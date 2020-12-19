@@ -1,6 +1,6 @@
 //Instead of showing a whole table, this table displays only
 //1. the header of the table (first row),
-//2. the first column and
+//2. the first column and 
 //3. one other column and one other row at a time
 //4. the column and row shown depend on the arrow or swiping of the table.
 
