@@ -10,7 +10,7 @@ var comparisonTables = (document.querySelectorAll('.comparisonTable') || (docume
 var xxxx;
 
 function moveInTable(direction) {
-	xxxx = direction;
+	xxxx = direction; 
 }
 
 comparisonTables.forEach(function (table2Compare) {
