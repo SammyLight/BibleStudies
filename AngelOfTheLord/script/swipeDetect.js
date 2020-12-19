@@ -30,7 +30,7 @@ function swipedetect(el, callback) {
 	}, false)
 
 	touchsurface.addEventListener('touchmove', function (e) {
-		e.stopPropagation() // prevent scrolling when inside DIV
+		e.preventDefault() // prevent scrolling when inside DIV
 	}, false)
 
 	touchsurface.addEventListener('touchend', function (e) {
