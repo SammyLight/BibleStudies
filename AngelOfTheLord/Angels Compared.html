@@ -861,4 +861,16 @@ categories: [Angel of Yahweh]
 
 	<button id="compTableBtn" title="One at a time" onclick="addStyleOnBtn()">One</button>
 
+	<div style="position: fixed; right: 120px; bottom: 0; display: grid; grid-template-columns: auto auto auto; grid-template-rows: 1fr 1fr 1fr; max-width: 10px; align-items: center; justify-items: center;">
+
+		<button class="fa fa-arrow-circle-left" style="grid-column-start: 1;grid-column-end: 2; grid-row-start: 1; grid-row-end: 4; font-size: 30px;" onclick="moveInTable('left')" title="Move Event Backward"></button>
+
+		<button class="fa fa-arrow-circle-up" style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 1; grid-row-end: 2; font-size: 30px;" onclick="moveInTable('up')" title="Move Row Up">
+		</button>
+		<button class="fa fa-arrow-circle-down" style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 3; grid-row-end: 4; font-size: 30px;" onclick="moveInTable('down')" title="Move Row Down"></button>
+
+		<button class="fa fa-arrow-circle-right" style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 4; font-size: 30px;" onclick="moveInTable('right')" title="Move Event Forward"></button>
+
+	</div>
+
 </body>
