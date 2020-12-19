@@ -4,11 +4,33 @@
 //3. one other column and one other row at a time
 //4. the column and row shown depend on the arrow or swiping of the table.
 
+
 var comparisonTables = (document.querySelectorAll('.comparisonTable') || (document.querySelectorAll('table')));
+
+var xxxx;
+
+function moveInTable(direction) {
+	xxxx = direction;
+}
 
 comparisonTables.forEach(function (table2Compare) {
 
-	//for navigation by arrow keys
+	//for navigation by arrow buttons
+	document.addEventListener('click', function (){
+	if (xxxx == 'right') {
+		moveRight();
+	}
+	if (xxxx == 'left') {
+		moveLeft();
+	}
+	if (xxxx == 'down') {
+		moveDown();
+	}
+	if (xxxx == 'up') {
+		moveUp();
+	}
+});
+	//for navigation by arrow keys on keyboard
 	document.addEventListener('keydown', getKeyAndMove);
 
 	function getKeyAndMove(e) {
@@ -118,7 +140,7 @@ comparisonTables.forEach(function (table2Compare) {
 		if (rln != 1) {
 			//hide present row
 			row2Show[rln].classList.remove('showRow');
-			
+
 			//show next row
 			rln = RLN;
 			row2Show[rln].classList.add('showRow');
@@ -164,17 +186,21 @@ function addStyle(styles) {
 var styles = `
         /*@media (max-width: 768px) {*/
 
-			td:first-child,
-			th:first-child {
+			table.comparisonTable td {
+				height: 50%;
+			}
+
+			table.comparisonTable td:first-child,
+			table.comparisonTable th:first-child {
 				width: 1px;
 			}
 
-			td:not(.showCell),
-            th:not(.showCell) {
+			table.comparisonTable td:not(.showCell),
+            table.comparisonTable th:not(.showCell) {
 				display: none;
 			}
 
-			tr:not(.showRow) {
+			table.comparisonTable tr:not(.showRow) {
 				display: none;
 			}
 			
@@ -186,16 +212,16 @@ var styles = `
 var stylesOnBtn = `
         /*@media (max-width: 768px) {*/
 
-			td:first-child,
-			th:first-child {
+			table.comparisonTable td:first-child,
+			table.comparisonTable th:first-child {
 				width: 1px;
 			}
-			td:not(.showCell),
-            th:not(.showCell) {
+			table.comparisonTable td:not(.showCell),
+            table.comparisonTable th:not(.showCell) {
 				display: none;
 			}
 
-			tr:not(.showRow) {
+			table.comparisonTable tr:not(.showRow) {
 				display: none;
 			}
 		/*}*/`;
