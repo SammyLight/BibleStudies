@@ -52,21 +52,21 @@ comparisonTables.forEach(function (table2Compare) {
 	}
 
 	//for navigation by swiping
-	swipedetect(table2Compare, function (swipedir) {
-		//    swipedir contains either "none", "left", "right", "up", or "down"
-		if (swipedir == 'right') {
-			moveLeft();
-		}
-		if (swipedir == 'left') {
-			moveRight();
-		}
-		if (swipedir == 'down') {
-			moveUp();
-		}
-		if (swipedir == 'up') {
-			moveDown();
-		}
-	})
+// 	swipedetect(table2Compare, function (swipedir) {
+// 		//    swipedir contains either "none", "left", "right", "up", or "down"
+// 		if (swipedir == 'right') {
+// 			moveLeft();
+// 		}
+// 		if (swipedir == 'left') {
+// 			moveRight();
+// 		}
+// 		if (swipedir == 'down') {
+// 			moveUp();
+// 		}
+// 		if (swipedir == 'up') {
+// 			moveDown();
+// 		}
+// 	})
 
 	//GENERATE COL-X CLASSES
 	generateColumnClasses(table2Compare);
