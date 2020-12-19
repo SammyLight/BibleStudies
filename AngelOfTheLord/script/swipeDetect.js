@@ -46,7 +46,7 @@ function swipedetect(el, callback) {
 			}
 		}
 		handleswipe(swipedir)
-		e.stopPropagation()
+		e.preventDefault()
 	}, false)
 }
 
