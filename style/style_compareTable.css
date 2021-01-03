@@ -4,7 +4,7 @@ comparisonTable-wrapper {
 	background: pink;
 }
 
-table.comparisonTable td {
+table.comparisonTable th {
 	position: sticky;
 	top: 0;
 }
