@@ -16,7 +16,7 @@ table.comparisonTable {
 
 /* Zebra striping */
 table.comparisonTable tr:nth-of-type(odd) {
-	background: pink;
+	background: #eee;
 }
 
 table.comparisonTable > tr:first-child > td,
