@@ -1,3 +1,13 @@
+comparisonTable-wrapper {
+	overflow-y: scroll;
+	height: 90mvh;
+}
+
+table.comparisonTable td {
+	position: sticky;
+	top: 0;
+}
+
 table.comparisonTable {
 	width: 100%;
 	border-collapse: collapse;
