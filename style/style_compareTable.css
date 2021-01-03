@@ -1,6 +1,7 @@
 comparisonTable-wrapper {
 	overflow-y: scroll;
 	height: 90mvh;
+	background: pink;
 }
 
 table.comparisonTable td {
