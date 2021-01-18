@@ -1,2 +1,8 @@
-	<link type="text/css" href="style/lightcity-02.css" rel="stylesheet">
+<!--<link type="text/css" href="../style/style.css" rel="stylesheet">-->
+<link type="text/css" href="../AngelOfTheLord/style/lightcity-02.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link type="text/css" href="../style/style_compareTable.css" rel="stylesheet">
 </head>
+<body>
+{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
+<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
