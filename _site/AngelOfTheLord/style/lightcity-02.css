@@ -41,15 +41,6 @@ h6 > span:first-child {
 	color: #5f666d;
 }
 
-/*
-ol>li>ol{
-	list-style-type: lower-alpha;
-}
-
-ol>li>ol>li>ol{
-	list-style-type: lower-roman;
-}
-*/
 header~h1{
 	counter-increment: header1;
 /*	content: counter(header);*/
@@ -78,11 +69,19 @@ header~h2:before {
 	font-size: 35px;
 }
 
-ol {
+ol>li>ol{
+	list-style-type: lower-roman;
+}
+
+ol>li>ol>li>ol{
+	list-style-type: lower-alpha;
+}
+
+/*ol {
 	list-style-type: none;
 	counter-reset: lister;
-	margin: 0;
-	padding: 0;
+	margin: auto;
+	padding: auto;
 }
 
 body>li:first-child {
@@ -108,6 +107,7 @@ li li {
 li li:before {
     content: counters(lister, ".") ". ";
 }
+*/
 
 .italize {
 	font-style: italic;
