@@ -4,5 +4,8 @@
 <link type="text/css" href="../style/style_compareTable.css" rel="stylesheet">
 </head>
 <body>
+{% for page in site.pages %}{% if page.title contains "Site Home" %}
+<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
+<span><strong>|</strong></span>
 {% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
