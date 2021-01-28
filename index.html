@@ -22,16 +22,24 @@ title: "Site Home"
 	<br>May He save you from the wayward wife who has left the Husband of her youth and may you never be numbered among her children.</p>
 
 <h1>LightCity Teaching Resources</h1>
+
 <h3>Angel of Yahweh</h3>
 <ol>
 	{% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
 	{% endif %}{% endfor %}
 </ol>
+
 <h3>Bible TimeLines</h3>
 <p>A collection of Bible Timelines</p>
-
 <ol id="nav">
 	{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+	{% endif %}{% endfor %}
+</ol>
+
+<h3>General Resources</h3>
+<p>A collection of Useful Resources</p>
+<ol id="nav">
+	{% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
 	{% endif %}{% endfor %}
 </ol>
 
