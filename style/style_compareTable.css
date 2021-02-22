@@ -33,6 +33,7 @@ table.comparisonTable th {
 table.comparisonTable td:first-child,
 table.comparisonTable th:first-child {
 	border-left: 3.5px solid grey;
+	border-right: 2.5px solid grey;
 }
 
 table.comparisonTable td:last-child,
