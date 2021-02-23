@@ -8,3 +8,4 @@
 {% include BStL-detailsSection-ShowHTML.html %}
 {% include BStL-storylineEditorSection.html %}
 {% include BStL-foot.html %}
+{% include Contact-section.html %}
