@@ -40,6 +40,31 @@ function getMissingNumber(arrayOrStringOfNumbers) {
 }
 //use as
 //getMissingNumber(arrayOrStringOfNumbers);
+
+///////////////////////////////////////////////
+/*Add Indicator for Cell That Has Details*/
+function addIndicatorShowingThatCellHasDetail (currentCell){
+	var divIndicatingCellHasDetail = currentCell.querySelector('div.localShowDetailButton');
+	if (divIndicatingCellHasDetail) {
+		divIndicatingCellHasDetail.remove();
+	}
+	var dtlCount = currentCell.getAttribute('detailIndex');
+	var localShowDetailButton = document.createElement('DIV');
+	localShowDetailButton.innerHTML = "+";
+	localShowDetailButton.classList.add('localShowDetailButton');
+	localShowDetailButton.id = 'locDtlShowBtn_' + dtlCount;
+	localShowDetailButton.setAttribute('detailIndex', dtlCount);
+	localShowDetailButton.setAttribute('title', "Show notes and details of selected events");
+	localShowDetailButton.setAttribute('onclick', "toggleDetailsSection()");
+	//use css to add content of button
+	currentCell.appendChild(localShowDetailButton);
+}
+
+/*Remove Indicator for Cell That Has Details*/
+function removeIndicatorShowingThatCellHasDetail (currentCell){
+		var localShowDetailButton = currentCell.querySelector('.localShowDetailButton');
+		localShowDetailButton.remove();
+}
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 
@@ -70,6 +95,8 @@ for (i = 0; i < tdDetailIndex.length; i++) {
 	////////////////////////////////////////////////////
 	if (!detailsSection.querySelector(`div[detailIndex="` + zyx + `"]`)) {
 		tdDetailIndex[i].removeAttribute('detailIndex');
+		//remove localShowDetailButton in table cell
+		removeIndicatorShowingThatCellHasDetail (tdDetailIndex[i]);
 	}
 	//////////////////////////////////////////////////////
 	//If, however, it has a corresponding detail/note,////
@@ -88,7 +115,15 @@ for (i = 0; i < tdDetailIndex.length; i++) {
 //ADD DETAIL KEY ON SELECTION OF ANY CELL
 function addDetailKeys() {
 
-	var previouslyShownDetail = document.querySelector('.showDetail'); //don't make it a live nodelist
+	var previouslyShownDetail;
+	var prevDetailIndex;
+
+	if (document.querySelector('.showDetail')) {
+		previouslyShownDetail = document.querySelector('.showDetail'); //don't make it a live nodelist
+		prevDetailIndex = Number(previouslyShownDetail.getAttribute('detailIndex'));
+		previouslyClickedCell = document.querySelector(`td[detailIndex="` + prevDetailIndex + `"]`);
+	}
+
 	var detailsActors = document.getElementById('detailsActors');
 	var detailsRegions = document.getElementById('detailsRegions');
 	//var cellParentName = storyLineTable.rows[clickedRow].parentNode.nodeName;
@@ -184,15 +219,15 @@ function addDetailKeys() {
 		////////////////////////////////////////////
 		//FUNCTION TO SHOW DETAIL OF SELECTED CELL//
 		////////////////////////////////////////////
-		
+
 		//if selectedCell does not have details
-		
+
 		//////////////////////////////////////////////////////
 		//IF THE SELECTED CELL HAS NO DETAIL-INDEX////////////
 		//////////////////////////////////////////////////////
 
 		if (selectedCell.getAttribute('detailIndex') == null) {
-			
+
 			/////////////////////////////////////////
 			//*HIDE PREVIOUSLY SHOWN DETAIL IF ANY*//
 			/////////////////////////////////////////
@@ -201,24 +236,38 @@ function addDetailKeys() {
 				//IF PREVIOUSLY SHOWN DETAIL IS EMPTY, REMOVE IT//
 				//////////////////////////////////////////////////
 				if (document.querySelector('.showDetail').textContent == '') {
-					
-					previouslyShownDetail = document.querySelector('.showDetail');
+
+					/*previouslyShownDetail = document.querySelector('.showDetail');
 					var prevDetailIndex = Number(previouslyShownDetail.getAttribute('detailIndex'));
-					previouslyClickedCell = document.querySelector(`td[detailIndex="` + prevDetailIndex + `"]`);
+					previouslyClickedCell = document.querySelector(`td[detailIndex="` + prevDetailIndex + `"]`);*/
+					removeIndicatorShowingThatCellHasDetail (previouslyClickedCell);
 					previouslyClickedCell.removeAttribute('detailIndex');
+
+					//to remove formatting from cell whose detail was previoiusly showing
+					if (previouslyClickedCell.classList.contains('showingDetail')) {
+						previouslyClickedCell.classList.remove('showingDetail');
+					}
+
 					previouslyShownDetail.remove(prevDetailIndex);
-					
+
+					//to remove formatting from cell whose detail was previoiusly showing
+					//					if(previousDetailedCell.classList.contains('showingDetail')){previouslyClickedCell.classList.remove('showingDetail');}
 					//////////////////////////////////////////////
 					//REMOVE DETAIL INDEX FROM DETAILCOUNT-ARRAY//
 					//////////////////////////////////////////////
 					var indexOfDetailCount2remove = detailsCountArray.indexOf(prevDetailIndex);
 					detailsCountArray.splice(indexOfDetailCount2remove, 1);
-					
+
 				} else {
-					previouslyShownDetail = document.querySelector('.showDetail');
+					//					previouslyShownDetail = document.querySelector('.showDetail');
 					previouslyShownDetail.classList.add('hideDetail');
 					previouslyShownDetail.classList.remove('showDetail');
 					previouslyShownDetail.contentEditable = 'false';
+
+					//to remove formatting from cell whose detail was previoiusly showing
+					if (previouslyClickedCell.classList.contains('showingDetail')) {
+						previouslyClickedCell.classList.remove('showingDetail');
+					}
 				}
 			}
 			/////////////////////////////////////////////////
@@ -227,8 +276,7 @@ function addDetailKeys() {
 			if (getMissingNumber(detailsCountArray).length != 0) {
 				detailsCount = getMissingNumber(detailsCountArray)[0];
 				getMissingNumber(detailsCountArray).splice(0, 1);
-			}
-			else {
+			} else {
 				if (detailsCountArray.length != 0) {
 					detailsCount = Math.max(...detailsCountArray) + 1;
 				} else {
@@ -250,21 +298,25 @@ function addDetailKeys() {
 
 			//assign the same detail Index to the selected cell to which the detail belongs;
 			selectedCell.setAttribute('detailIndex', detailsCount);
+			addIndicatorShowingThatCellHasDetail (selectedCell);
 			//			previouslyClickedCell = selectedCell;
+
+			selectedCell.classList.add('showingDetail');
 		}
-		
+
 		////////////////////////////////////////////////////////
 		//ELSE IF THE SELECTED CELL ALREADY HAS A DETAIL-INDEX//
 		////////////////////////////////////////////////////////
 		else if (selectedCell.getAttribute('detailIndex') != null) {
-			
+
 			x = selectedCell.getAttribute('detailIndex');
 			var detailToShow = detailsSection.querySelector(`div[detailIndex="` + x + `"]`); //find the corresponding detail/note (it will carry the same detailIndex attribute value)
+			var previousDetailedCell = storyLineTable.querySelector(`td[detailIndex="` + x + `"]`);
 
 			///////////////////////////////////////////////
 			//find previously selected detail and hide it//
 			///////////////////////////////////////////////
-			
+
 			///////////////////////////////////////////////////////////////
 			//IN CASE THERE IS NO DETAIL WITH DETAIL OF CLASS SHOWDETAIL,//
 			//BUT CLICKED CELL HAS A CORRESPONDING DETAILS THAT HAS////////
@@ -272,7 +324,7 @@ function addDetailKeys() {
 			///////////////////////////////////////////////////////////////
 			if ((previouslyShownDetail == null) && (detailToShow) && (detailToShow.classList.contains('hideDetail'))) {
 				detailToShow.classList.remove('hideDetail');
-				detailToShow.classList.add('showDetail');			
+				detailToShow.classList.add('showDetail');
 			}
 			if ((previouslyShownDetail) && (previouslyShownDetail.getAttribute('detailIndex') != x)) {
 
@@ -284,6 +336,7 @@ function addDetailKeys() {
 				if (previouslyShownDetail.textContent == '') {
 					var prevDetailIndex = Number(previouslyShownDetail.getAttribute('detailIndex'));
 					previouslyClickedCell = document.querySelector(`td[detailIndex="` + prevDetailIndex + `"]`);
+					removeIndicatorShowingThatCellHasDetail (previouslyClickedCell);
 					previouslyClickedCell.removeAttribute('detailIndex');
 					previouslyShownDetail.remove();
 					///////////////////////////
@@ -298,6 +351,14 @@ function addDetailKeys() {
 				detailToShow = detailsSection.querySelector(`div[detailIndex="` + x + `"]`); //find the corresponding detail/note (it will carry the same detailIndex attribute value)
 				detailToShow.classList.remove('hideDetail');
 				detailToShow.classList.add('showDetail');
+
+				//to remove formatting from cell whose detail was previoiusly showing
+				if (previouslyClickedCell.classList.contains('showingDetail')) {
+					previouslyClickedCell.classList.remove('showingDetail');
+				}
+
+				//add formatting to selected cell to indicate its detail is the one currently showing
+				selectedCell.classList.add('showingDetail');
 			}
 		}
 	} else if (previouslyShownDetail) {
@@ -308,15 +369,15 @@ function addDetailKeys() {
 ///////////////////////////////////////////
 //MAKE DETAILS TEXT-EDITOR BUTTONS VISIBLE/
 ///////////////////////////////////////////
-editMode.style.display = 'none';//to hide 'Show HTML'
+editMode.style.display = 'none'; //to hide 'Show HTML'
 function detailsEditButtons() {
 	var toolBar1_Buttons = document.querySelectorAll('#wysiwygEditor > div > *');
 
 	if (document.querySelector('.showDetail')) {
 		if (toolBar1_Buttons[0].style.display == 'none') {
-//			function showWYSIWYGbtns() {
-//				wysiwygEditor_Buttons[i - 1].style.display = ''
-//			}
+			//			function showWYSIWYGbtns() {
+			//				wysiwygEditor_Buttons[i - 1].style.display = ''
+			//			}
 			toolBar1_Buttons.forEach(function (btn) {
 				btn.style.display = 'none';
 			})
@@ -324,12 +385,12 @@ function detailsEditButtons() {
 			for (let i = 1; i <= toolBar1_Buttons.length; i++) {
 				setTimeout(() => [toolBar1_Buttons[i - 1].style.display = ''], 5 * i);
 			}
-			editMode.style.display = '';//to show 'Show HTML'
+			editMode.style.display = ''; //to show 'Show HTML'
 		} else {
 			for (let i = 1; i <= toolBar1_Buttons.length; i++) {
 				setTimeout(() => [toolBar1_Buttons[i - 1].style.display = 'none'], 5 * i);
 			}
-			editMode.style.display = 'none';//to hide 'Show HTML'
+			editMode.style.display = 'none'; //to hide 'Show HTML'
 		}
 	} else {
 		customAlert('There is no EVENT to make notes for!')
@@ -388,14 +449,6 @@ function addDetail() {
 
 			/*FUNCTION TO CREATE DETAIlS*/
 			if (selectedCell.getAttribute('detailIndex') == null) {
-				//				if (getMissingNumber(detailsCountArray)) {
-				//					detailsCount = missingNum[0];
-				//					missingNum.splice(0, 1);
-				//				} else {
-				//					detailsCount = Math.max(...detailsCountArray) + 1;
-				//					detailsCountArray.push(detailsCount);
-				//				}
-				//	detailsCount = detailsCount + 1;
 
 				var detailsSummary = document.getElementById('detailsSummary');
 
@@ -412,6 +465,7 @@ function addDetail() {
 				``
 				//assign the same detail Index to the selected cell to which the detail belongs;
 				selectedCell.setAttribute('detailIndex', detailsCount);
+				addIndicatorShowingThatCellHasDetail (selectedCell);
 
 			} else if (selectedCell.getAttribute('detailIndex') != null) {
 				var x = selectedCell.getAttribute('detailIndex');
@@ -429,3 +483,15 @@ function addDetail() {
 		customAlert('Please, select a cell to add or view its details.')
 	}
 }
+
+
+///////////////////////////////////////////////
+//Create localShowDetailButton in table cell///
+///////////////////////////////////////////////
+var cellWithDetailIndex = storyLineTable.querySelectorAll("td[detailindex]");
+
+for (i = 0; i < cellWithDetailIndex.length; i++) {
+	addIndicatorShowingThatCellHasDetail (cellWithDetailIndex[i]);
+}
+///////////////////////////////////////////////
+///////////////////////////////////////////////

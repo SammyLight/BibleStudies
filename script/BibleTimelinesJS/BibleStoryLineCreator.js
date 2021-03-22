@@ -3348,3 +3348,13 @@ function disConnectTo() {
 }
 /****************************************************************/
 /****************************************************************/
+// DarkMode
+var darkModeButton = document.getElementById('darkModeButton');
+function darkModeOnOff(){
+	if (documentBody.classList.contains('darkMode')) {
+		documentBody.classList.remove('darkMode');darkModeButton.innerHTML = 'D';
+	} else {
+		documentBody.classList.add('darkMode');
+		darkModeButton.innerHTML = 'L';
+	}
+}
