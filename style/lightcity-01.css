@@ -20,13 +20,13 @@ h6 {
 	font-weight: 600;
 	text-transform: uppercase;
 	/* 	line-height: 72px; */
-	margin-bottom: 20px;
 	text-shadow: 2px 3px 3px #d0d0d0,
 		0 0 0 black,
 		-1px 1px 0 #000000,
 		1px 1px 0 white;
 	color: #292d31;
 	border-bottom: 5px solid grey;
+	margin-bottom: 20px;
 	margin-bottom: 0;
 }
 
