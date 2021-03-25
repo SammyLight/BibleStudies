@@ -3,5 +3,3 @@
 {% for page in site.pages %}{% if page.title contains "Site Home" %}
 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
 	
-{% for page in site.pages %}{% if page.title contains "About" %}
-<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
