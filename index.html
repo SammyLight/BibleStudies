@@ -43,4 +43,10 @@ title: "Site Home"
 	{% endif %}{% endfor %}
 </ol>
 
+<h3>Bible Doctrines</h3>
+<p>A collection of Doctrines Treated Thus Far</p>
+<ol id="nav">
+	{% for page in site.pages %}{% if page.categories contains "Bible_Doctrines" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+	{% endif %}{% endfor %}
+</ol>
 </body>
