@@ -40,6 +40,11 @@ h6 > span:first-child {
 	color: #5f666d;
 }
 
+ol, ul{
+	column-gap: 2em;
+	column-width: 12em;
+}
+
 ol>li>ol{
 	list-style-type: lower-alpha;
 }
