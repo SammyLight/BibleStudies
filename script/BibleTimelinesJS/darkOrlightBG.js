@@ -1,3 +1,4 @@
+//from --https://codepen.io/andreaswik/pen/YjJqpK
 function lightOrDark(color) {
 	var r, g, b, hsp;
 	
@@ -38,9 +39,6 @@ function lightOrDark(color) {
 }
 
 function darkOrLightBG(x) {
-	//from --https://codepen.io/andreaswik/pen/YjJqpK
-
-	/////////////////////////////////////
 	var element, bgColor, brightness;
 
 	element = x;
