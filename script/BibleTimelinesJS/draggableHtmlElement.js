@@ -1,12 +1,15 @@
 // Make the DIV element draggable:
 //dragElement(document.getElementById("draggable"));
 dragElement(document.getElementById("navSection4navDivButtonHolder"));
-dragElement(document.getElementById("detailsSection"));
+dragElement(document.getElementById("detailsSection"), "horizontal");
 dragElement(document.getElementById("alternateStoryLineEditorButtons"));
 dragElement(slideShowListMaster);
 //dragElement(document.getElementById("timePeriodMenu"));
 
-function dragElement(elmnt) {
+function dragElement(elmnt, dragDirection) {
+	//if the dragDirection is set to "horizontal", then the element will only move horizontally
+	//if the dragDirection is set to "vertical", then the element will only move vertically
+	//if dragDirection is not set, it will move in all directions
 	var pos1 = 0,
 		pos2 = 0,
 		pos3 = 0,
@@ -38,9 +41,15 @@ function dragElement(elmnt) {
 		pos2 = pos4 - e.clientY;
 		pos3 = e.clientX;
 		pos4 = e.clientY;
-		// set the element's new position:
-		elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-		elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		// set the element's new position (if dragDirection is not set, it will move in all directions)
+		//if the dragDirection is set to "vertical", then the element will NOT move in horizontally
+		if (dragDirection != "vertical") {
+			elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		}
+		//if the dragDirection is set to "horizontal", then the element will NOT move in vertically
+		if (dragDirection != "horizontal") {
+			elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+		}
 	}
 
 	function closeDragElement() {
