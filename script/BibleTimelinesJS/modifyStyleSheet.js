@@ -9,11 +9,11 @@ function changeCSS(property, style, value, cssSectionID) {
         cssSectionID = "mainCSS";
     }
     // Get the current CSS sheet.
-    var mainCSS = document.getElementById(cssSectionID);
+    var mainCSS_1 = document.getElementById(cssSectionID);
     var changeStatus = false;
     // Refine the stylesheet into a more easily processed form.
     // It is done here as making it part of the variable definition produces issues where you still need to call the sheet property.
-    mainCSS = mainCSS.sheet;
+    mainCSS = mainCSS_1.sheet;
 
     // Only execute if the user has specified values for each of the required parameters.
     if (property !== undefined && style !== undefined && value !== undefined) {
@@ -27,6 +27,15 @@ function changeCSS(property, style, value, cssSectionID) {
 
                 // Sets the exit status and breaks the loop's execution.
                 changeStatus = true;
+                var rulesString = '';
+                var crL = mainCSS.cssRules.length;
+                for (var i = 0; i < mainCSS.cssRules.length; i++) {
+                    rulesString = rulesString + mainCSS.cssRules[i].cssText;
+                    if (i == (crL - 1)){
+                        mainCSS_1.innerText = rulesString;
+                        console.log(rulesString)
+                    }
+                }
                 break;
             }
         }
