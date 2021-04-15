@@ -2,7 +2,7 @@
 //dragElement(document.getElementById("draggable"));
 dragElement(document.getElementById("navSection4navDivButtonHolder"));
 dragElement(document.getElementById("detailsSection"), "horizontal");
-dragElement(document.getElementById("alternateStoryLineEditorButtons"));
+dragElement(document.getElementById("alternateStoryLineEditorButtons"), "horizontal");
 dragElement(slideShowListMaster);
 //dragElement(document.getElementById("timePeriodMenu"));
 
