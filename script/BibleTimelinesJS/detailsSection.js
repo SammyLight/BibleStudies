@@ -44,12 +44,12 @@ function getMissingNumber(arrayOrStringOfNumbers) {
 ///////////////////////////////////////////////
 /*Add Indicator for Cell That Has Details*/
 function addIndicatorShowingThatCellHasDetail (currentCell){
-	var divIndicatingCellHasDetail = currentCell.querySelector('div.localShowDetailButton');
+	var divIndicatingCellHasDetail = currentCell.querySelector('button.localShowDetailButton');
 	if (divIndicatingCellHasDetail) {
 		divIndicatingCellHasDetail.remove();
 	}
 	var dtlCount = currentCell.getAttribute('detailIndex');
-	var localShowDetailButton = document.createElement('DIV');
+	var localShowDetailButton = document.createElement('BUTTON');
 	localShowDetailButton.innerHTML = "+";
 	localShowDetailButton.classList.add('localShowDetailButton');
 	localShowDetailButton.id = 'locDtlShowBtn_' + dtlCount;
@@ -67,7 +67,6 @@ function removeIndicatorShowingThatCellHasDetail (currentCell){
 }
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
-
 var detailsSummary = document.getElementById('detailsSummary');
 var previouslyClickedCell;
 var detailsSection = document.getElementById('detailsSection');
