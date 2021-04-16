@@ -505,11 +505,6 @@ input {
   /* width: 93%; */
 }
 
-#alternateStoryLineEditorButtons select {
-  display: block;
-  width: 98%;
-}
-
 .btnactivecolor {
   background-color: aquamarine;
 }
@@ -876,7 +871,6 @@ td>div {
 #alternateStoryLineEditorButtonsBody {
   padding-left: 6px;
   padding-right: 6px;
-
   min-height: 350px;
   max-height: calc(100vh - 50px);
   overflow-y: auto;
@@ -914,16 +908,12 @@ td>div {
   margin: 0;
 }
 
-#alternateStoryLineEditorButtons>div>span {
+#alternateStoryLineEditorButtons > div > h2,
+#alternateStoryLineEditorButtons > div > h3 {
   font-style: italic;
-  font-weight: bold;
-  /* text-transform: uppercase; */
-  /* margin-right: 10px; */
-  /* width: 70px; */
-  padding-right: 5px;
-  /* padding-top: 10px; */
-  border-radius: 2px;
-  /* text-align: right; */
+  font-family: cursive;
+  margin-bottom: -5px;
+  margin-top: 5px;
 }
 
 #alternateStoryLineEditorButtons>.vertical {
@@ -984,11 +974,23 @@ td>div {
 .editInputnButton>span {
   width: 100px;
   text-align: right;
+  padding-right: 5px;
+  font-style: italic;
+}
+
+/* .editInputnButton> div:first-child, */
+.editInputnButton> h3 {
+  width: 38px;
+  margin-right: 20px;
+  text-align: right;
+  font-family: cursive;
+  font-style: italic;
 }
 
 .editInputnButton .inputNselect {
   display: block;
   width: 93%;
+  margin-bottom: 5px;
 }
 
 .editInputnButton .inputNselect input {
@@ -1000,8 +1002,17 @@ td>div {
 }
 
 .editInputnButton2 {
-  column-count: 4;
-  padding: 10px;
+  column-count: 3;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.editInputnButton2 span {
+  font-style: italic;
+}
+
+#divClassOptionsDropdown {
+  width: 105% !important;
 }
 
 /*SHOW HIDE DIVS SECTION*/
