@@ -8,7 +8,7 @@
 		<!--Table-->
 		<hr>
 		<div id="realignandreconnect" class="editInputnButton">
-			<span>Table:</span>
+			<h3>Table:</h3>
 			<button onclick="buildLegendTable()">
 				Re-Align<br>Tables</button><button
 				onclick="connectAllDraggableDivsWithSVGLines()">Connect<br>Divs</button><button
@@ -17,50 +17,42 @@
 				title="Save BIBLE STORYLINE"><strong>&#128190;</strong></button>
 		</div>
 
-		<!--Delete-->
-		<hr>
-		<div id="deleteButtons" class="editInputnButton">
-			<span>Delete:</span>
-			<div>
-				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
-					<span style="font-size: medium;">&#128465;</span>Label
-				</button><button title="delete label" onclick="destroyCell()">
-					<span style="font-size: medium;">&#128465;</span>Cell
-				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
-					<span style="font-size: medium;">&#128465;</span>Row
-				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
-					<span style="font-size: medium;">&#128465;</span>Col
-				</button>
-			</div>
-		</div>
-
-
 		<!--Merge & Split-->
 		<hr>
 		<div id="mergeAndSplit" class="editInputnButton">
-			<span>Merge<br>/Split:</span>
+			<h3>Merge<br>/Split:</h3>
 			<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
-				&#10010;
-				<br />
 				Select
 				<br />
 				Cells
 			</button><button title="merge selected cells" onclick="mergeCells()">
-				&#124; &#129034;&#129032; &#124;
-				<br />
 				Merge
 				<br />
 				Cells
 			</button><button title="split selected cells" onclick="splitCell()">
-				&#124;&#124;&#129032; &#129034;&#124;&#124;
-				<br />Split
+				Split
 				<br />
 				Cells
 			</button>
 		</div>
 
+		<!--Delete-->
+		<hr>
+		<div id="deleteButtons" class="editInputnButton">
+			<h3>Delete:</h3>
+			<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+				<span style="font-size: medium;">&#128465;</span>Label
+			</button><button title="delete label" onclick="destroyCell()">
+				<span style="font-size: medium;">&#128465;</span>Cell
+			</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+				<span style="font-size: medium;">&#128465;</span>Row
+			</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+				<span style="font-size: medium;">&#128465;</span>Col
+			</button>
+		</div>
+
 		<!--Create-->
-		<span>Create:</span>
+		<h3>Create:</h3>
 		<hr>
 		<div class="editInputnButton">
 			<span>New Cell:</span>
@@ -70,7 +62,6 @@
 					title="create cell to the right" onclick="createCellAfter()">&#129034;</button>
 			</div>
 		</div>
-		<hr>
 		<div class="editInputnButton2">
 			<div>
 				<span>Clone Row</span>
@@ -81,7 +72,7 @@
 				</div>
 			</div>
 			<div>
-				<span>NewRow</span>
+				<span>New Row</span>
 				<div>
 					<button title="new row above" onclick="createRowAbove()">&#129033;
 					</button><button title="new row below" onclick="createRowBelow()">&#129035;
@@ -96,18 +87,10 @@
 					</button>
 				</div>
 			</div>
-			<div>
-				<span>Del Col</span>
-				<div>
-					<button title="delete timesection, i.e., column" onclick="destroyColumn()">&#128465;
-					</button>
-				</div>
-			</div>
 		</div>
 
-		<hr>
 		<!--Edit-->
-		<span>Edit:</span>
+		<h3>Edit:</h3>
 		<hr>
 		<div class="editInputnButton">
 			<span>Cell Heading:</span>
@@ -137,7 +120,7 @@
 		<!--Land/Region-->
 		<hr>
 		<div class="editInputnButton">
-			<span>Location:</span>
+			<h3>Location:</h3>
 			<div class="inputNselect">
 				<input type="text" id="locationInput" value="" draggable="false">
 				<select id="locationOptionsDropdown" onclick="fillLocationInput()"
@@ -146,11 +129,11 @@
 			<button onclick="createRegionAttribute()">&#10003;</button>
 		</div>
 		<!--Label/Actors-->
-		<span>Actors:</span>
+		<h3>Actors:</h3>
 		<hr>
 		<div class="editInputnButton">
 			<div class="editInputnButton">
-				<span style="font-style: italic">Main<br>Name:</span>
+				<span style="width: 50px;">Main<br>Name:</span>
 				<div class="inputNselect">
 					<input type="text" id="divClass" value="" draggable="false">
 					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
@@ -158,19 +141,18 @@
 				</div>
 			</div>
 			<div class="editInputnButton">
-				<span style="font-style: italic">Alias:</span>
+				<span style="width: 60px;">Alias:</span>
 				<div class="inputNselect">
 					<input type="text" id="divName" value="" draggable="false">
 					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
 					</select>
 				</div>
 			</div>
-			<button onclick="createDIV()">Create Div</button>
+			<button onclick="createDIV()" style="height: 30px;">Create</button>
 		</div>
 		<!-- Div Color -->
-		<hr>
 		<div class="editInputnButton">
-			<span style="font-style: italic">DivColor:</span>
+			<h3>DivColor:</h3>
 			<div class="inputNselect">
 				<input type="text" id="divColor" value="" draggable="false">
 				<select id="divColorOptionsDropdown" onchange="fillDivColorInput(this[this.selectedIndex].value)">
@@ -370,9 +352,8 @@
 			</div>
 		</div>
 		<!--#2-Label/Actors-->
+		<h3>CustomConnect</h3>
 		<hr>
-		<hr>
-		<span>CustomConnect</span>
 		<div class="editInputnButton">
 			<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
 			<div class="inputNselect">
