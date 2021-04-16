@@ -182,10 +182,6 @@ body {
   grid-area: foot1;
 }
 
-/* #divTableContainer,
-#masterNav {
-} */
-
 #svg {
   pointer-events: none;
   /*THIS MAKES IT POSSIBLE TO CLICK THROUGH THE SVG*/
@@ -204,10 +200,9 @@ body {
 }
 
 #divTableContainer {
-  max-height: 90vh;
+  min-height: 85vh;
   margin-left: 10px;
   margin-right: 10px;
-
   border: 0.5px solid #cccccc;
   border-radius: 2.5px;
   box-shadow: 0px 3px 6px -3px black;
@@ -231,11 +226,6 @@ table h6:not(:last-of-type) {
 
 #storyLineTable td p:nth-child(2) {
   margin-top: 1.75em;
-}
-
-#masterTable {
-  position: relative;
-  background-color: beige;
 }
 
 .headbuttons {
@@ -264,6 +254,12 @@ table h6:not(:last-of-type) {
 
 .headbuttons>input {
   width: 20px;
+}
+
+#masterTable {
+  height: 100%;
+  position: relative;
+  background-color: beige;
 }
 
 #masterTable>td {
@@ -315,12 +311,6 @@ table h6:not(:last-of-type) {
   padding-right: 5px;
 }
 
-/* #storyLineTable td,
-#storyLineTable th {
-  	box-shadow: 0 8px 7.5px -8px black;
-  	box-shadow: 0 4px 5px -6px black;
-} */
-
 #legendTable td:hover,
 #legendTable th:hover,
 #storyLineTable td:hover,
@@ -345,7 +335,7 @@ table h6:not(:last-of-type) {
 }
 
 #legendTable th:empty,
-#legendTable thead td:empty,
+#legendTable td:empty,
 #storyLineTable th:empty,
 #storyLineTable td:empty {
   /*			visibility:hidden;*/
@@ -886,7 +876,7 @@ td>div {
 #alternateStoryLineEditorButtonsBody {
   padding-left: 6px;
   padding-right: 6px;
-  
+
   min-height: 350px;
   max-height: calc(100vh - 50px);
   overflow-y: auto;
@@ -986,30 +976,31 @@ td>div {
   display: inline-flex;
 }
 
-.editInputnButton > button{
+.editInputnButton>button {
   width: 100px;
   background-color: rgb(250, 255, 175);
 }
 
-.editInputnButton > span {
+.editInputnButton>span {
   width: 100px;
   text-align: right;
 }
 
-.editInputnButton .inputNselect{
+.editInputnButton .inputNselect {
   display: block;
   width: 93%;
 }
+
 .editInputnButton .inputNselect input {
   width: 97%;
 }
 
 .editInputnButton .inputNselect select {
-  width: 100%!important;
+  width: 100% !important;
 }
 
-.editInputnButton2{
-  column-count:4;
+.editInputnButton2 {
+  column-count: 4;
   padding: 10px;
 }
 
@@ -1380,12 +1371,12 @@ pre#sourceText {
     max-height: 100vh; */
     height: calc(100vh - 39px);
   }
-  
+
   #alternateStoryLineEditorButtons {
     overflow-y: hidden;
     overflow-x: hidden !important;
   }
-  
+
   #alternateStoryLineEditorButtonsBody {
     overflow-y: scroll;
     overflow-x: hidden !important;
