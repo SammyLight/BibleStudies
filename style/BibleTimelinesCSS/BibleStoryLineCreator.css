@@ -257,9 +257,8 @@ table h6:not(:last-of-type) {
 }
 
 #masterTable {
-  height: 100%;
+  /* height: 100%; */
   position: relative;
-  background-color: beige;
 }
 
 #masterTable>td {
@@ -275,6 +274,7 @@ table h6:not(:last-of-type) {
 #legendTable {
   margin-top: 5px;
   position: relative;
+  background-color: rgba(245, 245, 220, 0.5);
   box-shadow: 0px 3px 6px -3px black;
   z-index: 2;
 }
@@ -292,8 +292,8 @@ table h6:not(:last-of-type) {
 
 #storyLineTable tr:hover {
   border: 2px solid black;
-  /*	background-color: rgba(255, 231, 0, 0.24);*/
-  /*	background-color: rgba(255, 52, 208, 0.08);*/
+  background-color: rgba(255, 231, 0, 0.24);
+  background-color: rgba(255, 52, 208, 0.08);
   background-color: rgba(196, 184, 117, 0.3);
 }
 
@@ -311,13 +311,8 @@ table h6:not(:last-of-type) {
   padding-right: 5px;
 }
 
-#legendTable td:hover,
-#legendTable th:hover,
-#storyLineTable td:hover,
-#storyLineTable th:hover {
-  box-shadow: rgba(0, 0, 0, 0.09) 0px -2px 1px, rgba(0, 0, 0, 0.09) 0px -4px 2px,
-    rgba(0, 0, 0, 0.09) 0px -8px 4px, rgba(0, 0, 0, 0.09) 0px -16px 8px,
-    rgba(0, 0, 0, 0.09) 0px -32px 16px;
+#storyLineTable tr:hover {
+  box-shadow: 0 4px 5px -6px black;
 }
 
 #legendTable th,
@@ -326,12 +321,12 @@ table h6:not(:last-of-type) {
 #storyLineTable thead td,
 #legendTable tr[rowname="Time"] td:not(:empty),
 #storyLineTable tr[rowname="Time"] td:not(:empty) {
-  /*	background-color: rgba(34, 103, 95, 0.6);*/
-  /*	background-color: rgba(247, 233, 102, 0.6);*/
-  /*	background-color: rgba(226, 211, 189, 0.6);*/
+  background-color: rgba(255, 253, 219, 0.335);
+  background-color: rgba(247, 233, 102, 0.6);
+  background-color: rgba(255, 234, 115, 0.6);
   background-color: rgba(224, 219, 153, 0.6);
   border-radius: 2px;
-  /*	box-shadow: 0 4px 5px -6px black;*/
+  /* box-shadow: 0 4px 5px -6px black; */
 }
 
 #legendTable th:empty,
@@ -574,36 +569,25 @@ td>div {
 /*TO INDICATE EVENTS WITH DETAILS*/
 /******************/
 #storyLineTable .localShowDetailButton {
-  /* content: "+"; */
   position: absolute;
-  top: 0px !important;
-  left: 0 !important;
-  padding: 0 !important;
+  top: 0;
+  left: 0;
+  padding: 0 1px;
   margin: 0 !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  font-weight: bolder;
-  font-style: italic;
+  background-color: rgba(255, 217, 0, 0.082);
+  border: transparent;
   color: darkred;
   cursor: pointer;
   z-index: 80;
 }
 
 #storyLineTable .localShowDetailButton:hover {
-  font-size: 15px;
+  background-color: rgba(255, 251, 0, 0.513);
 }
 
 #storyLineTable td[detailindex]:hover:not(.showingDetail) {
-  /* box-sizing: border-box; */
-  border: 3px solid indianRed;
-  /* box-shadow:
-  3px 3px 0px 0px indianred inset,
-  -3px -3px 0px 0px indianred inset,
-  rgba(0, 0, 0, 0.09) 0px -2px 1px,
-  rgba(0, 0, 0, 0.09) 0px -4px 2px,
-  rgba(0, 0, 0, 0.09) 0px -8px 4px,
-  rgba(0, 0, 0, 0.09) 0px -16px 8px,
-  rgba(0, 0, 0, 0.09) 0px -32px 16px; */
+  box-shadow: grey 0px 0px 0px 1px inset;
+  border-color: transparent !important;
 }
 
 /* #storyLineTable td[detailindex] > h4:only-child {
@@ -620,15 +604,13 @@ td>div {
 } */
 
 #storyLineTable td:not(:empty):active {
-  border: 1px solid darkOrange;
-  border-right: 1px solid darkOrange;
-  border-top: 1px solid darkOrange;
-  padding-left: 3px;
-  /*	box-shadow:		
+  border-color: darkOrange;
+  box-shadow: grey 0px 1px 0px 0px inset;
+  /* box-shadow:		
 		rgba(255, 235, 0, 0.54) 8px 1px 20px 0px,
 		rgba(255, 128, 0, 0.63) 2px -2px 20px 0px,
 		rgb(245, 255, 0) 2px -10px 20px -2px,
-		rgba(255, 0, 245, 0.66) 2px -20px 20px -5px !important;*/
+		rgba(255, 0, 245, 0.66) 2px -20px 20px -5px !important; */
 }
 
 /*DETAILS SECTIONS*/
@@ -826,24 +808,22 @@ td>div {
 /*To indicate the td whose detail is currently showing*/
 .showingDetail {
   color: darkred;
-  border: 3px solid darkmagenta !important;
-  background-color: rgba(249, 255, 92, 0.37) !important;
-  box-shadow: rgba(255, 128, 0, 0.63) 1px 0px 0.5px 0px,
-    rgba(255, 128, 0, 0.63) 0px 0px 0.5px 0px;
+  background-color: rgba(179, 255, 92, 0.267) !important;
+  box-shadow: grey 1.5px 0px 0px 0px inset,
+    grey -1.5px 0px 0px 0px inset;
 }
 
 .showingDetail:hover {
-  border: 3px solid indianRed !important;
-  /*box-shadow:
-		#ff8000 1px 0px 2px 0px,
-		#ff8000 0px 0px 2px 0px !important;*/
+  background-color: rgba(255, 253, 116, 0.829) !important;
+  box-shadow: purple 1.5px 0px 0px 0px inset,
+    purple -1.5px 0px 0px 0px inset;
 }
 
 .showingDetail:active {
-  box-shadow: 0 0 0 0 !important;
-  border: 1px solid darkOrange !important;
+  box-shadow: darkOrange 0 0 -1px 0 inset !important;
+  /* border: 1px solid darkOrange !important;
   border-right: 1px solid darkOrange !important;
-  border-top: 1px solid darkOrange !important;
+  border-top: 1px solid darkOrange !important; */
 }
 
 .showingDetail:active:before {
@@ -908,8 +888,8 @@ td>div {
   margin: 0;
 }
 
-#alternateStoryLineEditorButtons > div > h2,
-#alternateStoryLineEditorButtons > div > h3 {
+#alternateStoryLineEditorButtons>div>h2,
+#alternateStoryLineEditorButtons>div>h3 {
   font-style: italic;
   font-family: cursive;
   margin-bottom: -5px;
@@ -979,7 +959,7 @@ td>div {
 }
 
 /* .editInputnButton> div:first-child, */
-.editInputnButton> h3 {
+.editInputnButton>h3 {
   width: 38px;
   margin-right: 20px;
   text-align: right;
@@ -1347,8 +1327,7 @@ pre#sourceText {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto 1fr auto auto;
-    grid-template-areas:
-      "header1    header1"
+    grid-template-areas: "header1    header1"
       "header2    header2"
       "mainbody   mainbody"
       "foot1      foot1"
@@ -1402,8 +1381,7 @@ pre#sourceText {
   #detailsSection {
     grid-template-rows: auto auto auto 1fr auto;
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "titlebar     "
+    grid-template-areas: "titlebar     "
       "editorButtons"
       "keyfacts      "
       "notes        "
