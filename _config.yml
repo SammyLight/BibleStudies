@@ -27,7 +27,7 @@ baseurl: "BibleStudies" # for LightCityTeachingFellowship github group
 #baseurl: "" # for the local host (the subpath of your site, e.g. /blog)
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  SamAwo
+github_username:  SammyLight
 
 # Build settings
 theme: minima
