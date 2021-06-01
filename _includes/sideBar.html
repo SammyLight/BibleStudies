@@ -1,0 +1,31 @@
+<aside class="col-lg-3 order-lg-2 content">
+    <div class="sidebar container-fluid-inner bg-image">
+        <div class="sidebar-wrapper">
+        <h4 class="titles">Recent Posts</h4>
+    <ul class="recentposts">
+        <li><a class="cat-link" href="{% for page in site.pages %}{% if page.title contains "Psalm 82" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Psalm 82</a></li>  
+        <li><a class="cat-link" href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">A Prophet Like Moses</a></li>
+        <li><a class="cat-link" href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">What Is A Sign</a></li>
+    </ul>
+    
+    <h4 class="titles">Resources</h4>
+    <ul class="recentposts">
+        <li>{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
+            <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel of Yahweh
+            </a>{% endif %}{% endfor %}</li>  
+        <li>{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
+            <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
+            </a>{% endif %}{% endfor %}</li>
+        <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
+            <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
+            </a>{% endif %}{% endfor %}</li>
+        <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+            <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
+            </a>{% endif %}{% endfor %}</li>
+        <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+            <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
+            </a>{% endif %}{% endfor %}</li>
+    </ul>
+</div>
+    </div>
+</aside>
