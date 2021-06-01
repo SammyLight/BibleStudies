@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Isaiah</title>
+	<meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+
+
+<!--the content is the dynamic part of the page which are
+1. the storyLineTable itself
+2. the details section
+-->
+<style id="divColorStyles">.opt_YahwehSabaoth{ background-color: Indigo; stroke: Indigo }.opt_Isaiah{ background-color: PeachPuff; stroke: PeachPuff }.opt_Seraphim{ background-color: BlanchedAlmond; stroke: BlanchedAlmond }.opt_HolySeed{ background-color: DarkGray; stroke: DarkGray }.opt_HolySeed{ background-color: ForestGreen; stroke: ForestGreen }.opt_Zion{ background-color: Bisque; stroke: Bisque }.opt_TempleMount{ background-color: SeaShell; stroke: SeaShell }.opt_PillarOfCloudAndFire{ background-color: YellowGreen; stroke: YellowGreen }</style>
+	<style id="legendTableRowsToggleStyle"></style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link type="text/css" href="../style/BibleTimelinesCSS/BibleStoryLineCreator.css" rel="stylesheet">
+	<link type="text/css" href="../style/BibleTimelinesCSS/scrollBar.css" rel="stylesheet">
+
+</head>
+
+
+<body class="scrollbar scrollbar-custom">
+	<!--HEAD-->
+	<nav id="head_1" class="grid2">
+		<div id="navHeadNavBtn" >
+			<button id="navMenu" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button>
+			<button class="masterNavButtonsToggle" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
+		</div>
+
+		<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
+	</nav>
+
+	<section id="websiteNav">
+		<!--		<h3 style="display: none">Bible Timelines</h3>-->
+		<h4 style="display: none">
+			
+			<a id="timelinesHome" href="/BibleStudies/BibleTimelines/Home-BibleTimeLines.html">BibleTimelines Home</a>
+			
+		</h4>
+		<ul style="display: none">
+
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/01_BibleTimelineCreator.html
+		        ">Timeline Template</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Ages-Major%20Time%20Divisions.html
+		        ">Ages-Major Time Divisions</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh%20in%20Isaiah.html
+		        ">Angel of Yahweh in Isaiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh%20in%20Judges.html
+		        ">Angel of Yahweh in Judges</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh--Shared%20Attributes.html
+		        ">Angel of Yahweh--Shared Attributes</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-02.html
+		        ">Angel of Yahweh-02</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-03%20(Shared%20Attributes).html
+		        ">Angel of Yahweh-03 (Shared Attributes)</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-04.html
+		        ">Angel of Yahweh-04</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh.html
+		        ">Angel of Yahweh</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Assyria,%20Israel%20and%20Judah.html
+		        ">Assyria, Israel and Judah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%201-12%20%5BNot%20Prophecy%5D.html
+		        ">Daniel 1-12 [Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%201-12%20%5BTimeline--Not%20Prophecy%5D.html
+		        ">Daniel 1-12 [Timeline--Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%208%20%5BConversation--Not%20Prophecy%5D.html
+		        ">Daniel 8 [Conversation--Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%208%20%5BNot%20Prophecy%5D.html
+		        ">Daniel 8 [Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Assyria,%20Israel%20and%20Judah.html
+		        ">II Kings--Assyria, Israel and Judah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah--2.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah--2</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah--3.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah--3</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah%20(Emmanuel%20vs.%20Assyria).html
+		        ">Isaiah--Emmanuel vs. Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah--Babylon%20and%20the%20Nations.html
+		        ">Isaiah--Babylon and the Nations</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah--Emmanuel%20vs.%20Assyria.html
+		        ">Isaiah--Emmanuel vs. Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah.html
+		        ">Isaiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Jesus%20and%20the%20Archangel%20Michael.html
+		        ">Jesus and the Archangel Michael</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Jesus.html
+		        ">Jesus</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Malachi.html
+		        ">Malachi</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Nations--Assyria.html
+		        ">Nations--Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Nations--Egypt.html
+		        ">Nations--Egypt</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Psalm%2082.html
+		        ">Psalm 82</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Rom%205.12-21.html
+		        ">Rom 5.12-21</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Rom%205.12.html
+		        ">Rom 5.12</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20&%20Creation.html
+		        ">Salvation &amp; Creation</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BComprehensive%5D.html
+		        ">Salvation Through The Ages [Comprehensive]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BLean%5D.html
+		        ">Salvation</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BSimple%5D.html
+		        ">Salvation Through The Ages [Simple]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Satan's%20Rise%20and%20Fall.html
+		        ">Satan's Rise and Fall</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/The%20AoY%20from%20Gen%20-%20Rev.html
+		        ">The AoY from Gen - Rev</a></li>
+			
+		</ul>
+
+	</section>
+	<!--ALERTS-->
+	<div id="customAlertBack" onclick="customAlertClose()">
+		<div id="customAlert">
+			<!--			<button id="customAlertClose" onclick="customAlertClose()">X</button>-->
+			<p id="customAlertContent"></p>
+
+		</div>
+	</div>
+
+	<!--* MENUS & STORYLINE TABLE***************************-->
+	<div id="middleGridSection" class="grid">
+		<!--* MENUS ****************************************-->
+		<div id="masterNav" class="scrollbar-custom" >
+
+			<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="storylineTableEditorButtonsMenu" class="">
+
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
+					<h3 id="storylineTableEditorMenuH3" class="titleBarH3">Editor
+					</h3>
+
+				</div>
+
+				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+					<span>Edit StoryLine</span>
+					<input id="editableRadio" type="checkbox"  value="editableRadio">
+				</button>
+				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
+					<span>DETAILS/Notes</span>
+					<input id="detailsRadio" type="checkbox"  value="detailsRadio">
+				</button>
+				<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<span>Connection</span>
+					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
+				</button>
+				<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+					<span>SlideShow List</span>
+					<input id="showSlideShowArranger" type="checkbox" value="slideShowArranger" >
+				</button>
+			</div>
+
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="moveButtonsMenu" class="">
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'M')" title="Move Events & Sections">&#9776;</button>
+					<h3 id="moveMenuH3" class="titleBarH3" style="">Move</h3>
+				</div>
+				<div  id="tdandtrDrag">
+					<div>
+						<button class="fa fa-arrow-circle-up" onclick="moveRowUp()" title="Move Row Up">
+						</button>
+						<button class="fa fa-arrow-circle-down" onclick="moveRowDown()" title="Move Row Down"></button>
+					</div>
+
+					<div >
+						<button class="fa fa-arrow-circle-left" onclick="moveCellLeft()" title="Move Event Backward"></button>
+						<button class="fa fa-arrow-circle-right" onclick="moveCellRight()" title="Move Event Forward"></button></div>
+				</div>
+			</div>
+			
+			<!--TIME PERIODS MENU******************************-->
+			<div id="timePeriodMenu" lass="">
+				<div class="titleDiv">
+					<button id="showTimeMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Time Sections (Vertical/Ages) Menu">&#9776;</button>
+					<h3 id="timesMenuH3" class="titleBarH3" style="">TimeSections</h3>
+				</div>
+				<div  id="timeMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllColXOfCheckedTD' onclick="hideAllOtherColXsExcept4AllColXOfCheckedTD(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllColXOfCheckedTD' onclick="hideAllColXOfCheckedTD(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAlltimePeriodMenu' onclick="uncheckAllBoxes('.timeLINameCheckBox')">x</button>
+				</div>
+				<div id="timeMenuListDiv">
+					<ol id="timeMenuList"></ol>
+				</div>
+			</div>
+			
+			<!--TIMELINES-ROW**********************************-->
+			<div id="timeLinesMenu" class="">
+				<div class="titleDiv">
+					<button id="showTimeLinesMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Timelines (Horizontal) Menu">&#9776;</button>
+					<h3  id="timeLinesMenuH3" class="titleBarH3" style="">TimeLines</h3>
+				</div>
+				<div id="timeLinesMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+
+					<button  id='hightlightTimelines' onclick="hightlightCheckedTimelines(this)" title="Show only timeLines belonging to the checked list item">Mark</button>
+
+					<button  id='hideAllCheckedTimeLines' onclick="HideCheckedTimelines(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+
+					<button  id='uncheckAllTimeLinesMenu' onclick="uncheckAllBoxes('.timeLinesLINameCheckBox')">x</button>
+				</div>
+				<div  id="timeLinesMenuListDiv" style="">
+					<ol id="timeLinesMenuList"></ol>
+				</div>
+			</div>
+			<!--CONTROLS FOR THE LABELS ***********************-->
+			<div id="navSection4navDivButtonHolder" class="draggableSection">
+
+				<div class="titleDiv">
+					<button id="showLabelMenu" class="expandMinimizeButton" title="Actors Control" onclick="toggleBtnzFamily(this, 'A')">&#9776;</button>
+					<h3  class="titleBarH3">Actors</h3>
+				</div>
+				<div style="">
+					<div  id="navDivButtonHolder" class="scrollbar scrollbar-custom">
+						<button  id='soloDivsOfCheckedClass' onclick="hideAllOtherExcept4DivsOfClass(this)" title="Show only labels belonging to the checked list item">Solo</button>
+						<button  id='hideDivsOfCheckedClass' onclick="hideDivsOfClass(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+						<button id='uncheckAll' onclick="hideDivsOfCheckedClass.click(), uncheckAllBoxes('.labelListNameCheckBox')">x</button>
+					</div>
+					<ol id="labelList"></ol>
+				</div>
+			</div>
+			
+			<!--TERRITORIES************************************-->
+			<div id="locationsMenu" class="">
+				<div class="titleDiv">
+					<button id="showLocationsMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'L')" title="Locations Menu">&#9776;</button>
+					<h3 id="locationsMenuH3" class="titleBarH3" style="">Locations</h3>
+				</div>
+				<div id="locationsMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllCheckedLocations' onclick="hideAllOtherLocationsExcept4checkedLocations(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllCheckedLocations' onclick="hideAllCheckedLocations(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAllLocationsMenu' onclick="uncheckAllBoxes('.locationsLINameCheckBox')">x</button>
+				</div>
+				<div id="locationsMenuListDiv">
+					<ol id="locationsMenuList"></ol>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="divTableContainer" class="scrollbar scrollbar-custom">
+			<table id="masterTable">
+				<tr>
+					<td valign="top">
+						<!--<button type="checkbox" class="tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio" checked="true">Edit StoryLine
+							<input id="editableRadio" type="checkbox" checked='true' value="editableRadio" style="width: 20px">
+						</button>-->
+						<svg id="svg"></svg>
+						<!--I POSITION THE SVG HERE SO THAT IT CAN SCROLL WITH THE TABLE WITHOUT HAVING TO BE REDRAWN-->
+						<table id="legendTable">
+							<thead>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</td>
+
+					<td id="legendNstoryLineHolder" valign="top" style="position: relative">
+
+<table id="storyLineTable">
+							<thead>
+								<tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" ></td>
+									<td class="dragOverELAdded col-2 col-3 col-4 col-5" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="0" ><h4 contenteditable="false">Before Last Days</h4></td>
+									
+									
+									<td class="dragOverELAdded col-6 col-7 col-8" originalcolspan="3" hiddencol_xs_count="0" rindex="0" colspan="3" detailindex="6" ><h4 contenteditable="false">Last Days</h4></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" ></td>
+									<td class="dragOverELAdded col-2 col-3 col-4 col-5" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="1" ><h4 contenteditable="false">Idolatry</h4></td>
+									
+									
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" detailindex="8" ><h4 contenteditable="false">Idols Totally Disappear</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" ></td>
+									<td class="dragOverELAdded col-2 col-3 col-4 col-5" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="2" detailindex="7" ><h4 contenteditable="false">Cleansing of Zion</h4></td>
+									
+									
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" ><h4 contenteditable="false">Zion Clean</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" ></td>
+									<td class="dragOverELAdded col-2 col-3 col-4 col-5" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="3" ><h4 contenteditable="false">Blindness of the People</h4></td>
+									
+									
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" detailindex="2" ><h4 contenteditable="false">No More Blindness</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" ></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" detailindex="1" ></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" ></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" detailindex="3" ><h4 contenteditable="false">Cities Destroyed</h4></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" detailindex="5" ><h4 contenteditable="false">Tenth Destroyed</h4></td><td class="clicked dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" detailindex="13" ><h4 contenteditable="false">Zion Rebuilt</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" ></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" ></td>
+									
+									
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" ></td><td class="clicked dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" detailindex="10" ><h4 contenteditable="false">Women &amp; Youths Oppress</h4></td><td class="clicked dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" detailindex="11" ><h4 contenteditable="false">Women of Zion Punished</h4></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" ><h4 contenteditable="false">The Branch</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td></tr><tr rowname="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" ></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" detailindex="1" location="jerusalem" ><span class="locationspan">Jerusalem</span><h4 contenteditable="false">Year of King Uzziah's Death</h4></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" ></td>
+									
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" ></td><td class="clicked dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" ><h4 contenteditable="false">The Day of Yahweh</h4></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" detailindex="9" ><h4 contenteditable="false">The Day of the Lord</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1"></td></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" ></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" location="temple" detailindex="1" ><span class="locationspan">Temple</span><div class="opt_YahwehSabaoth draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="YahwehSabaoth" title="YahwehSabaoth" draggable="true">Yahweh Sabaoth</div><div class="opt_Seraphim draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Seraphim" title="Seraphim" draggable="true">Seraphim</div><div class="opt_Isaiah draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Isaiah" title="Isaiah" draggable="true">Isaiah</div></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" ></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" ></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" ></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" detailindex="4" location="holy land" ><span class="locationspan">Holy Land</span><div class="opt_HolySeed draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="HolySeed" title="HolySeed" draggable="true">Holy Seed</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1"></td></tr>
+								<tr>
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" ></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" ></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" ></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" ></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" ></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" location="zion" detailindex="12" ><span class="locationspan">Zion</span><div class="opt_TempleMount draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="TempleMount" title="TempleMount" draggable="true">Temple Mountain</div><div class="opt_Zion draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Zion" title="Zion" draggable="true">Zion/Jerusalem</div><div class="opt_PillarOfCloudAndFire draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="PillarOfCloudAndFire" title="PillarOfCloudAndFire" draggable="true">Pillar Of Cloud<br>And Fire</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" ></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" ></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1"></td></tr>
+							</tbody>
+						</table>
+
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<section id="detailsSection" class="draggableSection">
+		<div id="detailsSectionheader" class="titleBarH3">
+			<h3>Details</h3>
+			<button id="closeDetails" onclick="toggleDetailsSection()">X</button>
+		</div>
+		<div id="detailsKeyFacts">
+
+			<h4 title="Absolute/Relative time when this/these event/events takes place">Time:</h4>
+			<ul id="detailsTimePeriods">
+			</ul>
+
+			<h4 title="Where this/these event/events takes place">Location/Region:</h4>
+			<ul id="detailsRegions">
+			</ul>
+
+			<h4>Characters/Actors</h4>
+			<ul id="detailsActors">
+			</ul>
+
+		</div>
+
+		<div id="wysiwygEditor">
+			<input type="hidden" name="myDoc">
+			<div id="toolBar1" class="toolBar1n2">
+				<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option selected>FORMATTING</option>
+					<option value="h1">Heading 1</option>
+					<option value="h2">Heading 2</option>
+					<option value="h3">Heading 3</option>
+					<option value="h4">Heading 4</option>
+					<option value="h5">Heading 5</option>
+					<option value="h6">Heading 6</option>
+					<option value="p">Paragraph &lt;p&gt;</option>
+					<option value="pre">Preformatted &lt;pre&gt;</option>
+				</select>
+				<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>FONT</option>
+					<option>Arial</option>
+					<option>Arial Black</option>
+					<option>Courier New</option>
+					<option>Times New Roman</option>
+				</select>
+				<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>SIZE</option>
+					<option value="1">Very small</option>
+					<option value="2">A bit small</option>
+					<option value="3">Normal</option>
+					<option value="4">Medium-large</option>
+					<option value="5">Big</option>
+					<option value="6">Very big</option>
+					<option value="7">Maximum</option>
+				</select>
+				<select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>COLOR</option>
+					<option value="pink" style="background-color: pink">Pink</option>
+					<option value="red" style="background-color:red">Red</option>
+					<option value="brown" style="background-color:brown; color:white">Brown</option>
+					<option value="orange" style="background-color:orange">Orange</option>
+					<option value="yellow" style="background-color:yellow">Yellow</option>
+					<option value="blue" style="background-color:blue; color:white">Blue</option>
+					<option value="purple" style="background-color:purple; color:white">Purple</option>
+					<option value="black" style="background-color:black; color:white">Black</option>
+					<option value="grey" style="background-color:grey; color:white">Grey</option>
+					<option value="green" style="background-color:green; color:white">Green</option>
+				</select>
+				<select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>BACKGROUND</option>
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="black">Black</option>
+				</select>
+			</div>
+			<div id="toolBar2" class="toolBar1n2">
+				<button class="intLink fa fa-paint-brush" title="Clean" onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};" style="display: none"></button>
+				<button class="intLink fa fa-print" title="Print" onclick="printDoc();" style="display: none"></button>
+				<button class="intLink fa fa-undo" title="Undo" onclick="formatDoc('undo');" style="display: none"></button>
+				<button class="intLink fa fa-undo fa-flip-horizontal" title="Redo" onclick="formatDoc('redo');" style="display: none"></button>
+
+				<button class="intLink fa fa-remove" title="Remove formatting" onclick="formatDoc('removeFormat')" style="display: none"></button>
+				<button class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" style="display: none"></button>
+				<button class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');" style="display: none"></button>
+				<button class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');" style="display: none"></button>
+				<button class="intLink fa  fa-align-left" title="Left align" onclick="formatDoc('justifyleft');" style="display: none"></button>
+				<button class="intLink fa  fa-align-justify" title="Center align" onclick="formatDoc('justifycenter');" style="display: none"></button>
+				<button class="intLink fa  fa-align-right" title="Right align" onclick="formatDoc('justifyright');" style="display: none"></button>
+
+				<button class="intLink fa fa-list-ol" title="Numbered list" onclick="formatDoc('insertorderedlist');" style="display: none"></button>
+				<button class="intLink fa fa-list-ul" title="Dotted list" onclick="formatDoc('insertunorderedlist');" style="display: none"></button>
+
+				<button class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock','blockquote');" style="display: none"></button>
+
+				<button class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');" style="display: none"></button>
+				<button class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');" style="display: none"></button>
+
+				<button class="intLink fa fa-link" title="Hyperlink" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" style="display: none"></button>
+
+				<button class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" style="display: none"></button>
+
+				<button class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" style="display: none"></button>
+
+				<button class="intLink fa fa-paste" title="Paste" onclick="formatDoc('paste');" style="display: none"></button>
+			</div>
+			
+			<button id="toggleKeyDetails" onclick="toglesummary()">Key Details</button>
+			<button id="expandDetails" onclick="detailsEditButtons()">Editor Buttons</button>
+			<button id="makeCurrentDetailEditable" onclick="makeCurrentDetailEditable()" title="Make detail/note edtiable">Make Editable</button>
+	</div>
+
+	<div id="detailsSummary" class="scrollbar-custom">
+
+		<div class="showDetail" id="detail_1" detailindex="1" contenteditable="true"><h1>Isaiah 6</h1><hr><p>In the year that King Uzziah died, I saw <b>Adonai</b> seated on a throne, high and exalted, and the train of his robe filled the temple.</p><p><sub>2</sub>Above him were seraphs, each with six wings: With two wings they covered their faces, with two they covered their feet, and with two they were flying. <sub>3</sub>And they were calling to one another: “Holy, holy, holy is <b>Yahweh Sabaoth</b>; the whole earth is full of his glory.”&nbsp;<sub>4</sub>At the sound of their voices the doorposts and thresholds shook and the temple was filled with smoke.</p><p><sub>5</sub>“Woe to me!” I cried. “I am ruined! For I am a man of unclean lips, and I live among a people of unclean lips, and my eyes have seen the <b>King</b>,&nbsp;<b>Yahweh Sabaoth</b>.”</p><p><sub>6</sub>Then one of the seraphs flew to me with a live coal in his hand, which he had taken with tongs from the altar. <sub>7</sub>With it he touched my mouth and said, “See, this has touched your lips; your guilt is taken away and your sin atoned for.”</p><p><sub>8</sub>Then I heard the voice of <b>Adonai</b> saying, “Whom shall I send? And who will go for us?”</p><p>And I said, “Here am I. Send me!”</p><p><sub>9</sub>He said, “Go and tell this people:</p><p>“‘Be ever hearing, but never understanding;<br>be ever seeing, but never perceiving.’<span ><br></span><sub>10</sub>Make the heart of this people calloused;<br>make their ears dull and close their eyes.<br>Otherwise they might see with their eyes, hear with their ears, understand with their hearts, and turn and be healed.”</p><p><sub>11</sub>Then I said, “<font color="#a52a2a">For how long, O <b >Adonai</b>?</font>”</p><p>And he answered: “Until the cities lie ruined and without inhabitant, until the houses are left deserted and the fields ruined and ravaged, <sub>12</sub>until&nbsp;<b>Yahweh</b>&nbsp;has sent everyone far away and the land is utterly forsaken. <sub>13</sub>And though a tenth remains in the land, it will again be laid waste. But as the terebinth and oak leave stumps when they are cut down, so the holy seed will be the stump in the land.”&nbsp;[Isa 6:1-13]</p></div>
+<!--**********************************************-->
+
+      <div class="hideDetail" id="detail_2" detailindex="2" contenteditable="false"><h1>No More Blindness</h1><hr><p>The curse of blindness will be lifted after the wrath of Yahweh has been poured out on the earth [Isa 6:9-13]</p><p>Yahweh</p></div><div class="hideDetail" id="detail_3" detailindex="3" contenteditable="false"><h1>Destruction of Cities</h1><hr><blockquote>“<font color="#a52a2a" data-darkreader-inline-color=""><b><u>Until the cities lie ruined and without inhabitant</u></b></font>,<br>until the houses are left deserted and the fields ruined and ravaged,<br><sub>12</sub>until <b>Yahweh</b> has sent everyone far away and the land is utterly forsaken.</blockquote><blockquote><sub>13</sub>And though a tenth remains in the land, it will again be laid waste.</blockquote><blockquote>But as the terebinth and oak leave stumps when they are cut down, so the holy seed will be the stump in the land.” [Isa 6:11-13]</blockquote></div><div class="hideDetail" id="detail_4" detailindex="4" contenteditable="false"><h1>The Holy Seed Will Remain</h1><hr><p>Those who remain to repopulate the land after all the destructions will be holy,&nbsp;</p><blockquote>“Until the cities lie ruined and without inhabitant,<br>until the houses are left deserted and the fields ruined and ravaged,<br><sub>12</sub>until&nbsp;<b>Yahweh</b>&nbsp;has sent everyone far away and the land is utterly forsaken.</blockquote><blockquote><sub>13</sub>And&nbsp;though a tenth remains in the land, it will again be laid waste.</blockquote><blockquote>But <font color="#a52a2a" data-darkreader-inline-color=""><b><u>as the terebinth and oak leave stumps when they are cut down, so the holy seed will be the stump in the land</u></b></font>.” [Isa 6:11-13]</blockquote></div><div class="hideDetail" id="detail_5" detailindex="5" contenteditable="false"><h1>Destruction of Cities</h1><hr><p>The city will be laid waste again,&nbsp;</p><blockquote>“Until the cities lie ruined and without inhabitant,<br>until the houses are left deserted and the fields ruined and ravaged,<br><sub>12</sub>until&nbsp;<b>Yahweh</b>&nbsp;has sent everyone far away and the land is utterly forsaken.</blockquote><blockquote><sub>13</sub>And <b><font color="#a52a2a" data-darkreader-inline-color=""><u>though a tenth remains in the land, it will again be laid waste</u></font></b>.</blockquote><blockquote>But as the terebinth and oak leave stumps when they are cut down, so the holy seed will be the stump in the land.” [Isa 6:11-13]</blockquote></div>
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      <div class="hideDetail" id="detail_6" detailindex="6" contenteditable="false"><h1>The Last Days</h1><hr><h3>Zion and the "Mountain of Yahweh's Temple" in the Last Days</h3><hr><ol><li><b><i>Zion Becomes "The City of Righteousness, The Faithful City"</i></b></li><ol><li>Yahweh will restore Zion's judges [Isa 1:26]</li><li>People everywhere acknowledge Zion as righteous and faithful to Yahweh and begin to call her "The City of Righteousness, The Faithful City" [Isa 1:26]</li></ol><li><b><i>Exaltation of Temple Mount</i></b></li><ol><li>"The Mountain of Yahweh's Temple" will be exalted as Chief among mountains [Isa 2:2]</li></ol><li><b><i>Many Nations Will Flow To The Mountain</i></b></li><ol><li>All nations will stream to the "Mountain of Yahweh's Temple" [Isa 2:2,3]</li></ol><li><b><i>They Will Come To Learn The Ways of Yahweh</i></b></li><ol><li>The nations and many peoples will come to the "Mountain of Yahweh's Temple" to come and learn the ways of Yahweh so that they may walk in them [Isa 2:2,3]</li></ol><li><b><i>Peace Among Nations</i></b><i><b>&nbsp;[Isa 2:3,4]</b></i></li><ol><li>The Law of the nations of the earth will be designed in Zion&nbsp;[Isa 2:3]</li><li>Yahweh will judge between nations and settle disputes for many peoples&nbsp;[Isa 2:4]</li><li>They will cease to fight against each other&nbsp;[Isa 2:4]</li></ol></ol></div><div class="hideDetail" id="detail_7" detailindex="7" contenteditable="false"><h1>Zion's Redemption</h1><hr><p>Yahweh’s plan to restore Jerusalem to righteousness is to</p><ol><li>To bring Jerusalem as a city to repentance,</li><ol><li>Through wrath and judgment&nbsp;[Isa 1:25,27,31]&nbsp;and</li><li>The preaching of the Gospel&nbsp;[Isa 40]</li></ol><li>Remove the wicked in her&nbsp;[Isa 1:25,28,31],</li><li>Preserve the repentant and penitent ones in her&nbsp;[Isa 1:2]&nbsp;and</li><li>Give her righteous leaders&nbsp;[Isa 1:26].</li></ol></div><div class="hideDetail" id="detail_8" detailindex="8" contenteditable="false"><h1>The Fate of Idols</h1><hr><p>Yahweh will bring an end to idolatry in all the earth in the Day of Yahweh [Isa 1:10-21].&nbsp;</p><blockquote>"...Yahweh alone will be exalted in that day, <sub>18</sub>and the idols will totally disappear." [Isa 1:7-18]</blockquote></div><div class="hideDetail" id="detail_9" detailindex="9" contenteditable="false"><h1>The Day of Yahweh <i>(The LORD)</i></h1><hr><ol><li>Men will see Yahweh in glorious splendor [Isa 2:10,19]</li><li>Men will be terrified by Yahweh's splendor and will</li><ol><li>Try to hide from Yahweh [Isa 2:10,19]</li><li>Throw away their idols [Isa 2:20]</li></ol><li>Yahweh will shake the earth [Isa 2:19]</li><ol><li><i>The fact that men try to hide in the rocks and caves [Isa 2:10,19<i>,21</i>] and not in their houses shows that the shaking of the earth by Yahweh includes a literal shaking of physical things.</i></li><li><i>apparently, the reason why they don't try to hide in their houses is because they will not be safe to dwell in on that day.</i></li></ol><li>Idolatry will cease [Isa 1:7-18,10-21]</li><li>Men will be destroyed</li><ol><li>We can see this from God speaking of "survivors in Israel" [Isa 4:2,3]</li></ol></ol></div><div class="hideDetail" id="detail_10" detailindex="10" contenteditable="false"><h1>Women and Youths Oppress God's People</h1><hr><blockquote>[Isa 3; 4:1]</blockquote></div><div class="hideDetail" id="detail_11" detailindex="11" contenteditable="false"><h1>Yahweh Punishes Zion's Women</h1><hr><p>God will punish the women of Zion by reducing the population of men [Isa 3; 4:1]</p><p>By their punishment, God washes away "the filth of the women of Zion" [Isa 4:4]</p><h1>Part of the LORD's Day</h1><hr><blockquote><b><font color="#a52a2a"><u>In that day</u></font></b>&nbsp;seven women will take hold of one man and say, “We will eat our own food and provide our own clothes; only let us be called by your name. Take away our disgrace!” [Isa 4:1]</blockquote></div><div class="hideDetail" id="detail_12" detailindex="12" contenteditable="false"><h1>The Pillar of Cloud and Fire</h1><hr><p>Whenever the people assemble to Jerusalem to worship Yahweh, which <i>(won't be every day but)&nbsp;</i>would be during the appointed feasts, they will see the Pillar of Cloud and Fire.</p><blockquote>Then <b>Yahweh</b> will create over all of Mount Zion and over those who assemble there <b><u><font color="#a52a2a">a cloud of smoke by day and a glow of flaming fire by night</font></u></b>; over all the glory will be a canopy. <sub>6</sub>It will be a shelter and shade from the heat of the day, and a refuge and hiding place from the storm and rain. [Isa 4:5-6]</blockquote></div>
+
+      <div class="hideDetail" id="detail_13" detailindex="13" contenteditable="false"><blockquote>"<span>In days to come Jacob
+will take root, Israel will bud and blossom and fill all the world with fruit.</span><span>" [Isa 27:6]</span></blockquote></div>
+
+      
+
+      
+
+      </div>
+		<div id="editMode">
+			<label for="switchBox">Show HTML</label>
+			<input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);">
+		</div>
+	</section>
+	
+
+
+<section id="alternateStoryLineEditorButtons">
+	<div id="alternateStoryLineEditorButtonsheader" class="titleBarH3">
+		<h3>Table Editor/Creator</h3>
+		<button id="alternateClose" onclick="alternateClose()">X</button>
+	</div>
+	
+	<div id="alternateStoryLineEditorButtonsBody">
+		<!--Table-->
+		<div id="realignandreconnect" class="vertical">
+			<span>Table:</span>
+			<div class="vertical"><button onclick="buildLegendTable()">Re-Align Tables</button><button onclick="connectAllDraggableDivsWithSVGLines()">Connect Divs</button><button onclick="btn_buildLegendTable()"><strong>Restore Timeline</strong></button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE"><strong>&#128190;</strong> </button>
+			</div>
+		</div>
+		
+		<!--Delete-->
+		<div id="deleteButtons" class="vertical">
+			<span>Delete:</span>
+			<div class="vertical">
+				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+					✘<br />Del<br />Label
+				</button><button title="delete label" onclick="destroyCell()">
+					✘<br />Del<br />Cell
+				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+					✘<br />Del<br />Row
+				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+					✘<br />Del<br />Col
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Merge & Split-->
+		<div id="mergeAndSplit" class="vertical">
+			<span>Merge<br>/Split:</span>
+			<div class="vertical">
+				<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
+					&#10010;
+					<br />
+					Select
+					<br />
+					Cells
+				</button><button title="merge selected cells" onclick="mergeCells()">
+					&#124; &#129034;&#129032; &#124;
+					<br />
+					Merge
+					<br />
+					Cells
+				</button><button title="split selected cells" onclick="splitCell()">
+					&#124;&#124;&#129032; &#129034;&#124;&#124;
+					<br />Split
+					<br />
+					Cells
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Create-->
+		<div class="vertical">
+			<span>Create:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Name:</span> <input type="text" id="myText" value="">
+					</div>
+					<button title="create cell to the left" onclick="createCellBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Cell
+					</button><button title="create cell to the right" onclick="createCellAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Cell
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="clone row above" onclick="cloneRowAbove()">
+						&#129033;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="clone row below" onclick="cloneRowBelow()">
+						&#129035;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="new row above" onclick="createRowAbove()">
+						&#129033;
+						<br />
+						new
+						<br />
+						Row
+					</button><button title="new row below" onclick="createRowBelow()">
+						&#129035;
+						<br />
+						new
+						<br />
+						Row
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="new column to the left" onclick="createColumnBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="new column to the right" onclick="createColumnAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="delete timesection, i.e., column" onclick="destroyColumn()">
+						&#129034;
+						<br />
+						del
+						<br />
+						Col
+					</button></div>
+			</div>
+		</div>
+		
+
+		<!--Edit-->
+		<div class="vertical">
+			<span>Edit:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Heading:</span> <input type="text" id="cellHeading" value="">
+					</div>
+					<button id="applyHeadingBtn" onclick="insertHeading()">Apply Heading</button>
+
+					<div class="vertical2">
+						<!--for the content of the cell-->
+						<span style="font-style: italic">Cell Details:</span> <input type="text" id="cellText" value="">
+					</div>
+					<button id="applyTextBtn" onclick="insertTextIntoTD()">Apply Details</button>
+
+					<div class="vertical2">
+						<!--for the duration of the cell-->
+						<span style="font-style: italic">Duration:</span> <input type="text" id="eventDuration" value="">
+					</div>
+					<button id="applyDurationBtn" onclick="insertDurationIntoTD()">Apply Duration</button>
+
+					<div class="vertical2">
+					</div>
+					<div class="vertical2">
+						<span style="font-style: italic">Row Name:</span> <input type="text" id="rowName" value="">
+					</div>
+					<button id="applyRowEditBtn" onclick="rowEdit()">Apply RowName</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!--Land/Region-->
+		<div class="vertical">
+			<span>Location<br>/Region:</span>
+			<div class="vertical">
+				<div class="vertical3">
+					<input type="text" id="locationInput" value="" draggable="false">
+					<select id="locationOptionsDropdown" onclick="fillLocationInput()" onchange="fillLocationInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createRegionAttribute()">Append Location</button></div>
+			</div>
+		</div>
+		
+
+		<!--Label/Actors-->
+		<div class="vertical">
+			<span>Actors:</span>
+			<div class="vertical">
+				<span style="font-style: italic">Main<br>Name:</span>
+				<div class="vertical3">
+					<input type="text" id="divClass" value="" draggable="false">
+					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
+					</select><br>
+				</div>
+				<span style="font-style: italic">Alias:</span>
+				<div class="vertical3">
+					<input type="text" id="divName" value="" draggable="false">
+					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createDIV()">Create Div</button></div>
+			</div>
+		</div>
+		
+
+		<!--#2-Label/Actors-->
+		<div class="vertical">
+			<span>Custom<br>Connect</span>
+			<div class="vertical">
+				<div class="vertical2">
+					<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
+					<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()" onchange="fillDivClass2ConnectFrom()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectFrom()">DisConnect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectFrom" value="" draggable="false">
+					<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()" onchange="fillDivClassToDisConnectFrom()">
+					</select>
+				</div>
+				<!--///////////////////////////////////////-->
+				
+				<!--///////////////////////////////////////-->
+				<div class="vertical2">
+					<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectTo" value="" draggable="false">
+					<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()" onchange="fillDivClass2ConnectTo()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectTo()">DisConnect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectTo" value="" draggable="false">
+					<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()" onchange="fillDivClassToDisConnectTo()">
+					</select>
+				</div>
+				<!--///////////////////////////-->
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+
+<div id="slideShowListMaster">
+	<div id="slideShowListMasterheader" class="titleBarH3">
+		<h3>SlideShowOrder</h3>
+
+		<div>
+			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
+		</div>
+	</div>
+	<div id="slideShowListContainer" class="scrollbar-custom">
+
+	</div>
+</div>
+
+<section id="pageFootSection">
+	<!--SAVE BUTTON-->
+	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE">&#128190;</button>
+	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+	<!--MODIFIERS & BUILDERS BUTTONS-->
+	<div id="pageBottomStorylineTableEditorButtons">
+
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style="" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+			<span>Edit</span>
+		</button>
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio"><span>Notes</span>
+		</button>
+		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+			<span>Connection</span>
+		</button>
+		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+			<span>SlideShow</span>
+		</button>
+	</div>
+	<!--SLIDE SHOW BUTTONS-->
+	<div id="slideShowButtons">
+		<input id="nextEventUseKeyboard" type="checkbox" checked="true" title="Enable Arrow Keys on Keyboard"></input>
+		<button id="prevEvent" class="fa fa-arrow-left" onclick="prevEventShow()" title="Show PREVIOUS event"></button>
+		<button id="resetEvent" class="fa fa-arrows" onclick="resetEventShow()" title="RESET events"></button>
+		<button id="nextEvent" class="fa fa-arrow-right" onclick="nextEventShow()" title="Show NEXT event"></button>
+	</div>
+</section>
+
+</body>
+
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/darkOrlightBG.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/GetElement-XY-Coordinates.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/tableColumnClasses.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/draggableHtmlElement.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragdCloneDivs.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_01.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_02.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/cssColorNamesArray.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_03.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/BibleStoryLineCreator.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/detailsSection.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragDropRows&Cells.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/fileSaver.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/saveTimelineAndDetails.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/TextEditorDocExec.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/reftager.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/storyTellerColumnSlideShow.js"></script>
+
+</html>

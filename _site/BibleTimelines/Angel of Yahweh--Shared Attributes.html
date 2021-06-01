@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Angel of Yahweh--Shared Attributes</title>
+	<meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+
+
+<!--the content is the dynamic part of the page which are
+1. the storyLineTable itself
+2. the details section
+-->
+<style id="divColorStyles">
+    .opt_Michael{ background-color: DarkMagenta; stroke: DarkMagenta }
+    .opt_AngelOfYahweh{ background-color: SkyBlue; stroke: SkyBlue }
+    .opt_NameOfYahweh{ background-color: Teal; stroke: Teal }
+    .opt_GloryOfYahweh{ background-color: Orange; stroke: Orange }
+    .opt_PresenceOfYahweh{ background-color: Pink; stroke: Pink }
+    .opt_Superiority{ background-color: DeepSkyBlue; stroke: DeepSkyBlue }
+    .opt_OtherAngels{ background-color: SlateGrey; stroke: SlateGrey }
+    .opt_DayOfYahweh{ background-color: Cyan; stroke: Cyan }
+    .opt_LeadingIsrael{ background-color: Brown; stroke: Brown }
+    .opt_Jesus{ background-color: Navy; stroke: Navy }
+    .opt_GodOfIsrael{ background-color: Olive; stroke: Olive }
+    .opt_Resurrection{ background-color: SeaGreen; stroke: SeaGreen }
+    .opt_AngelOfDan-10{ background-color: Orange; stroke: Orange }
+    .opt_Principality{ background-color: Red; stroke: Red }
+    .opt_ServantOfYahweh{ background-color: MediumAquaMarine; stroke: MediumAquaMarine }.opt_Blessing{ background-color: Moccasin; stroke: Moccasin }</style>
+	<style id="legendTableRowsToggleStyle"></style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link type="text/css" href="../style/BibleTimelinesCSS/BibleStoryLineCreator.css" rel="stylesheet">
+	<link type="text/css" href="../style/BibleTimelinesCSS/scrollBar.css" rel="stylesheet">
+
+</head>
+
+
+<body class="scrollbar scrollbar-custom">
+	<!--HEAD-->
+	<nav id="head_1" class="grid2">
+		<div id="navHeadNavBtn" >
+			<button id="navMenu" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button>
+			<button class="masterNavButtonsToggle" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
+		</div>
+
+		<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
+	</nav>
+
+	<section id="websiteNav">
+		<!--		<h3 style="display: none">Bible Timelines</h3>-->
+		<h4 style="display: none">
+			
+			<a id="timelinesHome" href="/BibleStudies/BibleTimelines/Home-BibleTimeLines.html">BibleTimelines Home</a>
+			
+		</h4>
+		<ul style="display: none">
+
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/01_BibleTimelineCreator.html
+		        ">Timeline Template</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Ages-Major%20Time%20Divisions.html
+		        ">Ages-Major Time Divisions</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh%20in%20Isaiah.html
+		        ">Angel of Yahweh in Isaiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh%20in%20Judges.html
+		        ">Angel of Yahweh in Judges</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh--Shared%20Attributes.html
+		        ">Angel of Yahweh--Shared Attributes</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-02.html
+		        ">Angel of Yahweh-02</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-03%20(Shared%20Attributes).html
+		        ">Angel of Yahweh-03 (Shared Attributes)</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh-04.html
+		        ">Angel of Yahweh-04</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Angel%20of%20Yahweh.html
+		        ">Angel of Yahweh</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Assyria,%20Israel%20and%20Judah.html
+		        ">Assyria, Israel and Judah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%201-12%20%5BNot%20Prophecy%5D.html
+		        ">Daniel 1-12 [Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%201-12%20%5BTimeline--Not%20Prophecy%5D.html
+		        ">Daniel 1-12 [Timeline--Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%208%20%5BConversation--Not%20Prophecy%5D.html
+		        ">Daniel 8 [Conversation--Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Daniel%208%20%5BNot%20Prophecy%5D.html
+		        ">Daniel 8 [Not Prophecy]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Assyria,%20Israel%20and%20Judah.html
+		        ">II Kings--Assyria, Israel and Judah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah--2.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah--2</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah--3.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah--3</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/II%20Kings--Pekah,%20Ahaz,%20Hoshea%20and%20Hezekiah.html
+		        ">II Kings--Pekah, Ahaz, Hoshea and Hezekiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah%20(Emmanuel%20vs.%20Assyria).html
+		        ">Isaiah--Emmanuel vs. Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah--Babylon%20and%20the%20Nations.html
+		        ">Isaiah--Babylon and the Nations</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah--Emmanuel%20vs.%20Assyria.html
+		        ">Isaiah--Emmanuel vs. Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Isaiah.html
+		        ">Isaiah</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Jesus%20and%20the%20Archangel%20Michael.html
+		        ">Jesus and the Archangel Michael</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Jesus.html
+		        ">Jesus</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Malachi.html
+		        ">Malachi</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Nations--Assyria.html
+		        ">Nations--Assyria</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Nations--Egypt.html
+		        ">Nations--Egypt</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Psalm%2082.html
+		        ">Psalm 82</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Rom%205.12-21.html
+		        ">Rom 5.12-21</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Rom%205.12.html
+		        ">Rom 5.12</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20&%20Creation.html
+		        ">Salvation &amp; Creation</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BComprehensive%5D.html
+		        ">Salvation Through The Ages [Comprehensive]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BLean%5D.html
+		        ">Salvation</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Salvation%20Through%20The%20Ages%20%5BSimple%5D.html
+		        ">Salvation Through The Ages [Simple]</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/Satan's%20Rise%20and%20Fall.html
+		        ">Satan's Rise and Fall</a></li>
+			<li style="display: none"><a href="/BibleStudies/BibleTimelines/The%20AoY%20from%20Gen%20-%20Rev.html
+		        ">The AoY from Gen - Rev</a></li>
+			
+		</ul>
+
+	</section>
+	<!--ALERTS-->
+	<div id="customAlertBack" onclick="customAlertClose()">
+		<div id="customAlert">
+			<!--			<button id="customAlertClose" onclick="customAlertClose()">X</button>-->
+			<p id="customAlertContent"></p>
+
+		</div>
+	</div>
+
+	<!--* MENUS & STORYLINE TABLE***************************-->
+	<div id="middleGridSection" class="grid">
+		<!--* MENUS ****************************************-->
+		<div id="masterNav" class="scrollbar-custom" >
+
+			<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="storylineTableEditorButtonsMenu" class="">
+
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
+					<h3 id="storylineTableEditorMenuH3" class="titleBarH3">Editor
+					</h3>
+
+				</div>
+
+				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+					<span>Edit StoryLine</span>
+					<input id="editableRadio" type="checkbox"  value="editableRadio">
+				</button>
+				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
+					<span>DETAILS/Notes</span>
+					<input id="detailsRadio" type="checkbox"  value="detailsRadio">
+				</button>
+				<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<span>Connection</span>
+					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
+				</button>
+				<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+					<span>SlideShow List</span>
+					<input id="showSlideShowArranger" type="checkbox" value="slideShowArranger" >
+				</button>
+			</div>
+
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="moveButtonsMenu" class="">
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'M')" title="Move Events & Sections">&#9776;</button>
+					<h3 id="moveMenuH3" class="titleBarH3" style="">Move</h3>
+				</div>
+				<div  id="tdandtrDrag">
+					<div>
+						<button class="fa fa-arrow-circle-up" onclick="moveRowUp()" title="Move Row Up">
+						</button>
+						<button class="fa fa-arrow-circle-down" onclick="moveRowDown()" title="Move Row Down"></button>
+					</div>
+
+					<div >
+						<button class="fa fa-arrow-circle-left" onclick="moveCellLeft()" title="Move Event Backward"></button>
+						<button class="fa fa-arrow-circle-right" onclick="moveCellRight()" title="Move Event Forward"></button></div>
+				</div>
+			</div>
+			
+			<!--TIME PERIODS MENU******************************-->
+			<div id="timePeriodMenu" lass="">
+				<div class="titleDiv">
+					<button id="showTimeMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Time Sections (Vertical/Ages) Menu">&#9776;</button>
+					<h3 id="timesMenuH3" class="titleBarH3" style="">TimeSections</h3>
+				</div>
+				<div  id="timeMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllColXOfCheckedTD' onclick="hideAllOtherColXsExcept4AllColXOfCheckedTD(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllColXOfCheckedTD' onclick="hideAllColXOfCheckedTD(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAlltimePeriodMenu' onclick="uncheckAllBoxes('.timeLINameCheckBox')">x</button>
+				</div>
+				<div id="timeMenuListDiv">
+					<ol id="timeMenuList"></ol>
+				</div>
+			</div>
+			
+			<!--TIMELINES-ROW**********************************-->
+			<div id="timeLinesMenu" class="">
+				<div class="titleDiv">
+					<button id="showTimeLinesMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Timelines (Horizontal) Menu">&#9776;</button>
+					<h3  id="timeLinesMenuH3" class="titleBarH3" style="">TimeLines</h3>
+				</div>
+				<div id="timeLinesMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+
+					<button  id='hightlightTimelines' onclick="hightlightCheckedTimelines(this)" title="Show only timeLines belonging to the checked list item">Mark</button>
+
+					<button  id='hideAllCheckedTimeLines' onclick="HideCheckedTimelines(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+
+					<button  id='uncheckAllTimeLinesMenu' onclick="uncheckAllBoxes('.timeLinesLINameCheckBox')">x</button>
+				</div>
+				<div  id="timeLinesMenuListDiv" style="">
+					<ol id="timeLinesMenuList"></ol>
+				</div>
+			</div>
+			<!--CONTROLS FOR THE LABELS ***********************-->
+			<div id="navSection4navDivButtonHolder" class="draggableSection">
+
+				<div class="titleDiv">
+					<button id="showLabelMenu" class="expandMinimizeButton" title="Actors Control" onclick="toggleBtnzFamily(this, 'A')">&#9776;</button>
+					<h3  class="titleBarH3">Actors</h3>
+				</div>
+				<div style="">
+					<div  id="navDivButtonHolder" class="scrollbar scrollbar-custom">
+						<button  id='soloDivsOfCheckedClass' onclick="hideAllOtherExcept4DivsOfClass(this)" title="Show only labels belonging to the checked list item">Solo</button>
+						<button  id='hideDivsOfCheckedClass' onclick="hideDivsOfClass(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+						<button id='uncheckAll' onclick="hideDivsOfCheckedClass.click(), uncheckAllBoxes('.labelListNameCheckBox')">x</button>
+					</div>
+					<ol id="labelList"></ol>
+				</div>
+			</div>
+			
+			<!--TERRITORIES************************************-->
+			<div id="locationsMenu" class="">
+				<div class="titleDiv">
+					<button id="showLocationsMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'L')" title="Locations Menu">&#9776;</button>
+					<h3 id="locationsMenuH3" class="titleBarH3" style="">Locations</h3>
+				</div>
+				<div id="locationsMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllCheckedLocations' onclick="hideAllOtherLocationsExcept4checkedLocations(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllCheckedLocations' onclick="hideAllCheckedLocations(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAllLocationsMenu' onclick="uncheckAllBoxes('.locationsLINameCheckBox')">x</button>
+				</div>
+				<div id="locationsMenuListDiv">
+					<ol id="locationsMenuList"></ol>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="divTableContainer" class="scrollbar scrollbar-custom">
+			<table id="masterTable">
+				<tr>
+					<td valign="top">
+						<!--<button type="checkbox" class="tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio" checked="true">Edit StoryLine
+							<input id="editableRadio" type="checkbox" checked='true' value="editableRadio" style="width: 20px">
+						</button>-->
+						<svg id="svg"></svg>
+						<!--I POSITION THE SVG HERE SO THAT IT CAN SCROLL WITH THE TABLE WITHOUT HAVING TO BE REDRAWN-->
+						<table id="legendTable">
+							<thead>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</td>
+
+					<td id="legendNstoryLineHolder" valign="top" style="position: relative">
+
+<table id="storyLineTable">
+							<thead>
+								<tr rowname="Time" style="">
+									<td class="dragOverELAdded col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12 col-13" originalcolspan="13" hiddencol_xs_count="0" rindex="0" colspan="13" style=""><h4 contenteditable="false">Attributes</h4></td>
+									
+									
+									
+									
+								<td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" style=""></td><td class="dragOverELAdded col-16 col-17 col-18 col-19" originalcolspan="4" hiddencol_xs_count="0" rindex="0" colspan="4" style=""><h4 contenteditable="false">Persons</h4></td></tr>
+							</thead>
+							<tbody>
+								<tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1" style=""></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style="" location="servant of yah"></td>
+								<td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style="" detailindex="6" location="blessing"><span class="locationspan">Blessing</span><div class="opt_Blessing draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Blessing" title="Blessing" draggable="true" style="">Blessing</div></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style="" location="aoy" detailindex="4"></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" style=""></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style="" location="servant of yah"></td>
+								<td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style="" location="aoy" detailindex="4"></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3" style=""></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style="" location="servant of yah"><span class="locationspan">Servant of Yah</span><div class="opt_ServantOfYahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="ServantOfYahweh" title="ServantOfYahweh" draggable="true" style="">Servant of<br>Yahweh</div></td>
+								<td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style="" location="aoy" detailindex="4"></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" style="" location="aoy" detailindex="4"><span class="locationspan">AoY</span><div class="opt_AngelOfYahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="AngelOfYahweh" title="AngelOfYahweh" draggable="true" style="" connectfrom="NameOfYahweh, GloryOfYahweh, PresenceOfYahweh, LeadingIsrael, DayOfYahweh, Resurrection, GodOfIsrael, Principality, ServantOfYahweh, Blessing" connectto="NameOfYahweh, GloryOfYahweh, PresenceOfYahweh, LeadingIsrael, DayOfYahweh, Resurrection, Principality, ServantOfYahweh, Blessing">Angel of<br>Yahweh</div></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" style=""></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style="" location="principality" detailindex="5"><span class="locationspan">Principality</span><div class="opt_Principality draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Principality" title="Principality" draggable="true" style="">Principality</div></td>
+									<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style="" location=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style="" location="aoy" detailindex="4"></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" style="" location="resurrection"><span class="locationspan">Resurrection</span><div class="opt_Resurrection draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Resurrection" title="Resurrection" draggable="true" style="">Resurrection</div></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style="" location="aoy" detailindex="4"></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1" style=""></td></tr>
+								<tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="7" colspan="1" style="" detailindex="2" location="michael"><span class="locationspan">Michael</span><div class="opt_Michael draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Michael" title="Michael" draggable="true" connectto="Superiority, NameOfYahweh, DayOfYahweh, LeadingIsrael, Principality, ServantOfYahweh" connectfrom="Superiority, NameOfYahweh, DayOfYahweh, LeadingIsrael, GodOfIsrael, Resurrection, Principality, ServantOfYahweh">Michael</div></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style="" location="god of israel"><span class="locationspan">God of Israel</span><div class="opt_GodOfIsrael draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="GodOfIsrael" title="GodOfIsrael" draggable="true" style="" connectfrom="Resurrection, NameOfYahweh, GloryOfYahweh" connectto="Resurrection, NameOfYahweh, GloryOfYahweh">God of<br>Israel</div></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style="" detailindex="2"></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="9" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10" style="" location="name of yah"><span class="locationspan">Name of Yah</span><div class="opt_NameOfYahweh draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="NameOfYahweh" title="NameOfYahweh" draggable="true" style="" connectfrom="Superiority, GloryOfYahweh" connectto="Superiority, GloryOfYahweh, DayOfYahweh">Name of<br>Yahweh</div></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style="" detailindex="1"></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1" style="" detailindex="1" location="jesus"><span class="locationspan">Jesus</span><div class="opt_Jesus draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Jesus" title="Jesus" draggable="true" style="" connectfrom="Superiority, PresenceOfYahweh, NameOfYahweh, GloryOfYahweh, DayOfYahweh, LeadingIsrael, Resurrection, GodOfIsrael, Principality, ServantOfYahweh, Blessing" connectto="Superiority, PresenceOfYahweh, NameOfYahweh, GloryOfYahweh, LeadingIsrael, DayOfYahweh, Resurrection, Principality, ServantOfYahweh, Blessing">Jesus</div></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14" style="" location="day of yah"><span class="locationspan">Day of Yah</span><div class="opt_DayOfYahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="DayOfYahweh" title="DayOfYahweh" draggable="true" style="">Day of<br>Yahweh</div></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="15" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="15" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="15" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="15" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="15" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="15" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="16" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="16" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="16" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="16" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="16" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="16" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="17" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="17" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="17" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="17" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="17" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="17" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="18" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="18" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="18" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="18" style="" location="glory of yah"><span class="locationspan">Glory of Yah</span><div class="opt_GloryOfYahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="GloryOfYahweh" title="GloryOfYahweh" draggable="true" style="" connectto="NameOfYahweh, DayOfYahweh, Resurrection" connectfrom="NameOfYahweh, Resurrection">Glory of<br>Yahweh</div></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="18" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="18" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="19" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="19" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="19" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="19" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="19" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="19" colspan="1" style="" detailindex="3" location="angels"><h4 contenteditable="false"></h4><span class="locationspan">Angels</span><div class="opt_OtherAngels draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="OtherAngels" title="OtherAngels" draggable="true" style="" connectto="DayOfYahweh, ServantOfYahweh" connectfrom="DayOfYahweh, ServantOfYahweh">Other<br>Angels</div></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="20" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="20" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="20" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="20" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style="" location="superiority"><span class="locationspan">Superiority</span><div class="opt_Superiority draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Superiority" title="Superiority" draggable="true" style="" connectto="NameOfYahweh" connectfrom="NameOfYahweh">Superiority</div></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="20" style=""></td>
+								<td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="20" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="21" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="21" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="21" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="21" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="21" style="" location="face of yah	"><span class="locationspan">Face of Yah	</span><div class="opt_PresenceOfYahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="PresenceOfYahweh" title="PresenceOfYahweh" draggable="true" style="" connectfrom="NameOfYahweh, GloryOfYahweh" connectto="GloryOfYahweh, NameOfYahweh, DayOfYahweh, LeadingIsrael">Presence<br>of Yahweh</div></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="21" colspan="1" style=""></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="22" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="22" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="22" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="22" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="22" style=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="22" colspan="1" style="" location="aodan10"><span class="locationspan">AoDan10</span><div class="opt_AngelOfDan-10 draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="AngelOfDan-10" title="AngelOfDan-10" draggable="true" style="" connectto="ServantOfYahweh" connectfrom="ServantOfYahweh">Angel of<br>Daniel 10</div></td></tr><tr rowname="Yahweh" title="Yahweh" style="">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="23" style=""></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="23" style=""></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="23" style=""></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="23" style=""></td>
+									<td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="23" style="" location=""></td>
+								<td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-12" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-13" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style="" location="leadership"><span class="locationspan">Leadership</span><div class="opt_LeadingIsrael draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="LeadingIsrael" title="LeadingIsrael" draggable="true" style="">Leading<br>Israel</div></td><td class="dragOverELAdded col-14" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-15" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-16" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-17" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-18" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td><td class="dragOverELAdded col-19" originalcolspan="1" hiddencol_xs_count="0" rindex="23" colspan="1" style=""></td></tr>
+							</tbody>
+						</table>
+
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<section id="detailsSection" class="draggableSection">
+		<div id="detailsSectionheader" class="titleBarH3">
+			<h3>Details</h3>
+			<button id="closeDetails" onclick="toggleDetailsSection()">X</button>
+		</div>
+		<div id="detailsKeyFacts">
+
+			<h4 title="Absolute/Relative time when this/these event/events takes place">Time:</h4>
+			<ul id="detailsTimePeriods">
+			</ul>
+
+			<h4 title="Where this/these event/events takes place">Location/Region:</h4>
+			<ul id="detailsRegions">
+			</ul>
+
+			<h4>Characters/Actors</h4>
+			<ul id="detailsActors">
+			</ul>
+
+		</div>
+
+		<div id="wysiwygEditor">
+			<input type="hidden" name="myDoc">
+			<div id="toolBar1" class="toolBar1n2">
+				<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option selected>FORMATTING</option>
+					<option value="h1">Heading 1</option>
+					<option value="h2">Heading 2</option>
+					<option value="h3">Heading 3</option>
+					<option value="h4">Heading 4</option>
+					<option value="h5">Heading 5</option>
+					<option value="h6">Heading 6</option>
+					<option value="p">Paragraph &lt;p&gt;</option>
+					<option value="pre">Preformatted &lt;pre&gt;</option>
+				</select>
+				<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>FONT</option>
+					<option>Arial</option>
+					<option>Arial Black</option>
+					<option>Courier New</option>
+					<option>Times New Roman</option>
+				</select>
+				<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>SIZE</option>
+					<option value="1">Very small</option>
+					<option value="2">A bit small</option>
+					<option value="3">Normal</option>
+					<option value="4">Medium-large</option>
+					<option value="5">Big</option>
+					<option value="6">Very big</option>
+					<option value="7">Maximum</option>
+				</select>
+				<select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>COLOR</option>
+					<option value="pink" style="background-color: pink">Pink</option>
+					<option value="red" style="background-color:red">Red</option>
+					<option value="brown" style="background-color:brown; color:white">Brown</option>
+					<option value="orange" style="background-color:orange">Orange</option>
+					<option value="yellow" style="background-color:yellow">Yellow</option>
+					<option value="blue" style="background-color:blue; color:white">Blue</option>
+					<option value="purple" style="background-color:purple; color:white">Purple</option>
+					<option value="black" style="background-color:black; color:white">Black</option>
+					<option value="grey" style="background-color:grey; color:white">Grey</option>
+					<option value="green" style="background-color:green; color:white">Green</option>
+				</select>
+				<select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+					<option class="heading" selected>BACKGROUND</option>
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="black">Black</option>
+				</select>
+			</div>
+			<div id="toolBar2" class="toolBar1n2">
+				<button class="intLink fa fa-paint-brush" title="Clean" onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};" style="display: none"></button>
+				<button class="intLink fa fa-print" title="Print" onclick="printDoc();" style="display: none"></button>
+				<button class="intLink fa fa-undo" title="Undo" onclick="formatDoc('undo');" style="display: none"></button>
+				<button class="intLink fa fa-undo fa-flip-horizontal" title="Redo" onclick="formatDoc('redo');" style="display: none"></button>
+
+				<button class="intLink fa fa-remove" title="Remove formatting" onclick="formatDoc('removeFormat')" style="display: none"></button>
+				<button class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" style="display: none"></button>
+				<button class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');" style="display: none"></button>
+				<button class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');" style="display: none"></button>
+				<button class="intLink fa  fa-align-left" title="Left align" onclick="formatDoc('justifyleft');" style="display: none"></button>
+				<button class="intLink fa  fa-align-justify" title="Center align" onclick="formatDoc('justifycenter');" style="display: none"></button>
+				<button class="intLink fa  fa-align-right" title="Right align" onclick="formatDoc('justifyright');" style="display: none"></button>
+
+				<button class="intLink fa fa-list-ol" title="Numbered list" onclick="formatDoc('insertorderedlist');" style="display: none"></button>
+				<button class="intLink fa fa-list-ul" title="Dotted list" onclick="formatDoc('insertunorderedlist');" style="display: none"></button>
+
+				<button class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock','blockquote');" style="display: none"></button>
+
+				<button class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');" style="display: none"></button>
+				<button class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');" style="display: none"></button>
+
+				<button class="intLink fa fa-link" title="Hyperlink" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" style="display: none"></button>
+
+				<button class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" style="display: none"></button>
+
+				<button class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" style="display: none"></button>
+
+				<button class="intLink fa fa-paste" title="Paste" onclick="formatDoc('paste');" style="display: none"></button>
+			</div>
+			
+			<button id="toggleKeyDetails" onclick="toglesummary()">Key Details</button>
+			<button id="expandDetails" onclick="detailsEditButtons()">Editor Buttons</button>
+			<button id="makeCurrentDetailEditable" onclick="makeCurrentDetailEditable()" title="Make detail/note edtiable">Make Editable</button>
+	</div>
+
+	<div id="detailsSummary" class="scrollbar-custom">
+
+		
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      <div class="hideDetail" id="detail_1" detailindex="1" contenteditable="false"><h1>Jesus Christ</h1><hr><ol><li><b>The Name of Yahweh</b></li><ol><li>Jesus has been given the Name that is above all other names [Joh 17:11; Php 2:9-10; Eph 1:21].</li></ol><li><b>The Presence/Face of Yahweh</b></li><ol><li>To see Jesus is to have seen the Father [Joh 14:7,9]</li></ol><li><b>The Glory of Yahweh</b></li><ol><li>Jesus is the Glory of Yahweh [Heb 1:3; 1Co 2; 2Co 4:4,6; Mat 17:2; Col 1:15,19]</li></ol><li><b>Superiority to All Others</b></li><ol><li>Jesus is superior to all <i>other</i> angels [Heb 1:4]</li></ol><li><b>Leader of Israel</b></li><ol><li>Jesus is the One appointed over Israel to lead them [Act 3:20]</li><li>And he will lead them</li></ol><li><b>The Day of Yahweh</b></li><ol><li>Jesus will be the leader of Yahweh's army, Yahweh's angels in the day of Yahweh [Rev 19:11,14]</li></ol></ol><div><h1>Jesus Christ &amp; the Angel of Yahweh</h1><hr><p></p><p></p><p></p><p>All of the above facts of Scriptures show Jesus Christ&nbsp;to be the angel of Yahweh</p><p></p><ol><li>Since the above facts are attributes that can only be possessed by one person and</li><li>Since both Jesus Christ and the Angel of Yahweh possess these attributes</li><li>Then Jesus Christ&nbsp;and the Angel of Yahweh are the same persons</li></ol><p>Therefore, Jesus Christ is the Archangel Michael since he is the Angel of Yahweh.</p><p></p><p></p><p></p><p></p></div></div><div class="hideDetail" id="detail_2" detailindex="2" contenteditable="false"><h1>Michael &amp; the Angel of Yahweh</h1><hr><ol><li><b>The Name of Yahweh</b></li><ol><li>Michael was called by the Name Yahweh when he appeared to Joshua [Jos 5:13-15; 6:2-5]</li></ol><li><b>Superiority to All Others<br></b></li><ol><li>Michael is greater than all other princes/captains. He was described as</li><ol><li></li><li>The Prince/Captain of Princes/Captains [Dan 8:11,25]</li><li>The&nbsp;First of the Princes/Captains [Dan 10:13]</li><li>The&nbsp;Great Prince/Captain [Dan 12:1]</li></ol></ol><li><b>Leader of Israel</b></li><ol><li>Michael is the leader of Israel, "The Captain/Commander/Prince of the Host of Yahweh" [Jos 5:14; Dan 12:1]</li></ol><li><b>The Day of Yahweh</b></li><ol><li>Michael will give a shout on the day of Yahweh [1Thes 4:16]</li></ol><li><b>Resurrection</b></li><ol><li>The rising of Michael in the time of the end will lead to the resurrection of tn of the dead [Dan 12:1-3]</li><li><i>(From the argument of Satan with Michael over the body of Moses)&nbsp;</i>Michael raised Moses from the dead [Jud 1:9]</li></ol></ol><div><h1>Michael &amp; the Angel of Yahweh</h1><hr><p></p><p></p><p></p><p>All of the above facts of Scriptures show Michael to be the angel of Yahweh since</p><p></p><ol><li>Since the above facts are attributes that can only be possessed by one person and</li><li>Since both Michael and the Angel of Yahweh possess these attributes</li><li>Then Michael and the Angel of Yahweh are the same persons</li></ol><p>Therefore, Michael is the Angel of Yahweh and <b>the Presence and the Glory of Yahweh</b>.</p><p></p><p></p><p></p><p></p></div></div><div class="hideDetail" id="detail_3" detailindex="3" contenteditable="false"><h1>Angels Other Than The Angel of Yahweh</h1><hr><ol><li><b>The Day of Yahweh</b></li><ol><li>The Angels of God will be present on the Day of Yahweh [2Th 1:7; Jud 1:14-15; Rev 19:14].</li></ol></ol></div><div class="hideDetail" id="detail_4" detailindex="4" contenteditable="false"><h1>The Angel of Yahweh</h1><hr><ol><li><b>The Name of Yahweh</b></li><ol><li>He is called, over and over, by the Name of Yahweh</li><li>In fact, Yahweh says that His Name is in him [Exo 23:21]</li></ol><li><b>The Presence/Face of Yahweh</b></li><ol><li>He is called the Face/Presence of God</li><ol><li>We can plainly see this from knowing that the it was the Angel of Yahweh with whom Jacob wrestled.</li><li>Jacob called the place where he wrestled with the man "Peniel" meaning face of God and also said that he had seen God face to face [Gen 32:30]</li><li>Hosea tells us that it was with an angel that Jacob wrestled [Hos 12:1-5]</li></ol></ol><li><b>The Glory of Yahweh</b></li><ol><li>Jesus is the Glory of Yahweh [Heb 1:3; 1Co 2:8; 2Co 4:4,6; Mat 17:2; Col 1:15,19]</li></ol><li><b>Superiority to All Others</b></li><ol><li>The Angel of Yahweh is superior to all&nbsp;<i>other</i>&nbsp;angels</li><ol><li>In Jacob's vision of the stairway reaching to heaven, the Angel of Yahweh was at the head of the stairway with <i>other&nbsp;</i>angels ascending and descending upon the stairway [Gen 28:12-13]</li><li>The testimony of the magicians of Egypt that Yahweh, who was in person the Angel of Yahweh with Moses, was God [Exo 8:19] pointing to his superiority to all other gods.</li><li>Moses' insistence that the Angel of Yahweh <i>(whom Yahweh described as His Presence)</i></li></ol></ol><li><b>Leader of Israel</b></li><ol><li>The Angel of Yahweh was to guard, deliver and bring Israel into the promised land [Exo 23:20-23]</li><li>He was the One through whom God brought the Israelites out of Egypt and</li><li>By whose hand Yahweh led the people through the wilderness [Exo 13:21-22; 14:19]</li><li>Even in the land he was to be with them and he was with them [Jdg 2:1-5]</li></ol><li><b>The Day of Yahweh</b></li><ol><li>The Angle of Yahweh will defend and lead Israel in the Day of Yahweh [Zec 12:8]</li></ol><li><b>Resurrection from the Dad</b></li><ol><li>Micah spoke of the Angel of Yahweh as being the first to rise from the dead and by so making the resurrection of the People of Israel possible [Mic 5:13]</li></ol></ol><div><h1>Jesus Christ &amp; the Angel of Yahweh</h1><hr><p></p><p></p><p></p><p>All of the above facts of Scriptures show Jesus Christ&nbsp;to be the angel of Yahweh</p><p></p><ol><li>Since the above facts are attributes that can only be possessed by one person and</li><li>Since both Jesus Christ and the Angel of Yahweh possess these attributes</li><li>Then Jesus Christ&nbsp;and the Angel of Yahweh are the same persons</li></ol><p>Therefore, Jesus Christ is the Archangel Michael since he is the Angel of Yahweh.</p></div></div>
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      <div class="hideDetail" id="detail_5" detailindex="5" contenteditable="false"><h1>Principality <i>(i.e., Captain/Prince Over a People)</i>&nbsp;Facts</h1><hr><p>A principality is a leader, a head.</p><p>His leadership can be over as few as 10, or a 100, or a 1,000 [Exo 18:21] and so on. And his leadership can be over men or angels.</p><ol><li><b>ἄρχων</b> (<b>archōn</b>) in Greek</li><ol><li>Persia and Greece have their&nbsp;<i><b><u>Archōn</u></b></i> [Dan 10:13,20 ABP+ Septuagint]</li><li>Michael is the <i><u><b>Archōn</b></u></i> of Israel [Dan 12:1 ABP+ Septuagint]</li><li>After interpreting the writing on the wall, Daniel was declared to be the Third&nbsp;<i><u><b>Archōn</b></u></i>&nbsp;in Babylon [Dan 5:29]</li></ol><li><b>שׂר</b> (<b>śar</b>) in Hebrew</li><ol><li>Prince, captain [Gen 12:1]</li><li>Persia and Greece have their&nbsp;<i><b><u>Archōn</u></b></i>&nbsp;[Dan 10:13,20]</li><li>Michael is the <i><b><u>Śar</u></b></i> of Israel&nbsp;[Dan 12:1]</li></ol></ol><p>The sons of God over the nations are the Principalities [Deut 32:8-9; Gen 11:7; Psa 82:1,6]. They are the highest ranking angels for they set over whole nations.</p><h1>All Who Share in This Title</h1><hr><p></p><ol><li>The Angel of Yahweh is a Principality by his role as Lord of Israel [Exo 23:21]</li><li>Michael is a Principality [Dan 8:; 12:1],</li><li>Jesus is a Principality [Col 2:10]</li></ol><p></p></div>
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      <div class="showDetail" id="detail_6" detailindex="6" contenteditable="true"><h1>Blessing Facts</h1><hr><ol><li>God forbids us seeking the blessing of other gods.</li><li>Blessing are to be and to be sought in the Name of Yahweh [Num 6:22-27].</li><li>Yahweh's blessings are conditioned upon obedience to Him [Exo 23:25; Deut 7:12-15<i>ff</i>; 11:26-27<i>ff</i>; 15:4-5]</li><li>Those that God has blessed are not to be cursed [Num 22:12; 23:20]</li></ol><div><h1>Blessing In/By</h1><hr><ol><li>The Angel of Yahweh</li><ol><li>Jacob sought the blessing of the Angel of Yahweh [Gen 23:26]</li><li>Jacob blessed Joseph in the Name of the Angel of Yahweh [Gen 48:15-16]</li><li>Yahweh promised to bless His people if they would submit to the Angel of Yahweh [Exo 23:20-23,25]</li><li>Moses blessed Joseph by the Angel of Yahweh [Deut 33:16]</li></ol><li>Jesus Christ</li></ol></div></div>
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+<!--**********************************************-->
+
+      
+
+      </div>
+		<div id="editMode">
+			<label for="switchBox">Show HTML</label>
+			<input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);">
+		</div>
+	</section>
+	
+
+
+<section id="alternateStoryLineEditorButtons">
+	<div id="alternateStoryLineEditorButtonsheader" class="titleBarH3">
+		<h3>Table Editor/Creator</h3>
+		<button id="alternateClose" onclick="alternateClose()">X</button>
+	</div>
+	
+	<div id="alternateStoryLineEditorButtonsBody">
+		<!--Table-->
+		<div id="realignandreconnect" class="vertical">
+			<span>Table:</span>
+			<div class="vertical"><button onclick="buildLegendTable()">Re-Align Tables</button><button onclick="connectAllDraggableDivsWithSVGLines()">Connect Divs</button><button onclick="btn_buildLegendTable()"><strong>Restore Timeline</strong></button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE"><strong>&#128190;</strong> </button>
+			</div>
+		</div>
+		
+		<!--Delete-->
+		<div id="deleteButtons" class="vertical">
+			<span>Delete:</span>
+			<div class="vertical">
+				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+					✘<br />Del<br />Label
+				</button><button title="delete label" onclick="destroyCell()">
+					✘<br />Del<br />Cell
+				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+					✘<br />Del<br />Row
+				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+					✘<br />Del<br />Col
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Merge & Split-->
+		<div id="mergeAndSplit" class="vertical">
+			<span>Merge<br>/Split:</span>
+			<div class="vertical">
+				<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
+					&#10010;
+					<br />
+					Select
+					<br />
+					Cells
+				</button><button title="merge selected cells" onclick="mergeCells()">
+					&#124; &#129034;&#129032; &#124;
+					<br />
+					Merge
+					<br />
+					Cells
+				</button><button title="split selected cells" onclick="splitCell()">
+					&#124;&#124;&#129032; &#129034;&#124;&#124;
+					<br />Split
+					<br />
+					Cells
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Create-->
+		<div class="vertical">
+			<span>Create:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Name:</span> <input type="text" id="myText" value="">
+					</div>
+					<button title="create cell to the left" onclick="createCellBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Cell
+					</button><button title="create cell to the right" onclick="createCellAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Cell
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="clone row above" onclick="cloneRowAbove()">
+						&#129033;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="clone row below" onclick="cloneRowBelow()">
+						&#129035;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="new row above" onclick="createRowAbove()">
+						&#129033;
+						<br />
+						new
+						<br />
+						Row
+					</button><button title="new row below" onclick="createRowBelow()">
+						&#129035;
+						<br />
+						new
+						<br />
+						Row
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="new column to the left" onclick="createColumnBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="new column to the right" onclick="createColumnAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="delete timesection, i.e., column" onclick="destroyColumn()">
+						&#129034;
+						<br />
+						del
+						<br />
+						Col
+					</button></div>
+			</div>
+		</div>
+		
+
+		<!--Edit-->
+		<div class="vertical">
+			<span>Edit:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Heading:</span> <input type="text" id="cellHeading" value="">
+					</div>
+					<button id="applyHeadingBtn" onclick="insertHeading()">Apply Heading</button>
+
+					<div class="vertical2">
+						<!--for the content of the cell-->
+						<span style="font-style: italic">Cell Details:</span> <input type="text" id="cellText" value="">
+					</div>
+					<button id="applyTextBtn" onclick="insertTextIntoTD()">Apply Details</button>
+
+					<div class="vertical2">
+						<!--for the duration of the cell-->
+						<span style="font-style: italic">Duration:</span> <input type="text" id="eventDuration" value="">
+					</div>
+					<button id="applyDurationBtn" onclick="insertDurationIntoTD()">Apply Duration</button>
+
+					<div class="vertical2">
+					</div>
+					<div class="vertical2">
+						<span style="font-style: italic">Row Name:</span> <input type="text" id="rowName" value="">
+					</div>
+					<button id="applyRowEditBtn" onclick="rowEdit()">Apply RowName</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!--Land/Region-->
+		<div class="vertical">
+			<span>Location<br>/Region:</span>
+			<div class="vertical">
+				<div class="vertical3">
+					<input type="text" id="locationInput" value="" draggable="false">
+					<select id="locationOptionsDropdown" onclick="fillLocationInput()" onchange="fillLocationInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createRegionAttribute()">Append Location</button></div>
+			</div>
+		</div>
+		
+
+		<!--Label/Actors-->
+		<div class="vertical">
+			<span>Actors:</span>
+			<div class="vertical">
+				<span style="font-style: italic">Main<br>Name:</span>
+				<div class="vertical3">
+					<input type="text" id="divClass" value="" draggable="false">
+					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
+					</select><br>
+				</div>
+				<span style="font-style: italic">Alias:</span>
+				<div class="vertical3">
+					<input type="text" id="divName" value="" draggable="false">
+					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createDIV()">Create Div</button></div>
+			</div>
+		</div>
+		
+
+		<!--#2-Label/Actors-->
+		<div class="vertical">
+			<span>Custom<br>Connect</span>
+			<div class="vertical">
+				<div class="vertical2">
+					<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
+					<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()" onchange="fillDivClass2ConnectFrom()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectFrom()">DisConnect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectFrom" value="" draggable="false">
+					<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()" onchange="fillDivClassToDisConnectFrom()">
+					</select>
+				</div>
+				<!--///////////////////////////////////////-->
+				
+				<!--///////////////////////////////////////-->
+				<div class="vertical2">
+					<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectTo" value="" draggable="false">
+					<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()" onchange="fillDivClass2ConnectTo()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectTo()">DisConnect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectTo" value="" draggable="false">
+					<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()" onchange="fillDivClassToDisConnectTo()">
+					</select>
+				</div>
+				<!--///////////////////////////-->
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+
+<div id="slideShowListMaster">
+	<div id="slideShowListMasterheader" class="titleBarH3">
+		<h3>SlideShowOrder</h3>
+
+		<div>
+			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
+		</div>
+	</div>
+	<div id="slideShowListContainer" class="scrollbar-custom">
+
+	</div>
+</div>
+
+<section id="pageFootSection">
+	<!--SAVE BUTTON-->
+	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE">&#128190;</button>
+	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+	<!--MODIFIERS & BUILDERS BUTTONS-->
+	<div id="pageBottomStorylineTableEditorButtons">
+
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style="" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+			<span>Edit</span>
+		</button>
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio"><span>Notes</span>
+		</button>
+		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+			<span>Connection</span>
+		</button>
+		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+			<span>SlideShow</span>
+		</button>
+	</div>
+	<!--SLIDE SHOW BUTTONS-->
+	<div id="slideShowButtons">
+		<input id="nextEventUseKeyboard" type="checkbox" checked="true" title="Enable Arrow Keys on Keyboard"></input>
+		<button id="prevEvent" class="fa fa-arrow-left" onclick="prevEventShow()" title="Show PREVIOUS event"></button>
+		<button id="resetEvent" class="fa fa-arrows" onclick="resetEventShow()" title="RESET events"></button>
+		<button id="nextEvent" class="fa fa-arrow-right" onclick="nextEventShow()" title="Show NEXT event"></button>
+	</div>
+</section>
+
+</body>
+
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/darkOrlightBG.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/GetElement-XY-Coordinates.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/tableColumnClasses.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/draggableHtmlElement.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragdCloneDivs.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_01.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_02.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/cssColorNamesArray.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_03.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/BibleStoryLineCreator.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/detailsSection.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragDropRows&Cells.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/fileSaver.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/saveTimelineAndDetails.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/TextEditorDocExec.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/reftager.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/storyTellerColumnSlideShow.js"></script>
+
+</html>
