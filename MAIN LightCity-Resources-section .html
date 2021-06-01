@@ -1,0 +1,47 @@
+---
+layout: homeTEMPLATE
+title: "LightCity Teaching Resources"
+categories: [""]
+---
+<style>
+	ol, ul{
+		column-gap: 2em;
+		column-width: 12em;
+	}
+</style>
+<section id="MAINResources-section">
+		<div class="homeBody-section container-fluid-inner">
+			<h1 class="titles">LightCity Teaching Resources</h1>
+			<h2>Angel of Yahweh</h2>
+		
+			<ol>
+				{% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Bible TimeLines</h2>
+			<p>A collection of Bible Timelines</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>General Resources</h2>
+			<p>A collection of Useful Resources</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>The Two Fall of Man</h2>
+			<p>A collection of Useful Resources on the Falls of Man</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Fall of Man" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+		</div>
+</section>
+{% include contact-section.html %}

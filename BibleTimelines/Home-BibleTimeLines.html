@@ -3,10 +3,20 @@ layout: homeTEMPLATE
 title: "BibleTimelines Navigation"
 categories: ["HomePage-BibleTimelines"]
 ---
-	<h1>Bible TimeLines</h1>
+<style>
+	ol, ul{
+		column-gap: 2em;
+		column-width: 12em;
+	}
+	</style>
+	<div class="homeBody-section container-fluid-inner" style="min-height: 75vh;">
+	<h1 class="titles">Bible TimeLines</h1>
 	<p>A collection of Bible Timelines</p>
 
 	<ol id="nav">
 	        {% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
             {% endif %}{% endfor %}
     </ol>
+	</div>
+	{% include contact-section.html %}
+	<script type="text/javascript" src="../script/victor'sScripts/dropDownMenu.js"></script>
