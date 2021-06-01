@@ -6,8 +6,10 @@
 <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <nav id="navbar">
 {% for page in site.pages %}{% if page.title contains "Site Home" %}
 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
 <span><strong>|</strong></span>
 {% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
+</nav>
