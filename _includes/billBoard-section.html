@@ -1,0 +1,21 @@
+		<section id="billBoard-section">
+			<div class="billBoard transparent-dark-right bg-image">
+				<div class="billBoard-container">
+					<div class="billBoard-bg-image" style="background-image: url(images/man-leans-against-a-red-wall-and-reads-his-bible-turning-pages-then-putting-his-hand-in-his-pocket_vk4y6ua1l__F0000.png);"></div>
+					<div class="billBoard-content">
+						<div class="billBoard-content-text">
+							<h3 class="billBoard-title">
+								<a href="{% for page in site.pages %}{% if page.title contains "About" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Messiah in Isaiah</a>
+							</h3>
+							<div class="billBoard-description">
+								<p>He was to be born to a virgin [Isa 7:14]
+								A sign that God is with the house of David and land of Judah</p>
+							</div>
+							<a href="#" class="billBoard-button"><span class="buttonText">Read More</span></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- {% include billBoard-section.html %} -->
