@@ -23,7 +23,7 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This site is for the study of the Bible.
 # baseurl: "LightCityBibleStudies" # for my personal github site
-baseurl: "SammyLight.github.io/BibleStudies" # for LightCityTeachingFellowship github group
+baseurl: "BibleStudies" # for LightCityTeachingFellowship github group
 # baseurl: "" # for the local host (the subpath of your site, e.g. /blog)
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
