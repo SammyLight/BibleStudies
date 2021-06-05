@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Download Page Content",
+  "version": "1.0",
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["downloadContent.js","fileSaver.js","saveLightCityPage.js"]
+  }],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "hello.png"
+  }
+}
