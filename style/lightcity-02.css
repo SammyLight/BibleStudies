@@ -51,6 +51,9 @@ ol,ul{
 	font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 	
 }
+ol{
+	padding-left: 1.5em;
+}
 ol>li>ol{
 	list-style-type: lower-roman;
 	padding-left: 0.5em;
