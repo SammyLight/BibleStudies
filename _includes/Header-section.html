@@ -17,8 +17,10 @@
                     </div>
                      
                     <div class="mobile-headerLinks transition">
-                        <a class="linkTitle transition" href="
-	{% for page in site.pages %}{% if page.title contains "About" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}"><span>About</span></a>
+                        {% for page in site.pages %}{% if page.title contains "About" %}
+                        <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>About</span>
+                        </a>{% endif %}{% endfor %}
                     </div>
                     
                     <div class="mobile-headerLinks transition">
