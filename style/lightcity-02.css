@@ -84,30 +84,30 @@ h6 > span:first-child {
 
 header~h1{
 	counter-increment: header1;
-/*	content: counter(header);*/
+	content: counter(header);
 }
 
 header~h1:before {
-/*    content: "*" counter(header)"*" ;*/
-    /* content: counter(header1); */
+   content: "*" counter(header)"*" ;
+    content: counter(header1);
 	/* font-size: 35px; */
 }
 
-/*
+
 header~h1 > h2{
 	counter-reset: header2 1;
 }
-*/
+
 
 header~h2{
 	counter-increment: header2;
-/*	content: counter(header);*/
+	content: counter(header);
 }
 
 header~h2:before {
-/*    content: "*" counter(header)"*" ;*/
-    /* content: counter(header1)"." counters(header2, ".") ". "; */
-	font-size: 35px;
+   content: "*" counter(header)"*" ;
+    content: counter(header1)"." counters(header2, ".") ". ";
+	/* font-size: 35px; */
 }
 
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
