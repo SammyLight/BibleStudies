@@ -46,14 +46,12 @@ header~h2:before {
 	/* font-size: 35px; */
 }
 
-@import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 ol,ul{
 	font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+	padding-left: 1.5em;
 	
 }
-ol{
-	padding-left: 1.5em;
-}
+
 ol>li>ol{
 	list-style-type: lower-roman;
 	padding-left: 0.5em;
