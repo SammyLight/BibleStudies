@@ -68,7 +68,18 @@ header~h2:before {
     content: counter(header1)"." counters(header2, ".") ". ";
 	font-size: 35px;
 }
-
+header~h1 > h2 > h3{
+	counter-reset: header2 1;
+}
+header~h3 {
+    counter-increment: header3;
+    content: counter(header);
+}
+header~h3:before {
+	content: "*" counter(header)"*" ;
+	 content: counter(header1)"." counters(header2, ".") "." counters(header3, ".")".";
+	 font-size: 25px;
+ }
 ol>li>ol{
 	list-style-type: lower-roman;
 }
