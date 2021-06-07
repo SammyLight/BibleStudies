@@ -7,15 +7,6 @@ body {
 	counter-reset: header1 header2;
 	margin: 0;
 }
-/* .fonts {
-    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    word-break: normal;
-} */
-/* body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-	font-size: 20px;
-} */
 
 h1 > span:first-child,
 h2 > span:first-child,
