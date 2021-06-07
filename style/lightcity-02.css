@@ -85,7 +85,6 @@ ol {
 	list-style-type: none;
 	counter-reset: lister;
 	margin: auto;
-	padding: auto;
 }
 
 body>li:first-child {
