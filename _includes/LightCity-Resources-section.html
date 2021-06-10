@@ -15,7 +15,7 @@
 				<small>
 					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 2)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
 					<div class="prayer-text">
-						<p class="categories" id="hubspot-topic_data"><span>category:</span>
+						<p class="categories"><span>category:</span>
                     	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
 						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
 						</a>{% endif %}{% endfor %}
@@ -36,36 +36,12 @@
 				<small>
 					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 1)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
 					<div class="prayer-text">
-						<p class="categories" id="hubspot-topic_data"><span>category:</span>
+						<p class="categories"><span>category:</span>
                     	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
 						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
 						</a>{% endif %}{% endfor %}
-						</a>{% endif %}{% endfor %}
 						</p>
 					</div>				
-			</div>
-			<hr>
-			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>2021-06-01</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">A Prophet Like Moses</a>
-				</h3>
-				<div class="prayer-text">
-					<p>To truly institute a New Covenant, he must have authority equal or greater and apart from Moses.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories" id="hubspot-topic_data"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel of Yahweh
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>
-					
-				
 			</div>
 			<hr>
 			<div class="homeResources-grid">
@@ -81,12 +57,34 @@
 				<small>
 					<a href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
 					<div class="prayer-text">
-						<p class="categories" id="hubspot-topic_data"><span>category:</span>
+						<p class="categories"><span>category:</span>
                     	{% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
 						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
 						</a>{% endif %}{% endfor %}
 						</p>
 					</div>				
+			</div>
+						<hr>
+			<div class="homeResources-grid">
+				<small class="article-date archive-date">
+					<em>2021-05-27</em>
+				</small>
+				<h3 class="titles">
+					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">{{ page.title }}</a>
+				</h3>
+				<div class="prayer-text">
+					<p>To truly institute a New Covenant, he must have authority equal or greater and apart from Moses.</p>
+				</div>
+				<small>
+					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
+					<div class="prayer-text">
+						<p class="categories"><span>category:</span>
+                    	{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
+						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel of Yahweh
+						</a>{% endif %}{% endfor %}
+						</p>
+					</div>			
+				
 			</div>
 		</div>
 </section>
