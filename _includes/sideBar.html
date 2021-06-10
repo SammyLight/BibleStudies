@@ -31,8 +31,13 @@
                 </li>
                 {% endif %}{% endfor %} -->
                 
-                <li>{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
-                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel of Yahweh
+                <li>
+                    {% for page in site.pages %}
+                        {% if page.categories contains "HomePage-AoY" %}
+<a class="cat-link" href="
+                            
+                                {{site.baseurl}}{{page.url}}
+                           ">Angel of Yahweh
                     </a>{% endif %}{% endfor %}</li>  
                 <li>{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
