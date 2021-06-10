@@ -51,30 +51,6 @@
 			
 			<hr>
 			
-				<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-06-01)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness</a>
-				</h3>
-				<div class="prayer-text">
-					<p>We have learnt about the metaphors of light and darkness. We learned that light primarily denotes eternal life and secondarily denotes everything that is positively related to it such as God himself who is the primary source of light and Jesus and the Holy Spirit who are the primary agents of light.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
-			
-			
-			<hr>
-			
 			<div class="homeResources-grid">
 				<small class="article-date archive-date">
 					<em>(2021-06-01)</em>
@@ -87,6 +63,31 @@
 				</div>
 				<small>
 					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Alienation Specifics" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
+					<div class="prayer-text">
+						<p class="categories"><span>category:</span>
+                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
+						</a>{% endif %}{% endfor %}
+						</p>
+					</div>				
+			</div>
+			
+			
+			<hr>
+			
+			
+				<div class="homeResources-grid">
+				<small class="article-date archive-date">
+					<em>(2021-05-31)</em>
+				</small>
+				<h3 class="titles">
+					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness</a>
+				</h3>
+				<div class="prayer-text">
+					<p>We have learnt about the metaphors of light and darkness. We learned that light primarily denotes eternal life and secondarily denotes everything that is positively related to it such as God himself who is the primary source of light and Jesus and the Holy Spirit who are the primary agents of light.</p>
+				</div>
+				<small>
+					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
 					<div class="prayer-text">
 						<p class="categories"><span>category:</span>
                     	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
