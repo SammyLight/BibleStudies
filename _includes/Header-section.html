@@ -33,7 +33,7 @@
                     <div class="mobile-headerLinks transition">
                         {% for page in site.pages %}{% if page.title contains "LightCity Teaching Resources" %}
                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                            <span>Catergories</span>
+                            <span>Categories</span>
                         </a>{% endif %}{% endfor %}
                     </div>
                     <div class="mobile-headerLinks transition">
@@ -84,7 +84,7 @@
                                 <li class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "LightCity Teaching Resources" %}
                                     <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                        <span>Catergories</span>
+                                        <span>Categories</span>
                                     </a>{% endif %}{% endfor %}
                                 </li>
 
