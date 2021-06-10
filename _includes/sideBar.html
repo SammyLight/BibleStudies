@@ -18,7 +18,11 @@
               {% endfor %}
 
               {% for page in my_array limit:5 %}
-                <li><a class="cat-link" href="{{ page.url }}">{{ page.title }} <em>({{ page.date }})</em></a></li>
+                <li><a class="cat-link" href="{% if site.baseurl == "" %}
+                    {{page.url}}
+                {% elsif site.baseurl != "" %}
+                    /{{site.baseurl}}{{page.url}}
+                {% endif %}">{{ page.title }} <em>({{ page.date }})</em></a></li>
               {% endfor %}
             </ul>
     
@@ -34,10 +38,11 @@
                 <li>
                     {% for page in site.pages %}
                         {% if page.categories contains "HomePage-AoY" %}
-<a class="cat-link" href="
-                            
+                        <a class="cat-link" href="{% if site.baseurl == "" %}
+                                {{page.url}}
+                            {% elsif site.baseurl != "" %}
                                 /{{site.baseurl}}{{page.url}}
-                           ">Angel of Yahweh
+                            {% endif %}">Angel of Yahweh
                     </a>{% endif %}{% endfor %}</li>  
                 <li>{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
