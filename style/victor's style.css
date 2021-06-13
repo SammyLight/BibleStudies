@@ -701,6 +701,9 @@ hr {
     padding-right: 0;
 }
 
+ul.recentposts{
+    padding: 0 1em;
+}
 @media only screen and (min-width: 1025px){
 .content{
     display: block !important;
