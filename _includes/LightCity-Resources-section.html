@@ -3,124 +3,74 @@
 			<h1 class="titles">Latest Posts</h1>
 			
 			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-06-01)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 2)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness—Examples of Rejection (Part 2)</a>
+				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
+              {% assign my_array = "" | split: ',' %}
+              {% for page in sorted-pages %}
+                {% if page.date And page.date != "" And page.date != nil %}
+                    {% assign my_array = my_array | push: page %}
+                {% endif %}
+              {% endfor %}
+			  
+			  {% for page in my_array limit:5 %}
+                <small class="article-date archive-date"><em>{{ page.date }}</em></small>
+              
+
+              
+                <h3 class="titles"><a href="{% if site.baseurl == "" %}
+                    {{page.url}}
+                {% elsif site.baseurl != "" %}
+                    /{{site.baseurl}}{{page.url}}
+                {% endif %}">{{ page.title }}</a>
 				</h3>
-				<div class="prayer-text">
-					<p>Samson was consecrated to God as a Nazirite from conception and he was to remain so for life [Jdg 13:3-5]. Although there were other prohibitions that came along with this consecration [Jdg 13:4], it primarily meant that Samson was never to cut the hair on his head. It was as though he was in a covenant with God as long as he did not cut the hair on his head.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 2)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
-			
-			
-			<hr>
-			
-			
-			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-06-01)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 1)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness—Examples of Rejection (Part 1)</a>
-				</h3>
-				<div class="prayer-text">
-					<p>Every relationship has benefits it offers its members, and along with these benefits come duties. When God rejects a person, it does not mean that God has totally ceased to relate with such a person in every form, nor does it mean that such a one has been cut off from every form of blessing from God.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Examples of Rejection (Part 1)" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
-			
-			
-			<hr>
-			
-			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-06-01)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Alienation Specifics" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness—Alienation Specifics</a>
-				</h3>
-				<div class="prayer-text">
-					<p>We have learnt about the metaphors of light and darkness. We learned that light primarily denotes eternal life and secondarily denotes everything that is positively related to it such as God himself who is the primary source of light and Jesus and the Holy Spirit who are the primary agents of light.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness—Alienation Specifics" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
-			
-			
-			<hr>
-			
-			
-				<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-05-31)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">The World in Darkness</a>
-				</h3>
-				<div class="prayer-text">
-					<p>We have learnt about the metaphors of light and darkness. We learned that light primarily denotes eternal life and secondarily denotes everything that is positively related to it such as God himself who is the primary source of light and Jesus and the Holy Spirit who are the primary agents of light.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "The World in Darkness." %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Falls of Man
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
-			
-			
-			<hr>
-			
-			
-			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					<em>(2021-05-21)</em>
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">A Prophet Like Moses</a>
-				</h3>
-				<div class="prayer-text">
-					<p>To truly institute a New Covenant, he must have authority equal or greater and apart from Moses.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "A Prophet Like Moses" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-AoY" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel of Yahweh
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>			
+
+				<!-- {% assign content = page.content %} -->
+				<p>
+					{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
+						{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) | strip_html | truncatewords: 50 }}
+					{% else %}
+						{{ page.content | strip_html | truncatewords: 50 }}
+					{% endif %}
+				</p>
 				
+                <small><a class="titles" href="{% if site.baseurl == "" %}
+                    {{page.url}}
+                {% elsif site.baseurl != "" %}
+                    /{{site.baseurl}}{{page.url}}
+                {% endif %}">Continue reading …</a></small>
+
+			  <div class="prayer-text">
+				<p class="categories"><span>category:</span>
+					{% assign categories = page.categories %}
+				<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.categories }}
+				</a>
+				</p>
+			</div>			
+			{% endfor %}
+
+			<hr>
+
+
+	
+			<hr>
+			<div class="homeResources-grid">
+				<small class="article-date archive-date">
+					May 27, 2021
+				</small>
+				<h3 class="titles">
+					<a href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">What is A Sign</a>
+				</h3>
+				<div class="prayer-text">
+					<p>A sign is an announcement, a proclamation of sorts, it points to something.</p>
+				</div>
+				<small>
+					<a href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
+					<div class="prayer-text">
+						<p class="categories" id="hubspot-topic_data"><span>category:</span>
+                    	{% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
+						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
+						</a>{% endif %}{% endfor %}
+						</p>
+					</div>				
 			</div>
 		</div>
 </section>

@@ -3,6 +3,12 @@
         <div class="sidebar-wrapper">
             <h4 class="titles">Recent Posts</h4>
             <ul class="recentposts">
+                <!-- {% for post in site.pages limit:5 %}
+                <li>
+                  <a class="cat-link" href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+              {% endfor %} -->
+
               {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
               {% for page in sorted-pages %}
@@ -37,19 +43,30 @@
                             {% elsif site.baseurl != "" %}
                                 /{{site.baseurl}}{{page.url}}
                             {% endif %}">Angel of Yahweh
-                    </a>{% endif %}{% endfor %}</li>  
-                <li>{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
+                    </a>{% endif %}{% endfor %}
+                </li>  
+
+                <li>
+                    {% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
-                    </a>{% endif %}{% endfor %}</li>
+                    </a>{% endif %}{% endfor %}
+                </li>
+
                 <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
-                    </a>{% endif %}{% endfor %}</li>
-                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+                    </a>{% endif %}{% endfor %}
+                </li>
+
+                <li>
+                     {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
-                    </a>{% endif %}{% endfor %}</li>
+                    </a>{% endif %}{% endfor %}
+                </li>
+
                 <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
-                    </a>{% endif %}{% endfor %}</li>
+                    </a>{% endif %}{% endfor %}
+                </li>
             </ul>
         </div>
     </div>
