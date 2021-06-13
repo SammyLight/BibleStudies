@@ -26,14 +26,14 @@
             <ul class="recentposts">
 
                 <!-- {% assign items_grouped = site.pages | group_by: 'categories' %}
-                {% for group in items_grouped %}{% if group.categories contains "HomePage-AoY" %}
+                {% for group in items_grouped %}{% if group.categories contains "HomePage-Angel of Yahweh" %}
                <li> <a>{{group.name}}</a>
                 </li>
                 {% endif %}{% endfor %} -->
                 
                 <li>
                     {% for page in site.pages %}
-                        {% if page.categories contains "HomePage-AoY" %}
+                        {% if page.categories contains "HomePage-Angel of Yahweh" %}
                         <a class="cat-link" href="{% if site.baseurl == "" %}
                                 {{page.url}}
                             {% elsif site.baseurl != "" %}
