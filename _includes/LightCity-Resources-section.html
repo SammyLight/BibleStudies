@@ -1,5 +1,5 @@
 <section id="Resources-section">
-		<div class="Resources-grid">
+	<div class="Resources-grid">
 			<h1 class="titles">Latest Posts</h1>
 			
 			<div class="homeResources-grid">
@@ -49,26 +49,6 @@
 				<hr>
 			</div>
 			{% endfor %}
-
-			<div class="homeResources-grid">
-				<small class="article-date archive-date">
-					May 27, 2021
-				</small>
-				<h3 class="titles">
-					<a href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">What is A Sign</a>
-				</h3>
-				<div class="prayer-text">
-					<p>A sign is an announcement, a proclamation of sorts, it points to something.</p>
-				</div>
-				<small>
-					<a href="{% for page in site.pages %}{% if page.title contains "What Is A Sign" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">Continue reading …</a></small>
-					<div class="prayer-text">
-						<p class="categories" id="hubspot-topic_data"><span>category:</span>
-                    	{% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
-						</a>{% endif %}{% endfor %}
-						</p>
-					</div>				
-			</div>
 		</div>
+	</div>
 </section>
