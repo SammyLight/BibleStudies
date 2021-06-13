@@ -3,12 +3,6 @@
         <div class="sidebar-wrapper">
             <h4 class="titles">Recent Posts</h4>
             <ul class="recentposts">
-                <!-- {% for post in site.pages limit:5 %}
-                <li>
-                  <a class="cat-link" href="{{ post.url }}">{{ post.title }}</a>
-                </li>
-              {% endfor %} -->
-
               {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
               {% for page in sorted-pages %}
@@ -22,7 +16,9 @@
                     {{page.url}}
                 {% elsif site.baseurl != "" %}
                     /{{site.baseurl}}{{page.url}}
-                {% endif %}">{{ page.title }} <small><em>({{ page.date }})</em></small></a></li>
+                {% endif %}">{{ page.title }} 
+                <br>
+                <small><em>({{ page.date }})</em></small></a></li>
               {% endfor %}
             </ul>
     
