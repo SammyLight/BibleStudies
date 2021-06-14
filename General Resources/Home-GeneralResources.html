@@ -1,0 +1,22 @@
+---
+layout: homeTEMPLATE
+title: "General Resources"
+categories: ["HomePage-General_Resources"]
+---
+<style>
+	ol, ul{
+		column-gap: 2em;
+		column-width: 12em;
+	}
+	</style>
+	<div class="homeBody-section container-fluid-inner" style="min-height: 75vh;">
+	<h1 class="titles">General Resources</h1>
+	<p>A collection of Useful Resources</p>
+
+	<ol id="nav">
+	        {% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+            {% endif %}{% endfor %}
+    </ol>
+	</div>
+	{% include contact-section.html %}
+	<script type="text/javascript" src="../script/victor'sScripts/dropDownMenu.js"></script>
