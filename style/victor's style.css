@@ -342,7 +342,7 @@ a:hover{
 h1,h2,h3,h4,h5,h6 {
     font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
     font-weight: 700;
-    color: #333030 !important;
+    color: #333030;
     line-height: 1.25;
     letter-spacing: .03em;
     margin-block-start: 0;
@@ -742,7 +742,7 @@ ul.recentposts{
     padding-top: 15px !important;
     padding-bottom: 15px !important;
 }
-.Contact-section h1,h3,h5 {
+.Contact-section h1,h5 {
     color: #d0d0d0;
 }
 .Contact-section p {
