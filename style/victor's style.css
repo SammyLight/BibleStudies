@@ -743,10 +743,10 @@ ul.recentposts{
     padding-bottom: 15px !important;
 }
 .Contact-section h1,h5 {
-    color: #d0d0d0 !important;
+    color: #d0d0d0;
 }
 .Contact-section p {
-    color: #d0d0d0 !important;
+    margin: 0.5em 0;
 }
 .Contact-section a  {
     color: #d0d0d0 !important;

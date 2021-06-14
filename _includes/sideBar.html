@@ -23,14 +23,7 @@
             </ul>
     
             <h4 class="titles">Categories</h4>
-            <ul class="recentposts">
-
-                <!-- {% assign items_grouped = site.pages | group_by: 'categories' %}
-                {% for group in items_grouped %}{% if group.categories contains "HomePage-Angel of Yahweh" %}
-               <li> <a>{{group.name}}</a>
-                </li>
-                {% endif %}{% endfor %} -->
-                
+            <ul class="recentposts">                
                 <li>
                     {% for page in site.pages %}
                         {% if page.categories contains "HomePage-Angel of Yahweh" %}
