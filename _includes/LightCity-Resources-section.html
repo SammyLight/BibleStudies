@@ -1,0 +1,54 @@
+<section id="Resources-section">
+	<div class="Resources-grid">
+			<h1 class="titles">Latest Posts</h1>
+			
+			<div class="homeResources-grid">
+				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
+              {% assign my_array = "" | split: ',' %}
+              {% for page in sorted-pages %}
+                {% if page.date And page.date != "" And page.date != nil %}
+                    {% assign my_array = my_array | push: page %}
+                {% endif %}
+              {% endfor %}
+			  
+			  {% for page in my_array limit:5 %}
+                <small class="article-date archive-date"><em>{{ page.date }}</em></small>
+             
+                <h3 class="titles"><a href="{% if site.baseurl == "" %}
+						{{page.url}}
+					{% elsif site.baseurl != "" %}
+						/{{site.baseurl}}{{page.url}}
+					{% endif %}">{{ page.title }}</a>
+				</h3>
+
+				<p class="prayer-text">
+					{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
+						{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) | strip_html | truncatewords: 50 }}
+					{% else %}
+						{{ page.content | strip_html | truncatewords: 50 }}
+					{% endif %}
+				</p>
+				
+                <small><a class="titles" href="{% if site.baseurl == "" %}
+						{{page.url}}
+					{% elsif site.baseurl != "" %}
+						/{{site.baseurl}}{{page.url}}
+					{% endif %}">Continue reading …</a>
+				</small>
+
+			  <div class="prayer-text">
+				<p class="categories"><span>category:</span>
+					{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
+						{% for aaa in site.pages %}
+							{% if aaa.categories contains caty %}
+				<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
+				</a>
+				{% endif %}
+					{% endfor %}
+				</p>
+				<hr>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

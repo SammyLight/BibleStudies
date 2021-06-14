@@ -5,54 +5,23 @@
 layout: homeTEMPLATE
 title: "Site Home"
 ---
-<p><em>Please see the <a href="
-	{% for page in site.pages %}{% if page.title contains "About" %}{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}{% endif %}{% endfor %}">About Page</a> for some sort of statement of belief. Thank you.</em></p>
 
-<header>
-	<h2>A Prayer for You</h2>
-</header>
+<section id="homeBodyContent" class="homeBody-section flex order-lg-1">
+	<div class="visible-titles bg-image collapsible">
+		<h4 class="container-fluid-inner caretText">Latest Posts</h4>
+		<span class="container-fluid-inner caret"></span>
+	</div>
+	{% include sideBar.html %}
+	<div class="col-lg-6">
+	<div class="container-fluid-inner">
+		
+			{% include Intro-to-the-Website.html %}
+			{% include Prayer-for-You.html %}
+			{% include LightCity-Resources-section.html %}	
+		</div>
+	</div>
+</section>
+{% include contact-section.html %}
 
-<p>May God, the Only True God and Father of our Lord Jesus Christ, in the Holy Name of Jesus Christ His Son and Holy Servant strengthen your heart in His Truth.
-	<br>May He give you a willing heart to obey Him and walk in all His ways.
-	<br>May He give you a sincere and pure desire to know Him in Truth.
-	<br>May He guard your heart and deliver you from the deception of the enemy.
-	<br>May He grant you true devotion to Him, placing Him and His Truths above all other considerations.
-	<br>May He give you a heart that trembles at His Word.
-	<br>May He save you from lies and false doctrines of all kinds, mainstream and fringe, ancient and recent, obvious and subtle.
-	<br>May He save you from the wayward wife who has left the Husband of her youth and may you never be numbered among her children.</p>
-
-<h1>LightCity Teaching Resources</h1>
-
-<h3>Angel of Yahweh</h3>
-<ol>
-	{% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-	{% endif %}{% endfor %}
-</ol>
-
-<h3>Bible TimeLines</h3>
-<p>A collection of Bible Timelines</p>
-<ol id="nav">
-	{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-	{% endif %}{% endfor %}
-</ol>
-
-<h3>The Two Falls of Man</h3>
-<ol>
-	{% for page in site.pages %}{% if page.categories contains "Fall of Man" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-	{% endif %}{% endfor %}
-</ol>
-
-<h3>General Resources</h3>
-<p>A collection of Useful Resources</p>
-<ol id="nav">
-	{% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-	{% endif %}{% endfor %}
-</ol>
-
-<h3>Bible Doctrines</h3>
-<p>A collection of Doctrines Treated Thus Far</p>
-<ol id="nav">
-	{% for page in site.pages %}{% if page.categories contains "Bible_Doctrines" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-	{% endif %}{% endfor %}
-</ol>
-</body>
+<script type="text/javascript" src="script/victor'sScripts/recentposts.js"></script>
+<script type="text/javascript" src="script/victor'sScripts/autoScroll.js"></script>

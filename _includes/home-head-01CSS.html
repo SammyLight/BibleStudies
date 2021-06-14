@@ -1,11 +1,8 @@
+{% include AoY-head.html %}
+<link type="text/css" href="style/lightcity-02.css" rel="stylesheet">
+<link type="text/css" href="style/victor's style.css" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="script/victor'sScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="script/victor'sScripts/recentposts.js"></script>
 </head>
-<body>
-{% for page in site.pages %}{% if page.title contains "Site Home" %}
-<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
-
-
-{% for page in site.pages %}{% if page.title contains "About" %}
-<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
-	
-{% for page in site.pages %}{% if page.title contains "Bible Doctrines" %}
-<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
