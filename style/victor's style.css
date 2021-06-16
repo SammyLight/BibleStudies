@@ -56,7 +56,7 @@ button, input, optgroup, textarea {
     height: 50px;
     z-index: 1100;
     background-color: #373433;
-    box-shadow: 1px -3px 14px rgb(0 0 0 / 40%);
+    box-shadow: 0 3px 4px #373433;
 }
 #mobileHeader .mobileHeaderNav {
     margin-left: 16px;
@@ -424,20 +424,15 @@ h3.subtitles{
 .container-fluid {
     position: relative;
 }
-@media only screen and (min-width: 960px){
-/* .container {
-    max-width: 1200px;
-    min-width: 801px;
-    width: auto;
-} */
+
 .container-fluid {
     margin: 0 30px;
     box-shadow: -20px 0 10px -7px rgb(0 0 0 / 10%), 20px 0 10px -7px rgb(0 0 0 / 10%);
-}}
+}
 .container-fluid-inner{
     margin: 0 16px 0;
 }
-@media only screen and (min-width: 520px){
+/* @media only screen and (min-width: 520px){
     .container-fluid-inner {
         margin: 0 24px 0;
 }}
@@ -446,7 +441,7 @@ h3.subtitles{
 .container-fluid-inner {
     margin: 0 32px 0;
 }
-}
+} */
 /* @media only screen and (min-width: 960px){
 .container-fluid-inner {
     margin: 0 64px 0;
@@ -630,7 +625,7 @@ hr {
 .visible-titles{
     background: #edede8;
     height: 40px;
-    box-shadow: 0px 1px 1px #edede8, 0 0 0 #edede8, -1px 1px 0 #edede8, 1px 1px 0 grey !important;
+    box-shadow: 0 2px 4px #bbb5b5;
 }
 .active, .visible-titles:hover {
     /* background-color: #373433; */
