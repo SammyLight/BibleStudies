@@ -56,7 +56,7 @@ button, input, optgroup, textarea {
     height: 50px;
     z-index: 1100;
     background-color: #373433;
-    box-shadow: 1px -3px 14px rgb(0 0 0 / 40%);
+    box-shadow: 0 3px 4px #373433;
 }
 #mobileHeader .mobileHeaderNav {
     margin-left: 16px;
@@ -625,7 +625,7 @@ hr {
 .visible-titles{
     background: #edede8;
     height: 40px;
-    box-shadow: 0px 1px 1px #edede8, 0 0 0 #edede8, -1px 1px 0 #edede8, 1px 1px 0 grey !important;
+    box-shadow: 0 2px 4px #bbb5b5;
 }
 .active, .visible-titles:hover {
     /* background-color: #373433; */
