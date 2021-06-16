@@ -188,6 +188,9 @@ svg:not(:root).svg-inline--fa {
 }
 
 /* desktopHeader CSS */
+#desktopHeader{
+    box-shadow: 0 3px 4px #373433;
+ }
 @media only screen and (max-width: 960px) {
 #desktopHeader{
    display: none;
