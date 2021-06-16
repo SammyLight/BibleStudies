@@ -424,20 +424,15 @@ h3.subtitles{
 .container-fluid {
     position: relative;
 }
-@media only screen and (min-width: 960px){
-/* .container {
-    max-width: 1200px;
-    min-width: 801px;
-    width: auto;
-} */
+
 .container-fluid {
     margin: 0 30px;
     box-shadow: -20px 0 10px -7px rgb(0 0 0 / 10%), 20px 0 10px -7px rgb(0 0 0 / 10%);
-}}
+}
 .container-fluid-inner{
     margin: 0 16px 0;
 }
-@media only screen and (min-width: 520px){
+/* @media only screen and (min-width: 520px){
     .container-fluid-inner {
         margin: 0 24px 0;
 }}
@@ -446,7 +441,7 @@ h3.subtitles{
 .container-fluid-inner {
     margin: 0 32px 0;
 }
-}
+} */
 /* @media only screen and (min-width: 960px){
 .container-fluid-inner {
     margin: 0 64px 0;
