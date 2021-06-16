@@ -626,15 +626,15 @@ function cellListeners() {
 						if (!TD.classList.contains('selected')) {
 							if (TD.innerHTML) {
 								TD.style.backgroundColor = 'rgba(235, 224, 116, 0.45)';
-//								TD.style.backgroundColor = 'rgba(255, 237, 65, 0.6)';
+								//								TD.style.backgroundColor = 'rgba(255, 237, 65, 0.6)';
 							}
 							if (!TD.innerHTML) {
 								TD.style.backgroundColor = 'rgba(196, 184, 117, 0.3)';
-//								TD.style.backgroundColor = 'rgba(255, 52, 208, 0.08)';
+								//								TD.style.backgroundColor = 'rgba(255, 52, 208, 0.08)';
 							}
 							if (this.innerHTML) {
 								this.style.backgroundColor = 'rgba(230, 188, 112, 0.75)';
-//								this.style.backgroundColor = 'rgba(230, 188, 110, 0.75)';
+								//								this.style.backgroundColor = 'rgba(230, 188, 110, 0.75)';
 							}
 						}
 					}
@@ -2340,6 +2340,7 @@ function makeTableEditable() {
 			itm.contentEditable = false
 		})
 	}
+	connectAllDraggableDivsWithSVGLines();
 }
 /******************************************************************************************/
 /******************************************************************************************/
@@ -3350,11 +3351,46 @@ function disConnectTo() {
 /****************************************************************/
 // DarkMode
 var darkModeButton = document.getElementById('darkModeButton');
-function darkModeOnOff(){
+
+function darkModeOnOff() {
 	if (documentBody.classList.contains('darkMode')) {
-		documentBody.classList.remove('darkMode');darkModeButton.innerHTML = 'D';
+		documentBody.classList.remove('darkMode');
+		darkModeButton.innerHTML = 'D';
 	} else {
 		documentBody.classList.add('darkMode');
 		darkModeButton.innerHTML = 'L';
+	}
+}
+
+// MasterNote
+var masterNoteNote = document.getElementById('masterNoteNote');
+var editMasterNote = document.getElementById('editMasterNote');
+window.onload = masterNoteFunc();
+
+masterNote.addEventListener('click', e => {
+	if (e.target == e.currentTarget) {
+		masterNoteClose()
+	}
+})
+
+function masterNoteClose(e) {
+	masterNote.style.display = 'none';
+	masterNoteNote.contentEditable = 'false';
+}
+
+function editMasterNoteFunc() {
+	if (masterNoteNote.contentEditable == 'true') {
+		masterNoteNote.contentEditable = 'false';
+		editMasterNote.style.color = 'red';
+	} else {
+		masterNoteNote.contentEditable = 'true'
+		editMasterNote.style.color = 'green';
+	}
+}
+
+function masterNoteFunc() {
+	//if it has non-whitespace character
+	if (!/\S/i.test(masterNoteNote.innerText)) {
+		masterNoteNote.innerHTML = `<h1>Title</h1><hr><p>Master note</p>`;
 	}
 }

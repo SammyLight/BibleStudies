@@ -44,12 +44,12 @@ function getMissingNumber(arrayOrStringOfNumbers) {
 ///////////////////////////////////////////////
 /*Add Indicator for Cell That Has Details*/
 function addIndicatorShowingThatCellHasDetail (currentCell){
-	var divIndicatingCellHasDetail = currentCell.querySelector('div.localShowDetailButton');
+	var divIndicatingCellHasDetail = currentCell.querySelector('.localShowDetailButton');
 	if (divIndicatingCellHasDetail) {
 		divIndicatingCellHasDetail.remove();
 	}
 	var dtlCount = currentCell.getAttribute('detailIndex');
-	var localShowDetailButton = document.createElement('DIV');
+	var localShowDetailButton = document.createElement('BUTTON');
 	localShowDetailButton.innerHTML = "+";
 	localShowDetailButton.classList.add('localShowDetailButton');
 	localShowDetailButton.id = 'locDtlShowBtn_' + dtlCount;
@@ -57,7 +57,7 @@ function addIndicatorShowingThatCellHasDetail (currentCell){
 	localShowDetailButton.setAttribute('title', "Show notes and details of selected events");
 	localShowDetailButton.setAttribute('onclick', "toggleDetailsSection()");
 	//use css to add content of button
-	currentCell.appendChild(localShowDetailButton);
+	currentCell.prepend(localShowDetailButton);
 }
 
 /*Remove Indicator for Cell That Has Details*/
@@ -67,7 +67,6 @@ function removeIndicatorShowingThatCellHasDetail (currentCell){
 }
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
-
 var detailsSummary = document.getElementById('detailsSummary');
 var previouslyClickedCell;
 var detailsSection = document.getElementById('detailsSection');
