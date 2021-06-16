@@ -12,7 +12,7 @@
               {% endfor %}
 			  
 			  {% for page in my_array limit:5 %}
-                <small class="article-date archive-date"><em>{{ page.date }}</em></small>
+                <small class="archive-date">{{ page.date }}</small>
              
                 <h3 class="titles"><a href="{% if site.baseurl == "" %}
 						{{page.url}}
