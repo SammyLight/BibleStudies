@@ -3,44 +3,109 @@ layout: bibleStoryLineTEMPLATE
 title: "Ages - Major Junctures"
 categories: Timeline
 ---
-<style id="divColorStyles">.opt_Creation { background-color: navy; stroke: navy; }.opt_Flood { background-color: aqua; stroke: aqua; }.opt_Principalities { background-color: mediumspringgreen; stroke: mediumspringgreen; }.opt_AbrahamicChildrenOfGod { background-color: yellowgreen; stroke: yellowgreen; }.opt_OldCovenantIsrael { background-color: dimgrey; stroke: dimgrey; }.opt_NewCovenatnChurch { background-color: burlywood; stroke: burlywood; }</style>
+<style id="divColorStyles">.opt_Creation { background-color: darkkhaki; stroke: darkkhaki; }.opt_Flood { background-color: aqua; stroke: aqua; }.opt_Principalities { background-color: papayawhip; stroke: papayawhip; }.opt_AbrahamicChildrenOfGod { background-color: brown; stroke: brown; }.opt_OldCovenantIsrael { background-color: silver; stroke: silver; }.opt_NewCovenantChurch { background-color: steelblue; stroke: steelblue; }</style>
 {% include BStL-preStorylineTable.html %}
 <table id="storyLineTable">
 							<thead>
 								<tr rowname="Time">
-									<td class="col-1 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="1"><button class="localShowDetailButton" id="locDtlShowBtn_1" detailindex="1" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Creation</h4></td>
-									<td class="col-2 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="2"><button class="localShowDetailButton" id="locDtlShowBtn_2" detailindex="2" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Flood</h4></td>
-									<td class="col-3 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="3"><button class="localShowDetailButton" id="locDtlShowBtn_3" detailindex="3" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Nations</h4></td>
-									<td class="col-4 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="4"><button class="localShowDetailButton" id="locDtlShowBtn_4" detailindex="4" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Abrahamic Covenant</h4></td>
-									<td class="col-5 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="5"><button class="localShowDetailButton" id="locDtlShowBtn_5" detailindex="5" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Old Covenant</h4></td>
-								<td class="col-6 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" detailindex="6"><button class="localShowDetailButton" id="locDtlShowBtn_6" detailindex="6" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">New Covenant</h4></td><td class="col-7 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" detailindex="7"><button class="localShowDetailButton" id="locDtlShowBtn_7" detailindex="7" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Kingdom of God</h4><div class="opt_NewCovenatnChurch draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="NewCovenatnChurch" title="NewCovenatnChurch" draggable="true">New Covenant Church</div><div class="opt_Creation draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Creation" title="Creation" draggable="true">Creation</div><div class="opt_AbrahamicChildrenOfGod draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="AbrahamicChildrenOfGod" title="AbrahamicChildrenOfGod" draggable="true">Abrahamic Children of God</div></td></tr><tr rowname="Time" title="Time">
-									<td class="col-1 dragOverELAdded showingDetail" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" detailindex="8"><button class="localShowDetailButton" id="locDtlShowBtn_8" detailindex="8" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><div class="opt_Creation draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Creation" title="Creation" draggable="true">Creation</div></td>
-									<td class="col-2 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"><div class="opt_Flood draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Flood" title="Flood" draggable="true">Flood</div></td>
-									<td class="col-3 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"><div class="opt_Principalities draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Principalities" title="Principalities" draggable="true">Ps &amp; Ps</div></td>
-									<td class="col-4 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"><div class="opt_AbrahamicChildrenOfGod draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="AbrahamicChildrenOfGod" title="AbrahamicChildrenOfGod" draggable="true">Abrahamic Children of God</div></td>
-									<td class="col-5 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"><div class="opt_OldCovenantIsrael draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="OldCovenantIsrael" title="OldCovenantIsrael" draggable="true">Old Covenant Israel</div></td>
-								<td class="col-6 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"><div class="opt_NewCovenatnChurch draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="NewCovenatnChurch" title="NewCovenatnChurch" draggable="true">New Covenant Church</div></td><td class="col-7 dragOverELAdded" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td></tr>
+									<td class="dragOverELAdded showingDetail col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="1"><button class="localShowDetailButton" id="locDtlShowBtn_1" detailindex="1" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Creation</h4></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="2"><button class="localShowDetailButton" id="locDtlShowBtn_2" detailindex="2" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Flood</h4></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="3"><button class="localShowDetailButton" id="locDtlShowBtn_3" detailindex="3" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Nations</h4></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="4"><button class="localShowDetailButton" id="locDtlShowBtn_4" detailindex="4" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Abrahamic Covenant</h4></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" detailindex="5"><button class="localShowDetailButton" id="locDtlShowBtn_5" detailindex="5" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false"><span>Old Covenant</span></h4></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="0" colspan="1" detailindex="6"><button class="localShowDetailButton" id="locDtlShowBtn_6" detailindex="6" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">New Covenant</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="0" detailindex="7"><button class="localShowDetailButton" id="locDtlShowBtn_7" detailindex="7" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</button><h4 contenteditable="false">Kingdom of God</h4></td>
+								</tr>
 							</thead>
 							<tbody>
-								
-								<tr>
-									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
-									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
-									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
-									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
-									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
-								<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td></tr><tr>
+								<tr rowname="Creation" title="Creation">
+									<td class="dragOverELAdded col-1 col-2 col-3 col-4 col-5 col-6 col-7" originalcolspan="7" hiddencol_xs_count="0" colspan="7" rindex="1"><h4 contenteditable="false">Creation</h4></td>
+									
+									
+									
+									
+								</tr>
+								<tr rowname="Creation" title="Creation">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"><div class="opt_Creation draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Creation" title="Creation" draggable="true">Creation</div></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"><div class="opt_Creation draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Creation" title="Creation" draggable="true">Creation</div></td>
+								</tr><tr rowname="Flood" title="Flood">
 									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
-									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
-									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
-									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
-									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
-								<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1"><div class="opt_OldCovenantIsrael draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="OldCovenantIsrael" title="OldCovenantIsrael" draggable="true">Old Covenant Israel</div><div class="opt_Principalities draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Principalities" title="Principalities" draggable="true">Ps &amp; Ps</div><div class="opt_Flood draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Flood" title="Flood" draggable="true">Flood</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="3" colspan="1"></td></tr>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"><h4 contenteditable="false">Flood</h4></td>
+									<td class="dragOverELAdded col-3 col-4 col-5 col-6" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="3"></td>
+									
+									<td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="3"></td>
+								</tr><tr rowname="Flood" title="Flood">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"><div class="opt_Flood draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Flood" title="Flood" draggable="true">Flood</div></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"><div class="opt_Flood draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Flood" title="Flood" draggable="true">Flood</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+								</tr><tr rowname="Nations" title="Nations">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-3 col-4 col-5 col-6" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="5"><h4 contenteditable="false">Principalities and Powers</h4></td>
+									
+									<td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+								</tr><tr rowname="Nations" title="Nations">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6"><div class="opt_Principalities draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Principalities" title="Principalities" draggable="true">Ps &amp; Ps</div></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="6" colspan="1"><div class="opt_Principalities draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Principalities" title="Principalities" draggable="true">Ps &amp; Ps</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="6"></td>
+								</tr><tr rowname="Abrahamic Covenant" title="Abrahamic Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="7"></td>
+									<td class="dragOverELAdded col-4 col-5 col-6 col-7" originalcolspan="4" hiddencol_xs_count="0" colspan="4" rindex="7"><h4 contenteditable="false">Abrahamic Covenant</h4></td>
+									
+								</tr><tr rowname="Abrahamic Covenant" title="Abrahamic Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8"><div class="opt_AbrahamicChildrenOfGod draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="AbrahamicChildrenOfGod" title="AbrahamicChildrenOfGod" draggable="true">Abraham's Children Of God</div></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="8" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="8"><div class="opt_AbrahamicChildrenOfGod draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="AbrahamicChildrenOfGod" title="AbrahamicChildrenOfGod" draggable="true">Abraham's Children Of God</div></td>
+								</tr><tr rowname="Old Covenant" title="Old Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9"></td>
+									<td class="dragOverELAdded col-5 col-6" originalcolspan="2" hiddencol_xs_count="0" rindex="9" colspan="2"><h4 contenteditable="false">Old Covenant</h4></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="9"></td>
+								</tr><tr rowname="Old Covenant" title="Old Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1"><div class="opt_OldCovenantIsrael draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="OldCovenantIsrael" title="OldCovenantIsrael" draggable="true">Old Covenant Israel</div></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="10" colspan="1"><div class="opt_OldCovenantIsrael draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="OldCovenantIsrael" title="OldCovenantIsrael" draggable="true">Old Covenant Israel</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="10"></td>
+								</tr><tr rowname="New Covenant" title="New Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="11"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="11" colspan="1"></td><td class="dragOverELAdded col-6 col-7" originalcolspan="2" hiddencol_xs_count="0" rindex="11" colspan="2"><h4 contenteditable="false">New Covenant</h4></td>
+								</tr><tr rowname="New Covenant" title="New Covenant">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="12" colspan="1"><div class="opt_NewCovenantChurch draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="NewCovenantChurch" title="NewCovenantChurch" draggable="true">New Covenant Church</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="12"><div class="opt_NewCovenantChurch draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="NewCovenantChurch" title="NewCovenantChurch" draggable="true">New Covenant Church</div></td>
+								</tr><tr rowname="Kingdom" title="Kingdom">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="13" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="13"><h4 contenteditable="false">Kingdom of God</h4></td>
+								</tr><tr rowname="Kingdom" title="Kingdom">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1"></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="14" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="14"></td>
+								</tr>
 							</tbody>
 						</table>
 
 {% include BStL-masterTableEND.html %}
- 
  
  
         <h1>Title</h1>
@@ -48,12 +113,11 @@ categories: Timeline
         <p>Master note</p>
     
 
-
 {% include BStL-detailsSection-Buttons.html %}
 
 	<div id="detailsSummary" class="scrollbar-custom">
 
-		<div class="hideDetail" id="detail_1" detailindex="1" contenteditable="false"><h1>All Men are by Creation God’s Children/People <em>(through Christ)</em></h1>
+		<div class="showDetail" id="detail_1" detailindex="1" contenteditable="false"><h1>All Men are by Creation God’s Children/People <em>(through Christ)</em></h1>
 <hr>
 <ol>
 	<li>By creation, all men are under Pre-Incarnate Christ…
@@ -85,9 +149,7 @@ categories: Timeline
 			<li>The <strong>Glory of God </strong>to enter the Most Holy Place <em>(man was created for glory)</em></li>
 		</ol>
 	</li>
-</ol></div>
-
-      <div class="hideDetail" id="detail_2" detailindex="2" contenteditable="false"><h1>Eden Temple Destroyed—Man is Cast out of God’s Presence</h1>
+</ol></div><div class="hideDetail" id="detail_2" detailindex="2" contenteditable="false"><h1>Eden Temple Destroyed—Man is Cast out of God’s Presence</h1>
 <hr>
 <ol>
 	<li>Eden <em>(and its Garden) </em>was God’s first dwelling place on earth. This temple was for all mankind.
@@ -120,7 +182,6 @@ categories: Timeline
 </li>
 <li>All future benefits, such as provision for eternal life and glorification become unavailable to the Gentiles, because they are no longer under Christ and have become disconnected from him</li>
 </ol>
-
 </div><div class="hideDetail" id="detail_4" detailindex="4" contenteditable="false"><h1>Abraham’s Descendants are all God’s People/Children by Covenant</h1>
 <hr>
 <ol>
@@ -177,4 +238,4 @@ categories: Timeline
 	</ol>
 </ol></div>
 
-      <div class="showDetail" id="detail_8" detailindex="8" contenteditable="true"><p></p></div>
+      
