@@ -3,11 +3,20 @@
 /*	top: 0;*/
 	right: 0;
 	float: right;
-	background-color: #fffff8;
+	background-color: #ffff8;
 	font-size: 33px;
 	padding: 0;
 }
 
+#saveDynamicDataToFile_1 {
+	position: fixed;
+/*	top: 0;*/
+	right: 0;
+	float: right;
+	background-color: #ffff8;
+	font-size: 33px;
+	padding: 0;
+}
 
 .grid {
 	display: grid;

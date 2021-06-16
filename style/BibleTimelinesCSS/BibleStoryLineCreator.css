@@ -35,12 +35,12 @@
   /*	column-rule: thin solid black;*/
 }
 
-#websiteNav li > a {
+#websiteNav li>a {
   display: block;
   text-decoration: none;
 }
 
-#websiteNav li > a:hover {
+#websiteNav li>a:hover {
   text-decoration: underline;
   color: red;
 }
@@ -84,7 +84,7 @@
   font-style: italic;
 }
 
-nav.gid2 > h1 {
+nav.gid2>h1 {
   padding: 0;
   margin: 0;
   /*	padding-left: 25px;*/
@@ -182,10 +182,6 @@ body {
   grid-area: foot1;
 }
 
-/* #divTableContainer,
-#masterNav {
-} */
-
 #svg {
   pointer-events: none;
   /*THIS MAKES IT POSSIBLE TO CLICK THROUGH THE SVG*/
@@ -204,10 +200,9 @@ body {
 }
 
 #divTableContainer {
-  max-height: 90vh;
+  min-height: 85vh;
   margin-left: 10px;
   margin-right: 10px;
-
   border: 0.5px solid #cccccc;
   border-radius: 2.5px;
   box-shadow: 0px 3px 6px -3px black;
@@ -233,11 +228,6 @@ table h6:not(:last-of-type) {
   margin-top: 1.75em;
 }
 
-#masterTable {
-  position: relative;
-  background-color: beige;
-}
-
 .headbuttons {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -258,15 +248,20 @@ table h6:not(:last-of-type) {
   background-color: #fcffb6;
 }
 
-.headbuttons > span {
+.headbuttons>span {
   font-size: 1.5em;
 }
 
-.headbuttons > input {
+.headbuttons>input {
   width: 20px;
 }
 
-#masterTable > td {
+#masterTable {
+  /* height: 100%; */
+  position: relative;
+}
+
+#masterTable>td {
   background-color: transparent;
 }
 
@@ -279,6 +274,7 @@ table h6:not(:last-of-type) {
 #legendTable {
   margin-top: 5px;
   position: relative;
+  background-color: rgba(245, 245, 220, 0.5);
   box-shadow: 0px 3px 6px -3px black;
   z-index: 2;
 }
@@ -296,8 +292,8 @@ table h6:not(:last-of-type) {
 
 #storyLineTable tr:hover {
   border: 2px solid black;
-  /*	background-color: rgba(255, 231, 0, 0.24);*/
-  /*	background-color: rgba(255, 52, 208, 0.08);*/
+  background-color: rgba(255, 231, 0, 0.24);
+  background-color: rgba(255, 52, 208, 0.08);
   background-color: rgba(196, 184, 117, 0.3);
 }
 
@@ -315,19 +311,8 @@ table h6:not(:last-of-type) {
   padding-right: 5px;
 }
 
-/* #storyLineTable td,
-#storyLineTable th {
-  	box-shadow: 0 8px 7.5px -8px black;
-  	box-shadow: 0 4px 5px -6px black;
-} */
-
-#legendTable td:hover,
-#legendTable th:hover,
-#storyLineTable td:hover,
-#storyLineTable th:hover {
-  box-shadow: rgba(0, 0, 0, 0.09) 0px -2px 1px, rgba(0, 0, 0, 0.09) 0px -4px 2px,
-    rgba(0, 0, 0, 0.09) 0px -8px 4px, rgba(0, 0, 0, 0.09) 0px -16px 8px,
-    rgba(0, 0, 0, 0.09) 0px -32px 16px;
+#storyLineTable tr:hover {
+  box-shadow: 0 4px 5px -6px black;
 }
 
 #legendTable th,
@@ -336,16 +321,16 @@ table h6:not(:last-of-type) {
 #storyLineTable thead td,
 #legendTable tr[rowname="Time"] td:not(:empty),
 #storyLineTable tr[rowname="Time"] td:not(:empty) {
-  /*	background-color: rgba(34, 103, 95, 0.6);*/
-  /*	background-color: rgba(247, 233, 102, 0.6);*/
-  /*	background-color: rgba(226, 211, 189, 0.6);*/
+  background-color: rgba(255, 253, 219, 0.335);
+  background-color: rgba(247, 233, 102, 0.6);
+  background-color: rgba(255, 234, 115, 0.6);
   background-color: rgba(224, 219, 153, 0.6);
   border-radius: 2px;
-  /*	box-shadow: 0 4px 5px -6px black;*/
+  /* box-shadow: 0 4px 5px -6px black; */
 }
 
 #legendTable th:empty,
-#legendTable thead td:empty,
+#legendTable td:empty,
 #storyLineTable th:empty,
 #storyLineTable td:empty {
   /*			visibility:hidden;*/
@@ -405,7 +390,7 @@ table h6:not(:last-of-type) {
   text-overflow: ellipsis;
 }
 
-#tableBuilder > div:not(#tableBuilderheader) {
+#tableBuilder>div:not(#tableBuilderheader) {
   padding-left: 5px;
   padding-bottom: 10px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -413,7 +398,7 @@ table h6:not(:last-of-type) {
   box-shadow: 0 8px 6px -8px black;
 }
 
-#tableBuilder > div:not(#tableBuilderheader) {
+#tableBuilder>div:not(#tableBuilderheader) {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -437,7 +422,7 @@ table h6:not(:last-of-type) {
   background-color: #ffd35c;
 }
 
-#tableBuilder > div > div h4 {
+#tableBuilder>div>div h4 {
   padding-bottom: 0;
   margin-bottom: 0;
   margin-top: 7px;
@@ -446,11 +431,11 @@ table h6:not(:last-of-type) {
   border-bottom: 1px solid grey;
 }
 
-#tableBuilder > div > div h4:hover {
+#tableBuilder>div>div h4:hover {
   color: #bf0093;
 }
 
-#tableBuilder > div button {
+#tableBuilder>div button {
   width: 100%;
   display: inline-block;
   cursor: pointer;
@@ -512,12 +497,7 @@ button.delete:hover {
 
 input {
   display: block;
-  width: 93%;
-}
-
-#alternateStoryLineEditorButtons select {
-  display: block;
-  width: 98%;
+  /* width: 93%; */
 }
 
 .btnactivecolor {
@@ -525,7 +505,7 @@ input {
 }
 
 /*DIV LABELS STYLING*/
-td > div {
+td>div {
   /*
 	position: relative;
 	display: block;
@@ -550,8 +530,8 @@ td > div {
   font-weight: bold;
 }
 
-#storyLineTable th > div:first-of-type,
-#storyLineTable td > div:first-of-type {
+#storyLineTable th>div:first-of-type,
+#storyLineTable td>div:first-of-type {
   margin-top: 5px;
 }
 
@@ -561,23 +541,23 @@ td > div {
   margin-bottom: 7.5px;
 }
 
-#storyLineTable th h4 > div:first-of-type,
-#storyLineTable td h4 > div:first-of-type {
+#storyLineTable th h4>div:first-of-type,
+#storyLineTable td h4>div:first-of-type {
   margin-top: 5px;
 }
 
-#storyLineTable th .locationspan + div,
-#storyLineTable td .locationspan + div {
+#storyLineTable th .locationspan+div,
+#storyLineTable td .locationspan+div {
   margin-top: 10px;
 }
 
-#storyLineTable th h4 + div,
-#storyLineTable td h4 + div {
+#storyLineTable th h4+div,
+#storyLineTable td h4+div {
   margin-top: 20px;
 }
 
-#storyLineTable th .locationspan > h4 > div,
-#storyLineTable td .locationspan > h4 > div {
+#storyLineTable th .locationspan>h4>div,
+#storyLineTable td .locationspan>h4>div {
   margin-top: 25px;
 }
 
@@ -589,43 +569,32 @@ td > div {
 /*TO INDICATE EVENTS WITH DETAILS*/
 /******************/
 #storyLineTable .localShowDetailButton {
-  /* content: "+"; */
   position: absolute;
-  top: 0px !important;
-  left: 0 !important;
-  padding: 0 !important;
+  top: 0;
+  left: 0;
+  padding: 0 1px;
   margin: 0 !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  font-weight: bolder;
-  font-style: italic;
+  background-color: rgba(255, 217, 0, 0.082);
+  border: transparent;
   color: darkred;
   cursor: pointer;
   z-index: 80;
 }
 
 #storyLineTable .localShowDetailButton:hover {
-  font-size: 15px;
+  background-color: rgba(255, 251, 0, 0.513);
 }
 
 #storyLineTable td[detailindex]:hover:not(.showingDetail) {
-  /* box-sizing: border-box; */
-  border: 3px solid indianRed;
-  /* box-shadow:
-  3px 3px 0px 0px indianred inset,
-  -3px -3px 0px 0px indianred inset,
-  rgba(0, 0, 0, 0.09) 0px -2px 1px,
-  rgba(0, 0, 0, 0.09) 0px -4px 2px,
-  rgba(0, 0, 0, 0.09) 0px -8px 4px,
-  rgba(0, 0, 0, 0.09) 0px -16px 8px,
-  rgba(0, 0, 0, 0.09) 0px -32px 16px; */
+  box-shadow: grey 0px 0px 0px 1px inset;
+  border-color: transparent !important;
 }
 
 /* #storyLineTable td[detailindex] > h4:only-child {
   	margin-top: 5px;
 } */
 
-#storyLineTable td[detailindex] > .locationspan + h4 {
+#storyLineTable td[detailindex]>.locationspan+h4 {
   margin-top: 10px;
 }
 
@@ -635,15 +604,13 @@ td > div {
 } */
 
 #storyLineTable td:not(:empty):active {
-  border: 1px solid darkOrange;
-  border-right: 1px solid darkOrange;
-  border-top: 1px solid darkOrange;
-  padding-left: 3px;
-  /*	box-shadow:		
+  border-color: darkOrange;
+  box-shadow: grey 0px 1px 0px 0px inset;
+  /* box-shadow:		
 		rgba(255, 235, 0, 0.54) 8px 1px 20px 0px,
 		rgba(255, 128, 0, 0.63) 2px -2px 20px 0px,
 		rgb(245, 255, 0) 2px -10px 20px -2px,
-		rgba(255, 0, 245, 0.66) 2px -20px 20px -5px !important;*/
+		rgba(255, 0, 245, 0.66) 2px -20px 20px -5px !important; */
 }
 
 /*DETAILS SECTIONS*/
@@ -669,10 +636,10 @@ td > div {
   /*	top: 0;*/
   right: 0;
   min-height: 350px;
-  max-height: 95vh;
+  max-height: calc(100vh - 30px);
   height: 100vh;
   width: 25vw;
-  min-width: 150px;
+  min-width: 323px;
   /*	border-radius: 5px;*/
   z-index: 11;
   overflow: auto;
@@ -721,6 +688,40 @@ td > div {
 }
 
 /**********************/
+#masterNote {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(253, 253, 215, 0.822);
+  z-index: 99;
+}
+
+#closeMasterNote {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+#editMasterNote {
+  position: absolute;
+  right: 0;
+  top:25px;
+  z-index: 2;
+}
+
+#masterNote>div {
+  position: inherit;
+  padding: 10px;
+  height: calc(100% - 10vw);
+  top: 2.5vw;
+  left: 10vw;
+  right: 10vw;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: calc(100% - 20vw);
+  box-shadow: #847e7f 10px 0 5px 0,
+    #847e7f -10px 0 5px 0;
+  overflow-y: auto;
+}
 
 #detailsKeyFacts {
   width: 95px;
@@ -771,7 +772,7 @@ td > div {
   background-color: white;
 }
 
-#detailsSummary > div > p:empty::before {
+#detailsSummary>div>p:empty::before {
   content: "Insert details for selected cell here";
 }
 
@@ -841,24 +842,23 @@ td > div {
 /*To indicate the td whose detail is currently showing*/
 .showingDetail {
   color: darkred;
-  border: 3px solid darkmagenta !important;
-  background-color: rgba(249, 255, 92, 0.37) !important;
-  box-shadow: rgba(255, 128, 0, 0.63) 1px 0px 0.5px 0px,
-    rgba(255, 128, 0, 0.63) 0px 0px 0.5px 0px;
+  background-color: rgba(255, 253, 116, 0.3) !important;
+  box-shadow: grey 1.5px 0px 0px 0px inset,
+    grey -1.5px 0px 0px 0px inset;
 }
 
 .showingDetail:hover {
-  border: 3px solid indianRed !important;
-  /*box-shadow:
-		#ff8000 1px 0px 2px 0px,
-		#ff8000 0px 0px 2px 0px !important;*/
+  background-color: rgba(179, 255, 92, 0.267) !important;
+  background-color: rgba(251, 255, 0, 0.3) !important;
+  box-shadow: purple 1.5px 0px 0px 0px inset,
+    purple -1.5px 0px 0px 0px inset;
 }
 
 .showingDetail:active {
-  box-shadow: 0 0 0 0 !important;
-  border: 1px solid darkOrange !important;
+  box-shadow: darkOrange 0 0 -1px 0 inset !important;
+  /* border: 1px solid darkOrange !important;
   border-right: 1px solid darkOrange !important;
-  border-top: 1px solid darkOrange !important;
+  border-top: 1px solid darkOrange !important; */
 }
 
 .showingDetail:active:before {
@@ -873,31 +873,35 @@ td > div {
   font-weight: 1000;
   align-items: flex-end;
   position: fixed;
-  /*	bottom: 435px;*/
+  padding-bottom: 20px;
   right: 32px;
-  width: 970px;
-  height: 300px;
+  width: 350px;
+  max-height: 95vh;
   background-color: rgba(245, 245, 220, 0.97);
   border-radius: 5px;
   box-shadow: 0px 0px 1px 1px grey, 5px 5px 60px -20px grey;
   z-index: 12;
 }
 
-#alternateStoryLineEditorButtons
-  > div:not(#alternateStoryLineEditorButtonsheader) {
+#alternateStoryLineEditorButtonsBody {
+  padding-left: 6px;
+  padding-right: 6px;
+  min-height: 350px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#alternateStoryLineEditorButtons>div:not(#alternateStoryLineEditorButtonsheader) {
   font-size: 11px;
 }
 
 #alternateStoryLineEditorButtons button {
   font-size: 12px;
-  width: 70px;
-  min-height: 35px;
 }
 
 #alternateStoryLineEditorButtons button:hover {
   background-color: aquamarine;
-  border: 1px solid grey;
-  border-radius: 3px;
 }
 
 #alternateStoryLineEditorButtons button:active {
@@ -919,20 +923,15 @@ td > div {
   margin: 0;
 }
 
-#alternateStoryLineEditorButtons > div > span {
+#alternateStoryLineEditorButtons>div>h2,
+#alternateStoryLineEditorButtons>div>h3 {
   font-style: italic;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-right: 10px;
-  width: 50px;
-  padding-right: 5px;
-  padding-top: 10px;
-  /*			padding-bottom: 10px;*/
-  border-radius: 2px;
-  text-align: right;
+  font-family: cursive;
+  margin-bottom: -5px;
+  margin-top: 5px;
 }
 
-#alternateStoryLineEditorButtons > .vertical {
+#alternateStoryLineEditorButtons>.vertical {
   background-color: beige;
   border: 1px solid #bcbcbc;
   padding: 0 2px;
@@ -965,51 +964,70 @@ td > div {
 }
 
 #alternateClose {
+  background-color: transparent;
   min-height: 25px !important;
   position: absolute;
   width: 30px !important;
-  right: 2px;
-  top: 5px;
+  right: 4px;
+  top: 1px;
   border: 1px solid grey;
   border-radius: 3px;
   cursor: pointer;
   box-shadow: 2px 2px 2px 0px grey;
 }
 
-/*
-#alternateStoryLineEditorButtonsheader {
-	width: 100%;
-	height: 30px;
-	background-color: #f0de92;
-	border-bottom: 1px solid grey;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-*/
-
-#deleteButtons {
-  background-color: rgba(255, 192, 203, 0.57) !important;
+.editInputnButton {
+  width: 100%;
+  display: inline-flex;
 }
 
-#mergeAndSplit {
-  background-color: rgba(255, 249, 172, 0.64) !important;
+.editInputnButton>button {
+  width: 100px;
+  background-color: rgb(250, 255, 175);
 }
 
-#realignandreconnect {
-  min-height: 53px;
-}
-
-#realignandreconnect button {
-  background-color: floralwhite;
-  border: 0.5px solid grey;
-  border-radius: 3px;
-}
-
-#realignandreconnect #saveDynamicDataToFile_2 {
-  background-color: #ffff99;
-  font-size: 25px;
-  padding: 0;
+.editInputnButton>span {
+  width: 100px;
+  text-align: right;
+  padding-right: 5px;
   font-style: italic;
+}
+
+/* .editInputnButton> div:first-child, */
+.editInputnButton>h3 {
+  width: 38px;
+  margin-right: 20px;
+  text-align: right;
+  font-family: cursive;
+  font-style: italic;
+}
+
+.editInputnButton .inputNselect {
+  display: block;
+  width: 93%;
+  margin-bottom: 5px;
+}
+
+.editInputnButton .inputNselect input {
+  width: 97%;
+}
+
+.editInputnButton .inputNselect select {
+  width: 100% !important;
+}
+
+.editInputnButton2 {
+  column-count: 3;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.editInputnButton2 span {
+  font-style: italic;
+}
+
+#divClassOptionsDropdown {
+  width: 105% !important;
 }
 
 /*SHOW HIDE DIVS SECTION*/
@@ -1079,15 +1097,15 @@ td > div {
   margin-right: 0.5rem;
 }
 
-#masterNav li > label {
+#masterNav li>label {
   flex-grow: 2;
 }
 
-#masterNav li > input {
+#masterNav li>input {
   width: 20px;
 }
 
-#masterNav > div {
+#masterNav>div {
   border-bottom: 3px solid #bcbcbc;
 }
 
@@ -1117,7 +1135,7 @@ td > div {
   font-size: 2rem;
 }
 
-#tdandtrDrag > div:first-child {
+#tdandtrDrag>div:first-child {
   /*			border-bottom: 1px solid black;*/
   margin-bottom: 10px;
 }
@@ -1225,11 +1243,11 @@ img.intLink {
   grid-column-end: 3;
 }
 
-#editMode > label {
+#editMode>label {
   float: left;
 }
 
-#editMode > input {
+#editMode>input {
   width: 10px;
   float: left;
 }
@@ -1305,7 +1323,7 @@ img.intLink {
   grid-auto-columns: 1fr;
 }
 
-#pageFootSection > .masterNavButtonsToggle {
+#pageFootSection>.masterNavButtonsToggle {
   grid-area: "pageBottomLeft_2";
 }
 
@@ -1331,16 +1349,20 @@ img.intLink {
   padding: 0;
 }
 
+pre#sourceText {
+  white-space: pre-wrap;
+}
+
 /* THIS MEDIA QUERY REQUIRES WORK */
 /*@media only screen and (max-width: 768px) {*/
 @media (max-width: 768px) {
+
   /*@media (orientation: portrait) {*/
   body {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto 1fr auto auto;
-    grid-template-areas:
-      "header1    header1"
+    grid-template-areas: "header1    header1"
       "header2    header2"
       "mainbody   mainbody"
       "foot1      foot1"
@@ -1364,13 +1386,26 @@ img.intLink {
   #alternateStoryLineEditorButtons,
   #detailsSection {
     position: fixed;
+    top: 0;
+    /* bottom: 37px !important; */
     left: 0vw;
     right: 0vw;
     width: 100vw;
     min-width: 100vw;
-    min-height: 90vh;
-    bottom: 37px !important;
-    max-height: 100vh;
+    /* min-height: 90vh;
+    max-height: 100vh; */
+    height: calc(100vh - 39px);
+  }
+
+  #alternateStoryLineEditorButtons {
+    overflow-y: hidden;
+    overflow-x: hidden !important;
+  }
+
+  #alternateStoryLineEditorButtonsBody {
+    overflow-y: scroll;
+    overflow-x: hidden !important;
+    height: calc(100vh - 60px);
   }
 
   #pageFootSection {
@@ -1379,11 +1414,9 @@ img.intLink {
   }
 
   #detailsSection {
-    top: 0;
     grid-template-rows: auto auto auto 1fr auto;
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "titlebar     "
+    grid-template-areas: "titlebar     "
       "editorButtons"
       "keyfacts      "
       "notes        "
@@ -1407,10 +1440,6 @@ img.intLink {
     margin: 0;
   }
 
-  /* #detailsKeyFacts ul,
-  #detailsKeyFacts li {
-  } */
-
   #detailsSummary {
     grid-area: notes;
     background-color: rgba(255, 255, 255, 0.75);
@@ -1428,32 +1457,12 @@ img.intLink {
     grid-area: showHtml;
   }
 
-  /* #alternateStoryLineEditorButtons {
-    
-		position: fixed;
-		top: 60px;
-		min-height: auto !important;
-		height: auto !important;
-		max-height: 90vh!important;
-
-    top: !important;
-  } */
-
-  #alternateStoryLineEditorButtonsBody > div {
+  #alternateStoryLineEditorButtonsBody>div {
     width: 100vw;
     overflow-x: scroll;
   }
 
-  /* #alternateStoryLineEditorButtonsBody button {
-  }
-
-  #alternateStoryLineEditorButtonsheader {
-  }
-
-  #pageBottomStorylineTableEditorButtons {
-  } */
-
-  #pageBottomStorylineTableEditorButtons .headbuttons > span {
+  #pageBottomStorylineTableEditorButtons .headbuttons>span {
     display: none;
   }
 
