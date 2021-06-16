@@ -523,22 +523,17 @@ img {
 .archive-date {
     display: block;
     color: #6b6161;
-    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 17px;
     margin-top: 20px;
 }
-/* .archive-date, .store-date {
-    color: #898181;
-    font-size: 14px;
-    font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
-    display: block;
-    line-height: 2.5;
-    margin-left: 15px;
-    margin-bottom: 10px;
-} */
+.recentposts .archive-date {
+    color: #d0d0d0;
+    margin-top: 0;
+}
 .small, small {
     font-size: 87%;
 }
@@ -558,15 +553,13 @@ a.cat-link:hover{
 }
 hr {
     margin-top: 20px;
-
-}
-hr {
     border: 0;
     border-top: 1px solid #898181;
     clear: both;
     margin-top: 20px;
     margin-bottom: 0;
 }
+
 @media only screen and (min-width: 520px){
 .homeResources-grid {
     display: -ms-grid;
@@ -673,7 +666,7 @@ hr {
 
   
 .content {
-/*         max-height: 0; */
+        max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
 }
