@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Table2ArrayTEST</title>
+	<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+	<style>
+		table {
+			display: none;
+			border-collapse: collapse;
+			border-spacing: none;
+		}
+
+		td {
+			border: 1px solid black;
+		}
+
+		svg {
+/*			background-color: palegoldenrod;*/
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 500%;
+			height: 500%;
+		}
+
+		svg path, .cool {
+			stroke: purple;
+		}
+		
+		.cool {
+			fill:purple;
+		}
+
+		svg path {
+/*			stroke-width: 5px;*/
+			marker-end: url(#arrow);
+		}
+	</style>
+</head>
+
+<body>
+	<svg id="svg">
+		<defs>
+			<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2" markerHeight="2" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" class="cool"></path>
+			</marker>
+		</defs>
+	</svg>
+	<table id="tableFORarray">
+		<tbody>
+			<tr id="GOD">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td to="GOD">Yahweh of Hosts [Zec 1:12]</td>
+				<td to="guidingAngel">Yahweh [Zec 1:13]</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="angelOnRedHorse">
+				<td>The Angel on a Red Horsestanding among the Myrtle Trees [Zec 1:8]</td>
+				<td></td>
+				<td></td>
+				<td to="zechariah">The Man standing among the myrtle trees [Zec 1:10]</td>
+				<td to="GOD">The Angel of Yahweh standing among the myrtle trees [Zec 1:11]</td>
+				<td>The Angel of Yahweh [Zec 1:12]</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="horses">
+				<td to="zechariah">Red, brown and white horses [Zec 1:8]</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td to="angelOnRedHorse">Red, brown and white horses [Zec 1:11]</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="guidingAngel">
+				<td></td>
+				<td to="guidingAngel">The Angel talking with Zechariah [Zec 1:9]</td>
+				<td to="zechariah">The Angel talking with Zechariah [Zec 1:9]</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td to="zechariah">The Angel talking with Zechariah [Zec 1:13]</td>
+				<td to="guidingAngel">The Angel talking with Zechariah [Zec 1:13]</td>
+				<td to="GOD">Zechariah 2</td>
+			</tr>
+			<tr id="zechariah">
+				<td></td>
+				<td to="guidingAngel">Zechariah [Zec 1:7,9]</td>
+				<td to="angelOnRedHorse">Zechariah [Zec 1:7,9]</td>
+				<td to="horses">Zechariah [Zec 1:7,9]</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td to="guidingAngel">4. Zechariah [Zec 1:7,9]</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script type="text/javascript" src="table2arrayJS.js"></script>
+<script type="text/javascript" src="BLB.ScriptureTooltip.js"></script>
+
+<!--<script type="text/javascript" src="script/reftager.js"></script>-->
+
+</html>
