@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <div id="homeHeader" class="bg-color bg-image">
+    <nav id="homeHeader" class="bg-color bg-image">
         <div class="container">
             <div class="container-fluid-inner cms-clearfix">
-                <nav class="homeHeaderNav align-items">
+                <div class="homeHeaderNav align-items">
                     <div class="churchLOGO">
                         {% for page in site.pages %}{% if page.title contains "Site Home" %}
                             <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -26,12 +26,12 @@
                         </li>
                         
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+                            {% for page in site.pages %}{% if page.categories contains "HomePage-Angel of Yahweh" %}
                             <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
                         </li>
                         </ul>
                     </div>
-                </nav>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>

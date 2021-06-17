@@ -1,6 +1,5 @@
-<link type="text/css" href="../style/victor's style.css" rel="stylesheet">
 <link type="text/css" href="../style/lightcity-02.css" rel="stylesheet">
-<link type="text/css" href="style/article-style.css" rel="stylesheet">
+<link type="text/css" href="../style/article-style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link type="text/css" href="../style/style_compareTable.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,8 +13,10 @@
             <div class="container-fluid-inner cms-clearfix">
                 <nav class="homeHeaderNav align-items">
                     <div class="churchLOGO">
-                        <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
-                        <!-- <p class="header-links-li">Bible Study Website</p> -->
+                        {% for page in site.pages %}{% if page.title contains "Site Home" %}
+                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                            </a>{% endif %}{% endfor %}
                     </div>
                     <div class="headerUL">
                         <ul class="header-links"></ul>
