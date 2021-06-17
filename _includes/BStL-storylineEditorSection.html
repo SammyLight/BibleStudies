@@ -1,0 +1,292 @@
+
+
+<section id="alternateStoryLineEditorButtons">
+	<div id="alternateStoryLineEditorButtonsheader" class="titleBarH3">
+		<h3>Table Editor/Creator</h3>
+		<button id="alternateClose" onclick="alternateClose()">X</button>
+	</div>
+	
+	<div id="alternateStoryLineEditorButtonsBody">
+		<!--Table-->
+		<div id="realignandreconnect" class="vertical">
+			<span>Table:</span>
+			<div class="vertical"><button onclick="buildLegendTable()">Re-Align Tables</button><button onclick="connectAllDraggableDivsWithSVGLines()">Connect Divs</button><button onclick="btn_buildLegendTable()"><strong>Restore Timeline</strong></button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE"><strong>&#128190;</strong> </button>
+			</div>
+		</div>
+		
+		<!--Delete-->
+		<div id="deleteButtons" class="vertical">
+			<span>Delete:</span>
+			<div class="vertical">
+				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+					✘<br />Del<br />Label
+				</button><button title="delete label" onclick="destroyCell()">
+					✘<br />Del<br />Cell
+				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+					✘<br />Del<br />Row
+				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+					✘<br />Del<br />Col
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Merge & Split-->
+		<div id="mergeAndSplit" class="vertical">
+			<span>Merge<br>/Split:</span>
+			<div class="vertical">
+				<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
+					&#10010;
+					<br />
+					Select
+					<br />
+					Cells
+				</button><button title="merge selected cells" onclick="mergeCells()">
+					&#124; &#129034;&#129032; &#124;
+					<br />
+					Merge
+					<br />
+					Cells
+				</button><button title="split selected cells" onclick="splitCell()">
+					&#124;&#124;&#129032; &#129034;&#124;&#124;
+					<br />Split
+					<br />
+					Cells
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Create-->
+		<div class="vertical">
+			<span>Create:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Name:</span> <input type="text" id="myText" value="">
+					</div>
+					<button title="create cell to the left" onclick="createCellBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Cell
+					</button><button title="create cell to the right" onclick="createCellAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Cell
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="clone row above" onclick="cloneRowAbove()">
+						&#129033;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="clone row below" onclick="cloneRowBelow()">
+						&#129035;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="new row above" onclick="createRowAbove()">
+						&#129033;
+						<br />
+						new
+						<br />
+						Row
+					</button><button title="new row below" onclick="createRowBelow()">
+						&#129035;
+						<br />
+						new
+						<br />
+						Row
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="new column to the left" onclick="createColumnBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="new column to the right" onclick="createColumnAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="delete timesection, i.e., column" onclick="destroyColumn()">
+						&#129034;
+						<br />
+						del
+						<br />
+						Col
+					</button></div>
+			</div>
+		</div>
+		
+
+		<!--Edit-->
+		<div class="vertical">
+			<span>Edit:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Heading:</span> <input type="text" id="cellHeading" value="">
+					</div>
+					<button id="applyHeadingBtn" onclick="insertHeading()">Apply Heading</button>
+
+					<div class="vertical2">
+						<!--for the content of the cell-->
+						<span style="font-style: italic">Cell Details:</span> <input type="text" id="cellText" value="">
+					</div>
+					<button id="applyTextBtn" onclick="insertTextIntoTD()">Apply Details</button>
+
+					<div class="vertical2">
+						<!--for the duration of the cell-->
+						<span style="font-style: italic">Duration:</span> <input type="text" id="eventDuration" value="">
+					</div>
+					<button id="applyDurationBtn" onclick="insertDurationIntoTD()">Apply Duration</button>
+
+					<div class="vertical2">
+					</div>
+					<div class="vertical2">
+						<span style="font-style: italic">Row Name:</span> <input type="text" id="rowName" value="">
+					</div>
+					<button id="applyRowEditBtn" onclick="rowEdit()">Apply RowName</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!--Land/Region-->
+		<div class="vertical">
+			<span>Location<br>/Region:</span>
+			<div class="vertical">
+				<div class="vertical3">
+					<input type="text" id="locationInput" value="" draggable="false">
+					<select id="locationOptionsDropdown" onclick="fillLocationInput()" onchange="fillLocationInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createRegionAttribute()">Append Location</button></div>
+			</div>
+		</div>
+		
+
+		<!--Label/Actors-->
+		<div class="vertical">
+			<span>Actors:</span>
+			<div class="vertical">
+				<span style="font-style: italic">Main<br>Name:</span>
+				<div class="vertical3">
+					<input type="text" id="divClass" value="" draggable="false">
+					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
+					</select><br>
+				</div>
+				<span style="font-style: italic">Alias:</span>
+				<div class="vertical3">
+					<input type="text" id="divName" value="" draggable="false">
+					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createDIV()">Create Div</button></div>
+			</div>
+		</div>
+		
+
+		<!--#2-Label/Actors-->
+		<div class="vertical">
+			<span>Custom<br>Connect</span>
+			<div class="vertical">
+				<div class="vertical2">
+					<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
+					<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()" onchange="fillDivClass2ConnectFrom()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectFrom()">DisConnect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectFrom" value="" draggable="false">
+					<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()" onchange="fillDivClassToDisConnectFrom()">
+					</select>
+				</div>
+				<!--///////////////////////////////////////-->
+				
+				<!--///////////////////////////////////////-->
+				<div class="vertical2">
+					<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectTo" value="" draggable="false">
+					<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()" onchange="fillDivClass2ConnectTo()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectTo()">DisConnect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectTo" value="" draggable="false">
+					<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()" onchange="fillDivClassToDisConnectTo()">
+					</select>
+				</div>
+				<!--///////////////////////////-->
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+
+<div id="slideShowListMaster">
+	<div id="slideShowListMasterheader" class="titleBarH3">
+		<h3>SlideShowOrder</h3>
+
+		<div>
+			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
+		</div>
+	</div>
+	<div id="slideShowListContainer" class="scrollbar-custom">
+
+	</div>
+</div>
+
+<section id="pageFootSection">
+	<!--SAVE BUTTON-->
+	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE">&#128190;</button>
+	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+	<!--MODIFIERS & BUILDERS BUTTONS-->
+	<div id="pageBottomStorylineTableEditorButtons">
+
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style="" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+			<span>Edit</span>
+		</button>
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio"><span>Notes</span>
+		</button>
+		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+			<span>Connection</span>
+		</button>
+		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+			<span>SlideShow</span>
+		</button>
+	</div>
+	<!--SLIDE SHOW BUTTONS-->
+	<div id="slideShowButtons">
+		<input id="nextEventUseKeyboard" type="checkbox" checked="true" title="Enable Arrow Keys on Keyboard"></input>
+		<button id="prevEvent" class="fa fa-arrow-left" onclick="prevEventShow()" title="Show PREVIOUS event"></button>
+		<button id="resetEvent" class="fa fa-arrows" onclick="resetEventShow()" title="RESET events"></button>
+		<button id="nextEvent" class="fa fa-arrow-right" onclick="nextEventShow()" title="Show NEXT event"></button>
+	</div>
+</section>
+
+</body>
+
