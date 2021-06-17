@@ -1,0 +1,190 @@
+body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 20px!important;
+    line-height: 1.65!important;
+    text-align: left!important;
+}
+p,li,h1,h2,h3,h4,h5,h6{
+    margin: 1em 0.5em;
+}
+li{
+    margin-left: 0;
+}
+header > h1:first-of-type {
+    font-size: 2.649690125em;
+    padding-top: .50em;
+    border-bottom: 2px solid grey;
+}
+div > h1:first-of-type {
+    font-size: 2.649690125em;
+    padding-top: .50em;
+    border-bottom: 2px solid grey;
+}
+h1 {
+    font-size: 1.949690125em;
+}
+h2 {
+    font-size: 1.749690125em;
+}
+h3 {
+    font-size: 1.349690125em;
+}
+ @media only screen and (max-width: 760px){
+header > h1:first-of-type {
+    font-size: 2.249690125em;
+}
+div > h1:first-of-type {
+    font-size: 2.249690125em;
+}  
+h1,h2 {
+    font-size: 1.549690125em;
+}
+h3 {
+    font-size: 1.149690125em;
+}
+} 
+h1:first-child,table{
+    margin: 1em 0.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+table{
+    margin: 1em 0.5em;
+}
+h1 > span:first-child,
+h2 > span:first-child,
+h3 > span:first-child,
+h4 > span:first-child,
+h5 > span:first-child,
+h6 > span:first-child {
+	width: 100px;
+	color: #5f666d;
+}
+
+header~h1{
+	counter-increment: header1;
+	content: counter(header);
+}
+
+header~h1:before {
+   content: "*" counter(header)"*" ;
+    content: counter(header1);
+	/* font-size: 35px; */
+}
+
+
+header~h1 > h2{
+	counter-reset: header2 1;
+}
+
+
+header~h2{
+	counter-increment: header2;
+	content: counter(header);
+}
+
+header~h2:before {
+   content: "*" counter(header)"*" ;
+    content: counter(header1)"." counters(header2, ".") ". ";
+}
+header~h1 > h2 > h3{
+	counter-reset: header2 1;
+}
+header~h3 {
+    counter-increment: header3;
+    content: counter(header);
+}
+header~h3:before {
+	content: "*" counter(header)"*" ;
+	 content: counter(header1)"." counters(header2, ".") "." counters(header3, ".")".";
+	 font-size: 25px;
+ }
+
+@import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
+ol,ul{
+	padding-left: 1em;
+}
+
+ol>li>ol{
+	list-style-type: lower-roman;
+	padding-left: 0.5em;
+}
+
+ol>li>ol>li>ol{
+	list-style-type: lower-alpha;
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: lister;
+	margin: auto;
+}
+
+body>li:first-child {
+	margin-top: 0.6em;	
+}
+
+li {
+  display: table;
+  counter-increment: lister;
+  margin-bottom: 0.6em;
+}
+
+li:before {
+    content: counters(lister, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;    
+}
+
+li li {
+    margin: 0;
+}
+
+li li:before {
+    content: counters(lister, ".") ". ";
+}
+
+
+.italize {
+	font-style: italic;
+}
+
+.emphasize {
+	color:black;
+	background-color:rgb(245, 220, 244);
+}
+
+blockquote {
+	margin: 0;
+}
+
+blockquote p {
+	padding: 15px;
+	background: #c7fff0;
+	border-radius: 5px;
+}
+
+blockquote p::before {
+	content: '\201C';
+}
+
+blockquote p::after {
+	content: '\201D';
+}
+
+.sidenote {
+	color: #021515;
+	background-color: rgb(250, 255, 211);
+}
+
+.sidenote p {
+	font-size: 18px;
+	font-style: italic;
+	padding: 15px;
+}
+
+@media all and (min-width: 900px) {
+	.mobilebreak {
+		display: none;
+	}
+}
