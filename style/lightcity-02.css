@@ -16,16 +16,7 @@ body {
 /* body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
 	font-size: 20px;
 } */
-.articleTitle h1{
-	font-family: Sanchez,Georgia,"Times New Roman",Times,serif !important;
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: .03em;
-	font-size: 35px;
-	margin-top: 15px;
-	margin-bottom: 26px;
-	border-bottom: 1px double #000;
-}
+
 @media (max-width: 767px){
 .articleTitle h1 {
 	margin: 24px 0;
@@ -82,7 +73,7 @@ h6 > span:first-child {
 	color: #5f666d;
 }
 
-header~h1{
+header~h1 {
 	counter-increment: header1;
 	content: counter(header);
 }
@@ -94,7 +85,7 @@ header~h1:before {
 }
 
 
-header~h1 > h2{
+header~h1 > h2 {
 	counter-reset: header2 1;
 }
 
