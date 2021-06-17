@@ -13,9 +13,18 @@ table,p,li{
 p,li,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
 }
-h1.titles {
+
+header > h1:first-of-type {
     font-size: 2.649690125em;
-}
+    padding-top: .50em;
+    border-bottom: 2px solid grey;
+  }
+  div > h1:first-of-type {
+    font-size: 2.649690125em;
+    padding-top: .50em;
+    border-bottom: 2px solid grey;
+  }
+  
 h1:first-child,table{
     margin: 1em 0.5em;
     margin-top: 0;
