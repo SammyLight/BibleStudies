@@ -24,7 +24,30 @@ header > h1:first-of-type {
     padding-top: .50em;
     border-bottom: 2px solid grey;
   }
-  
+h1 {
+    font-size: 1.949690125em;
+}
+h2 {
+    font-size: 1.749690125em;
+}
+h3 {
+    font-size: 1.349690125em;
+}
+  @media only screen and (max-width: 760px){
+    header > h1:first-of-type {
+        font-size: 2.249690125em;
+    }
+    div > h1:first-of-type {
+        font-size: 2.249690125em;
+    }  
+    h1,h2 {
+        font-size: 1.549690125em;
+    }
+    h3 {
+        font-size: 1.149690125em;
+    }
+    }
+ 
 h1:first-child,table{
     margin: 1em 0.5em;
     margin-top: 0;
