@@ -177,13 +177,24 @@ li li:before {
 }
 
 blockquote {
-	margin: 0;
-	padding: 15px;
-	background: #c7fff0;
-	border-radius: 5px;
+	background: #f9f9f9;
+	border-left: 10px solid blanchedalmond;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\2018";
 }
 
-blockquote p {
+blockquote:before {
+	color: blanchedalmond;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+/* blockquote p {
+	display: inline;
 }
 
 blockquote p::before {
@@ -192,7 +203,7 @@ blockquote p::before {
 
 blockquote p::after {
 	content: '\201D';
-}
+} */
 
 .sidenote {
 	color: #021515;
