@@ -210,6 +210,11 @@ blockquote p::after {
     text-decoration: none;
     display: -webkit-box;
     display: flex;
+    font-size: 75% !important;
+    padding: 9px 4px;
+}
+@media only screen and (min-width: 361px){
+.header-links-li>a {
     font-size: 90% !important;
     padding: 12px 7px;
-}
+}}
