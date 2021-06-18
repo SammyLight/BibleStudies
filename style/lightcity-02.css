@@ -46,11 +46,9 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 button, select {
     text-transform: none;
 }
-
 button {
     overflow: visible;
 }
-
 button, input, optgroup, textarea {
     color: inherit;
     font: inherit;
@@ -63,7 +61,6 @@ button, input, optgroup, textarea {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 50px;
     z-index: 1100;
     background-color: #373433;
     box-shadow: 0 3px 4px #373433;
@@ -82,53 +79,31 @@ button, input, optgroup, textarea {
 }
 #mobileHeader .mobileLogo {
     height: 40px;
-    /* margin-top: 5px; */
-    /* padding-left: .75rem; */
+    padding: 10px 10px 10px 0;
 
 }
-
-
 #mobileHeader .mobileControls {
     display: -webkit-box;
     display: flex;
     float: right;
 } 
-
 .mobileButton {
     width: 50px;
     height: 50px;
     color: #d0d0d0;
 }
-/* #mobileHeader .mobileControls .mobileButton-icon {
-    -webkit-box-flex: 0;
-    flex: 0 0 50px;
-}
-svg:not(:root).svg-inline--fa {
-    overflow: visible;
-}
-.svg-inline--fa {
-    display: inline-block;
-    font-size: inherit;
-    width: 24px;
-    height: 24px;
-    overflow: visible;
-    vertical-align: -.125em;
-} */
 #mobileHeader nav {
     display: inline-block;
 }
-
 #headerLinks{
     background-color: #fff;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
-
 .mobileDropdown{
     position: relative;
     display: inline-block;
 }
-
 .mobile-homeHeaderNav {
     position: absolute;
     display: none;    
@@ -141,8 +116,7 @@ svg:not(:root).svg-inline--fa {
     z-index: 1;
     width: 310px;
     right: 1px; 
-    top: 100%;
-    perspective: 1000px;
+    margin-top: 8px;
 }
 .dropdown_menu-6{
     animation: growDown 300ms ease-in-out forwards;
@@ -513,7 +487,7 @@ img {
 /* END OF CUSTOM CSS */
 
 .homeBody-section{
-    margin-top: 50px;
+    margin-top: 60px;
 }
 @media only screen and (min-width: 960px) {
     .homeBody-section {
