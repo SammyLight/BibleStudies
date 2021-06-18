@@ -28,7 +28,7 @@
                         
                         <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
-                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
+                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Gen Resources</a>{% endif %}{% endfor %}
                         </li>
                         </ul>
                     </div>
