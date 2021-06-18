@@ -205,15 +205,21 @@ blockquote p::after {
     align-items: center;
     float: left;
 }
+.churchLOGO-img{
+    height: 33px;
+}
 .header-links-li>a {
     color: #d0d0d0;
     text-decoration: none;
     display: -webkit-box;
     display: flex;
-    font-size: 75% !important;
+    font-size: 82% !important;
     padding: 9px 4px;
 }
 @media only screen and (min-width: 361px){
+.churchLOGO-img{
+    height: 40px;
+}
 .header-links-li>a {
     font-size: 90% !important;
     padding: 12px 7px;
