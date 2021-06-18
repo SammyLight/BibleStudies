@@ -157,7 +157,7 @@ li li:before {
 blockquote {
 /*! background: #f9ffc6; */
 	background: rgb(0, 0, 0, 0.05);
-	/*! border-left: 10px solid rgb(83, 0, 83, 0.5); */
+	border-left: 10px solid rgb(83, 0, 83, 0.5);
 	/*! margin: 1.5em 10px; */
 	padding: 0.5em 10px;
 	quotes: "\201C""\2018";
