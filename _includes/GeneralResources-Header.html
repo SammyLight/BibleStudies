@@ -22,7 +22,8 @@
                         <ul class="header-links"></ul>
                         <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.title contains "Site Home" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
+                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
+                            </a>{% endif %}{% endfor %}
                         </li>
                         
                         <li class="header-links-li transition">
