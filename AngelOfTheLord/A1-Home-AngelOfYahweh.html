@@ -13,8 +13,11 @@ ol, ul{
 		<h1 class="titles">Angel of Yahweh</h1>
 		<p>A collection of our Study on the Angel of Yahweh</p>
 		<ol>
-			{% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-				{% endif %}{% endfor %}
+			{% for page in site.pages %}
+				{% if page.categories contains "Angel of Yahweh" %}
+					<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+				{% endif %}
+			{% endfor %}
 		</ol>
 	</div>
 	{% include contact-section.html %}
