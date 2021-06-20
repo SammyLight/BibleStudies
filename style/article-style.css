@@ -29,6 +29,9 @@ h2 {
 h3 {
     font-size: 1.349690125em;
 }
+h4 {
+    font-size: 1.049690125em;
+}
  @media only screen and (max-width: 760px){
 header > h1:first-of-type {
     font-size: 2.249690125em;
