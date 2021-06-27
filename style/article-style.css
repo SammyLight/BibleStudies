@@ -29,9 +29,6 @@ h2 {
 h3 {
     font-size: 1.349690125em;
 }
-h4 {
-    font-size: 1.049690125em;
-}
  @media only screen and (max-width: 760px){
 header > h1:first-of-type {
     font-size: 2.249690125em;
@@ -107,7 +104,6 @@ header~h3:before {
 ol,ul{
 	padding-left: 1em;
 }
-
 ol>li>ol{
 	list-style-type: lower-roman;
 	padding-left: 0.5em;
@@ -116,78 +112,100 @@ ol>li>ol{
 ol>li>ol>li>ol{
 	list-style-type: lower-alpha;
 }
-
 ol {
 	list-style-type: none;
 	counter-reset: lister;
 	margin: auto;
 }
-
 body>li:first-child {
 	margin-top: 0.6em;	
 }
-
 li {
   display: table;
   counter-increment: lister;
   margin-bottom: 0.6em;
 }
-
 li:before {
     content: counters(lister, ".") ". ";
     display: table-cell;
     padding-right: 0.6em;    
 }
-
 li li {
     margin: 0;
 }
-
 li li:before {
     content: counters(lister, ".") ". ";
 }
-
-
 .italize {
 	font-style: italic;
 }
-
 .emphasize {
 	color:black;
 	background-color:rgb(245, 220, 244);
 }
-
 blockquote {
-	margin: 0;
+    /*! background: #f9ffc6; */
+    background: rgb(0, 0, 0, 0.05);
+    border-left: 10px solid rgb(83, 0, 83, 0.5);
+    /*! margin: 1.5em 10px; */
+    padding: 0.5em 10px;
+    quotes: "\201C""\2018";
+}    
+blockquote:before {
+    color: rgb(83, 0, 83, 0.5);
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
-
-blockquote p {
-	padding: 15px;
-	background: #c7fff0;
-	border-radius: 5px;
-}
-
-blockquote p::before {
-	content: '\201C';
-}
-
-blockquote p::after {
-	content: '\201D';
-}
-
 .sidenote {
 	color: #021515;
 	background-color: rgb(250, 255, 211);
 }
-
 .sidenote p {
 	font-size: 18px;
 	font-style: italic;
 	padding: 15px;
 }
-
 @media all and (min-width: 900px) {
 	.mobilebreak {
 		display: none;
 	}
 }
+#homeHeader{
+    box-shadow: 0 3px 4px #373433;
+}
+.homeHeaderNav{    
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.churchLOGO {
+    padding: 10px 10px 10px 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    float: left;
+}
+.churchLOGO-img{
+    height: 33px;
+}
+.header-links-li>a {
+    color: #d0d0d0;
+    text-decoration: none;
+    display: -webkit-box;
+    display: flex;
+    font-size: 82% !important;
+    padding: 9px 4px;
+}
+@media only screen and (min-width: 361px){
+.churchLOGO-img{
+    height: 40px;
+}
+.header-links-li>a {
+    font-size: 90% !important;
+    padding: 12px 7px;
+}}
