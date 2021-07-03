@@ -63,3 +63,30 @@ function fillDivColorInput(newColor) {
         }
     }
 }
+
+function deleteNodeDivStyle(){
+    var dCM = '.opt_' + clickedDIV.getAttribute('divclassname');
+    var divColorStyles = document.getElementById('divColorStyles');
+    var allStyleSheets = document.styleSheets;
+    var newCssRules = '';
+    for(i=0; i<allStyleSheets.length; i++){
+        if(allStyleSheets[i] == divColorStyles.sheet){
+            //serch within the stylesheet
+            for (var j = 0; j < allStyleSheets[i].cssRules.length; j++) {
+                if ((allStyleSheets[i].cssRules[j].selectorText).toString() !== dCM) {
+                    newCssRules = newCssRules + allStyleSheets[i].cssRules[j].cssText + '\n';
+                }
+                if(j == allStyleSheets[i].cssRules.length - 1){
+                    // allStyleSheets[i].cssRules = newCssRules;
+                    divColorStyles.remove();
+                    var newStyleSheet = document.createElement('style');
+                    newStyleSheet.id = 'divColorStyles';
+                    newStyleSheet.innerHTML = newCssRules;
+                    document.getElementsByTagName('head')[0].appendChild(newStyleSheet);
+                    // console.log(newCssRules);
+                }
+            }
+            break;
+        }
+    }
+}

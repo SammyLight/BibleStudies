@@ -139,9 +139,9 @@ function generateCustomSVGConnectorsType3() {
 		}
 
 
-		divDeleteButton.style.backgroundColor = '';
-		connectToButton.style.backgroundColor = '';
-		clearTimeout(deletButtonColorTimeOut);
+		// divDeleteButton.style.backgroundColor = '';
+		// connectToButton.style.backgroundColor = '';
+		// clearTimeout(deletButtonColorTimeOut);
 
 		//	deselectEmptyCell();
 		//		buildLegendTable();

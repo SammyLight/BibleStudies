@@ -31,13 +31,15 @@ var rowsNameLLowerCaseArray = [];
 
 var customAlertBack = document.getElementById('customAlertBack');
 
-var divDeleteButton = document.querySelector('#divDeleteButton');
+var divDeleteButton = document.getElementById('divDeleteButton');
 var deletButtonColorTimeOut;
 var clickedDIVColorTimeOut;
 var initialColor;
 var connectAccording2RowNames = 0;
 var connectOnlyConnect2andConnect4rm = 0;
 var customConnectionsOnly = 0;
+var divsArrangementButton = document.getElementById('divsArrangementButton')
+var connectionsTypeButton = document.getElementById('connectionsTypeButton')
 
 var TypeOfHtmlHeader = 'H4';
 var celldeselect;
@@ -80,21 +82,53 @@ function toggleAllMasterNavBtnz() {
 
 /*HOW TO CONNECT THE DIVS******************************/
 /******************************************************/
+function customConnections(linkType, x) {
+	if ((linkType == 'c0') || (customConnectionsOnly == 0)) {
+		connectOnlyConnect2andConnect4rm = 0;
+		connectAccording2RowNames = 1;
+		connectByTimelines.checked = true;
+		connectAllDraggableDivsWithSVGLines();
+		x.style.backgroundColor = 'pink';
+		x.title = "Connect Only Within RowNames"
+		//for use on pageLoad
+		storyLineTable.setAttribute('connectionType', 'c1')
+
+	} else if ((linkType == 'c1') || (customConnectionsOnly == 1)) {
+		connectOnlyConnect2andConnect4rm = 1;
+		connectAccording2RowNames = 0;
+		connectByTimelines.checked = true;
+		connectAllDraggableDivsWithSVGLines();
+		x.style.backgroundColor = 'yellow';
+		x.title = "Only Custom Connections"
+		//for use on pageLoad
+		storyLineTable.setAttribute('connectionType', 'c0')
+	}
+}
+
 function howShouldDivsBeConnected(x) {
+	//check if there are nodeDivs to connect or not
 	var goAhead = 0;
 	if (storyLineTable.querySelector('div')) {
 		for (i = 0; i < rows.length; i++) {
+			//if any row is without a rowName don't connect
 			if (!rows[i].getAttribute('rowname')) {
 				customAlert('ONLY ACTORS IN TIMLINES WITH ROWNAME WILL BE CONNECTED!')
 				break;
 			}
 			goAhead = 1;
 		}
-	} else {
+	} else { //if there is no actors/character nodeDiv
 		customAlert('There are no actors to connect.')
 	}
 
+	//if there are divNodes, goAhead == 1
 	if (goAhead == 1) {
+		/* There are two types of connectByTimelines
+			a. customConnectionsOnly == 1 and
+			b. customConnectionsOnly == 0
+		*/
+		//If connectByTimelines is checked (uncheck it and
+		//Restore the timeline connections to the default)
 		if (connectByTimelines.checked == true) {
 
 			if (customConnectionsOnly == 0) {
@@ -106,27 +140,19 @@ function howShouldDivsBeConnected(x) {
 			connectOnlyConnect2andConnect4rm = 0;
 			connectAccording2RowNames = 0;
 			connectByTimelines.checked = false;
+			storyLineTable.removeAttribute('connectionType')
 			connectAllDraggableDivsWithSVGLines();
 			x.style.backgroundColor = '';
 			x.title = 'Connect Actors Across TimeLines';
-
-		} else if (connectByTimelines.checked == false) {
-
-			if (customConnectionsOnly == 0) {
-				connectOnlyConnect2andConnect4rm = 0;
-				connectAccording2RowNames = 1;
-				connectByTimelines.checked = true;
-				connectAllDraggableDivsWithSVGLines();
-				x.style.backgroundColor = 'pink';
-				x.title = "Connect Only Within RowNames"
-
-			} else if (customConnectionsOnly == 1) {
-				connectOnlyConnect2andConnect4rm = 1;
-				connectAccording2RowNames = 0;
-				connectByTimelines.checked = true;
-				connectAllDraggableDivsWithSVGLines();
-				x.style.backgroundColor = 'yellow';
-				x.title = "Only Custom Connections"
+		}
+		//If connectByTimelies is NOT checked (check it and
+		//Connect it within timelines depending on which one had come before)
+		else if (connectByTimelines.checked == false) {
+			if (storyLineTable.getAttribute('connectionType')) {
+				var cType = storyLineTable.getAttribute('connectionType');
+				customConnections(cType, x);
+			} else {
+				customConnections(null, x);
 			}
 		}
 	}
@@ -395,13 +421,17 @@ function onloadAnalysis() {
 	//GENERATE ACTORS NODES ARRAY AND MENU
 	generateActorsNodesArrayOnLoad();
 
-	/*
-		//FUNCTION FOR REMOVING ALL INLINE STYLES --darkreader....
-		var storyLineTableCONTENT = storyLineTable.innerHTML;
-		storyLineTableCONTENT.toString();
-		storyLineTableCONTENT = storyLineTableCONTENT.replace(/ style=("|\')(.*?)("|\')/g, '');
-		storyLineTable.innerHTML = storyLineTableCONTENT;
-	*/
+	//CONNECTION TYPE
+	if (storyLineTable.getAttribute('connectionType')) {
+		var cType = storyLineTable.getAttribute('connectionType');
+		if (cType == 'c0') {
+			divsArrangementButton.click();
+			divsArrangementButton.click();
+			divsArrangementButton.click();
+		} else {
+			divsArrangementButton.click();
+		}
+	}
 }
 
 /*BECAUSE COORDINATES CHANGE WHEN BROWSER WINDOW IS RESIZED******************************/
@@ -695,16 +725,18 @@ function divListeners() {
 				this.style.backgroundColor = "lightgrey";
 
 				//DELETE BUTTON
-				initialdeleteDivBtnColor = divDeleteButton.style.backgroundColor;
 				divDeleteButton.style.backgroundColor = 'pink';
-				//CONNECTTO BUTTON
+				//CONNECTFROM BUTTON
 				connectFromButton.style.backgroundColor = 'pink';
+				//CONNECTTO BUTTON
+				connectToButton.style.backgroundColor = 'pink';
 
 
 				//RESET THE COLOR OF THE MODIFIED BUTTONS
 				clickedDIVColorTimeOut = setTimeout(() => [clickedDIV.style.backgroundColor = initialColor], 5000);
 				deletButtonColorTimeOut = setTimeout(() => [divDeleteButton.style.backgroundColor = ''], 5000);
 				connectToButtonColorTimeOut = setTimeout(() => [connectFromButton.style.backgroundColor = ''], 5000);
+				connectToButtonColorTimeOut = setTimeout(() => [connectToButton.style.backgroundColor = ''], 5000);
 
 				//clear connectFromArray so that it doesnt have values from old clicked div
 
@@ -1274,12 +1306,6 @@ function destroyColumn() {
 
 //HIDE COLUMN
 function hideColumn() {}
-
-//DESTROY COLUMN (I.E. REMOVE FROM DOM)
-function destroyRow() {
-	var row = storyLineTable.querySelectorAll('tr');
-	row[clickedRow].remove();
-}
 
 
 /*SHOW ALL (FOR ROWS AND CELLS WITH DISPLAY == 'NONE' AND VISIBILITY == 'HIDDEN')***********************/
@@ -1938,6 +1964,11 @@ function buildLegendTable() {
 	bodyClear = 1;
 	clear = 1;
 
+	//RESET THE COLOR OF THE MODIFIED BUTTONS
+	if(clickedDIV)clickedDIV.style.backgroundColor = initialColor;
+	divDeleteButton.style.backgroundColor = '';
+	connectFromButton.style.backgroundColor = '';
+	connectToButton.style.backgroundColor = '';
 }
 
 /******************************************************************************************/
@@ -2115,59 +2146,50 @@ function createDIV() {
 function deleteDIV() {
 
 	if (clickedDIV) {
-		var divNameOptions = divNameOptionsDropdown.getElementsByTagName('option');
 		var dName = clickedDIV.innerHTML;
-		for (j = 0; j < divNameOptions.length; j++) {
+		var divClassNameAtt = clickedDIV.getAttribute('divclassname');
 
-			if (divNameOptions[j].text == dName) {
-				var optCounterValue = Number(divNameOptions[j].getAttribute('optCounter'));
-				divNameOptions[j].setAttribute('optCounter', --optCounterValue);
+		/* REDO of deleteDIV function */
 
-				//REDUCE OPTIONS COUNT OF CLASS TO WHICH DELETED DIV BELONGS
-				var optionsClassNameOfDivToBeDeleted = divNameOptions[j].getAttribute('optClassName');
-				//find the class in the classOptionsDropdown and reduce its optCounter value
-				var divClassOptions = divClassOptionsDropdown.getElementsByTagName('option');
-
-				for (j = 0; j < divClassOptions.length; j++) {
-					if (divClassOptions[j].text == optionsClassNameOfDivToBeDeleted) {
-						var optCounterValue = Number(divClassOptions[j].getAttribute('optCounter'))
-						divClassOptions[j].setAttribute('optCounter', --optCounterValue);
-
-						if (optCounterValue == 0) {
-							//REMOVE FROM ARRAY OF CLASS NAMES
-							var indexToRemove = divClassAttributeArray.indexOf(optionsClassNameOfDivToBeDeleted);
-							divClassAttributeArray.splice(indexToRemove, 1);
-							//REMOVE CORRESPONDING CLASS-NAME OPTION
-							divClassOptions[j].remove();
-							//REMOVE CORRESPONDING LI WITH CORRESPONDING LABEL AND INPUT
-							var inputOfLI2Remove = document.getElementById('opt_' + optionsClassNameOfDivToBeDeleted);
-							inputOfLI2Remove.closest('li').remove();
-						}
-						break;
-					}
-				}
-
-				if (optCounterValue == 0) {
-					//REMOVE FROM ARRAY OF NAMES
-					var indexOfName2Remove = divNameAttributeArray.indexOf(dName);
-					divNameAttributeArray.splice(indexOfName2Remove, 1);
-					//REMOVE THE OPTIONS ELEMENT ITSELF
-					divNameOptions[j].remove();
-				};
-				break;
+		//find all options that have this nodeDiv's display name
+		var optionsWithNodeDivsName = document.querySelectorAll('option[optclassname="' + divClassNameAtt + '"]');
+		//find all nodeDivs with this classNameAttribute
+		var nodeDivsWithClassName = storyLineTable.querySelectorAll('[divclassname="' + divClassNameAtt + '"]');
+		var arrayOfNodeDivsWithInnerHtml = [];
+		var countOfNodeDivsWithInnerHtml = 0;
+		//delete the div
+		clickedDIV.remove();
+		//if this is the last of this nodeDiv
+		if (nodeDivsWithClassName.length == 1) {
+			//delete styleRule from divColorStyles stylesheet
+			deleteNodeDivStyle();
+			//delete all option elements with className
+			for (q = 0; q < optionsWithNodeDivsName.length; q++) {
+				optionsWithNodeDivsName[q].remove();
+			}
+			//delete li carrying label with optclass name
+			document.querySelector('input#opt_' + divClassNameAtt).parentElement.remove();
+		}
+		//if this is not the last one
+		else {
+			//Modify all relevant options elements attributes
+			for (r = 0; r < optionsWithNodeDivsName.length; r++) {
+				optionsWithNodeDivsName[r].setAttribute('optCounter', nodeDivsWithClassName.length - 1);
 			}
 		}
-
-		clickedDIV.remove();
-		divDeleteButton.style.backgroundColor = '';
-		clearTimeout(deletButtonColorTimeOut);
-
-		deselectEmptyCell();
-		buildLegendTable();
-		connectAllDraggableDivsWithSVGLines();
 	}
 
+	/* ************************** */
+
+	divDeleteButton.style.backgroundColor = '';
+	clearTimeout(deletButtonColorTimeOut);
+
+	deselectEmptyCell();
+	buildLegendTable();
+	connectAllDraggableDivsWithSVGLines();
 }
+
+
 /******************************************************************************************/
 /*FOR ACTOR/LABEL CONSOLE******************************************************************/
 /******************************************************************************************/
@@ -2950,64 +2972,77 @@ function createRegionAttribute() {
 	//	var row = storyLineTable.querySelectorAll('tr');
 	var cell = rows[clickedRow].querySelectorAll('td')[clickedCell];
 
-	if (cell.querySelector('.locationspan')) {
-		var locationSpanElm = cell.querySelector('.locationspan');
-		//		var formerAssignedLocation = cell.getAttribute('location');
-		var formerAssignedLocation = locationSpanElm.innerHTML;
-		//Remove Former LocationSpan Element
-		locationSpanElm.remove();
-		cell.setAttribute('location', x);
+	function regionsForMultipleCells(xxx) {
+		if (xxx.querySelector('.locationspan')) {
+			var locationSpanElm = xxx.querySelector('.locationspan');
+			//		var formerAssignedLocation = xxx.getAttribute('location');
+			var formerAssignedLocation = locationSpanElm.innerHTML;
+			//Remove Former LocationSpan Element
+			locationSpanElm.remove();
+			xxx.setAttribute('location', x);
 
-		//Check if there is any other LocationSpan with the same removed location
-		//If none, then remove from the location menu list
-		var newAssignedLocation = x;
-		var allLocationSpanElm = storyLineTable.querySelectorAll('.locationspan');
-		var doesLocationExist = 'no';
+			//Check if there is any other LocationSpan with the same removed location
+			//If none, then remove from the location menu list
+			var newAssignedLocation = x;
+			var allLocationSpanElm = storyLineTable.querySelectorAll('.locationspan');
+			var doesLocationExist = 'no';
 
-		for (i = 0; i < allLocationSpanElm.length; i++) {
-			if (allLocationSpanElm[i].innerHTML == formerAssignedLocation) {
-				doesLocationExist = 'yes';
-				break;
+			for (i = 0; i < allLocationSpanElm.length; i++) {
+				if (allLocationSpanElm[i].innerHTML == formerAssignedLocation) {
+					doesLocationExist = 'yes';
+					break;
+				}
 			}
-		}
-		if (doesLocationExist == 'no') {
-			var indexOfLocation2Remove = locationsArray.indexOf(formerAssignedLocation.toLowerCase());
-			locationsArray.splice(indexOfLocation2Remove, 1);
-			document.getElementById('location_' + formerAssignedLocation.toLowerCase()).remove();
-			document.getElementById('locopt_' + formerAssignedLocation.toLowerCase()).remove();
+			if (doesLocationExist == 'no') {
+				var indexOfLocation2Remove = locationsArray.indexOf(formerAssignedLocation.toLowerCase());
+				locationsArray.splice(indexOfLocation2Remove, 1);
+				document.getElementById('location_' + formerAssignedLocation.toLowerCase()).remove();
+				document.getElementById('locopt_' + formerAssignedLocation.toLowerCase()).remove();
+			}
+
 		}
 
+		if (x != '') {
+			xxx.setAttribute('location', x.toLowerCase());
+			var locationSpan = document.createElement('SPAN');
+			locationSpan.classList.add('locationspan');
+			locationSpan.innerHTML = x;
+			xxx.prepend(locationSpan);
+
+			var xLowerCase = x.toLowerCase();
+
+			if (locationsArray.indexOf(xLowerCase) == -1) {
+				locationsArray.push(xLowerCase);
+				locationsMenuGenerate(x);
+
+				//LOCATIONS OPTIONS
+				var locationOption = document.createElement('OPTION');
+				locationOption.text = x;
+				locationOptionsDropdown.append(locationOption);
+				locationOption.setAttribute('id', 'locopt_' + xLowerCase)
+			};
+
+			if (xxx.hasAttribute('title')) {
+
+				x = xxx.getAttribute('title') + x;
+				xxx.setAttribute('title', x);
+			}
+
+			analyzeTable();
+		}
+		connectAllDraggableDivsWithSVGLines();
 	}
 
-	if (x != '') {
-		cell.setAttribute('location', x.toLowerCase());
-		var locationSpan = document.createElement('SPAN');
-		locationSpan.classList.add('locationspan');
-		locationSpan.innerHTML = x;
-		cell.prepend(locationSpan);
-
-		var xLowerCase = x.toLowerCase();
-
-		if (locationsArray.indexOf(xLowerCase) == -1) {
-			locationsArray.push(xLowerCase);
-			locationsMenuGenerate(x);
-
-			//LOCATIONS OPTIONS
-			var locationOption = document.createElement('OPTION');
-			locationOption.text = x;
-			locationOptionsDropdown.append(locationOption);
-			locationOption.setAttribute('id', 'locopt_' + xLowerCase)
-		};
-
-		if (cell.hasAttribute('title')) {
-
-			x = cell.getAttribute('title') + x;
-			cell.setAttribute('title', x);
-		}
-
-		analyzeTable();
+	if (selectedCellsArray.length != 0) {
+		var selectedCellsForRegion = storyLineTable.querySelectorAll('.selected');
+		selectedCellsForRegion.forEach(itm => {
+			regionsForMultipleCells(itm);
+			// itm.classList.remove('selected')
+		})
+		selectCells(selectCell2MergeSplit)
+	} else {
+		regionsForMultipleCells(cell);
 	}
-	connectAllDraggableDivsWithSVGLines();
 }
 /******************************************************************************************/
 /******************************************************************************************/

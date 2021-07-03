@@ -129,9 +129,10 @@ function generateCustomSVGConnectorsType2() {
 			}
 		}
 
-		divDeleteButton.style.backgroundColor = '';
-		connectFromButton.style.backgroundColor = '';
-		clearTimeout(deletButtonColorTimeOut);
+		// divDeleteButton.style.backgroundColor = '';
+		// connectFromButton.style.backgroundColor = '';
+		// connectToButton.style.backgroundColor = '';
+		// clearTimeout(deletButtonColorTimeOut);
 	}
 //	generateCustomSVGConnectorsType3();
 }
