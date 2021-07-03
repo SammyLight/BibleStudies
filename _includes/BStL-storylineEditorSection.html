@@ -1,248 +1,396 @@
-
-
 <section id="alternateStoryLineEditorButtons">
 	<div id="alternateStoryLineEditorButtonsheader" class="titleBarH3">
 		<h3>Table Editor/Creator</h3>
 		<button id="alternateClose" onclick="alternateClose()">X</button>
 	</div>
-	
+
 	<div id="alternateStoryLineEditorButtonsBody">
 		<!--Table-->
-		<div id="realignandreconnect" class="vertical">
-			<span>Table:</span>
-			<div class="vertical"><button onclick="buildLegendTable()">Re-Align Tables</button><button onclick="connectAllDraggableDivsWithSVGLines()">Connect Divs</button><button onclick="btn_buildLegendTable()"><strong>Restore Timeline</strong></button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE"><strong>&#128190;</strong> </button>
-			</div>
+		<hr>
+		<div id="realignandreconnect" class="editInputnButton">
+			<h3>Table:</h3>
+			<button onclick="buildLegendTable()">
+				Re-Align<br>Tables</button><button
+				onclick="connectAllDraggableDivsWithSVGLines()">Connect<br>Divs</button><button
+				onclick="btn_buildLegendTable()"><strong>Restore<br>Timeline</strong>
+			</button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()"
+				title="Save BIBLE STORYLINE"><strong>&#128190;</strong></button>
 		</div>
-		
-		<!--Delete-->
-		<div id="deleteButtons" class="vertical">
-			<span>Delete:</span>
-			<div class="vertical">
-				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
-					✘<br />Del<br />Label
-				</button><button title="delete label" onclick="destroyCell()">
-					✘<br />Del<br />Cell
-				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
-					✘<br />Del<br />Row
-				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
-					✘<br />Del<br />Col
-				</button>
-			</div>
-		</div>
-		
 
 		<!--Merge & Split-->
-		<div id="mergeAndSplit" class="vertical">
-			<span>Merge<br>/Split:</span>
-			<div class="vertical">
-				<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
-					&#10010;
-					<br />
-					Select
-					<br />
-					Cells
-				</button><button title="merge selected cells" onclick="mergeCells()">
-					&#124; &#129034;&#129032; &#124;
-					<br />
-					Merge
-					<br />
-					Cells
-				</button><button title="split selected cells" onclick="splitCell()">
-					&#124;&#124;&#129032; &#129034;&#124;&#124;
-					<br />Split
-					<br />
-					Cells
-				</button>
-			</div>
+		<hr>
+		<div id="mergeAndSplit" class="editInputnButton">
+			<h3>Merge<br>/Split:</h3>
+			<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
+				Select
+				<br />
+				Cells
+			</button><button title="merge selected cells" onclick="mergeCells()">
+				Merge
+				<br />
+				Cells
+			</button><button title="split selected cells" onclick="splitCell()">
+				Split
+				<br />
+				Cells
+			</button>
 		</div>
-		
+
+		<!--Delete-->
+		<hr>
+		<div id="deleteButtons" class="editInputnButton">
+			<h3>Delete:</h3>
+			<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+				<span style="font-size: medium;">&#128465;</span>Label
+			</button><button title="delete label" onclick="destroyCell()">
+				<span style="font-size: medium;">&#128465;</span>Cell
+			</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+				<span style="font-size: medium;">&#128465;</span>Row
+			</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+				<span style="font-size: medium;">&#128465;</span>Col
+			</button>
+		</div>
 
 		<!--Create-->
-		<div class="vertical">
-			<span>Create:</span>
-			<div class="vertical">
-				<div class="vertical">
-					<div class="vertical2">
-						<span style="font-style: italic">Cell Name:</span> <input type="text" id="myText" value="">
-					</div>
-					<button title="create cell to the left" onclick="createCellBefore()">
-						&#129032;
-						<br />
-						new
-						<br />
-						Cell
-					</button><button title="create cell to the right" onclick="createCellAfter()">
-						&#129034;
-						<br />
-						new
-						<br />
-						Cell
-					</button>
-				</div>
-				<div class="vertical">
-					<button title="clone row above" onclick="cloneRowAbove()">
-						&#129033;
-						<br />
-						clone
-						<br />
-						Row
-					</button><button title="clone row below" onclick="cloneRowBelow()">
-						&#129035;
-						<br />
-						clone
-						<br />
-						Row
-					</button><button title="new row above" onclick="createRowAbove()">
-						&#129033;
-						<br />
-						new
-						<br />
-						Row
-					</button><button title="new row below" onclick="createRowBelow()">
-						&#129035;
-						<br />
-						new
-						<br />
-						Row
-					</button>
-				</div>
-				<div class="vertical">
-					<button title="new column to the left" onclick="createColumnBefore()">
-						&#129032;
-						<br />
-						new
-						<br />
-						Col
-					</button><button title="new column to the right" onclick="createColumnAfter()">
-						&#129034;
-						<br />
-						new
-						<br />
-						Col
-					</button><button title="delete timesection, i.e., column" onclick="destroyColumn()">
-						&#129034;
-						<br />
-						del
-						<br />
-						Col
-					</button></div>
+		<h3>Create:</h3>
+		<hr>
+		<div class="editInputnButton">
+			<span>New Cell:</span>
+			<input type="text" id="myText" value="">
+			<div>
+				<button title="create cell to the left" onclick="createCellBefore()">&#129032;</button><button
+					title="create cell to the right" onclick="createCellAfter()">&#129034;</button>
 			</div>
 		</div>
-		
+		<div class="editInputnButton2">
+			<div>
+				<span>Clone Row</span>
+				<div>
+					<button title="clone row above" onclick="cloneRowAbove()">&#129033;
+					</button><button title="clone row below" onclick="cloneRowBelow()">&#129035;
+					</button>
+				</div>
+			</div>
+			<div>
+				<span>New Row</span>
+				<div>
+					<button title="new row above" onclick="createRowAbove()">&#129033;
+					</button><button title="new row below" onclick="createRowBelow()">&#129035;
+					</button>
+				</div>
+			</div>
+			<div>
+				<span>New Col</span>
+				<div>
+					<button title="new column to the left" onclick="createColumnBefore()">&#129032;
+					</button><button title="new column to the right" onclick="createColumnAfter()">&#129034;
+					</button>
+				</div>
+			</div>
+		</div>
 
 		<!--Edit-->
-		<div class="vertical">
-			<span>Edit:</span>
-			<div class="vertical">
-				<div class="vertical">
-					<div class="vertical2">
-						<span style="font-style: italic">Cell Heading:</span> <input type="text" id="cellHeading" value="">
-					</div>
-					<button id="applyHeadingBtn" onclick="insertHeading()">Apply Heading</button>
-
-					<div class="vertical2">
-						<!--for the content of the cell-->
-						<span style="font-style: italic">Cell Details:</span> <input type="text" id="cellText" value="">
-					</div>
-					<button id="applyTextBtn" onclick="insertTextIntoTD()">Apply Details</button>
-
-					<div class="vertical2">
-						<!--for the duration of the cell-->
-						<span style="font-style: italic">Duration:</span> <input type="text" id="eventDuration" value="">
-					</div>
-					<button id="applyDurationBtn" onclick="insertDurationIntoTD()">Apply Duration</button>
-
-					<div class="vertical2">
-					</div>
-					<div class="vertical2">
-						<span style="font-style: italic">Row Name:</span> <input type="text" id="rowName" value="">
-					</div>
-					<button id="applyRowEditBtn" onclick="rowEdit()">Apply RowName</button>
-				</div>
-			</div>
+		<h3>Edit:</h3>
+		<hr>
+		<div class="editInputnButton">
+			<span>Cell Heading:</span>
+			<input type="text" id="cellHeading" value="">
+			<button id="applyHeadingBtn" onclick="insertHeading()">&#10003;</button>
 		</div>
-		
 
+		<!--for the content of the cell-->
+		<div class="editInputnButton">
+			<span>Cell Details:</span>
+			<input type="text" id="cellText" value="">
+			<button id="applyTextBtn" onclick="insertTextIntoTD()">&#10003;</button>
+		</div>
+
+		<!--for the duration of the cell-->
+		<div class="editInputnButton">
+			<span>Duration:</span>
+			<input type="text" id="eventDuration" value="">
+			<button id="applyDurationBtn" onclick="insertDurationIntoTD()">&#10003;</button>
+		</div>
+
+		<div class="editInputnButton">
+			<span>Row Name:</span>
+			<input type="text" id="rowName" value="">
+			<button id="applyRowEditBtn" onclick="rowEdit()">&#10003;</button>
+		</div>
 		<!--Land/Region-->
-		<div class="vertical">
-			<span>Location<br>/Region:</span>
-			<div class="vertical">
-				<div class="vertical3">
-					<input type="text" id="locationInput" value="" draggable="false">
-					<select id="locationOptionsDropdown" onclick="fillLocationInput()" onchange="fillLocationInput()">
-					</select>
-				</div>
-				<div class="vertical2">
-					<button onclick="createRegionAttribute()">Append Location</button></div>
+		<hr>
+		<div class="editInputnButton">
+			<h3>Location:</h3>
+			<div class="inputNselect">
+				<input type="text" id="locationInput" value="" draggable="false">
+				<select id="locationOptionsDropdown" onclick="fillLocationInput()"
+					onchange="fillLocationInput()"></select>
 			</div>
+			<button onclick="createRegionAttribute()">&#10003;</button>
 		</div>
-		
-
 		<!--Label/Actors-->
-		<div class="vertical">
-			<span>Actors:</span>
-			<div class="vertical">
-				<span style="font-style: italic">Main<br>Name:</span>
-				<div class="vertical3">
+		<h3>Actors:</h3>
+		<hr>
+		<div class="editInputnButton">
+			<div class="editInputnButton">
+				<span style="width: 50px;">Main<br>Name:</span>
+				<div class="inputNselect">
 					<input type="text" id="divClass" value="" draggable="false">
 					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
 					</select><br>
 				</div>
-				<span style="font-style: italic">Alias:</span>
-				<div class="vertical3">
+			</div>
+			<div class="editInputnButton">
+				<span style="width: 60px;">Alias:</span>
+				<div class="inputNselect">
 					<input type="text" id="divName" value="" draggable="false">
 					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
 					</select>
 				</div>
-				<div class="vertical2">
-					<button onclick="createDIV()">Create Div</button></div>
+			</div>
+			<button onclick="createDIV()" style="height: 30px;">Create</button>
+		</div>
+		<!-- Div Color -->
+		<div class="editInputnButton">
+			<h3>DivColor:</h3>
+			<div class="inputNselect">
+				<input type="text" id="divColor" value="" draggable="false">
+				<select id="divColorOptionsDropdown" onchange="fillDivColorInput(this[this.selectedIndex].value)">
+					<option class="heading" selected>COLOR</option>
+					<option value="AliceBlue" title="AliceBlue" style="background-color:AliceBlue"></option>
+					<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite">
+					</option>
+					<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+					<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+					<option value="Azure" title="Azure" style="background-color:Azure"></option>
+					<option value="Beige" title="Beige" style="background-color:Beige"></option>
+					<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+					<option value="Black" title="Black" style="background-color:Black"></option>
+					<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond">
+					</option>
+					<option value="Blue" title="Blue" style="background-color:Blue"></option>
+					<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+					<option value="Brown" title="Brown" style="background-color:Brown"></option>
+					<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+					<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+					<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+					<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+					<option value="Coral" title="Coral" style="background-color:Coral"></option>
+					<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue">
+					</option>
+					<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+					<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+					<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+					<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+					<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+					<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod">
+					</option>
+					<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+					<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+					<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+					<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+					<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta">
+					</option>
+					<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen">
+					</option>
+					<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+					<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+					<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+					<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+					<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen">
+					</option>
+					<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue">
+					</option>
+					<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray">
+					</option>
+					<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey">
+					</option>
+					<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise">
+					</option>
+					<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+					<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+					<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue">
+					</option>
+					<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+					<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+					<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+					<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+					<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite">
+					</option>
+					<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen">
+					</option>
+					<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+					<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+					<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+					<option value="Gold" title="Gold" style="background-color:Gold"></option>
+					<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+					<option value="Gray" title="Gray" style="background-color:Gray"></option>
+					<option value="Grey" title="Grey" style="background-color:Grey"></option>
+					<option value="Green" title="Green" style="background-color:Green"></option>
+					<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow">
+					</option>
+					<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+					<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+					<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+					<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+					<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+					<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+					<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+					<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush">
+					</option>
+					<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+					<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon">
+					</option>
+					<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+					<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+					<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+					<option value="LightGoldenRodYellow" title="LightGoldenRodYellow"
+						style="background-color:LightGoldenRodYellow"></option>
+					<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+					<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+					<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+					<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+					<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon">
+					</option>
+					<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen">
+					</option>
+					<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue">
+					</option>
+					<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray">
+					</option>
+					<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey">
+					</option>
+					<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue">
+					</option>
+					<option value="LightYellow" title="LightYellow" style="background-color:LightYellow">
+					</option>
+					<option value="Lime" title="Lime" style="background-color:Lime"></option>
+					<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+					<option value="Linen" title="Linen" style="background-color:Linen"></option>
+					<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+					<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+					<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine">
+					</option>
+					<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+					<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid">
+					</option>
+					<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple">
+					</option>
+					<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen">
+					</option>
+					<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue">
+					</option>
+					<option value="MediumSpringGreen" title="MediumSpringGreen"
+						style="background-color:MediumSpringGreen">
+					</option>
+					<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise">
+					</option>
+					<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed">
+					</option>
+					<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue">
+					</option>
+					<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+					<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+					<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+					<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite">
+					</option>
+					<option value="Navy" title="Navy" style="background-color:Navy"></option>
+					<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+					<option value="Olive" title="Olive" style="background-color:Olive"></option>
+					<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+					<option value="Orange" title="Orange" style="background-color:Orange"></option>
+					<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+					<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+					<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod">
+					</option>
+					<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+					<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise">
+					</option>
+					<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed">
+					</option>
+					<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+					<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+					<option value="Peru" title="Peru" style="background-color:Peru"></option>
+					<option value="Pink" title="Pink" style="background-color:Pink"></option>
+					<option value="Plum" title="Plum" style="background-color:Plum"></option>
+					<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+					<option value="Purple" title="Purple" style="background-color:Purple"></option>
+					<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple">
+					</option>
+					<option value="Red" title="Red" style="background-color:Red"></option>
+					<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+					<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+					<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown">
+					</option>
+					<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+					<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+					<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+					<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+					<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+					<option value="Silver" title="Silver" style="background-color:Silver"></option>
+					<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+					<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+					<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+					<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+					<option value="Snow" title="Snow" style="background-color:Snow"></option>
+					<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen">
+					</option>
+					<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+					<option value="Tan" title="Tan" style="background-color:Tan"></option>
+					<option value="Teal" title="Teal" style="background-color:Teal"></option>
+					<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+					<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+					<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+					<option value="Violet" title="Violet" style="background-color:Violet"></option>
+					<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+					<option value="White" title="White" style="background-color:White"></option>
+					<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+					<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+					<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen">
+					</option>
+				</select>
 			</div>
 		</div>
-		
-
 		<!--#2-Label/Actors-->
-		<div class="vertical">
-			<span>Custom<br>Connect</span>
-			<div class="vertical">
-				<div class="vertical2">
-					<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
-				</div>
-				<div class="vertical3">
-					<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
-					<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()" onchange="fillDivClass2ConnectFrom()">
-					</select><br>
-				</div>
-				<div class="vertical2">
-					<button onclick="disConnectFrom()">DisConnect<br>From</button>
-				</div>
-				<div class="vertical3">
-					<input type="text" id="divToDisConnectFrom" value="" draggable="false">
-					<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()" onchange="fillDivClassToDisConnectFrom()">
-					</select>
-				</div>
-				<!--///////////////////////////////////////-->
-				
-				<!--///////////////////////////////////////-->
-				<div class="vertical2">
-					<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
-				</div>
-				<div class="vertical3">
-					<input type="text" id="divClass2ConnectTo" value="" draggable="false">
-					<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()" onchange="fillDivClass2ConnectTo()">
-					</select><br>
-				</div>
-				<div class="vertical2">
-					<button onclick="disConnectTo()">DisConnect<br>To</button>
-				</div>
-				<div class="vertical3">
-					<input type="text" id="divToDisConnectTo" value="" draggable="false">
-					<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()" onchange="fillDivClassToDisConnectTo()">
-					</select>
-				</div>
-				<!--///////////////////////////-->
+		<h3>CustomConnect</h3>
+		<hr>
+		<div class="editInputnButton">
+			<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
+			<div class="inputNselect">
+				<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
+				<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()"
+					onchange="fillDivClass2ConnectFrom()">
+				</select><br>
 			</div>
 		</div>
-		
+		<div class="editInputnButton">
+			<button onclick="disConnectFrom()">DisConnect<br>From</button>
+			<div class="inputNselect">
+				<input type="text" id="divToDisConnectFrom" value="" draggable="false">
+				<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()"
+					onchange="fillDivClassToDisConnectFrom()">
+				</select>
+			</div>
+		</div>
+		<div class="editInputnButton">
+			<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
+			<div class="inputNselect">
+				<input type="text" id="divClass2ConnectTo" value="" draggable="false">
+				<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()"
+					onchange="fillDivClass2ConnectTo()">
+				</select><br>
+			</div>
+		</div>
+
+		<div class="editInputnButton">
+			<button onclick="disConnectTo()">DisConnect<br>To</button>
+			<div class="inputNselect">
+				<input type="text" id="divToDisConnectTo" value="" draggable="false">
+				<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()"
+					onchange="fillDivClassToDisConnectTo()">
+				</select>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -252,7 +400,8 @@
 		<h3>SlideShowOrder</h3>
 
 		<div>
-			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
+			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button
+				id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
 		</div>
 	</div>
 	<div id="slideShowListContainer" class="scrollbar-custom">
@@ -262,20 +411,27 @@
 
 <section id="pageFootSection">
 	<!--SAVE BUTTON-->
-	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE">&#128190;</button>
-	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()"
+		title="Save BIBLE STORYLINE">&#128190;</button>
+	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()"
+		title="Hide Navigation SideBar"></button>
 	<!--MODIFIERS & BUILDERS BUTTONS-->
 	<div id="pageBottomStorylineTableEditorButtons">
 
-		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style="" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style=""
+			onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
 			<span>Edit</span>
 		</button>
-		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio"><span>Notes</span>
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton"
+			onclick="toggleDetailsSection()" title="Show notes and details of selected events"
+			for="detailsRadio"><span>Notes</span>
 		</button>
-		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)"
+			title="Connect Actors Across TimeLines">
 			<span>Connection</span>
 		</button>
-		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()"
+			title="Show/Hide the SlideShow List">
 			<span>SlideShow</span>
 		</button>
 	</div>
@@ -289,4 +445,3 @@
 </section>
 
 </body>
-
