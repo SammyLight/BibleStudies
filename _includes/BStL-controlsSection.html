@@ -5,9 +5,11 @@
 		<div id="masterNav" class="scrollbar-custom" >
 
 			<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
-
+			
 			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
 			<div id="storylineTableEditorButtonsMenu" class="">
+				<!-- For master note -->
+				<button class="masterNote headbuttons tableHeadEqualHeights" onclick="showHideSiteNav(masterNote)" title="Show Master Note">N</button>
 
 				<div class="titleDiv">
 					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
@@ -17,19 +19,23 @@
 				</div>
 
 				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
-					<span>Edit StoryLine</span>
+					<!-- <span>Edit StoryLine</span> -->
+					<span>E</span>
 					<input id="editableRadio" type="checkbox"  value="editableRadio">
 				</button>
 				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
-					<span>DETAILS/Notes</span>
+					<!-- <span>DETAILS/Notes</span> -->
+					<span>D</span>
 					<input id="detailsRadio" type="checkbox"  value="detailsRadio">
 				</button>
-				<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
-					<span>Connection</span>
+				<button class="headbuttons" id="connectionsTypeButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<!-- <span>Connection</span> -->
+					<span>C</span>
 					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
 				</button>
 				<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
-					<span>SlideShow List</span>
+					<!-- <span>SlideShow List</span> -->
+					<span>S</span>
 					<input id="showSlideShowArranger" type="checkbox" value="slideShowArranger" >
 				</button>
 			</div>
@@ -92,8 +98,8 @@
 			<div id="navSection4navDivButtonHolder" class="draggableSection">
 
 				<div class="titleDiv">
-					<button id="showLabelMenu" class="expandMinimizeButton" title="Actors Control" onclick="toggleBtnzFamily(this, 'A')">&#9776;</button>
-					<h3  class="titleBarH3">Actors</h3>
+					<button id="showLabelMenu" class="expandMinimizeButton" title="Characters Menu" onclick="toggleBtnzFamily(this, 'C')">&#9776;</button>
+					<h3  class="titleBarH3">Characters</h3>
 				</div>
 				<div style="">
 					<div  id="navDivButtonHolder" class="scrollbar scrollbar-custom">
