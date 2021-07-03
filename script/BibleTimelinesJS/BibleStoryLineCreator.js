@@ -236,6 +236,7 @@ function generateActorsNodesArrayOnLoad() {
 
 		//ARRAYS FOR DIV'S & THEIR CLASSES
 		if (divClassArray.indexOf(divzClass) == -1) {
+			//if div class name is not in the array, add it to the array
 			divClassArray.push(divzClass);
 			buildActorsMenu(divzClass);
 			divopt_ClassArray.push('opt_' + divzClass);
@@ -243,7 +244,7 @@ function generateActorsNodesArrayOnLoad() {
 			divNameAttributeArray.push(divzClass);
 			var dNmoption = document.createElement('OPTION');
 			dNmoption.text = divzClass;
-			dNmoption.setAttribute('optCounter', 1);
+			// dNmoption.setAttribute('optCounter', 1);
 			dNmoption.setAttribute('optClassName', divzClass);
 			var dNmClone = dNmoption.cloneNode(true);
 			var dNmClone2 = dNmoption.cloneNode(true);
@@ -255,16 +256,16 @@ function generateActorsNodesArrayOnLoad() {
 			divNameArray.push(divzName);
 			var dNmoption = document.createElement('OPTION');
 			dNmoption.text = divzName;
-			dNmoption.setAttribute('optCounter', 1);
+			// dNmoption.setAttribute('optCounter', 1);
 			dNmoption.setAttribute('optClassName', divzName);
 			divNameOptionsDropdown.append(dNmoption);
-			for (j = 0; j < divNameOptions.length; j++) {
+			/* for (j = 0; j < divNameOptions.length; j++) {
 				if (divNameOptions[j].text == divzName) {
 					var optCounterValue = Number(divNameOptions[j].getAttribute('optCounter'));
 					divNameOptions[j].setAttribute('optCounter', ++optCounterValue);
 					break;
 				}
-			}
+			} */
 		}
 	}
 	btn_buildLegendTable();
@@ -1965,7 +1966,7 @@ function buildLegendTable() {
 	clear = 1;
 
 	//RESET THE COLOR OF THE MODIFIED BUTTONS
-	if(clickedDIV)clickedDIV.style.backgroundColor = initialColor;
+	if(clickedDIV){clickedDIV.style.backgroundColor = initialColor;}
 	divDeleteButton.style.backgroundColor = '';
 	connectFromButton.style.backgroundColor = '';
 	connectToButton.style.backgroundColor = '';
@@ -2062,7 +2063,7 @@ function createDIV() {
 					var divClassOption = document.createElement('OPTION');
 					divClassOption.text = dClass;
 
-					divClassOption.setAttribute('optCounter', 1);
+					// divClassOption.setAttribute('optCounter', 1);
 					var dNmClone = divClassOption.cloneNode(true);
 					divClassOptionsDropdown.append(divClassOption);
 					divClass2ConnectToOptions.append(dNmClone);
@@ -2074,24 +2075,24 @@ function createDIV() {
 					//find the option that has this classname as its text and increase its optCounter value
 					var divClassOptions = divClassOptionsDropdown.getElementsByTagName('option');
 
-					for (j = 0; j < divClassOptions.length; j++) {
+					/* for (j = 0; j < divClassOptions.length; j++) {
 						if (divClassOptions[j].text == dClass) {
 							var optCounterValue = Number(divClassOptions[j].getAttribute('optCounter'))
 							divClassOptions[j].setAttribute('optCounter', ++optCounterValue);
 							break;
 						}
-					}
+					} */
 					//FOR THE DIV2CONNECT TO OPTIONS
 					var divClass2ConnectOptions =
 						divClass2ConnectToOptions.getElementsByTagName('option');
 
-					for (j = 0; j < divClass2ConnectOptions.length; j++) {
+					/* for (j = 0; j < divClass2ConnectOptions.length; j++) {
 						if (divClass2ConnectOptions[j].text == dClass) {
 							var optCounterValue = Number(divClass2ConnectOptions[j].getAttribute('optCounter'))
 							divClass2ConnectOptions[j].setAttribute('optCounter', ++optCounterValue);
 							break;
 						}
-					}
+					} */
 				}
 
 				/******************************************************************************************/
@@ -2104,7 +2105,7 @@ function createDIV() {
 					var dNmoption = document.createElement('OPTION');
 					dNmoption.text = dName;
 
-					dNmoption.setAttribute('optCounter', 1);
+					// dNmoption.setAttribute('optCounter', 1);
 					dNmoption.setAttribute('optClassName', dClass);
 					divNameOptionsDropdown.append(dNmoption);
 				}
@@ -2115,13 +2116,13 @@ function createDIV() {
 					//find the option that has this name as its text and increase its optCounter value
 					var divNameOptions = divNameOptionsDropdown.getElementsByTagName('option');
 
-					for (j = 0; j < divNameOptions.length; j++) {
-						if (divNameOptions[j].text == dName) {
-							var optCounterValue = Number(divNameOptions[j].getAttribute('optCounter'));
-							divNameOptions[j].setAttribute('optCounter', ++optCounterValue);
-							break;
-						}
-					}
+					// for (j = 0; j < divNameOptions.length; j++) {
+					// 	if (divNameOptions[j].text == dName) {
+					// 		var optCounterValue = Number(divNameOptions[j].getAttribute('optCounter'));
+					// 		divNameOptions[j].setAttribute('optCounter', ++optCounterValue);
+					// 		break;
+					// 	}
+					// }
 
 				}
 
@@ -2173,9 +2174,9 @@ function deleteDIV() {
 		//if this is not the last one
 		else {
 			//Modify all relevant options elements attributes
-			for (r = 0; r < optionsWithNodeDivsName.length; r++) {
+			/* for (r = 0; r < optionsWithNodeDivsName.length; r++) {
 				optionsWithNodeDivsName[r].setAttribute('optCounter', nodeDivsWithClassName.length - 1);
-			}
+			} */
 		}
 	}
 
