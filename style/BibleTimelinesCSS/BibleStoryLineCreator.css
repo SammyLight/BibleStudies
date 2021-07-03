@@ -1333,9 +1333,9 @@ img.intLink {
   font-size: 1em;
 }
 
-#saveDynamicDataToFile_1:hover::before {
+/* #saveDynamicDataToFile_1:hover::before {
   content: "SAVE";
-}
+} */
 
 #pageBottomStorylineTableEditorButtons {
   grid-area: "pageBottomCenter";
