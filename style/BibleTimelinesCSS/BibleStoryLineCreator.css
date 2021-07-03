@@ -112,9 +112,9 @@ nav.gid2>h1 {
   font-family: Georgia, serif;
 }
 
-*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+/* *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   font-size: 98%;
-}
+} */
 
 /* Focusing the button with a keyboard will show a dashed black line. */
 focus-visible {
@@ -200,7 +200,7 @@ body {
 }
 
 #divTableContainer {
-  min-height: 85vh;
+  min-height: 90vh;
   margin-left: 10px;
   margin-right: 10px;
   border: 0.5px solid #cccccc;
@@ -267,6 +267,7 @@ table h6:not(:last-of-type) {
 
 #legendTable h4 {
   margin: 0;
+  margin-left: 2px;
   padding: 0;
 }
 
@@ -274,8 +275,9 @@ table h6:not(:last-of-type) {
 #legendTable {
   margin-top: 5px;
   position: relative;
-  background-color: rgba(245, 245, 220, 0.5);
-  box-shadow: 0px 3px 6px -3px black;
+  border: 1px solid rgba(119, 136, 153, 0.75);
+  /* background-color: rgba(245, 245, 220, 0.5);
+  box-shadow: 0px 3px 6px -3px black; */
   z-index: 2;
 }
 
@@ -285,7 +287,7 @@ table h6:not(:last-of-type) {
 }
 
 #storyLineTable {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   border-collapse: separate;
   border-spacing: 5px 0;
 }
@@ -298,13 +300,23 @@ table h6:not(:last-of-type) {
 }
 
 #legendTable td,
-#legendTable th,
+#legendTable th {
+  /* border-bottom: 1.5px solid rgba(150, 128, 32, 0.42); */
+  /* border-bottom: 1px solid rgba(119, 136, 153, 0.75); */
+  box-shadow: 0 4px 5px -6px black;
+  background-color: rgba(245, 245, 220, 0.5);
+}
+
 #storyLineTable td,
 #storyLineTable th {
   position: relative;
   min-width: 100px;
   height: 20px;
-  border-bottom: 1.5px solid rgba(150, 128, 32, 0.42);
+  /* border-bottom: 1.5px solid rgba(150, 128, 32, 0.42); */
+  /* border-bottom: 1px solid rgba(119, 136, 153, 0.75); */
+  /* box-shadow: 0 4px 5px -6px black; */
+  box-shadow: -3px 6px 26px 0px black;
+  box-shadow: 0px 6px 20px -4px rgb(0 0 0);
   background-color: rgba(245, 245, 220, 0.5);
   border-radius: 2px;
   padding-left: 5px;
@@ -321,12 +333,15 @@ table h6:not(:last-of-type) {
 #storyLineTable thead td,
 #legendTable tr[rowname="Time"] td:not(:empty),
 #storyLineTable tr[rowname="Time"] td:not(:empty) {
-  background-color: rgba(255, 253, 219, 0.335);
-  background-color: rgba(247, 233, 102, 0.6);
   background-color: rgba(255, 234, 115, 0.6);
-  background-color: rgba(224, 219, 153, 0.6);
+  /* background-color: rgba(224, 219, 153, 0.6); */
   border-radius: 2px;
-  /* box-shadow: 0 4px 5px -6px black; */
+  box-shadow: 0 4px 5px -6px black;
+  /* box-shadow: 0px 6px 2px 4px rgba(0, 0, 0, 0.7); */
+  /* border-top:2px solid rgba(0, 0, 0, 0.5); */
+  border-right:2px solid rgba(0, 0, 0, 0.5);
+  border-bottom:2px solid rgba(0, 0, 0, 0.5);
+  border-left:2px solid rgba(0, 0, 0, 0.5);
 }
 
 #legendTable th:empty,
@@ -513,8 +528,8 @@ td>div {
 */
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 2px;
-  text-align: center;
-  box-shadow: 0 4px 5px -6px black;
+  /* text-align: center;
+  box-shadow: 0 4px 5px -6px black; */
   z-index: 1;
 }
 
@@ -524,10 +539,13 @@ td>div {
 #storyLineTable td div {
   /*	min-width: 95px;*/
   max-width: 200px;
-  padding: 5px 0;
+  padding: 2px 5px;
   border: 1px solid #acacac;
   border-radius: 3px;
   font-weight: bold;
+  /* font-style: italic; */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1px;;
 }
 
 #storyLineTable th>div:first-of-type,
@@ -574,15 +592,18 @@ td>div {
   left: 0;
   padding: 0 1px;
   margin: 0 !important;
-  background-color: rgba(255, 217, 0, 0.082);
+  background-color: rgba(0, 0, 0, 0.45);
   border: transparent;
-  color: darkred;
+  color: white;
+  font-weight: bolder;
   cursor: pointer;
   z-index: 80;
 }
 
-#storyLineTable .localShowDetailButton:hover {
-  background-color: rgba(255, 251, 0, 0.513);
+#storyLineTable .localShowDetailButton:active {
+  /* background-color: rgba(255, 251, 0, 0.513); */
+  background-color: rgba(255, 255, 255, 0.45);
+  color: black;
 }
 
 #storyLineTable td[detailindex]:hover:not(.showingDetail) {
@@ -1358,6 +1379,11 @@ pre#sourceText {
 @media (max-width: 768px) {
 
   /*@media (orientation: portrait) {*/
+
+ *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    font-size: 98%;
+  }
+
   body {
     display: grid;
     grid-template-columns: auto auto;
