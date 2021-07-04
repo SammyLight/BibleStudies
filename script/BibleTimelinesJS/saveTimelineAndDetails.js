@@ -47,6 +47,8 @@ categories: Timeline
 	saveText = saveText.replace(/([\s]*style=\"[^\"]*\")/g, "");
 	saveText = saveText.replace(/(showingDetail )/g, "");
 	saveText = saveText.replace(/(<p><\/p>)/g, "");//Remove emply paragraphs
+	saveText = saveText.replace(/(<p><ol>)/g, "<ol>");//Remove emply paragraphs
+	saveText = saveText.replace(/(<\/ol><\/p>)/g, "</ol>");//Remove emply paragraphs
 	// console.log(saveText);
 	////////////////////////////////////////////////////////////////////////////////////////////
 

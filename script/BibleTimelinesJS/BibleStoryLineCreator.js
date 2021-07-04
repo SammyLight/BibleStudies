@@ -238,6 +238,7 @@ function generateActorsNodesArrayOnLoad() {
 		if (divClassArray.indexOf(divzClass) == -1) {
 			//if div class name is not in the array, add it to the array
 			divClassArray.push(divzClass);
+			divClassArray.sort();//arrange it alphabetically
 			buildActorsMenu(divzClass);
 			divopt_ClassArray.push('opt_' + divzClass);
 
@@ -2024,6 +2025,7 @@ function createDIV() {
 				//ARRAYS FOR DIV'S & THEIR CLASSES
 				if (divClassArray.indexOf(dClass) == -1) {
 					divClassArray.push(dClass);
+					divClassArray.sort();
 					buildActorsMenu(dClass);
 				}
 				if (divNameArray.indexOf(dName) == -1) {
@@ -2558,16 +2560,54 @@ function createDivMenu(dClass) {
 function buildActorsMenu(x) {
 	//	divClassArray
 	//	divNameArray
-
+	
 	if (x) {
 		createDivMenu(x)
+		sortList('labelList');
 	} else {
+		console.log('bIPLUS1text')
 		divClassArray.forEach(function (divClassName) {
-			createDivMenu(divClassName)
+			createDivMenu(divClassName);
 		})
+		sortList('labelList');
 	}
-
 }
+
+function sortList(listId) {//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_list
+	var list, i, switching, b, shouldSwitch;
+	list = document.getElementById(listId);
+	switching = true;
+	/* Make a loop that will continue until
+	no switching has been done: */
+	while (switching) {
+	  // start by saying: no switching is done:
+	  switching = false;
+	  b = list.getElementsByTagName("LI");
+	  // Loop through all list-items:
+	  for (i = 0; i < (b.length - 1); i++) {
+		// start by saying there should be no switching:
+		shouldSwitch = false;
+		/* check if the next item should
+		switch place with the current item: */
+		var bItext = b[i]./* querySelector('label'). */innerHTML.toLowerCase();
+		var bIPLUS1text = b[i + 1]./* querySelector('label'). */innerHTML.toLowerCase();
+		// if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+		if (bItext > bIPLUS1text) {
+		  /* if next item is alphabetically
+		  lower than current item, mark as a switch
+		  and break the loop: */
+		  shouldSwitch = true;
+		  break;
+		}
+	  }
+	  if (shouldSwitch) {
+		/* If a switch has been marked, make the switch
+		and mark the switch as done: */
+		b[i].parentNode.insertBefore(b[i + 1], b[i]);
+		switching = true;
+	  }
+	}
+  }
 /******************************************************************************************/
 /******************************************************************************************/
 
