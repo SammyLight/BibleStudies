@@ -13,12 +13,13 @@
 
 	<section id="websiteNav">
 		<!--		<h3 style="display: none">Bible Timelines</h3>-->
-		<h4 style="display: none">
+		<h4 style="display: none; width: fit-content;">
 			{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
 			<a id="timelinesHome" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">BibleTimelines Home</a>
 			{% endif %}{% endfor %}
 		</h4>
-		<ul style="display: none">
+		<input type="text" id="searchBox" onkeyup="searchNavMenu('searchBox', 'bibleTimelinesNav')" placeholder="Search for names.." title="Type in a name" style="display: none">
+		<ul id="bibleTimelinesNav" style="display: none">
 			{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li style="display: none"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
 		        {% endif %}">{{page.title}}</a></li>
 			{% endif %}{% endfor %}
