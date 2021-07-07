@@ -33,7 +33,6 @@ function changeCSS(property, style, value, cssSectionID) {
                     rulesString = rulesString + mainCSS.cssRules[i].cssText;
                     if (i == (crL - 1)){
                         mainCSS_1.innerText = rulesString;
-                        console.log(rulesString)
                     }
                 }
                 break;
@@ -83,7 +82,6 @@ function deleteNodeDivStyle(){
                     newStyleSheet.id = 'divColorStyles';
                     newStyleSheet.innerHTML = newCssRules;
                     document.getElementsByTagName('head')[0].appendChild(newStyleSheet);
-                    // console.log(newCssRules);
                 }
             }
             break;

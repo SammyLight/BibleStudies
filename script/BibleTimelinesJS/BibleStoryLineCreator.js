@@ -238,7 +238,7 @@ function generateActorsNodesArrayOnLoad() {
 		if (divClassArray.indexOf(divzClass) == -1) {
 			//if div class name is not in the array, add it to the array
 			divClassArray.push(divzClass);
-			divClassArray.sort();//arrange it alphabetically
+			divClassArray.sort(); //arrange it alphabetically
 			buildActorsMenu(divzClass);
 			divopt_ClassArray.push('opt_' + divzClass);
 
@@ -454,8 +454,11 @@ function analyzeTable() {
 
 }
 /*CHANGE CONTROL AND DETAILS SECTION Z-INDEX*********************************************/
-
 alternateStoryLineEditorButtons.addEventListener('mousedown', function (e) {
+	editorZindexAboveNote();
+})
+
+function editorZindexAboveNote() {
 	var a = getComputedStyle(alternateStoryLineEditorButtons, null).getPropertyValue('z-Index');
 	var d = getComputedStyle(detailsSection, null).getPropertyValue('z-Index');
 	var aN = Number(a);
@@ -465,19 +468,23 @@ alternateStoryLineEditorButtons.addEventListener('mousedown', function (e) {
 		alternateStoryLineEditorButtons.style.zIndex = dN;
 		detailsSection.style.zIndex = aN;
 	}
-})
+}
 
 detailsSection.addEventListener('mousedown', function (e) {
+	noteZindexAboveEditor();
+})
+
+function noteZindexAboveEditor() {
 	var a = getComputedStyle(alternateStoryLineEditorButtons, null).getPropertyValue('z-Index');
 	var d = getComputedStyle(detailsSection, null).getPropertyValue('z-Index');
 	var aN = Number(a);
 	var dN = Number(d);
-
+	
 	if (dN < aN) {
 		alternateStoryLineEditorButtons.style.zIndex = dN;
 		detailsSection.style.zIndex = aN;
 	}
-})
+}
 
 /****************************************************************************************/
 
@@ -1967,7 +1974,9 @@ function buildLegendTable() {
 	clear = 1;
 
 	//RESET THE COLOR OF THE MODIFIED BUTTONS
-	if(clickedDIV){clickedDIV.style.backgroundColor = initialColor;}
+	if (clickedDIV) {
+		clickedDIV.style.backgroundColor = initialColor;
+	}
 	divDeleteButton.style.backgroundColor = '';
 	connectFromButton.style.backgroundColor = '';
 	connectToButton.style.backgroundColor = '';
@@ -2352,6 +2361,7 @@ function makeTableEditable() {
 		allPInTable.forEach(function (itm) {
 			itm.contentEditable = true
 		})
+		editorZindexAboveNote();
 	} else {
 		storyLineTableTitleHeader.contentEditable = 'false';
 		alternateStoryLineEditorButtons.style.display = 'none';
@@ -2560,7 +2570,7 @@ function createDivMenu(dClass) {
 function buildActorsMenu(x) {
 	//	divClassArray
 	//	divNameArray
-	
+
 	if (x) {
 		createDivMenu(x)
 		sortList('labelList');
@@ -2573,41 +2583,41 @@ function buildActorsMenu(x) {
 	}
 }
 
-function sortList(listId) {//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_list
+function sortList(listId) { //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_list
 	var list, i, switching, b, shouldSwitch;
 	list = document.getElementById(listId);
 	switching = true;
 	/* Make a loop that will continue until
 	no switching has been done: */
 	while (switching) {
-	  // start by saying: no switching is done:
-	  switching = false;
-	  b = list.getElementsByTagName("LI");
-	  // Loop through all list-items:
-	  for (i = 0; i < (b.length - 1); i++) {
-		// start by saying there should be no switching:
-		shouldSwitch = false;
-		/* check if the next item should
-		switch place with the current item: */
-		var bItext = b[i]./* querySelector('label'). */innerHTML.toLowerCase();
-		var bIPLUS1text = b[i + 1]./* querySelector('label'). */innerHTML.toLowerCase();
-		// if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-		if (bItext > bIPLUS1text) {
-		  /* if next item is alphabetically
-		  lower than current item, mark as a switch
-		  and break the loop: */
-		  shouldSwitch = true;
-		  break;
+		// start by saying: no switching is done:
+		switching = false;
+		b = list.getElementsByTagName("LI");
+		// Loop through all list-items:
+		for (i = 0; i < (b.length - 1); i++) {
+			// start by saying there should be no switching:
+			shouldSwitch = false;
+			/* check if the next item should
+			switch place with the current item: */
+			var bItext = b[i]. /* querySelector('label'). */ innerHTML.toLowerCase();
+			var bIPLUS1text = b[i + 1]. /* querySelector('label'). */ innerHTML.toLowerCase();
+			// if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+			if (bItext > bIPLUS1text) {
+				/* if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop: */
+				shouldSwitch = true;
+				break;
+			}
 		}
-	  }
-	  if (shouldSwitch) {
-		/* If a switch has been marked, make the switch
-		and mark the switch as done: */
-		b[i].parentNode.insertBefore(b[i + 1], b[i]);
-		switching = true;
-	  }
+		if (shouldSwitch) {
+			/* If a switch has been marked, make the switch
+			and mark the switch as done: */
+			b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			switching = true;
+		}
 	}
-  }
+}
 /******************************************************************************************/
 /******************************************************************************************/
 
@@ -3469,4 +3479,22 @@ function masterNoteFunc() {
 	if (!/\S/i.test(masterNoteNote.innerText)) {
 		masterNoteNote.innerHTML = `<h1>Title</h1><hr><p>Master note</p>`;
 	}
+}
+
+/* SEARCH BIBLE WEBSITE SECTION NAV MENU*/
+function searchNavMenu(sbox, list2search) {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById(sbox) || sbox;
+    filter = input.value.toUpperCase();
+    ul = document.getElementById(list2search);
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
