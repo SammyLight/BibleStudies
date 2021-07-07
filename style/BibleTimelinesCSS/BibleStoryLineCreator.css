@@ -62,9 +62,11 @@
   display: grid;
   grid-template-columns: auto 1fr;
 }
-
+:root {
+  --customColor: floralwhite;
+}
 .grid2 {
-  background-color: white !important;
+  background-color: var(--customColor);
   border: 1px solid black;
   position: sticky;
   z-index: 10;
@@ -160,6 +162,8 @@ body {
   /*Beige*/
   background-color: White;
   /*White*/
+  background-color: var(--customColor);
+  /*Blanchedalmond*/
   /*			color: white;*/
   /*	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));*/
 }
@@ -364,6 +368,7 @@ table h6:not(:last-of-type) {
   max-width: 100%;
   text-align: right;
   font-style: italic;
+  font-weight: bolder;
 }
 
 #storyLineTableTitleHeader {
@@ -1561,7 +1566,8 @@ pre#sourceText {
 .darkMode #pageBottomStorylineTableEditorButtons *:hover,
 .darkMode #alternateStoryLineEditorButtons,
 .darkMode #alternateStoryLineEditorButtons * {
-  background-color: rgb(8, 8, 10);
+  background-color: rgb(33, 56, 56);/* darker darkslategrey */
+  background-color: rgb(70, 70, 71);/* blackish */
   border-color: white;
   color: white;
 }
@@ -1574,9 +1580,8 @@ body.darkMode thead,
 .darkMode #masterTable td,
 .darkMode #legendNstoryLineHolder,
 .darkMode #legendTable,
-.darkMode #storyLineTable {
-  background-color: rgba(0, 0, 0, 0.226) !important;
-  /* background-color: rgba(75, 0, 0, 0.226) !important; */
+.darkMode #storyLineTable,\ {
+  background-color: rgba(0, 0, 0, 0.08) !important;
   border-color: hsl(0, 0%, 87%);
 }
 
@@ -1599,4 +1604,29 @@ body.darkMode thead,
 
 .darkMode #storyLineTable .localShowDetailButton {
   color: white;
+}
+.darkMode #searchBox {
+  background-color: white;
+  color: black;
+}
+
+.darkMode #websiteNav li>a:hover {
+  background-color: rgba(255, 255, 255, 0.596);
+  font-weight: stronger;
+  color: black;
+  text-decoration: none;
+}
+.darkMode #masterNote {
+  background-color: rgba(81, 82, 66, 0.6)!important;
+}
+.darkMode #masterNoteNote {
+  background-color: rgba(0, 0, 0, 0.7)!important;
+  color: white !important;
+}
+.darkMode #divTableContainer,
+.darkMode #masterNoteNote p {
+  background-color: transparent !important;
+}
+.darkMode #masterNav button:hover  {
+  color: black !important;
 }
