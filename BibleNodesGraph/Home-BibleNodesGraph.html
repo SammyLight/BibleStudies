@@ -1,0 +1,13 @@
+---
+layout: homeTEMPLATE
+title: "BibleNodeGraph"
+categories: ["HomePage-BibleNodeGraph"]
+---
+	<h2>Bible Node Graphs</h2>
+	
+	<ol>
+		{% for page in site.pages %}{% if page.categories contains "BibleNodeGraph" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+            {% endif %}{% endfor %}
+	</ol>
+</body>
+</html>
