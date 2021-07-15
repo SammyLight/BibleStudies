@@ -33,7 +33,7 @@
     <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
     <div id="canvasCustomContextMenu" class="customContextMenu">
         <button id="contextMenuNewNode" onclick="createNewNode('node')">New Node</button>
-        <button id="contextMenuNewNode" onclick="createNewNode('set')">New Set</button>
+        <button id="contextMenuNewNodeSet" onclick="createNewNode('set')">New Set</button>
     </div>
     <!-- ContextMenu for rightClick on any divNode -->
     <div id="nodeDivCustomContextMenu" class="customContextMenu">
@@ -47,7 +47,25 @@
     <div id="svgPathCustomContextMenu" class="customContextMenu">
         <button id="addLabelContextMenu" onclick="addLabelToPath()" tabindex="0">Add Label</button>
         <button id="deletePathContextMenu" onclick="deletePath()" tabindex="0">Delete</button>
-        <button id="deletePathContextMenu" onclick="addNote()" tabindex="0">Add Note</button>
+        <button id="addNoteContextMenu" onclick="addNote()" tabindex="0">Add Note</button>
+
+        {% comment %}
+        <select id="startSide" onchange="startSide(this[this.selectedIndex].value)">
+            <option class="heading" selected>StartSide</option>
+            <option value="left" title="left">Start Left</option>
+            <option value="top" title="top">Start Top</option>
+            <option value="right" title="right">Start Right</option>
+            <option value="bottom" title="bottom">Start Bottom</option>
+        </select>
+
+        <select id="endSide" onchange="endSide(this[this.selectedIndex].value)">
+            <option class="heading" selected>EndSide</option>
+            <option value="left" title="left">End Left</option>
+            <option value="top" title="top">End Top</option>
+            <option value="right" title="right">End Right</option>
+            <option value="bottom" title="bottom">End Bottom</option>
+        </select>
+        {% endcomment %}
     </div>
     </div>
     <!-- ContextMenu for rightClick on any note -->
