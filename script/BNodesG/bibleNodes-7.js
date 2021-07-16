@@ -92,8 +92,8 @@ function mouseDownFunction(e) {
     contextX = e.clientX;
     contextY = e.clientY;
 
-    divX = e.clientX - currentNode.getBoundingClientRect().left + nodeCanvasX;
-    divY = e.clientY - currentNode.getBoundingClientRect().top + nodeCanvasY;
+    divX = e.clientX - currentNode.getBoundingClientRect().left;
+    divY = e.clientY - currentNode.getBoundingClientRect().top;
     SVGmouseDownFunction();
 }
 
@@ -102,8 +102,8 @@ function mouseMoveFunction(e) {
     mouseMoveForDraggingEnabled = 0;
 
     // take vertical and horizontal page scroll into consideration 
-    var horizontalScroll = (window.pageXOffset || document.documentElement.scrollLeft);
-    var verticalScroll = (window.pageYOffset || document.documentElement.scrollTop);
+    var horizontalScroll = (window.pageXOffset || document.documentElement.scrollLeft) - nodeCanvas.getBoundingClientRect().left;
+    var verticalScroll = (window.pageYOffset || document.documentElement.scrollTop) - nodeCanvas.getBoundingClientRect().top;
 
     var newX = e.clientX - divX + horizontalScroll + 'px';
     var newY = e.clientY - divY + verticalScroll + 'px';

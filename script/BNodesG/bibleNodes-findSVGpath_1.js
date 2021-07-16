@@ -3,8 +3,8 @@
 function findSVGpathMouseDownFunction(e) {
     //create new pointNode
     pointNode.style.display = 'block';
-    pointNode.style.left = e.clientX - pointNode.offsetWidth / 2 - nodeCanvasX + (window.pageXOffset || document.documentElement.scrollLeft) + 'px';
-    pointNode.style.top = e.clientY - pointNode.offsetHeight / 2 - nodeCanvasY + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
+    pointNode.style.left = e.clientX - pointNode.offsetWidth / 2 - /* nodeCanvasX */ nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft) + 'px';
+    pointNode.style.top = e.clientY - pointNode.offsetHeight / 2 - /* nodeCanvasY */ nodeCanvas.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
 
     nodeCanvas.addEventListener('mousemove', findSVGpathMouseMoveFunction);
     for (i=0; i < divNodes.length; i++) {
@@ -31,8 +31,8 @@ function identifyCurrentDiv(){
 function findSVGpathMouseMoveFunction(e) {
     //create new pointNode
     pointNode.style.display = 'block';
-    pointNode.style.left = e.clientX - pointNode.offsetWidth / 2 - nodeCanvasX + (window.pageXOffset || document.documentElement.scrollLeft) + 'px';
-    pointNode.style.top = e.clientY - pointNode.offsetHeight / 2 - nodeCanvasY + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
+    pointNode.style.left = e.clientX - pointNode.offsetWidth / 2 - /* nodeCanvasX */ nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft) + 'px';
+    pointNode.style.top = e.clientY - pointNode.offsetHeight / 2 - /* nodeCanvasY */ nodeCanvas.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
         
     //Connect divs with svg line
     if(nodeCanvas.getElementsByClassName('tempSVGline').length == 0){

@@ -47,8 +47,8 @@ function getElementOffset(el) {
 function getCoordinates(element) {
 
 	var rect = element.getBoundingClientRect();
-	var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	var scrollLeft = (window.pageXOffset || document.documentElement.scrollLeft);
+    var scrollTop = (window.pageYOffset || document.documentElement.scrollTop);
 	
 	var trueX;
 	var trueY;
