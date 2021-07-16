@@ -23,57 +23,60 @@
                         Home</a>
                     {% endif %}{% endfor %}
                 </h4>
-                {% for page in site.pages %}{% if page.categories contains "BibleNodeGraph" %}<li style="display: none;"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
+                {% for page in site.pages %}{% if page.categories contains "BibleNodeGraph" %}<li
+                    style="display: none;"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
 		        {% endif %}">{{page.title}}</a></li>
                 {% endif %}{% endfor %}
             </ol>
         </div>
     </div>
 
-    <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
-    <div id="canvasCustomContextMenu" class="customContextMenu">
-        <button id="contextMenuNewNode" onclick="createNewNode('node')">New Node</button>
-        <button id="contextMenuNewNodeSet" onclick="createNewNode('set')">New Set</button>
-    </div>
-    <!-- ContextMenu for rightClick on any divNode -->
-    <div id="nodeDivCustomContextMenu" class="customContextMenu">
-        <button id="contextMenuLink" onclick="nodeToConnectCurrentNodeTo()" tabindex="0">Link</button>
-        <!-- <button id="contextMenuClone" onclick="cloneNodeDiv()" tabindex="0">Clone</button> -->
-        <button id="contextMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
-        <button id="contextMenuDelete" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
-        <button id="contextMenuDelete" onclick="addNote()" tabindex="0">Add Note</button>
-    </div>
-    <!-- ContextMenu for rightClick on any svgPath -->
-    <div id="svgPathCustomContextMenu" class="customContextMenu">
-        <button id="addLabelContextMenu" onclick="addLabelToPath()" tabindex="0">Add Label</button>
-        <button id="deletePathContextMenu" onclick="deletePath()" tabindex="0">Delete</button>
-        <button id="addNoteContextMenu" onclick="addNote()" tabindex="0">Add Note</button>
+    <div id="nodeCanvasContainer">
+        <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
+        <div id="canvasCustomContextMenu" class="customContextMenu">
+            <button id="contextMenuNewNode" onclick="createNewNode('node')">New Node</button>
+            <button id="contextMenuNewNodeSet" onclick="createNewNode('set')">New Set</button>
+        </div>
+        <!-- ContextMenu for rightClick on any divNode -->
+        <div id="nodeDivCustomContextMenu" class="customContextMenu">
+            <button id="contextMenuLink" onclick="nodeToConnectCurrentNodeTo()" tabindex="0">Link</button>
+            <!-- <button id="contextMenuClone" onclick="cloneNodeDiv()" tabindex="0">Clone</button> -->
+            <button id="contextMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
+            <button id="contextMenuDelete" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
+            <button id="contextMenuDelete" onclick="addNote()" tabindex="0">Add Note</button>
+        </div>
+        <!-- ContextMenu for rightClick on any svgPath -->
+        <div id="svgPathCustomContextMenu" class="customContextMenu">
+            <button id="addLabelContextMenu" onclick="addLabelToPath()" tabindex="0">Add Label</button>
+            <button id="deletePathContextMenu" onclick="deletePath()" tabindex="0">Delete</button>
+            <button id="addNoteContextMenu" onclick="addNote()" tabindex="0">Add Note</button>
 
+            {% comment %}
+            <select id="startSide" onchange="startSide(this[this.selectedIndex].value)">
+                <option class="heading" selected>StartSide</option>
+                <option value="left" title="left">Start Left</option>
+                <option value="top" title="top">Start Top</option>
+                <option value="right" title="right">Start Right</option>
+                <option value="bottom" title="bottom">Start Bottom</option>
+            </select>
+
+            <select id="endSide" onchange="endSide(this[this.selectedIndex].value)">
+                <option class="heading" selected>EndSide</option>
+                <option value="left" title="left">End Left</option>
+                <option value="top" title="top">End Top</option>
+                <option value="right" title="right">End Right</option>
+                <option value="bottom" title="bottom">End Bottom</option>
+            </select>
+            {% endcomment %}
+        </div>
+
+        <!-- ContextMenu for rightClick on any note -->
+        <div id="notesCustomContextMenu" class="customContextMenu">
+            <button id="deleteNoteBtn" onclick="deleteNote()" tabindex="0">Delete</button>
+        </div>
+    
         {% comment %}
-        <select id="startSide" onchange="startSide(this[this.selectedIndex].value)">
-            <option class="heading" selected>StartSide</option>
-            <option value="left" title="left">Start Left</option>
-            <option value="top" title="top">Start Top</option>
-            <option value="right" title="right">Start Right</option>
-            <option value="bottom" title="bottom">Start Bottom</option>
-        </select>
-
-        <select id="endSide" onchange="endSide(this[this.selectedIndex].value)">
-            <option class="heading" selected>EndSide</option>
-            <option value="left" title="left">End Left</option>
-            <option value="top" title="top">End Top</option>
-            <option value="right" title="right">End Right</option>
-            <option value="bottom" title="bottom">End Bottom</option>
-        </select>
+        <!-- <div id="" class=""> -->
+        Useful to keep the title bar in place when scrolling on mobile
+        It however affects assigning of x and y coordinates
         {% endcomment %}
-    </div>
-    </div>
-    <!-- ContextMenu for rightClick on any note -->
-    <div id="notesCustomContextMenu" class="customContextMenu">
-        <button id="deleteNoteBtn" onclick="deleteNote()" tabindex="0">Delete</button>
-    </div>
-    <!-- <div id="nodeCanvasContainer" class=""> -->
-    {% comment %}
-    Useful to keep the title bar in place when scrolling on mobile
-    It however affects assigning of x and y coordinates
-    {% endcomment %}
