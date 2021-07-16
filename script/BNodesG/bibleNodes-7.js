@@ -102,8 +102,8 @@ function mouseMoveFunction(e) {
     mouseMoveForDraggingEnabled = 0;
 
     // take vertical and horizontal page scroll into consideration 
-    var horizontalScroll = (window.pageXOffset || document.documentElement.scrollLeft) - nodeCanvas.getBoundingClientRect().left;
-    var verticalScroll = (window.pageYOffset || document.documentElement.scrollTop) - nodeCanvas.getBoundingClientRect().top;
+    var horizontalScroll = (window.pageXOffset || document.documentElement.scrollLeft) - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left;
+    var verticalScroll = (window.pageYOffset || document.documentElement.scrollTop) + nodeCanvasContainer.getBoundingClientRect().top - nodeCanvas.getBoundingClientRect().top;
 
     var newX = e.clientX - divX + horizontalScroll + 'px';
     var newY = e.clientY - divY + verticalScroll + 'px';

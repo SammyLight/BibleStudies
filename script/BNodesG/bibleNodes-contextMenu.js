@@ -104,12 +104,9 @@ var noteToDelete;
 
 //For Tooltip
 nodeCanvas.addEventListener('mouseover', function (ev) {
-    rClick_X = ev.clientX + (window.pageXOffset || document.documentElement.scrollLeft) /* + nodeCanvas.getBoundingClientRect().left */;
-    rClick_Y = ev.clientY + (window.pageYOffset || document.documentElement.scrollTop) /* + nodeCanvas.getBoundingClientRect().top */;
-    console.log(ev)
-    console.log(ev.clientX)
-    console.log(rClick_X)
-    console.log(nodeCanvas.getBoundingClientRect().left)
+    rClick_X = ev.clientX - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);
+    rClick_Y = ev.clientY + nodeCanvasContainer.getBoundingClientRect().top - nodeCanvas.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+    
     ev = ev || window.event;
     var target = ev.target || ev.srcElement;
     
@@ -171,12 +168,11 @@ nodeCanvas.addEventListener('mousemove', function (ev) {
     ev = ev || window.event;
     var target = ev.target || ev.srcElement;
  
-    rClick_X = ev.clientX - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);
-    rClick_Y = ev.clientY /* - nodeCanvas.getBoundingClientRect().top */ + (window.pageYOffset || document.documentElement.scrollTop);
+    rClick_X = ev.clientX - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);
+    rClick_Y = ev.clientY + nodeCanvasContainer.getBoundingClientRect().top - nodeCanvas.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
     
     if (target.tagName == 'path') {
-        
-        console.log('jesus')
+
         selectedPath = target;
         
         svgPathToolTip.style.left =rClick_X + 10 + 'px';
@@ -208,8 +204,8 @@ nodeCanvas.addEventListener('mousedown', function (ev) {
 })
 
 nodeCanvas.addEventListener('contextmenu', function (ev) {
-    rClick_X = ev.clientX - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);
-    rClick_Y = ev.clientY /* - nodeCanvas.getBoundingClientRect().top */ + (window.pageYOffset || document.documentElement.scrollTop);
+    rClick_X = ev.clientX - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);
+    rClick_Y = ev.clientY + nodeCanvasContainer.getBoundingClientRect().top - nodeCanvas.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
 
     ev.preventDefault();//prevent default context menu
 
