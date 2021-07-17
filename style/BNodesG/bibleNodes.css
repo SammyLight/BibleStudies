@@ -17,7 +17,7 @@ body {
     width: 100vw;
     background-color: rgb(237, 237, 237);
     box-shadow: 0px 1px 5px 3px rgb(0, 0, 0, 75%);
-    display: grid;
+    /* display: grid; */
     grid-template-columns: minmax(auto, 50px) minmax(auto, 50px) 1fr;
     grid-template-rows: 1fr;
     z-index: 18;
@@ -42,6 +42,10 @@ body {
 #websiteNav ol {
     display: block;
     margin-left: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 30px;
     list-style-type: decimal;
     column-width: 12em;
@@ -83,6 +87,14 @@ body {
     background-color: rgba(242, 255, 127, 0.3);
     transition-property: background-color;
     transition-duration: 0.5s;
+}
+
+.interactivebutton input {
+    width: 9px;
+    margin: 0;
+}
+.coloron {
+    background-color: lightGreen !important;
 }
 
 .notes {
@@ -348,9 +360,15 @@ div[setclass]:active {
 }
 
 /* DARK MODE */
-.darkmode path {
+.darkmode .svg-connectors{
     stroke: white;
+    box-shadow: 5px 5px 0 0 #000000;
 }
+.darkmode #arrowHead path {
+    stroke: white;
+    stroke-width: 1;
+}
+body.darkmode,
 .darkmode #nodeCanvas {
     background-color: grey;
 }
@@ -362,11 +380,13 @@ div[setclass]:active {
     background-color: rgba(93, 93, 93, 0.768);
     color: white;
 }
-.darkmode #websiteNav,
-.darkmode #websiteNav a  {
+.darkmode #websiteNav {
     background-color: rgba(169, 169, 169, 0.863);
     color: rgb(54, 54, 54);
     font-weight: bolder;
+}
+.darkmode #websiteNav a  {
+    color: rgb(54, 54, 54);
 }
 .darkmode #connectionDetails,
 .darkmode #connectionDetails a  {
@@ -386,4 +406,7 @@ div[setclass]:active {
 .darkmode .notes[contenteditable="true"] {
     /* background-color: rgb(98, 98, 98); */
     color: black;
+}
+.darkmode .coloron {
+    background-color: darkGreen !important;
 }
