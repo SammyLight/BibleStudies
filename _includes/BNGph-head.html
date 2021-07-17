@@ -13,6 +13,7 @@
     <div id="bibleNodesHeader">
         <button id="menuButton" onclick="navMenu()">Site Menu</button>
         <button id="saveButton" onclick="saveDynamicDataToFile()">SAVE</button>
+        <button id="darkModeButton" onclick="darkModeOnOff()" title="Toggle Dark or Light Mode">D</button>
         <h1 id="bibleNodesTitle" title='Double click to edit'>{{page.title}}</h1>
         <div id="websiteNav">
             <ol id="websiteNavMenu" style="display: none;">
@@ -39,11 +40,12 @@
         </div>
         <!-- ContextMenu for rightClick on any divNode -->
         <div id="nodeDivCustomContextMenu" class="customContextMenu">
-            <button id="contextMenuLink" onclick="nodeToConnectCurrentNodeTo()" tabindex="0">Link</button>
+            <button id="cMenuLink" onclick="nodeToConnectCurrentNodeTo()" tabindex="0">Link</button>
             <!-- <button id="contextMenuClone" onclick="cloneNodeDiv()" tabindex="0">Clone</button> -->
-            <button id="contextMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
-            <button id="contextMenuDelete" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
-            <button id="contextMenuDelete" onclick="addNote()" tabindex="0">Add Note</button>
+            <button id="cMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
+            <button id="cMenuDeleteNodeDiv" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
+            <button id="cMenuAddNote" onclick="addNote()" tabindex="0">Add Note</button>
+            <button id="cMenuDescendantsToggle" onclick="toggleDescendants()" tabindex="0">Descendants</button>
         </div>
         <!-- ContextMenu for rightClick on any svgPath -->
         <div id="svgPathCustomContextMenu" class="customContextMenu">
