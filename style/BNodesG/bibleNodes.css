@@ -15,11 +15,7 @@ body {
     position: fixed;
     margin-top: 0px;
     width: 100vw;
-    /* grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2; */
-    background-color: rgba(245, 245, 220, 0.95);
+    background-color: snow;
     box-shadow: 0px 1px 5px 3px rgb(0, 0, 0, 75%);
     display: grid;
     grid-template-columns: minmax(auto, 50px) minmax(auto, 50px) 1fr;
@@ -32,7 +28,7 @@ body {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    background-color: Azure;
+    background-color: rgb(245, 245, 220);
 }
 
 #websiteNav h4 {
@@ -230,13 +226,9 @@ path:hover {
 }
 
 #nodeCanvas {
-    background-color: transparent;
-    height: 100%;
-    width: auto;
-    /* grid-column-start: 1;
-    grid-column-end: auto;
-    grid-row-start: 1;
-    grid-row-end: auto; */
+    background-color: whitesmoke;
+    height: 2000px;
+    width: 2000px;
 }
 
 .divNode {
@@ -348,4 +340,20 @@ div[setclass]:active {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     padding: 30px;
+}
+
+/* DARK MODE */
+.darkmode path {
+    stroke: white;
+}
+.darkmode #nodeCanvas {
+    background-color: grey;
+}
+.darkmode #bibleNodesHeader  {
+    background-color: darkgrey;
+    color: white;
+}
+.darkmode #websiteNav  {
+    background-color: darkgray;
+    color: white;
 }
