@@ -148,3 +148,17 @@ function navMenu() {
 		setTimeout(() => showHideSiteNav(webSiteNavLinks[i - 1]), 5 * i)
 	}
 }
+
+/* DARK MODE ON OFF */
+var darkModeButton = document.getElementById('darkModeButton');
+var documentBody = document.getElementsByTagName('body')[0];
+
+function darkModeOnOff() {
+	if (documentBody.classList.contains('darkmode')) {
+		documentBody.classList.remove('darkmode');
+		darkModeButton.innerHTML = 'D';
+	} else {
+		documentBody.classList.add('darkmode');
+		darkModeButton.innerHTML = 'L';
+	}
+}
