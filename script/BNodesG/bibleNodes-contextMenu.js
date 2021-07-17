@@ -28,11 +28,24 @@ function fadeInShow( el, speed ) {
     if(fadeOutTimeOut){
         clearTimeout(fadeOutTimeOut);
     }
-    
-    // el.style.display = 'block';
     var seconds = speed/1000;
+    el.style.display = '';
     el.style.transition = "opacity "+seconds+"s";
     el.style.opacity = 1;
+}
+function fadeInShow2( el, speed ) {
+    if(fadeOutTimeOut){
+        clearTimeout(fadeOutTimeOut);
+    }
+    
+    var seconds = speed/1000;
+    el.style.display = '';
+    
+    fadeInTimeOut = setTimeout(function() {
+        el.style.transition = "opacity "+seconds+"s";
+        el.style.opacity = 1;
+        fadeInTimeOut = null;
+    }, speed);
 }
 function fadeOutHide( el, speed ) {
     if(fadeInTimeOut){clearTimeout(fadeInTimeOut);}
