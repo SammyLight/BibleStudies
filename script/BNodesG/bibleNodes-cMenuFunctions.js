@@ -29,7 +29,7 @@ function setConnect2Attribute(first, second) {
     if (first != second) {
         var connect2Array = [];
         if (first.hasAttribute('connectTo')) {
-            var abc = (first.getAttribute('connectTo')).split(' ');
+            var abc = (first.getAttribute('connectTo')).trim().split(' ');
             connect2Array = connect2Array.concat(abc);
         }
         var secondNodeId = second.getAttribute('nodeId');
@@ -160,36 +160,218 @@ function deleteNodeDiv() {
 }
 
 //THIS HIDES OR SHOWS ALL DESCENDANTS OF SELECTED NODE
-function toggleDescendants(thisNode, showORhide) {
+
+//FUNCTIONS TO DETERMINE IF ALL DESCENDANTS OR JUST THE NEXT GENERATION SHOULD BE SHOWN/HIDDEN
+function descendants2Toggle(allOrNextOnly) {
+    if (allOrNextOnly == 'all') {
+        firstGenRadio.checked = false;
+        allNfirstGenRadio.checked = false;
+    } else if (allOrNextOnly == 'firstGeneration') {
+        allGenRadio.checked = false;
+        allNfirstGenRadio.checked = false;
+    } else if (allOrNextOnly == 'hideAllShowFirst') {
+        firstGenRadio.checked = false;
+        allGenRadio.checked = false;
+    }
+}
+
+//TO SHOW AND HIDE THE ITERACTIVITY CONTROLS
+var interactivebuttons = document.getElementsByClassName('interactivebutton');
+var makeInteractive = document.getElementById('makeInteractive');
+
+function interactivity() {
+    if (makeInteractive.classList.contains('noninteractive')) {
+        for (i = 0; i < interactivebuttons.length; i++) {
+            interactivebuttons[i].style.display = '';
+        }
+        makeInteractive.classList.remove('noninteractive');
+        nodeCanvas.addEventListener('mousedown', toggleDescendants);
+        makeInteractive.classList.add('coloron');
+    } else {
+        for (i = 0; i < interactivebuttons.length; i++) {
+            interactivebuttons[i].style.display = 'none';
+            interactivebuttons[i].querySelector('input').checked = false;
+        }
+        makeInteractive.classList.add('noninteractive');
+        makeInteractive.classList.remove('coloron');
+    }
+}
+//To determine Which Function to Call
+function toggleDescendants(e) {
+    if ((currentNode) && (aNodeHasBeenClicked == 1)) {
+        if (allGenRadio.checked) {
+            toggleAllDescendants();
+        } else if (firstGenRadio.checked) {
+            toggleFirstGeneration()
+        } else if (allNfirstGenRadio.checked) {
+            toggleAllnFirstGeneration()
+        }
+    }
+}
+var arrayOfAllDescendants = [];
+
+function toggleAllDescendants(thisNode, showORhide) {
     if (!thisNode) {
         thisNode = currentNode
     }
-    if (thisNode.hasAttribute('connectTo')) {
+    if ((thisNode.hasAttribute('connectTo')) && ((thisNode.getAttribute('connectTo')).trim().split(' ') != '')) {
         var connect2Array = [];
-        var abc = (thisNode.getAttribute('connectTo')).split(' ');
+        var abc = (thisNode.getAttribute('connectTo')).trim().split(' ');
         connect2Array = connect2Array.concat(abc);
 
         //SHOW ALL DESCENDANTS AND CONNECTING PATHS OF SELECTED NODE IF THEY HAVE BEEN HIDDEN
         if (((!showORhide) || (showORhide == 'show')) && (thisNode.classList.contains('descendantshidden'))) {
             connect2Array.forEach(descendant => {
-                var currentDescendant = nodeCanvas.querySelector('[nodeId=' + descendant + ']')
-                fadeInShow2(currentDescendant, 400);
+                var currentDescendant = nodeCanvas.querySelector('[nodeid=' + descendant + ']')
+                fadeInShow2(currentDescendant, 300);
                 var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
                 var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
                 for (i = 0; i < pathsFrom.length; i++) {
-                    fadeInShow2(pathsFrom[i], 400);
+                    fadeInShow2(pathsFrom[i], 300);
                 }
                 for (i = 0; i < pathsTo.length; i++) {
-                    fadeInShow2(pathsTo[i], 400);
+                    //Show path if node to which it is connected TO is not Hidden                    
+                    if (nodeCanvas.querySelector('.divNode.' + pathsTo[i].getAttribute('connectedfrom')).style.display != 'none') {
+                        fadeInShow2(pathsTo[i], 400);
+                        //show path's label if any
+                        if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + pathsTo[i].id + '"]')) {
+                            fadeInShow2(pathLabeToToggle, 400);
+                        }
+                    }
                 }
-                toggleDescendants(currentDescendant, 'show');
+                toggleAllDescendants(currentDescendant, 'show');
             });
-                thisNode.classList.remove('descendantshidden');
+            thisNode.classList.remove('descendantshidden');
+        }
+        //HIDE ALL DESCENDANTS AND CONNECTING PATHS OF SELECTED NODE
+        else if ((!showORhide) || (showORhide == 'hide') && (thisNode.classList.contains('descendantshidden') == false)) {
+            thisNode.classList.add('descendantshidden');
+            connect2Array.forEach(descendant => {
+                var currentDescendant;
+                if (nodeCanvas.querySelector('[nodeid=' + descendant + ']').classList.contains('descendantshidden') == false) {
+                    currentDescendant = nodeCanvas.querySelector('[nodeid=' + descendant + ']')
+                    fadeOutHide(currentDescendant, 400);
+                    // if(arrayOfAllDescendants.indexOf(currentDescendant) === -1){
+                    var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
+                    var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
+                    for (i = 0; i < pathsFrom.length; i++) {
+                        fadeOutHide(pathsFrom[i], 400);
+                    }
+                    for (i = 0; i < pathsTo.length; i++) {
+                        fadeOutHide(pathsTo[i], 400);
+                    }
+                    //Hide descendants of current descendant
+                    if (currentDescendant.classList.contains('descendantshidden') == false) {
+                        toggleAllDescendants(currentDescendant, 'hide');
+                    }
+                }
+            });
+        }
+    }
+
+    hideContextMenu()
+}
+
+function toggleFirstGeneration() {
+    if ((currentNode.hasAttribute('connectTo')) && ((currentNode.getAttribute('connectTo')).trim().split(' ') != '')) {
+        var connect2Array = [];
+        var abc = ((currentNode.getAttribute('connectTo'))).trim().split(' ');
+        connect2Array = connect2Array.concat(abc);
+
+        //SHOWS NEXT GENERATION NODES AND PATHS
+        if (currentNode.classList.contains('descendantshidden')) {
+            connect2Array.forEach(descendant => {
+                fadeInShow(nodeCanvas.querySelector('[nodeid=' + descendant + ']'), 800);
+                var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
+                var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
+                //Show all paths connected FROM the node
+                for (i = 0; i < pathsFrom.length; i++) {
+                    //Show path if node to which it is connected FROM is not Hidden                    
+                    if (nodeCanvas.querySelector('.divNode.' + pathsFrom[i].getAttribute('connectedto')).style.display != 'none') {
+                        fadeInShow(pathsFrom[i], 800);
+                        //show path's label if any
+                        if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + pathsFrom[i].id + '"]')) {
+                            fadeInShow(pathLabeToToggle, 800);
+                        }
+                    }
+                }
+                //Show all paths connected TO the node
+                for (i = 0; i < pathsTo.length; i++) {
+                    //Show path if node to which it is connected TO is not Hidden                    
+                    if (nodeCanvas.querySelector('.divNode.' + pathsTo[i].getAttribute('connectedfrom')).style.display != 'none') {
+                        fadeInShow(pathsTo[i], 800);
+                        //show path's label if any
+                        if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + pathsTo[i].id + '"]')) {
+                            fadeInShow(pathLabeToToggle, 800);
+                        }
+                    }
+                }
+            });
+            currentNode.classList.remove('descendantshidden');
+        }
+        //HIDES NEXT GENERATION NODES AND ALL PATHS CONNECTED TO CURRENT NODE
+        else {
+            connect2Array.forEach(descendant => {
+                fadeOutHide(nodeCanvas.querySelector('[nodeid=' + descendant + ']'), 800);
+                var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
+                var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
+                for (i = 0; i < pathsFrom.length; i++) {
+                    fadeOutHide(pathsFrom[i], 800);
+                }
+                for (i = 0; i < pathsTo.length; i++) {
+                    fadeOutHide(pathsTo[i], 800);
+                    //show path's label if any
+                    if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + pathsTo[i].id + '"]')) {
+                        fadeOutHide(pathLabeToToggle, 800);
+                    }
+                }
+            });
+            currentNode.classList.add('descendantshidden');
+        }
+    }
+
+    hideContextMenu()
+}
+
+function toggleAllnFirstGeneration(thisNode, showORhide) {
+    if (!thisNode) {
+        thisNode = currentNode
+    }
+    if ((thisNode.hasAttribute('connectTo')) && ((thisNode.getAttribute('connectTo')).trim().split(' ') != '')) {
+        var connect2Array = [];
+        var abc = (thisNode.getAttribute('connectTo')).trim().split(' ');
+        connect2Array = connect2Array.concat(abc);
+
+        //SHOW NEXT GENERATION AND CONNECTING PATHS ONLY
+        if (currentNode.classList.contains('descendantshidden')) {
+            connect2Array.forEach(descendant => {
+                fadeInShow(nodeCanvas.querySelector('[nodeid=' + descendant + ']'), 800);
+                var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
+                var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
+                //Show all paths connected FROM the node
+                for (i = 0; i < pathsFrom.length; i++) {
+                    if (nodeCanvas.querySelector('.divNode.' + pathsFrom[i].getAttribute('connectedto')).style.display != 'none') {
+                        fadeInShow(pathsFrom[i], 800);
+                    }
+                }
+                //Show all paths connected TO the node
+                for (i = 0; i < pathsTo.length; i++) {
+                    //Show path if node to which it is connected TO is not Hidden                    
+                    if (nodeCanvas.querySelector('.divNode.' + pathsTo[i].getAttribute('connectedfrom')).style.display != 'none') {
+                        fadeInShow(pathsTo[i], 800);
+                        //show path's label if any
+                        if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + pathsTo[i].id + '"]')) {
+                            fadeInShow(pathLabeToToggle, 800);
+                        }
+                    }
+                }
+            });
+            currentNode.classList.remove('descendantshidden');
         }
         //HIDE ALL DESCENDANTS AND CONNECTING PATHS OF SELECTED NODE
         else if ((!showORhide) || (showORhide == 'hide')) {
             connect2Array.forEach(descendant => {
-                var currentDescendant = nodeCanvas.querySelector('[nodeId=' + descendant + ']')
+                var currentDescendant = nodeCanvas.querySelector('[nodeid=' + descendant + ']')
                 fadeOutHide(currentDescendant, 400);
                 var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
                 var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
@@ -199,7 +381,7 @@ function toggleDescendants(thisNode, showORhide) {
                 for (i = 0; i < pathsTo.length; i++) {
                     fadeOutHide(pathsTo[i], 400);
                 }
-                toggleDescendants(currentDescendant, 'hide');
+                toggleAllDescendants(currentDescendant, 'hide');
             });
             thisNode.classList.add('descendantshidden');
         }
@@ -207,51 +389,14 @@ function toggleDescendants(thisNode, showORhide) {
 
     hideContextMenu()
 }
-/* function toggleDescendants() {
-    if (currentNode.hasAttribute('connectTo')) {
-        var connect2Array = [];
-        var abc = (currentNode.getAttribute('connectTo')).split(' ');
-        connect2Array = connect2Array.concat(abc);
-    
-        // var descendants = currentNode.getAttribute('connectto');
-        if (currentNode.classList.contains('descendantshidden')) {
-            connect2Array.forEach(descendant => {
-                fadeInShow(nodeCanvas.querySelector('[nodeId=' + descendant + ']'), 800);
-                var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
-                var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
-                for(i=0; i<pathsFrom.length; i++){
-                    fadeInShow(pathsFrom[i], 800);
-                }
-                for(i=0; i<pathsTo.length; i++){
-                    fadeInShow(pathsTo[i], 800);
-                }
-            });
-            currentNode.classList.remove('descendantshidden');
-        } else {
-            connect2Array.forEach(descendant => {
-                fadeOutHide(nodeCanvas.querySelector('[nodeId=' + descendant + ']'), 800);
-                var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
-                var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
-                for(i=0; i<pathsFrom.length; i++){
-                    fadeOutHide(pathsFrom[i], 800);
-                }
-                for(i=0; i<pathsTo.length; i++){
-                    fadeOutHide(pathsTo[i], 800);
-                }
-            });
-            currentNode.classList.add('descendantshidden');
-        }
-    }
 
-    hideContextMenu()
-} */
-
+//FUNCTION TO DELETE SELECTED PATH
 function deletePath() {
     //get nodeId of startNode
     var startNodeId = selectedPath.getAttribute('connectedfrom');
     var pathConnectedTo = selectedPath.getAttribute('connectedto');
     //find divNode with the nodeId equal to the connectedFrom of the selected path
-    var startNode = nodeCanvas.querySelector('[nodeId=' + startNodeId + ']');
+    var startNode = nodeCanvas.querySelector('[nodeid=' + startNodeId + ']');
     var startNodeConnectTo = startNode.getAttribute('connectTo');
 
     // if (startNodeConnectTo === pathConnectedTo) {
