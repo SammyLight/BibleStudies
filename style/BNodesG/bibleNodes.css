@@ -15,7 +15,7 @@ body {
     position: fixed;
     margin-top: 0px;
     width: 100vw;
-    background-color: snow;
+    background-color: rgb(237, 237, 237);
     box-shadow: 0px 1px 5px 3px rgb(0, 0, 0, 75%);
     display: grid;
     grid-template-columns: minmax(auto, 50px) minmax(auto, 50px) 1fr;
@@ -73,6 +73,10 @@ body {
     font-style: italic;
     transition-property: background-color;
     transition-duration: 0.5s;
+}
+#bibleNodesHeader>button {
+    background-color: transparent;
+    border: 1px solid #cccccc;
 }
 
 #bibleNodesTitle:focus {
@@ -227,6 +231,7 @@ path:hover {
 
 #nodeCanvas {
     background-color: whitesmoke;
+    background-color: rgba(245, 245, 220, 0.5);
     height: 2000px;
     width: 2000px;
 }
@@ -350,10 +355,35 @@ div[setclass]:active {
     background-color: grey;
 }
 .darkmode #bibleNodesHeader  {
-    background-color: darkgrey;
+    background-color: rgba(32, 32, 32, 0.6);
     color: white;
 }
-.darkmode #websiteNav  {
-    background-color: darkgray;
+.darkmode #bibleNodesHeader button  {
+    background-color: rgba(93, 93, 93, 0.768);
     color: white;
+}
+.darkmode #websiteNav,
+.darkmode #websiteNav a  {
+    background-color: rgba(169, 169, 169, 0.863);
+    color: rgb(54, 54, 54);
+    font-weight: bolder;
+}
+.darkmode #connectionDetails,
+.darkmode #connectionDetails a  {
+    background-color: grey;
+    color: white;
+}
+.darkmode #toggleConnectionDetails {
+    background-color: grey;
+    color: white;
+}
+.darkmode .notes {
+    background-color: rgb(98, 98, 98);
+    padding-left: 10px;
+    padding-right: 10px;
+    /* color: white; */
+}
+.darkmode .notes[contenteditable="true"] {
+    /* background-color: rgb(98, 98, 98); */
+    color: black;
 }
