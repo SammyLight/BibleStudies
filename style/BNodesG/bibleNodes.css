@@ -410,3 +410,38 @@ body.darkmode,
 .darkmode .coloron {
     background-color: darkGreen !important;
 }
+
+/* FOR SELECTABLES.JS
+Style the react box when you start dragging.
+*/
+#s-rectBox {
+  position: absolute;
+  z-index: 1090;
+  border: 2px dashed #cbd3e3;
+}
+
+.active {
+    background-color: aquamarine;
+}
+
+#moveSelectedElements {
+    position: fixed;
+    z-index: 30;
+    font-weight: bold;
+    right: 40px;
+    top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#up, #down {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+#left {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#right {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
