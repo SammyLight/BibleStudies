@@ -22,7 +22,7 @@ function endNodeAssigner(elm2makeEndNode) {
     });
 }
 
-addEventListenersToDivNodesOnPageLoad(); //This function is here becasue it needs the endNodeAssigner() function to have been defined
+onload = addEventListenersToDivNodesOnPageLoad(); //This function is here becasue it needs the endNodeAssigner() function to have been defined
 
 //The ConnectTo and the ConnectFrom attributes of a nodeDiv show what divs it is connected to and its relationship to it
 function setConnect2Attribute(first, second) {
@@ -103,6 +103,7 @@ nodeCanvas.addEventListener('dblclick', function (ev) {
     }
     if (target.tagName == 'svg') {
         createNewNode();
+        makeNodeDivsSelectable();
     }
 
     //prevent doubleClick

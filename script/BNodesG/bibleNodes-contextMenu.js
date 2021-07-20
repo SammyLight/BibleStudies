@@ -251,8 +251,14 @@ nodeCanvas.addEventListener('contextmenu', function (ev) {
     return false;//prevent default context menu
 }, false);
 
-var notesCustomContextMenuX = notesCustomContextMenu.getBoundingClientRect().left;
-var notesCustomContextMenuY = notesCustomContextMenu.getBoundingClientRect().top;
+var notesCustomContextMenuX;
+var notesCustomContextMenuY;
+onload = nodeBoundingRect();
+function nodeBoundingRect(){
+    notesCustomContextMenuX = notesCustomContextMenu.getBoundingClientRect().left;
+    notesCustomContextMenuY = notesCustomContextMenu.getBoundingClientRect().top;
+}
+
 connectionDetails.addEventListener('contextmenu', function (ev) {
     rClick_X = ev.clientX + notesCustomContextMenuX + (window.pageXOffset || document.documentElement.scrollLeft);
     rClick_Y = ev.clientY + notesCustomContextMenuY + (window.pageYOffset || document.documentElement.scrollTop);

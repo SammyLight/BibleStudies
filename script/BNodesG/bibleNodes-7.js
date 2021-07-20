@@ -8,8 +8,8 @@ var divNodes = document.getElementsByClassName('divNode');
 var pointNode = document.getElementById('pointNode');
 var currentNode;
 var previousNode;
-var nodeCanvasX = nodeCanvas.getBoundingClientRect().left;
-var nodeCanvasY = nodeCanvas.getBoundingClientRect().top;
+var nodeCanvasX;
+var nodeCanvasY;
 var contextX;
 var contextY;
 var divX;
@@ -23,6 +23,13 @@ var nodeIdsAllAssigned = 0;
 var collisionDetectionOn = 0;
 var evaluatedNode;
 
+var arrayOfSelectedNodes = [];//FOR SELECTABLES.JS
+
+onload = nodeBoundingRect();
+function nodeBoundingRect(){
+    nodeCanvasX = nodeCanvas.getBoundingClientRect().left;
+    nodeCanvasY = nodeCanvas.getBoundingClientRect().top;
+}
 //Function to assign nodeId attribute and nodeId class to selected divNode
 function assignNodeID(elm, index) {
     elm.setAttribute('nodeId', ('node' + (index + 1)));
@@ -72,7 +79,7 @@ function nodeCanvasMouseDownFunction(e) {
         nodeCanvas.addEventListener('mousemove', mouseMoveFunction);
         nodeCanvas.addEventListener('mouseup', mouseUpFunction);
     } else if (currentNode != this) {
-        //if the currently clicked divNode is the formerly clicked one
+        //if the currently clicked divNode is not the formerly clicked one
         //visually demonstrate that the previously selected node has been deselected
         previousNode = currentNode;
         previousNode.style.border = "";
@@ -105,12 +112,14 @@ function mouseMoveFunction(e) {
     var horizontalScroll = (window.pageXOffset || document.documentElement.scrollLeft) - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left;
     var verticalScroll = (window.pageYOffset || document.documentElement.scrollTop) + nodeCanvasContainer.getBoundingClientRect().top - nodeCanvas.getBoundingClientRect().top;
 
+    //The mouse coordinates (e.clientX and e.clientY) will be updated as the mouse moves
+    //divX and divY are the orginal divNodes position
     var newX = e.clientX - divX + horizontalScroll + 'px';
     var newY = e.clientY - divY + verticalScroll + 'px';
 
     currentNode.style.left = newX;
     currentNode.style.top = newY;
-
+    
     SVGmouseMoveFunction();
     createSet();
     if(collisionDetectionOn){detectCollision();}
@@ -124,7 +133,7 @@ function mouseUpFunction(e) {
     //Connection to SVGmouseDownFunction & SVGmouseMoveFunction
     mouseDownForDraggingEnabled = 0;
     mouseMoveForDraggingEnabled = 0;
-
+    
     aNodeHasBeenClicked = 0; //used for deselecting node
     nodeCanvas.removeEventListener('mousedown', mouseDownFunction);
     nodeCanvas.removeEventListener('mousemove', mouseMoveFunction);
@@ -133,32 +142,160 @@ function mouseUpFunction(e) {
 /* For Navigation Menu */
 function showHideSiteNav(x) {
 	if (x.style.display == 'none') {
-		x.style.display = '';
+        x.style.display = '';
 	} else {
-		x.style.display = 'none';
+        x.style.display = 'none';
 	}
 }
 function navMenu() {
-
-	// window.scrollTo(0, 0);
-
+    
+    // window.scrollTo(0, 0);
+    
 	var webSiteNavLinks = websiteNav.querySelectorAll('*:not(a)');
-
+    
 	for (let i = 1; i <= webSiteNavLinks.length; i++) {
-		setTimeout(() => showHideSiteNav(webSiteNavLinks[i - 1]), 5 * i)
+        setTimeout(() => showHideSiteNav(webSiteNavLinks[i - 1]), 5 * i)
 	}
 }
 
 /* DARK MODE ON OFF */
 var darkModeButton = document.getElementById('darkModeButton');
 var documentBody = document.getElementsByTagName('body')[0];
-
 function darkModeOnOff() {
-	if (documentBody.classList.contains('darkmode')) {
-		documentBody.classList.remove('darkmode');
+    if (documentBody.classList.contains('darkmode')) {
+        documentBody.classList.remove('darkmode');
 		darkModeButton.innerHTML = 'D';
 	} else {
-		documentBody.classList.add('darkmode');
+        documentBody.classList.add('darkmode');
 		darkModeButton.innerHTML = 'L';
 	}
+}
+
+//FOR MOVING ARRAY OF SELECTED NODES
+document.addEventListener('keydown', function(e) {
+    switch (e.keyCode) {
+        case 37:
+        //left
+        moveLeft()
+        break;
+        case 38:
+        //up
+        moveUp()
+        break;
+        case 39:
+            //right
+        moveRight()
+        break;
+        case 40:
+        //down
+        moveDown()
+        break;
+    }
+});
+function moveUp(){
+    if(arrayOfSelectedNodes.length != 0){
+        arrayOfSelectedNodes.forEach(selNode => {
+
+            var selNodeY = selNode.offsetTop;
+            selNode.style.top = selNodeY - 5 + 'px';
+            //for svg lines
+            currentNode = selNode;
+            SVGmouseDownFunction();
+            SVGmouseMoveFunction();
+            // currentNode = null;
+        })
+    }
+}
+function moveDown(){
+    if(arrayOfSelectedNodes.length != 0){
+        arrayOfSelectedNodes.forEach(selNode => {
+
+            var selNodeY = selNode.offsetTop;
+            selNode.style.top = selNodeY + 5 + 'px';
+            //for svg lines
+            currentNode = selNode;
+            SVGmouseDownFunction();
+            SVGmouseMoveFunction();
+            // currentNode = null;
+        })
+    }
+}
+function moveLeft(){
+    if(arrayOfSelectedNodes.length != 0){
+        arrayOfSelectedNodes.forEach(selNode => {
+
+            var selNodeX = selNode.offsetLeft;
+            selNode.style.left = selNodeX - 5 + 'px';
+            //for svg lines
+            currentNode = selNode;
+            SVGmouseDownFunction();
+            SVGmouseMoveFunction();
+            // currentNode = null;
+        })
+    }
+}
+function moveRight(){
+    if(arrayOfSelectedNodes.length != 0){
+        arrayOfSelectedNodes.forEach(selNode => {
+
+            var selNodeX = selNode.offsetLeft;
+            selNode.style.left = selNodeX + 5 + 'px';
+            //for svg lines
+            currentNode = selNode;
+            SVGmouseDownFunction();
+            SVGmouseMoveFunction();
+            // currentNode = null;
+        })
+    }
+}
+//Move Selected by dragging
+nodeCanvas.addEventListener('mousedown', selectedMouseDown);
+nodeCanvas.addEventListener('mouseup', selectedMouseUp);
+var selMX;
+var selMY;
+var addSelecListner = 0;
+var selNodeX;
+var selNodeY;
+function selectedMouseDown(ev) {
+    selMX = ev.clientX;
+    selMY = ev.clientY;
+    
+    // if((ev.target).classList.contains('active')){
+    if(((ev.target).classList.contains('active'))&&(arrayOfSelectedNodes.length != 0)){
+        document.addEventListener('mousemove', selectedMouseMove);
+        addSelecListner = 1;
+    }
+}
+function selectedMouseMove(ev) {
+    // console.log(ev.clientX);
+    // console.log(ev.clientY);
+    difX = ev.clientX - selMX;
+    difY = ev.clientY - selMY;
+    // console.log(difX);
+    // console.log(difY);
+
+    arrayOfSelectedNodes.forEach(selNode => {
+
+        selNodeX = selNode.offsetLeft;
+        selNodeY = selNode.offsetTop;
+        selNode.style.left = selNodeX + difX + 'px';
+        selNode.style.top = selNodeY + difY + 'px';
+        //for svg lines
+        currentNode = selNode;
+        SVGmouseDownFunction();
+        SVGmouseMoveFunction();
+        // currentNode = null;
+    })
+    //get the new mouse coordinates
+    selMX = ev.clientX;
+    selMY = ev.clientY;
+}
+function selectedMouseUp(ev) {
+    selMX = null;
+    selMY = null;
+    addSelecListner = 0;
+    selNodeX = null;
+    selNodeY = null;
+    
+    document.removeEventListener('mousemove', selectedMouseMove);
 }
