@@ -7,9 +7,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style/BNodesG/bibleNodes.css">
+    <link rel="stylesheet" href="../style/BNodesG/selectables.css">
 </head>
 
 <body class="darkmode">
+    <div id="moveSelectedElements" style="display: none;">
+        <button id="up" onmousedown ="moveUp('start')" onmouseup ="moveUp('stop')">Up</button>
+        <br>
+        <button id="left" onmousedown ="moveLeft('start')" onmouseup ="moveLeft('stop')">Left</button>
+        <button id="right" onmousedown ="moveRight('start')" onmouseup ="moveRight('stop')">Right</button>
+        <br>
+        <button id="down" onmousedown ="moveDown('start')" onmouseup ="moveDown('stop')">Down</button>
+    </div>
     <div id="bibleNodesHeader">
         <h1 id="bibleNodesTitle" title='Double click to edit'>{{page.title}}</h1>
         <button id="menuButton" onclick="navMenu()">Site Menu</button>
