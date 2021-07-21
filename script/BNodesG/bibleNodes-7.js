@@ -53,7 +53,7 @@ nodeCanvas.addEventListener('mousedown', deselectOnCanvasClick);
 function deselectOnCanvasClick(e) {
     if ((currentNode) && (aNodeHasBeenClicked == 0)) {
         youCanDrag = 0;
-        currentNode.style.border = "";
+        currentNode.classList.remove('currentnode');
         youCanDrag = 0;
     }
     if(websiteNavMenu.style.display != 'none'){navMenu()}
@@ -70,7 +70,7 @@ function nodeCanvasMouseDownFunction(e) {
     if (youCanDrag == 0) {
         youCanDrag = 1;
         currentNode = this;
-        currentNode.style.border = "0.5px solid red";
+        currentNode.classList.add('currentnode');
         //findSVGpathMouseDownFunction eventListner is connected to this
     } else if ((currentNode == this)) {
         //if the same divNode is clicked
@@ -82,11 +82,11 @@ function nodeCanvasMouseDownFunction(e) {
         //if the currently clicked divNode is not the formerly clicked one
         //visually demonstrate that the previously selected node has been deselected
         previousNode = currentNode;
-        previousNode.style.border = "";
+        previousNode.classList.remove('currentnode');
         // previousNode.style.boxShadow = "";
         youCanDrag = 1;
         currentNode = this; //reasign the currentNode varriable to the currently selected divNode
-        currentNode.style.border = "0.5px solid red";
+        currentNode.classList.add('currentnode');
     }
 }
 

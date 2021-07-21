@@ -1,6 +1,6 @@
 //Funciton to check if an element has a parent with the given class
 function doesAnyAnscestorOfClass(A,C,boundary){
-    if(boundary == null){boundary = document}
+    if(boundary == null){boundary = document.querySelector('body')}
     while((A.parentNode)){
         if(A.parentNode.classList.contains(C)){
             return {
@@ -28,21 +28,12 @@ function fadeInShow( el, speed ) {
     if(fadeOutTimeOut){
         clearTimeout(fadeOutTimeOut);
     }
-    var seconds = speed/1000;
+    var seconds = speed/750;
     el.style.display = '';
-    el.style.transition = "opacity "+seconds+"s";
-    el.style.opacity = 1;
-}
-function fadeInShow2( el, speed ) {
-    if(fadeOutTimeOut){
-        clearTimeout(fadeOutTimeOut);
-    }
-    
-    var seconds = speed/1000;
-    el.style.display = '';
+    el.style.opacity = 0;
     
     fadeInTimeOut = setTimeout(function() {
-        el.style.transition = "opacity "+seconds+"s";
+        el.style.transition = "opacity "+ seconds +"s";
         el.style.opacity = 1;
         fadeInTimeOut = null;
     }, speed);
@@ -50,12 +41,11 @@ function fadeInShow2( el, speed ) {
 function fadeOutHide( el, speed ) {
     if(fadeInTimeOut){clearTimeout(fadeInTimeOut);}
     
-    var seconds = speed/1000;
-    el.style.transition = "opacity "+seconds+"s";
+    var seconds = speed/750;
+    el.style.transition = "opacity "+ seconds +"s";
     el.style.opacity = 0;
 
     fadeOutTimeOut = setTimeout(function() {
-        // el.style.backgroundColor = 'red';
         el.style.display = 'none';
         fadeOutTimeOut = null;
     }, speed);
@@ -63,8 +53,8 @@ function fadeOutHide( el, speed ) {
 function fadeOutDelete( el, speed ) {
     if(fadeInTimeOut){clearTimeout(fadeInTimeOut);}
     
-    var seconds = speed/1000;
-    el.style.transition = "opacity "+seconds+"s";
+    var seconds = speed/750;
+    el.style.transition = "opacity "+ seconds +"s";
     el.style.opacity = 0;
 
     fadeOutTimeOut = setTimeout(function() {
@@ -203,12 +193,11 @@ nodeCanvas.addEventListener('mousedown', function (ev) {
     // elementToCommentOn = target;
 
     //If there is an editable divNode and it is not what is clicked, make it uneditable
-    if (editableDiv && (target != editableDiv)) {
+    if (editableDiv && (target != editableDiv) && (doesAnyAnscestorOfClass(target,'divNode').truth == false)) {
         editableDiv.contentEditable = 'false';
-        
     }
-    //If there is an editable pathLabel and it is not what is clicked, make it uneditable
-    if (editablePathLabel && (target != editablePathLabel)) {
+    //If there is an editable pathLabel and it is not what is clicked, and it is not one of the ancestors of what was clicked, make it uneditable
+    if (editablePathLabel && (target != editablePathLabel) && (doesAnyAnscestorOfClass(target,'pathLabel').truth == false)) {
         editablePathLabel.contentEditable = 'false';
     }
     if (target.parentNode.classList.contains('customContextMenu')) {
