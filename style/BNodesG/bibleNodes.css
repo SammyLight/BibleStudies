@@ -391,7 +391,7 @@ div[setclass]:active {
 
 body.darkmode,
 .darkmode #nodeCanvas {
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(53, 53, 53);
 }
 
 .darkmode #bibleNodesHeader {
@@ -405,13 +405,13 @@ body.darkmode,
 }
 
 .darkmode #websiteNav {
-    background-color: rgba(169, 169, 169, 0.863);
+    background-color: rgba(244, 244, 244, 0.863);
     color: rgb(54, 54, 54);
     font-weight: bolder;
 }
 
 .darkmode #websiteNav a {
-    color: rgb(54, 54, 54);
+    color: rgb(0, 0, 0);
 }
 
 .darkmode #connectionDetails,
