@@ -15,7 +15,7 @@ body {
     position: fixed;
     margin-top: 0px;
     width: 100vw;
-    background-color: rgb(237, 237, 237);
+    background-color: rgba(237, 237, 237, 0.95);
     box-shadow: 0px 1px 5px 3px rgb(0, 0, 0, 75%);
     /* display: grid; */
     grid-template-columns: minmax(auto, 50px) minmax(auto, 50px) 1fr;
@@ -78,6 +78,7 @@ body {
     transition-property: background-color;
     transition-duration: 0.5s;
 }
+
 #bibleNodesHeader>button {
     background-color: transparent;
     border: 1px solid #cccccc;
@@ -93,6 +94,7 @@ body {
     width: 9px;
     margin: 0;
 }
+
 .coloron {
     background-color: lightGreen !important;
 }
@@ -153,6 +155,7 @@ body {
 }
 
 path {
+    stroke: dimgrey;
     marker-end: url(#arrowHead);
 }
 
@@ -161,23 +164,6 @@ path:hover {
     transition: stroke 0.5s;
 }
 
-[nodeid]:hover {
-    background-color: rgb(255, 184, 158);
-    box-shadow:
-        0px 0px 0px 0.5px blue inset,
-        0px 0px 0px 0.5px blue inset,
-        5px 5px 2.5px -1px rgba(92, 92, 92, 0.75);
-    /* transform: scale(1.01); */
-}
-
-[nodeid]:active {
-    background-color: rgb(255, 184, 158);
-    box-shadow:
-        0px 0px 0px 0.5px blue inset,
-        0px 0px 0px 0.5px blue inset,
-        5px 5px 2.5px -1px rgba(92, 92, 92, 0.75);
-    transform: scale(1);
-}
 
 #pointNode {
     display: none;
@@ -244,8 +230,8 @@ path:hover {
 #nodeCanvas {
     background-color: whitesmoke;
     background-color: rgba(245, 245, 220, 0.5);
-    height: 2000px;
-    width: 2000px;
+    height: 4000px;
+    width: 4000px;
 }
 
 .divNode {
@@ -258,11 +244,10 @@ path:hover {
     /* width: 50px; */
     /* border: 1px solid black; */
     padding: 10px;
-    background-color: rgba(252, 255, 101, 0.918);
-    box-shadow:
+    background-color: rgba(250, 235, 215);
+    box-shadow: 0px 0px 0px 0.5px grey inset,
         0px 0px 0px 0.5px grey inset,
-        0px 0px 0px 0.5px grey inset,
-        5px 5px 2.5px -1px rgba(80, 80, 80, 0.75);
+        2px 2px 2.5px -1px rgba(92, 92, 92, 0.75);
     z-index: 2;
     font-weight: bolder;
     text-align: center;
@@ -277,6 +262,31 @@ path:hover {
 .divNode a {
     /* text-decoration: none; */
     color: black;
+}
+
+.currentnode {
+    background-color: yellow!important;
+    box-shadow: 0px 0px 0px 0.5px orangered inset,
+    0px 0px 0px 0.5px rgb(160, 43, 0, 0.5) inset,
+    5px 5px 2.5px -1px rgba(255, 166, 0, 0.5)!important;
+}
+
+.divNode:hover {
+    background-color: rgb(255, 184, 158);
+    box-shadow:
+        0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        5px 5px 2.5px -1px rgba(92, 92, 92, 0.75);
+    /* transform: scale(1.01); */
+}
+
+.divNode:active {
+    background-color: rgb(255, 184, 158);
+    box-shadow:
+        0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        2px 2px 2.5px -1px rgba(92, 92, 92, 0.75)!important;
+    transform: scale(1);
 }
 
 #svgPathToolTip,
@@ -304,8 +314,9 @@ path:hover {
 
 .pathLabel {
     display: block;
-    padding: 5px;
-    width: 110px;
+    padding: 2px;
+    border: 1px solid yellow;
+    max-width: 120px;
     font: Georgia, serif;
     font-size: small;
     /* font-weight: bolder; */
@@ -316,6 +327,13 @@ path:hover {
     transition-property: opacity, display;
     transition-duration: 0.5s;
     transition-delay: 2s;
+}
+
+.pathLabel ul,
+.pathLabel ol {
+    margin: 0;
+    padding-left: 15px;
+    list-style: lower-alpha;
 }
 
 #notesCustomContextMenu {
@@ -330,13 +348,14 @@ path:hover {
 div[setclass] {
     background-color: rgba(245, 245, 245, 0.397);
     border-style: none;
-    box-shadow:none;
+    box-shadow: none;
 }
+
 div[setclass]:hover,
 div[setclass]:active {
     background-color: transparent;
     border-style: none;
-    box-shadow:none;
+    box-shadow: none;
 }
 
 .svg-Venn:hover {
@@ -360,53 +379,68 @@ div[setclass]:active {
 }
 
 /* DARK MODE */
-.darkmode .svg-connectors{
+.darkmode .svg-connectors {
     stroke: white;
     box-shadow: 5px 5px 0 0 #000000;
 }
+
 .darkmode #arrowHead path {
     stroke: white;
     stroke-width: 1;
 }
+
 body.darkmode,
 .darkmode #nodeCanvas {
-    background-color: grey;
+    background-color: rgb(17, 17, 17);
 }
-.darkmode #bibleNodesHeader  {
+
+.darkmode #bibleNodesHeader {
     background-color: rgba(32, 32, 32, 0.6);
     color: white;
 }
-.darkmode #bibleNodesHeader button  {
+
+.darkmode #bibleNodesHeader button {
     background-color: rgba(93, 93, 93, 0.768);
     color: white;
 }
+
 .darkmode #websiteNav {
     background-color: rgba(169, 169, 169, 0.863);
     color: rgb(54, 54, 54);
     font-weight: bolder;
 }
-.darkmode #websiteNav a  {
+
+.darkmode #websiteNav a {
     color: rgb(54, 54, 54);
 }
+
 .darkmode #connectionDetails,
-.darkmode #connectionDetails a  {
+.darkmode #connectionDetails a {
     background-color: grey;
     color: white;
 }
+
 .darkmode #toggleConnectionDetails {
-    background-color: grey;
+    /* background-color: grey; */
+    background-color: rgb(17, 17, 17);
     color: white;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
 }
+
 .darkmode .notes {
     background-color: rgb(98, 98, 98);
     padding-left: 10px;
     padding-right: 10px;
     /* color: white; */
 }
+
 .darkmode .notes[contenteditable="true"] {
     /* background-color: rgb(98, 98, 98); */
     color: black;
 }
+
 .darkmode .coloron {
     background-color: darkGreen !important;
 }
@@ -415,9 +449,9 @@ body.darkmode,
 Style the react box when you start dragging.
 */
 #s-rectBox {
-  position: absolute;
-  z-index: 1090;
-  border: 2px dashed #cbd3e3;
+    position: absolute;
+    z-index: 1090;
+    border: 2px dashed #cbd3e3;
 }
 
 .active {
@@ -433,14 +467,18 @@ Style the react box when you start dragging.
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-#up, #down {
+
+#up,
+#down {
     grid-column-start: 2;
     grid-column-end: 4;
 }
+
 #left {
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
 #right {
     grid-column-start: 3;
     grid-column-end: 5;
