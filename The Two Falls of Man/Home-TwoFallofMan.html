@@ -1,7 +1,7 @@
 ---
 layout: cat-homepageTEMPLATE
-title: "Fall of Man"
-categories: ["HomePage-Fall of Man"]
+title: "Falls of Man"
+categories: ["HomePage-Falls of Man"]
 ---
 <style>
 	div > ol {	
@@ -15,7 +15,7 @@ categories: ["HomePage-Fall of Man"]
 	}
 	</style>
 	<div class="homeBody-section container-fluid-inner" style="min-height: 75vh;">
-	<h1 class="titles">The Two Fall of Man</h1>
+	<h1 class="titles">The Two Falls of Man</h1>
 	<p>A collection of Useful Resources on the Falls of Man</p>
 
 	<div>
@@ -23,7 +23,7 @@ categories: ["HomePage-Fall of Man"]
 		<li><h4>The Two Falls</h4></li>
 		<ol>
 			{% for page in site.pages %}
-			{% if page.categories contains "Fall of Man" %}
+			{% if page.categories contains "Falls of Man" %}
 			{% if page.subsection contains "Two Falls" %}
 			<li><a
 					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
@@ -35,7 +35,7 @@ categories: ["HomePage-Fall of Man"]
 		<li><h4>Major Judgments of God</h4></li>
 		<ol>
 			{% for page in site.pages %}
-			{% if page.categories contains "Fall of Man" %}
+			{% if page.categories contains "Falls of Man" %}
 			{% if page.subsection contains "Major Junctures" %}
 			<li><a
 					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
