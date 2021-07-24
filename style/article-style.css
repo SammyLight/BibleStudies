@@ -105,21 +105,33 @@ header~h3:before {
 
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 ol,ul{
-	padding-left: 1em;
+/* 	padding-left: 1em; */
 }
 
 ol>li>ol{
-	list-style-type: lower-roman;
+	list-style-type: lower-alpha;
 	padding-left: 0.5em;
 }
 
 ol>li>ol>li>ol{
-	list-style-type: lower-alpha;
+	list-style-type: lower-roman;
+}
+
+ol>li>ol>li>ol>li>ol {
+	list-style-type: decimal-leading-zero;
+}
+
+ol>li>ol>li>ol>li>ol>li>ol {
+	list-style-type: upper-alpha;
+}
+
+ol>li>ol>li>ol>li>ol>li>ol>li>ol{
+	list-style-type: upper-roman;
 }
 
 ol {
-	list-style-type: none;
-	counter-reset: lister;
+/* 	list-style-type: none; */
+/* 	counter-reset: lister; */
 	margin: auto;
 }
 
@@ -127,7 +139,7 @@ body>li:first-child {
 	margin-top: 0.6em;	
 }
 
-li {
+/* li {
   display: table;
   counter-increment: lister;
   margin-bottom: 0.6em;
@@ -144,8 +156,8 @@ li li {
 }
 
 li li:before {
-    content: counters(lister, ".") ". ";
-}
+   content: counters(lister, ".") ". ";
+}*/
 
 
 .italize {
