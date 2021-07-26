@@ -28,7 +28,7 @@ body {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
-    background-color: rgb(245, 245, 220);
+    background-color: rgb(245, 245, 220, 0.8);
 }
 
 #websiteNav h4 {
@@ -69,7 +69,7 @@ body {
     width: 100%;
     transition-property: background-color;
     transition-duration: 0.5s;
-    border-bottom: 2px solid lightgray;
+    border-bottom: 2px solid dimgrey;
 }
 
 #bibleNodesHeader>*[contenteditable="true"] {
@@ -81,7 +81,18 @@ body {
 
 #bibleNodesHeader>button {
     background-color: transparent;
-    border: 1px solid #cccccc;
+    border: 1px solid double;
+    margin:-3px;
+}
+
+#bibleNodesHeader>button:hover {
+    background-color: rgb(182, 184, 179);
+    border-color: grey;
+}
+
+#bibleNodesHeader>button:active {
+    background-color: pink;
+    /* border-color: red; */
 }
 
 #bibleNodesTitle:focus {
@@ -291,7 +302,7 @@ path:hover {
 
 #svgPathToolTip,
 #divNodeToolTip {
-    display: none;
+    /* display: none; */
     padding: 5px;
     width: auto;
     font-size: smaller;
@@ -395,6 +406,8 @@ body.darkmode,
 }
 
 .darkmode #bibleNodesHeader {
+    border-bottom: 1px solid grey;
+    box-shadow: 0px 2px 3px 4px rgb(116 116 116 / 75%);
     background-color: rgba(32, 32, 32, 0.6);
     color: white;
 }
