@@ -127,21 +127,6 @@ function makeNodeDivEditable() {
 
 function makePathLabelEditable() {
     editablePathLabel.contentEditable = 'true';
-    // editablePathLabel.id = 'pathlabel_editor';
-    // /* FOR QUILL TEXT EDITOR */
-    // quill = new Quill('#pathlabel_editor', {
-    //     modules: {
-    //         toolbar: [
-    //             [{
-    //                 header: [1, 2, false]
-    //             }],
-    //             ['bold', 'italic', 'underline'],
-    //             ['image', 'code-block']
-    //         ]
-    //     },
-    //     placeholder: 'Compose an epic...',
-    //     theme: 'bubble' // or 'bubble'
-    // });
     hideContextMenu()
 }
 
@@ -362,6 +347,10 @@ function addNote() {
         connectionDetails.appendChild(noteDiv);
         //highest noteCount
         highestNoteCount = notesCount;
+
+        //TO OPEN COMMENTS SECTION TO ADD NOTES
+        toggleCheck = 1;
+        toggleConnectionDetails();
     }
 
     hideContextMenu();
@@ -379,11 +368,11 @@ function noteDblClick() {
 
 var toggleCheck = 0;
 
-function toggleConnectionDetails() {
-    if (toggleCheck == '0') {
+function toggleConnectionDetails(x) {
+    if ((x == 'open')||(toggleCheck == 0)) {
         connectionDetails.style.right = '-' + connectionDetails.offsetWidth + 'px';
         toggleCheck = 1;
-    } else {
+    } else if ((x == 'close')||(toggleCheck == 1)) {
         connectionDetails.style.right = '';
         toggleCheck = 0;
     }
