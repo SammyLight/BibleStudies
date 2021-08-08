@@ -38,12 +38,25 @@ function assignNodeID(elm, index) {
 
 //Add eventListner to all divNodes
 //The function below is called when endNodeAssigner() has been defined
+var setsArray = [];
 function addEventListenersToDivNodesOnPageLoad(){
     if(divNodes){
         for (i = 0; i < divNodes.length; i++) {
         divNodes[i].addEventListener('mousedown', nodeCanvasMouseDownFunction);
         endNodeAssigner(divNodes[i]);
         }
+    }
+
+    //GET AVAILABLE SETS ON PAGE LOAD
+    var setsOnLoad = nodeCanvas.querySelectorAll('.svg-Venn');
+    for(i=0; i<setsOnLoad.length; i++){
+        setName = setsOnLoad[i].id;
+        setsArray.push(setName);
+        setselect.innerHTML = setselect.innerHTML + 
+        `<li class='setselect'>
+            <input type="checkbox" id="input_` + setName + `" name="` + setName + `" value="` + setName + `">
+            <label for="input_` + setName + `">` + setName.slice(3) + `</label>
+        </li>`
     }
 }
 
@@ -63,7 +76,7 @@ function nodeCanvasMouseDownFunction(e) {
     contextX = e.clientX;
     contextY = e.clientY;
     evaluatedNode = this;
-    collisionSwitch();
+    // collisionSwitch();
     if(collisionDetectionOn){currentNodeStartPosition(evaluatedNode);}//for getting the initial position of currentNode to return it to in case of collision
     aNodeHasBeenClicked = 1;
     //if this is the first time a nodeDiv is clicked or if the nodeCanvas was clicked, then 'youCanDrag  == 0'
@@ -121,14 +134,14 @@ function mouseMoveFunction(e) {
     currentNode.style.top = newY;
     
     SVGmouseMoveFunction();
-    createSet();
+    createSet('rectangle');
     if(collisionDetectionOn){detectCollision();}
     // joinCirclesWithPaths(arrangeArray(document.getElementsByClassName('divNode')), 'divNodes');
 }
 
 function mouseUpFunction(e) {
     if(collisionDetectionOn){actIfCollision();}
-    createSet();
+    createSet('rectangle');
 
     //Connection to SVGmouseDownFunction & SVGmouseMoveFunction
     mouseDownForDraggingEnabled = 0;

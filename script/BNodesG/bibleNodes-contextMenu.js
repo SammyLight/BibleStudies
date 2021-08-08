@@ -97,7 +97,6 @@ var selectedPath;
 var svgPathToolTip
 
 function createSvgPathToolTip() {
-    console.log('createSvgPathToolTip')
     svgPathToolTip = document.createElement('DIV');
     svgPathToolTip.id = 'svgPathToolTip';
     // svgPathToolTip.style.borderRadius = '2px';
@@ -193,9 +192,8 @@ nodeCanvas.addEventListener('mouseover', function (ev) {
             divNodeToolTip.innerHTML = "";
             var noteForDivNode = connectionDetails.querySelector('[note="' + noteInnerHtml + '"]').cloneNode(true);
             noteForDivNode.classList.remove('notes');
-            noteForDivNode.removeAttribute('contenteditable',0);
+            noteForDivNode.removeAttribute('contenteditable', 0);
             divNodeToolTip.appendChild(noteForDivNode);
-            console.log(divNodeToolTip)
             // divNodeToolTip.innerHTML = connectionDetails.querySelector('[note="' + noteInnerHtml + '"]').innerHTML;
         } else {
             divNodeToolTip.innerHTML = '<em>' + selectedDivNode.innerText + '</em>';
@@ -268,6 +266,23 @@ nodeCanvas.addEventListener('contextmenu', function (ev) {
         nodeDivCustomContextMenu.style.left = rClick_X + 'px';
         nodeDivCustomContextMenu.style.top = rClick_Y + 'px';
         nodeDivCustomContextMenu.style.display = 'grid';
+
+        //set SET options
+        var dNodeClassList = target.classList;
+        //uncheck all sets
+        var setChkBoxes = setselect.querySelectorAll('input');
+        for (i = 0; i < setChkBoxes.length; i++) {
+            setChkBoxes[i].checked = 0;
+        }
+
+        //check sets of selected node
+        for (k = 0; k < dNodeClassList.length; k++) {
+            if (dNodeClassList[k].startsWith('set')) {
+                var setName = dNodeClassList[k];
+                //check set
+                setselect.querySelector('#input_' + setName).checked = 1;
+            }
+        }
     }
     //Show contextMenu on rightClick of any connecting svg line/path
     else if (target.tagName == 'path') {

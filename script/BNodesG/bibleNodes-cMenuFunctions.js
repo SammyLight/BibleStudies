@@ -75,13 +75,6 @@ function createNewNode(type) {
     //Append new nodeDiv
     nodeCanvas.appendChild(newDivNode);
     endNodeAssigner(newDivNode);
-    //For creating set nodes
-    if (type == 'set') {
-        newDivNode.classList.add('set_item');
-        newDivNode.setAttribute('setclass', null);
-        createSet();
-    }
-
     hideContextMenu()
 }
 
@@ -165,22 +158,6 @@ function deleteNodeDiv() {
     deletedNodeIdsArray = [...new Float64Array(deletedNodeIdsArray).sort()];
 
     hideContextMenu()
-}
-
-//THIS HIDES OR SHOWS ALL DESCENDANTS OF SELECTED NODE
-
-//FUNCTIONS TO DETERMINE IF ALL DESCENDANTS OR JUST THE NEXT GENERATION SHOULD BE SHOWN/HIDDEN
-function descendants2Toggle(allOrNextOnly) {
-    if (allOrNextOnly == 'all') {
-        firstGenRadio.checked = false;
-        allNfirstGenRadio.checked = false;
-    } else if (allOrNextOnly == 'firstGeneration') {
-        allGenRadio.checked = false;
-        allNfirstGenRadio.checked = false;
-    } else if (allOrNextOnly == 'hideAllShowFirst') {
-        firstGenRadio.checked = false;
-        allGenRadio.checked = false;
-    }
 }
 
 //FUNCTION TO DELETE SELECTED PATH

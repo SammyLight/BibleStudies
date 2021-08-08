@@ -2,6 +2,55 @@
 var interactivebuttons = document.getElementsByClassName('interactivebutton');
 var makeInteractive = document.getElementById('makeInteractive');
 
+//Function and EventListners for button to make divNodes hide or show their descendants
+function interactivity() {
+    if (makeInteractive.classList.contains('noninteractive')) {
+        for (i = 0; i < interactivebuttons.length; i++) {
+            interactivebuttons[i].style.display = '';
+        }
+        makeInteractive.classList.remove('noninteractive');
+        nodeCanvas.addEventListener('mousedown', toggleDescendants);
+        makeInteractive.classList.add('coloron');
+    } else {
+        for (i = 0; i < interactivebuttons.length; i++) {
+            interactivebuttons[i].style.display = 'none';
+            interactivebuttons[i].querySelector('input').checked = false;
+        }
+        makeInteractive.classList.add('noninteractive');
+        makeInteractive.classList.remove('coloron');
+    }
+}
+
+//To Determine Which of the ShowHideDescendants Funtions to Call
+function toggleDescendants(e) {
+    //toggle accordingly if it is a divnode that is clicked
+    if (e.target.classList.contains('divNode')) {
+        clickedNode = e.target;
+        if (allGenRadio.checked) {
+            toggleAllDescendants();
+            //hide the sets groups
+            setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
+        } else if (firstGenRadio.checked) {
+            toggleFirstGeneration();
+            //hide the sets groups
+            
+            // if((node2Hide = clickedNode.getAttribute('connectto'))&&(node2Hide = nodeCanvas.querySelector('[nodeid=' + node2Hide + ']'))){
+            //     clickedClasslists = node2Hide.classList;
+            //     for(i=0; i<clickedClasslists.length; i++){
+            //         if(clickedClasslists[i].startsWith('set')){
+                        setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
+            //         }
+            //     }
+            // }
+        } else if (allNfirstGenRadio.checked) {
+            toggleAllnFirstGeneration();
+            //hide the sets groups
+            setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
+        }
+    }
+}
+
+//Helper function to hide or show descendants
 function showHidePath(SorH, fromORto, checkIfItIsHidden) {
     for (i = 0; i < fromORto.length; i++) {
         //Hide all paths connected FROM or TO the node
@@ -21,59 +70,63 @@ function showHidePath(SorH, fromORto, checkIfItIsHidden) {
                     fadeInShow(pathLabeToToggle, 300);
                 }
             }
-        }
-        else if (checkIfItIsHidden.toLowerCase() == 'from') {
-            if (nodeCanvas.querySelector('.divNode.' + fromORto[i].getAttribute('connectedfrom')).style.display != 'none') {
+        } else if (checkIfItIsHidden.toLowerCase() == 'from') {
+            nodeLeadingFrom = nodeCanvas.querySelector('.divNode.' + fromORto[i].getAttribute('connectedfrom'));
+            // console.log(nodeLeadingFrom);
+            if (nodeLeadingFrom.style.display != 'none') {
                 fadeInShow(fromORto[i], 300);
                 //Show path's label if any
                 if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + fromORto[i].id + '"]')) {
                     fadeInShow(pathLabeToToggle, 300);
                 }
+                //Check if all its descendants are showing or not by checking if the paths connecting from it are all showing or not
+                // allChildrenShowing = 'yes';
+                // console.log(fromORto[i]);
+                // console.log(fromORto[i].getAttribute('connectedfrom'));
+                // console.log(nodeCanvas.querySelectorAll('path[connectedfrom=' + fromORto[i].getAttribute('connectedfrom') + ']'));
+                // allChildrenShowing = nodeCanvas.querySelectorAll('path[connectedfrom=' + fromORto[i].getAttribute('connectedfrom') + ']');
+                // allChildrenShowing.forEach(connectedPaths => {
+                //     if(connectedPaths.style.display == 'none'){nodeLeadingFrom.classList.remove('descendantshidden');}else{nodeLeadingFrom.classList.add('descendantshidden');}
+                // })
             }
-        }
-        else if (checkIfItIsHidden.toLowerCase() == 'to') {
-            if (nodeCanvas.querySelector('.divNode.' + fromORto[i].getAttribute('connectedto')).style.display != 'none') {
+        } else if (checkIfItIsHidden.toLowerCase() == 'to') {
+            nodeLeadingTo = nodeCanvas.querySelector('.divNode.' + fromORto[i].getAttribute('connectedto'));
+            // console.log(nodeLeadingTo);
+            if (nodeLeadingTo.style.display != 'none') {
                 fadeInShow(fromORto[i], 300);
                 //Show path's label if any
                 if (pathLabeToToggle = nodeCanvas.querySelector('.pathLabel[labelfor="' + fromORto[i].id + '"]')) {
                     fadeInShow(pathLabeToToggle, 300);
                 }
+                // allChildrenShowing = 'yes';
+                // console.log(nodeLeadingTo.getAttribute('connectto'));
+                // if(nodeLeadingTo.getAttribute('connectto').trim().split(' ')){
+                //     var a23 = nodeLeadingTo.getAttribute('connectto').trim().split(' ');
+                //     var connecta23 = connecta23.concat(a23);
+                //     console.log(connecta23);
+                // }
             }
         }
+    }
+}
+//THIS HIDES OR SHOWS ALL DESCENDANTS OF SELECTED NODE
+//FUNCTIONS TO DETERMINE IF ALL DESCENDANTS OR JUST THE NEXT GENERATION SHOULD BE SHOWN/HIDDEN
+function descendants2Toggle(allOrNextOnly) {
+    if (allOrNextOnly == 'all') {
+        firstGenRadio.checked = false;
+        allNfirstGenRadio.checked = false;
+    } else if (allOrNextOnly == 'firstGeneration') {
+        allGenRadio.checked = false;
+        allNfirstGenRadio.checked = false;
+    } else if (allOrNextOnly == 'hideAllShowFirst') {
+        firstGenRadio.checked = false;
+        allGenRadio.checked = false;
     }
 }
 
-function interactivity() {
-    if (makeInteractive.classList.contains('noninteractive')) {
-        for (i = 0; i < interactivebuttons.length; i++) {
-            interactivebuttons[i].style.display = '';
-        }
-        makeInteractive.classList.remove('noninteractive');
-        nodeCanvas.addEventListener('mousedown', toggleDescendants);
-        makeInteractive.classList.add('coloron');
-    } else {
-        for (i = 0; i < interactivebuttons.length; i++) {
-            interactivebuttons[i].style.display = 'none';
-            interactivebuttons[i].querySelector('input').checked = false;
-        }
-        makeInteractive.classList.add('noninteractive');
-        makeInteractive.classList.remove('coloron');
-    }
-}
-//To determine Which Function to Call
-function toggleDescendants(e) {
-    if ((currentNode) && (aNodeHasBeenClicked == 1)) {
-        if (allGenRadio.checked) {
-            toggleAllDescendants();
-        } else if (firstGenRadio.checked) {
-            toggleFirstGeneration()
-        } else if (allNfirstGenRadio.checked) {
-            toggleAllnFirstGeneration()
-        }
-    }
-}
 var arrayOfAllDescendants = [];
 
+//FUNCTION SHOWS OR HIDES ALL DESCENDANTS OF CLICKED DIV-NODE
 function toggleAllDescendants(thisNode, showORhide) {
     if (!thisNode) {
         thisNode = currentNode
@@ -82,9 +135,10 @@ function toggleAllDescendants(thisNode, showORhide) {
         var connect2Array = [];
         var abc = (thisNode.getAttribute('connectTo')).trim().split(' ');
         connect2Array = connect2Array.concat(abc);
+        var areDescendantsHidden = thisNode.classList.contains('descendantshidden');
 
         //SHOW ALL DESCENDANTS AND CONNECTING PATHS OF SELECTED NODE IF THEY HAVE BEEN HIDDEN
-        if (((!showORhide) || (showORhide == 'show')) && (thisNode.classList.contains('descendantshidden'))) {
+        if (((!showORhide) || (showORhide == 'show')) && (areDescendantsHidden)) {
             connect2Array.forEach(descendant => {
                 var currentDescendant = nodeCanvas.querySelector('[nodeid=' + descendant + ']')
                 fadeInShow(currentDescendant, 300);
@@ -97,7 +151,7 @@ function toggleAllDescendants(thisNode, showORhide) {
             thisNode.classList.remove('descendantshidden');
         }
         //HIDE ALL DESCENDANTS AND CONNECTING PATHS OF SELECTED NODE
-        else if ((!showORhide) || (showORhide == 'hide') && (thisNode.classList.contains('descendantshidden') == false)) {
+        else if ((!showORhide) || (showORhide == 'hide') && (areDescendantsHidden == false)) {
             thisNode.classList.add('descendantshidden');
             connect2Array.forEach(descendant => {
                 var currentDescendant;
@@ -117,18 +171,20 @@ function toggleAllDescendants(thisNode, showORhide) {
             });
         }
     }
-
+    // for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a]);}
     hideContextMenu()
 }
 
+//FUNCTION SHOWS OR HIDES ONLY THE FIRST GENERATION OF DESCENDANTS OF CLICKED DIV-NODE
 function toggleFirstGeneration() {
     if ((currentNode.hasAttribute('connectTo')) && ((currentNode.getAttribute('connectTo')).trim().split(' ') != '')) {
         var connect2Array = [];
         var abc = ((currentNode.getAttribute('connectTo'))).trim().split(' ');
         connect2Array = connect2Array.concat(abc);
+        var areDescendantsHidden = currentNode.classList.contains('descendantshidden');
 
         //SHOWS NEXT GENERATION NODES AND PATHS
-        if (currentNode.classList.contains('descendantshidden')) {
+        if (areDescendantsHidden) {
             connect2Array.forEach(descendant => {
                 fadeInShow(nodeCanvas.querySelector('[nodeid=' + descendant + ']'), 300);
                 var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
@@ -152,10 +208,11 @@ function toggleFirstGeneration() {
             currentNode.classList.add('descendantshidden');
         }
     }
-
+    for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a]);}
     hideContextMenu()
 }
 
+//FUNCTION HIDES ALL DESCENDANTS OF CLICKED DIV-NODE BUT SHOWS ONLY THE FIRST GENERATION OF DESCENDANTS OF CLICKED DIV-NODE
 function toggleAllnFirstGeneration(thisNode, showORhide) {
     if (!thisNode) {
         thisNode = currentNode
@@ -164,11 +221,13 @@ function toggleAllnFirstGeneration(thisNode, showORhide) {
         var connect2Array = [];
         var abc = (thisNode.getAttribute('connectTo')).trim().split(' ');
         connect2Array = connect2Array.concat(abc);
+        var areDescendantsHidden = currentNode.classList.contains('descendantshidden');
 
-        //SHOW NEXT GENERATION AND CONNECTING PATHS ONLY
-        if (currentNode.classList.contains('descendantshidden')) {
+        //SHOW NEXT GENERATIONS AND CONNECTING PATHS ONLY
+        if (areDescendantsHidden) {
             connect2Array.forEach(descendant => {
-                fadeInShow(nodeCanvas.querySelector('[nodeid=' + descendant + ']'), 300);
+                var currentDescendant = nodeCanvas.querySelector('[nodeid=' + descendant + ']');
+                fadeInShow(currentDescendant, 300);
                 var pathsFrom = svg.querySelectorAll('[connectedfrom=' + descendant + ']');
                 var pathsTo = svg.querySelectorAll('[connectedto=' + descendant + ']');
                 //Show all paths connected FROM the node
@@ -192,6 +251,6 @@ function toggleAllnFirstGeneration(thisNode, showORhide) {
             thisNode.classList.add('descendantshidden');
         }
     }
-
+    
     hideContextMenu()
 }
