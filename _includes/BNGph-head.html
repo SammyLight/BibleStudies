@@ -12,12 +12,12 @@
 
 <body>
     <div id="moveSelectedElements" style="display: none;">
-        <button id="up" onmousedown ="moveUp('start')" onmouseup ="moveUp('stop')">Up</button>
+        <button id="up" onmousedown="moveUp('start')" onmouseup="moveUp('stop')">Up</button>
         <br>
-        <button id="left" onmousedown ="moveLeft('start')" onmouseup ="moveLeft('stop')">Left</button>
-        <button id="right" onmousedown ="moveRight('start')" onmouseup ="moveRight('stop')">Right</button>
+        <button id="left" onmousedown="moveLeft('start')" onmouseup="moveLeft('stop')">Left</button>
+        <button id="right" onmousedown="moveRight('start')" onmouseup="moveRight('stop')">Right</button>
         <br>
-        <button id="down" onmousedown ="moveDown('start')" onmouseup ="moveDown('stop')">Down</button>
+        <button id="down" onmousedown="moveDown('start')" onmouseup="moveDown('stop')">Down</button>
     </div>
     <div id="bibleNodesHeader">
         <h1 id="bibleNodesTitle" title='Double click to edit'>{{page.title}}</h1>
@@ -26,18 +26,21 @@
         <button id="darkModeButton" onclick="darkModeOnOff()" title="Toggle Dark or Light Mode">D</button>
         <!-- <div style="display: inline;"> -->
         <button onclick="interactivity()" id="makeInteractive" class="noninteractive">Interactive</button>
-        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('all')" title="Hide/Show All Descendants">
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('all')"
+            title="Hide/Show All Descendants">
             <label for="allGenRadio">All Gen
                 <input id="allGenRadio" type="checkbox" value="allGenRadio">
             </label>
         </button>
-        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('firstGeneration')" title="Hide/Show Next Descendants">
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('firstGeneration')"
+            title="Hide/Show Next Descendants">
             <label for="firstGenRadio">
                 <span>1<em>st</em> Gen</span>
                 <input id="firstGenRadio" type="checkbox" value="firstGenRadio">
             </label>
         </button>
-        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('hideAllShowFirst')" title="Hide All Descendants But Show First Generation">
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('hideAllShowFirst')"
+            title="Hide All Descendants But Show First Generation">
             <label for="allNfirstGenRadio">
                 <span>All & 1<em>st</em> Gen</span>
                 <input id="allNfirstGenRadio" type="checkbox" value="allNfirstGenRadio">
@@ -52,7 +55,8 @@
                     Home</a>
                 {% endif %}{% endfor %}
             </h4>
-            <input type="text" id="searchBox" onkeyup="searchNavMenu('searchBox', 'websiteNavMenu')" placeholder="Search for names.." title="Type in a name" style="display: none">
+            <input type="text" id="searchBox" onkeyup="searchNavMenu('searchBox', 'websiteNavMenu')"
+                placeholder="Search for names.." title="Type in a name" style="display: none">
             <ol id="websiteNavMenu" style="display: none;">
                 {% for page in site.pages %}{% if page.categories contains "BibleNodeGraph" %}<li
                     style="display: none;"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
@@ -66,7 +70,6 @@
         <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
         <div id="canvasCustomContextMenu" class="customContextMenu">
             <button id="contextMenuNewNode" onclick="createNewNode('node')">New Node</button>
-            <button id="contextMenuNewNodeSet" onclick="createNewNode('set')">New Set</button>
         </div>
         <!-- ContextMenu for rightClick on any divNode -->
         <div id="nodeDivCustomContextMenu" class="customContextMenu">
@@ -75,8 +78,18 @@
             <button id="cMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
             <button id="cMenuDeleteNodeDiv" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
             <button id="cMenuAddNote" onclick="addNote()" tabindex="0">Add Note</button>
+            <!-- SETS BUTTONS & SUBMENU -->
+            <br>
+            <!-- <button id="cMenuAdd2Set" onclick="add2Set()" tabindex="0">Add2Set</button> -->
+            <!-- <button id="cMenuRemove4rmSet" onclick="remove4rmSet()" tabindex="0">Remove4rmSet</button> -->
+
+            <ul id="setselect"></ul>
+            <input type="text" id="setnewset" onkeypress ="showCurrentValue(event)" value="">
+            <!-- INTERACTIVITY -->
+            <br>
             <button id="cMenuDescendantsAllToggle" onclick="toggleAllDescendants()" tabindex="0">All Gens</button>
-            <button id="cMenuDescendantsFirstToggle" onclick="toggleFirstGeneration()" tabindex="0">1<em>st</em> Gen</button>
+            <button id="cMenuDescendantsFirstToggle" onclick="toggleFirstGeneration()" tabindex="0">1<em>st</em>
+                Gen</button>
         </div>
         <!-- ContextMenu for rightClick on any svgPath -->
         <div id="svgPathCustomContextMenu" class="customContextMenu">
