@@ -158,6 +158,8 @@ body {
 .customContextMenu button {
     width: 100%;
     text-align: left;
+    border: 0.5px solid lightgray;
+    border-radius: 0;
 }
 
 /* .customContextMenu button:not(:last-child){
@@ -165,14 +167,14 @@ body {
     border-bottom: 0;
 } */
 
-#svg {
-    /* width: 100%;
-    height: 100%; */
-    /* viewBox: 0 0 100 100; */
-}
+/* #svg {
+    width: 100%;
+    height: 100%;
+    viewBox: 0 0 100 100;
+} */
 
-path {
-    stroke: dimgrey;
+.svg-connectors {
+    /* stroke: dimgrey; */
     marker-end: url(#arrowHead);
 }
 
@@ -344,6 +346,7 @@ path:hover {
     transition-property: opacity, display;
     transition-duration: 0.5s;
     transition-delay: 2s;
+    z-index: 1;
 }
 
 .pathLabel ul,
@@ -362,7 +365,7 @@ path:hover {
 } */
 
 /* SETS SECTION */
-div[setclass] {
+/* div[setclass] {
     background-color: rgba(245, 245, 245, 0.397);
     border-style: none;
     box-shadow: none;
@@ -373,6 +376,23 @@ div[setclass]:active {
     background-color: transparent;
     border-style: none;
     box-shadow: none;
+} */
+
+div.svg-Venn {
+    position: absolute;
+    background-color : rgba(139,69,19, 0.1);
+    border: 3px solid grey;
+    border-radius: 20px;
+    color: maroon;
+}
+
+div.svg-Venn:hover {
+    background-color : rgb(255, 255, 0, 0.1);
+    border: 3px solid brown;
+}
+
+div.svg-Venn > h3 {
+    padding-left: 10px;
 }
 
 .svg-Venn:hover {
@@ -380,6 +400,23 @@ div[setclass]:active {
     stroke: brown;
     /* stroke-width: 5px; */
     border: 5px;
+}
+
+#setselect {
+    list-style-type: none;
+    padding: 5px;
+    der: 5px;
+}
+
+#setselect {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.nodeCircle {
+    stroke: none;
 }
 
 /* SHAPES With CSS Clip-path*/
@@ -455,6 +492,12 @@ body.darkmode,
     /* color: white; */
 }
 
+.darkmode #divNodeToolTip {
+    background-color: black;
+    box-shadow: none !important;
+    color: white;
+}
+
 .darkmode .notes[contenteditable="true"] {
     /* background-color: rgb(98, 98, 98); */
     color: black;
@@ -462,6 +505,18 @@ body.darkmode,
 
 .darkmode .coloron {
     background-color: darkGreen !important;
+}
+
+.darkmode div.svg-Venn {
+    position: absolute;
+    background-color : rgba(255, 152, 79, 0.1);
+    border: 3px solid rgb(175, 175, 175);
+    color: white;
+}
+
+.darkmode div.svg-Venn:hover {
+    background-color : rgb(255, 255, 0, 0.1);
+    border-color: brown;
 }
 
 /* FOR SELECTABLES.JS
