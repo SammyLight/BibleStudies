@@ -162,16 +162,13 @@ body {
     border-radius: 0;
 }
 
-/* .customContextMenu button:not(:last-child){
-    border: 1px solid rgb(118, 118, 118);
-    border-bottom: 0;
-} */
+#cMenuAddNote{
+    margin-bottom: 5px;
+}
 
-/* #svg {
-    width: 100%;
-    height: 100%;
-    viewBox: 0 0 100 100;
-} */
+#cMenuDescendantsAllToggle{
+    margin-top: 5px;
+}
 
 .svg-connectors {
     /* stroke: dimgrey; */
@@ -380,7 +377,7 @@ div[setclass]:active {
 
 div.svg-Venn {
     position: absolute;
-    background-color : rgba(139,69,19, 0.1);
+    /* background-color : rgba(139,69,19, 0.1); */
     border: 3px solid grey;
     border-radius: 20px;
     color: maroon;
@@ -404,16 +401,13 @@ div.svg-Venn > h3 {
 
 #setselect {
     list-style-type: none;
-    padding: 5px;
-    der: 5px;
-}
-
-#setselect {
-    list-style-type: none;
-    padding: 5px;
+    padding-left: 0;
     margin: 0;
     font-size: 15px;
 }
+/* #setselect li {
+    display: none;
+} */
 
 .nodeCircle {
     stroke: none;
