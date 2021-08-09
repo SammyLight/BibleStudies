@@ -79,17 +79,12 @@
             <button id="cMenuDeleteNodeDiv" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
             <button id="cMenuAddNote" onclick="addNote()" tabindex="0">Add Note</button>
             <!-- SETS BUTTONS & SUBMENU -->
-            <br>
-            <!-- <button id="cMenuAdd2Set" onclick="add2Set()" tabindex="0">Add2Set</button> -->
-            <!-- <button id="cMenuRemove4rmSet" onclick="remove4rmSet()" tabindex="0">Remove4rmSet</button> -->
-
+            <button onclick="setsCMenu()">Sets</button>
             <ul id="setselect"></ul>
             <input type="text" id="setnewset" onkeypress ="showCurrentValue(event)" value="">
             <!-- INTERACTIVITY -->
-            <br>
             <button id="cMenuDescendantsAllToggle" onclick="toggleAllDescendants()" tabindex="0">All Gens</button>
-            <button id="cMenuDescendantsFirstToggle" onclick="toggleFirstGeneration()" tabindex="0">1<em>st</em>
-                Gen</button>
+            <button id="cMenuDescendantsFirstToggle" onclick="toggleFirstGeneration()" tabindex="0">1<em>st</em>Gen</button>
         </div>
         <!-- ContextMenu for rightClick on any svgPath -->
         <div id="svgPathCustomContextMenu" class="customContextMenu">
