@@ -225,6 +225,7 @@ nodeCanvas.addEventListener('mousemove', function (ev) {
 })
 
 //This eventListner targets the children of nodeCanvas without attaching eventListners to the children directly
+var currentNodesSetsArray = [];
 nodeCanvas.addEventListener('mousedown', function (ev) {
     //Get the clicked element
     ev = ev || window.event;
@@ -247,8 +248,29 @@ nodeCanvas.addEventListener('mousedown', function (ev) {
         toggleCheck = 0;
         toggleConnectionDetails();
     }
-})
 
+    //Show contextMenu on rightClick of any divNode
+    currentNodesSetsArray = [];
+    if (target.classList.contains('divNode')) {
+        //set SET options
+        var dNodeClassList = target.classList;
+        //uncheck all sets
+        var setChkBoxes = setselect.querySelectorAll('input');
+        for (i = 0; i < setChkBoxes.length; i++) {
+            setChkBoxes[i].checked = 0;
+        }
+
+        //check sets of selected node
+        for (k = 0; k < dNodeClassList.length; k++) {
+            if (dNodeClassList[k].startsWith('set')) {
+                var setName = dNodeClassList[k];
+                currentNodesSetsArray.push(setName);
+                //check set
+                setselect.querySelector('#input_' + setName).checked = 1;
+            }
+        }
+    }
+}, false);
 nodeCanvas.addEventListener('contextmenu', function (ev) {
 
     rClick_X = ev.clientX - nodeCanvasContainer.getBoundingClientRect().left - nodeCanvas.getBoundingClientRect().left + (window.pageXOffset || document.documentElement.scrollLeft);

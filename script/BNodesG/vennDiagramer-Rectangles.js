@@ -37,17 +37,17 @@ function setRectangle(ax, ay, width, height, groupName, circleclass) {
     //if the rectangle already exists, delete it before redrawing it
     var allDivNodeOfSet = nodeCanvas.querySelectorAll('.divNode.' + groupName);
     //check to see if all divNodes of set are hidden or at least one is not
-    function atLeastOneDivNodeIsShowing(x){
-        for(i=0; i<x.length; i++){
-            if(x[i].style.display != 'none'){
+    function atLeastOneDivNodeIsShowing(x) {
+        for (i = 0; i < x.length; i++) {
+            if (x[i].style.display != 'none') {
                 return true
-            }
-            return false
+            } 
         }
+        return false
     }
 
     //if the set already exists and at least one of its members is showing
-    if ((rect2modify = document.getElementById(groupName)) /* && (atLeastOneDivNodeIsShowing(allDivNodeOfSet)) */) {
+    if ((rect2modify = document.getElementById(groupName)) && (atLeastOneDivNodeIsShowing(allDivNodeOfSet))) {
         rect2modify.style.left = ax + "px";
         rect2modify.style.top = ay + "px";
         rect2modify.style.width = width + 'px';
@@ -86,13 +86,11 @@ function rectangleGroup(groupName) {
             notHiddenNodes.push(groupArray[i]);
         }
     }
-
     var x1;
     var y1;
     var x2;
     var y2;
     var gi;
-
     for (i = 0; i < notHiddenNodes.length; i++) {
         gi = notHiddenNodes[i];
 
@@ -145,7 +143,7 @@ function createSet(shape) {
 
 // createSet('rectangle');
 
-//Mousedown eventListner for SET selection
+//Mousedown eventListner for SET checkbox selection
 nodeDivCustomContextMenu.addEventListener('mousedown', function (ev) {
     ev = ev || window.event;
     var target = ev.target || ev.srcElement;
@@ -164,6 +162,7 @@ nodeDivCustomContextMenu.addEventListener('mousedown', function (ev) {
 });
 
 //FOR SETS CHECKBOXES ON RIGHTCLICK CONTEXTMENU
+//Checks for available sets and creates menu item with checkbox for it
 function showCurrentValue(event) {
     const value = event.target.value;
     document.getElementById("setnewset").innerText = value;
@@ -181,4 +180,22 @@ function showCurrentValue(event) {
         document.getElementById("input_set" + value).checked = true;
         document.getElementById("setnewset").value = '';
     }
+}
+//TO HIDE THE SETS CONTEXTMENU
+function setsCMenu() {
+    var setsCheckBoxes = nodeDivCustomContextMenu.querySelectorAll('#setselect>li');
+    var setsListItem = [];
+    setsListItem.push(setnewset);
+    setsCheckBoxes.forEach(element => {
+        setsListItem.push(element)
+    });
+    for (let i = 1; i <= setsListItem.length; i++) {
+        setTimeout(() => showHideSiteNav(setsListItem[i - 1]), 20 * i)
+    }
+}
+setsCMenu()
+
+//Redraw currentNodes sets
+function modifyCurrentNodesSets(){
+    for (a = 0; a < currentNodesSetsArray.length; a++) {rectangleGroup(currentNodesSetsArray[a])}
 }

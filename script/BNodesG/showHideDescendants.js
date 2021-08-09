@@ -28,24 +28,10 @@ function toggleDescendants(e) {
         clickedNode = e.target;
         if (allGenRadio.checked) {
             toggleAllDescendants();
-            //hide the sets groups
-            setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
         } else if (firstGenRadio.checked) {
             toggleFirstGeneration();
-            //hide the sets groups
-            
-            // if((node2Hide = clickedNode.getAttribute('connectto'))&&(node2Hide = nodeCanvas.querySelector('[nodeid=' + node2Hide + ']'))){
-            //     clickedClasslists = node2Hide.classList;
-            //     for(i=0; i<clickedClasslists.length; i++){
-            //         if(clickedClasslists[i].startsWith('set')){
-                        setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
-            //         }
-            //     }
-            // }
         } else if (allNfirstGenRadio.checked) {
             toggleAllnFirstGeneration();
-            //hide the sets groups
-            setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
         }
     }
 }
@@ -171,7 +157,8 @@ function toggleAllDescendants(thisNode, showORhide) {
             });
         }
     }
-    // for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a]);}
+    //to redraw the set
+    setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
     hideContextMenu()
 }
 
@@ -208,7 +195,8 @@ function toggleFirstGeneration() {
             currentNode.classList.add('descendantshidden');
         }
     }
-    for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a]);}
+    //to redraw the set
+    setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
     hideContextMenu()
 }
 
@@ -251,6 +239,7 @@ function toggleAllnFirstGeneration(thisNode, showORhide) {
             thisNode.classList.add('descendantshidden');
         }
     }
-    
+    //to redraw the set
+    setTimeout(function() { for (a = 0; a < setsArray.length; a++) {rectangleGroup(setsArray[a])}; }, 300);
     hideContextMenu()
 }
