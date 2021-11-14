@@ -4,6 +4,11 @@ body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
     line-height: 1.65!important;
     text-align: left!important;
 }
+@media only screen and (max-width: 376px){
+body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+    font-size: 16px!important;
+}
+}
 p,li,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
 }
