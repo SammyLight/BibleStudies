@@ -47,10 +47,16 @@
                 </li>
 
                 <li>
-                     {% for page in site.pages %}{% if page.categories contains "HomePage-Falls of Man" %}
+                     {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
                     </a>{% endif %}{% endfor %}
                 </li>
+
+                <li>
+                    {% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
+                   <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The LAW
+                   </a>{% endif %}{% endfor %}
+               </li>
 
                 <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
