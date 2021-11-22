@@ -716,12 +716,11 @@ ul.recentposts{
 .Contact-section {
     color: #d0d0d0 !important;
     font-weight: 500 !important;
-    margin-bottom: 0;
+    padding-bottom: 20px;
     text-shadow: 0px 1px 1px #292d31, 0 0 0 #292d31, -1px 1px 0 #292d31, 1px 1px 0 gray !important;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
 }
-.Contact-section h1,h5 {
+.Contact-section h5{
+    border-bottom: none;
     color: #d0d0d0;
 }
 .Contact-section p {
@@ -734,7 +733,6 @@ ul.recentposts{
 .Contact-section a:hover  {
     text-decoration: underline;
 }
-
 .Contact-section .icons {
     font-size: 15px ;
     margin-right: 5px;
