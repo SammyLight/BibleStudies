@@ -39,7 +39,7 @@ categories: [""]
 			<p>A collection of Useful Resources on the Falls of Man</p>
 		
 			<ol id="nav">
-					{% for page in site.pages %}{% if page.categories contains "Fall of Man" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% for page in site.pages %}{% if page.categories contains "Falls of Man" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
 					{% endif %}{% endfor %}
 			</ol>
 
