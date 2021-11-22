@@ -1,12 +1,13 @@
 body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
     font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 20px!important;
-/*     line-height: 1.65!important; */
+    line-height: 1.65!important;
     text-align: left!important;
 }
 @media only screen and (max-width: 410px){
 body :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
     font-size: 16px!important;
+    line-height: 1.35!important;
 }
 }
 p,h1,h2,h3,h4,h5,h6{
