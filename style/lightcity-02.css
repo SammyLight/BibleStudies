@@ -739,3 +739,90 @@ ul.recentposts{
     font-size: 15px ;
     margin-right: 5px;
 }
+/* FOOTER LINKS CSS */
+.footerLinks-header h3, .Contact-section h3 {
+    color: #d0d0d0;    
+    font-size: 20px;
+}
+@media only screen and (min-width: 520px){
+.footerLinks-wrapper{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    gap: 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+}
+.footerLinks-wrapper > div:first-child{
+    width: 115%;
+    padding-left: 0;
+}
+.footerLinks-header{
+    width: 100%;
+    padding-left: 45px;
+}
+.footerLinks-header h3 {
+    font-size: 20px;
+    margin-top: 48px;
+    margin-bottom: 17px;
+}
+}
+@media only screen and (min-width: 960px){
+.footer-nav-wrapper {
+    position: relative;
+    min-height: 1px;
+    border-right: 1px solid #333030;
+    display: table-cell;
+    vertical-align: top;
+}
+.footerLinks-wrapper{
+    padding-bottom: 20px;
+    padding-right: 30px;
+}
+.Contact-section {
+    padding-left: 30px;
+}
+.Contact-section h3 {
+    font-size: 20px;
+    margin-top: 48px;
+    margin-bottom: 17px;
+}
+.footerLinks-wrapper > div:first-child{
+    width: 125%;
+    padding-left: 0;
+}
+.footerLinks-header{
+    width: 100%;
+    padding-left: 45px;
+}
+}
+.footerLinks-header{
+    width: 88%;
+    position: relative;
+    color: #d0d0d0;
+}
+
+ul.footerLinks-lists{
+    padding: 0;
+    /* column-gap: 2em;
+    column-width: 5em; */
+}
+.footerLinks-lists li{
+    line-height: 1.7;
+    list-style-type: none;
+}
+.footerLinks-lists a{
+    text-decoration: none;
+    color: #d0d0d0;
+    font-size: 16px;
+}
+.footerLinks-lists a:hover{
+    text-decoration: underline;
+}
+.footerLinks-lists p{
+    color: #d0d0d0;
+    font-size: 16px;
+}
