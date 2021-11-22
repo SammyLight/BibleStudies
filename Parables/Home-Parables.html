@@ -11,7 +11,7 @@ categories: ["HomePage-Parables"]
 	</style>
 	<div class="homeBody-section container-fluid-inner" style="min-height: 75vh;">
 	<h1 class="titles">Parables</h1>
-	<p>A collection of Useful Resources</p>
+	<p>A collection of Useful Resources on Parables</p>
 
 	<ol id="nav">
 	        {% for page in site.pages %}{% if page.categories contains "Parables" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
