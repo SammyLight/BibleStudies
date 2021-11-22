@@ -58,6 +58,12 @@
                    </a>{% endif %}{% endfor %}
                </li>
 
+               <li>
+                {% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+               <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
+               </a>{% endif %}{% endfor %}
+           </li>
+
                 <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
                     </a>{% endif %}{% endfor %}
