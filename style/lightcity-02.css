@@ -836,17 +836,18 @@ p,li {
  	line-height: 20px;
  	letter-spacing:1px;
  }
-h1,h2,h3,h4,h5,h6 {
-	color: #111;
-	font-family: 'Open Sans Condensed', sans-serif;
-	text-transform: uppercase;
-	margin: 0 0 12px;
+h1, h2, h3, h4, h5, h6 {
+    color: #111;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    /* margin: 0 0 12px; */
 }
+@media only screen and (min-width: 1024px){
 h1 {
-	font-size: 64px!important;
-	font-weight: 700;
-	line-height: 64px;
-}
+        font-size: 64px!important;
+        font-weight: 700;
+        line-height: 64px;
+}}
 h2 {
 	font-size: 48px!important;
 	font-weight: 700;
