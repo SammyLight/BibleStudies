@@ -827,7 +827,9 @@ ul.footerLinks-lists{
     color: #d0d0d0;
     font-size: 16px;
 }
-
+blockquote {
+    font: italic 1.2rem Vollkorn !important;
+}
 /*  ADDED TO MAKE IT BEAUTIFUL*/
 
 /*  ADDED TO MAKE IT BEAUTIFUL*/
@@ -858,7 +860,3 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 700;
         line-height: 32px;
     }}
-
-blockquote {
-    font: italic 1.2rem Vollkorn !important;
-}
