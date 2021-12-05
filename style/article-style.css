@@ -38,6 +38,32 @@ h3 {
 h4 {
     font-size: 1.049690125em;
 }
+@media only screen and (min-width: 960px){
+    header > h1:first-of-type {
+        font-size: 70px!important;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    div > h1:first-of-type {
+        font-size: 70px!important;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    h1 {
+        font-size: 60px!important;
+        font-weight: 700;
+        line-height: 60px;
+    }
+    h2 {
+        font-size: 48px!important;
+        font-weight: 700;
+        line-height: 48px;
+    }
+    h3 {
+        font-size: 32px!important;
+        font-weight: 700;
+        line-height: 32px;
+    }}
  @media only screen and (max-width: 760px){
 header > h1:first-of-type {
     font-size: 2.249690125em;
@@ -45,16 +71,16 @@ header > h1:first-of-type {
 div > h1:first-of-type {
     font-size: 2.249690125em;
 }  
-h1,h2 {
-    font-size: 1.549690125em;
+h1 {
+    font-size: 1.749690125em;
 }
 h2 {
-    font-size: 1.349690125em;
+    font-size: 1.449690125em;
 }
 h3 {
     font-size: 1.149690125em;
 }
-} 
+}
 h1:first-child,table{
     margin: 1em 0.5em;
     margin-top: 0;
