@@ -48,6 +48,9 @@ div > h1:first-of-type {
 h1,h2 {
     font-size: 1.549690125em;
 }
+h2 {
+    font-size: 1.349690125em;
+}
 h3 {
     font-size: 1.149690125em;
 }
