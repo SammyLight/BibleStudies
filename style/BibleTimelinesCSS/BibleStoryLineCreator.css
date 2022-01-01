@@ -62,9 +62,11 @@
   display: grid;
   grid-template-columns: auto 1fr;
 }
+
 :root {
   --customColor: floralwhite;
 }
+
 .grid2 {
   background-color: var(--customColor);
   border: 1px solid black;
@@ -258,6 +260,11 @@ table h6:not(:last-of-type) {
 
 .headbuttons>input {
   width: 20px;
+}
+
+#storylineTableEditorButtonsMenu .headbuttons span {
+  text-align: left;
+  padding-left: 7px;
 }
 
 #masterTable {
@@ -1088,7 +1095,7 @@ td>div {
 }
 
 #masterNav h3 {
-  margin-top: 15px;
+  margin-top: 1px;
   margin-bottom: 5px;
 }
 
@@ -1147,13 +1154,14 @@ td>div {
 #showTimeLinesMenu,
 #showTimeMenu,
 #showLabelMenu,
-#showLocationsMenu {
+#showLocationsMenu,
+.masterNote {
   min-width: 30px;
 }
 
 /*MOVE ROWS AND CELLS*/
 #moveButtonsMenu {
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 #tdandtrDrag button {
