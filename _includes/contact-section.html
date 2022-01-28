@@ -6,7 +6,11 @@
                     <div class="footer-nav-wrapper col-lg-6">
                     <div class="footerLinks-wrapper">
                         <div class="footerLinks-header">
+                            <div class="visible-titles2 collapsible">
                             <h3>Latest Post</h3>
+                            <span class="caret2"></span>
+                        </div>
+                        <div class="content">
                             <ul class="footerLinks-lists">
                                 {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
                                 {% assign my_array = "" | split: ',' %}
@@ -29,10 +33,15 @@
                                     </li>
                                 {% endfor %}
                               </ul>
+                            </div>
                         </div>
 
                         <div class="footerLinks-header">
+                            <div class="visible-titles2 collapsible">
                             <h3>Categories</h3>
+                            <span class="caret2"></span>
+                        </div>
+                        <div class="content">
                             <ul class="footerLinks-lists">                
                                 <li>
                                     {% for page in site.pages %}
@@ -59,7 +68,7 @@
                                 </li>
                 
                                 <li>
-                                     {% for page in site.pages %}{% if page.categories contains "HomePage-Falls of Man" %}
+                                     {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
                                     </a>{% endif %}{% endfor %}
                                 </li>
@@ -82,8 +91,13 @@
                                 </li>
                             </ul>
                         </div>
+                        </div>
                         <div class="footerLinks-header">
+                            <div class="visible-titles2 collapsible">
                             <h3>Welcome</h3>
+                            <span class="caret2"></span>
+                        </div>
+                        <div class="content">
                             <ul class="footerLinks-lists">
                                 <li>
                                     {% for page in site.pages %}{% if page.title contains "About" %}
@@ -98,6 +112,7 @@
                                     </a>{% endif %}{% endfor %}
                                 </li>
                             </ul>
+                        </div>
                         </div>
                     </div>
                 </div>
