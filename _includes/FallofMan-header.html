@@ -27,7 +27,7 @@
                         </li>                        
                         <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
+                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
                             </a>{% endif %}{% endfor %}                          
                         </li>
                         </ul>
