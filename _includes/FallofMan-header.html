@@ -26,7 +26,7 @@
                             </a>{% endif %}{% endfor %}
                         </li>                        
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+                            {% for page in site.pages %}{% if page.categories contains "HomePage-Falls of Man" %}
                             <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
                             </a>{% endif %}{% endfor %}                          
                         </li>
