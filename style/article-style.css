@@ -273,8 +273,4 @@ blockquote:before {
 @media only screen and (min-width: 361px){
 .churchLOGO-img{
     height: 40px;
-}
-.header-links-li>a {
-    font-size: 90% !important;
-    padding: 12px 7px;
 }}
