@@ -2,3 +2,4 @@
 {% include GeneralResources-Header.html %}
 {{content}}
 {% include AoY-foot.html %}
+{% include contact-section.html %}
