@@ -25,8 +25,7 @@ categories: ["HomePage-Falls of Man"]
 			{% for page in site.pages %}
 			{% if page.categories contains "Falls of Man" %}
 			{% if page.subsection contains "Two Falls" %}
-			<li><a
-					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -37,8 +36,7 @@ categories: ["HomePage-Falls of Man"]
 			{% for page in site.pages %}
 			{% if page.categories contains "Falls of Man" %}
 			{% if page.subsection contains "Major Junctures" %}
-			<li><a
-					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
