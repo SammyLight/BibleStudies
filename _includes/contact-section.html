@@ -10,7 +10,7 @@
                             <h3>Latest Post</h3>
                             <span class="caret2"></span>
                         </div>
-                        <div class="content">
+                        <div class="min-height content">
                             <ul class="footerLinks-lists">
                                 {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
                                 {% assign my_array = "" | split: ',' %}
@@ -41,7 +41,7 @@
                             <h3>Categories</h3>
                             <span class="caret2"></span>
                         </div>
-                        <div class="content">
+                        <div class="min-height content">
                             <ul class="footerLinks-lists">                
                                 <li>
                                     {% for page in site.pages %}
@@ -97,7 +97,7 @@
                             <h3>Welcome</h3>
                             <span class="caret2"></span>
                         </div>
-                        <div class="content">
+                        <div class="min-height content">
                             <ul class="footerLinks-lists">
                                 <li>
                                     {% for page in site.pages %}{% if page.title contains "About" %}
