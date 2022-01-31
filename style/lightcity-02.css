@@ -719,6 +719,7 @@ footer {
 .footerLinks-wrapper > div:first-child{
     width: 115%;
     padding-left: 0;
+    padding-right: 45px;
 }
 .footerLinks-header{
     width: 100%;
