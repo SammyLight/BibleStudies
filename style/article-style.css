@@ -178,7 +178,7 @@ ol>li>ol>li>ol>li>ol>li>ol>li>ol{
 ol {
 /* 	list-style-type: none; */
 /* 	counter-reset: lister; */
-	margin: auto;
+/* 	margin: auto; */
 }
 
 body>li:first-child {
