@@ -137,7 +137,6 @@ button, input, optgroup, textarea {
       transform: rotateX(0deg)
     }
   }
-
 .mobile-headerLinks{
     border-bottom: 1px solid #373433;
     border-radius: 5px;
@@ -186,16 +185,14 @@ button, input, optgroup, textarea {
     padding-right: .75rem !important;
 }}
 /* homeHeader */
-.churchLOGO{
-    padding: 10px 10px 10px 0;
+.homeHeaderNav .churchLOGO {
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    /* float: left; */
-    /* flex: 1 1 auto; */
+    padding: 10px 10px 10px 0;
 }
-.headerUL{
+.headerUL {
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
