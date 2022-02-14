@@ -7,7 +7,6 @@ body {
 	counter-reset: header1 header2;
 	margin: 0;
 }
-
 a:hover{
 	text-decoration: underline;
 	color: #000;
@@ -26,23 +25,19 @@ a:hover{
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
 }
-
 button, input[type="button"], input[type="reset"], input[type="submit"] {
     cursor: pointer;
     -webkit-appearance: button;
 }
-
 button {
     background-color: transparent;
     border: 0;
     padding: 0;
 }
-
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
 }
-
 button, select {
     text-transform: none;
 }
@@ -54,7 +49,6 @@ button, input, optgroup, textarea {
     font: inherit;
     margin: 0;
 }
-
 /* mobile view */
 #mobileHeader {
     display: none;
@@ -80,7 +74,6 @@ button, input, optgroup, textarea {
 #mobileHeader .mobileLogo {
     height: 40px;
     padding: 10px 10px 10px 0;
-
 }
 #mobileHeader .mobileControls {
     display: -webkit-box;
@@ -173,14 +166,13 @@ button, input, optgroup, textarea {
     box-shadow: 0 3px 4px #373433;
     z-index: -1;
  }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 768px) {
 #desktopHeader{
    display: none;
 }
 #mobileHeader {
     display: block;
 }}
-@media only screen and (max-width: 768px) {
 #mobileHeader .mobileControls button {
     border: none;
     background-color: transparent;
@@ -200,11 +192,6 @@ button, input, optgroup, textarea {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    /* float: left; */
-    /* flex: 1 1 auto; */
-}
-.churchLOGO-img{
-    /* padding: 10px 10px 10px 0; */
 }
 .headerUL{
     display: -webkit-box;
@@ -213,7 +200,6 @@ button, input, optgroup, textarea {
     align-items: center;
     -webkit-box-pack: start;
     justify-content: flex-start;
-    /* margin: 0 auto; */
 }
 ul.header-links{
     column-gap: 0.5em;
@@ -244,7 +230,6 @@ li.header-links-li:before {
     padding: 0;
 }
 .header-links-li>a {
-    /* color: #fff; */
     color: #d0d0d0;
     text-decoration: none;
     display: -webkit-box;
@@ -264,7 +249,6 @@ li.header-links-li:before {
     overflow: visible;
     font-size: 1.3em;
 }
-
 ul.header-links {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -272,7 +256,6 @@ ul.header-links {
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
-
 .header-links-li {
     display: -webkit-box;
     display: flex;
@@ -283,7 +266,6 @@ ul.header-links {
 .header-links-li>a {
     -webkit-box-align: center;
 }}
-
 @media only screen and (min-width: 960px){
 #homeHeader{
     min-width: 801px;
@@ -318,7 +300,6 @@ h1,h2,h3,h4,h5,h6 {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-top: 1em;
-    border-bottom: 1px solid #333030;
 }
 h1 {
     font-size: 1.949690125em;
@@ -443,12 +424,13 @@ img {
     order: 2;
 }}
 /* END OF CUSTOM CSS */
+@media only screen and (min-width: 768px) {
+.homeBody-section {
+    margin-top: 0;
+}}
+@media only screen and (max-width: 768px) {
 .homeBody-section{
     margin-top: 60px;
-}
-@media only screen and (min-width: 960px) {
-    .homeBody-section {
-        margin-top: 0;
 }}
 #Resources-section a{
     text-decoration: none;
@@ -627,7 +609,6 @@ ul.recentposts{
 .sidebar {
     margin-top: 4.5em;
     margin-left: 0;
-    
 }
 .visible-titles{
     display: none;
@@ -704,7 +685,7 @@ footer {
 .footerLinks-header h3, .Contact-section h3 {
     color: #d0d0d0;
 }
-@media only screen and (min-width: 520px){
+@media only screen and (min-width: 541px){
 .footerLinks-wrapper{
     display: -ms-grid;
     display: grid;
@@ -716,14 +697,8 @@ footer {
     -webkit-box-direction: normal;
     flex-flow: row wrap;
 }
-.footerLinks-wrapper > div:first-child{
-    width: 115%;
-    padding-left: 0;
-    padding-right: 45px;
-}
 .footerLinks-header{
     width: 100%;
-    padding-left: 45px;
 }
 .footerLinks-header h3{
     font-size: 24px;
@@ -737,7 +712,7 @@ footer {
 .footer-nav-wrapper {
     position: relative;
     min-height: 1px;
-    border-right: 1px solid #333030;
+/*     border-right: 1px solid #333030; */
     display: table-cell;
     vertical-align: top;
 }
