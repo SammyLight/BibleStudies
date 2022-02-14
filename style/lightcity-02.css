@@ -192,6 +192,8 @@ button, input, optgroup, textarea {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    /* float: left; */
+    /* flex: 1 1 auto; */
 }
 .headerUL{
     display: -webkit-box;
