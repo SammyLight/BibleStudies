@@ -687,6 +687,7 @@ footer {
 @media only screen and (max-width: 540px){
 .footerLinks-header h3, .Contact-section h3 {
     font-size: 1.349690125em!important;
+    margin-left: 0;
 }}
 @media only screen and (min-width: 541px){
 .footerLinks-wrapper > div:first-child{
