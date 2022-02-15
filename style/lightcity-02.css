@@ -216,7 +216,6 @@ ul.header-links{
     -webkit-box-align: center;
     align-items: center;
 }
-
 .header-links-li {
     list-style-type: none;
     margin: 0;
@@ -261,7 +260,6 @@ ul.header-links {
     list-style-type: none;
     margin: 0;
 }
-
 .header-links-li>a {
     -webkit-box-align: center;
 }}
@@ -282,7 +280,6 @@ ul.header-links {
 .header-links li:hover, .header-links li:focus {
     background-color: #fff;
 }
-
 /* custom CSS */
 a{
     /* text-decoration: none; */
@@ -299,6 +296,7 @@ h1,h2,h3,h4,h5,h6 {
     margin-block-start: 0;
     margin-block-end: 0;
     margin-top: 1em;
+    border-bottom: 1px solid #333030;
 }
 h1 {
     font-size: 1.949690125em;
@@ -684,6 +682,7 @@ footer {
 }}
 .footerLinks-header h3, .Contact-section h3 {
     color: #d0d0d0;
+    border-bottom: none;
 }
 @media only screen and (max-width: 540px){
 .footerLinks-header h3, .Contact-section h3 {
