@@ -257,3 +257,6 @@ blockquote:before {
 .churchLOGO-img{
     height: 40px;
 }}
+footer {
+    font-size: .95em!important;
+}
