@@ -752,6 +752,7 @@ ul.footerLinks-lists{
     padding: 0;
 }
 .footerLinks-lists li{
+    font-size: 16px!important;
     line-height: 1.7;
     list-style-type: none;
 }
