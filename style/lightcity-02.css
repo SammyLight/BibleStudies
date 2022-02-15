@@ -639,6 +639,7 @@ footer {
 .Contact-section h5{
     border-bottom: none;
     color: #d0d0d0;
+    margin: 0;
 }
 .Contact-section p {
     margin: 0.5em 0;
@@ -709,8 +710,11 @@ padding-left: 0;
     margin-bottom: 17px;
     margin-left: 0;
 }
-.Contact-section h3 { 
+.Contact-section h3 {
     font-size: 24px;
+    margin-top: 48px;
+    margin-bottom: 17px;
+    margin-left: 0;
 }}
 @media only screen and (min-width: 911px){
 .footer-nav-wrapper {
@@ -730,10 +734,6 @@ padding-left: 0;
 }
 .Contact-section {
     padding-left: 20px;
-}
-.Contact-section h3 {
-    margin-top: 48px;
-    margin-bottom: 17px;
 }
 .footerLinks-wrapper > div:first-child{
     width: 115%;
