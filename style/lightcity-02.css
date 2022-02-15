@@ -677,27 +677,31 @@ footer {
     font-size: 15px;
 }
 .content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.3s ease-out;
 }}
 .footerLinks-header h3, .Contact-section h3 {
     color: #d0d0d0;
 }
 @media only screen and (min-width: 541px){
+.footerLinks-wrapper > div:first-child{
+width: 160%;
+padding-left: 0;
+}
 .footerLinks-wrapper{
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    gap: 20px;
+    grid-gap: 130px;
+    gap: 130px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
 }
-.footerLinks-header{
-    width: 100%;
+.space{
+    margin-left: 40px;
 }
 .footerLinks-header h3{
     font-size: 24px;
@@ -707,7 +711,7 @@ footer {
 .Contact-section h3 { 
     font-size: 24px;
 }}
-@media only screen and (min-width: 960px){
+@media only screen and (min-width: 911px){
 .footer-nav-wrapper {
     position: relative;
     min-height: 1px;
@@ -717,17 +721,21 @@ footer {
 }
 .footerLinks-wrapper{
     padding-bottom: 20px;
-    padding-right: 30px;
+    grid-gap: 0;
+    gap: 0;
+}
+.space{
+    margin-left: 0;
 }
 .Contact-section {
-    padding-left: 30px;
+    padding-left: 20px;
 }
 .Contact-section h3 {
     margin-top: 48px;
     margin-bottom: 17px;
 }
 .footerLinks-wrapper > div:first-child{
-    width: 105%;
+    width: 115%;
     padding-left: 0;
 }
 .footerLinks-header{
