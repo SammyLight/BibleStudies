@@ -450,7 +450,7 @@ img {
     margin-top: 20px;
 }
 .recentposts .archive-date {
-    color: #d0d0d0;
+/*     color: #d0d0d0; */
     margin-top: 0;
 }
 .small, small {
@@ -592,7 +592,7 @@ aside.content {
     padding-right: 0;
 }
 ul.recentposts{
-    padding: 0 1em;
+    padding: 0;
 }
 .recentposts li{
     padding: 0.2em 0;
