@@ -154,7 +154,7 @@ button, input, optgroup, textarea {
 }
 .mobile-headerLinks a {
     color: #373433;
-    text-decoration: none;
+    text-decoration: none!important;
 }
 .mobile-headerLinks a:hover {
     text-decoration: underline;
@@ -232,7 +232,7 @@ li.header-links-li:before {
 }
 .header-links-li>a {
     color: #d0d0d0;
-    text-decoration: none;
+    text-decoration: none!important;
     display: -webkit-box;
     display: flex;
     font-size: 85.7%;
@@ -285,10 +285,10 @@ ul.header-links {
 }
 /* custom CSS */
 a{
-    /* text-decoration: none; */
+    text-decoration: underline!important;
 }
 a:hover{
-    text-decoration: none;
+    text-decoration: none!important;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: Sanchez,Georgia,"Times New Roman",Times,serif;
