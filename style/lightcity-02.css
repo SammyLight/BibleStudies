@@ -630,6 +630,12 @@ ul.recentposts{
 footer {
     font-size: .95em !important;
 }
+footer a{
+    text-decoration: none!important;
+}
+footer a:hover{
+    text-decoration: underline!important;
+}
 /* CONTACT-SECTION CSS */
 .Contact-section {
     color: #d0d0d0 !important;
