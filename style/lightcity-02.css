@@ -388,7 +388,7 @@ img {
     font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 1.1em;
     font-weight: 400;
-    line-height: 1.65;
+/*     line-height: 1.65; */
     letter-spacing: 1px;
     text-align: left;
     word-break: normal;
@@ -780,7 +780,7 @@ blockquote {
 /*  ADDED TO MAKE IT BEAUTIFUL*/
 p,li {
 	font-family:"Marvel", sans-serif!important;
- 	line-height: 20px;
+/*  	line-height: 20px; */
  	letter-spacing:1px;
  }
 h1, h2, h3, h4, h5, h6 {
