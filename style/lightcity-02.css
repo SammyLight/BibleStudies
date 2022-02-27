@@ -488,9 +488,6 @@ hr {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-gap: 20px; */
-    /* gap: 20px; */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
@@ -510,7 +507,6 @@ hr {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
-    /* grid-template-columns: repeat(3, 1fr); */
 }
 .grids{
     min-height: 129px;
@@ -521,7 +517,6 @@ hr {
     flex: 0 0 31%;
 }}
 /* MEETING-DAYS CSS */
-
 @media only screen and (min-width: 1025px){
 .meeting-grid {
     display: -ms-grid;
@@ -790,21 +785,20 @@ h1, h2, h3, h4, h5, h6 {
     color: #111;
     font-family: 'Open Sans Condensed', sans-serif;
     text-transform: uppercase;
-    /* margin: 0 0 12px; */
 }
 @media only screen and (min-width: 960px){
-    h1 {
-        font-size: 64px!important;
-        font-weight: 700;
-        line-height: 64px;
-    }
-    h2 {
-        font-size: 48px!important;
-        font-weight: 700;
-        line-height: 48px;
-    }
-    h3 {
-        font-size: 32px!important;
-        font-weight: 700;
-        line-height: 32px;
-    }}
+h1 {
+    font-size: 64px!important;
+    font-weight: 700;
+    line-height: 64px;
+}
+h2 {
+   font-size: 48px!important;
+   font-weight: 700;
+   line-height: 48px;
+}
+h3 {
+   font-size: 32px!important;
+   font-weight: 700;
+   line-height: 32px;
+}}
