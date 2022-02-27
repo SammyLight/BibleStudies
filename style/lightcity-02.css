@@ -665,6 +665,10 @@ footer a:hover{
 }
 /* FOOTER LINKS CSS */
 @media only screen and (max-width: 720px){
+.footerLinks-header h3, .Contact-section h3 {
+    font-size: 1.349690125em!important;
+    margin: 1em 0 0 0!important;
+}
 .visible-titles2{
     height: 30px;
 }
@@ -694,10 +698,10 @@ footer a:hover{
     color: #d0d0d0;
     border-bottom: none;
 }
-@media only screen and (max-width: 540px){
+@media only screen and (min-width: 721px){
 .footerLinks-header h3, .Contact-section h3 {
-    font-size: 1.349690125em!important;
-    margin: 1em 0 0 0!important;
+    font-size: 24px;
+    margin: 48px 0 17px 0!important;
 }}
 @media only screen and (min-width: 541px){
 .footerLinks-wrapper > div:first-child{
@@ -718,10 +722,7 @@ padding-left: 0;
 .space{
     margin-left: 40px;
 }
-.footerLinks-header h3, .Contact-section h3 {
-    font-size: 24px;
-    margin: 48px 0 17px 0!important;
-}}
+}
 @media only screen and (min-width: 911px){
 .footer-nav-wrapper {
     position: relative;
