@@ -702,8 +702,7 @@ footer a:hover{
 .footerLinks-header h3, .Contact-section h3 {
     font-size: 24px;
     margin: 48px 0 17px 0!important;
-}}
-@media only screen and (min-width: 541px){
+}
 .footerLinks-wrapper > div:first-child{
 width: 160%;
 padding-left: 0;
@@ -721,7 +720,8 @@ padding-left: 0;
 }
 .space{
     margin-left: 40px;
-}
+}}
+@media only screen and (min-width: 541px){
 }
 @media only screen and (min-width: 911px){
 .footer-nav-wrapper {
