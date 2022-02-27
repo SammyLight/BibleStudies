@@ -235,7 +235,6 @@ li.header-links-li:before {
     text-decoration: none!important;
     display: -webkit-box;
     display: flex;
-    font-size: 85.7%;
     padding: 15px 10px;
 }
 @media only screen and (min-width: 760px){
@@ -265,6 +264,7 @@ ul.header-links {
 }
 .header-links-li>a {
     -webkit-box-align: center;
+    font-size: 70.7%;
 }}
 @media only screen and (min-width: 960px){
 #homeHeader{
@@ -276,6 +276,10 @@ ul.header-links {
 ul.header-links {
     -webkit-box-pack: center;
     justify-content: center;
+}
+.header-links-li>a {
+    -webkit-box-align: center;
+    font-size: 85.7%;
 }}
 .header-links a:hover, .header-links a:focus {
     color: #000;
