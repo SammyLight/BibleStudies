@@ -755,6 +755,8 @@ padding-left: 0;
 }
 ul.footerLinks-lists{
     padding: 0;
+    margin-left: 0!important;
+    margin-right: 0!important;
 }
 .footerLinks-lists li{
     font-size: 16px!important;
