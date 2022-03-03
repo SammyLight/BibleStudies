@@ -20,12 +20,6 @@ h3 {
 p,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
 }
-li{
-    margin-left: 0;
-    display: table;
-    counter-increment: lister;
-    margin-bottom: 0.6em;
-}
 header > h1:first-of-type {
     padding-top: .50em;
     border-bottom: 2px solid grey;
@@ -165,12 +159,12 @@ ol {
 body>li:first-child {
 	margin-top: 0.6em;	
 }
-/* li {
-  display: table;
-  counter-increment: lister;
-  margin-bottom: 0.6em;
+li{
+    margin-left: 0;
+    display: table;
+    counter-increment: lister;
+    margin-bottom: 0.6em;
 }
-
 li:before {
     content: counters(lister, ".") ". ";
     display: table-cell;
