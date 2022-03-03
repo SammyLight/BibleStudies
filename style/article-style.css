@@ -130,7 +130,8 @@ header~h3:before {
  }
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 ol,ul{
-/* 	padding-left: 1em; */
+/* 	padding-left: 0.5em; */
+	margin: 1em 0.5em!important;
 }
 ol {
 	list-style-type: lower-alpha;
@@ -170,7 +171,7 @@ body>li:first-child {
 li:before {
     content: counters(lister, ".") ". ";
     display: table-cell;
-    padding-right: 0.6em;    
+    padding-right: 0.3em;    
 }
 li li {
     margin: 0;
