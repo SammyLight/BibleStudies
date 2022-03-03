@@ -22,6 +22,9 @@ p,h1,h2,h3,h4,h5,h6{
 }
 li{
     margin-left: 0;
+    display: table;
+    counter-increment: lister;
+    margin-bottom: 0.6em;
 }
 header > h1:first-of-type {
     padding-top: .50em;
