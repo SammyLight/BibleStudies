@@ -156,7 +156,6 @@ ol {
 	counter-reset: lister;
 /* 	margin: auto; */
 }
-
 body>li:first-child {
 	margin-top: 0.6em;	
 }
@@ -213,7 +212,6 @@ blockquote:before {
 	font-style: italic;
 	padding: 15px;
 }
-
 @media all and (min-width: 900px) {
 	.mobilebreak {
 		display: none;
