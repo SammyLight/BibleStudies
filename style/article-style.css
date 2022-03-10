@@ -171,6 +171,10 @@ li:before {
     display: table-cell;
     padding-right: 0.3em;    
 }
+.footerLinks-lists li:before {
+    content: " ";
+    padding-right: 0;
+}
 li li {
     margin: 0;
 }
@@ -178,7 +182,7 @@ li li:before {
    content: counters(lister, ".") ". ";
 }
 .italize {
-	font-style: italic;
+   font-style: italic;
 }
 .emphasize {
 	color:black;
