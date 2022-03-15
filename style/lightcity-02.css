@@ -240,7 +240,7 @@ li.header-links-li:before {
 }
 @media only screen and (max-width: 541px){
 .header-links-li>a {
-    font-size: 87% !important;
+    font-size: 71.3% !important;
     padding: 9px 4px;
 }}
 @media only screen and (min-width: 760px){
