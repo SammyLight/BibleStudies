@@ -238,6 +238,11 @@ li.header-links-li:before {
     font-size: 90%!important;
     padding: 15px 10px;
 }
+@media only screen and (max-width: 376px){
+.header-links-li>a {
+    font-size: 63% !important;
+    padding: 8px 4px;
+}}
 @media only screen and (max-width: 541px){
 .header-links-li>a {
     font-size: 71.3% !important;
