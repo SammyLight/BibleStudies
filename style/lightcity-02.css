@@ -210,7 +210,7 @@ ul.header-links{
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-flow: row nowrap;
-    margin: 0;
+    margin: 0!important;
     padding: 0;
 }
 .iconLink {
@@ -240,12 +240,12 @@ li.header-links-li:before {
 }
 @media only screen and (max-width: 541px){
 .header-links-li>a {
-    font-size: 71.3%!important;
+    font-size: 77.3%!important;
     padding: 9px 4px;
 }}
-@media only screen and (max-width: 391px){
+@media only screen and (max-width: 390px){
 .header-links-li>a {
-    font-size: 63%!important;
+    font-size: 71.3%!important;
     padding: 8px 4px;
 }}
 @media only screen and (min-width: 760px){
