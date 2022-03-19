@@ -1,0 +1,44 @@
+---
+layout: cat-homepageTEMPLATE
+title: "Bible Commentaries"
+categories: ["HomePage-Bible Commentaries"]
+---
+<style>
+div > ol {	
+	list-style-type: upper-alpha;
+}
+div > ol > ol {	
+	padding-left: 20px;
+	padding-top: 10px;
+	column-gap: 4em;
+	column-width: 24em;
+}
+</style>
+<div class="homeBody-section container-fluid-inner">
+<h1 class="titles">Bible Commentaries</h1>
+<p>A collection of our Study on Bible Books</p>
+<div>
+	<!-- <h2>OLD TESTAMENT</h2> -->
+	<ol>
+	<li><h4>Romans</h4></li>
+	<p>A collection of our Study on the Book of Romans</p>
+	<ol>
+		{% for page in site.pages %}
+		{% if page.categories contains "Bible Commentaries" %}
+		{% if page.subsection contains "Romans" %}
+		<li><a
+				href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+		</li>
+		{% endif %}
+		{% endif %}
+		{% endfor %}
+	</ol>
+	</ol>
+</div>
+</div>
+{% include contact-section.html %}
+<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+</body>
+
+</html>
