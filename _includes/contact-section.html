@@ -61,6 +61,11 @@
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
                                     </a>{% endif %}{% endfor %}
                                 </li>
+                                
+                                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
+                                   <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Commentaries
+                                    </a>{% endif %}{% endfor %}
+                                 </li>
                 
                                 <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
