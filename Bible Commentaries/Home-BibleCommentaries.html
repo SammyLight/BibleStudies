@@ -5,7 +5,7 @@ categories: ["HomePage-Bible Commentaries"]
 ---
 <style>
 div > ol {	
-	list-style-type: upper-alpha;
+	list-style-type: numeric;
 }
 div > ol > ol {	
 	padding-left: 20px;
@@ -14,31 +14,946 @@ div > ol > ol {
 	column-width: 24em;
 }
 </style>
+
 <div class="homeBody-section container-fluid-inner">
 <h1 class="titles">Bible Commentaries</h1>
 <p>A collection of our Study on Bible Books</p>
 <div>
 	<!-- <h2>OLD TESTAMENT</h2> -->
 	<ol>
-	<li><h4>Romans</h4></li>
-	<p>A collection of our Study on the Book of Romans</p>
-	<ol>
-		{% for page in site.pages %}
-		{% if page.categories contains "Bible Commentaries" %}
-		{% if page.subsection contains "Romans" %}
-		<li><a
-				href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
-		</li>
-		{% endif %}
-		{% endif %}
-		{% endfor %}
+		<!-- <li><h4>Genesis</h4></li>
+		<p>A collection of our Study on the Book of Genesis</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Genesis" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Exodus</h4></li>
+		<p>A collection of our Study on the Book of Exodus</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Exodus" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Leviticus</h4></li>
+		<p>A collection of our Study on the Book of Leviticus</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Leviticus" %}
+			{% if page.subsection contains "Genesis" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Numbers</h4></li>
+		<p>A collection of our Study on the Book of Numbers</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Numbers" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Deuteronomy</h4></li>
+		<p>A collection of our Study on the Book of Deuteronomy</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Deuteronomy" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Joshua</h4></li>
+		<p>A collection of our Study on the Book of Joshua</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Joshua" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Judges</h4></li>
+		<p>A collection of our Study on the Book of Judges</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Judges" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Ruth</h4></li>
+		<p>A collection of our Study on the Book of Ruth</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Ruth" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>1 Samuel</h4></li>
+		<p>A collection of our Study on the Book of 1 Samuel</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Samuel" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>2 Samuel</h4></li>
+		<p>A collection of our Study on the Book of 2 Samuel</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Samuel" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>1 Kings</h4></li>
+		<p>A collection of our Study on the Book of 1 Kings</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Kings" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>2 Kings</h4></li>
+		<p>A collection of our Study on the Book of 2 Kings</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Kings" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>1 Chronicles</h4></li>
+		<p>A collection of our Study on the Book of 1 Chronicles</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Chronicles" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>2 Chronicles</h4></li>
+		<p>A collection of our Study on the Book of 2 Chronicles</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Chronicles" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Ezra</h4></li>
+		<p>A collection of our Study on the Book of Ezra</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Ezra" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Nehemiah</h4></li>
+		<p>A collection of our Study on the Book of Nehemiah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Nehemiah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Esthers</h4></li>
+		<p>A collection of our Study on the Book of Esthers</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Esthers" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Job</h4></li>
+		<p>A collection of our Study on the Book of Job</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Job" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Psalms</h4></li>
+		<p>A collection of our Study on the Book of Psalms</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Psalms" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Proverbs</h4></li>
+		<p>A collection of our Study on the Book of Proverbs</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Proverbs" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Ecclesiastes</h4></li>
+		<p>A collection of our Study on the Book of Ecclesiastes</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Ecclesiastes" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Songs of Solomon</h4></li>
+		<p>A collection of our Study on the Book of Solomon</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Songs of Solomon" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Isaiah</h4></li>
+		<p>A collection of our Study on the Book of Isaiah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Isaiah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Jeremiah</h4></li>
+		<p>A collection of our Study on the Book of Jeremiah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Jeremiah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Lamentations</h4></li>
+		<p>A collection of our Study on the Book of Lamentations</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Lamentations" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Ezekiel</h4></li>
+		<p>A collection of our Study on the Book of Ezekiel</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Ezekiel" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Daniel</h4></li>
+		<p>A collection of our Study on the Book of Daniel</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Daniel" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Hosea</h4></li>
+		<p>A collection of our Study on the Book of Hosea</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Hosea" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Joel</h4></li>
+		<p>A collection of our Study on the Book of Joel</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Joel" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Amos</h4></li>
+		<p>A collection of our Study on the Book of Amos</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Amos" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Obadiah</h4></li>
+		<p>A collection of our Study on the Book of Obadiah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Obadiah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Jonah</h4></li>
+		<p>A collection of our Study on the Book of Jonah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Jonah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Micah</h4></li>
+		<p>A collection of our Study on the Book of Micah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Micah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Nahum</h4></li>
+		<p>A collection of our Study on the Book of Nahum</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Nahum" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Habakkuk</h4></li>
+		<p>A collection of our Study on the Book of Habakkuk</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Habakkuk" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Zaphaniah</h4></li>
+		<p>A collection of our Study on the Book of Zaphaniah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Zaphaniah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Haggai</h4></li>
+		<p>A collection of our Study on the Book of Haggai</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Haggai" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Zachariah</h4></li>
+		<p>A collection of our Study on the Book of Zachariah</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Zachariah" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Malachi</h4></li>
+		<p>A collection of our Study on the Book of Malachi</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Malachi" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
 	</ol>
+
+
+	<!-- <h2>NEW TESTAMENT</h2>	 -->
+	<ol>
+		<!-- <li><h4>Matthew</h4></li>
+		<p>A collection of our Study on the Book of Matthew</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Matthew" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<!-- <li><h4>Mark</h4></li>
+		<p>A collection of our Study on the Book of Mark</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Mark" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Luke</h4></li>
+		<p>A collection of our Study on the Book of Luke</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Luke" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>John</h4></li>
+		<p>A collection of our Study on the Book of John</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "John" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+				
+		<!-- <li><h4>Acts</h4></li>
+		<p>A collection of our Study on the Book of Acts</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Acts" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+
+		<li><h4>Romans</h4></li>
+		<p>A collection of our Study on the Book of Romans</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Romans" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol>
+		
+		<!-- <li><h4>1 Corinthians</h4></li>
+		<p>A collection of our Study on the Book of 1 Corinthians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Corinthians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>2 Corinthians</h4></li>
+		<p>A collection of our Study on the Book of 2 Corinthians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Corinthians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Galatians</h4></li>
+		<p>A collection of our Study on the Book of Galatians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Galatians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Ephesians</h4></li>
+		<p>A collection of our Study on the Book of Ephesians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Ephesians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Phillipians</h4></li>
+		<p>A collection of our Study on the Book of Phillipians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Phillipians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Colossians</h4></li>
+		<p>A collection of our Study on the Book of Colossians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Colossians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>1 Thessalonians</h4></li>
+		<p>A collection of our Study on the Book of 1 Thessalonians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Thessalonians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>2 Thessalonians</h4></li>
+		<p>A collection of our Study on the Book of 2 Thessalonians</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Thessalonians" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>1 Timothy</h4></li>
+		<p>A collection of our Study on the Book of 1 Timothy</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Timothy" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>2 Timothy</h4></li>
+		<p>A collection of our Study on the Book of 2 Timothy</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Timothy" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Titus</h4></li>
+		<p>A collection of our Study on the Book of Titus</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Titus" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Philemon</h4></li>
+		<p>A collection of our Study on the Book of Philemon</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Philemon" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>Hebrews</h4></li>
+		<p>A collection of our Study on the Book of Hebrews</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Hebrews" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>James</h4></li>
+		<p>A collection of our Study on the Book of James</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "James" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>1 Peter</h4></li>
+		<p>A collection of our Study on the Book of 1 Peter</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 Peter" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>2 Peter</h4></li>
+		<p>A collection of our Study on the Book of 2 Peter</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 Peter" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+		
+		<!-- <li><h4>1 John</h4></li>
+		<p>A collection of our Study on the Book of 1 John</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "1 John" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+				
+		<!-- <li><h4>2 John</h4></li>
+		<p>A collection of our Study on the Book of 2 John</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "2 John" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+				
+		<!-- <li><h4>3 John</h4></li>
+		<p>A collection of our Study on the Book of 3 John</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "3 John" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+				
+		<!-- <li><h4>Jude</h4></li>
+		<p>A collection of our Study on the Book of Jude</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Jude" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
+				
+		<!-- <li><h4>Revelation</h4></li>
+		<p>A collection of our Study on the Book of Revelation</p>
+		<ol>
+			{% for page in site.pages %}
+			{% if page.categories contains "Bible Commentaries" %}
+			{% if page.subsection contains "Revelation" %}
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			</li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol> -->
 	</ol>
 </div>
 </div>
 {% include contact-section.html %}
-<script type="text/javascript" src="../script/victor'sScripts/dropDownMenu.js"></script>
-<script type="text/javascript" src="../script/victor'sScripts/recentposts.js"></script>
+<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
 </body>
 
 </html>
