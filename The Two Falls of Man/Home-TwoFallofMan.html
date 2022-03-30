@@ -1,13 +1,9 @@
 ---
 layout: cat-homepageTEMPLATE
-title: "Falls of Man"
-categories: ["HomePage-Falls of Man"]
+title: "Fall of Man"
+categories: ["HomePage-Fall of Man"]
 ---
 <style>
-	ol, ul{
-	column-gap: 2em;
-	column-width: 12em;
-	}
 	div > ol {	
 		list-style-type: upper-alpha;
 	}
@@ -17,10 +13,9 @@ categories: ["HomePage-Falls of Man"]
 		column-gap: 4em;
 		column-width: 24em;
 	}
-</style>
-
+	</style>
 	<div class="homeBody-section container-fluid-inner">
-	<h1 class="titles">The Two Falls of Man</h1>
+	<h1 class="titles">The Two Fall of Man</h1>
 	<p>A collection of Useful Resources on the Falls of Man</p>
 
 	<div>
@@ -28,9 +23,10 @@ categories: ["HomePage-Falls of Man"]
 		<li><h4>The Two Falls</h4></li>
 		<ol>
 			{% for page in site.pages %}
-			{% if page.categories contains "Falls of Man" %}
+			{% if page.categories contains "Fall of Man" %}
 			{% if page.subsection contains "Two Falls" %}
-			<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -39,9 +35,10 @@ categories: ["HomePage-Falls of Man"]
 		<li><h4>Major Judgments of God</h4></li>
 		<ol>
 			{% for page in site.pages %}
-			{% if page.categories contains "Falls of Man" %}
+			{% if page.categories contains "Fall of Man" %}
 			{% if page.subsection contains "Major Junctures" %}
-			<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li><a
+					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -50,5 +47,5 @@ categories: ["HomePage-Falls of Man"]
 	</div>
 	</div>
 	{% include contact-section.html %}
-	<script type="text/javascript" src="../script/victor'sScripts/dropDownMenu.js"></script>
-	<script type="text/javascript" src="../script/victor'sScripts/recentposts.js"></script>
+	<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+	<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
