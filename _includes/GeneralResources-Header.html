@@ -13,7 +13,7 @@
             <div class="container-fluid-inner cms-clearfix">
                 <nav class="homeHeaderNav align-items">
                     <div class="churchLOGO">
-                        {% for page in site.pages %}{% if page.title contains "Site Home" %}
+                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                             <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                 <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
                             </a>{% endif %}{% endfor %}
@@ -21,15 +21,14 @@
                     <div class="headerUL">
                         <ul class="header-links"></ul>
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.title contains "Site Home" %}
+                            {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                             <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
                             </a>{% endif %}{% endfor %}
                         </li>
                         
                         <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
-                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
-                            </a>{% endif %}{% endfor %}
+                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>{% endif %}{% endfor %}
                         </li>
                         </ul>
                     </div>
@@ -37,3 +36,4 @@
             </div>
         </div>
     </div>
+    
