@@ -1,0 +1,23 @@
+---
+layout: cat-homepageTEMPLATE
+title: "Parables"
+categories: ["HomePage-Parables"]
+---
+<style>
+	ol, ul{
+		column-gap: 2em;
+		column-width: 12em;
+	}
+	</style>
+	<div class="homeBody-section container-fluid-inner">
+	<h1 class="titles">Parables</h1>
+	<p>A collection of Useful Resources on Parables</p>
+
+	<ol id="nav">
+	        {% for page in site.pages %}{% if page.categories contains "Parables" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+            {% endif %}{% endfor %}
+    </ol>
+	</div>
+	{% include contact-section.html %}
+	<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+	<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
