@@ -1,6 +1,6 @@
 ---
 layout: homeTEMPLATE
-title: "Resources"
+title: "Study Resources"
 categories: [""]
 ---
 <style>
@@ -39,7 +39,15 @@ categories: [""]
 			<p>A collection of Useful Resources</p>
 		
 			<ol id="nav">
-					{% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% for page in site.pages %}{% if page.categories contains "General Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Jesus</h2>
+			<p>A collection of Useful Resources on Jesus</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Jesus" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
 					{% endif %}{% endfor %}
 			</ol>
 
