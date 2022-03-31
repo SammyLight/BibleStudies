@@ -1,7 +1,7 @@
 ---
 layout: cat-homepageTEMPLATE
 title: "General Resources"
-categories: ["HomePage-General_Resources"]
+categories: ["HomePage-General Resources"]
 ---
 <style>
 	ol, ul{
@@ -14,7 +14,7 @@ categories: ["HomePage-General_Resources"]
 	<p>A collection of Useful Resources</p>
 
 	<ol id="nav">
-	        {% for page in site.pages %}{% if page.categories contains "General_Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+	        {% for page in site.pages %}{% if page.categories contains "General Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
             {% endif %}{% endfor %}
     </ol>
 	</div>
