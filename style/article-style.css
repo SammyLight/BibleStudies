@@ -1,242 +1,243 @@
 @media only screen and (max-width: 541px){
-p,li{
-    font-size: 20px!important;
-}
-header > h1:first-of-type {
-    font-size: 1.949690125em!important;
-}
-div > h1:first-of-type {
-    font-size: 1.949690125em!important;
-}  
-h1 {
-    font-size: 1.449690125em!important;
-}
-h2 {
-    font-size: 1.149690125em!important;
-}
-h3 {
-    font-size: 0.849690125em!important;
-}}
-p,h1,h2,h3,h4,h5,h6{
-    margin: 1em 0.5em;
-}
-header > h1:first-of-type {
-    padding-top: .50em;
-    border-bottom: 2px solid grey;
-}
-div > h1:first-of-type {
-    padding-top: .50em;
-    border-bottom: 2px solid grey;
-}
-@media only screen and (min-width: 961px){
+    p,li{
+        font-size: 20px!important;
+    }
     header > h1:first-of-type {
-        font-size: 65px!important;
-        font-weight: 700;
-        line-height: 65px;
+        font-size: 1.949690125em!important;
     }
     div > h1:first-of-type {
-        font-size: 65px!important;
-        font-weight: 700;
-        line-height: 65px;
-    }
+        font-size: 1.949690125em!important;
+    }  
     h1 {
-        font-size: 55px!important;
-        font-weight: 700;
-        line-height: 55px;
+        font-size: 1.449690125em!important;
     }
     h2 {
-        font-size: 43px!important;
-        font-weight: 700;
-        line-height: 43px;
+        font-size: 1.149690125em!important;
     }
     h3 {
-        font-size: 27px!important;
-        font-weight: 700;
-        line-height: 27px;
+        font-size: 0.849690125em!important;
+    }}
+    p,h1,h2,h3,h4,h5,h6{
+        margin: 1em 0.5em;
     }
-p,li {
-    font-size: 28px;
-}}
- @media only screen and (max-width: 960px){
-p,li {
-    font-size: 24px;
-}   
-header > h1:first-of-type {
-    font-size: 2.249690125em;
-}
-div > h1:first-of-type {
-    font-size: 2.249690125em;
-}  
-h1 {
-    font-size: 1.749690125em;
-}
-h2 {
-    font-size: 1.449690125em;
-}
-h3 {
-    font-size: 1.149690125em;
-}}
-h1:first-child,table{
-    margin: 1em 0.5em;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-table{
-    margin: 1em 0.5em;
-}
-h1 > span:first-child,
-h2 > span:first-child,
-h3 > span:first-child,
-h4 > span:first-child,
-h5 > span:first-child,
-h6 > span:first-child {
-	width: 100px;
-	color: #5f666d;
-}
-header~h1{
-	counter-increment: header1;
-	content: counter(header);
-}
-header~h1:before {
-   content: "*" counter(header)"*" ;
-    content: "0" counter(header1);
-	/* font-size: 35px; */
-}
-header~h1 > h2{
-	counter-reset: header2 1;
-}
-header~h2{
-	counter-increment: header2;
-	content: counter(header);
-}
-header~h2:before {
-   content: "*" counter(header)"*" ;
-    content: counter(header1)"." counters(header2, ".") ". ";
-}
-header~h1 > h2 > h3{
-	counter-reset: header2 1;
-}
-header~h3 {
-    counter-increment: header3;
-    content: counter(header);
-}
-header~h3:before {
-	content: "*" counter(header)"*" ;
-	 content: counter(header1)"." counters(header2, ".") "." counters(header3, ".")".";
-/* 	 font-size: 25px; */
- }
-@import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
-ol,ul{
-	padding-left: 0.5em;
-	margin: 1em 0.5em!important;
-}
-ol {
-	list-style-type: lower-alpha;
-}
-ol>li>ol{
-	list-style-type: lower-roman;
-	padding-left: 0;
-        margin: 0!important;
-}
-ol>li>ol>li>ol{
-	list-style-type: decimal-leading-zero;
-}
-
-ol>li>ol>li>ol>li>ol {
-	list-style-type: upper-alpha;
-}
-ol>li>ol>li>ol>li>ol>li>ol {
-	list-style-type: upper-roman;
-}
-ol>li>ol>li>ol>li>ol>li>ol>li>ol{
-	list-style-type: decimal;
-}
-ol {
-/* 	list-style-type: none; */
-	counter-reset: lister;
-/* 	margin: auto; */
-}
-body>li:first-child {
-	margin-top: 0.6em;	
-}
-li{
-    margin-left: 0;
-    display: table;
-    counter-increment: lister;
-    margin-bottom: 0.6em;
-}
-li:before {
-    content: counters(lister, ".") ". ";
-    display: table-cell;
-    padding-right: 0.3em;    
-}
-.footerLinks-lists li:before {
-    content: " ";
-    padding-right: 0;
-}
-li li {
-    margin: 0;
-}
-li li:before {
-   content: counters(lister, ".") ". ";
-}
-.italize {
-   font-style: italic;
-}
-.emphasize {
-	color:black;
-	background-color:rgb(245, 220, 244);
-}
-blockquote {
-/*! background: #f9ffc6; */
-	background: rgb(0, 0, 0, 0.05);
-	border-left: 10px solid rgb(83, 0, 83, 0.5);
-	/* margin: 1.5em 10px; */
-	padding: 0.5em 10px;
-	quotes: "\201C""\2018";
-}
-blockquote:before {
-	color: rgb(83, 0, 83, 0.5);
-	content: open-quote;
-	font-size: 4em;
-	line-height: 0.1em;
-	margin-right: 0.25em;
-	vertical-align: -0.4em;
-}
-.sidenote {
-	color: #021515;
-	background-color: rgb(250, 255, 211);
-}
-.sidenote p {
-	font-size: 18px;
-	font-style: italic;
-	padding: 15px;
-}
-@media all and (min-width: 900px) {
-	.mobilebreak {
-		display: none;
-}}
-#homeHeader{
-    box-shadow: 0 3px 4px #373433;
-}
-.homeHeaderNav{    
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-}
-.churchLOGO {
-    padding: 10px 10px 10px 0;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    float: left;
-}
-.churchLOGO-img{
-    height: 33px;
-}
-@media only screen and (min-width: 361px){
-.churchLOGO-img{
-    height: 40px;
-}}
+    header > h1:first-of-type {
+        padding-top: .50em;
+        border-bottom: 2px solid grey;
+    }
+    div > h1:first-of-type {
+        padding-top: .50em;
+        border-bottom: 2px solid grey;
+    }
+    @media only screen and (min-width: 961px){
+        header > h1:first-of-type {
+            font-size: 65px!important;
+            font-weight: 700;
+            line-height: 65px;
+        }
+        div > h1:first-of-type {
+            font-size: 65px!important;
+            font-weight: 700;
+            line-height: 65px;
+        }
+        h1 {
+            font-size: 55px!important;
+            font-weight: 700;
+            line-height: 55px;
+        }
+        h2 {
+            font-size: 43px!important;
+            font-weight: 700;
+            line-height: 43px;
+        }
+        h3 {
+            font-size: 27px!important;
+            font-weight: 700;
+            line-height: 27px;
+        }
+    p,li {
+        font-size: 28px;
+    }}
+     @media only screen and (max-width: 960px){
+    p,li {
+        font-size: 24px;
+    }   
+    header > h1:first-of-type {
+        font-size: 2.249690125em;
+    }
+    div > h1:first-of-type {
+        font-size: 2.249690125em;
+    }  
+    h1 {
+        font-size: 1.749690125em;
+    }
+    h2 {
+        font-size: 1.449690125em;
+    }
+    h3 {
+        font-size: 1.149690125em;
+    }}
+    h1:first-child,table{
+        margin: 1em 0.5em;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    table{
+        margin: 1em 0.5em;
+    }
+    h1 > span:first-child,
+    h2 > span:first-child,
+    h3 > span:first-child,
+    h4 > span:first-child,
+    h5 > span:first-child,
+    h6 > span:first-child {
+        width: 100px;
+        color: #5f666d;
+    }
+    header~h1{
+        counter-increment: header1;
+        content: counter(header);
+    }
+    header~h1:before {
+       content: "*" counter(header)"*" ;
+        content: "0" counter(header1);
+        /* font-size: 35px; */
+    }
+    header~h1 > h2{
+        counter-reset: header2 1;
+    }
+    header~h2{
+        counter-increment: header2;
+        content: counter(header);
+    }
+    header~h2:before {
+       content: "*" counter(header)"*" ;
+        content: counter(header1)"." counters(header2, ".") ". ";
+    }
+    header~h1 > h2 > h3{
+        counter-reset: header2 1;
+    }
+    header~h3 {
+        counter-increment: header3;
+        content: counter(header);
+    }
+    header~h3:before {
+        content: "*" counter(header)"*" ;
+         content: counter(header1)"." counters(header2, ".") "." counters(header3, ".")".";
+    /* 	 font-size: 25px; */
+     }
+    @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
+    ol,ul{
+        padding-left: 0.5em;
+        margin: 1em 0.5em!important;
+    }
+    ol {
+        list-style-type: lower-alpha;
+    }
+    ol>li>ol{
+        list-style-type: lower-roman;
+        padding-left: 0;
+            margin: 0!important;
+    }
+    ol>li>ol>li>ol{
+        list-style-type: decimal-leading-zero;
+    }
+    
+    ol>li>ol>li>ol>li>ol {
+        list-style-type: upper-alpha;
+    }
+    ol>li>ol>li>ol>li>ol>li>ol {
+        list-style-type: upper-roman;
+    }
+    ol>li>ol>li>ol>li>ol>li>ol>li>ol{
+        list-style-type: decimal;
+    }
+    ol {
+    /* 	list-style-type: none; */
+        counter-reset: lister;
+    /* 	margin: auto; */
+    }
+    body>li:first-child {
+        margin-top: 0.6em;	
+    }
+    li{
+        margin-left: 0;
+        display: table;
+        counter-increment: lister;
+        margin-bottom: 0.6em;
+    }
+    li:before {
+        content: counters(lister, ".") ". ";
+        display: table-cell;
+        padding-right: 0.3em;    
+    }
+    .footerLinks-lists li:before {
+        content: " ";
+        padding-right: 0;
+    }
+    li li {
+        margin: 0;
+    }
+    li li:before {
+       content: counters(lister, ".") ". ";
+    }
+    .italize {
+       font-style: italic;
+    }
+    .emphasize {
+        color:black;
+        background-color:rgb(245, 220, 244);
+    }
+    blockquote {
+    /*! background: #f9ffc6; */
+        background: rgb(0, 0, 0, 0.05);
+        border-left: 10px solid rgb(83, 0, 83, 0.5);
+        /* margin: 1.5em 10px; */
+        padding: 0.5em 10px;
+        quotes: "\201C""\2018";
+    }
+    blockquote:before {
+        color: rgb(83, 0, 83, 0.5);
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+    .sidenote {
+        color: #021515;
+        background-color: rgb(250, 255, 211);
+    }
+    .sidenote p {
+        font-size: 18px;
+        font-style: italic;
+        padding: 15px;
+    }
+    @media all and (min-width: 900px) {
+        .mobilebreak {
+            display: none;
+    }}
+    #homeHeader{
+        box-shadow: 0 3px 4px #373433;
+    }
+    .homeHeaderNav{    
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+    .churchLOGO {
+        padding: 10px 10px 10px 0;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        float: left;
+    }
+    .churchLOGO-img{
+        height: 40px;
+    }
+    @media only screen and (max-width: 540px){
+    .churchLOGO-img{
+        height: 33px;
+    }}
+    
