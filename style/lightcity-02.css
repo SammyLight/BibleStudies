@@ -638,7 +638,6 @@ ul.recentposts{
 /* FOOTER CSS */
 footer {
     font-size: .95em !important;
-	margin-bottom: 0;//to make footer stay at the bottom
 }
 footer a{
     text-decoration: none!important;
