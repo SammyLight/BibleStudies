@@ -745,7 +745,7 @@ padding-left: 0;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
 }}
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 1025px){
 .footerLinks-wrapper > div:first-child{
     width: 190%;
 }
