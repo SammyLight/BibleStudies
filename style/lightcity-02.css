@@ -712,7 +712,7 @@ footer a:hover{
     margin: 48px 0 17px 0!important;
 }
 .footerLinks-wrapper > div:first-child{
-width: 160%;
+width: 183%;
 padding-left: 0;
 }
 .footerLinks-wrapper{
@@ -720,16 +720,51 @@ padding-left: 0;
     display: grid;
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 130px;
-    gap: 130px;
+    grid-gap: 115px;
+    gap: 115px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
 }
 .space{
-    margin-left: 40px;
+    margin-left: 80px;
 }}
-@media only screen and (min-width: 911px){
+@media only screen and (min-width: 854px){
+.footerLinks-wrapper > div:first-child{
+    width: 160%;
+    padding-left: 0;
+}
+.footerLinks-wrapper{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 125px;
+    gap: 125px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+}}
+@media only screen and (min-width: 1024px){
+.footerLinks-wrapper > div:first-child{
+    width: 190%;
+}
+.footerLinks-wrapper{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 135px;
+    gap: 135px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+}
+.space{
+    margin-left: 90px;
+}   
+}
+@media only screen and (min-width: 1060px){
 .footer-nav-wrapper {
     position: relative;
     min-height: 1px;
@@ -744,12 +779,13 @@ padding-left: 0;
 }
 .space{
     margin-left: 0;
+    padding-left: 70px!important;
 }
 .Contact-section {
     padding-left: 20px;
 }
 .footerLinks-wrapper > div:first-child{
-    width: 115%;
+    width: 100%;
     padding-left: 0;
 }
 .footerLinks-header{
