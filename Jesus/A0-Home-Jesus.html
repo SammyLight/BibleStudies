@@ -41,6 +41,17 @@ categories: ["HomePage-Jesus"]
 			{% endif %}
 			{% endfor %}
 		</ol>
+
+		<li><h4>Deity of Christ</h4></li>
+		<ol id="nav">
+			{% for page in site.pages %}
+			{% if page.categories contains "Jesus" %}
+			{% if page.subsection contains "Deity of Christ" %}
+			<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+		</ol>
 </ol>
 	</div>
 	{% include contact-section.html %}
