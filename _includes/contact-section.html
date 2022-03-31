@@ -101,13 +101,13 @@
                         <div class="min-height content">
                             <ul class="footerLinks-lists">
                                 <li>
-                                    {% for page in site.pages %}{% if page.title contains "About" %}
+                                    {% for page in site.pages %}{% if page.title contains "About Us" %}
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>About Us</span>
                                     </a>{% endif %}{% endfor %}
                                 </li>
                                 <li>
-                                    {% for page in site.pages %}{% if page.title contains "Meeting Days" %}
+                                    {% for page in site.pages %}{% if page.title contains "Join Us" %}
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Meeting Days</span>
                                     </a>{% endif %}{% endfor %}
