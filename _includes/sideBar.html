@@ -31,7 +31,7 @@
                                 {{page.url}}
                             {% elsif site.baseurl != "" %}
                                 /{{site.baseurl}}{{page.url}}
-                            {% endif %}">Angel of Yahweh
+                            {% endif %}">{{page.title}}
                     </a>{% endif %}{% endfor %}
                 </li>  
 
@@ -40,23 +40,29 @@
                     <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Timelines
                     </a>{% endif %}{% endfor %}
                 </li>
-                
+
                 <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
-                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Commentaries
+                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
                     </a>{% endif %}{% endfor %}
                 </li>
-
-                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General_Resources" %}
-                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
+                <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
                     </a>{% endif %}{% endfor %}
                 </li>
-
                 <li>
-                     {% for page in site.pages %}{% if page.categories contains "HomePage-Falls of Man" %}
-                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
+                    {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+                   <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
+                   </a>{% endif %}{% endfor %}
+               </li>
+                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General Resources" %}
+                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
                     </a>{% endif %}{% endfor %}
                 </li>
-
+                <li>
+                     {% for page in site.pages %}{% if page.categories contains "HomePage-Jesus" %}
+                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
+                    </a>{% endif %}{% endfor %}
+                </li>
                 <li>
                     {% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The LAW
@@ -64,13 +70,8 @@
                </li>
 
                <li>
-                {% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
-               <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
-               </a>{% endif %}{% endfor %}
-           </li>
-
-                <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
+                    {% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                    <a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
                     </a>{% endif %}{% endfor %}
                 </li>
             </ul>
