@@ -66,34 +66,30 @@
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Commentaries
                                     </a>{% endif %}{% endfor %}
                                 </li>
-
-                                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General Resources" %}
-                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
-                                    </a>{% endif %}{% endfor %}
-                                </li>
-                
-                                <li>
-                                     {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
-                                    </a>{% endif %}{% endfor %}
-                                </li>
-
-                                <li>
-                                    {% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
-                                   <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The LAW
-                                   </a>{% endif %}{% endfor %}
-                               </li>
-
-                               <li>
-                                {% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
-                               <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
-                               </a>{% endif %}{% endfor %}
-                           </li>
-                
                                 <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
                                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible Doctrines
                                     </a>{% endif %}{% endfor %}
                                 </li>
+
+                                <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General Resources" %}
+                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General Resources
+                                    </a>{% endif %}{% endfor %}
+                                </li>                
+                                <li>
+                                    {% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
+                                    </a>{% endif %}{% endfor %}
+                                </li>
+                                <li>
+                                    {% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
+                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The LAW
+                                    </a>{% endif %}{% endfor %}
+                                </li>
+                                <li>
+                                    {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
+                                   <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The Two Falls of Man
+                                   </a>{% endif %}{% endfor %}
+                               </li>
                             </ul>
                         </div>
                         </div>
