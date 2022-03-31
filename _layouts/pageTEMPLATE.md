@@ -1,5 +1,5 @@
 {% include siteHead.html %}
-{% include siteHeader.html %}
+{% include pageHeader.html %}
 {{content}}
 {% include AoY-foot.html %}
 {% include contact-section.html %}
