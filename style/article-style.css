@@ -241,3 +241,38 @@
         height: 33px;
     }}
     
+    /* Table CSS */
+    td, th {
+        border:1px solid grey;
+        padding-right:5px;
+        padding-left:5px;
+        border-right:2.5px solid grey;
+        border-bottom:2.5px solid grey;
+    }
+    th {
+        text-transform: uppercase;
+    }
+    th:first-child {
+        /* text-align: right; */
+        border-right:2.5px solid grey;
+    }
+    @media only screen and (max-width: 540px){
+    td,th{
+        padding-right:0;
+        padding-left:0;
+    }
+    table p{
+        font-size: 16px!important;
+        margin: 0.3em!important;
+    }
+    table li{
+        font-size: 16px!important;
+    }
+    table ul{
+        padding-left: 0.2em!important;
+        margin: 0.5em 0!important;
+    }
+    table ol{
+        padding-left: 0.2em!important;
+        margin: 0.5em 0!important;
+    }}
