@@ -1,8 +1,14 @@
-
-
-
 // FOR MORE THAN ONE OL ON A PAGE
-var all_OL_List = document.querySelectorAll('*:not(li):not(ol):not(ul)>ol');
+var all_OL_List;
+var mLclass = document.querySelector('.meganestedlist');
+//Check if there is any list with 'meganestedlist' 
+if (mLclass) {
+    all_OL_List = document.querySelectorAll('.meganestedlist')
+    console.log(all_OL_List);
+} else {
+    all_OL_List = document.querySelectorAll('*:not(li):not(ol):not(ul)>ol');
+}
+console.log(all_OL_List);
 
 //HIDE ALL_CHILDREN_OL
 all_OL_List.forEach(OL_List => {
@@ -33,9 +39,7 @@ all_OL_List.forEach(OL_List => {
                 cOL.style.display = '';
                 // currentList.style.color = 'blue';
                 currentList.getElementsByTagName('span')[0].innerHTML = closeTriangle;
-                cOL.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // cOL.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
             } else {
                 // currentList.style.color = 'red';
                 cOL.style.display = 'none'
