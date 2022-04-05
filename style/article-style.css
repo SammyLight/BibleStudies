@@ -15,7 +15,7 @@
         font-size: 1.149690125em!important;
     }
     h3 {
-        font-size: 0.849690125em!important;
+        font-size: 0.949690125em!important;
     }}
     p,h1,h2,h3,h4,h5,h6{
         margin: 1em 0.5em;
@@ -50,7 +50,7 @@
             line-height: 43px;
         }
         h3 {
-            font-size: 27px!important;
+            font-size: 32px!important;
             font-weight: 700;
             line-height: 27px;
         }
@@ -74,7 +74,7 @@
         font-size: 1.449690125em;
     }
     h3 {
-        font-size: 1.149690125em;
+        font-size: 1.249690125em;
     }}
     h1:first-child,table{
         margin: 1em 0.5em;
@@ -238,7 +238,7 @@
     }
     @media only screen and (max-width: 540px){
     .churchLOGO-img{
-        height: 33px;
+        height: 30px;
     }}
     
     /* Table CSS */
