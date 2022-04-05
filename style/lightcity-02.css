@@ -641,6 +641,7 @@ footer {
 }
 footer a{
     text-decoration: none!important;
+    color: #d0d0d0;
 }
 footer a:hover{
     text-decoration: underline!important;
@@ -849,3 +850,41 @@ h3 {
    font-weight: 700;
    line-height: 32px;
 }}
+/* TOOLTIP CSS */
+/* .tooltip {
+    text-decoration:none;
+    position:relative;
+}
+.tooltip span {
+    display:none;
+}
+.tooltip:hover span {
+    display:block;
+    position:fixed;
+    overflow:hidden;
+} */
+
+/* .tooltip {
+    position: relative;
+    display: block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    font-size: 10px;
+    text-transform: none;
+    background-color: black;
+    color: #ddd;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    margin-left: 100px;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  } */
