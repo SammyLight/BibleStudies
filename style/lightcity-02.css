@@ -86,7 +86,7 @@ button, input, optgroup, textarea {
 .mobileButton {
    width: 50px;
    height: 50px;
-   color: #d0d0d0;
+   color: #fff;
 }
 #mobileHeader nav {
    display: inline-block;
