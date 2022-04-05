@@ -1,11 +1,7 @@
 <section id="Resources-section">
 	<div class="Resources-grid">
-			<h1 class="titles" title="Click me for More Latest Posts">
-				{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-					<span>Latest Posts</span>
-				</a>{% endif %}{% endfor %}
-			</h1>			
+			<h1 class="titles">More Latest Posts</h1>
+			
 			<div class="homeResources-grid">
 				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
@@ -15,7 +11,7 @@
                 {% endif %}
               {% endfor %}
 			  
-			  {% for page in my_array limit:5 %}
+			  {% for page in my_array limit:30 %}
                 <small class="archive-date">{{ page.date }}</small>
              
                 <h3 class="titles"><a href="{% if site.baseurl == "" %}
@@ -56,13 +52,3 @@
 		</div>
 	</div>
 </section>
-<!-- <script>
-	var tooltipSpan = document.getElementById('tooltip-span');
-
-window.onmousemove = function (e) {
-    var x = e.clientX,
-        y = e.clientY;
-    tooltipSpan.style.top = (y + 20) + 'px';
-    tooltipSpan.style.left = (x + 20) + 'px';
-};
-</script> -->

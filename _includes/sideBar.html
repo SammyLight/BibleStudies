@@ -1,7 +1,12 @@
 <aside class="col-lg-3 order-lg-2 content">
     <div class="sidebar container-fluid-inner bg-image">
         <div class="sidebar-wrapper">
-            <h4 class="titles">Recent Posts</h4>
+            <h4 class="titles" title="Click me for More Latest Posts">
+                {% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
+                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+                    <span>Latest Posts</span>
+                </a>{% endif %}{% endfor %}
+            </h4>
             <ul class="recentposts">
               {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
@@ -22,7 +27,12 @@
               {% endfor %}
             </ul>
     
-            <h4 class="titles">Categories</h4>
+            <h4 class="titles" title="Click me for all Links in Categories">
+                {% for page in site.pages %}{% if page.title contains "Study Resources" %}
+                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+                    <span>Categories</span>
+                </a>{% endif %}{% endfor %}
+            </h4>
             <ul class="recentposts">                
                 <li>
                     {% for page in site.pages %}
