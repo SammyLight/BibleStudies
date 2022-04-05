@@ -1,0 +1,80 @@
+---
+layout: homeTEMPLATE
+title: "Study Resources"
+categories: [""]
+---
+<style>
+	ol, ul{
+		column-gap: 2em;
+		column-width: 12em;
+	}
+</style>
+<section id="MAINResources-section">
+		<div class="homeBody-section container-fluid-inner">
+			<h1 class="titles">LightCity Teaching Resources</h1>
+			<h2>Angel of Yahweh</h2>
+			<p>A collection of our Study on the Angel of Yahweh</p>
+			<ol>
+				{% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Bible TimeLines</h2>
+			<p>A collection of Bible Timelines</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Bible Commentaries</h2>
+			<p>A collection of Useful Resources on Bible Commentaries</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Bible Commentaries" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>General Resources</h2>
+			<p>A collection of Useful Resources</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "General Resources" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Jesus</h2>
+			<p>A collection of Useful Resources on Jesus</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Jesus" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>The Two Falls of Man</h2>
+			<p>A collection of Useful Resources on the Falls of Man</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Fall of Man" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>The LAW</h2>
+			<p>A collection of Useful Resources on the LAW</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "The LAW" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+
+			<h2>Parables</h2>
+			<p>A collection of Useful Resources on Parables</p>
+		
+			<ol id="nav">
+					{% for page in site.pages %}{% if page.categories contains "Parables" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+					{% endif %}{% endfor %}
+			</ol>
+		</div>
+</section>
+{% include contact-section.html %}
+<script type="text/javascript" src="script/victorScripts/recentposts.js"></script>
