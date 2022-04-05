@@ -1,12 +1,12 @@
 <section id="Resources-section">
 	<div class="Resources-grid">
-			<h1 class="titles" title="Click me for More Latest Posts">
-				{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-					<span>Latest Posts</span>
-				</a>{% endif %}{% endfor %}
-			</h1>			
-			<div class="homeResources-grid">
+		<h1 class="titles" title="Click me for More Latest Posts">
+			{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+				<span>Latest Posts</span>
+			</a>{% endif %}{% endfor %}
+		</h1>			
+		<div class="homeResources-grid">
 				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
               {% for page in sorted-pages %}
@@ -40,19 +40,25 @@
 					{% endif %}">Continue reading …</a>
 				</small>
 
-			  <div class="prayer-text">
-				<p class="categories"><span>category:</span>
-					{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
-						{% for aaa in site.pages %}
-							{% if aaa.categories contains caty %}
-				<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
-				</a>
-				{% endif %}
-					{% endfor %}
-				</p>
-				<hr>
-			</div>
+			  	<div class="prayer-text">
+					<p class="categories"><span>category:</span>
+						{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
+							{% for aaa in site.pages %}
+								{% if aaa.categories contains caty %}
+					<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
+					</a>
+					{% endif %}
+						{% endfor %}
+					</p>
+					<hr>					
+				</div>
 			{% endfor %}
+			<h5 class="titles" title="Click me for More Latest Posts">
+				{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-transform: capitalize;">
+					<span>More Latest Posts</span>
+				</a>{% endif %}{% endfor %}
+			</h5>
 		</div>
 	</div>
 </section>
