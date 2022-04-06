@@ -126,6 +126,10 @@
     /* 	 font-size: 25px; */
      }
     @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
+
+    ol,ul:first-of-type{
+        padding-left: 0!important;
+    }
     ol,ul{
         padding-left: 0.5em;
         margin: 1em 0.5em!important;
@@ -276,3 +280,4 @@
         padding-left: 0.2em!important;
         margin: 0.5em 0!important;
     }}
+
