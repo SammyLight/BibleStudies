@@ -850,6 +850,29 @@ h3 {
    font-weight: 700;
    line-height: 32px;
 }}
+
+.desktopView{
+    display: block;
+}
+.mobileView{
+    display: none;
+}
+@media only screen and (max-width: 541px){
+.mobileView{
+    display: block;
+}
+.desktopView{
+    display: none;
+}}
+
+
+
+
+
+
+
+
+
 /* TOOLTIP CSS */
 /* .tooltip {
     text-decoration:none;
