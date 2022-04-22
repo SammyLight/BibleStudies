@@ -549,7 +549,8 @@ td>div {
 #legendTable td div,
 #storyLineTable th div,
 #storyLineTable td div {
-  /*	min-width: 95px;*/
+  display:table;
+  min-width: 80px;
   max-width: 200px;
   padding: 2px 5px;
   border: 1px solid #acacac;
@@ -558,6 +559,9 @@ td>div {
   /* font-style: italic; */
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 1px;;
+  /* overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word; */
 }
 
 #storyLineTable th>div:first-of-type,
