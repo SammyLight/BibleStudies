@@ -296,10 +296,6 @@ ul.header-links {
     background-color: #fff;
 }
 /* custom CSS */
-h1>a, h2>a, h3>a, h4>a, h5>a, h6>a {
-    color: #111;
-    text-decoration: none!important;
-}
 a{
     text-decoration: underline!important;
     text-decoration-color: #6b6161!important;
