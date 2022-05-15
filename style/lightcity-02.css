@@ -296,6 +296,11 @@ ul.header-links {
     background-color: #fff;
 }
 /* custom CSS */
+header>h1 a {
+    color: #111;
+    text-decoration: none!important;
+    white-space: nowrap;
+}
 a{
     text-decoration: underline!important;
     text-decoration-color: #6b6161!important;
