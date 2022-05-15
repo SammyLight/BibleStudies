@@ -606,6 +606,7 @@ aside.content {
 }
 ul.recentposts{
     padding: 0;
+    list-style: none;
 }
 .recentposts li{
     padding: 0.2em 0;
