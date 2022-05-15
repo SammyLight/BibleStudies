@@ -296,7 +296,7 @@ ul.header-links {
     background-color: #fff;
 }
 /* custom CSS */
-header>h1 a {
+h1,h2,h3,h4,h5,h6 a {
     color: #111;
     text-decoration: none!important;
     white-space: nowrap;
