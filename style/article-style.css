@@ -4,6 +4,10 @@ p,li{
 }
 header > h1:first-of-type {
     font-size: 1.949690125em!important;
+/*PSAM 220516c*/
+    font-family: 'Bitter', serif;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px !important;
 }
 div > h1:first-of-type {
     font-size: 1.949690125em!important;
