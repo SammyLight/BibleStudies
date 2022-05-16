@@ -295,7 +295,7 @@ table ol{
 }}
 
 /*PSAM 220516c*/
-header h1 {
+header h1:first-of-type {
     font-family: 'Bitter', serif;
     font-family: "Times New Roman", Times, serif;
     font-size: 50px !important;
