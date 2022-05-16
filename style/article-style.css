@@ -21,6 +21,10 @@ h3 {
 p {
     margin: 0.75em 0.4em 0em 0.4em!important;
 }
+/*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
+h1, h2, h3, h4, h5, h6 {
+  margin-left: 0.25em !important;
+}
 p,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
 }
