@@ -17,6 +17,10 @@ h2 {
 h3 {
     font-size: 0.949690125em!important;
 }}
+/*PSAM.220516a: the Rule for p below was added for alignment with H1 element*/
+p {
+    margin: 0.75em 0.4em 0em 0.4em;
+}
 p,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
 }
@@ -131,13 +135,14 @@ header~h3:before {
  }
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 
-ol,ul:first-of-type{
+/*PSAM.220516a: Deactivated because of the poor left alignment formatting*/
+/* ol,ul:first-of-type{
     padding-left: 0!important;
 }
 ol,ul{
     padding-left: 0.5em;
     margin: 1em 0.5em!important;
-}
+} */
 ol {
     list-style-type: lower-alpha;
 }
@@ -171,7 +176,7 @@ li{
     margin-left: 0;
     display: table;
     counter-increment: lister;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.4em;  /*PSAM.220516a: from 0.6em to 0.4em*/
 }
 li:before {
     content: counters(lister, ".") ". ";
