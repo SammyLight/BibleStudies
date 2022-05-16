@@ -19,7 +19,7 @@ h3 {
 }}
 /*PSAM.220516a: the Rule for p below was added for alignment with H1 element*/
 p {
-    margin: 0.75em 0.4em 0em 0.4em;
+    margin: 0.75em 0.4em 0em 0.4em!important;
 }
 p,h1,h2,h3,h4,h5,h6{
     margin: 1em 0.5em;
