@@ -88,7 +88,7 @@ body {
 #bibleNodesHeader>button {
     background-color: transparent;
     border: 1px solid double;
-    margin:-3px;
+    margin: -3px;
 }
 
 #bibleNodesHeader>button:hover {
@@ -162,11 +162,11 @@ body {
     border-radius: 0;
 }
 
-#cMenuAddNote{
+#cMenuAddNote {
     margin-bottom: 5px;
 }
 
-#cMenuDescendantsAllToggle{
+#cMenuDescendantsAllToggle {
     margin-top: 5px;
 }
 
@@ -253,12 +253,14 @@ path:hover {
 .divNode {
     cursor: pointer;
     position: absolute;
+    display: grid;
+    align-content: center;
     top: 20px;
     left: 20px;
     height: auto;
-    border-radius: 7.5px;
     /* width: 50px; */
     /* border: 1px solid black; */
+    border-radius: 7.5px;
     padding: 10px;
     background-color: rgba(250, 235, 215);
     box-shadow: 0px 0px 0px 0.5px grey inset,
@@ -281,10 +283,11 @@ path:hover {
 }
 
 .currentnode {
-    background-color: yellow!important;
+    background-color: yellow !important;
     box-shadow: 0px 0px 0px 0.5px orangered inset,
-    0px 0px 0px 0.5px rgb(160, 43, 0, 0.5) inset,
-    5px 5px 2.5px -1px rgba(255, 166, 0, 0.5)!important;
+        0px 0px 0px 0.5px rgb(160, 43, 0, 0.5) inset,
+        5px 5px 2.5px -1px rgba(255, 166, 0, 0.5) !important;
+    color: black!important;
 }
 
 .divNode:hover {
@@ -301,7 +304,7 @@ path:hover {
     box-shadow:
         0px 0px 0px 0.5px grey inset,
         0px 0px 0px 0.5px grey inset,
-        2px 2px 2.5px -1px rgba(92, 92, 92, 0.75)!important;
+        2px 2px 2.5px -1px rgba(92, 92, 92, 0.75) !important;
     transform: scale(1);
 }
 
@@ -384,11 +387,11 @@ div.svg-Venn {
 }
 
 div.svg-Venn:hover {
-    background-color : rgb(255, 255, 0, 0.1);
+    background-color: rgb(255, 255, 0, 0.1);
     border: 3px solid brown;
 }
 
-div.svg-Venn > h3 {
+div.svg-Venn>h3 {
     padding-left: 10px;
 }
 
@@ -405,6 +408,7 @@ div.svg-Venn > h3 {
     margin: 0;
     font-size: 15px;
 }
+
 /* #setselect li {
     display: none;
 } */
@@ -425,6 +429,31 @@ div.svg-Venn > h3 {
     clip-path: circle(50% at 50% 50%);
     padding: 30px;
 }
+
+/* SVG SHAPES FOR DIV-NODES */
+.svg-circle {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e\ %3ccircle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='white' /%3e\ Sorry, your browser does not support inline SVG. \%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.svg-square {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e\ %3crect x='0' y='0' width='100' height='100' stroke='black' fill='transparent' stroke-width='5' /%3e\ Sorry, your browser does not support inline SVG. \%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.svg-ellipse {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 125'%3e\ %3cellipse cx='100' cy='62.5' rx='89.5' ry='37' stroke='red' fill='transparent' stroke-width='5' /%3e\ Sorry, your browser does not support inline SVG. \%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.svg-star {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e\ %3cpolygon points='50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180' stroke='green' fill='transparent' stroke-width='5'/%3e\ Sorry, your browser does not support inline SVG. \%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dark-text {color: black}
+.light-text {color: white}
 
 /* DARK MODE */
 .darkmode .svg-connectors {
@@ -503,13 +532,13 @@ body.darkmode,
 
 .darkmode div.svg-Venn {
     position: absolute;
-    background-color : rgba(255, 152, 79, 0.1);
+    background-color: rgba(255, 152, 79, 0.1);
     border: 3px solid rgb(175, 175, 175);
     color: white;
 }
 
 .darkmode div.svg-Venn:hover {
-    background-color : rgb(255, 255, 0, 0.1);
+    background-color: rgb(255, 255, 0, 0.1);
     border-color: brown;
 }
 
