@@ -29,10 +29,12 @@ function setConnect2Attribute(first, second) {
     if (first != second) {
         var connect2Array = [];
         if (first.hasAttribute('connectTo')) {
+            //Convert connectTo attribut string to array
             var abc = (first.getAttribute('connectTo')).trim().split(' ');
             connect2Array = connect2Array.concat(abc);
         }
         var secondNodeId = second.getAttribute('nodeId');
+        //Ensure the two are not already connected
         if (connect2Array.indexOf(secondNodeId) == -1) {
             connect2Array.push(secondNodeId);
         }
@@ -50,8 +52,9 @@ function nodeToConnectCurrentNodeTo() {
 }
 
 //This is the function the 'Clone Node'  button on the rightClick menu triggers
+var newDivNode;
 function createNewNode(type) {
-    var newDivNode = document.createElement('DIV');
+    newDivNode = document.createElement('DIV');
     //Assign new nodeId class from cloned divNode
     var newNodeID;
     newDivNode.classList.add('divNode');
@@ -62,20 +65,20 @@ function createNewNode(type) {
         deletedNodeIdsArray.shift();
     }
     assignNodeID(newDivNode, newNodeID);
-    //Remove border indicating node was selected
-    newDivNode.style.border = '';
-    //Create the nodeDiv at the mouse's coordinate
-    newDivNode.style.top = rClick_Y + 'px';
-    newDivNode.style.left = rClick_X + 'px';
-    newDivNode.setAttribute('tabindex', 1);
     //Make the nodeId the textContent of the new nodeDiv
     newDivNode.textContent = 'node' + (newNodeID + 1);
+    //Remove border indicating node was selected
+    newDivNode.style.border = '';
     //Assing eventListners to nodeDiv
     newDivNode.addEventListener('mousedown', nodeCanvasMouseDownFunction);
     //Append new nodeDiv
     nodeCanvas.appendChild(newDivNode);
     endNodeAssigner(newDivNode);
     hideContextMenu()
+    //Create the nodeDiv centered to the mouse's coordinate
+    newDivNode.style.top = rClick_Y - newDivNode.clientHeight/2 + 'px';
+    newDivNode.style.left = rClick_X - newDivNode.clientWidth/2 + 'px';
+    newDivNode.setAttribute('tabindex', 1);
 }
 
 //Make divNode editable
@@ -92,7 +95,8 @@ nodeCanvas.addEventListener('dblclick', function (ev) {
         if (doesAnyAnscestorOfClass(target, 'divNode').truth) {
             targParentDivNode = doesAnyAnscestorOfClass(target, 'pathLabel').parentOfClass;
         }
-        editablePathLabel = targParentDivNode || target;makeNodeDivEditable();
+        editablePathLabel = targParentDivNode || target;
+        makeNodeDivEditable();
     }
     if ((target.classList.contains('pathLabel')) || (doesAnyAnscestorOfClass(target, 'pathLabel').truth)) {
         var targParentPathLabel = null;
@@ -346,10 +350,10 @@ function noteDblClick() {
 var toggleCheck = 0;
 
 function toggleConnectionDetails(x) {
-    if ((x == 'open')||(toggleCheck == 0)) {
+    if ((x == 'open') || (toggleCheck == 0)) {
         connectionDetails.style.right = '-' + connectionDetails.offsetWidth + 'px';
         toggleCheck = 1;
-    } else if ((x == 'close')||(toggleCheck == 1)) {
+    } else if ((x == 'close') || (toggleCheck == 1)) {
         connectionDetails.style.right = '';
         toggleCheck = 0;
     }
@@ -372,4 +376,28 @@ function deleteNote() {
     }
     noteToDelete.remove();
     noteToDelete = null;
+}
+
+// FOR CHANGING DIVNODES COLOR
+var optionsBgColor;
+function optionsRGBColor(c){optionsBgColor = c; console.log(optionsBgColor)}
+function fillDivColorInput(newColor) {
+    if (currentNode) {
+        currentNode.style.backgroundColor = newColor;
+        // var dCM = '.opt_' + currentNode.getAttribute('divclassname');
+        // changeCSS(dCM, 'backgroundColor', newColor, 'divColorStyles');
+        // changeCSS(dCM, 'stroke', newColor, 'divColorStyles');
+
+        //Change color and text of divColor options and input
+        divColor.value = newColor;
+        // divColor.style.backgroundColor = newColor;
+        darkOrLightBG(currentNode,optionsBgColor);
+        divColorOptionsDropdown.style.backgroundColor = newColor;
+
+        //Change color of divNode's text if necesary for contrast
+        // var divToModify = document.querySelectorAll("div"+dCM);
+        // for(i=0; i<divToModify.length; i++){
+        //     darkOrLightBG(divToModify[i])
+        // }
+    }
 }
