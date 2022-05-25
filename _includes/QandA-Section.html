@@ -1,0 +1,22 @@
+
+<section id="QandA-section">
+    <div class="homeBody-section container-fluid-inner">
+        {% include QandA-header.html %}
+        <div id="completeQuiz" class="complete-Quiz">
+            <div class="complete-Quiz-inner bg-image">
+                <header class="CompleteAndProceed-message">
+                    <span onclick="document.getElementById('completeQuiz').style.display='none'" class="close-message">×</span>
+                    <h4>You have not Answers all Questions!!!</h4>
+                </header>
+                <div class="CompleteAndProceed-btns">
+                    <button>Complete Quiz</button>
+                    <button>Proceed</button>
+                </div>
+            </div>
+        </div>
+        <div class="QandA-Board">
+            {{content}}
+            <button id="confirmButton" onclick="confirm()">Confirm</button>
+        </div>
+        </div>
+</section>
