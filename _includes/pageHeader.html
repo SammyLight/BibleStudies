@@ -20,20 +20,25 @@
                     </div>
                     <div class="headerUL mobileView">
                         <ul class="header-links">
-                        <li class="header-links-li transition">
-                            {% assign caty = page.categories[0] | prepend: 'HomePage-' %}
-                            {% for aaa in site.pages %}
-                                {% if aaa.categories contains caty %}
-                                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
+                            <li class="header-links-li transition">
+                                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
                                 </a>{% endif %}{% endfor %}
-                        </li>
-                        <li class="header-links-li transition">
-                            {% assign caty = page.categories[1] | prepend: 'HomePage-' %}
-                            {% for aaa in site.pages %}
-                                {% if aaa.categories contains caty %}
-                                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[1] }}
-                                </a>{% endif %}{% endfor %}
-                        </li>
+                            </li>
+                            <li class="header-links-li transition">
+                                {% assign caty = page.categories[0] | prepend: 'HomePage-' %}
+                                {% for aaa in site.pages %}
+                                    {% if aaa.categories contains caty %}
+                                    <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
+                                    </a>{% endif %}{% endfor %}
+                            </li>
+                            <li class="header-links-li transition">
+                                {% assign caty = page.categories[1] | prepend: 'HomePage-' %}
+                                {% for aaa in site.pages %}
+                                    {%  if aaa.categories contains caty %}
+                                    <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[1] }}
+                                    </a>{% endif %}{% endfor %}
+                            </li>
                         </ul>
                     </div>
 

@@ -6,20 +6,19 @@
 			<button id="navMenu" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button>
 			<button class="masterNavButtonsToggle" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
 		</div>
-		
+
 		<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
-		<button id="darkModeButton" onclick="darkModeOnOff()" title="Toggle Dark or Light Mode">D</button>
 	</nav>
 
 	<section id="websiteNav">
 		<!--		<h3 style="display: none">Bible Timelines</h3>-->
-		<h4 style="display: none; width: fit-content;">
+		<h4 style="display: none">
 			{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
 			<a id="timelinesHome" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">BibleTimelines Home</a>
 			{% endif %}{% endfor %}
 		</h4>
-		<input type="text" id="searchBox" onkeyup="searchNavMenu('searchBox', 'bibleTimelinesNav')" placeholder="Search for names.." title="Type in a name" style="display: none">
-		<ul id="bibleTimelinesNav" style="display: none">
+		<ul style="display: none">
+
 			{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li style="display: none"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
 		        {% endif %}">{{page.title}}</a></li>
 			{% endif %}{% endfor %}
