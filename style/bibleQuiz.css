@@ -667,7 +667,7 @@
 .QandA-Board>ol>li>ul>li>ul{
     display: inline-flex;
     display: none;
-    font-weight: 100;
+    font-weight: 400;
     padding: 0;
     list-style: none;
     text-align: left;
