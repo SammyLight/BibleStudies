@@ -1,23 +1,26 @@
 <div class="cat-grid">
-    {% for page in site.pages %}{% if page.title contains "AofY-Qs" %}
+    <!-- {% for page in site.pages %}{% if page.title contains "AofY-Qs" %}
         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
             Angel of Yahweh
-        </a>{% endif %}{% endfor %}
+        </a>{% endif %}{% endfor %} -->
 
-        {% for page in site.pages %}{% if page.title contains "GenKnow-Qs" %}
+        <!-- {% for page in site.pages %}{% if page.title contains "GenKnow-Qs" %}
         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
             General Knowledge
-        </a>{% endif %}{% endfor %}
+        </a>{% endif %}{% endfor %} -->
+
         {% for page in site.pages %}{% if page.title contains "Parables-Qs" %}
         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
             Parables
-        </a>{% endif %}{% endfor %}  
+        </a>{% endif %}{% endfor %} 
+
         {% for page in site.pages %}{% if page.title contains "Prophecy-Qs" %}
         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
             Prophecy
-        </a>{% endif %}{% endfor %}       
-        <a>Jesus</a>
-        <a>The Law</a>
-        <a>The New Covenant</a>
-        <a>The Two Falls</a>
+        </a>{% endif %}{% endfor %}     
+
+        <!-- <a>Jesus</a> -->
+        <!-- <a>The Law</a> -->
+        <!-- <a>The New Covenant</a> -->
+        <!-- <a>The Two Falls</a> -->
 </div>
