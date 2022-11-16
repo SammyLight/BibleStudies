@@ -8,9 +8,7 @@
         </div>
         <div class="mobileControls">
             <div class="mobileDropdown">
-                <button onclick="myFunction()" class="mobileButton" type="button">
-                    <!-- ☰ -->
-                </button>
+                <button onclick="myFunction()" class="mobileButton" type="button"></button>
                 <div id="myDropdown" class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                     <div class="mobile-headerLinks">
                         {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
@@ -39,8 +37,8 @@
                             <span>Categories</span>
                         </a>{% endif %}{% endfor %}
                     </div>
-                    <div class="mobile-headerLinks transition">
-                        <a class="linkTitle transition" href="https://sammylight.github.io/BibleApp-1/">
+<!--                     <div class="mobile-headerLinks transition">
+                        <a class="linkTitle transition" href="https://lightcityteachingfellowship.github.io/BibleApp/">
                             <span>Bible App</span>
                         </a>
                     </div>
@@ -49,7 +47,7 @@
                         <a class="linkTitle transition" href="{% if site.baseurl == " " %}{{page.url}}{% elsif site.baseurl != " " %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>{{page.title}}</span>
                         </a>{% endif %}{% endfor %}
-                    </div>
+                    </div> -->
                     <div class="mobile-headerLinks transition">
                         {% for page in site.pages %}{% if page.title contains "Join Us" %}
                         <a class="linkTitle transition" href="{% if site.baseurl == " " %}{{page.url}}{% elsif site.baseurl != " " %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -104,8 +102,8 @@
                                 </a>{% endif %}{% endfor %}
                             </li>
 
-                            <li class="header-links-li transition">
-                                <a class="iconLink transition" href="https://sammylight.github.io/BibleApp-1/">
+<!--                             <li class="header-links-li transition">
+                                <a class="iconLink transition" href="https://lightcityteachingfellowship.github.io/BibleApp/">
                                     <span>Bible App</span>
                                 </a>
                             </li>
@@ -115,7 +113,7 @@
                                 <a class="iconLink transition" href="{% if site.baseurl == " " %}{{page.url}}{% elsif site.baseurl != " " %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>{{page.title}}</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
+                            </li> -->
 
                             <li class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Join Us" %}
