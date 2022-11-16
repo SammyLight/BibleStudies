@@ -129,6 +129,7 @@ textarea {
 
 .mobileButton::before {
     content: '\2261';
+    color: #d0d0d0!important;
     font-size: xx-large;
 }
 
