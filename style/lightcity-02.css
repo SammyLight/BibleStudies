@@ -129,7 +129,7 @@ textarea {
 
 .mobileButton::before {
     content: '\2261';
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 #mobileHeader nav {
