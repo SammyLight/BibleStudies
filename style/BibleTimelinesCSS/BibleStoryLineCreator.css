@@ -63,12 +63,8 @@
   grid-template-columns: auto 1fr;
 }
 
-:root {
-  --customColor: floralwhite;
-}
-
 .grid2 {
-  background-color: var(--customColor);
+  background-color: white !important;
   border: 1px solid black;
   position: sticky;
   z-index: 10;
@@ -116,9 +112,9 @@ nav.gid2>h1 {
   font-family: Georgia, serif;
 }
 
-/* *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   font-size: 98%;
-} */
+}
 
 /* Focusing the button with a keyboard will show a dashed black line. */
 focus-visible {
@@ -164,8 +160,6 @@ body {
   /*Beige*/
   background-color: White;
   /*White*/
-  background-color: var(--customColor);
-  /*Blanchedalmond*/
   /*			color: white;*/
   /*	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));*/
 }
@@ -206,7 +200,7 @@ body {
 }
 
 #divTableContainer {
-  min-height: 90vh;
+  min-height: 85vh;
   margin-left: 10px;
   margin-right: 10px;
   border: 0.5px solid #cccccc;
@@ -262,11 +256,6 @@ table h6:not(:last-of-type) {
   width: 20px;
 }
 
-#storylineTableEditorButtonsMenu .headbuttons span {
-  text-align: left;
-  padding-left: 7px;
-}
-
 #masterTable {
   /* height: 100%; */
   position: relative;
@@ -278,7 +267,6 @@ table h6:not(:last-of-type) {
 
 #legendTable h4 {
   margin: 0;
-  margin-left: 2px;
   padding: 0;
 }
 
@@ -286,9 +274,8 @@ table h6:not(:last-of-type) {
 #legendTable {
   margin-top: 5px;
   position: relative;
-  border: 1px solid rgba(119, 136, 153, 0.75);
-  /* background-color: rgba(245, 245, 220, 0.5);
-  box-shadow: 0px 3px 6px -3px black; */
+  background-color: rgba(245, 245, 220, 0.5);
+  box-shadow: 0px 3px 6px -3px black;
   z-index: 2;
 }
 
@@ -298,7 +285,7 @@ table h6:not(:last-of-type) {
 }
 
 #storyLineTable {
-  /* margin-left: 20px; */
+  margin-left: 20px;
   border-collapse: separate;
   border-spacing: 5px 0;
 }
@@ -311,23 +298,13 @@ table h6:not(:last-of-type) {
 }
 
 #legendTable td,
-#legendTable th {
-  /* border-bottom: 1.5px solid rgba(150, 128, 32, 0.42); */
-  /* border-bottom: 1px solid rgba(119, 136, 153, 0.75); */
-  box-shadow: 0 4px 5px -6px black;
-  background-color: rgba(245, 245, 220, 0.5);
-}
-
+#legendTable th,
 #storyLineTable td,
 #storyLineTable th {
   position: relative;
   min-width: 100px;
   height: 20px;
-  /* border-bottom: 1.5px solid rgba(150, 128, 32, 0.42); */
-  /* border-bottom: 1px solid rgba(119, 136, 153, 0.75); */
-  /* box-shadow: 0 4px 5px -6px black; */
-  box-shadow: -3px 6px 26px 0px black;
-  box-shadow: 0px 6px 20px -4px rgb(0 0 0);
+  border-bottom: 1.5px solid rgba(150, 128, 32, 0.42);
   background-color: rgba(245, 245, 220, 0.5);
   border-radius: 2px;
   padding-left: 5px;
@@ -344,15 +321,12 @@ table h6:not(:last-of-type) {
 #storyLineTable thead td,
 #legendTable tr[rowname="Time"] td:not(:empty),
 #storyLineTable tr[rowname="Time"] td:not(:empty) {
+  background-color: rgba(255, 253, 219, 0.335);
+  background-color: rgba(247, 233, 102, 0.6);
   background-color: rgba(255, 234, 115, 0.6);
-  /* background-color: rgba(224, 219, 153, 0.6); */
+  background-color: rgba(224, 219, 153, 0.6);
   border-radius: 2px;
-  box-shadow: 0 4px 5px -6px black;
-  /* box-shadow: 0px 6px 2px 4px rgba(0, 0, 0, 0.7); */
-  /* border-top:2px solid rgba(0, 0, 0, 0.5); */
-  border-right:2px solid rgba(0, 0, 0, 0.5);
-  border-bottom:2px solid rgba(0, 0, 0, 0.5);
-  border-left:2px solid rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 4px 5px -6px black; */
 }
 
 #legendTable th:empty,
@@ -375,7 +349,6 @@ table h6:not(:last-of-type) {
   max-width: 100%;
   text-align: right;
   font-style: italic;
-  font-weight: bolder;
 }
 
 #storyLineTableTitleHeader {
@@ -540,8 +513,8 @@ td>div {
 */
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 2px;
-  /* text-align: center;
-  box-shadow: 0 4px 5px -6px black; */
+  text-align: center;
+  box-shadow: 0 4px 5px -6px black;
   z-index: 1;
 }
 
@@ -549,19 +522,12 @@ td>div {
 #legendTable td div,
 #storyLineTable th div,
 #storyLineTable td div {
-  display:table;
-  min-width: 80px;
+  /*	min-width: 95px;*/
   max-width: 200px;
-  padding: 2px 5px;
+  padding: 5px 0;
   border: 1px solid #acacac;
   border-radius: 3px;
   font-weight: bold;
-  /* font-style: italic; */
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 1px;;
-  /* overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word; */
 }
 
 #storyLineTable th>div:first-of-type,
@@ -608,18 +574,15 @@ td>div {
   left: 0;
   padding: 0 1px;
   margin: 0 !important;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(255, 217, 0, 0.082);
   border: transparent;
-  color: white;
-  font-weight: bolder;
+  color: darkred;
   cursor: pointer;
   z-index: 80;
 }
 
-#storyLineTable .localShowDetailButton:active {
-  /* background-color: rgba(255, 251, 0, 0.513); */
-  background-color: rgba(255, 255, 255, 0.45);
-  color: black;
+#storyLineTable .localShowDetailButton:hover {
+  background-color: rgba(255, 251, 0, 0.513);
 }
 
 #storyLineTable td[detailindex]:hover:not(.showingDetail) {
@@ -1099,7 +1062,7 @@ td>div {
 }
 
 #masterNav h3 {
-  margin-top: 1px;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
@@ -1158,14 +1121,13 @@ td>div {
 #showTimeLinesMenu,
 #showTimeMenu,
 #showLabelMenu,
-#showLocationsMenu,
-.masterNote {
+#showLocationsMenu {
   min-width: 30px;
 }
 
 /*MOVE ROWS AND CELLS*/
 #moveButtonsMenu {
-  /* padding-bottom: 10px; */
+  padding-bottom: 10px;
 }
 
 #tdandtrDrag button {
@@ -1350,9 +1312,9 @@ img.intLink {
   font-size: 1em;
 }
 
-/* #saveDynamicDataToFile_1:hover::before {
+#saveDynamicDataToFile_1:hover::before {
   content: "SAVE";
-} */
+}
 
 #pageBottomStorylineTableEditorButtons {
   grid-area: "pageBottomCenter";
@@ -1396,11 +1358,6 @@ pre#sourceText {
 @media (max-width: 768px) {
 
   /*@media (orientation: portrait) {*/
-
- *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    font-size: 98%;
-  }
-
   body {
     display: grid;
     grid-template-columns: auto auto;
@@ -1578,8 +1535,7 @@ pre#sourceText {
 .darkMode #pageBottomStorylineTableEditorButtons *:hover,
 .darkMode #alternateStoryLineEditorButtons,
 .darkMode #alternateStoryLineEditorButtons * {
-  background-color: rgb(33, 56, 56);/* darker darkslategrey */
-  background-color: rgb(70, 70, 71);/* blackish */
+  background-color: rgb(8, 8, 10);
   border-color: white;
   color: white;
 }
@@ -1592,8 +1548,9 @@ body.darkMode thead,
 .darkMode #masterTable td,
 .darkMode #legendNstoryLineHolder,
 .darkMode #legendTable,
-.darkMode #storyLineTable,\ {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+.darkMode #storyLineTable {
+  background-color: rgba(0, 0, 0, 0.226) !important;
+  /* background-color: rgba(75, 0, 0, 0.226) !important; */
   border-color: hsl(0, 0%, 87%);
 }
 
@@ -1616,29 +1573,4 @@ body.darkMode thead,
 
 .darkMode #storyLineTable .localShowDetailButton {
   color: white;
-}
-.darkMode #searchBox {
-  background-color: white;
-  color: black;
-}
-
-.darkMode #websiteNav li>a:hover {
-  background-color: rgba(255, 255, 255, 0.596);
-  font-weight: stronger;
-  color: black;
-  text-decoration: none;
-}
-.darkMode #masterNote {
-  background-color: rgba(81, 82, 66, 0.6)!important;
-}
-.darkMode #masterNoteNote {
-  background-color: rgba(0, 0, 0, 0.7)!important;
-  color: white !important;
-}
-.darkMode #divTableContainer,
-.darkMode #masterNoteNote p {
-  background-color: transparent !important;
-}
-.darkMode #masterNav button:hover  {
-  color: black !important;
 }

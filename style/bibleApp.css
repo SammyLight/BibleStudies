@@ -1,0 +1,1059 @@
+:root {
+    --fontsize-main: 15px;
+    --fontsize-scripture-nav: 15px;
+    --fontsize-scripture: 13px;
+    --fontsize-ref: 8px;
+    --fontsize-strongstooltip: 13px;
+    --fontsize-title:20px;
+    --width-sidebuttons:27px;
+    --width-mainbutton:35px;
+    --ref-hlt: #f8f8f8;
+    --ref-hlt: #dde3db;
+    --ref-img: url(images/R.jpg);
+    --ref-img: #ffffc8;
+    --ref-img: url(images/background.jpg);
+    --shadow-color:rgb(81, 81, 81);
+    --ref-paper: url(images/4rKVgAQ.jpg);
+    --ref-paper: url(images/IyEMTp.jpg);
+    --verse-higlight: #ffff92;
+    --verse-higlight: #fffb001b;
+    --vmultiple-hover:rgb(225, 241, 239);
+    --nav-bg-color: #fbfbfb;
+    --vhlt-border: #8080809c;
+    --vhlt: #ffffc4;
+    --vhlt2: #ffff99;
+    --redwords:crimson;
+    --strongword-hover: rgb(237, 213, 222);
+    --strongword-hover: rgb(216, 255, 137);
+    --strongword-hover: rgb(199, 255, 194);
+    --strongword-hover: rgb(255, 250, 163);
+    --chpt: rgb(238, 227, 202);
+    --verse-hover: rgb(248, 246, 241);
+    /* --verse-hover: rgba(192, 176, 98, 0.858);
+    --verse-hover: rgba(230, 183, 72, 0.5);
+    --verse-hover: rgba(255, 252, 165, 0.78); */
+    --main-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* --top-bar-bground-color: #427d7f; */
+    --top-bar-bground-color: #212121;
+    --darkmode-bg1color: #212121;
+    --scroll-track-bg-color: #878787;
+    --scroll-thumb-border-color: #000000;
+    --scroll-thumb-bgcolor: #4b4b4b;
+    --scroll-thumb-hover-border: #939cff;
+    --scroll-thumb-hover-bg-color: #555;
+    --buttons: #f8f8f8;
+    /* --buttons: #FCFCFC 110.00000000000001%; */
+    --buttons-border: 0.25px solid #70707072;
+}
+::selection {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+html {
+    padding: 0;
+    font-size: var(--fontsize-main);
+    /* background-color: var(--nav-bg-color); */
+    /* background: var(--verse-higlight); */
+    /* background-color: var(--ref-img); */
+    /* background-color: #ffffc8; */
+    background: var(--ref-img);
+    font-family: var(--main-font);
+}
+.text_content{
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+    border:1px solid grey!important;
+    min-height:50px;
+    max-height:200px;
+    overflow: auto;
+    resize: vertical;
+}
+.text_content:empty::before{
+    content: 'Take down a comment to the verse';
+    font-size: large;
+    font-style: italic;
+}
+body>svg {
+    width: 100% !important;
+}
+body {
+    margin: 0;
+    overflow-y: hidden;
+    /* don't add color to the body, it will hide the svg */
+}
+#pagemaster {
+    position: relative;
+    height: 100vh;
+    /* border: 2px solid red; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(min(auto, 100%), 1fr)); */
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    row-gap: 0;
+    /* overflow-y:scroll; */
+}
+#ppp code, #context_menu code {
+    font-size: var(--fontsize-ref);
+}
+.chptheading {
+    background-color: var(--chpt);
+    border-bottom: 0.5px solid grey;
+    font-size: small;
+}
+#ppp .verse:not(code) {
+    font-size: var(--fontsize-scripture);
+}
+#ppp>span {
+    display: block;
+}
+#refnav {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    height: inherit;
+}
+.rtl {
+    direction: rtl
+}
+code{position: relative; padding-top: 5px;}
+#show_crossref_comments{position: absolute;bottom:var(--fontsize-ref);display: flex;}
+#show_crossref_comments button{font-size: var(--fontsize-ref);font-weight: bold;padding: 2px 5px;border-width: 0.5px;}
+#show_crossref_comments button:not(:first-child){
+    margin-left: 2px;
+}
+.showing_crossref #verse_crossref_button,
+.showing_versenote #verse_notes_button{
+    background: rgb(203, 255, 125)!important;
+}
+.crossrefs, .verse_note{
+    box-shadow: 0 2px 2px 0#878787;
+}
+.crossrefs{
+    padding: 5px 5px 0 5px;
+    background: #ffff;
+    overflow: hidden;
+    font-size: var(--fontsize-main);
+    transition: max-height .2s ease-in-out;
+    min-height: 10px;
+    max-height: 500px;
+    margin-bottom:5px;
+    line-height: auto;
+    opacity: 1;
+}
+#verse_note{display: none;}
+.verse_note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* position: relative; */
+    transition: all 0.15s ease-in-out;
+    padding: 5px;
+    background: #fff;
+    overflow: hidden;
+    min-height: 10px;
+    max-height: 300px;
+    margin-bottom:5px;
+    line-height: auto;
+    opacity: 1;
+}
+.save_edit_btns_holder{
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
+    display:flex;
+    align-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;    
+}
+.note_edit_button{
+    background: none;
+    /* box-shadow: 1px 0px 2px 1.5px var(--shadow-color); */
+    cursor: pointer;
+}
+.note_edit_button:active{
+    box-shadow: 0px 0px 2px 0px var(--shadow-color);
+}
+.note_edit_button::before{
+    content: 'Edit';
+    font-style: italic;
+    pointer-events: none;
+}
+.note_save_button{
+    /* float: left; */
+}
+.note_save_button::before{
+    content: 'Save';
+    font-style: italic;
+    pointer-events: none;
+}
+#singleverse_compare_menu {
+    /* display: inline-flex; */
+}
+#singleverse_compare_menu button {
+    font-size: var(--fontsize-ref);
+    font-weight: bold;
+    min-width: 25px;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+#singleverse_compare_menu input {
+    width: 5.5px;
+    position: absolute;
+    right: 0;
+}
+#refnav>.refnav {
+    height: 100%;
+    float: left;
+}
+#ref_search_versions_holder #refdiv,
+#ref_search_versions_holder #searchdiv {
+    display: flex;
+    flex: 1;
+}
+#ref_search_versions_holder #refdiv *,
+#ref_search_versions_holder #searchdiv * {
+    font-size: var(--fontsize-title);
+}
+#refnav #app_settings {
+    border-right: 5px solid grey;
+    /* background-color: var(--top-bar-bground-color); */
+    background-image: var(--ref-img);
+    overflow: hidden;
+    /* width: 35px; */
+}
+#refnav #app_settings * {
+    box-sizing: border-box;
+    display: block;
+}
+#refnav #app_settings img {
+    box-sizing: border-box;
+    margin-left: 1px;
+    margin-right: 1px;
+    width: var(--width-sidebuttons);
+}
+#refnav #app_settings > button {
+    box-sizing: border-box;
+    /* min-width: var(--width-sidebuttons); */
+    width:auto;
+    min-width:36px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 22.5px;
+}
+#bibleversions_btns {
+    display: inline-flex;
+}
+#bibleversions_btns input {
+    width: 6px;
+    /* margin: 0; */
+    pointer-events: none;
+}
+#bibleversions_btns button {
+    /* width: var(--width-sidebuttons);; */
+    float: left;
+    /* font-size: var(--width-sidebuttons) !important; */
+    /* display: block;
+    padding: 0;
+    */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#bible_nav {
+    font-size: var(--fontsize-scripture-nav);
+}
+.refnav .bible_nav {
+    height: 99.5%;
+    float: left;
+    background-color: var(--nav-bg-color);
+    overflow-y: scroll;
+    border-bottom: 2px solid;
+}
+#refnav .bible_nav * {
+    /* font-size: 0.75em; */
+    cursor: pointer;
+}
+#refnav .bible_nav *:hover {
+    background-color: var(--ref-hlt);
+    /* font-style: italic; */
+    /* background: var(--ref-img); */
+}
+#refnav .bible_nav *:active {
+    /* background-color: var(--verse-higlight); */
+    background: var(--ref-img);
+}
+#togglenavbtn{
+    min-width: 40px;
+    height: 100%;
+}
+#forreference,#forwordsearch,#titlebar_show_searchsettings{
+    min-width: 50px;
+}
+.ref_hlt {
+    font-weight: bold;
+    font-style: italic;
+    background-color: var(--ref-hlt);
+    background: var(--ref-img);
+    border-top: 0.25px solid rgba(128, 128, 128, 0.611);
+    border-bottom: 0.25px solid rgba(128, 128, 128, 0.611);
+}
+.tmp_hlt {
+    background-color: var(--ref-hlt);
+}
+#bible_chapters>option {
+    display: none;
+}
+.show_chapter {
+    display: block !important;
+}
+#bible_verses {
+    display: none;
+}
+#bible_verses>option {
+    /* display: none; */
+    width: 20px;
+}
+.show_verses {
+    /* display: block !important; */
+}
+button {
+    cursor: pointer;
+    background-color: var(--buttons);
+    border: var(--buttons-border);
+}
+#top_horizontal_bar{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-bottom: 2px solid grey;
+    /* z-index: 10; */
+    display: flex;
+    flex-wrap: wrap;
+}
+#top_horizontal_bar>div{
+}
+#titlebarsearchparameters{
+}
+
+.buttons {
+    background: var(--ref-img);
+    border-bottom: 2px solid grey;
+    display: flex;
+    width: 100%;
+}
+#ref_search_versions_holder {display: flex;flex-wrap: wrap;}
+#context_menu {
+    box-sizing: border-box;
+    position: absolute;
+    /* display: block; */
+    background: var(--ref-img);
+    border: 1px solid grey;
+    /* border-top: 5px solid grey; */
+    /* border-left: 5px solid grey; */
+    /* border-bottom: 5px solid grey; */
+    min-width: 50px;
+    max-width: 300px;
+    max-height: 400px;
+    overflow-y: scroll;
+    padding: 5px;
+    -webkit-box-shadow: 3px 3px 3.5px 0px rgba(67, 67, 67, 0.87);
+    -moz-box-shadow: 3px 3px 3.5px 0px rgba(67, 67, 67, 0.87);
+    box-shadow: 3px 3px 3.5px 0px rgba(67, 67, 67, 0.87);
+    z-index: 10;
+    font-size: var(--fontsize-strongstooltip);
+    overflow-x:hidden;
+}
+#context_menu>hr+.strngsdefinition>hr:first-child{display: none;}
+#context_menu h2 {font-size:x-large;}
+#context_menu i {font-size:small;}
+#context_menu .strngsdefinition div {display: block;}
+.vmultiple code:hover, #searchPreviewFixed .verse code:hover, .crossrefs>span:hover, #context_menu code:hover {text-decoration: underline;color: blue;cursor: pointer;}
+#context_menu div{z-index: 2;}
+#tool_tip {
+    /* float:left; */
+    /* position: fixed;
+    right: 0; */
+}
+#context_menu .cmtitlebar{
+    position: sticky;
+    top: 0;
+    right: inherit;
+    background: var(--ref-img);
+    /* -webkit-box-shadow: 0px -6px 0 0px whitesmoke;
+    -moz-box-shadow: 0px -6px 0 0px whitesmoke;
+    box-shadow: 0px -6px 0 0px whitesmoke; */
+    font-size: small;
+    font-weight: bold;
+}#context_menu .cmtitlebar::after{
+    position: absolute;
+    content: '';
+    left:-10px;
+    bottom: -3px;
+    border-top: 2px solid var(--scroll-track-bg-color);
+    background: var(--ref-img);
+    width: 150%;
+    height: 1px;
+    z-index: -1;
+}#context_menu .cmtitlebar::before{
+    position: absolute;
+    content: '';
+    left:-10px;
+    top: -10px;
+    border-top: 2px solid var(--scroll-track-bg-color);
+    background: var(--ref-img);
+    background: var(--ref-img),linear-gradient(to top, rgba(225, 225, 225, 0), 5%, transparent);
+    width: 150%;
+    height: 10px;
+    z-index: -1;
+}#context_menu .cmtitlebar~span{
+    font-size:var(--fontsize-scripture);
+}#context_menu:hover {
+    /* border: 1px solid #878787; */
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(20, 2, 67, 0.87);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(20, 2, 67, 0.87);
+    box-shadow: 1px 1px 3px 0px rgba(20, 2, 67, 0.87);
+}
+.buttons>button,
+.buttons>#searchdiv button,
+.buttons>#refdiv button {
+    /* width: var(--width-sidebuttons); */
+    font-size:var(--width-mainbutton);
+    padding: 0;
+    height: 0px;
+}
+.buttons>#searchdiv,
+.buttons>#refdiv {
+    padding-top: 0 !important;
+    display: inline-flex;
+}
+div.buttons{
+    overflow-y: hidden;
+}
+#reference {
+    width: -webkit-fill-available;
+    vertical-align: bottom;
+    background-color: var(--buttons);
+    border: var(--buttons-border);
+}
+button:disabled {
+    cursor: default;
+}
+button:not(:disabled):hover {
+    background-color: var(--chpt) !important;
+}
+.active_button,
+searchsettings.active_button {
+    background-color: var(--chpt) !important;
+}
+.red, span.red span{
+    color: var(--redwords)!important;
+}.strongsnum {
+    color: rgb(64, 59, 105);
+}span:not(.red) span[strnum^=H],
+span:not(.red) span[strnum^=G] {
+    /* color: black; */
+}
+[strnum]:empty {
+    display: none !important;
+}
+#main {
+    /* border: 3px solid orange; */
+    max-width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    overflow-y: scroll;
+    display: flex;
+    position: relative;
+}
+#main>*>* {
+    padding-left: 5px;
+}
+#ppp {
+    /* background-image: var(--ref-paper); */
+}
+#search_section {
+    /* max-width:100px; */
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-color: royalblue;
+}
+#ppp>span.verse:last-child {
+    /* margin-bottom: 20px; */
+    padding-bottom: 20px;
+}
+[strnum] {
+    cursor: pointer;
+}
+span.verse:hover:not(.vhlt),
+span.vmultiple:hover {
+    transition: background 0.05s linear;
+}
+span.verse:hover:not(.vhlt){
+    /* box-sizing:border-box!important; */
+    background-color: var(--verse-hover);
+    /* box-shadow: 0 0 2px 0 rgb(30, 30, 30)*/
+    cursor: pointer;
+}span.vmultiple:hover .verse{
+    background-color: var(--vmultiple-hover);
+    background-color: var(--verse-hover);
+    transition: box-shadow 0.05s linear;
+    box-shadow: 1px 5px 5px -2px var(--shadow-color),
+    3px -2px 2.5px -1px var(--shadow-color)!important;
+    z-index: 2;
+}
+span[class^=v_]:hover {
+    background-color: rgb(246, 239, 227)!important;
+    background-color: var(--vhlt)!important;
+    box-shadow: 1px 5px 5px -2px var(--shadow-color),
+    3px -2px 2.5px -1px var(--shadow-color),
+    -10px -2px 0px -0px var(--shadow-color)!important;
+    z-index:5;
+}
+span.translated:hover {
+    border-bottom: 1px solid rgb(151, 116, 0);
+    color: brown;
+}
+sup {
+    font-weight: bold;
+}
+main span {
+    /* font-size: x-small; */
+}
+.translated[trans] {
+    /* font-size: xx-small; */
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#wordsearch {
+    /* cursor: pointer; */
+    background-color: var(--buttons);
+    border: var(--buttons-border);
+    width: -webkit-fill-available;
+}
+#wordsearch::-webkit-input-placeholder,
+#reference::-webkit-input-placeholder {
+    font-style: italic;
+}
+#wordsearch:-moz-placeholder,
+#reference:-moz-placeholder {
+    font-style: italic;
+}
+#wordsearch::-moz-placeholder,
+#reference::-moz-placeholder {
+    font-style: italic;
+}
+#wordsearch:-ms-input-placeholder,
+#reference:-ms-input-placeholder {
+    font-style: italic;
+}
+.search_options {
+    display: none;
+    font-size: small;
+    font-style: italic;
+    color: whitesmoke;
+}
+/* .strnum:before {content: " " attr(data-xlit) " ";} */
+.eng2grk {
+    text-indent: -9999px;
+}
+.eng2grk>span {
+    display: inline;
+    font-weight: bold;
+}
+#fontchange {
+    width: 100%;
+}
+#eng2grk_sup_table{
+    min-width:100%;
+    border-collapse:collapse;
+    border-spacing: 0;
+}
+#eng2grk_sup_table td {
+    min-width:90px;
+    text-align: right;
+}
+#eng2grk_sup_table button {
+    width:100%;
+    min-height:55px;
+    text-transform: lowercase;
+    font-weight:bold;
+    /* font-size: medium!important; */
+}
+.strnum:after {
+    content: attr(data-lemma);
+    font-style: italic;
+}   */
+#searchresultwindow {
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    height: 100%;
+    width: 150px;
+}
+.relative {
+    position: relative;
+    /* margin-top: 100px; */
+    /* width: 100%;*/
+    height: 100%;
+}
+#searchPreview {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 150px;
+    padding: 5px 0 5px 0;
+    background-color: white;
+    border: 0.5px solid black;
+    min-height: 0px;
+    max-height: 90%;
+    overflow-y: scroll;
+}
+#searchPreview>* {
+    display: block;
+    padding: 0 5px;
+}
+#searchPreview [ref]:hover {
+    font-weight: bolder;
+    border-bottom: 1px dashed blue;
+    border: 2px solid gray;
+}
+#searchboxtitlebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 12px;
+    border: 0.5px solid whitesmoke;
+    background-color: whitesmoke;
+    cursor: pointer;
+    z-index: 2;
+}
+#searchrelative {
+    display: flex;
+}
+#searchclose {
+    /* position: absolute;
+    top: 0px;
+    right: 0px; */
+    /* height: 5px; */
+    padding: 0 2px;
+    font-size: 10px;
+    font-weight: bold;
+    border-left: 0.5px solid black;
+    /* color:white;
+    background-color: rgb(158, 42, 0); */
+}
+#searchclose:active,
+#searchminimize:active {
+    font-style: italic;
+}
+#searchclose:hover {
+    background-color: lightpink;
+}
+#searchminimize:hover {
+    background-color: greenyellow;
+}
+#searchminimize {
+    /* position: absolute;
+    top: 0px;
+    right: 22px; */
+    /* height: 5px; */
+    padding: 0 2px;
+    font-size: 10px;
+    font-weight: bold;
+    border-left: 0.5px solid black;
+}
+#refnav {
+    height: auto;
+    overflow-y: hidden;
+    font-size: var(--fontsize-main);
+}
+#refnav input {
+    height: 8px;
+    width: 8px;
+}
+#searchparameters {
+    min-height: auto;
+    border-bottom: 1px solid var(--scroll-track-bg-color);
+    border-top: 0;
+    background-color: var(--ref-hlt);
+    font-size: var(--fontsize-main);
+}
+.search_param_btns{
+    width: 100%;
+    text-align: left;
+}
+#searchparameters div:first-of-type+div,
+#bibleapp_cache div:first-of-type,
+#bibleapp_cache .settingssectionheadings {
+    border-bottom: 1px solid var(--scroll-track-bg-color);
+    border-top: 1px solid var(--scroll-track-bg-color);
+    /* width: 96%; */
+    margin: 0;
+    box-shadow: 0 0.5px 0 rgb(58, 58, 58);
+    background-color: whitesmoke;
+    background-image: var(--ref-img);
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+.bible_versions_heading{
+    box-shadow: 0 0.5px 0 rgb(58, 58, 58);
+    background-color: whitesmoke;
+    background-image: var(--ref-img);
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+#bibleapp_cache *:not(.settingssectionheadings) {
+    /* display: inline-flex; */
+    font-size: var(--fontsize-main);
+}
+.bible_nav {
+    float: left;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#bible_nav,
+#bible_versions,
+#searchPreviewWindowFixed,
+#strongsdefinitionwindow,
+#bibleapp_cache {
+    box-sizing: border-box;
+    max-width: 300px;
+    height: 100%;
+    border-right: 2px solid grey;
+    font-size: var(--fontsize-main);
+}
+#bible_versions,
+#searchPreviewWindowFixed,
+#strongsdefinitionwindow,
+#bibleapp_cache {
+    overflow-y: auto;
+    background-color: var(--verse-higlight);
+}
+#bible_versions,
+#bibleapp_cache {
+    overflow-y: scroll;
+}
+#bibleapp_cache label,#bibleapp_cache input {
+    display: inline!important;
+}
+#cache_table {
+    width: 100%;
+    display: table!important;
+    border-collapse:collapse;
+    box-sizing: border-box;
+}
+#cache_table td{min-width:40px;}
+#cache_table td button{min-width: 100%;font-weight: bolder;}
+#hidestrongshighlight {display: none;}
+#strongsdefinitionwindow {
+    min-width: 200px;
+    font-size: var(--fontsize-scripture);
+}
+#strongsdefinitionwindow::after {
+    content: '';
+    background-color: #ccc;
+    position: absolute;
+    right: 0;
+}
+#resizerdiv {
+    background-color: grey;
+    float: right;
+    width: 2.5px;
+    height: 100%;
+    cursor: ew-resize;
+}
+#resizerdiv:hover,#resizerdiv:active {
+    background-color: greenyellow;
+}
+#strongsdefinitionwindow>*:not(hr),
+#strongsdefinitionwindow>*:not(hr),
+#bible_versions>*:not(hr),
+#bibleapp_cache>*:not(hr) {
+    padding-right: 3px;
+    padding-left: 3px;
+}
+#bible_versions {
+    font-size: var(--fontsize-main);
+}
+.strngsdefinition h1,
+.strngsdefinition h2,
+.strngsdefinition h3,
+.strngsdefinition h4 {
+    display: inline;
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.strngsdefinition {
+    margin-bottom: 10px;
+}
+#searchPreviewWindowFixed {
+    overflow-y: hidden;
+    font-size: var(--fontsize-scripture);
+}
+#searchparameters div:last-child {
+    display: block;
+    background-color: var(--verse-higlight);
+    background-image: var(--ref-img);
+    border-top: 1.5px solid var(--scroll-track-bg-color);
+    box-shadow: 0 2px 0 grey;
+}
+#searchparameters #where2display {
+    display: block;
+    border-top: 1.1px solid var(--scroll-track-bg-color);
+}
+#hidesearchparameters {
+    padding: 0;
+    margin-top: -2px;
+    float: right;
+    border: 1px solid var(--scroll-track-bg-color);
+    background-color: white;
+    cursor: pointer;
+    height: 15px;
+}
+.hidesearchparameters>*:not(div) {
+    display: none !important;
+}
+#searchPreviewFixed {
+    display: table-row;
+    height: 92%;
+    float: left;
+    width: 100%;
+    overflow-y: scroll;
+}
+#searchPreviewFixed>* {
+    display: block;
+    padding: 0 5px;
+}
+#searchPreviewFixed>.chptheading,
+#searchPreviewFixed code {
+    cursor: pointer;
+    font-size: var(--fontsize-main);
+    font-weight: bolder;
+    margin: 0;
+}
+#searchPreviewFixed .chptheading+.verse {
+    margin-top: 5px;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 7.5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    /* background: #f1f1f1; */
+    background: var(--scroll-track-bg-color);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb-bgcolor);
+    border-top: 2px solid var(--scroll-thumb-border-color);
+    border-bottom: 2px solid var(--scroll-thumb-border-color);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover-bg-color);
+    border-top: 2px solid var(--scroll-thumb-hover-border);
+    border-bottom: 2px solid var(--scroll-thumb-hover-border);
+}
+/* BEREAN BIBLE */
+.section_headings {
+    display: none;
+}
+.vmultiple {
+    display: flex !important;
+    flex-wrap: wrap;
+    /* max-width: 900px; */
+}
+.vmultiple>span {
+    padding: 5px 5px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    flex-basis: 50px;
+    flex-grow: 1;
+}
+span.vmultiple:hover span.vhlt {
+    background: yellow;
+}
+/* ANIMATIONS CLASSES */
+.slideup {
+    display: none;
+    min-height: 0;
+    max-height: 0;
+    padding: 0;
+    margin-bottom:0;
+    line-height: 0;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.slidein {
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.slideout {
+    display: none;
+    margin-left: -500px;
+    margin-top: 0;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.displaynone {
+    display: none !important;
+}
+.displayshow {
+    display: block !important;
+}
+@keyframes blink {
+    0% {background-color: beige;}
+    75% {background-color: rgb(255, 170, 80);}
+    100% {background-color: beige;}
+}
+.vglow {
+    animation: blink 3s 2;
+    animation-direction: alternate;
+}
+.vhlt {
+    background-color: var(--vhlt);
+    border-top: 0.25px solid var(--vhlt-border);
+    border-left: 0.25px solid var(--vhlt-border);
+    border-right: 0.25px solid var(--vhlt-border);
+    border-radius: 2px;
+    z-index: 1;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(67, 67, 67, 0.87);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(67, 67, 67, 0.87);
+    box-shadow: 1px 1px 2px 0px rgba(67, 67, 67, 0.87);
+}
+.vhlt:hover {
+    background-color: #fff08f99;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(67, 67, 67, 0.87);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(67, 67, 67, 0.87);
+    box-shadow: 1px 1px 1px 0px rgba(67, 67, 67, 0.87);
+}
+.vhlt+.vhlt {
+    border-top: 0;
+    padding-bottom: 3px;
+}
+.flashit {
+    -webkit-animation: flash linear 1.5s;
+    animation: flash linear 1.5s;
+}
+@-webkit-keyframes flash {
+    0% {
+        opacity: 1;
+        background-color: #f5f1c6;
+        font-weight: 1000;
+    }
+    20% {
+        opacity: 1;
+        background-color: #ffff92;
+        font-weight: 200;
+    }
+    80% {
+        opacity: 1;
+        background-color: #f5f1c6;
+        font-weight: 200;
+    }
+    95% {
+        opacity: 1;
+        background-color: #f5f1c6;
+        font-weight: 400;
+    }
+    100% {
+        opacity: 1;
+        background-color: transparent;
+        font-weight: 100;
+    }
+}
+@-keyframes flash {
+    0% {
+        opacity: 1;
+        background-color: #f5f1c6;
+        font-weight: 100;
+    }
+    20% {
+        opacity: .1;
+        background-color: #ffff92;
+        font-weight: 200;
+    }
+    80% {
+        opacity: .8;
+        background-color: #f5f1c6;
+        font-weight: 500;
+    }
+    95% {
+        opacity: 1;
+        background-color: #f5f1c6;
+        font-weight: 700;
+    }
+    100% {
+        opacity: 1;
+        background-color: transparent;
+        font-weight: 700;
+    }
+}
+[class^=v_].vhlt{
+    background-color: var(--vhlt2);
+}
+/* MEDIA QUERIES */
+#mobilebuttons {
+    display: none;
+}
+@media screen and (max-device-width: 500px) {
+    :root {
+        --fontsize-main: 17px;
+        --fontsize-scripture: 17px;
+        --fontsize-ref: 12px;
+        --fontsize-strongstooltip: 17px;
+        --width-sidebuttons:40px;
+        --width-mainbutton:45px;
+    }
+    #refnav #app_settings > button {
+        font-size: 32.5px;
+        overflow: hidden;
+        width: 50px!important;
+    }
+    #ref_search_versions_holder #refdiv, #ref_search_versions_holder #searchdiv {
+        display: flex;
+        width: 100%;
+    }
+    #refdiv input, #searchdiv input {
+        flex-grow: 1;
+    }
+    #togglenavbtn{
+        width: 120px !important;
+    }
+}
+@media screen and (max-device-width: 300px) {
+    #ref_search_versions_holder #refdiv, #ref_search_versions_holder #searchdiv {
+        display: flex;
+        width: 100%;
+    }
+    #refdiv input, #searchdiv input {
+        flex-grow: 1;
+    }
+}
