@@ -1,0 +1,46 @@
+<section id="quizResult-section">
+    <div id="headerbar" class="Result-BoardHeader container-fluid-inner">
+        <div>Quiz Result</div>
+        <!-- <ul>
+            <button>
+                {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        New Quiz
+                    </a>{% endif %}{% endfor %}
+                </button>
+        </ul> -->
+    </div>
+    <div  class="Result-Board">
+        <div class="Result-Board-inner">
+            <div class="Result-img">
+                <img src="../images/Trophy2.jpg" alt="Trophy">
+            </div>
+            <div>
+                <h1>Congratulations!</h1>
+                <h4>Quiz Completed</h4>
+                <h5>Your Performance</h5>
+                <div id="questionsIndex"></div>
+                <ol>
+                    <li>Correct</li>
+                    <li><i class="fas fa-solid fa-arrow-right"></i></li>
+                    <li id="scoreCorrect"></li>
+                </ol>
+                <ol>
+                    <li>Wrong</li>
+                    <li><i class="fas fa-solid fa-arrow-right"></i></li>
+                    <li id="scoreMissed"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="Result-btn container-fluid-inner">
+        <button class="btn-bg-color" onclick="window.location.reload()">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
+        <button class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers <i class="fas fa-solid fa-angle-right"></i></button>
+        <button class="btn-bg-color">
+            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                New Quiz <i class="fas fa-solid fa-angle-right"></i>
+            </a>{% endif %}{% endfor %}
+        </button>
+    </div>
+</section>

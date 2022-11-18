@@ -1,0 +1,15 @@
+{% include siteHead.html %}
+<link type="text/css" href="../style/bibleQuiz.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
+</head>
+<style>
+#mobileHeader, #desktopHeader, footer {
+    display: none!important;
+}
+</style>
+<body>
+    {% include QandA-Section.html %}
+    {% include QandA-Quiz-Result.html %}
+    {% include QandA-Corrected-Answers.html %}    
+</body>

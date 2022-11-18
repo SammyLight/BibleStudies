@@ -1,0 +1,49 @@
+{% include homeHead.html %}
+<!-- <link type="text/css" href="../style/lightcity-02.css" rel="stylesheet"> -->
+<link type="text/css" href="style/bibleQuiz.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
+
+<script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+</head>
+<style>
+    #headerbar, #confirmButton {
+    display: none;
+}
+</style>
+<body>
+    <section class="cat-bibleQuiz-section">
+        <div id="cat-headerbar" class="container-fluid-inner">
+            <div class="churchLOGO">
+                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                </a>{% endif %}{% endfor %}
+            </div>
+            <div class="headerUL">
+                <ul class="header-links">
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>Home</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "About Us" %}
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>About</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
+            <h1>BIBLE QUIZ</h1>
+            <h5>TEST YOUR KNOWLEDGE ON:</h5>
+            {% include QandA-Categories.html %}
+        </section>
+    </section>
+    <!-- <a href="https://www.flaticon.com/free-icons/power" title="power icons">Power icons created by Freepik - Flaticon</a>
+    <a href="https://www.vectorstock.com/royalty-free-vector/trophy-eps-vector-25170110">Vector image by VectorStock / vectorstock</a> -->
+</body>

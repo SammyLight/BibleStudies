@@ -1,0 +1,23 @@
+<section id="CorrectedAnswers-section">
+    <div id="headerbar" class="corAnswers-BoardHeader container-fluid-inner">
+        <div>Review Answers</div>
+        <!-- <ul>
+            <button onclick="window.location.reload()">Redo Quiz</button>
+        </ul> -->
+    </div>
+    <div class="corAnswers-Board-Header container-fluid-inner">
+        <h1>Question</h1>
+        <h1>Answer & Explanation</h1>
+    </div>
+    <div class="corAnswers-Board">
+        <hr>
+    </div>
+    <div class="corAnswers-btn">
+        <button class="btn-bg-color" onclick="window.location.reload()">Redo Quiz</button>
+        <button class="btn-bg-outline">{% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                New Quiz
+            </a>{% endif %}{% endfor %}
+        </button>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+<div class="loader-bg">
+    <div class="loader"></div>
+</div>
+
+<section id="QandA-section">
+    <div class="opacityBG">
+        <!-- <audio controls autoplay loop>
+            <source src="../audio/BibleQuiz BG Track.mp3" type="audio/mpeg">
+        </audio> -->
+        {% include QandA-header.html %}
+        <!-- <div class="animation-area"> -->
+    <ul class="box-area">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<!-- </div>	 -->
+        <div id="CountHint">
+            <div id="questioncount" title="Question Counter">
+                <span></span>
+            </div>
+            <div id="questionhint" onclick="showHint()" title="Hint for this question">
+                <div class="Hint-img">
+                    <img src="../images/Hint44.jpg" alt="Hint">
+                </div>
+                <!-- <span><i class="fas fa-regular fa-lightbulb"></i> Hint</span> -->
+            </div>
+        </div>
+        <div class="QandAbody-section">
+            <div id="completeQuiz" class="complete-Quiz">
+                <div class="complete-Quiz-inner">
+                    <header class="CompleteAndProceed-message">
+                        <span onclick="document.getElementById('completeQuiz').style.display='none'" class="close-message">×</span>
+                        <h4>You have not Answers all Questions!!!</h4>
+                    </header>
+                    <div class="CompleteAndProceed-btns">
+                        <button>Complete Quiz</button>
+                        <button>Proceed</button>
+                    </div>
+                </div>
+            </div>
+            <div class="QandA-Board">
+                {{content}}
+            </div>
+        </div>
+        <div class="QandA-BoardLinks">
+            <div id="quizCatName">
+                <span>{{page.title}}</span>
+            </div>
+            <button id="confirmButton" onclick="confirm()">Confirm</button>
+        </div>
+    </div>
+</section>
