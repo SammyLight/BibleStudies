@@ -420,6 +420,8 @@ img {
     border-style: none;
 }
 .fonts {
+    background-color: antiquewhite;
+    background-color: floralwhite;
     color: #384b3d;
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.1em;
