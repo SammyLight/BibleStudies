@@ -1,24 +1,16 @@
 <section id="quizResult-section">
-    <div id="headerbar" class="Result-BoardHeader container-fluid-inner">
+    <!-- <div id="headerbar" class="Result-BoardHeader">
         <div>Quiz Result</div>
-        <!-- <ul>
-            <button>
-                {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                        New Quiz
-                    </a>{% endif %}{% endfor %}
-                </button>
-        </ul> -->
-    </div>
+    </div> -->
     <div  class="Result-Board">
         <div class="Result-Board-inner">
             <div class="Result-img">
-                <img src="../images/Trophy2.jpg" alt="Trophy">
-            </div>
-            <div>
-                <h1>Congratulations!</h1>
+                <h2>Congratulations!</h2>
+                <img src="../images/Trophy10.svg" alt="Trophy">
                 <h4>Quiz Completed</h4>
-                <h5>Your Performance</h5>
+            </div>
+            <div class="performance">
+                <h2>Your Performance</h2>
                 <div id="questionsIndex"></div>
                 <ol>
                     <li>Correct</li>
@@ -33,14 +25,18 @@
             </div>
         </div>
     </div>
-    <div class="Result-btn container-fluid-inner">
-        <button class="btn-bg-color" onclick="window.location.reload()">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
+    <div class="Result-btn">
+        <button onclick="window.location.reload()" class="btn-bg-color">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
         <button class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers <i class="fas fa-solid fa-angle-right"></i></button>
         <button class="btn-bg-color">
-            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                New Quiz <i class="fas fa-solid fa-angle-right"></i>
-            </a>{% endif %}{% endfor %}
+            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
+            {% for aaa in site.pages %}
+                {% if aaa.subsection contains caty %}
+                <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                    New Quiz <i class="fas fa-solid fa-angle-right"></i>
+                </a>
+            {% endif %}
+            {% endfor %}
         </button>
     </div>
 </section>

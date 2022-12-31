@@ -1,0 +1,73 @@
+{% include homeHead.html %}
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
+<link type="text/css" href="style/bibleQuizNoBG.css" rel="stylesheet">
+<link id="darkPurpleCssFile" type="text/css" href="style/bibleQuizBG-darkpurple.css" rel="stylesheet">
+</head>
+
+<body>
+    <section id="cat-bibleQuiz" class="cat-bibleQuiz-section">
+        <audio id="categorySound" src="audio/categorySound.mp3" loop="true"></audio>
+        <audio id="clickSound" src="audio/clickSound.mp3"></audio>
+        <div id="cat-headerbar" class="container-fluid-inner">
+            <div class="churchLOGO">
+                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                </a>{% endif %}{% endfor %}
+            </div>
+            <div class="headerUL">
+                <ul class="header-links">
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                        <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>Q-Home</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "Rules" %}
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>About</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <button id="catSettings" class="catSettings" style="position: relative;" onclick="showCatSettings()" title="general settings"><img src="images\settings-svgrepo-com.svg" alt="&#9881;"></button>
+        </div>
+        <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
+            <h1>About Quiz</h1>
+                <h5>Welcome to lightCity Bible Quiz.</h5>
+                <div class="aboutRules">
+                    <p>This quiz is designed to help us measure and improve our growth of God’s Word.</p>
+                    <h6>Here's somethings to know about the quiz:</h6>
+                    <ol>
+                        <li>A Question can have multiple Answers.
+                            <ol>
+                                <li>If only one correct Answer is selected, the Question will be passed as failed.</li>
+                            </ol>
+                        </li>
+                        <li>When an option is selected, it is colored  <span style="color: orange;">Yellow</span>, at this point your Answer has not been comfirmed yet, you will need to click the confirm button at the bottom right of your screen to confirm your selection.
+                            <ol>
+                                <li>Once the confirm button is clicked, your Anwser is locked, it cannot be undone.</li>
+                                <li>But before clicking the comfirm button, when the option selected is still <span style="color: orange;">Yellow</span>, you can un-click it and select another option.</li>
+                            </ol>
+                            <li>If you do not know the Answer to a Question and do not wish to select any option, you can click the confirm button to show the right Answer.
+                                <ol>
+                                    <li>Please note that the Question will be passed as failed.</li>
+                                </ol>
+                            </li>
+                        </li>
+                        <li>Hints to Questions and Explanations to Answers are provided for some Questions.</li>
+                        <li>You can change your settings such as Theme and Music ON/OFF by clicking <img class="aboutImg" src="images\settings-svgrepo-com.svg" alt="&#9881;"> icon at the top of your screen.</li>
+                        <li>As you may have seen, there are two categories. CHILDREN and ADULTS categories, please feel free to choose any, as no knowlegde is a waste.</li>
+                        <li>You can review the Quiz by clicking the review button (it is very east to see).
+                            <ol>
+                                <li>The Quiz Review shows you the Questions and their Right Answer(s) and Explanations (for options that have one).</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                {% include QandA-cat-settings.html %}
+        </section>
+    </section> 
+</body>

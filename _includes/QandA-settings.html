@@ -1,0 +1,38 @@
+<div id="settingsContent">
+    <div class="settingsContentInner">
+        <div id="themeSettings">
+            <div class="collapsible">Change Theme <i class="fas fa-solid fa-angle-right"></i></div>
+            <ul class="content">
+                <li id="antiqueWhite">Antiquewhite</li>
+                <li id="blackPearl">BlackPearl</li>
+                <li id="crimson">Crimson</li>
+                <li id="darkCyan">DarkCyan</li>
+                <li id="darkPurple">DarkPurple</li>
+            </ul>
+        </div>
+        <div onclick="window.location.reload()">Restart Quiz <i class="fas fa-solid fa-angle-right"></i></div>
+        <div>
+            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
+            {% for aaa in site.pages %}
+                {% if aaa.subsection contains caty %}
+                <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                    <span>Quit Quiz <i class="fas fa-solid fa-angle-right"></i></span>
+                </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+    <div id="audioSettings">
+        <span><i class="fas fa-volume-up"></i> Music:</span>
+        <audio id="quizBgSound" src="../audio/BG-Track4.mp3" loop="true"></audio>
+        <audio id="letsStart" src="../audio/letsStart.mp3"></audio>
+        <button id="playButton">On
+            <!-- <i class="fas fa-volume-up"></i> -->
+        </button>
+        <div class="vl"></div>
+        <button id="pauseButton">Off
+        <!-- <i class="fas fa-volume-mute"></i> -->
+        </button>
+    </div>
+</div>

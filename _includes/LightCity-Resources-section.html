@@ -45,9 +45,10 @@
 						{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
 							{% for aaa in site.pages %}
 								{% if aaa.categories contains caty %}
-					<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
-					</a>
-					{% endif %}
+							<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+								{{ page.categories[0] }}
+							</a>
+							{% endif %}
 						{% endfor %}
 					</p>
 					<hr>					
