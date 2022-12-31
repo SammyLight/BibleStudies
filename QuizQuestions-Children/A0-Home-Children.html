@@ -1,0 +1,23 @@
+---
+layout: QandA-cat-TEMPLATE
+title: "Children Quiz"
+subsection: ["HomePage-Children"]
+categories: ["Quiz Cat"]
+---
+
+		<div class="cat-grid">
+				{% for page in site.pages %}
+				{% if page.categories contains "Quiz Cat" %}
+				{% if page.subsection contains "Children" %}
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+					{{page.title}}
+				</a>
+				{% endif %}
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+
+</html>
+	
