@@ -103,13 +103,13 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
-                                        <a href="https://sammylight.github.io/BibleApp-1/">
+                                        <a href="https://lightcityteachingfellowship.github.io/BibleApp-2/" target="_blank">
                                             <span>Bible App</span>
                                         </a>
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" target="_blank">
                                             <span>Bible Quiz</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
