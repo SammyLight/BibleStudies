@@ -748,8 +748,8 @@ footer a:hover {
         transition: max-height 0.3s ease-out;
     }
 }
-.footerLinks-header h3, .Contact-section h3 {
-    color: #d0d0d0;
+.footerLinks-header h3, .Contact-section h3, .footerLinks-header a {
+    color: #d0d0d0!important;
     border-bottom: none;
 }
 
@@ -851,8 +851,7 @@ footer a:hover {
 }
 ul.footerLinks-lists {
     padding: 0;
-    margin-left: 0!important;
-    margin-right: 0!important;
+    margin: 0!important;
 }
 
 .footerLinks-lists li {
