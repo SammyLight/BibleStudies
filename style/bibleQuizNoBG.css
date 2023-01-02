@@ -496,6 +496,9 @@ ul.header-links {
 #cat-bibleQuiz-inner li {
     list-style-type: decimal;
 }
+#cat-bibleQuiz-inner li li {
+    list-style: lower-alpha;
+}
 .cat-grid {
     place-content: baseline;
 }
