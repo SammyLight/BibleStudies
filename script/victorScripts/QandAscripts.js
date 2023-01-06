@@ -202,16 +202,19 @@ function confirm() {
             if (opt.style.backgroundColor == 'orange') {
                 opt.style.backgroundColor = 'pink';
                 opt.style.borderRight = rightBorder; //this indicates the option selected
-        }
+            }
+            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
+                explainButtonCreate(opt).addEventListener('click', showExplanation);
+            }
         });
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
             rightAnswer.style.backgroundColor = 'green';
             rightAnswer.style.color = 'white';
-                if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
-                    explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
-                }            
+                // if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
+                //     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
+                // }            
         });
     
         currentQuestionsOptions.setAttribute('confirmed', 'yes');
@@ -402,12 +405,12 @@ function showExplanation() {
     this.parentNode.classList.toggle("removeMaxHeight");
 }
 //TO CREATE AN EXPLANATION BUTTON
-function explainButtonCreate(answer) {
+function explainButtonCreate(opt) {
     var explainButton = document.createElement("BUTTON");
     explainButton.classList.add('explainButton');
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
-    answer.append(explainButton);
+    opt.append(explainButton);
     return explainButton;
 }
 function showAllQuestionsWithAnswers() {
