@@ -147,6 +147,10 @@ body{
     background-color: #009688;
     background-color: darkcyan;
 }
+#QandA-section a {
+    color: white;
+    /* text-decoration: none; */
+}
 .fade {
     background-color: rgba(0,0,0,0.4);
 }
@@ -372,6 +376,10 @@ body{
 }
 .corAnswers-Board-Header>h1 {
     color: white;
+}
+.corAnswers-Board a {
+    color: white;
+    /* text-decoration: none; */
 }
 .corAnswers-Board>ol>li {
     border-top: 1px solid #ccc;

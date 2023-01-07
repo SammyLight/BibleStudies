@@ -147,6 +147,10 @@ hr {
 #QandA-section{
     background-color: antiquewhite;
 }
+#QandA-section a {
+    color: brown;
+    /* text-decoration: none; */
+}
 .fade {
     background-color: rgba(0,0,0,0.4);
 }
@@ -382,6 +386,10 @@ hr {
 }
 .corAnswers-Board-Header>h1{
     color: chocolate;
+}
+.corAnswers-Board a {
+    color: brown;
+    /* text-decoration: none; */
 }
 .corAnswers-Board>ol>li {
     border-top: 1px solid #ccc;

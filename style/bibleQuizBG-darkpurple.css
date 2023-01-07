@@ -21,7 +21,7 @@ body{
 /* Custom CSS */
 .explainButton{
     color: #d0d0d0;
-    color: aliceblue;
+    color: #fff;
     background-color: brown;
     border: 1px solid brown;
     background-color: #D61C4E;
@@ -35,7 +35,7 @@ body{
 #confirmButton {
     background-color: #D61C4E;
     border: 1px solid #D61C4E;
-    color: aliceblue;
+    color: #fff;
 }
 #confirmButton:hover {
     background-color: #b91742;
@@ -48,7 +48,7 @@ body{
     /* background-color: rgb(0 0 0 / 68%); */
     background-color: #1a0f30;
     /* box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 68%); */
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .choosecat-Child {
     background-color: antiquewhite;
@@ -61,13 +61,13 @@ body{
 .choosecat-Adult {
     background-color: #D61C4E;
     border: #D61C4E;
-    color: aliceblue;
+    color: #fff;
 }
 .choosecat-Adult a {
-    color: aliceblue;
+    color: #fff;
 }
 .choosecat-grid h2 {
-    color: aliceblue;
+    color: #fff;
     color: darkkhaki;
 }
 
@@ -75,7 +75,7 @@ body{
 .choosecat-Child:hover {
     background-color: #D61C4E;
     border: #D61C4E;
-    color: aliceblue;
+    color: #fff;
 }
 .choosecat-Adult:hover {
     background-color: antiquewhite;
@@ -83,7 +83,7 @@ body{
     color: #D61C4E;
 }
 .choosecat-Child a:hover {
-    color: aliceblue;
+    color: #fff;
 }
 .choosecat-Adult a:hover {
     color: #D61C4E;
@@ -102,7 +102,7 @@ body{
     color: lightblue;
 }
 .header-links a:hover, .header-links a:focus {
-    color: aliceblue;
+    color: #fff;
 }
 .header-links li:hover, .header-links li:focus {
     background-color: #161e3d;
@@ -122,7 +122,7 @@ body{
     color: aqua;
 }
 #cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol{
-    color: aliceblue;
+    color: #fff;
 }
 /* MOBILE CSS */
 @media screen and (max-width: 590px){
@@ -138,7 +138,7 @@ body{
 .cat-grid>a {
     color: #272727;
     text-shadow: 0 1px 1px #fff;
-    background-color: aliceblue;
+    background-color: #fff;
     box-shadow: 0 3px 4px #0c0618;
     border: 1px solid #bfc3c8;
 }
@@ -151,6 +151,10 @@ body{
 /* QandA CSS */
 #QandA-section{
     background-color: #1a0f30;
+}
+#QandA-section a {
+    color: #fff;
+    /* text-decoration: none; */
 }
 .fade {
     background-color: rgba(0,0,0,0.4);
@@ -174,7 +178,7 @@ body{
 } */
 
 .quizCatLink a {
-    color: lightblue;
+    color: lightblue!important;
 }
 .quizCatLink span>i{
     background: -webkit-linear-gradient(#f3ec78, #af4261);
@@ -188,20 +192,20 @@ body{
     color: #fff!important;
 }
 #settingsContent a, #catSettingsContent a  {
-    color: aliceblue;
+    color: #fff;
 }
 #nextPrevButton {
     border: 1px solid #E38B29;
     border: 1px solid #969292;
 }
 #playButton, #pauseButton, #playButtonCat, #pauseButtonCat {
-    color: aliceblue;
+    color: #fff;
     /* background-color: rgba(115, 67, 167, 0.8);
     background-color: #D61C4E;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); */
 }
 .vl {
-    border-left: 3px solid aliceblue;
+    border-left: 3px solid #fff;
 }
 /* .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
     text-shadow: rgba(255,162,0,0.95) 0px 0px 39px;
@@ -223,10 +227,10 @@ body{
 }
 .closeHint, .closeSettings, .closeCatSettings{
     background-color: red;
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .showHintCSS>a, .showNewCatCSS>a {
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .QandA-Board>ol>li>ul>li::before {
     background-color: antiquewhite;
@@ -241,7 +245,7 @@ body{
        linear-gradient(#fff 0 0); 
 }
 .QandA-Board>ol>li>ul>li>ul{
-    color: aliceblue;
+    color: #fff;
 }
 
 /* MOBILE VIEW */
@@ -302,7 +306,7 @@ body{
 .QandA-Board>ol>li>ul>li:hover, .QandA-Board>ol>li>ul>li:active{
     background-color: #161e3d;
     border:#161e3d;
-    color: aliceblue!important;
+    color: #fff!important;
 }}
 
 /* QUIZ RESULT CSS */
@@ -339,7 +343,7 @@ body{
 .btn-bg-color {
     background-color: #D61C4E;
     border:  1px solid #D61C4E;
-    color: aliceblue;
+    color: #fff;
 }
 .btn-bg-outline {
     background-color: antiquewhite;
@@ -350,10 +354,10 @@ body{
     background-color: #D61C4E;
     border:  1px solid #D61C4E;
     /* box-shadow: 0 1px 2px brown; */
-    color: aliceblue;
+    color: #fff;
 }
 .btn-bg-color>a {
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .btn-bg-color:hover{
     background-color: antiquewhite!important;
@@ -366,12 +370,12 @@ body{
 
 @media only screen and (max-width: 540px){
 .Result-img {
-    border-bottom: 1px solid aliceblue;
+    border-bottom: 1px solid #fff;
 }}
 
 @media only screen and (min-width: 541px){
 .Result-img {
-    border-right: 1px solid aliceblue;
+    border-right: 1px solid #fff;
 }}
 
 /* CORRECTED ANSWERS CSS */
@@ -389,25 +393,29 @@ body{
 .corAnswers-Board-Header>h1 {
     color: aqua;
 }
+.corAnswers-Board a {
+    color: #fff;
+    /* text-decoration: none; */
+}
 .corAnswers-Board>ol>li {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    color: aliceblue;
+    color: #fff;
 }
 .corAnswers-Board>ol>li>div {
-    border-right: 2px solid aliceblue;
+    border-right: 2px solid #fff;
 }
 .corAnswers-Board>ol>li>ul>li>strong {
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .corAnswers-Board>ol>li>ul>li>ul {
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .corAnswers-btn>button{
     background-color: #D61C4E;
     /* background-color: antiquewhite; */
     border: 1px solid #D61C4E;
-    color: aliceblue;
+    color: #fff;
 }
 .corAnswers-btn>button:hover {
     background-color: transparent;
@@ -416,7 +424,7 @@ body{
     color: #D61C4E!important;
 }
 .corAnswers-btn>button>a {
-    color: aliceblue!important;
+    color: #fff!important;
 }
 .corAnswers-btn>button>a:hover {
     background-color: transparent!important;

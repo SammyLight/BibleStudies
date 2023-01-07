@@ -145,6 +145,10 @@ body{
 #QandA-section{
     background-color: #0d1117;
 }
+#QandA-section a {
+    color: #f0f6fc;
+    /* text-decoration: none; */
+}
 .fade {
     background-color: rgba(0,0,0,0.4);
 }
@@ -373,6 +377,10 @@ body{
 }
 .corAnswers-Board-Header>h1 {
     color: aqua;
+}
+.corAnswers-Board a {
+    color: #f0f6fc;
+    /* text-decoration: none; */
 }
 .corAnswers-Board>ol>li {
     border-top: 1px solid #ccc;
