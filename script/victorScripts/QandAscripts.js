@@ -212,9 +212,9 @@ function confirm() {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
             rightAnswer.style.backgroundColor = 'green';
             rightAnswer.style.color = 'white';
-                // if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
-                //     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
-                // }            
+                if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
+                    explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
+                }            
         });
     
         currentQuestionsOptions.setAttribute('confirmed', 'yes');
@@ -411,6 +411,14 @@ function explainButtonCreate(opt) {
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
     opt.append(explainButton);
+    return explainButton;
+}
+function explainButtonCreate(answer) {
+    var explainButton = document.createElement("BUTTON");
+    explainButton.classList.add('explainButton');
+    explainButton.innerText = 'Explanation';
+    // 'answer' represents clicked correct answer
+    answer.append(explainButton);
     return explainButton;
 }
 function showAllQuestionsWithAnswers() {
