@@ -1,3 +1,14 @@
+<div class="toggleAllHeaders">
+    <p>Expand All</p>
+    <div>
+		<input type="checkbox" class="checkbox" id="toggleAllBtn" />
+		<label class="label" for="toggleAllBtn">
+			<span id="closeAll" onclick="hideOrShowAllHnum()" class="close"></span>
+			<span id="openAll" onclick="hideOrShowAllHnum()" class="open"></span>
+			<div class="ball"></div>
+		</label>
+	</div>
+</div>
 {{content}}
 {% include AoY-foot.html %}
 <div class="add_space"></div>
