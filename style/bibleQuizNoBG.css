@@ -490,13 +490,13 @@ ul.header-links {
     font-size: 1.5em;
     margin: 0;
 }
-#cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol {
+.aboutRules p, .aboutRules ol {
     font-size: 1rem;
 }
-#cat-bibleQuiz-inner li {
+.aboutRules li {
     list-style-type: decimal;
 }
-#cat-bibleQuiz-inner li li {
+.aboutRules li li {
     list-style: lower-alpha;
 }
 .cat-grid {
@@ -604,7 +604,7 @@ ul.header-links {
 #cat-bibleQuiz-inner h1{
     margin: 0.3em 0;
 }
-#cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol {
+.aboutRules p, .aboutRules ol {
     font-size: 1.5rem;
 }}
 @media screen and (min-width: 767px){

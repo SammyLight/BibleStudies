@@ -25,7 +25,9 @@
 p {
     margin: 0.75em 0.4em 0em 0.4em!important;
 }
-
+.displayNone{
+    word-break: break-word;
+}
 /*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
 h1,
 h2,
@@ -34,6 +36,7 @@ h4,
 h5,
 h6 {
     margin-left: 0.25em !important;
+    word-break: break-word;
 }
 p,
 h1,
@@ -354,4 +357,66 @@ header h1:first-of-type {
 /*DVIC 221119c*/
 .add_space{
     height: 70px;
+}
+
+.openAll{
+    display: block!important;
+}
+.toggleAllHeaders {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    place-items: baseline;
+    margin: 1em 0.5em;
+}
+.toggleAllHeaders p {
+    margin: 0!important;
+}
+.toggleAllHeaders div {
+    place-self: end;
+}
+.checkbox {
+	opacity: 0;
+    display: none;
+	/* position: absolute; */
+}
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* padding: 5px; */
+	position: relative;
+	height: 26px;
+	width: 50px;
+	/* transform: scale(1.5); */
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+    pointer-events: none;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+.open, .close {
+	color: #f1c40f;
+    color: floralwhite;
+}
+.open::before {
+	content: "\2727 ";
+}
+.close::before {
+	content: "\2726 ";
 }
