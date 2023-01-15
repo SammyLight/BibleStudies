@@ -640,8 +640,11 @@ ul.header-links {
 .opacityBG{
     /* height: 100vh; */
     display: grid;
-    grid-template-rows: 10% 20% 60% 10%;
+    grid-template-rows: 10% 15% 5% 60% 10%;
     perspective: 1000px;
+}
+.opacityBGTwo{
+    grid-template-rows: 60px 80px auto 10%;
 }
 /* .QandAbody-section {
     margin-top: 0!important;
@@ -659,7 +662,7 @@ ul.header-links {
     grid-template-rows: minmax(10px, 1fr) auto;
     position: relative;
     grid-template-areas: "col-1 col-2 col-3";
-    width: -webkit-fill-available
+    width: -webkit-fill-available;
 }
 /* .QandA-headerinner {
     border-radius: 3px;
@@ -813,6 +816,17 @@ button{
     width: 95%;
     /* padding: 15px; */
 }
+#subCat{
+    place-content: center;
+    place-self: center;
+    width: 95%;
+    display: flex;
+}
+#subCat>p{
+    background-color: transparent!important;
+    margin: 0;
+    padding: 0!important;
+}
 .Hint-img>img {
     height: 100px;
     height: 55px;
@@ -836,6 +850,7 @@ button{
 /* QandA-BOARD SECTION */
 .QandA-Board{
     height: -webkit-fill-available;
+    position: relative;
 }
 .QandA-Board>ol{
     padding: 0;
@@ -849,15 +864,14 @@ button{
     display: grid;
     place-items: center;
     border-radius: 3px!important;
-    text-align: center;
     text-align: left;
+    text-align: center;
     margin: 0;
 }
-
-.QandA-Board>ol>li>em{
+.QandA-Board>ol>li>em, .QandA-Board>ol>li>p{
     display: none;
 }
-.showHintCSS, .showNewCatCSS{
+.showHintCSS{
     border-radius: 6px;
     display: block!important;
     padding: 70px 20px!important;
@@ -867,6 +881,12 @@ button{
     place-self: center;
     text-align: center;
     z-index: 3;
+}
+.showNewCatCSS{
+    display: block;
+    position: initial;
+    width: auto;
+    z-index: 0;
 }
 .closeHint, .closeSettings, .closeCatSettings{
     border-radius: 6px;
@@ -897,7 +917,7 @@ button{
     -ms-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     -webkit-animation-name: bounceIn;
     -moz-animation-name: bounceIn;
     -o-animation-name: bounceIn;
@@ -1047,14 +1067,15 @@ to {left: 0px;}
 /* MOBILE VIEW */
 @media  only screen and (max-width: 657px){
 #QandA-section{
-    grid-template-rows: 10% 11% 73% 6%;
-    grid-template-rows: 10% 11% auto 6%;
+    grid-template-rows: 10% 10% 4% auto 10%;
     
 }
 .opacityBG{
-    grid-template-rows: 10% 11% auto 6%;
-    grid-template-rows: 10% 11% auto 12%;
+    grid-template-rows: 10% 10% 4% auto 10%;
     min-height: calc(100vh - 80px);
+}
+.opacityBGTwo{
+    grid-template-rows: 10% 11% auto 12%;
 }
 .QandAbody-section {
     /* padding: 0 6px; */
@@ -1098,9 +1119,9 @@ to {left: 0px;}
     width: -webkit-fill-available;
     display: grid;
     place-content: center;
-    padding: 15px 10px
-  }
-.insertedDIV::before {
+    padding: 15px 10px;
+}
+  .insertedDIV::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -1109,7 +1130,7 @@ to {left: 0px;}
     padding: 2px;
     -webkit-mask-composite: xor;
             mask-composite: exclude; 
-  }
+}
 .QandA-Board>ol>li{
     display: grid;
     /* grid-template-rows: 60% 10% auto; */
@@ -1118,14 +1139,18 @@ to {left: 0px;}
     position: relative;
     text-align: center;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     /* border-radius: 2px; */
     font-weight: 400;
     /* left: 50px; */
     top: 5px;
     padding: 45px 10px!important;
     max-width: 90%;
-    width: 76vw;
+    /* width: 76vw; */
+}
+.showNewCatCSS {
+    top: -26px;
+    padding: 10px!important;
 }
 .QandA-Board>ol>li>ul {
     /* margin-top: 50px; */
@@ -1176,9 +1201,13 @@ to {left: 0px;}
     font-size: 1.5em; /* 24px */
     line-height: 24px;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     font-size: 1.0834em; /* 26px */
      line-height: 28px;
+}
+.showNewCatCSS {
+    font-size: 1.0834em;
+    line-height: 15px;
 }
 .QandA-Board>ol>li>ul>li {
     font-size: 0.85em; /* 18px */
@@ -1210,7 +1239,7 @@ to {left: 0px;}
     margin-top: 5px;
     padding: 0.7em 0.5em;
     min-height: 20px;
-    max-height: 35px;
+    max-height: 80px;
 }
 .QandA-Board>ol>li>ul>li::before {
     width: 17px;
@@ -1243,9 +1272,13 @@ to {left: 0px;}
     font-size: 1.375em; /* 22px */
     line-height: 22px;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     font-size: 1.0634em; /* 24px */
     line-height: 26px;
+}
+.showNewCatCSS {
+    font-size: 0.7634em;
+    line-height: 10px;
 }
 .QandA-Board>ol>li>ul>li {
     font-size: 0.75em; /* 16px */
@@ -1274,7 +1307,10 @@ to {left: 0px;}
 }
 .opacityBG{
     height: 100vh;
-    grid-template-rows: 10% 12% auto 10%;
+    grid-template-rows: 10% 12% 5% auto 10%;
+}
+.opacityBGTwo{
+    grid-template-rows: 10% 12% auto 12%;
 }
 .QandAbody-section {
     place-content: space-between;
@@ -1307,7 +1343,7 @@ to {left: 0px;}
     place-content: center;
     padding: 30px 20px
   }
-.insertedDIV::before {
+  .insertedDIV::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -1323,9 +1359,13 @@ to {left: 0px;}
     place-content: start center;
     position: relative;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     padding: 0.5em;
     top: 10px;
+}
+.showNewCatCSS {
+    padding: 20px!important;
+    top: -48px;
 }
 .QandA-Board>ol>li>ul {
     /* margin-top: 40px; */
@@ -1376,15 +1416,20 @@ to {left: 0px;}
 .Hint-img>img {
     height: 70px;
 }
+#subCat {
+    place-content: baseline;
+}
 
 /* QandA-BOARD SECTION */
 #QandA-section{
-    grid-template-rows: 10% 16% auto 21%;
+    grid-template-rows: 60px 90px 30px auto 20%;
 }
 .opacityBG {
-    grid-template-rows: 10% 10% auto 12%;
-    grid-template-rows: 60px 80px auto 10%;
+    grid-template-rows: 60px 90px 30px auto 20%;
     min-height: 100vh;
+}
+.opacityBGTwo{
+    grid-template-rows: 60px 80px auto 10%;
 }
 .QandAbody-section {
     display: grid;
@@ -1429,9 +1474,13 @@ to {left: 0px;}
     grid-template-areas:
         "col-1 col-2";
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     padding: 80px 25px!important;
     top: 10px;
+}
+.showNewCatCSS {
+    padding: 20px!important;
+    top: -49px;
 }
 .QandA-Board>ol>li>ul {
     grid-area: col-2;
@@ -1477,9 +1526,13 @@ to {left: 0px;}
     font-size: 2.75em; /* 44px */
     line-height: 44px;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     font-size: 0.8637em; /* 38px */
     line-height: 36px;
+}
+.showNewCatCSS {
+    font-size: 2.0637em;
+    line-height: 20px;
 }
 .QandA-Board>ol>li>ul>li {
     font-size: 0.7273em; /* 32px */
@@ -1506,9 +1559,13 @@ to {left: 0px;}
     font-size: 2.5em;  /* 40px */
     line-height: 40px;
 }
-.showHintCSS, .showNewCatCSS {
+.showHintCSS {
     font-size: 1.2249em;  /* 50px */
     line-height: 52px;
+}
+.showNewCatCSS {
+    font-size: 1.5249em;
+    /* line-height: 25px; */
 }
 .QandA-Board>ol>li>ul>li {
     font-size: 0.55em;  /* 22px */

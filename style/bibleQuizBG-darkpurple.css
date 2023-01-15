@@ -219,10 +219,12 @@ body{
 .QandA-Board>ol>li {
     color: #fff!important;
 }
+.showHintCSS{
+    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 92%);
+}
 .showHintCSS, .showNewCatCSS{
     background-color: #1a0f30;
     border: 1px solid #1a0f30;
-    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 92%);
     color: #fff!important;
 }
 .closeHint, .closeSettings, .closeCatSettings{
@@ -252,7 +254,7 @@ body{
 @media  only screen and (max-width: 657px){
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before {
+.insertedDIV::before{
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
     -webkit-mask: 
        linear-gradient(#fff 0 0) content-box, 
@@ -275,7 +277,7 @@ body{
 @media only screen and (min-width: 658px){
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before {
+.insertedDIV::before{
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
     -webkit-mask: 
        linear-gradient(#fff 0 0) content-box, 

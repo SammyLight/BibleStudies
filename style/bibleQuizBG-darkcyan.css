@@ -212,11 +212,12 @@ body{
 .QandA-Board>ol>li {
     color: white!important;
 }
-
+.showHintCSS{
+    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 73%);
+}
 .showHintCSS, .showNewCatCSS{
     background-color: darkcyan;
     border: 1px solid darkcyan;
-    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 73%);
     color: white!important;
 }
 .closeHint, .closeSettings, .closeCatSettings{
