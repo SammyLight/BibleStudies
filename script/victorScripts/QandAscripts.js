@@ -4,16 +4,12 @@
 var questions = document.getElementsByTagName('ol')[0].children;
 var resultSection = document.getElementById('quizResult-section');
 var qandAsection = document.getElementById('QandA-section');
-// var QandAcatTemplate = document.getElementById('cat-bibleQuiz');
-// var QandAchooseCat = document.getElementById('chooseCat');
-// var redoQuiz = document.getElementById('redoQuizButton');
 var CorrectedAnswersSection = document.getElementById('CorrectedAnswers-section');
 
 function greyOutON(x) {
     x.style.color = 'grey';
     x.style.pointerEvents = 'none';
 }
-
 function greyOutOFF(x) {
     x.style.color = '';
     x.style.pointerEvents = '';
@@ -26,15 +22,18 @@ greyOutON(prevquestionbutton);
 var questionhint = document.getElementById('questionhint');
 greyOutON(questionhint);
 var questionsIndex = document.getElementById('questionsIndex');
+var performance = document.getElementById('performance');
 var scoreCorrect = document.getElementById('scoreCorrect');
 var scoreMissed = document.getElementById('scoreMissed');
 var totalQuestions = questions.length;
+console.log(totalQuestions);
 var currentQuestionIndex;
 var currentQuestion;
 var nextQuestion;
 var questionCount;
 var previousQuestion = questions[0]; //the first question is the initial previousQuestion
 var questionsArray = [];
+console.log(questionsArray);
 var passFailSequenceArray = [];
 var passedQuestionsArray = [];
 var failedQuestionsArray = [];
@@ -44,15 +43,11 @@ var confirmButtonHasBeenClicked;
 var notLastQuestion = 1;
 var rightBorder = '3px solid brown';
 var modal = document.getElementById('completeQuiz');
-
 var slideIndex = 1;
-showNextOrPrevQuestion(slideIndex);
-
 function plusDivs(n) {
     showNextOrPrevQuestion(slideIndex += n);
     clickSound.play();
 }
-
 function goToPreviousQuestion() {
     if (currentQuestionIndex != 1) {
         confirmButton.innerText = 'Next';
@@ -60,7 +55,6 @@ function goToPreviousQuestion() {
     }
     plusDivs(-1);
 }
-
 for (i = 0; i < questions.length; i++) {
     if (i > 0) {
         questions[i].style.display = "none";
@@ -69,25 +63,65 @@ for (i = 0; i < questions.length; i++) {
     var chances = questions[i].querySelectorAll('LI > STRONG').length;
     questions[i].querySelectorAll('UL')[0].setAttribute('availablechances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
     questions[i].querySelectorAll('UL')[0].setAttribute('maxchances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
-    // var allOptionsUnderQuestion = questions[i].querySelectorAll('UL>LI');
-
-    var parentElementLINowDiv = questions[i].firstChild;
-    var parentElementOL = questions[i];
+    
+    var parentElementLI = questions[i];
+    var parentElementLINowDiv = parentElementLI.firstChild;
+    var parentElmTextNode = parentElementLINowDiv.textContent.replace(/(\((.*)\)[\s\n\r]*)/,'<p>$2</p>');
+    parentElementLINowDiv.remove();
     var createDIV = document.createElement("div");
-    createDIV.append(parentElementLINowDiv);
+    createDIV.innerHTML = parentElmTextNode;
+    if(pIn_createDIV = createDIV.querySelector('p')){
+    parentElementLI.prepend(pIn_createDIV)}
     createDIV.classList.add('insertedDIV');
-    parentElementOL.prepend(createDIV);
+    parentElementLI.prepend(createDIV)
+
     var allOptionsUnderQuestion = document.querySelectorAll('.QandA-Board>OL>LI>UL>LI');
     allOptionsUnderQuestion.forEach(element => {
         element.classList.add('option');
     });
-
     questions[i].querySelector('UL').addEventListener('click', isClickedLiAnAnswer);
     questionsArray.push(questions[i]);
-
 }
+showNextOrPrevQuestion(slideIndex);
+var opacityBG = document.getElementById('opacityBG');
+ var parentElementOL = document.querySelector('#subCat');
+if (parentElementOL.children.length == 0) {
+    parentElementOL.remove();
+    opacityBG.classList.add('opacityBGTwo');
+}   
+var showNewCat;       
+function showNewCatFunc() {
+    var parentElementOL = document.querySelector('#subCat');
+    var showNewCat = currentQuestion.querySelector('p');
+    // console.log(showNewCat);
+    if (showNewCat) {
+        showNewCat.classList.add("showNewCatCSS");
+        let clone = showNewCat.cloneNode(true);
+        parentElementOL.innerHTML="";
+        parentElementOL.prepend(clone);
+        // var getAllPtag = parentElementOL.querySelectorAll("P");
+        // for (let i = 1; i < getAllPtag.length; i++) {
+        //     let onlyOnePtag = getAllPtag[i];
+        //     onlyOnePtag.remove();
+        // }
+        // alert('does exist!');
+    }
+}
+// function noPtagSshowNewCatFunc() {
+//     var parentElementOL = document.querySelector('.showNewCatCSS');
+//     console.log(parentElementOL);
+//     var parentElementLI = currentQuestion;
+//     var showNewCatPrevious = currentQuestion.previousElementSibling.querySelector('p');
+//     console.log(showNewCatPrevious);
+//     var showNewCat = currentQuestion.querySelector('p');
+//     if (!showNewCat) {
+//         let clone = showNewCatPrevious.cloneNode(true);
+//         parentElementLI.prepend(clone);
+//         showNewCatPrevious.remove();
+//         // alert('does not exist!');
+//     }
+// }
 function showNextOrPrevQuestion(n) {
-
     if ((n > totalQuestions) || (n < 1)) {
         slideIndex = 1;
     }
@@ -100,8 +134,9 @@ function showNextOrPrevQuestion(n) {
         nextQuestion = questions[slideIndex];
     }
     currentQuestion.style.display = ""; //Current Question
-    previousQuestion = currentQuestion;
-    questionIndex();
+    if (previousQuestion = currentQuestion) {
+        questionIndex(); 
+    } 
     if ((emph = currentQuestion.querySelector('em')) && (emph.parentElement == currentQuestion)) {
         greyOutOFF(questionhint);
         questionhint.style.display = "grid";
@@ -111,7 +146,12 @@ function showNextOrPrevQuestion(n) {
     }
     if ((emph = currentQuestion.querySelector('p')) && (emph.parentElement == currentQuestion)) {
         showNewCatFunc();
-    }
+    } 
+    // else {
+    //     noPtagSshowNewCatFunc();
+    //     // currentQuestion.previousElementSibling
+    //     // console.log(currentQuestion.previousElementSibling);
+    // }
     if (n == 2) {
         greyOutOFF(prevquestionbutton);
     } else if (n == 1) {
@@ -165,13 +205,14 @@ function confirm() {
         } else {
             qandAsection.style.display = "grid";
             resultSection.style.display = "grid";
-            clapSound.play();
             resultSound.play();
             if (quizBgSound.play()){
                 quizBgSound.pause();
             }
-            scoreCorrect.innerText = passedQuestionsArray.length + '/' + questionsArray.length;
-            scoreMissed.innerText = failedQuestionsArray.length + '/' + questionsArray.length;
+            var passedQuestionsArrayLength = passedQuestionsArray.length;
+            var failedQuestionsArrayLength = failedQuestionsArray.length;
+            scoreCorrect.innerText = passedQuestionsArrayLength + '/' + questionsArray.length;
+            scoreMissed.innerText = failedQuestionsArrayLength + '/' + questionsArray.length;
             // questionsIndex
             for (k = 0; k < passFailSequenceArray.length; k++) {
                 var pf = passFailSequenceArray[k];
@@ -191,9 +232,56 @@ function confirm() {
                     questionsIndex.append(indexSpan);
                 }
             }
-
+            failedPercentage();
         }
     }
+    const totalActivities = 10;
+    const doneActivities = 2;
+    // var totalQsprt = Math.sqrt(totalQuestions)
+    // var totalQround = Math.round(totalQsprt)
+    // console.log(totalQsprt);
+    // console.log(totalQround);
+    document.getElementById('resultImgContainer');
+    document.getElementById('quizCmlpt');
+    var perfectImg = document.createElement('IMG');
+    perfectImg.src = '../images/Trophy7.svg';
+    perfectImg.alt = 'Trophy';
+    var excellentImg = document.createElement('IMG');
+    excellentImg.src = '../images/Trophy10.svg';
+    excellentImg.alt = 'Trophy';
+    var veryGoodImg = document.createElement('IMG');
+    veryGoodImg.src = '../images/Trophy8Silver.svg';
+    veryGoodImg.alt = 'Trophy';
+    var goodImg = document.createElement('IMG');
+    goodImg.src = '../images/Trophy14.svg';
+    goodImg.alt = 'Trophy';
+    function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
+        return (100 * failedQuestionsArrayLength) / totalQuestions;
+    }
+    if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 0) {
+        performance.innerHTML = 'Perfect Score';
+        resultImgContainer.insertBefore(perfectImg, quizCmlpt);
+        clapSound.play();
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 10) {
+        performance.innerHTML = 'Excellent Score';
+        resultImgContainer.insertBefore(excellentImg, quizCmlpt);
+        clapSound.play();
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 40) {
+        performance.innerHTML = 'Very Good Score';
+        resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
+        clapSound.play();
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 75) {
+        performance.innerHTML = 'Good Score';
+        resultImgContainer.insertBefore(goodImg, quizCmlpt);
+        clapSound.play();
+     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 80) {
+        performance.innerHTML = 'Poor Score';
+     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 90) {
+        performance.innerHTML = 'Very Poor Score';
+     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 100) {
+        performance.innerHTML = 'Very Poor Score';
+     }
+    console.log(failedPercentage(failedQuestionsArrayLength, totalQuestions));
     // color selected options which are wrong 'pink'
     if (!currentQuestionsOptions.getAttribute('confirmed')) {
         confirmButton.innerText = 'Next';
@@ -317,11 +405,6 @@ function isClickedLiAnAnswer(event) {
 
                 if (previousClickedULArray.includes(this)) {
                     previousClickedULArray.splice(previousClickedULArray.indexOf(this), 2);
-                    // if (previousClickedULArray.length == questionsArray.length) {
-                    // show the "Quiz Result" li/button after the last Question has been answered;
-                    // quizResult = document.getElementById("quizResult").innerHTML = "Quiz Result";
-                    // quizResult.style.display = "block";
-                    // }
                 }
             }
         }
@@ -340,14 +423,6 @@ function showHintFunc() {
     showHint.classList.toggle("showHintCSS");
     showHintSound.play();
     showHint.prepend(closeHint);
-}
-function showNewCatFunc() {
-    showNewCat = currentQuestion.querySelector("P");
-    showNewCat.classList.add("showNewCatCSS");
-    setTimeout(() => {
-        const elem = document.querySelector(".showNewCatCSS");
-        elem.remove(elem);
-    }, 4500);
 }
 //TO HIDE QUESTION HINT
 function closeHintFunc() {
