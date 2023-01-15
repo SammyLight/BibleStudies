@@ -2,7 +2,7 @@
     <div class="loader"></div>
 </div>
 <section id="QandA-section">
-    <div class="opacityBG">
+    <div id="opacityBG" class="opacityBG">
         {% include QandA-header.html %}
         {% include QandA-settings.html %}
         <div id="CountHint">
@@ -15,7 +15,8 @@
                 </div>
             </div>
         </div>
-        <div class="QandAbody-section">
+        <div id="subCat"></div>
+        <div id="QandAbody-section" class="QandAbody-section">
             <div class="QandA-Board">
                 {{content}}
             </div>
