@@ -1,7 +1,7 @@
 // "use strict";
 // Script for the Toggling between Questions and Question count
 
-var questions = document.getElementsByTagName('ol')[0].children;
+var questions = document.querySelector('.QandA-Board>OL').children;
 var resultSection = document.getElementById('quizResult-section');
 var qandAsection = document.getElementById('QandA-section');
 var CorrectedAnswersSection = document.getElementById('CorrectedAnswers-section');
@@ -447,21 +447,40 @@ document.addEventListener('mouseup', function(e) {
         }
 });
 var settingsContent;
+var rulesContent;
 var closeSettings = document.createElement("SPAN");
 closeSettings.classList.add('closeSettings');
 closeSettings.innerText = 'x';
 closeSettings.addEventListener('click', closeSettingsFunc);
+var closeRules = document.createElement("SPAN");
+closeRules.classList.add('closeSettings');
+closeRules.innerText = 'x';
+closeRules.addEventListener('click', closeRulesFunc);
 
+//TO SHOW SETTINGS AND RULES
 function showSettings() {
     settingsContent = document.getElementById("settingsContent");
     settingsContent.classList.toggle("show");
     showHintSound.play();
     settingsContent.prepend(closeSettings);
 }
-//TO HIDE SETTINGS
+function showRules() {
+    rulesContent = document.getElementById("rulesContent");
+    rulesContent.classList.toggle("show");
+    showHintSound.play();
+    rulesContent.prepend(closeRules);
+}
+//TO HIDE SETTINGS AND RULES
 function closeSettingsFunc() {
     if (settingsContent.className == "show") {
         settingsContent.className = "";
+      }
+      clickSound.play(); 
+      closeHintSound.play();
+}
+function closeRulesFunc() {
+    if (rulesContent.className == "show") {
+        rulesContent.className = "";
       }
       clickSound.play(); 
       closeHintSound.play();
