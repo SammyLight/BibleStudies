@@ -743,6 +743,14 @@ button{
     opacity: 0.8;
     padding-left: 8px;
 }
+#rulesContent{
+    display: none;
+    z-index: 1100;
+    position: absolute;
+    /* height: 100vh; */
+    top: 0;
+}
+}
 #audioSettings, #catAudioSettings {
     display: flex;
 }
@@ -895,6 +903,7 @@ button{
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 1;
 }
 .showHintCSS>a, .showNewCatCSS>a {
     text-decoration: underline;
@@ -917,7 +926,7 @@ button{
     -ms-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
 }
-.showHintCSS {
+.showHintCSS, #rulesContent {
     -webkit-animation-name: bounceIn;
     -moz-animation-name: bounceIn;
     -o-animation-name: bounceIn;
@@ -1622,7 +1631,8 @@ to {left: 0px;}
     box-sizing: border-box;
     /* font-family: jaf-bernino-sans-condensed,sans-serif!important; */
     font-family: 'DynaPuff', cursive!important;
-    height: 90%;
+    height: auto;
+    min-height: 90%;
     width: 90%;
     padding: 3px;
     place-self: center;
