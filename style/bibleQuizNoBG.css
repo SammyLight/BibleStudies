@@ -1616,6 +1616,8 @@ to {left: 0px;}
     font-size: 20px;
 }
 .Result-Board {
+    display: grid;
+    place-content: center;
     border-radius: 6px!important;
     box-sizing: border-box;
     /* font-family: jaf-bernino-sans-condensed,sans-serif!important; */
@@ -1747,6 +1749,9 @@ to {left: 0px;}
     width: 32%;
 }}
 @media only screen and (min-width: 1024px){
+    .Result-Board{
+        place-content: inherit;
+    }
 }
 
 /* MOBILE VIEW FONT SIZES CSS */
