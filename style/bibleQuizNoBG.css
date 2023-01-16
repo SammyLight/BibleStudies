@@ -1631,7 +1631,8 @@ to {left: 0px;}
     box-sizing: border-box;
     /* font-family: jaf-bernino-sans-condensed,sans-serif!important; */
     font-family: 'DynaPuff', cursive!important;
-    height: 90%;
+    height: auto;
+    min-height: 90%;
     width: 90%;
     padding: 3px;
     place-self: center;
