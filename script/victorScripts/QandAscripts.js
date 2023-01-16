@@ -26,14 +26,12 @@ var performance = document.getElementById('performance');
 var scoreCorrect = document.getElementById('scoreCorrect');
 var scoreMissed = document.getElementById('scoreMissed');
 var totalQuestions = questions.length;
-console.log(totalQuestions);
 var currentQuestionIndex;
 var currentQuestion;
 var nextQuestion;
 var questionCount;
 var previousQuestion = questions[0]; //the first question is the initial previousQuestion
 var questionsArray = [];
-console.log(questionsArray);
 var passFailSequenceArray = [];
 var passedQuestionsArray = [];
 var failedQuestionsArray = [];
@@ -255,6 +253,8 @@ function confirm() {
     var goodImg = document.createElement('IMG');
     goodImg.src = '../images/Trophy14.svg';
     goodImg.alt = 'Trophy';
+    var poorScore = document.createElement('H3');
+    poorScore.innerHTML = 'No trophy for you, you really need to do better.';
     function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
         return (100 * failedQuestionsArrayLength) / totalQuestions;
     }
@@ -262,24 +262,27 @@ function confirm() {
         performance.innerHTML = 'Perfect Score';
         resultImgContainer.insertBefore(perfectImg, quizCmlpt);
         clapSound.play();
-    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 10) {
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 20) {
         performance.innerHTML = 'Excellent Score';
         resultImgContainer.insertBefore(excellentImg, quizCmlpt);
         clapSound.play();
-    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 40) {
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 40) {
         performance.innerHTML = 'Very Good Score';
         resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
         clapSound.play();
-    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 75) {
+    } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 60) {
         performance.innerHTML = 'Good Score';
         resultImgContainer.insertBefore(goodImg, quizCmlpt);
         clapSound.play();
-     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 80) {
+     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 80) {
         performance.innerHTML = 'Poor Score';
-     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) < 90) {
+        resultImgContainer.insertBefore(poorScore, quizCmlpt);
+     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 99.9) {
         performance.innerHTML = 'Very Poor Score';
+        resultImgContainer.insertBefore(poorScore, quizCmlpt);
      } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 100) {
         performance.innerHTML = 'Very Poor Score';
+        resultImgContainer.insertBefore(poorScore, quizCmlpt);
      }
     console.log(failedPercentage(failedQuestionsArrayLength, totalQuestions));
     // color selected options which are wrong 'pink'
