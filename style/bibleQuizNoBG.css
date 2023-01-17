@@ -750,7 +750,6 @@ button{
     /* height: 100vh; */
     top: 0;
 }
-}
 #audioSettings, #catAudioSettings {
     display: flex;
 }
@@ -1642,6 +1641,7 @@ to {left: 0px;}
     padding: 10px;
     border-radius: 6px;
     height: 95%;
+    width: 95%;
 }
 .Result-Board h2 {
     font-size: 1.5em;

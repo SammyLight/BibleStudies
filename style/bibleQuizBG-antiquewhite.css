@@ -114,7 +114,8 @@ hr {
     -webkit-text-stroke-color: honeydew;
 }
 #cat-bibleQuiz-inner h5, #cat-bibleQuiz-inner h6 {
-    color: black;
+    /* color: black; */
+    color: chocolate;
 }
 #cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol{
     color: brown;
@@ -318,7 +319,8 @@ hr {
     color: chocolate;
 }
 .Result-Board {
-    background: linear-gradient(to top, #FFA500,#d53a9d);
+    /* background: linear-gradient(to top, #FFA500,#d53a9d); */
+    background-color: antiquewhite;
     color: brown!important;
     box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 85%);
 }
