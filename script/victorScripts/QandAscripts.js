@@ -257,7 +257,7 @@ function confirm() {
     poorImg.src = '../images/sadEmoji.svg';
     poorImg.alt = 'Trophy';
     var poorScore = document.createElement('H5');
-    poorScore.innerHTML = "But unfortunately there's no trophy for you, you really need to do better.";
+    poorScore.innerHTML = "But unfortunately there's no trophy for you, you really need to do better next time.";
 
     function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
         return (100 * failedQuestionsArrayLength) / totalQuestions;
