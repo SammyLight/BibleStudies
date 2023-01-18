@@ -233,14 +233,13 @@ function confirm() {
             failedPercentage();
         }
     }
-    const totalActivities = 10;
-    const doneActivities = 2;
-    // var totalQsprt = Math.sqrt(totalQuestions)
-    // var totalQround = Math.round(totalQsprt)
-    // console.log(totalQsprt);
-    // console.log(totalQround);
     document.getElementById('resultImgContainer');
     document.getElementById('quizCmlpt');
+    document.getElementById('redoBtn');
+    document.getElementById('reviewBtn');
+    document.getElementById('newBtn');
+    document.getElementById('poorPerPopup');
+    document.getElementById('openResultBtn');
     var perfectImg = document.createElement('IMG');
     perfectImg.src = '../images/Trophy7.svg';
     perfectImg.alt = 'Trophy';
@@ -251,40 +250,60 @@ function confirm() {
     veryGoodImg.src = '../images/Trophy8Silver.svg';
     veryGoodImg.alt = 'Trophy';
     var goodImg = document.createElement('IMG');
-    goodImg.src = '../images/Trophy14.svg';
+    goodImg.src = '../images/Trophy11.svg';
     goodImg.alt = 'Trophy';
-    var poorScore = document.createElement('H3');
-    poorScore.innerHTML = 'No trophy for you, you really need to do better.';
+    var poorImg = document.createElement('IMG');
+    poorImg.src = '../images/sadEmoji.svg';
+    poorImg.alt = 'Trophy';
+    var poorScore = document.createElement('H5');
+    poorScore.innerHTML = "But unfortunately there's no trophy for you, you really need to do better.";
     function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
         return (100 * failedQuestionsArrayLength) / totalQuestions;
     }
     if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 0) {
         performance.innerHTML = 'Perfect Score';
-        resultImgContainer.insertBefore(perfectImg, quizCmlpt);
+        // resultImgContainer.insertBefore(perfectImg, quizCmlpt);
+        resultImgContainer.append(perfectImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 20) {
         performance.innerHTML = 'Excellent Score';
-        resultImgContainer.insertBefore(excellentImg, quizCmlpt);
+        // resultImgContainer.insertBefore(excellentImg, quizCmlpt);
+        resultImgContainer.append(excellentImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 40) {
         performance.innerHTML = 'Very Good Score';
-        resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
+        // resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
+        resultImgContainer.append(veryGoodImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 60) {
         performance.innerHTML = 'Good Score';
-        resultImgContainer.insertBefore(goodImg, quizCmlpt);
+        // resultImgContainer.insertBefore(goodImg, quizCmlpt);
+        resultImgContainer.append(goodImg);
         clapSound.play();
      } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 80) {
-        performance.innerHTML = 'Poor Score';
-        resultImgContainer.insertBefore(poorScore, quizCmlpt);
-     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 99.9) {
-        performance.innerHTML = 'Very Poor Score';
-        resultImgContainer.insertBefore(poorScore, quizCmlpt);
-     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 100) {
-        performance.innerHTML = 'Very Poor Score';
-        resultImgContainer.insertBefore(poorScore, quizCmlpt);
-     }
-    console.log(failedPercentage(failedQuestionsArrayLength, totalQuestions));
+         performance.innerHTML = 'Poor Score';
+         poorPerPopup.style.display = 'grid';
+         openResultBtn.addEventListener('click', closePopup);
+         function closePopup() {
+             if (poorPerPopup.style.display == 'grid') {
+                 poorPerPopup.style.display = 'none'
+             }
+         }
+         resultImgContainer.append(poorScore);
+         resultImgContainer.insertBefore(poorImg, poorScore);
+        } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 99.9 || failedPercentage(failedQuestionsArrayLength, totalQuestions) == 100) {
+            performance.innerHTML = 'Very Poor Score';
+            poorPerPopup.style.display = 'grid';
+            openResultBtn.addEventListener('click', closePopup);
+            function closePopup() {
+                if (poorPerPopup.style.display == 'grid') {
+                    poorPerPopup.style.display = 'none'
+                }
+            }
+            resultImgContainer.append(poorScore);
+            resultImgContainer.insertBefore(poorImg, poorScore);
+        }
+    
     // color selected options which are wrong 'pink'
     if (!currentQuestionsOptions.getAttribute('confirmed')) {
         confirmButton.innerText = 'Next';
@@ -302,7 +321,7 @@ function confirm() {
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
             rightAnswer.style.backgroundColor = 'green';
-            rightAnswer.style.color = 'white';
+                rightAnswer.style.color = 'white';
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
@@ -394,7 +413,7 @@ function isClickedLiAnAnswer(event) {
                 previousClickedULArray.push(this);
                 if (previousClickedULArray.length == questionsArray.length) {
                     // show the "Quiz Result" li/button after the last Question has been answered;
-                    quizResult = document.getElementById("quizResult").innerHTML = "Quiz Result";
+                    // quizResult = document.getElementById("quizResult").innerHTML = "Quiz Result";
                     // quizResult.style.display = "block";
 
                 }
@@ -405,7 +424,6 @@ function isClickedLiAnAnswer(event) {
             chancesLeft = Number(chancesLeft) + 1
             actualClickedOption.parentElement.setAttribute('availablechances', chancesLeft);
             if (chancesLeft == maxchances) {
-
                 if (previousClickedULArray.includes(this)) {
                     previousClickedULArray.splice(previousClickedULArray.indexOf(this), 2);
                 }
