@@ -1585,7 +1585,7 @@ to {left: 0px;}
     font-family: poppins!important;
     font-family: 'DynaPuff', cursive!important;
     font-style: normal;
-    grid-template-rows: 1% 85% 15%;
+    grid-template-rows: 0% 85% 15%;
     width: -webkit-fill-available;
     height: 100vh;
     /* min-height: calc(100vh - 50px); */
@@ -1736,7 +1736,7 @@ to {left: 0px;}
 
 @media only screen and (max-width: 540px){
 #quizResult-section{
-    min-height: calc(100vh - 50px);
+    height: calc(100vh - 50px);
 }
 .Result-img>img {
     height: 150px;
