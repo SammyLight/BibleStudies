@@ -178,7 +178,7 @@ body{
 } */
 
 .quizCatLink a {
-    color: lightblue!important;
+    color: lightblue;
 }
 .quizCatLink span>i{
     background: -webkit-linear-gradient(#f3ec78, #af4261);
@@ -341,6 +341,12 @@ body{
 }
 .performance ol:first-of-type {
     color: green;
+}
+#poorPerPopup{
+    background-color: #1a0f30;
+    border:  1px solid #1a0f30;
+    color: antiquewhite;
+    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 95%);
 }
 .btn-bg-color {
     background-color: #D61C4E;

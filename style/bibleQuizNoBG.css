@@ -709,7 +709,7 @@ button{
 #settings>img {
     height: -webkit-fill-available;
 }
-#settingsContent, #catSettingsContent {
+#settingsContent, #catSettingsContent, #poorPerPopup {
     border-radius: 6px;
     display: none;
     font-size: 1.25em;
@@ -724,10 +724,10 @@ button{
     gap: 10px;
     text-transform: uppercase;
 }
-#settingsContent a, #catSettingsContent a {
+#settingsContent a, #catSettingsContent a, #poorPerPopup a{
     text-decoration: none;
 }
-.settingsContentInner, .catSettingsContentInner {
+.settingsContentInner, .catSettingsContentInner, #poorPerPopup {
     display: grid;
     gap: 10px;
     place-self: center;
@@ -908,24 +908,7 @@ button{
     text-decoration: underline;
     place-self: center;
 }
-.QandA-Board>ol>li {
-    -webkit-animation-name: bounceIn;
-    -moz-animation-name: bounceIn;
-    -o-animation-name: bounceIn;
-    -ms-animation-name: bounceIn;
-    animation-name: bounceIn;
-    -webkit-animation-duration: .6s;
-    -moz-animation-duration: .6s;
-    -o-animation-duration: .6s;
-    -ms-animation-duration: .6s;
-    animation-duration: .6s;
-    -webkit-animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    -o-animation-timing-function: ease-out;
-    -ms-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-}
-.showHintCSS, #rulesContent {
+.QandA-Board>ol>li, .showHintCSS, #rulesContent, #settingsContent, #catSettingsContent, #poorPerPopup, #quizResult-section {
     -webkit-animation-name: bounceIn;
     -moz-animation-name: bounceIn;
     -o-animation-name: bounceIn;
@@ -1234,6 +1217,9 @@ to {left: 0px;}
     width: 28px;
     height: 28px;
 }
+.vl {
+    margin: 0px 4px;
+}
 .QandA-BoardLinks{
     margin-top: 15px;
 }
@@ -1264,6 +1250,9 @@ to {left: 0px;}
 
 /* FONT SIZES QandA-BOARD SECTION */
 @media only screen and (max-width: 300px){
+#settingsContent, #catSettingsContent, #poorPerPopup {
+    font-size: 1.05em;
+}
 /* HEADER SECTION */
 #questioncount, #questionhint, .quizCatLink, #nextPrevButton, #questionhint {
     font-size: 0.9em!important;
@@ -1328,7 +1317,6 @@ to {left: 0px;}
     grid-template-areas: "col-1";
     place-content: center;
 }
-
 /* HEADER SECTION */
 .QandA-header{
     grid-template-columns: 30% 10% 55%;
@@ -1410,13 +1398,11 @@ to {left: 0px;}
     grid-template-columns: 20% 20% 55%;
     padding: 10px 0;
 }
-#settingsContent, #catSettingsContent {
-    font-size: 2em;
+#settingsContent, #catSettingsContent, #poorPerPopup {
     gap: 15px;
     width: 50vw;
 }
 #themeSettings ul, #catThemeSettings ul {
-    font-size: 22px!important;
     gap: 10px;
     /* margin-top: 10px; */
     padding-left: 10px;
@@ -1520,8 +1506,12 @@ to {left: 0px;}
 
 /* DESKTOP FONT SIZES CSS */
 
-/* FONT SIZES HEADER SECTION */
 @media only screen and (min-width: 658px){
+#settingsContent, #catSettingsContent, #poorPerPopup{
+    font-size: 2.25em;
+}
+    
+/* FONT SIZES HEADER SECTION */
 .quizCatLink, #nextPrevButton,#questionhint{
     font-size: 2.5em!important;  /* 40px */
 }
@@ -1555,6 +1545,12 @@ to {left: 0px;}
 }}
 
 @media only screen and (min-width: 1024px){
+#settingsContent, #catSettingsContent, #poorPerPopup {
+    font-size: 2em;
+}
+#themeSettings ul, #catThemeSettings ul {
+    font-size: 22px!important;
+}
 .quizCatLink, #nextPrevButton, #questionhint{
     font-size: 1.563em!important; /* 25px */
 }
@@ -1589,10 +1585,10 @@ to {left: 0px;}
     font-family: poppins!important;
     font-family: 'DynaPuff', cursive!important;
     font-style: normal;
-    grid-template-rows: 85% 15%;
+    grid-template-rows: 1% 85% 15%;
     width: -webkit-fill-available;
-    /* height: 100vh; */
-    min-height: calc(100vh - 50px);
+    height: 100vh;
+    /* min-height: calc(100vh - 50px); */
     position: absolute;
     top: 0;
 }
@@ -1642,6 +1638,7 @@ to {left: 0px;}
     border-radius: 6px;
     height: 95%;
     width: 95%;
+    position: relative;
 }
 .Result-Board h2 {
     font-size: 1.5em;
@@ -1650,6 +1647,10 @@ to {left: 0px;}
 }
 .Result-Board h4 {
     font-size: 1em;
+    margin: 10px 0;
+}
+.Result-Board h5 {
+    font-size: 0.83em;
     margin: 10px 0;
 }
 .Result-Board>div>span {
@@ -1683,11 +1684,34 @@ to {left: 0px;}
 .performance li:last-child {
     place-self: end;
 }
+/* poor performance popup css */
+#poorPerPopup{
+    display: none;
+    top: 200px;
+    text-align: center;
+    /* width: 200px;
+    padding: 20px;
+    border-radius: 6px;
+    position: absolute; */
+}
+#poorPerPopup p {
+    margin: 0;
+}
+.popupBtn{
+    display: flex!important;
+    width: 100%!important;
+    padding: 0!important;
+}
+.popupBtn>button{
+    height: auto;
+    min-height: 40px;
+}
 .Result-btn {
     margin: 0;
     padding: 0 15px;
     place-self: start center;
     text-align: center;
+    z-index: 1;
 }
 .Result-btn>button {
     font-family: 'DynaPuff', cursive!important;
@@ -1711,13 +1735,16 @@ to {left: 0px;}
 }
 
 @media only screen and (max-width: 540px){
+#quizResult-section{
+    min-height: calc(100vh - 50px);
+}
 .Result-img>img {
     height: 150px;
 }
 .performance ol {
     grid-template-columns: 45% 20% 30%;
     place-content: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 .Result-btn {
     /* display: grid; */
@@ -1725,16 +1752,29 @@ to {left: 0px;}
     width: 90%;
 }
 .Result-btn>button{
-    height: 40px;
+    min-height: 40px;
     text-align: center;
     width: 48%;
+}
+.popupBtn>button{
+    width: 38%!important;
+    height: auto!important;
+    min-height: 40px;
 }}
 @media only screen and (max-width: 285px){
+.Result-img>img {
+    height: 120px;
+}
 .performance ol {
     grid-template-columns: 50% 20% 25%;
 }
 .Result-btn>button{
+    min-height: 30px;
     width: 47%;
+}
+.popupBtn>button{
+    min-height: 30px;
+    width: 37%!important;
 }}
 
 @media only screen and (min-width: 541px){
@@ -1748,6 +1788,9 @@ to {left: 0px;}
 .performance {
     padding-left: 10px;
 }
+#poorPerPopup {
+    top: 290px;
+}
 .Result-btn{
     width: 85%;
 }
@@ -1757,24 +1800,41 @@ to {left: 0px;}
 @media only screen and (min-width: 963px){
 .Result-btn>button {
     width: 32%;
+}
+.popupBtn>button{
+    width: 32%!important;
 }}
 @media only screen and (min-width: 1024px){
-    .Result-Board{
-        place-content: inherit;
-    }
+.Result-Board{
+    place-content: inherit;
 }
+#poorPerPopup{
+    top: 150px;
+}
+.popupBtn>button {
+    width: 63%!important;
+}}
 
 /* MOBILE VIEW FONT SIZES CSS */
+.popupBtn>button{
+    font-size: 1.363em!important;
+}
 @media only screen and (max-width: 540px){
 .performance ol{
     font-size: 28px;
 }
 .Result-btn>button{
     font-size: 1.125em; /* 18px */
+}
+.popupBtn>button{
+    font-size: 0.6em!important;
 }}
 @media only screen and (max-width: 394px){ 
 .Result-btn>button {
     font-size: 0.88em; /* 14px */
+}
+.popupBtn>button{
+    font-size: 0.48em!important;
 }}
 @media only screen and (max-width: 285px){
 .Result-Board h2 {
@@ -1785,16 +1845,25 @@ to {left: 0px;}
 }
 .Result-btn>button{
     font-size: 0.7em; /* 13.5px */
+}
+.popupBtn>button{
+    font-size: 0.48em!important;
 }}
 @media only screen and (min-width: 541px){
 .Result-Board h2 {
     font-size: 2em;
+}
+.popupBtn>button {
+    font-size: 0.653em!important;
 }}
 
 /* DESKTOP VIEW FONT SIZES CSS */
 @media only screen and (min-width: 1024px){
 .Result-Board h2 {
     font-size: 2.5em;
+}
+.popupBtn>button {
+    font-size: 0.663em!important;
 }}
 
 /* CORRECTED ANSWERS CSS */
@@ -1852,6 +1921,9 @@ to {left: 0px;}
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.corAnswers-Board p {
+    display: none!important;
 }
 .corAnswers-Board>ol>li {
     display: flex;

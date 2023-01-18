@@ -326,6 +326,12 @@ body{
 .performance ol:first-of-type {
     color: green;
 }
+#poorPerPopup{
+    background-color: crimson;
+    border: 1px solid crimson;
+    color: white;
+    box-shadow: 3px -500px 22px 2000px rgb(0 0 0 / 95%);
+}
 .btn-bg-color {
     background-color: white;
     border:  1px solid white;
