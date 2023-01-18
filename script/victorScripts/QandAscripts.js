@@ -1,6 +1,7 @@
 // "use strict";
 // Script for the Toggling between Questions and Question count
-
+var head = document.head;
+var body = document.body;
 var questions = document.querySelector('.QandA-Board>OL').children;
 var resultSection = document.getElementById('quizResult-section');
 var qandAsection = document.getElementById('QandA-section');
@@ -257,27 +258,44 @@ function confirm() {
     poorImg.alt = 'Trophy';
     var poorScore = document.createElement('H5');
     poorScore.innerHTML = "But unfortunately there's no trophy for you, you really need to do better.";
+
     function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
         return (100 * failedQuestionsArrayLength) / totalQuestions;
     }
+    function animationCssAndJsFunc() {
+        // CREATE ANIMATION CSS
+        var animationCssFile = document.createElement('link');
+        animationCssFile.id = 'animationCssFile'
+        animationCssFile.type = 'text/css';
+        animationCssFile.href = '../style/bibleQuizAnimation.css';
+        animationCssFile.rel = 'stylesheet';
+        head.appendChild(animationCssFile);
+
+        // CREATE ANIMATION JS
+        var animationJsFile = document.createElement('script');
+        animationJsFile.id = 'animationJsFile'
+        animationJsFile.type = 'text/javascript';
+        animationJsFile.src = '../script/victorScripts/QandAscriptsAnimation.js';
+        body.appendChild(animationJsFile);
+    }
     if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 0) {
         performance.innerHTML = 'Perfect Score';
-        // resultImgContainer.insertBefore(perfectImg, quizCmlpt);
+        animationCssAndJsFunc();
         resultImgContainer.append(perfectImg);
         clapSound.play();
+
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 20) {
         performance.innerHTML = 'Excellent Score';
-        // resultImgContainer.insertBefore(excellentImg, quizCmlpt);
+        animationCssAndJsFunc();
         resultImgContainer.append(excellentImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 40) {
         performance.innerHTML = 'Very Good Score';
-        // resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
+        animationCssAndJsFunc();
         resultImgContainer.append(veryGoodImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 60) {
         performance.innerHTML = 'Good Score';
-        // resultImgContainer.insertBefore(goodImg, quizCmlpt);
         resultImgContainer.append(goodImg);
         clapSound.play();
      } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 80) {
@@ -690,7 +708,6 @@ function bgSoundPlayButton() {
 }
 
 // FOR TOGGLING THEMES
-var head = document.head;
 var antiqueWhiteCssFile;
 var blackPearlCssFile;
 var crimsonCssFile;
@@ -724,7 +741,7 @@ function getDarkOrLightModeFROMCache(){
 function changeToAntiquewhiteTheme() {
     setDarkOrLightModeInCache('AntiquewhiteTheme')
     antiqueWhiteCssFile = document.createElement('link');
-    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile"'
+    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile'
     antiqueWhiteCssFile.type = 'text/css';
     antiqueWhiteCssFile.href = '../style/bibleQuizBG-antiquewhite.css';
     antiqueWhiteCssFile.rel = 'stylesheet';
@@ -737,7 +754,7 @@ function changeToAntiquewhiteTheme() {
 function changeToBlackPearlTheme() {
     setDarkOrLightModeInCache('BlackPearlTheme')
     blackPearlCssFile = document.createElement('link');
-    blackPearlCssFile.id = 'blackPearlCssFile"'
+    blackPearlCssFile.id = 'blackPearlCssFile'
     blackPearlCssFile.type = 'text/css';
     blackPearlCssFile.href = '../style/bibleQuizBG-blackpearl.css';
     blackPearlCssFile.rel = 'stylesheet';
@@ -750,7 +767,7 @@ function changeToBlackPearlTheme() {
 function changeToCrimsonTheme() {
     setDarkOrLightModeInCache('CrimsonTheme')
     crimsonCssFile = document.createElement('link');
-    crimsonCssFile.id = 'crimsonCssFile"'
+    crimsonCssFile.id = 'crimsonCssFile'
     crimsonCssFile.type = 'text/css';
     crimsonCssFile.href = '../style/bibleQuizBG-crimson.css';
     crimsonCssFile.rel = 'stylesheet';
@@ -763,7 +780,7 @@ function changeToCrimsonTheme() {
 function changeToDarkCyanTheme() {
     setDarkOrLightModeInCache('DarkCyanTheme')
     darkCyanCssFile = document.createElement('link');
-    darkCyanCssFile.id = 'darkCyanCssFile"'
+    darkCyanCssFile.id = 'darkCyanCssFile'
     darkCyanCssFile.type = 'text/css';
     darkCyanCssFile.href = '../style/bibleQuizBG-darkcyan.css';
     darkCyanCssFile.rel = 'stylesheet';
