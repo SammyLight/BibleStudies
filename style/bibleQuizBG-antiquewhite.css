@@ -374,12 +374,12 @@ hr {
     color: brown;
 }
 
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 1023px){
 .Result-img {
     border-bottom: 1px solid brown;
 }}
 
-@media only screen and (min-width: 541px){
+@media only screen and (min-width: 1024px){
 .Result-img {
     border-right: 1px solid brown;
 }}

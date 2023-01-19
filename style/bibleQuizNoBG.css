@@ -114,25 +114,24 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
-#quizResult-section, #CorrectedAnswers-section {
+#quizResult-section, #CorrectedAnswers-section,.corAnswers-Board .explainButton, audio{
     display: none;
 }
-
 /* Custom CSS */
-ul, ol, li {
+ul, ol, li{
     list-style-type: none;
 }
-hr {
+hr{
     width: -webkit-fill-available;
     border-radius: 5px;
 }
-.icons {
+.icons{
     font-size: 20px ;
 }
-.show {
+.show{
     display: grid!important;
 }
-.hide {
+.hide{
     display:none!important;
 }
 .content{
@@ -150,9 +149,6 @@ hr {
     font-size: medium;
     z-index: 1;
 }
-.corAnswers-Board .explainButton {
-    display: none;
-}
 .QandA-BoardLinks{
     font-family: 'DynaPuff', cursive!important;
     display: grid;
@@ -160,7 +156,7 @@ hr {
     padding: 0 10px;
     z-index: 1;
 }
-#quizCatName {
+#quizCatName{
     border-radius: 13px;
     /* font-weight: bolder; */
     font-size: larger;
@@ -169,7 +165,7 @@ hr {
     /* border: gray 1px solid; */
     /* width: 130px; */
 }
-#confirmButton {
+#confirmButton{
     border-radius: 6px;
     font-family: 'DynaPuff', cursive!important;
     font-weight: bold;
@@ -179,72 +175,41 @@ hr {
     text-transform: capitalize;
     width: auto;
 }
-#confirmButton:hover {
+#confirmButton:hover{
     font-weight: bolder;
 }
 
 /* Choose QandA-Categories CSS */
-audio {
-    display: none;
-}
-/* #playButtonCat, #pauseButtonCat {
-    font-size: 16px;
-    position: absolute;
-    bottom: 2px;
-    left: 3px;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    padding: 15px;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: all 0.4s ease-out;
-  } */
-  button.fadeOut:hover {
+button.fadeOut:hover{
     opacity: 1!important;
-  }
-  /* #playButtonCat{
-    display: none;
-  } */
-  .catSettings{
+}
+.catSettings{
     position: absolute;
     bottom: 0;
     right: 0;
-  }
-.catSettings>img {
-    /* height: -webkit-fill-available; */
+}
+.catSettings>img{
     width: 50px;
 }
-  
-  /* .fadeOut {
-    opacity: 0.2!important;
-    bottom: 0!important;
-    left: 0!important;
-    transform: translate(0, 0)!important;
-  } */
-.choosecat-grid {
+.choosecat-grid{
     font-family: 'DynaPuff', cursive!important;
     display: grid;
     grid-template-rows: 10% 90%;
     grid-template-columns: 100%;
-    /* height: 100vh; */
     min-height: calc(100vh - 80px);
     position: relative;
 }
-.choosecat-grid-inner {
+.choosecat-grid-inner{
     display: grid;
     place-content: center;
     grid-template-columns: 90%;
     width: 100%;
 }
-.choosecat-grid-inner>div {
+.choosecat-grid-inner>div{
     display: grid;
     gap: 10px;
 }
-.choosecat-grid-inner>div>button {
+.choosecat-grid-inner>div>button{
     border-radius: 15px;
     font-size: 1.375em!important;
     font-weight: bold;
@@ -255,11 +220,11 @@ audio {
     text-transform: capitalize;
     width: -webkit-fill-available;
 }
-.choosecat-grid a {
+.choosecat-grid a{
     text-decoration: none;
     display: block;
 }
-.choosecat-grid h2 {
+.choosecat-grid h2{
     font-size: 1.8em;
     place-self: end;
     margin: 2em 0;
@@ -268,32 +233,31 @@ audio {
 }
 
 @media only screen and (min-width: 376px){
-.choosecat-grid-inner>div>button, .choosecat-grid h2 {
+.choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 2em!important;
 }}
 @media only screen and (min-width: 410px){
-.choosecat-grid-inner>div>button, .choosecat-grid h2 {
+.choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 2.2em!important;
 }}
 
 @media only screen and (min-width: 540px){
-.choosecat-grid-inner>div>button, .choosecat-grid h2 {
+.choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 2.5em!important;
 }
-.choosecat-grid-inner>div {
+.choosecat-grid-inner>div{
     display: grid;
     gap: 20px;
 }}
 
 @media only screen and (min-width: 768px){
-.choosecat-grid-inner>div>button, .choosecat-grid h2 {
+.choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 3em!important;
 }}
 
 @media only screen and (min-width: 912px){
 .choosecat-grid {
     grid-template-rows: 10% 90%;
-    /* grid-template-columns: 90%; */
     place-items: center;
     height: 100vh;
 }
@@ -328,41 +292,41 @@ display: none!important;
     overflow: visible;
     position: relative;
 }
-.churchLOGO {
+.churchLOGO{
     display: -ms-grid;
     display: grid;
     place-content: center start;
     place-self: normal;
 }
-.headerUL {
+.headerUL{
     display: -ms-grid;
     display: grid;
     place-content: center start;
 }
-ul.header-links {
+ul.header-links{
     column-gap: 1em;
     display: -webkit-box;
     display: flex;
     margin: 0!important;
     padding: 0;
 }
-.header-links-li {
+.header-links-li{
     list-style-type: none;
     margin: 0;
 }
-.header-links-li>a {
+.header-links-li>a{
     font-size: 100%!important;
     padding: 15px 10px;
     text-decoration: none!important;
 }
-.align-items {
+.align-items{
     align-items: center;
 }
 @media only screen and (max-width: 589px){
 #cat-headerbar{
     grid-template-columns: 35% 55% 10%;
 }
-#catSettingsContent {
+#catSettingsContent{
     top: 0;
     left: 11%;
 }
@@ -510,6 +474,18 @@ ul.header-links {
 }
 #cat-bibleQuiz-inner h5{
     font-size: 1.2rem;
+}}
+@media only screen and (max-width: 350px){
+.cat-grid {
+    display: -ms-grid;
+    display: grid;
+    font-size: 0.9em;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    -ms-grid-columns: (1fr)[2];
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
 }}
 @media only screen and (min-width: 351px){
 .cat-grid {
@@ -1543,7 +1519,43 @@ to {left: 0px;}
 #quizCatName, #confirmButton  {
     font-size: 2.25em!important; /* 36px */
 }}
-
+/* FONT SIZES QandA-BOARD SECTION */
+@media only screen and (min-width: 820px) and (max-width: 1023px){
+.QandA-Board>ol>li {
+    font-size: 3em;
+    line-height: 48px;
+}
+.insertedDIV {
+    min-height: 230px;
+    padding: 35px 20px;
+}
+.QandA-Board>ol>li>ul>li::before{
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+}
+.imgSizeRight, .imgSizeWrong{
+    width: 35px;
+    height: 35px;
+}}
+@media only screen and (min-width: 912px) and (max-width: 1023px){
+.QandA-Board>ol>li {
+    font-size: 3.55em;
+    line-height: 50px;
+}
+.insertedDIV {
+    min-height: 240px;
+    padding: 40px 20px;
+}
+.QandA-Board>ol>li>ul>li::before{
+    font-size: 25px;
+    width: 35px;
+    height: 35px;
+}
+.imgSizeRight, .imgSizeWrong{
+    width: 40px;
+    height: 40px;
+}}
 @media only screen and (min-width: 1024px){
 #settingsContent, #catSettingsContent, #poorPerPopup {
     font-size: 2em;
@@ -1557,7 +1569,6 @@ to {left: 0px;}
 #questioncount{
     font-size: 1.563em!important; /* 25px */
 }
-
 /* FONT SIZES QandA-BOARD SECTION */
 .QandA-Board>ol>li {
     font-size: 2.5em;  /* 40px */
@@ -1644,6 +1655,7 @@ to {left: 0px;}
     font-size: 1.5em;
     margin: 15px 0;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 .Result-Board h4 {
     font-size: 1em;
@@ -1778,10 +1790,6 @@ to {left: 0px;}
 }}
 
 @media only screen and (min-width: 541px){
-.Result-Board-inner {
-    display: grid;
-    grid-template-columns: 45% 55%;
-}
 .Result-img>img {
     height: 250px;
 }
@@ -1807,6 +1815,11 @@ to {left: 0px;}
 @media only screen and (min-width: 1024px){
 .Result-Board{
     place-content: inherit;
+}
+.Result-Board-inner {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-self: center;
 }
 #poorPerPopup{
     top: 150px;
@@ -1850,11 +1863,47 @@ to {left: 0px;}
     font-size: 0.48em!important;
 }}
 @media only screen and (min-width: 541px){
-.Result-Board h2 {
-    font-size: 2em;
-}
 .popupBtn>button {
     font-size: 0.653em!important;
+}}
+@media only screen and (min-width: 658px) and (max-width: 1023px){
+.Result-Board h2 {
+    font-size: 2.8em;
+}
+.Result-Board h4 {
+    font-size: 1.8em;
+}
+.Result-Board h5 {
+    font-size: 1.23em;
+}
+.Result-img>img {
+    height: 280px;
+}
+.performance>div{
+    font-size: 1.5em;
+}
+#questionsIndex{
+    font-size: 1.2em;
+}}
+@media only screen and (min-width: 820px) and (max-width: 1023px){
+.Result-Board h5 {
+    font-size: 1.43em;
+}
+.performance>div, #questionsIndex {
+    font-size: 1.5em;
+}
+.performance ol{
+    font-size: xxx-large;
+}}
+@media only screen and (min-width: 912px) and (max-width: 1023px){
+.Result-Board h2 {
+    font-size: 3.5em;
+}
+.Result-img>img {
+    height:300px;
+}
+.performance>div, #questionsIndex {
+    font-size: 1.9em;
 }}
 
 /* DESKTOP VIEW FONT SIZES CSS */
