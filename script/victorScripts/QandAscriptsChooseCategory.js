@@ -17,36 +17,6 @@ links.forEach(elm => {
     });
   });
 
-// const buttonPauseCat = document.querySelector("#pauseButtonCat");
-// const buttonPlayCat = document.querySelector("#playButtonCat");
-// const audioElementCat = document.querySelector("AUDIO");
-
-// buttonPauseCat.addEventListener('click', bgSoundPauseButton);
-// buttonPlayCat.addEventListener('click', bgSoundPlayButton);
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     audioElementCat.volume = 0.2;
-//     audioElementCat.play();
-// });
-
-// function bgSoundPauseButton() {
-//     if (audioElementCat.play()){
-//         audioElementCat.pause();
-//         buttonPauseCat.style.display = 'none';
-//         buttonPlayCat.style.display = 'block';
-//     } 
-// }
-// function bgSoundPlayButton() {
-//     if (audioElementCat.paused){
-//         audioElementCat.play();
-//         if (buttonPlayCat.style.display == 'block') {
-//             buttonPlayCat.style.display = 'none';
-//         }
-//         if (buttonPauseCat.style.display == 'none') {
-//             buttonPauseCat.style.display = 'block'
-//         }
-//     }
-// }
 const buttonPause = document.querySelector("#pauseButtonCat");
 const buttonPlay = document.querySelector("#playButtonCat");
 const audioElementCat = document.querySelector("AUDIO");
@@ -113,6 +83,7 @@ document.addEventListener('mouseup', function(e) {
 var head = document.head;
 var antiqueWhiteCssFile;
 var blackPearlCssFile;
+var copperRoseCssFile;
 var crimsonCssFile;
 var darkCyanCssFile;
 var darkPurpleCssFile;
@@ -122,6 +93,8 @@ var antiqueWhiteThemeBtn = document.getElementById('antiqueWhite');
 antiqueWhiteThemeBtn.addEventListener('click', changeToAntiquewhiteTheme);
 var blackPearlThemeBtn = document.getElementById('blackPearl');
 blackPearlThemeBtn.addEventListener('click', changeToBlackPearlTheme);
+var copperRoseThemeBtn = document.getElementById('copperRose');
+copperRoseThemeBtn.addEventListener('click', changeToCopperRoseTheme);
 var crisomThemeBtn = document.getElementById('crimson');
 crisomThemeBtn.addEventListener('click', changeToCrimsonTheme);
 var darkCyanThemeBtn = document.getElementById('darkCyan');
@@ -136,6 +109,7 @@ function getDarkOrLightModeFROMCache(){
     if(colorMode = localStorage.getItem('colorMode')){
         if(colorMode=='DarkPurpleTheme'){changeToDarkPurpleTheme()}
         else if(colorMode=='BlackPearlTheme'){changeToBlackPearlTheme()}
+        else if(colorMode=='CopperRoseTheme'){changeToCopperRoseTheme()}
         else if(colorMode=='CrimsonTheme'){changeToCrimsonTheme()}
         else if(colorMode=='DarkCyanTheme'){changeToDarkCyanTheme()}
         else if(colorMode=='AntiquewhiteTheme'){changeToAntiquewhiteTheme()}
@@ -144,7 +118,7 @@ function getDarkOrLightModeFROMCache(){
 function changeToAntiquewhiteTheme() {
     setDarkOrLightModeInCache('AntiquewhiteTheme')
     antiqueWhiteCssFile = document.createElement('link');
-    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile"'
+    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile'
     antiqueWhiteCssFile.type = 'text/css';
     antiqueWhiteCssFile.href = 'style/bibleQuizBG-antiquewhite.css';
     antiqueWhiteCssFile.rel = 'stylesheet';
@@ -153,15 +127,30 @@ function changeToAntiquewhiteTheme() {
     crimsonCssFile.remove();
     darkCyanCssFile.remove();
     darkPurpleCssFile.remove();
+    copperRoseCssFile.remove();
 }
 function changeToBlackPearlTheme() {
     setDarkOrLightModeInCache('BlackPearlTheme')
     blackPearlCssFile = document.createElement('link');
-    blackPearlCssFile.id = 'blackPearlCssFile"'
+    blackPearlCssFile.id = 'blackPearlCssFile'
     blackPearlCssFile.type = 'text/css';
     blackPearlCssFile.href = 'style/bibleQuizBG-blackpearl.css';
     blackPearlCssFile.rel = 'stylesheet';
     head.appendChild(blackPearlCssFile);
+    antiqueWhiteCssFile.remove();
+    crimsonCssFile.remove();
+    darkCyanCssFile.remove();
+    copperRoseCssFile.remove();
+    darkPurpleCssFile.remove();
+}
+function changeToCopperRoseTheme() {
+    setDarkOrLightModeInCache('CopperRoseTheme')
+    copperRoseCssFile = document.createElement('link');
+    copperRoseCssFile.id = 'copperRoseCssFile'
+    copperRoseCssFile.type = 'text/css';
+    copperRoseCssFile.href = 'style/bibleQuizBG-copperrose.css';
+    copperRoseCssFile.rel = 'stylesheet';
+    head.appendChild(copperRoseCssFile);
     antiqueWhiteCssFile.remove();
     crimsonCssFile.remove();
     darkCyanCssFile.remove();
@@ -170,7 +159,7 @@ function changeToBlackPearlTheme() {
 function changeToCrimsonTheme() {
     setDarkOrLightModeInCache('CrimsonTheme')
     crimsonCssFile = document.createElement('link');
-    crimsonCssFile.id = 'crimsonCssFile"'
+    crimsonCssFile.id = 'crimsonCssFile'
     crimsonCssFile.type = 'text/css';
     crimsonCssFile.href = 'style/bibleQuizBG-crimson.css';
     crimsonCssFile.rel = 'stylesheet';
@@ -179,11 +168,12 @@ function changeToCrimsonTheme() {
     blackPearlCssFile.remove();
     darkCyanCssFile.remove();
     darkPurpleCssFile.remove();
+    copperRoseCssFile.remove();
 }
 function changeToDarkCyanTheme() {
     setDarkOrLightModeInCache('DarkCyanTheme')
     darkCyanCssFile = document.createElement('link');
-    darkCyanCssFile.id = 'darkCyanCssFile"'
+    darkCyanCssFile.id = 'darkCyanCssFile'
     darkCyanCssFile.type = 'text/css';
     darkCyanCssFile.href = 'style/bibleQuizBG-darkcyan.css';
     darkCyanCssFile.rel = 'stylesheet';
@@ -191,6 +181,7 @@ function changeToDarkCyanTheme() {
     antiqueWhiteCssFile.remove();
     blackPearlCssFile.remove();
     crimsonCssFile.remove();
+    copperRoseCssFile.remove();
     darkPurpleCssFile.remove();
 }
 function changeToDarkPurpleTheme() {
@@ -199,6 +190,7 @@ function changeToDarkPurpleTheme() {
     antiqueWhiteCssFile.remove();
     blackPearlCssFile.remove();
     crimsonCssFile.remove();
+    copperRoseCssFile.remove();
     darkCyanCssFile.remove();
 }
 window.addEventListener("DOMContentLoaded", () => {
