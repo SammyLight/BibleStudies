@@ -368,14 +368,24 @@ header h1:first-of-type {
     place-items: baseline;
     margin: 1em 0.5em;
 }
+.toggleAllHeaders div {
+    place-self: center end;
+}
+/* @media only screen and (min-width: 1024px) {
+.toggleAllHeaders {
+    grid-template-columns: 90% 10%;
+    place-items: end;
+}} */
+@media only screen and (min-width: 540px) {
+.toggleAllHeaders {
+    grid-template-columns: 90% 10%;
+    place-items: end;
+}}
 .toggleAllHeaders p {
     margin: 0!important;
 }
-.toggleAllHeaders div {
-    place-self: end;
-}
 .checkbox {
-	opacity: 0;
+    opacity: 0;
     display: none;
 	/* position: absolute; */
 }
