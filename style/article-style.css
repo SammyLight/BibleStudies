@@ -4,19 +4,22 @@
         font-size: 20px!important;
     }
     header>h1:first-of-type {
-        font-size: 1.949690125em!important;
+        font-size: 37px!important;
     }
     div>h1:first-of-type {
-        font-size: 1.949690125em!important;
+        font-size: 37px!important;
     }
     h1 {
-        font-size: 1.449690125em!important;
+        font-size: 30px!important;
     }
     h2 {
-        font-size: 1.149690125em!important;
+        font-size: 26px!important;
     }
     h3 {
-        font-size: 0.949690125em!important;
+        font-size: 22px!important;
+    }
+    h4,h5,h6 {
+        font-size: 20px!important;
     }
 }
 
@@ -35,8 +38,9 @@ h3,
 h4,
 h5,
 h6 {
-    margin-left: 0.25em !important;
+    margin-left: 0.25em!important;
     word-break: break-word;
+    font-weight: 900!important;
 }
 p,
 h1,
@@ -76,9 +80,9 @@ div>h1:first-of-type {
         line-height: 65px;
     }
     h1 {
-        font-size: 55px!important;
+        font-size: 50px!important;
         font-weight: 700;
-        line-height: 55px;
+        line-height: 50px;
     }
     h2 {
         font-size: 43px!important;
@@ -86,9 +90,19 @@ div>h1:first-of-type {
         line-height: 43px;
     }
     h3 {
-        font-size: 32px!important;
+        font-size: 34px!important;
+        font-weight: 700;
+        line-height: 34px;
+    }
+    h4 {
+        font-size: 27px!important;
         font-weight: 700;
         line-height: 27px;
+    }
+    h5, h6 {
+        font-size: 24px!important;
+        font-weight: 700;
+        line-height: 24px;
     }
     p,
     li {
@@ -202,6 +216,7 @@ ol>li>ol>li>ol>li>ol>li>ol>li>ol {
 ol {
     /* 	list-style-type: none; */
     counter-reset: lister;
+    padding-inline-start: 20px;
     /* 	margin: auto; */
 }
 body>li:first-child {
@@ -218,6 +233,7 @@ li:before {
     content: counters(lister, ".") ". ";
     display: table-cell;
     padding-right: 0.3em;
+    font-size: x-small;
 }
 .footerLinks-lists li:before {
     content: " ";
@@ -240,7 +256,7 @@ blockquote {
     /*! background: #f9ffc6; */
     background: rgb(0, 0, 0, 0.05);
     border-left: 10px solid rgb(83, 0, 83, 0.5);
-    /* margin: 1.5em 10px; */
+    margin: 1em 15px;
     padding: 0.5em 10px;
     quotes: "\201C""\2018";
 }
@@ -262,10 +278,12 @@ blockquote:before {
     padding: 15px;
 }
 @media all and (min-width: 900px) {
-    .mobilebreak {
-        display: none;
-    }
+.mobilebreak {
+    display: none;
 }
+li:before {
+    font-size: medium;
+}}
 #homeHeader {
     box-shadow: 0 3px 4px #373433;
 }
@@ -310,49 +328,45 @@ th:first-child {
 }
 
 @media only screen and (max-width: 540px) {
-    td,
-    th {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    table p {
-        font-size: 16px!important;
-        margin: 0.3em!important;
-    }
-    table li {
-        font-size: 16px!important;
-    }
-    table ul {
-        padding-left: 0.2em!important;
-        margin: 0.5em 0!important;
-    }
-    table ol {
-        padding-left: 0.2em!important;
-        margin: 0.5em 0!important;
-    }
+td,
+th {
+    padding-right: 0;
+    padding-left: 0;
 }
+table p {
+    font-size: 16px!important;
+    margin: 0.3em!important;
+}
+table li {
+    font-size: 16px!important;
+}
+table ul {
+    padding-left: 0.2em!important;
+    margin: 0.5em 0!important;
+}
+table ol {
+    padding-left: 0.2em!important;
+    margin: 0.5em 0!important;
+}}
 
 /*PSAM 220516c*/
 header h1:first-of-type {
     font-family: 'Bitter', serif;
     font-family: "Times New Roman", Times, serif;
-    font-size: 50px!important;
+    font-size: 65px!important;
 }
 @media only screen and (max-width: 768px) {
-    header h1:first-of-type {
-        font-size: 40px!important;
-    }
-}
+header h1:first-of-type {
+    font-size: 40px!important;
+}}
 @media only screen and (max-width: 540px) {
-    header h1:first-of-type {
-        font-size: 30px!important;
-    }
-}
+header h1:first-of-type {
+    font-size: 30px!important;
+}}
 @media only screen and (max-width: 300px) {
-    header h1:first-of-type {
-        font-size: 20px!important;
-    }
-}
+header h1:first-of-type {
+    font-size: 20px!important;
+}}
 
 /*DVIC 221119c*/
 .add_space{
