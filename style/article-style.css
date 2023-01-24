@@ -1,28 +1,109 @@
-@media only screen and (max-width: 541px) {
-    p,
-    li {
-        font-size: 20px!important;
-    }
-    header>h1:first-of-type {
-        font-size: 37px!important;
-    }
-    div>h1:first-of-type {
-        font-size: 37px!important;
+@media only screen and (max-width: 960px) {
+    header>h1:first-of-type, div>h1:first-of-type {
+        font-size: 40px!important;
     }
     h1 {
-        font-size: 30px!important;
+        font-size: 38px!important;
     }
     h2 {
-        font-size: 26px!important;
+        font-size: 34px!important;
     }
     h3 {
-        font-size: 22px!important;
+        font-size: 30px!important;
     }
     h4,h5,h6 {
-        font-size: 20px!important;
+        font-size: 26px!important;
+    }
+    p,
+    li {
+        font-size: 30px;
     }
 }
+@media only screen and (max-width: 541px) {
+header>h1:first-of-type, div>h1:first-of-type {
+    font-size: 35px!important;
+}
+h1 {
+    font-size: 30px!important;
+}
+h2 {
+    font-size: 26px!important;
+}
+h3 {
+    font-size: 22px!important;
+}
+h4,h5,h6 {
+    font-size: 20px!important;
+}
+p,
+li {
+    font-size: 20px!important;
+}}
 
+@media only screen and (max-width: 300px) {
+header>h1:first-of-type, div>h1:first-of-type {
+    font-size: 20px!important;
+}
+h1 {
+    font-size: 18px!important;
+}
+h2 {
+    font-size: 15px!important;
+}
+h3 {
+    font-size: 13px!important;
+}
+h4,h5,h6 {
+    font-size: 10px!important;
+}
+p,
+li {
+    font-size: 18px!important;
+}}
+
+@media only screen and (min-width: 961px) {
+header>h1:first-of-type, div>h1:first-of-type {
+    font-size: 65px!important;
+    font-weight: 700;
+    line-height: 65px;
+}
+h1 {
+    font-size: 50px!important;
+    font-weight: 700;
+    line-height: 50px;
+}
+h2 {
+    font-size: 43px!important;
+    font-weight: 700;
+    line-height: 43px;
+}
+h3 {
+    font-size: 34px!important;
+    font-weight: 700;
+    line-height: 34px;
+}
+h4 {
+    font-size: 27px!important;
+    font-weight: 700;
+    line-height: 27px;
+}
+h5, h6 {
+    font-size: 24px!important;
+    font-weight: 700;
+    line-height: 24px;
+}
+p,
+li {
+    font-size: 28px;
+}}
+
+/*PSAM 220516c*/
+header>h1:first-of-type, div>h1:first-of-type {
+    font-family: 'Bitter', serif;
+    font-family: "Times New Roman", Times, serif;
+    padding-top: .50em;
+    border-bottom: 2px solid grey;
+}
 /*PSAM.220516a: the Rule for p below was added for alignment with H1 element*/
 
 p {
@@ -32,112 +113,23 @@ p {
     word-break: break-word;
 }
 /*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     margin-left: 0.25em!important;
     word-break: break-word;
     font-weight: 900!important;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p,h1,h2,h3,h4,h5,h6 {
     margin: 1em 0.5em;
 }
-h1>a,
-h2>a,
-h3>a,
-h4>a,
-h5>a,
-h6>a {
+h1>a,h2>a,h3>a,h4>a,h5>a,h6>a {
     color: #111;
     text-decoration: none!important;
-}
-header>h1:first-of-type {
-    padding-top: .50em;
-    border-bottom: 2px solid grey;
-}
-div>h1:first-of-type {
-    padding-top: .50em;
-    border-bottom: 2px solid grey;
-}
-@media only screen and (min-width: 961px) {
-    header>h1:first-of-type {
-        font-size: 65px!important;
-        font-weight: 700;
-        line-height: 65px;
-    }
-    div>h1:first-of-type {
-        font-size: 65px!important;
-        font-weight: 700;
-        line-height: 65px;
-    }
-    h1 {
-        font-size: 50px!important;
-        font-weight: 700;
-        line-height: 50px;
-    }
-    h2 {
-        font-size: 43px!important;
-        font-weight: 700;
-        line-height: 43px;
-    }
-    h3 {
-        font-size: 34px!important;
-        font-weight: 700;
-        line-height: 34px;
-    }
-    h4 {
-        font-size: 27px!important;
-        font-weight: 700;
-        line-height: 27px;
-    }
-    h5, h6 {
-        font-size: 24px!important;
-        font-weight: 700;
-        line-height: 24px;
-    }
-    p,
-    li {
-        font-size: 28px;
-    }
-}
-@media only screen and (max-width: 960px) {
-    p,
-    li {
-        font-size: 24px;
-    }
-    header>h1:first-of-type {
-        font-size: 2.249690125em;
-    }
-    div>h1:first-of-type {
-        font-size: 2.249690125em;
-    }
-    h1 {
-        font-size: 1.749690125em;
-    }
-    h2 {
-        font-size: 1.449690125em;
-    }
-    h3 {
-        font-size: 1.249690125em;
-    }
 }
 h1:first-child,
 table {
     margin: 1em 0.5em;
     margin-top: 0;
     margin-bottom: 0;
-}
-table {
-    margin: 1em 0.5em;
 }
 h1>span:first-child,
 h2>span:first-child,
@@ -155,7 +147,7 @@ header~h1 {
 header~h1:before {
     content: "*" counter(header)"*";
     content: "0" counter(header1);
-    /* font-size: 35px; */
+    font-size: medium;
 }
 header~h1>h2 {
     counter-reset: header2 1;
@@ -167,6 +159,7 @@ header~h2 {
 header~h2:before {
     content: "*" counter(header)"*";
     content: counter(header1)"." counters(header2, ".") ". ";
+    font-size: medium;
 }
 header~h1>h2>h3 {
     counter-reset: header2 1;
@@ -178,7 +171,7 @@ header~h3 {
 header~h3:before {
     content: "*" counter(header)"*";
     content: counter(header1)"." counters(header2, ".") "." counters(header3, ".")".";
-    /* 	 font-size: 25px; */
+    font-size: medium;
 }
 
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
@@ -349,24 +342,6 @@ table ol {
     margin: 0.5em 0!important;
 }}
 
-/*PSAM 220516c*/
-header h1:first-of-type {
-    font-family: 'Bitter', serif;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 65px!important;
-}
-@media only screen and (max-width: 768px) {
-header h1:first-of-type {
-    font-size: 40px!important;
-}}
-@media only screen and (max-width: 540px) {
-header h1:first-of-type {
-    font-size: 30px!important;
-}}
-@media only screen and (max-width: 300px) {
-header h1:first-of-type {
-    font-size: 20px!important;
-}}
 
 /*DVIC 221119c*/
 .add_space{
