@@ -64,32 +64,26 @@ li {
 @media only screen and (min-width: 961px) {
 header>h1:first-of-type, div>h1:first-of-type {
     font-size: 65px!important;
-    font-weight: 700;
     line-height: 65px;
 }
 h1 {
     font-size: 50px!important;
-    font-weight: 700;
     line-height: 50px;
 }
 h2 {
     font-size: 43px!important;
-    font-weight: 700;
     line-height: 43px;
 }
 h3 {
     font-size: 34px!important;
-    font-weight: 700;
     line-height: 34px;
 }
 h4 {
     font-size: 27px!important;
-    font-weight: 700;
     line-height: 27px;
 }
 h5, h6 {
     font-size: 24px!important;
-    font-weight: 700;
     line-height: 24px;
 }
 p,
