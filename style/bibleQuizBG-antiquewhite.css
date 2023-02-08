@@ -453,10 +453,10 @@ hr {
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: brown; 
+    background: rgb(206, 176, 138); 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(146, 37, 37); 
+    background: rgb(175, 150, 118); 
   }
