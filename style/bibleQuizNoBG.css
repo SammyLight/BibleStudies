@@ -1974,8 +1974,12 @@ to {left: 0px;}
 .corAnswers-Board p {
     display: none!important;
 }
-.corAnswers-Board>ol>li {
-    display: flex;
+/* details > summary {
+    list-style: inside disclosure-closed;
+    display: inline;
+} */
+.corAnswers-Board>ol>details {
+    /* display: flex; */
     font-family: jaf-bernino-sans-condensed,sans-serif!important;
     font-family: 'DynaPuff', cursive!important;
     font-style: normal;
@@ -1986,16 +1990,20 @@ to {left: 0px;}
     place-items: start;
     text-align: left;
     word-break: break-word;
+    /* height: -webkit-fill-available;
+    overflow: hidden; */
 }
-.corAnswers-Board>ol>li>div {
-    width: 45%;
+.corAnswers-Board>ol>details>summary>div {
+    /* width: 45%; */
+    display: inline;
 }
 .corAnswers-Board>ol>li>ul{
+    /* display: none; */
     grid-area: col-2;
     list-style-type: none;
     padding: 0 0 0 12px;
     place-self: start;
-    width: 55%;
+    /* width: 55%; */
 }
 .corAnswers-Board>ol>li>ul>li{
     list-style-type: none;
@@ -2049,7 +2057,7 @@ to {left: 0px;}
 .corAnswers-Board-Header>h1{
     font-size: 1.75em; /* 28px */
 }
-.corAnswers-Board>ol>li {
+.corAnswers-Board>ol>details {
     font-size: 1.75em; /* 28px */
     line-height: 30px;
     gap: 15px;
@@ -2062,7 +2070,7 @@ to {left: 0px;}
 .corAnswers-Board-Header>h1{
     font-size: 1.375em; /* 22px */
 }
-.corAnswers-Board>ol>li {
+.corAnswers-Board>ol>details {
     font-size: 1.375em; /* 22px */
     line-height: 24px;
     gap: 10px;

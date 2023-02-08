@@ -389,7 +389,7 @@ body{
     color: #f0f6fc;
     /* text-decoration: none; */
 }
-.corAnswers-Board>ol>li {
+.corAnswers-Board>ol>details {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     color: #f0f6fc;
