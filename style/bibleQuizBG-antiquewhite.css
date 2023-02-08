@@ -439,3 +439,24 @@ hr {
 .totalQuestionsColor{
     color: #414141!important;
 }
+
+/* Scrollbar CSS */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: antiquewhite; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: brown; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 37, 37); 
+  }

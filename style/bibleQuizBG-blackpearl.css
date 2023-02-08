@@ -423,3 +423,24 @@ body{
 .totalQuestionsColor{
     color: #414141!important;
 }
+
+/* Scrollbar CSS */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0d1117; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #050608; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000000; 
+  }
