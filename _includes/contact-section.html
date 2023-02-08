@@ -6,13 +6,8 @@
                     <div class="footerLinks-wrapper">
                         <div class="footerLinks-header">
                             <div class="visible-titles2 collapsible">
-                                <h3 title="Click me for More Latest Posts">
-                                    {% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-                                        Latest Posts
-                                    </a>{% endif %}{% endfor %}
-                                </h3>
-                                <span class="caret2"></span>
+                                <h3>Latest Posts</h3>
+                                <span class="caret22"></span>
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
@@ -31,13 +26,8 @@
 
                         <div class="footerLinks-header space">
                             <div class="visible-titles2 collapsible">
-                                <h3 title="Click me for all Links in Categories">
-                                    {% for page in site.pages %}{% if page.title contains "Study Resources" %}
-                                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-                                        Categories
-                                    </a>{% endif %}{% endfor %}
-                                </h3>
-                                <span class="caret2"></span>
+                                <h3>Categories</h3>
+                                <span class="caret22"></span>
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
@@ -92,7 +82,7 @@
                         <div class="footerLinks-header">
                             <div class="visible-titles2 collapsible">
                                 <h3>Welcome</h3>
-                                <span class="caret2"></span>
+                                <span class="caret22"></span>
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
