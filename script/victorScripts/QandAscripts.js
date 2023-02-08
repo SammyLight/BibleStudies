@@ -555,8 +555,14 @@ function explainButtonCreate(answer) {
     return explainButton;
 }
 function showAllQuestionsWithAnswers() {
-    var questionUL = document.querySelector('.QandA-Board>OL')
+    var questionUL = document.querySelector('.QandA-Board>OL');
     var displayAllQuestions = questionUL.cloneNode(true);
+    // var details = document.createElement('details');
+    // var questionLI = document.querySelector('.QandA-Board>OL>LI');
+    // details.append(questionLI);
+    // var questionDIV = document.querySelector('.QandA-Board>OL>LI>DIV');
+    // questionDIV.classList.add('collapsible');
+    // questionDIV.nextElementSibling.classList.add('content');
     var liFirstLevel = displayAllQuestions.querySelectorAll('LI:not(.option):not(.option li)');
 
     displayAllQuestions.querySelectorAll('.explainButton').forEach(elm =>{elm.remove()})
@@ -583,10 +589,23 @@ function showAllQuestionsWithAnswers() {
         // // removeIMG.length = 0;
         // removeIMG.splice(0,removeIMG.length);
     }
+    // document.getElementsByClassName('corAnswers-Board').append(details);
     liFirstLevel.forEach(element => {
         element.style.backgroundColor = '';
         var removeClass = element.querySelector('.insertedDIV');
         removeClass.classList.remove('insertedDIV'); 
+        var details = document.createElement('details');
+        var questionOL = element.parentElement;
+        questionOL.append(details);
+        details.append(element);
+        var summary = document.createElement('summary');
+        summary.append(removeClass);
+        details.prepend(summary);
+        var questionDIV = document.querySelector('.QandA-Board>OL>LI>DIV');
+        questionDIV.classList.add('collapsible');
+        questionDIV.nextElementSibling.classList.add('content');
+        // removeClass.classList.add('collapsible');
+        // removeClass.nextElementSibling.classList.add('content');
     });
     qandAsection.style.display = 'none';
     resultSection.style.display = 'none';
