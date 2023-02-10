@@ -1941,7 +1941,7 @@ to {left: 0px;}
     grid-template-columns: 100%;
     display: grid;
     place-items: center;
-    font-size: 2.5em!important;
+    font-size: 2.5em;
     text-transform: capitalize;
 }
 .corAnswers-Board-Header{
@@ -2084,7 +2084,7 @@ details > summary:first-of-type {
 
 /* MOBILE VIEW FONT SIZES CSS */
 @media only screen and (max-width: 820px){
-.corAnswers-Board-Header>h1{
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
     font-size: 2.3em;
 }
 .corAnswers-Board>ol>details {
@@ -2096,8 +2096,8 @@ details > summary:first-of-type {
     line-height: 30px;
 }}
 @media only screen and (max-width: 540px){
-.corAnswers-Board-Header>h1{
-    font-size: 1.375em; /* 22px */
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
+    font-size: 1.175em; /* 20px */
 }
 .corAnswers-Board>ol>details {
     font-size: 1.375em; /* 22px */
