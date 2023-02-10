@@ -1941,12 +1941,12 @@ to {left: 0px;}
     grid-template-columns: 100%;
     display: grid;
     place-items: center;
-    font-size: 1.563em!important;
+    font-size: 2.5em!important;
     text-transform: capitalize;
 }
 .corAnswers-Board-Header{
     display: grid;
-    grid-template-columns: 48% 52%;
+    /* grid-template-columns: 48% 52%; */
     grid-template-rows: 100%;
     place-self: center;
     width: 95%;
@@ -1974,10 +1974,6 @@ to {left: 0px;}
 .corAnswers-Board p {
     display: none!important;
 }
-/* details > summary {
-    list-style: inside disclosure-closed;
-    display: inline;
-} */
 .corAnswers-Board>ol>details {
     /* display: flex; */
     font-family: jaf-bernino-sans-condensed,sans-serif!important;
@@ -1993,25 +1989,35 @@ to {left: 0px;}
     /* height: -webkit-fill-available;
     overflow: hidden; */
 }
-.corAnswers-Board>ol>details>summary>div {
-    /* width: 45%; */
-    display: inline;
+details > summary:first-of-type {
+    display: list-item;
 }
-.corAnswers-Board>ol>li>ul{
-    /* display: none; */
+.corAnswers-Board>ol>details>summary>div {
+    /* display: inline; */
+    display: grid;
+    grid-template-columns: 90%;
+    place-content: center;
+    margin-top: -23px;
+}
+.corAnswers-Board>ol>details>summary::marker {
+    height: 100%;
+}
+.corAnswers-Board>ol>details>li>ul{
+    padding-inline-start: 20px;
+    /* display: none;
     grid-area: col-2;
     list-style-type: none;
     padding: 0 0 0 12px;
     place-self: start;
-    /* width: 55%; */
+    width: 55%; */
 }
-.corAnswers-Board>ol>li>ul>li{
+.corAnswers-Board>ol>details>li>ul>li{
     list-style-type: none;
 }
-.corAnswers-Board>ol>li>ul>li>img {
+.corAnswers-Board>ol>details>li>ul>li>img {
     display: none!important;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     grid-area: row-1;
     list-style-type: none;
     margin: 10px 0;
@@ -2019,11 +2025,12 @@ to {left: 0px;}
 }
 .corAnswers-btn{
     display: flex;
-    justify-content: center;
-    justify-self: center;
+    /* justify-content: center;
+    justify-self: center; */
+    place-self: start center;
     width: 95%;
     height: fit-content;
-    padding: 0 0.5em;
+    /* padding: 0 0.5em; */
 }
 .corAnswers-btn>button{
     font-family: 'DynaPuff', cursive!important;
@@ -2042,29 +2049,51 @@ to {left: 0px;}
 .corAnswers-btn>button>a:hover {
     text-decoration: none!important;
 }
-
+@media only screen and (min-width: 490px){
+.corAnswers-Board>ol>details>li>ul{
+    padding-inline-start: 25px;
+}}
 @media only screen and (min-width: 541px){
+.corAnswers-Board>ol>details>summary>div {
+    margin-top: -35px;
+}
+.corAnswers-Board>ol>details>li>ul{
+    padding-inline-start: 40px;
+}
+.corAnswers-Board>ol>details>li>ul>li{
+    padding: 15px 0 0 0;
+}
 .corAnswers-btn>button{
     width: 46%;
+}}
+@media only screen and (min-width: 821px){
+.corAnswers-Board>ol>details>li>ul {
+    padding-inline-start: 45px;
 }}
 @media only screen and (min-width: 963px){
 .corAnswers-btn>button{
     width: 32%;
 }}
+@media only screen and (min-width: 1024px){
+.corAnswers-Board>ol>details>summary>div {
+    margin-top: -40px;
+}
+.corAnswers-Board>ol>details>li>ul {
+    padding-inline-start: 50px;
+}}
 
 /* MOBILE VIEW FONT SIZES CSS */
 @media only screen and (max-width: 820px){
 .corAnswers-Board-Header>h1{
-    font-size: 1.75em; /* 28px */
+    font-size: 2.3em;
 }
 .corAnswers-Board>ol>details {
-    font-size: 1.75em; /* 28px */
-    line-height: 30px;
-    gap: 15px;
+    font-size: 2.5em;
+    line-height: 35px;
 }
-.corAnswers-Board>ol>li>ul>li {
-    font-size: 0.86em; /* 24px */
-    line-height: 26px;
+.corAnswers-Board>ol>details>li>ul>li {
+    font-size: 0.9em;
+    line-height: 30px;
 }}
 @media only screen and (max-width: 540px){
 .corAnswers-Board-Header>h1{
@@ -2075,11 +2104,11 @@ to {left: 0px;}
     line-height: 24px;
     gap: 10px;
 }
-.corAnswers-Board>ol>li>ul>li {
+.corAnswers-Board>ol>details>li>ul>li {
     font-size: 0.819em; /* 22px */
     line-height: 20px;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     font-size: 0.7778em; /* 14px */
     line-height: 16px;
 }
@@ -2097,27 +2126,27 @@ to {left: 0px;}
     font-size: 2em; /* 20px */
     line-height: 36px;
 }
-.corAnswers-Board>ol>li>ul>li {
+.corAnswers-Board>ol>details>li>ul>li {
     font-size: 0.815em; /* 26px */
     line-height: 28px;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     font-size: 0.844em; /* 22px */
     line-height: 24px;
 }}
-@media only screen and (min-width: 914px){
+@media only screen and (min-width: 912px){
 .corAnswers-Board-Header>h1{
-    font-size: 2.375em; /* 38px */
+    font-size: 2.7em; /* 38px */
 }
 .corAnswers-Board>ol>details {
-    font-size: 2.375em; /* 38px */
+    font-size: 3em; /* 38px */
     line-height: 42px;
 }
-.corAnswers-Board>ol>li>ul>li {
-    font-size: 0.843em; /* 32px */
+.corAnswers-Board>ol>details>li>ul>li {
+    font-size: 0.943em; /* 32px */
     line-height: 34px;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     font-size: 0.875em; /* 32px */
     line-height: 30px;
 }}
@@ -2129,11 +2158,11 @@ to {left: 0px;}
     font-size: 2.375em; /* 38px */
     line-height: 42px;
 }
-.corAnswers-Board>ol>li>ul>li {
+.corAnswers-Board>ol>details>li>ul>li {
     font-size: 0.89em; /* 38px */
     line-height: 34px;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     font-size: 0.812em; /* 26px */
     line-height: 28px;
 }}

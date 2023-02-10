@@ -394,13 +394,13 @@ body{
     border-bottom: 1px solid #ccc;
     color: #f0f6fc;
 }
-.corAnswers-Board>ol>li>div {
+/* .corAnswers-Board>ol>li>div {
     border-right: 2px solid #f0f6fc;
-}
-.corAnswers-Board>ol>li>ul>li>strong {
+} */
+.corAnswers-Board>ol>details>li>ul>li>strong {
     color: #f0f6fc!important;
 }
-.corAnswers-Board>ol>li>ul>li>ul {
+.corAnswers-Board>ol>details>li>ul>li>ul {
     color: #f0f6fc!important;
 }
 .corAnswers-btn>button{
