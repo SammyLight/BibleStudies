@@ -203,7 +203,7 @@ body{
     text-shadow: rgba(255,162,0,0.95) 0px 0px 39px;
 } */
 #questioncount{
-    color: #58a6ff;
+    color: #D3756B;
 }
 
 /* QandA-BOARD SECTION */
@@ -383,7 +383,13 @@ body{
     color: #f0f6fc;
 }
 .corAnswers-Board-Header>h1 {
-    color: aqua;
+    color: #D3756B;
+}
+.questionsH1{
+    color: #f0f6fc!important;
+}
+.ansANDexpH1{
+    color: #D3756B!important;
 }
 .corAnswers-Board a {
     color: #f0f6fc;
@@ -398,10 +404,10 @@ body{
     border-right: 2px solid #f0f6fc;
 } */
 .corAnswers-Board>ol>details>li>ul>li>strong {
-    color: #f0f6fc!important;
+    color: #D3756B!important;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
-    color: #f0f6fc!important;
+    color: #D3756B!important;
 }
 .corAnswers-btn>button{
     background-color: #f0f6fc;

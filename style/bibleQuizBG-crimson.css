@@ -383,6 +383,12 @@ body{
 .corAnswers-Board-Header>h1 {
     color: orange;
 }
+.questionsH1{
+    color: orange!important;
+}
+.ansANDexpH1{
+    color: white!important;
+}
 .corAnswers-Board a {
     color: white;
     /* text-decoration: none; */
@@ -390,7 +396,7 @@ body{
 .corAnswers-Board>ol>details {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    color: white;
+    color: orange;
 }
 /* .corAnswers-Board>ol>li>div {
     border-right: 2px solid white;

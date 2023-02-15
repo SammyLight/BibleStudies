@@ -385,6 +385,12 @@ body{
 .corAnswers-Board-Header>h1 {
     color: aqua;
 }
+.questionsH1{
+    color: #f0f6fc!important;
+}
+.ansANDexpH1{
+    color: aqua!important;
+}
 .corAnswers-Board a {
     color: #f0f6fc;
     /* text-decoration: none; */
@@ -398,7 +404,7 @@ body{
     border-right: 2px solid #f0f6fc;
 } */
 .corAnswers-Board>ol>details>li>ul>li>strong {
-    color: #f0f6fc!important;
+    color: aqua!important;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
     color: #f0f6fc!important;

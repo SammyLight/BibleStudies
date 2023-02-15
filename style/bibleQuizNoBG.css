@@ -2030,7 +2030,7 @@ details > summary:first-of-type {
     place-self: start center;
     width: 95%;
     height: fit-content;
-    /* padding: 0 0.5em; */
+    padding: 1em 0;
 }
 .corAnswers-btn>button{
     font-family: 'DynaPuff', cursive!important;
@@ -2080,6 +2080,10 @@ details > summary:first-of-type {
 }
 .corAnswers-Board>ol>details>li>ul {
     padding-inline-start: 50px;
+}}
+@media only screen and (min-width: 1060px){
+.corAnswers-Board>ol>details>li>ul {
+    padding-inline-start: 60px;
 }}
 
 /* MOBILE VIEW FONT SIZES CSS */

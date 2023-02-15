@@ -399,6 +399,12 @@ hr {
 .corAnswers-Board-Header>h1{
     color: chocolate;
 }
+.questionsH1{
+    color: brown!important;
+}
+.ansANDexpH1{
+    color: chocolate!important;
+}
 .corAnswers-Board a {
     color: brown;
     /* text-decoration: none; */
@@ -412,10 +418,10 @@ hr {
     border-right: 2px solid brown;
 } */
 .corAnswers-Board>ol>details>li>ul>li>strong {
-    color: brown!important;
+    color: chocolate!important;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
-    color: brown!important;
+    color: chocolate!important;
 }
 .corAnswers-btn>button{
     background-color: brown;

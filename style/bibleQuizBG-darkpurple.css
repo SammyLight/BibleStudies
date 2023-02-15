@@ -401,6 +401,12 @@ body{
 .corAnswers-Board-Header>h1 {
     color: aqua;
 }
+.questionsH1{
+    color: #fff!important;
+}
+.ansANDexpH1{
+    color: aqua!important;
+}
 .corAnswers-Board a {
     color: #fff;
     /* text-decoration: none; */
@@ -414,10 +420,10 @@ body{
     border-right: 2px solid #fff;
 } */
 .corAnswers-Board>ol>details>li>ul>li>strong {
-    color: #fff!important;
+    color: aqua!important;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
-    color: #fff!important;
+    color: aqua!important;
 }
 .corAnswers-btn>button{
     background-color: #D61C4E;
