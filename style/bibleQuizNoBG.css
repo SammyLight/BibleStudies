@@ -1949,7 +1949,7 @@ to {left: 0px;}
     /* grid-template-columns: 48% 52%; */
     grid-template-rows: 100%;
     place-self: center;
-    width: 95%;
+    width: 99%;
     height: -webkit-fill-available;
 }
 .corAnswers-Board-Header>h1{
@@ -1964,7 +1964,7 @@ to {left: 0px;}
     display: grid;
     /* grid-template-rows: 100%; */
     place-self: start center;
-    width: 95%;
+    width: 99%;
 }
 .corAnswers-Board ol {
     list-style: none;
@@ -2029,7 +2029,7 @@ details > summary:first-of-type {
     /* justify-content: center;
     justify-self: center; */
     place-self: start center;
-    width: 95%;
+    width: 99%;
     height: fit-content;
     padding: 1em 0;
 }
@@ -2038,7 +2038,7 @@ details > summary:first-of-type {
     border-radius: 6px;
     margin: 5px 5px 5px 0;
     padding: 0.2em;
-    font-size: 1.563em!important; /* 25px */
+    font-size: 2em!important; /* 25px */
     text-transform: uppercase;
 }
 .corAnswers-btn>button:hover {
@@ -2065,7 +2065,7 @@ details > summary:first-of-type {
     padding: 15px 0 0 0;
 }
 .corAnswers-btn>button{
-    width: 46%;
+    width: 50%;
 }}
 @media only screen and (min-width: 821px){
 .corAnswers-Board>ol>details>li>ul {
@@ -2074,11 +2074,11 @@ details > summary:first-of-type {
 @media only screen and (min-width: 912px){ 
 .corAnswers-Board>ol>details>summary>div {
     margin-top: -40px;
-}}
-@media only screen and (min-width: 963px){
-.corAnswers-btn>button{
+}
+/* .corAnswers-btn>button{
     width: 32%;
-}}
+} */
+}
 @media only screen and (min-width: 1024px){
 .corAnswers-Board>ol>details>summary>div {
     margin-top: -43px;
@@ -2123,7 +2123,11 @@ details > summary:first-of-type {
 }
 .corAnswers-btn>button{
     font-size: 1.25em!important; /* 20px */
-    width: 97%;
+    width: 100%;
+}}
+@media only screen and (max-width: 300px){
+.corAnswers-btn>button{
+    font-size: 1em!important; 
 }}
 
 /* DESKTOP VIEW FONT SIZES CSS */
