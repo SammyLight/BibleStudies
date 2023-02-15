@@ -1997,7 +1997,7 @@ details > summary:first-of-type {
     display: grid;
     grid-template-columns: 90%;
     place-content: center;
-    margin-top: -23px;
+    margin-top: -25px;
 }
 .corAnswers-Board>ol>details>summary::marker {
     height: 100%;
@@ -2071,20 +2071,24 @@ details > summary:first-of-type {
 .corAnswers-Board>ol>details>li>ul {
     padding-inline-start: 45px;
 }}
+@media only screen and (min-width: 912px){ 
+.corAnswers-Board>ol>details>summary>div {
+    margin-top: -40px;
+}}
 @media only screen and (min-width: 963px){
 .corAnswers-btn>button{
     width: 32%;
 }}
 @media only screen and (min-width: 1024px){
 .corAnswers-Board>ol>details>summary>div {
-    margin-top: -40px;
+    margin-top: -43px;
 }
 .corAnswers-Board>ol>details>li>ul {
-    padding-inline-start: 50px;
+    padding-inline-start: 53px;
 }}
-@media only screen and (min-width: 1060px){
+@media only screen and (min-width: 1025px){
 .corAnswers-Board>ol>details>li>ul {
-    padding-inline-start: 60px;
+    padding-inline-start: 63px;
 }}
 
 /* MOBILE VIEW FONT SIZES CSS */
