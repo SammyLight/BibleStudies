@@ -391,7 +391,7 @@ body{
     color: black!important;
 }
 .corAnswers-Board a {
-    color: white;
+    color: inherit;
     /* text-decoration: none; */
 }
 .corAnswers-Board>ol>details {

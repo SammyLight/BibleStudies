@@ -120,6 +120,7 @@ body{
 /* Custom CSS */
 ul, ol, li{
     list-style-type: none;
+    list-style-type: disc;
 }
 hr{
     width: -webkit-fill-available;
@@ -1692,6 +1693,7 @@ to {left: 0px;}
 }
 .performance li{
     place-self: center;
+    list-style-type: none;
 }
 .performance li:last-child {
     place-self: end;
@@ -1949,7 +1951,6 @@ to {left: 0px;}
     /* grid-template-columns: 48% 52%; */
     grid-template-rows: 100%;
     place-self: center;
-    width: 99%;
     height: -webkit-fill-available;
 }
 .corAnswers-Board-Header>h1{
@@ -1964,7 +1965,6 @@ to {left: 0px;}
     display: grid;
     /* grid-template-rows: 100%; */
     place-self: start center;
-    width: 99%;
 }
 .corAnswers-Board ol {
     list-style: none;
@@ -1993,35 +1993,27 @@ details > summary:first-of-type {
     display: list-item;
 }
 .corAnswers-Board>ol>details>summary>div {
-    /* display: inline; */
     display: grid;
     grid-template-columns: 90%;
     place-content: center;
-    margin-top: -25px;
+    margin-top: -24px;
 }
 .corAnswers-Board>ol>details>summary::marker {
     height: 100%;
 }
 .corAnswers-Board>ol>details>li>ul{
     padding-inline-start: 20px;
-    /* display: none;
-    grid-area: col-2;
-    list-style-type: none;
-    padding: 0 0 0 12px;
-    place-self: start;
-    width: 55%; */
 }
 .corAnswers-Board>ol>details>li>ul>li{
-    list-style-type: none;
     list-style-type: circle!important;
+    padding: 10px 0 0 0;
 }
 .corAnswers-Board>ol>details>li>ul>li>img {
     display: none!important;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
-    grid-area: row-1;
     list-style-type: none;
-    margin: 10px 0;
+    margin-top: 10px;
     padding: 0;
 }
 .corAnswers-btn{
@@ -2029,7 +2021,6 @@ details > summary:first-of-type {
     /* justify-content: center;
     justify-self: center; */
     place-self: start center;
-    width: 99%;
     height: fit-content;
     padding: 1em 0;
 }
@@ -2037,7 +2028,7 @@ details > summary:first-of-type {
     font-family: 'DynaPuff', cursive!important;
     border-radius: 6px;
     margin: 5px 5px 5px 0;
-    padding: 0.2em;
+    padding: 0.5em;
     font-size: 2em!important; /* 25px */
     text-transform: uppercase;
 }
@@ -2050,6 +2041,19 @@ details > summary:first-of-type {
 .corAnswers-btn>button>a:hover {
     text-decoration: none!important;
 }
+.corAnswers-Board-Header, .corAnswers-Board, .corAnswers-btn {
+    width: 97%;
+}
+@media only screen and (max-width: 300px){
+#CorrectedAnswers-section {
+    grid-template-rows: 50px 50px auto 8%;
+}
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1 {
+    font-size: 0.875em;
+}
+.corAnswers-Board>ol>details>summary>div {
+    grid-template-columns: 85%;
+}}
 @media only screen and (min-width: 490px){
 .corAnswers-Board>ol>details>li>ul{
     padding-inline-start: 25px;
@@ -2067,6 +2071,10 @@ details > summary:first-of-type {
 .corAnswers-btn>button{
     width: 50%;
 }}
+@media only screen and (min-width: 768px){
+.corAnswers-Board-Header, .corAnswers-Board, .corAnswers-btn {
+    width: 99%;
+}}
 @media only screen and (min-width: 821px){
 .corAnswers-Board>ol>details>li>ul {
     padding-inline-start: 45px;
@@ -2074,11 +2082,7 @@ details > summary:first-of-type {
 @media only screen and (min-width: 912px){ 
 .corAnswers-Board>ol>details>summary>div {
     margin-top: -40px;
-}
-/* .corAnswers-btn>button{
-    width: 32%;
-} */
-}
+}}
 @media only screen and (min-width: 1024px){
 .corAnswers-Board>ol>details>summary>div {
     margin-top: -43px;
@@ -2109,17 +2113,17 @@ details > summary:first-of-type {
     font-size: 1.175em; /* 20px */
 }
 .corAnswers-Board>ol>details {
-    font-size: 1.375em; /* 22px */
-    line-height: 24px;
+    font-size: 1.475em; /* 22.5px */
+    line-height: 26px;
     gap: 10px;
 }
 .corAnswers-Board>ol>details>li>ul>li {
-    font-size: 0.819em; /* 22px */
-    line-height: 20px;
+    font-size: 0.88em;/* 22p.3x */
+    line-height: 26px;
 }
 .corAnswers-Board>ol>details>li>ul>li>ul {
-    font-size: 0.7778em; /* 14px */
-    line-height: 16px;
+    font-size: 0.8888em; /* 14.5px */
+    line-height: 20px;
 }
 .corAnswers-btn>button{
     font-size: 1.25em!important; /* 20px */

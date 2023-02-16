@@ -406,7 +406,7 @@ hr {
     color: chocolate!important;
 }
 .corAnswers-Board a {
-    color: brown;
+    color: inherit;
     /* text-decoration: none; */
 }
 .corAnswers-Board>ol>details {
