@@ -32,8 +32,8 @@
         </div>
     </div>
     <div class="Result-btn">
-        <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
-        <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers <i class="fas fa-solid fa-angle-right"></i></button>
+        <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color"><span>Redo Quiz <i class="fas fa-solid fa-angle-right"></i></span></button>
+        <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()"><span>Review Answers <i class="fas fa-solid fa-angle-right"></i></span></button>
         <button id="newBtn" class="btn-bg-color">
             {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
             {% for aaa in site.pages %}
