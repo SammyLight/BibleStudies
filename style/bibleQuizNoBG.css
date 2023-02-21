@@ -1410,7 +1410,7 @@ to {left: 0px;}
     width: 95%;
 }
 .QandA-Board{
-    width: calc(100vw - 8%);
+    width: calc(100vw - 6%);
     place-self: center;
 }
 .QandA-Board>ol {
