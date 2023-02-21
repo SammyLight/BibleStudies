@@ -1490,7 +1490,7 @@ to {left: 0px;}
     
 /* FONT SIZES HEADER SECTION */
 .quizCatLink, #nextPrevButton,#questionhint{
-    font-size: 2.5em!important;  /* 40px */
+    font-size: 2.4em!important;  /* 40px */
 }
 #questioncount{
     font-size: 2.25em!important; /* 36px */
@@ -1639,7 +1639,7 @@ to {left: 0px;}
     /* font-family: jaf-bernino-sans-condensed,sans-serif!important; */
     font-family: 'DynaPuff', cursive!important;
     height: auto;
-    min-height: 90%;
+    /* min-height: 90%; */
     width: 90%;
     padding: 3px;
     place-self: center;
@@ -1648,8 +1648,9 @@ to {left: 0px;}
 .Result-Board-inner {
     padding: 10px;
     border-radius: 6px;
-    height: 95%;
+    /* height: 95%; */
     width: 95%;
+    place-self: center;
     position: relative;
 }
 .Result-Board h2 {
@@ -1802,10 +1803,10 @@ to {left: 0px;}
     top: 290px;
 }
 .Result-btn{
-    width: 85%;
+    width: 90%;
 }
 .Result-btn>button {
-    width: 46%;
+    width: 49%;
 }}
 @media only screen and (min-width: 963px){
 .Result-btn>button {
@@ -1817,17 +1818,25 @@ to {left: 0px;}
 @media only screen and (min-width: 1024px){
 .Result-Board{
     place-content: inherit;
+    width: 95%;
 }
 .Result-Board-inner {
     display: grid;
     grid-template-columns: 50% 50%;
     place-self: center;
 }
+.Result-btn{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    place-self: start center;
+    gap: 5px;
+    width: 95%;
+}
 #poorPerPopup{
     top: 150px;
 }
-.popupBtn>button {
-    width: 63%!important;
+.popupBtn>button, .Result-btn>button {
+    width: 100%!important;
 }}
 
 /* MOBILE VIEW FONT SIZES CSS */
@@ -1881,9 +1890,6 @@ to {left: 0px;}
 .Result-img>img {
     height: 280px;
 }
-.performance>div{
-    font-size: 1.5em;
-}
 #questionsIndex{
     font-size: 1.2em;
 }}
@@ -1891,7 +1897,7 @@ to {left: 0px;}
 .Result-Board h5 {
     font-size: 1.43em;
 }
-.performance>div, #questionsIndex {
+#questionsIndex {
     font-size: 1.5em;
 }
 .performance ol{
@@ -1904,7 +1910,7 @@ to {left: 0px;}
 .Result-img>img {
     height:300px;
 }
-.performance>div, #questionsIndex {
+#questionsIndex {
     font-size: 1.9em;
 }}
 
@@ -2130,6 +2136,9 @@ details > summary:first-of-type {
     width: 100%;
 }}
 @media only screen and (max-width: 300px){
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1 {
+    font-size: 0.885em;
+}
 .corAnswers-btn>button{
     font-size: 1em!important; 
 }}
