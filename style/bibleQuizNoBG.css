@@ -1733,16 +1733,21 @@ to {left: 0px;}
     font-size: 1.563em; /* 25px */
     text-transform: uppercase;
 }
+.Result-btn>button>a, .Result-btn>button>span {
+    text-decoration: none!important;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: block;
+    padding: 0.3em;
+}
 .btn-bg-color {
     border-radius: 6px;
     margin: 5px 5px 5px 0;
-    padding: 0.2em;
     width: 63%;
 }
 .btn-bg-outline {
     border-radius: 6px;
     margin: 5px 5px 5px 0;
-    padding: 0.2em;
     width: 63%;
 }
 .btn-bg-color>a {
@@ -1919,8 +1924,21 @@ to {left: 0px;}
 .Result-Board h2 {
     font-size: 2.5em;
 }
+#questionsIndex {
+    font-size: 1.4em;
+}
 .popupBtn>button {
     font-size: 0.663em!important;
+}}
+@media only screen and (min-width: 1066px){
+.Result-Board h2 {
+    font-size: 3em;
+}
+.Result-Board h4 {
+    font-size: 1.5em;
+}
+.Result-Board h5 {
+    font-size: 1.23em;
 }}
 
 /* CORRECTED ANSWERS CSS */
@@ -2034,15 +2052,16 @@ details > summary:first-of-type {
     font-family: 'DynaPuff', cursive!important;
     border-radius: 6px;
     margin: 5px 5px 5px 0;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     font-size: 2em!important; /* 25px */
     text-transform: uppercase;
 }
-.corAnswers-btn>button:hover {
-    border-radius: 6px;
-}
 .corAnswers-btn>button>a {
     text-decoration: none!important;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: block;
+    padding: 0.5em;
 }
 .corAnswers-btn>button>a:hover {
     text-decoration: none!important;
@@ -2096,9 +2115,13 @@ details > summary:first-of-type {
 .corAnswers-Board>ol>details>li>ul {
     padding-inline-start: 53px;
 }}
-@media only screen and (min-width: 1025px){
+/* @media only screen and (min-width: 1025px){
 .corAnswers-Board>ol>details>li>ul {
-    padding-inline-start: 63px;
+    padding-inline-start: 67px;
+}} */
+@media only screen and (min-width: 1280px){
+.corAnswers-Board>ol>details>li>ul {
+    padding-inline-start: 67px;
 }}
 
 /* MOBILE VIEW FONT SIZES CSS */

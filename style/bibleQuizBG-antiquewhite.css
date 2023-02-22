@@ -371,7 +371,7 @@ hr {
     color: brown;
 }
 .btn-bg-color>a:hover {
-    color: brown;
+    color: brown!important;
 }
 
 @media only screen and (max-width: 1023px){
@@ -440,7 +440,7 @@ hr {
 }
 .corAnswers-btn>button>a:hover {
     background-color: transparent!important;
-    color: brown;
+    color: brown!important;
 }
 .totalQuestionsColor{
     color: #414141!important;

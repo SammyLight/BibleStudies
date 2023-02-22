@@ -338,8 +338,8 @@ body{
     color: black;
 }
 .btn-bg-outline {
-    background-color: crimson;
-    border: 1px solid crimson;
+    background-color: black;
+    border: 1px solid black;
     color: white;
 }
 .btn-bg-outline:hover {
@@ -356,7 +356,7 @@ body{
     color: white;
 }
 .btn-bg-color>a:hover {
-    color: white;
+    color: white!important;
 }
 
 @media only screen and (max-width: 1023px){
@@ -422,7 +422,7 @@ body{
 }
 .corAnswers-btn>button>a:hover {
     background-color: black!important;
-    color: white;
+    color: white!important;
 }
 .totalQuestionsColor{
     color: #414141!important;

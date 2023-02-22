@@ -373,7 +373,7 @@ body{
     color: #D61C4E;
 }
 .btn-bg-color>a:hover {
-    color: #D61C4E;
+    color: #D61C4E!important;
 }
 
 @media only screen and (max-width: 1023px){
@@ -442,7 +442,7 @@ body{
 }
 .corAnswers-btn>button>a:hover {
     background-color: transparent!important;
-    color: #D61C4E;
+    color: #D61C4E!important;
 }
 .totalQuestionsColor{
     color: #414141!important;
