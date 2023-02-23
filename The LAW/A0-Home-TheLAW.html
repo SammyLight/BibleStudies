@@ -4,8 +4,7 @@ title: "The LAW"
 categories: ["HomePage-The LAW"]
 ---
 <style>
-	ol,
-	ul {
+	div>ol {
 		column-gap: 2em;
 		column-width: 12em;
 		padding-left: 1.5em;
@@ -15,7 +14,7 @@ categories: ["HomePage-The LAW"]
 	<h1 class="titles">The LAW</h1>
 	<p>A collection of Useful Resources</p>
 
-	<ol id="nav">
+	<ol>
 		{% for page in site.pages %}{% if page.categories contains "The LAW" %}<li><a
 				href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 		</li>
