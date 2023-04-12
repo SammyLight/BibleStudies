@@ -206,23 +206,40 @@ button.fadeOut:hover{
 .choosecat-grid-inner{
     display: grid;
     place-content: center;
-    grid-template-columns: 90%;
+    /* grid-template-columns: 95%; */
     width: 100%;
 }
 .choosecat-grid-inner>div{
     display: grid;
     gap: 10px;
 }
+.choosecat-grid-inner>div{
+    grid-template-areas: "col-1 col-2" "row-1 row-1";
+}
+.con1 {
+    grid-area: col-1;
+}
+.con2 {
+    grid-area: col-2;
+}
+.con3 {
+    grid-area: row-1;
+}
 .choosecat-grid-inner>div>button{
-    border-radius: 15px;
+    border-radius: 100%;
     font-size: 1.375em!important;
     font-weight: bold;
-    padding: 10px;
+    /* padding: 10px; */
     cursor: pointer;
     place-self: center;
     text-align: center;
     text-transform: capitalize;
-    width: -webkit-fill-available;
+}
+.choosecat-grid-inner>div>button>a{
+    display: grid;
+    place-content: center;
+    height: 160px;
+    width: 160px;
 }
 .choosecat-grid h2{
     font-size: 1.8em;
@@ -231,52 +248,79 @@ button.fadeOut:hover{
     text-align: center;
     width: -webkit-fill-available;
 }
-
+@media only screen and (max-width: 300px){
+.choosecat-grid-inner>div>button>a{
+    height: 120px;
+    width: 120px;
+}}
 @media only screen and (min-width: 376px){
 .choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 2em!important;
 }}
-@media only screen and (min-width: 410px){
+/* @media only screen and (min-width: 410px){
 .choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 2.2em!important;
-}}
+}} */
 
 @media only screen and (min-width: 540px){
 .choosecat-grid-inner>div>button, .choosecat-grid h2{
-    font-size: 2.5em!important;
+    font-size: 2.2em!important;
 }
-.choosecat-grid-inner>div{
-    display: grid;
-    gap: 20px;
+.choosecat-grid-inner>div {
+    gap: 35px;
+}
+.choosecat-grid-inner>div>button>a{
+    height: 195px;
+    width: 195px;
 }}
 
 @media only screen and (min-width: 768px){
 .choosecat-grid-inner>div>button, .choosecat-grid h2{
     font-size: 3em!important;
+}
+.choosecat-grid-inner>div>button>a{ 
+    height: 320px;
+    width: 320px;
 }}
-
+@media only screen and (min-width: 820px){
+.choosecat-grid-inner>div>button>a{ 
+    height: 350px;
+    width: 350px;
+}}
 @media only screen and (min-width: 912px){
 .choosecat-grid {
     grid-template-rows: 10% 90%;
-    place-items: center;
     height: 100vh;
 }
 .choosecat-grid h2 {
     place-self: end center;
+}
+.choosecat-grid-inner>div>button>a{
+    height: 370px;
+    width: 370px;
 }}
 
 @media  only screen and (min-width: 1024px){
 .choosecat-grid {
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 13% 87%;
     place-content: center;
     gap: 0;
     height: 100vh;
 }
+.choosecat-grid-inner>div{
+    display: flex;
+    justify-content: center;
+}
 .choosecat-grid>div>button, .choosecat-grid h2 {
     font-size: 2.5em!important;
     place-self: center;
+}
+.choosecat-grid-inner>div>button>a{
+    height: 300px;
+    width: 300px;    
 }}
+
 
 /* QandA-Categories CSS */
 /* HEADER SECTION */
@@ -295,11 +339,15 @@ display: none!important;
 #cat-headerbar a{
     display: grid;
 }
-.churchLOGO{
+/* .churchLOGO{
     display: -ms-grid;
     display: grid;
     place-content: center start;
     place-self: normal;
+} */
+#catSettings {
+    display: grid;
+    place-content: center start;
 }
 .headerUL{
     display: -ms-grid;
@@ -327,7 +375,7 @@ ul.header-links{
 }
 @media only screen and (max-width: 589px){
 #cat-headerbar{
-    grid-template-columns: 35% 55% 10%;
+    grid-template-columns: 25% 60% 15%;
 }
 #catSettingsContent{
     top: 0;
@@ -350,14 +398,11 @@ ul.header-links {
 }}
 @media screen and (max-width: 420px){
 .churchLOGO img {
-    height: 25px;
+    height: 28px;
 }
 #catSettingsContent {
     top: 130px;
     left: 9%;
-}
-#cat-headerbar{
-    grid-template-columns: 25% 60% 15%;
 }}
 @media screen and (max-width: 360px){
 #cat-headerbar {
@@ -368,7 +413,7 @@ ul.header-links {
 }}
 @media screen and (max-width: 280px){
 #cat-headerbar {
-    font-size: 0.6em;
+    font-size: 0.8em;
 }
 #cat-bibleQuiz-inner h1 {
     margin: 0.4em 0!important;
@@ -376,7 +421,7 @@ ul.header-links {
     -webkit-text-stroke-width: 1px!important;
 }
 .churchLOGO img {
-    height: 20px;
+    height: 23px;
 }
 .catSettings>img {
     width: 35px;
@@ -401,17 +446,13 @@ ul.header-links {
     left: 15%;
 } 
 #cat-headerbar{
-    grid-template-columns: 20% 60% 20%;
+    font-size: 2.5em;
+    grid-template-columns: 25% 55% 20%;
 }
 .churchLOGO img {
-    height: 50px;
+    height: 60px;
 }}
-@media only screen and (min-width: 911px){ 
-#cat-headerbar{
-    width: -webkit-fill-available;
-    height: 70px;
-    grid-template-columns: 20% 60% 20%;
-}}
+
 @media only screen and (min-width: 1024px){ 
 #catSettingsContent {
     top: 132px;

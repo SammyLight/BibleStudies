@@ -256,7 +256,7 @@ blockquote:before {
     vertical-align: -0.4em;
 }
 .sidenote {
-    color: #021515;
+    color: #212121;
     background-color: rgb(250, 255, 211);
 }
 .sidenote p {
@@ -272,7 +272,7 @@ li:before {
     font-size: medium;
 }}
 #homeHeader {
-    box-shadow: 0 3px 4px #373433;
+    box-shadow: 0 2px 4px #d0d0d0;
 }
 .homeHeaderNav {
     display: -webkit-box;

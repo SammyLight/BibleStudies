@@ -226,8 +226,7 @@ hr {
     color: aliceblue!important;
 }
 .showHintCSS>a, .showNewCatCSS>a {
-    /* color: #d0d0d0!important;
-    color: brown!important; */
+    color: brown!important;
 }
 
 .QandA-Board>ol>li>ul>li::before {
