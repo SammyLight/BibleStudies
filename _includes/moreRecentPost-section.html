@@ -1,8 +1,8 @@
 <section id="Resources-section">
 	<div class="Resources-grid">
-			<h1 class="titles">More Latest Posts</h1>
+			<h1 class="titles container-fluid">More Latest Posts</h1>
 			
-			<div class="homeResources-grid">
+			<div class="homeResources-grid container-fluid">
 				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
               {% assign my_array = "" | split: ',' %}
               {% for page in sorted-pages %}

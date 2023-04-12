@@ -7,6 +7,13 @@
 
 <body>
     <section id="cat-bibleQuiz" class="cat-bibleQuiz-section">
+        {% include QandA-cat-header.html %}
+        <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
+            <h1>BIBLE QUIZ</h1>
+            <h5>TEST YOUR KNOWLEDGE ON:</h5>
+            {{ content }}
+            {% include QandA-cat-settings.html %}
+        </section>
         <audio id="categorySound" src="../audio/categorySound.mp3" loop="true"></audio>
         <!-- <button id="pauseButtonCat">
             <i class="fas fa-volume-mute"></i>
@@ -15,15 +22,5 @@
               <i class="fas fa-volume-up"></i>
         </button> -->
         <audio id="clickSound" src="../audio/clickSound.mp3"></audio>
-        {% include QandA-cat-header.html %}
-        <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
-            <h1>BIBLE QUIZ</h1>
-            <h5>TEST YOUR KNOWLEDGE ON:</h5>
-            {{ content }}
-            {% include QandA-cat-settings.html %}
-        </section>
     </section>
-    <!-- Sound from Zapsplat.com -->
-    <!-- <a href="https://www.flaticon.com/free-icons/power" title="power icons">Power icons created by Freepik - Flaticon</a>
-    <a href="https://www.vectorstock.com/royalty-free-vector/trophy-eps-vector-25170110">Vector image by VectorStock / vectorstock</a> -->
 </body>

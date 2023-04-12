@@ -2,7 +2,7 @@
 	<div class="Resources-grid">
 		<h1 class="titles" title="Click me for More Latest Posts">
 			{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;border-bottom: none;">
 				<span>Latest Posts</span>
 			</a>{% endif %}{% endfor %}
 		</h1>			

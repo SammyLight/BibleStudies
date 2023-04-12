@@ -35,7 +35,7 @@
         <div class="choosecat-grid-inner">
             <!-- <h2>Who Are You Please?</h2> -->
             <div>
-                <button class="choosecat-Child">
+                <button class="choosecat-Child con1">
                     {% for page in site.pages %}
                     {% if page.categories contains "Quiz Cat" %}
                     {% if page.subsection contains "HomePage-Children" %}
@@ -43,12 +43,20 @@
                         Children Quiz
                     </a>{% endif %}{% endif %}{% endfor %}
                 </button>
-                <button class="choosecat-Adult">
+                <button class="choosecat-Adult con2">
                     {% for page in site.pages %}
                     {% if page.categories contains "Quiz Cat" %}
                     {% if page.subsection contains "HomePage-Adult" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                         Adult Quiz
+                    </a>{% endif %}{% endif %}{% endfor %}
+                </button>
+                <button class="choosecat-Child con3">
+                    {% for page in site.pages %}
+                    {% if page.categories contains "Quiz Cat" %}
+                    {% if page.subsection contains "trivia" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        Bible Trivia
                     </a>{% endif %}{% endif %}{% endfor %}
                 </button>
             </div>

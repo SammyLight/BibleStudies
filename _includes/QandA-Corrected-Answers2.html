@@ -16,14 +16,10 @@
     <div class="corAnswers-btn">
         <button onclick="window.location.reload()">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
         <button>
-            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
-            {% for aaa in site.pages %}
-                {% if aaa.subsection contains caty %}
-                <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-                    New Quiz <i class="fas fa-solid fa-angle-right"></i>
-                </a>
-            {% endif %}
-            {% endfor %}
+            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
+                New Quiz <i class="fas fa-solid fa-angle-right"></i>
+            </a>{% endif %}{% endfor %}
         </button>
     </div>
 </section>

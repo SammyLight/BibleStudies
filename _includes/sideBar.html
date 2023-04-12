@@ -1,12 +1,14 @@
 <aside class="col-lg-3 order-lg-2 content">
-    <div class="sidebar container-fluid-inner bg-color bg-image">
+    <div class="sidebar container-fluid-inner bg-image">
         <div class="sidebar-wrapper">
-            <h4 class="titles" title="Click me for More Latest Posts">
-                {% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-                    <span>Latest Posts</span>
-                </a>{% endif %}{% endfor %}
-            </h4>
+            <div class="sidebar-wrapper-header">
+                <h4 class="titles" title="Click me for More Latest Posts">
+                    {% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+                        <span>Latest Posts</span>
+                    </a>{% endif %}{% endfor %}
+                </h4>
+            </div>
             <ul class="recentposts">
                 {% assign sorted-pages = site.pages | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {% for page in sorted-pages %} {% if page.date And page.date != "" And page.date != nil %} {% assign my_array = my_array | push: page %} {% endif %}
                 {% endfor %} {% for page in my_array limit:5 %}
@@ -15,13 +17,14 @@
                 <small class="archive-date">{{ page.date }}</small></a></li>
                 {% endfor %}
             </ul>
-
-            <h4 class="titles" title="Click me for all Links in Categories">
-                {% for page in site.pages %}{% if page.title contains "Study Resources" %}
-                <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
-                    <span>Categories</span>
-                </a>{% endif %}{% endfor %}
-            </h4>
+            <div class="sidebar-wrapper-header">
+                <h4 class="titles" title="Click me for all Links in Categories">
+                    {% for page in site.pages %}{% if page.title contains "Study Resources" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
+                        <span>Categories</span>
+                    </a>{% endif %}{% endfor %}
+                </h4>
+            </div>
             <ul class="recentposts">
                 <li>
                     {% for page in site.pages %} {% if page.categories contains "HomePage-Angel of Yahweh" %}
