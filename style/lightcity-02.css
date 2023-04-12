@@ -739,6 +739,9 @@ hr {
     padding: 10px;
 }
 .sidebar a {
+    color: #898181!important;
+}
+.recentposts a {
     color: #212121!important;
 }
 .sidebar li:before {
