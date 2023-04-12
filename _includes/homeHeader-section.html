@@ -52,12 +52,9 @@
                                     <a class="linkTitle transition" href="BibleApp.html"><span>Bible App</span></a>
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                                    <a class="linkTitle transition"
-                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-                                        target="_blank">
-                                        <span>{{page.title}}</span>
-                                    </a>{% endif %}{% endfor %}
+                                    <a class="iconLink transition" href="https://lightcityteachingfellowship.github.io/BibleApp-2/">
+                                        <span>Bible App</span>
+                                    </a>
                                 </div>
                                 <div class="mobile-headerLinks transition">
                                     {% for page in site.pages %}{% if page.title contains "Join Us" %}
@@ -118,13 +115,14 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            <a class="linkTitle transition" href="BibleApp.html"><span>Bible App</span></a>
+                            <a class="iconLink transition" href="https://lightcityteachingfellowship.github.io/BibleApp-2/">
+                                <span>Bible App</span>
+                            </a>
                         </li>
                         <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                             <a class="iconLink transition"
-                                href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-                                target="_blank">
+                                href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                 <span>{{page.title}}</span>
                             </a>{% endif %}{% endfor %}
                         </li>

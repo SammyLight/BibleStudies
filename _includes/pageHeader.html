@@ -49,15 +49,14 @@
                                 </div>
                                 <div class="mobile-headerLinks transition">
                                     <a class="linkTitle transition"
-                                        href="lightcityteachingfellowship.github.io/BibleApp-2/" target="_blank">
+                                        href="lightcityteachingfellowship.github.io/BibleApp-2/">
                                         <span>Bible App</span>
                                     </a>
                                 </div>
                                 <div class="mobile-headerLinks transition">
                                     {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                                     <a class="linkTitle transition"
-                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-                                        target="_blank">
+                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>{{page.title}}</span>
                                     </a>{% endif %}{% endfor %}
                                 </div>
@@ -92,16 +91,14 @@
                         </a>{% endif %}{% endfor %}
                     </li>
                     <li class="header-links-li transition">
-                        <a class="iconLink transition" href="https://lightcityteachingfellowship.github.io/BibleApp-2/"
-                            target="_blank">
+                        <a class="iconLink transition" href="https://lightcityteachingfellowship.github.io/BibleApp-2/">
                             <span>Bible App</span>
                         </a>
                     </li>
                     <li class="header-links-li transition">
                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                         <a class="iconLink transition"
-                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-                            target="_blank">
+                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>{{page.title}}</span>
                         </a>{% endif %}{% endfor %}
                     </li>
