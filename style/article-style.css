@@ -271,9 +271,6 @@ blockquote:before {
 li:before {
     font-size: medium;
 }}
-#homeHeader {
-    box-shadow: 0 2px 4px #d0d0d0;
-}
 .homeHeaderNav {
     display: -webkit-box;
     display: flex;
