@@ -110,12 +110,6 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                <span>Categories</span>
-                            </a>{% endif %}{% endfor %}
-                        </li>
-                        <li class="header-links-li transition">
                             <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
                                 <span>Bible App</span>
                             </a>
