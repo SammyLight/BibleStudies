@@ -1,0 +1,40 @@
+<header id="mobileHeader">
+    <div class="bg-color bg-image">
+        <div class="mobileHeaderNav">
+            <div class="mobileLogoSize">
+                {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                <a
+                    href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <img class="mobileLogo" src="images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                </a>{% endif %}{% endfor %}
+            </div>
+            <div style="display: grid; place-content: center;">
+                <div class="mobile-headerLinks">
+                    <span>LightCity Resources</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header id="desktopHeader">
+    <div id="homeHeader" class="bg-color bg-image">
+        <div class="container-fluid-inner">
+            <nav class="homeHeaderNav">
+                <div class="churchLOGO">
+                    {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                    <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                    </a>{% endif %}{% endfor %}
+                </div>
+                <div class="headerUL">
+                    <ul class="header-links">
+                        <li class="header-links-li transition">
+                            <span>LightCity Resources</span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
