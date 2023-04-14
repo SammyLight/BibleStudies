@@ -2,25 +2,40 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: homeTEMPLATE
-title: "LightCity Teaching Fellowship"
+layout: pre-homeTEMPLATE
+title: "LightCity Resources"
 ---
 
-<section id="homeBodyContent" class="homeBody-section flex1 order-lg-1">
-	<div class="visible-titles hover bg-image collapsible">
-		<h4 class="container-fluid-inner caretText">Latest Posts</h4>
-		<span id="caretID" class="container-fluid-inner caret"></span>
-	</div>
-	{% include sideBar.html %}
-	<div class="col-lg-6">
-	<div class="container-fluid-inner">
-			{% include Intro-to-the-Website.html %}
-			{% include Prayer-for-You.html %}
-			{% include LightCity-Resources-section.html %}	
+<section id="pre-homeBodyContent" class="">
+	<div class="box-container">
+		<div class="box transition">
+		{% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+		<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+			<img class="" src="images/library-book-svgrepo-com.svg" alt="lightcity Study Page">
+			<span>Study Page</span>
+		</a>{% endif %}{% endfor %}
+		</div>
+		<div class="box transition">
+			<a href="https://samuelawojuola.github.io/BibleApp-2">
+				<img class="" src="images/books-stack-svgrepo-com.svg" alt="lightcity Bible App">
+				<span>Bible App</span>
+			</a>
+		</div>
+		<div class="box transition">
+			<a href="https://samuelawojuola.github.io/BibleApp-2/page2_versenotes.html">
+				<img class="" src="images/book-pencil-svgrepo-com.svg" alt="Pst Sam ElYah's Notes">
+				<span>Bible Notes</span>
+			</a>
+		</div>
+		<div class="box transition">
+			{% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+				<img class="" src="images/test-svgrepo-com2.svg" alt="lightcity Bible Quiz">
+				<span>Bible Quiz</span>
+			</a>{% endif %}{% endfor %}
 		</div>
 	</div>
 </section>
-{% include contact-section.html %}
 
 <script type="text/javascript" src="script/victorScripts/recentposts.js"></script>
 <script type="text/javascript" src="script/victorScripts/dropDownMenu.js"></script>
