@@ -324,8 +324,8 @@ function confirm() {
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
-            rightAnswer.style.backgroundColor = 'transparent';
-                rightAnswer.style.color = '';
+            rightAnswer.style.backgroundColor = 'green';
+                rightAnswer.style.color = 'white';
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
