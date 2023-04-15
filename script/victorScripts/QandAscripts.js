@@ -106,20 +106,6 @@ function showNewCatFunc() {
         // alert('does exist!');
     }
 }
-// function noPtagSshowNewCatFunc() {
-//     var parentElementOL = document.querySelector('.showNewCatCSS');
-//     console.log(parentElementOL);
-//     var parentElementLI = currentQuestion;
-//     var showNewCatPrevious = currentQuestion.previousElementSibling.querySelector('p');
-//     console.log(showNewCatPrevious);
-//     var showNewCat = currentQuestion.querySelector('p');
-//     if (!showNewCat) {
-//         let clone = showNewCatPrevious.cloneNode(true);
-//         parentElementLI.prepend(clone);
-//         showNewCatPrevious.remove();
-//         // alert('does not exist!');
-//     }
-// }
 function showNextOrPrevQuestion(n) {
     if ((n > totalQuestions) || (n < 1)) {
         slideIndex = 1;
@@ -338,8 +324,8 @@ function confirm() {
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
-            rightAnswer.style.backgroundColor = 'green';
-                rightAnswer.style.color = 'white';
+            rightAnswer.style.backgroundColor = 'transparent';
+                rightAnswer.style.color = '';
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
