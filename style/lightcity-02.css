@@ -751,7 +751,9 @@ hr {
     min-height: calc(100vh - 400px);
     position: relative;
 }
-
+.homeBody-section{
+    min-height: calc(100vh - 400px);
+}
 /* SIDEBAR CSS */
 .visible-titles {
     display: grid;
