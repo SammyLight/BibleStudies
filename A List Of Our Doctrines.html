@@ -21,7 +21,11 @@ categories: [""]
                 <ol>
                     <li>Obedience</li>
                     <li>Consecration</li>
-                    <li><a href="/BibleStudies/Bible%20Commentaries/NT-7.01-Head%20Covering.html">Head Covering</a></li>
+                    <li>{% for page in site.pages %}{% if page.title contains "Head Covering" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            Head Covering
+                        </a>{% endif %}{% endfor %}
+                    </li>
                     <li>Church Conduct</li>
                     <li>Spiritual Language</li>
                     <li>Studying Scriptures</li>
@@ -35,20 +39,29 @@ categories: [""]
                     <li>Isaiah 40</li>
                     <li>The 70 7s of Daniel Chapter 9</li>
                     <li>The Gospel According to Stephen</li>
-                    <li><a href="/BibleStudies/Bible%20Commentaries/A0-Home-BibleCommentaries.html">Romans</a></li>
+                    <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Romans
+                        </a>{% endif %}{% endfor %}
+                    </li>
                 </ol>
                 <h3 class="titles">The Supernatural/Miraculous</h3>
                 <ol>
                     <li>The Children&rsquo;s Bread</li>
                     <li>Lifting of Hands and Power Transfer</li>
-                    <li><a href="/BibleStudies/General%20Resources/The%20Elements%20(Στοιχεῖον,%20stoicheion—G4747)%20of%20Which%20Paul%20Wrote.html">The Elements</a></li>
+                    <li>{% for page in site.pages %}{% if page.title contains "The Elements" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            The Elements
+                        </a>{% endif %}{% endfor %}
+                    </li>
                 </ol>
                 <h3 class="titles">The Christian Response to Worldly Events</h3>
                 <ol>
                     <li>The Truth about the One-World Government</li>
                     <li>The Christian Response to the #EndSARS Protest</li>
                 </ol>
-                <h3 class="titles"><a href="/BibleStudies/Jesus/A0-Home-Jesus.html">Jesus</a></h3>
+                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-Jesus" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
+                    </a>{% endif %}{% endfor %}</h3>
                 <ol>
                     <li>The Law of Christ</li>
                     <li>Jesus as the Christ</li>
@@ -57,7 +70,9 @@ categories: [""]
                     <li>Jesus Fulfils the Law of Moses</li>
                     <li>When Jesus Became God&rsquo;s Son</li>
                 </ol>
-                <h3 class="titles"><a href="/BibleStudies/Parables/A0-Home-Parables.html">Parables</a></h3>
+                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
+                    </a>{% endif %}{% endfor %}</h3>
                 <ol>
                     <li>Parables of Jesus</li>
                     <li>Parables of Jacob</li>
@@ -70,7 +85,9 @@ categories: [""]
                 </ol>
                 <h3 class="titles">Spiritual Concepts</h3>
                 <ol>
-                    <li><a href="/BibleStudies/Parables/A0-Home-Parables.html">Parables</a></li>
+                    <li>{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
+                        </a>{% endif %}{% endfor %}</li>
                     <li>Salvation</li>
                     <li>Prophecy</li>
                     <li>Shaping Reality</li>
@@ -79,24 +96,44 @@ categories: [""]
                     <li>The Sure Mercies of David</li>
                     <li>The Resurrection/Immortality</li>
                 </ol>
-                <h3 class="titles"><a href="/BibleStudies/The%20LAW/A0-Home-TheLAW.html">The Law of Moses</a></h3>
+                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        The LAW of Moses
+                   </a>{% endif %}{% endfor %}</h3>
                 <ol>
                     <li>The Priesthood of Israel</li>
                     <li>The Law of the Sabbath</li>
                 </ol>
                 <h3>Angels and Supernatural Beings</h3>
                 <ol>
-                    <li><a href="/BibleStudies/AngelOfTheLord/A0-Home-AngelOfYahweh.html">The Angel of Yahweh</a></li>
+                    <li>
+                        {% for page in site.pages %} {% if page.categories contains "HomePage-Angel of Yahweh" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            The Angel of Yahweh
+                        </a>{% endif %}{% endfor %}
+                    </li>
                 </ol>
                 <h3 class="titles">Biblical Events and Places</h3>
                 <ol>
                     <li>Eden</li>
-                    <li><a href="/BibleStudies/Bible%20Commentaries/NT-27.01-The%20Fall%20of%20Satan.html">Fall of Satan</a></li>
-                    <li><a href="/BibleStudies/General%20Resources/LastDays%20Template.html">The Last Days</a></li>
+                    <li>{% for page in site.pages %}{% if page.title contains "The Fall of Satan" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            Fall of Satan
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                    <li>{% for page in site.pages %}{% if page.title contains "Last Days Timeline" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            The Last Days
+                        </a>{% endif %}{% endfor %}
+                    </li>
                 </ol>
                 <h3 class="titles">Biblical Questions</h3>
                 <ol>
-                    <li><a href="/BibleStudies/General%20Resources/Is%20Swearing%20A%20Sin.html">Is Swearing a Sin</a></li>
+                    <li>{% for page in site.pages %}{% if page.title contains "Is Swearing A Sin" %}
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            Is Swearing A Sin
+                        </a>{% endif %}{% endfor %}
+                    </li>
                     <li>Why did God try to Kill Moses?</li>
                 </ol>
             </div>
