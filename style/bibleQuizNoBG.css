@@ -193,7 +193,7 @@ button.fadeOut:hover{
     right: 0;
 }
 .catSettings>img{
-    width: 50px;
+    width: 35px;
 }
 .choosecat-grid{
     font-family: 'DynaPuff', cursive!important;
@@ -329,7 +329,7 @@ display: none!important;
 }
 #cat-headerbar{
     display: grid;
-    place-items: center;
+    /* place-items: center; */
     place-content: center;
     font-size: 1.5em;
     grid-template-columns: 10% 90%;
@@ -347,7 +347,7 @@ display: none!important;
 } */
 #catSettings {
     display: grid;
-    place-content: center start;
+    place-content: center end;
 }
 .headerUL{
     display: -ms-grid;
@@ -373,9 +373,12 @@ ul.header-links{
 .align-items{
     align-items: center;
 }
+.churchLOGO img {
+    padding: 10px 10px 10px 0;
+}
 @media only screen and (max-width: 589px){
 #cat-headerbar{
-    grid-template-columns: 25% 60% 15%;
+    grid-template-columns: 32% 53% 15%;
 }
 #catSettingsContent{
     top: 0;
@@ -397,17 +400,20 @@ ul.header-links {
     padding: 0 8px 0!important;
 }}
 @media screen and (max-width: 420px){
+#cat-headerbar {
+    font-size: 1.3em;
+}
 .churchLOGO img {
     height: 28px;
+}
+.header-links-li>a {
+    font-size: 85.7%!important;
 }
 #catSettingsContent {
     top: 130px;
     left: 9%;
 }}
 @media screen and (max-width: 360px){
-#cat-headerbar {
-    font-size: 1.4em;
-}
 .catSettings>img {
     width: 45px;
 }}
@@ -446,11 +452,14 @@ ul.header-links {
     left: 15%;
 } 
 #cat-headerbar{
-    font-size: 2.5em;
-    grid-template-columns: 25% 55% 20%;
+    /* font-size: 2.5em; */
+    grid-template-columns: 35% 53% 12%;
 }
 .churchLOGO img {
-    height: 60px;
+    height: 40px;
+}
+.catSettings>img{
+    width: 50px;
 }}
 
 @media only screen and (min-width: 1024px){ 
@@ -460,7 +469,7 @@ ul.header-links {
 } 
 #cat-headerbar{
     /* place-self: baseline; */
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 40% 40% 20%;
 }}
 /* END OF HEADER SECTION */
 
