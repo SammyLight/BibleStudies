@@ -471,7 +471,7 @@ ul.header-links {
 } 
 #cat-headerbar{
     /* place-self: baseline; */
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 43% 40% 17%;
 }}
 /* END OF HEADER SECTION */
 
