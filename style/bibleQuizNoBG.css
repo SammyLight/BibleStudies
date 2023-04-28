@@ -197,9 +197,9 @@ button.fadeOut:hover{
 }
 .choosecat-grid{
     font-family: 'DynaPuff', cursive!important;
-    display: grid;
+    /* display: grid;
     grid-template-rows: 10% 90%;
-    grid-template-columns: 100%;
+    grid-template-columns: 100%; */
     min-height: calc(100vh - 80px);
     position: relative;
 }
@@ -208,6 +208,7 @@ button.fadeOut:hover{
     place-content: center;
     /* grid-template-columns: 95%; */
     width: 100%;
+    min-height: calc(100vh - 80px);
 }
 .choosecat-grid-inner>div{
     display: grid;
@@ -289,7 +290,7 @@ button.fadeOut:hover{
 }}
 @media only screen and (min-width: 912px){
 .choosecat-grid {
-    grid-template-rows: 10% 90%;
+    /* grid-template-rows: 10% 90%; */
     height: 100vh;
 }
 .choosecat-grid h2 {
@@ -302,9 +303,9 @@ button.fadeOut:hover{
 
 @media  only screen and (min-width: 1024px){
 .choosecat-grid {
-    display: grid;
+    /* display: grid;
     grid-template-rows: 13% 87%;
-    place-content: center;
+    place-content: center; */
     gap: 0;
     height: 100vh;
 }
@@ -348,6 +349,7 @@ display: none!important;
 #catSettings {
     display: grid;
     place-content: center end;
+    place-self: center end;
 }
 .headerUL{
     display: -ms-grid;
