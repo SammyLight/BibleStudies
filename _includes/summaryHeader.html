@@ -1,7 +1,7 @@
 <!-- <link type="text/css" href="/style/lightcity-02.css" rel="stylesheet"> -->
-<link type="text/css" href="../../../../../style/article-style.css" rel="stylesheet">
+<link type="text/css" href="/style/article-style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link type="text/css" href="../../../../../style/style_compareTable.css" rel="stylesheet">
+<link type="text/css" href="/style/style_compareTable.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -87,7 +87,7 @@
                             {% assign categories = page.categories[0] %}
                         {% endif %}
                         {% for category in categories %}
-                        <a class="iconLink transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
                         {% unless forloop.last %}&nbsp;{% endunless %}
                         {% endfor %}
                     </li>
@@ -98,7 +98,7 @@
                             {% assign categories = page.categories[1] %}
                         {% endif %}
                         {% for category in categories %}
-                        <a class="iconLink transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
                         {% unless forloop.last %}&nbsp;{% endunless %}
                         {% endfor %}
                     </li>
