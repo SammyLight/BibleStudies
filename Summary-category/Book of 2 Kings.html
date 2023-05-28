@@ -22,7 +22,7 @@ categories: ["HomePage-Book-of-2Kings"]
 		<ol>
 			{% for post in site.categories.Book-of-2Kings %}
 			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
 				{% endfor %}
 		</ol>

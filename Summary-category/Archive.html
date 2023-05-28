@@ -28,7 +28,7 @@ title: Archive
 		<h3 class="titles">{{ yearMonth.name }}</h3>
 		<ol>
 			{% for post in yearMonth.items %}
-			<li><a href="{{ post.url }}">{{ post.title }} <small class="archive-date-summary">{{ post.date | date: "%a,
+			<li><a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }} <small class="archive-date-summary">{{ post.date | date: "%a,
 						%b %d, %y." }}</small></a></a></li>
 			{% endfor %}
 		</ol>

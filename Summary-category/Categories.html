@@ -42,13 +42,13 @@ title: Categories
 				<h5 class="titles">{{ yearMonth.name }}</h5>
 				<ul class="recentposts">
 					{% for post in yearMonth.items %}
-					<li><a class="link" href="{{ post.url }}">{{ post.title }}
+					<li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}
 							<br>
 							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
 					{% endfor %}
 					<small title="Click me for all Links in Archive">
 						{% for page in site.pages %}{% if page.title contains "Archive" %}
-						<a class="titles href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+						<a class="titles" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
 							style="text-decoration: none!important;">
 							<span>More archives...</span>
 						</a>{% endif %}{% endfor %}
@@ -97,7 +97,7 @@ title: Categories
 					<ol>
 						{% for post in site.categories[category_name] %}
 						<li>
-							<a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a> &nbsp; <span
+							<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a> &nbsp; <span
 								class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 						</li>
 						{% endfor %}

@@ -26,7 +26,7 @@ categories: ["HomePage-Faith"]
 		<ol id="nav">
 			{% for post in site.categories.Faith %}
 			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
 				{% endfor %}
 		</ol>
