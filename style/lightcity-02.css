@@ -650,7 +650,17 @@ img {
     display: block;
     color: #6b6161;
     font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-top: 20px;
+}
+.archive-date-summary {
+    display: inline;
+    color: #6b6161;
+    font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 17px;
@@ -665,7 +675,7 @@ img {
 }
 .categories {
     margin-top: 24px;
-    font-size: 90%!important;
+    font-size: 80%!important;
 }
 .categories span {
     color: #898181;
@@ -717,7 +727,7 @@ hr {
     font-size: 20px;
 }
 .archive-date {
-    font-size: 20px;
+    font-size: 16px;
 }}
 @media only screen and (min-width: 960px) {
 .Agrids {
@@ -725,7 +735,7 @@ hr {
     flex: 0 0 31%;
 }
 .archive-date {
-    font-size: 20px;
+    font-size: 16px;
 }}
 
 /* MEETING-DAYS CSS */
@@ -815,6 +825,7 @@ hr {
 .sidebar-wrapper {
     color: #212121!important;
     color: #F9FBFD!important;
+    padding: 0 10px 10px;
     /* margin-top: 1em; */
 }
 .sidebar-wrapper span:hover{
@@ -831,8 +842,9 @@ hr {
     /* box-shadow: 0 1px 2px #d0d0d0;
     box-shadow: 0 1px 2px rgba(190,190,190,.5); */
 }
-.sidebar-wrapper-header h4{
-    padding: 10px;
+.sidebar-wrapper-header h4, .sidebar-wrapper h5{
+    padding: 10px 0;
+    margin: 0;
     border-bottom: none;
 }
 .sidebar-wrapper-header h4>a{
@@ -857,12 +869,18 @@ hr {
     padding-right: 0;
 }
 ul.recentposts {
-    padding: 10px;
+    padding: 10px 0;
     list-style: none;
     margin: 0;
 }
 .recentposts li {
     padding: 0.2em 0;
+}
+a.cat-link{
+    font-size: 12px;
+}
+a.link{
+    font-size: 16px;
 }
 @media only screen and (max-width: 1024px) {
 aside.content {
@@ -875,14 +893,20 @@ aside.content {
     font-size: 30px;
 }
 a.cat-link{
-    font-size: 23px;
+    font-size: 16px;
+}
+a.link{
+    font-size: 18px;
 }
 .recentposts li {
     padding: 0.2em 0 0.5em 0;
 }}
 @media only screen and (min-width: 760px) {
-a.cat-link{
-    font-size: 25px;
+/* a.cat-link{
+    font-size: 18px;
+} */
+a.link{
+    font-size: 20px;
 }}
 @media only screen and (min-width: 820px) {
 .caretText{
