@@ -1,7 +1,7 @@
-<!-- <link type="text/css" href="../style/lightcity-02.css" rel="stylesheet"> -->
-<link type="text/css" href="../style/article-style.css" rel="stylesheet">
+<!-- <link type="text/css" href="/style/lightcity-02.css" rel="stylesheet"> -->
+<link type="text/css" href="/style/article-style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link type="text/css" href="../style/style_compareTable.css" rel="stylesheet">
+<link type="text/css" href="/style/style_compareTable.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
@@ -10,10 +10,10 @@
     <nav id="homeHeader" class="bg-color bg-image">
         <div class="mobileHeaderNav">
             <div class="mobileLogoSize">
-                {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                 <a
                     href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                    <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                    <img class="mobileLogo" src="/images/LightCityLOGO.jpg" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
             </div>
             <div class="mobileView">
@@ -23,22 +23,32 @@
                         <div id="myDropdown" class="myDropdown transition">
                             <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                                 <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %} {% if page.title contains "LCTF" %}
+                                    {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
                                     <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Home</span>
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% assign caty = page.categories[0] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if aaa.categories contains caty %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-                                        <span>{{ page.categories[0] }}</span>
-                                    </a>{% endif %}{% endfor %}
+                                    {% if post %}
+                                        {% assign categories = post.categories[0] %}
+                                    {% else %}
+                                        {% assign categories = page.categories[0] %}
+                                    {% endif %}
+                                    {% for category in categories %}
+                                    <a class="linkTitle transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                                    {% unless forloop.last %}&nbsp;{% endunless %}
+                                    {% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% assign caty = page.categories[1] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if aaa.categories contains caty %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-                                        <span>{{ page.categories[1] }}</span>
-                                    </a>{% endif %}{% endfor %}
+                                    {% if post %}
+                                        {% assign categories = post.categories[1] %}
+                                    {% else %}
+                                        {% assign categories = page.categories[1] %}
+                                    {% endif %}
+                                    {% for category in categories %}
+                                    <a class="linkTitle transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                                    {% unless forloop.last %}&nbsp;{% endunless %}
+                                    {% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
                                     <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
@@ -66,20 +76,31 @@
             <div class="headerUL desktopView">
                 <ul class="header-links">
                     <li class="header-links-li transition">
-                        {% for page in site.pages %} {% if page.title contains "LCTF" %}
+                        {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
                         </a>{% endif %}{% endfor %}
                     </li>
                     <li class="header-links-li transition">
-                        {% assign caty = page.categories[0] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if aaa.categories contains caty %}
-                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
-                        </a>{% endif %}{% endfor %}
+                        {% if post %}
+                            {% assign categories = post.categories[0] %}
+                        {% else %}
+                            {% assign categories = page.categories[0] %}
+                        {% endif %}
+                        {% for category in categories %}
+                        <a class="iconLink transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                        {% unless forloop.last %}&nbsp;{% endunless %}
+                        {% endfor %}
                     </li>
                     <li class="header-links-li transition">
-                        {% assign caty = page.categories[1] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if
-                        aaa.categories contains caty %}
-                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[1] }}
-                        </a>{% endif %}{% endfor %}
+                        {% if post %}
+                            {% assign categories = post.categories[1] %}
+                        {% else %}
+                            {% assign categories = page.categories[1] %}
+                        {% endif %}
+                        {% for category in categories %}
+                        <a class="iconLink transition" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                        {% unless forloop.last %}&nbsp;{% endunless %}
+                        {% endfor %}
                     </li>
                     <li class="header-links-li transition">
                         <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">

@@ -19,7 +19,7 @@
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
                                             page.title }}
 
-                                            <small class="archive-date" style="margin-top: 0;">{{ page.date }}</small>
+                                            <small class="archive-date" style="margin-top: 0;">{{ page.date | date_to_string }}.</small>
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -103,6 +103,12 @@
                                         {% for page in site.pages %}{% if page.title contains "About Us" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>About Us</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
+                                        {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Summary</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>

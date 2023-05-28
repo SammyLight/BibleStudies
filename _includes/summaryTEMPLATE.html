@@ -1,4 +1,4 @@
-<div class="toggleAllHeaders">
+<!-- <div class="toggleAllHeaders">
     <p>Expand All</p>
     <div>
 		<input type="checkbox" class="checkbox" id="toggleAllBtn" />
@@ -8,8 +8,9 @@
 			<div class="ball"></div>
 		</label>
 	</div>
-</div>
+</div> -->
+<small class="archive-date" style="margin: 1em;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 {{content}}
 <div class="add_space"></div>
-{% include contact-section.html %}
-{% include AoY-foot.html %}
+{% include contact-section-summary.html %}
+{% include AoY-foot-summary.html %}

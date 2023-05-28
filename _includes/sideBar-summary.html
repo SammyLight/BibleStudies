@@ -1,0 +1,74 @@
+<aside class="col-lg-3 order-lg-2 content">
+    <div class="sidebar container-fluid-inner bg-image">
+        <div class="sidebar-wrapper">
+            <div class="sidebar-wrapper-header">
+                <h4 class="titles" title="Click me for More Latest Summaries">
+                    {% for page in site.pages %}{% if page.title contains "More Recent Summaries" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                        style="text-decoration: none!important;">
+                        <span>Latest Summaries</span>
+                    </a>{% endif %}{% endfor %}
+                </h4>
+            </div>
+            <ul class="recentposts">
+                <!-- {% assign sorted-posts = site.posts | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {% for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign my_array = my_array | push: posts %} {% endif %}
+                {% endfor %}  -->
+                {% for post in site.posts limit:5 %}
+                <li><a class="link" href="{{ post.url }}">{{ post.title }}
+                        <br>
+                        <small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
+                {% endfor %}
+            </ul>
+            <div class="sidebar-wrapper-header">
+                <h4 class="titles" title="Click me for all Links in Categories">
+                    {% for page in site.pages %}{% if page.title contains "Categories" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                        style="text-decoration: none!important;">
+                        <span>Categories</span>
+                    </a>{% endif %}{% endfor %}
+                </h4>
+            </div>
+            <ul class="recentposts">
+                {% for category in site.categories %}
+                {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+                <li>
+                    {% assign sumcaty = category_name %}
+                    {% for sss in site.pages %}
+                    {% if sss.categories contains sumcaty %}
+                    <a class="link" href="{% if site.baseurl == "" %}{{sss.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{sss.url}}{% endif %}">
+                        {{ sss.title }}
+                    </a>
+                    {% endif %}{% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="sidebar-wrapper-header">
+                <h4 class="titles" title="Click me for all Links in Archive">
+                    {% for page in site.pages %}{% if page.title contains "Archive" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                        style="text-decoration: none!important;">
+                        <span>Archives</span>
+                    </a>{% endif %}{% endfor %}
+                </h4>
+            </div>
+            {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1 %}
+            {% for yearMonth in postsByYearMonth %}
+            <h5 class="titles">{{ yearMonth.name }}</h5>
+            <ul class="recentposts">
+                {% for post in yearMonth.items %}
+                <li><a href="{{ post.url }}">{{ post.title }}
+                        <br>
+                        <small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            <small title="Click me for all Links in Archive">
+                {% for page in site.pages %}{% if page.title contains "Archive" %}
+                <a class="titles href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                    style="text-decoration: none!important;">
+                    <span>More archives...</span>
+                </a>{% endif %}{% endfor %}
+            </small>
+        </div>
+    </div>
+</aside>
