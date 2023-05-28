@@ -4,7 +4,7 @@
             <div class="mobileLogoSize">
                 {% for page in site.pages %}{% if page.title contains "LCTF" %}
                 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                    <img class="mobileLogo" src="/images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                    <img class="mobileLogo" src="images/LightCityLOGO.jpg" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
             </div>
             <!-- <form>
