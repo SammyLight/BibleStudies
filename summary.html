@@ -1,0 +1,34 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: homeTEMPLATE-summary
+title: "Teaching Summary"
+---
+
+<section id="homeBodyContent" class="homeBody-section flex1 order-lg-1">
+	<div class="visible-titles hover bg-image collapsible">
+		<h4 class="container-fluid-inner caretText">Latest Summaries</h4>
+		<span id="caretID" class="container-fluid-inner caret"></span>
+	</div>
+	{% include sideBar-summary.html %}
+	<div class="col-lg-6">
+	<div class="container-fluid-inner">
+        <section id="Intro-to-the-Website">
+            <h1 class="titles">Teaching Summary</h1>
+            <div class="prayer-text">
+                <p>This is a our {% for page in site.pages %}{% if page.title contains "Join Us" %}
+					<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+						<span>Meeting Days</span>
+					</a>{% endif %}{% endfor %} summary page. Where the teaching(s) are summarizes for us to able to review and remember the key points.</p>
+                <p style="margin-bottom: 0;">We hope our writings will help in your hunger for God's truth as you study.</p>
+            </div>
+        </section>
+        {% include LightCity-Summary-section.html %}
+	</div>
+	</div>
+</section>
+{% include contact-section-summary.html %}
+<script type="text/javascript" src="/script/victorScripts/recentposts.js"></script>
+<script type="text/javascript" src="/script/victorScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="/script/victorScripts/search.js"></script>

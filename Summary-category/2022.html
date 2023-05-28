@@ -1,0 +1,38 @@
+---
+layout: cat-homepageTEMPLATE-summary
+title: "Year 2022"
+categories: ["HomePage-Year-2022"]
+date: 2022-11-06
+---
+<style>
+	div>ol {
+		list-style-type: upper-alpha;
+		padding-left: 1.5em;
+	}
+
+	div>ol>ol {
+		padding-left: 20px;
+		padding-top: 10px;
+		column-gap: 4em;
+		column-width: 24em;
+	}
+</style>
+<div class="homeBody-section container-fluid-inner">
+	<h1 class="titles">{{ page.title }}</h1>
+	<p>A collection of our Teaching Summaries for the Year.</p>
+	<ol>
+		<!-- <li>
+			<h4>October</h4>
+		</li> -->
+		<ol>
+			{% for post in site.categories.Year-2022 %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+			</li>
+				{% endfor %}
+		</ol>
+	</ol>
+</div>
+{% include contact-section.html %}
+<script type="text/javascript" src="/script/victorScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="/script/victorScripts/recentposts.js"></script>
