@@ -4,7 +4,7 @@
             <div class="mobileLogoSize">
                 {% for page in site.pages %}{% if page.title contains "LCTF" %}
                 <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                    <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                    <img class="mobileLogo" src="/images/LightCityLOGO.jpg" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
             </div>
             <!-- <form>
@@ -86,7 +86,7 @@
                 <div class="churchLOGO">
                     {% for page in site.pages %}{% if page.title contains "LCTF" %}
                     <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                        <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                        <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                     </a>{% endif %}{% endfor %}
                 </div>
                 <div class="headerUL">
