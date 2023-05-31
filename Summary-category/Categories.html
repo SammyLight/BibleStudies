@@ -46,6 +46,8 @@ permalink: /categories/
 							<br>
 							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
 					{% endfor %}
+				</ul>
+				{% endfor %}
 					<small title="Click me for all Links in Archive">
 						{% for page in site.pages %}{% if page.title contains "Archive" %}
 						<a class="titles" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
@@ -53,8 +55,6 @@ permalink: /categories/
 							<span>More archives...</span>
 						</a>{% endif %}{% endfor %}
 					</small>
-				</ul>
-				{% endfor %}
 				<div class="sidebar-wrapper-header">
 					<h4 class="titles" title="Click me for all Links in Categories">
 						{% for page in site.pages %}{% if page.title contains "Categories" %}
