@@ -315,7 +315,10 @@ textarea {
     height: auto;
     min-width: 30px;
 }
-.homeBody-section {
+/* .homeBody-section {
+    margin-top: 60px!important;
+} */
+#search-container {
     margin-top: 60px!important;
 }
 .mobile-headerLinks {
@@ -1151,6 +1154,27 @@ h3 {
     display: none;
 }}
 
+/* Search CSS */
+#search-demo-container {
+    max-width: 40em;
+    padding: 1em;
+    margin: 1em auto;
+    border: 1px solid lightgrey;
+}
+#search-input {
+    display: inline-block;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.8em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* #results-container{
+    margin-left: 30px;
+} */
+
+
 /* Scrollbar CSS */
 /* width */
 ::-webkit-scrollbar {
@@ -1171,6 +1195,7 @@ h3 {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
 /* TOOLTIP CSS */
 
 
