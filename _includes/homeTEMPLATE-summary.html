@@ -4,7 +4,13 @@
 </head>
 
 <body class="fonts">
-    {% include homeHeader-summary.html %} {{ content }}
+    {% include homeHeader-summary.html %}
+    <!-- <div id="search-demo-container">
+        <input type="search" id="search-input" placeholder="search...">
+        <ul id="results-container"></ul>
+      </div> -->
+      {% include search.html %}
+    {{ content }}
 
 </body>
 
