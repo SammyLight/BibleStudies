@@ -1,4 +1,4 @@
-{% include siteHead.html %}
+{% include homeHead.html %}
 {% include pageHeader.html %}
 {% include pageTEMPLATE.html %}
 
