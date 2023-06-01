@@ -5,7 +5,7 @@
     {
 
       "title"    : "{{ page.title | escape }}",
-      "url"      : "{{ site.baseurl }}{{ page.url }}",
+      "url"      : "{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}",
       "category" : "{{ page.categories | join: ', ' }}",
       "tags"     : "{{ page.tags | join: ', ' }}",
       "date"     : "{{ page.date }}"
