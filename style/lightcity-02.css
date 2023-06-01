@@ -1170,9 +1170,19 @@ h3 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-/* #results-container{
+#results-container{
+    /* margin-left: 30px; */
+    position: relative;
+}
+#results-container span{
     margin-left: 30px;
-} */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px;
+    border-radius: 6px;
+    background: transparent;
+}
 
 
 /* Scrollbar CSS */
