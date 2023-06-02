@@ -1,5 +1,4 @@
 ---
-permalink: /search-articles/
 ---
 [
   {% for page in site.pages %}
