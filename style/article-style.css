@@ -9,6 +9,7 @@ body {
     counter-reset: header1 header2;
     margin: 0;
     font-size: 1.5em;
+    font-size: 2em;
 }
 body *{
     -webkit-transition: all 0.1s ease-in-out;
@@ -905,9 +906,19 @@ footer a:hover {
 #Contact-section>div{
     padding: 20px 0;
 }
+.Contact-section h5 {
+    border-bottom: none;
+    font-size: 17px!important;
+    font-weight: 400!important;
+    margin: 0!important;
+    box-shadow: none;
+}
 .Contact-section p {
-    margin: 0.5em 0;
-    font-size: 0.6em!important;
+    display: grid;
+    grid-template-columns: 6% 96%;
+    place-items: baseline;
+    margin: 1em 0!important;
+    font-size: 0.8em!important;
 }
 .Contact-section a {
     text-decoration: none;
@@ -925,11 +936,7 @@ footer a:hover {
     color: #F9FBFD;
     font-weight: 700!important;
     margin: 0;
-}
-.Contact-section h5 {
-    border-bottom: none;
-    font-weight: 400!important;
-    margin: 0!important;
+    box-shadow: none;
 }
 .min-height {
     width: 70%;
@@ -956,13 +963,6 @@ ul.footerLinks-lists {
 }
 .footerLinks-lists p {
     font-size: 16px;
-}
-.Contact-section p {
-    margin: 1em 0;
-    font-size: 0.8em!important;
-}
-.Contact-section h5{
-    font-size: 17px!important;
 }
 
 /* FOOTER LINKS CSS */
@@ -1002,14 +1002,17 @@ ul.footerLinks-lists {
 }
 .Contact-section h5 {
     font-size: 14px!important;
+}
+.Contact-section p {
+    font-size: 0.6em!important;
 }}
 
 @media only screen and (max-width: 300px) {
+.Contact-section h5 {
+    font-size: 10px!important;
+}
 .Contact-section p {
     font-size: .63em!important;
-}
-.Contact-section h5 {
-font-size: 10px!important;
 }}
 
 @media only screen and (min-width: 721px) {
@@ -1018,6 +1021,9 @@ font-size: 10px!important;
 }
 .archive-date {
     font-size: 20px;
+}
+.footerLinks-lists .archive-date {
+    font-size: 16px;
 }
 .footerLinks-header h3,
 .Contact-section h3 {
@@ -1040,11 +1046,14 @@ font-size: 10px!important;
 @media only screen and (min-width: 1060px) {
 .Contact-section-inner {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 70% 30%;
 }
 .footerLinks-wrapper {
     display: grid;
     grid-template-columns: 43% 30% 27%;
+}
+.Contact-section p {
+    font-size: 0.7em!important;
 }}
 
 /* Scrollbar CSS */
