@@ -27,50 +27,28 @@
 				{% endif %}
 			</p>
 
-			<small><a class="titles" href="{% if site.baseurl == "" %}
+			<small><a class="titles-links" href="{% if site.baseurl == "" %}
 						{{page.url}}
 					{% elsif site.baseurl != "" %}
 						/{{site.baseurl}}{{page.url}}
-					{% endif %}">Continue reading …</a>
+					{% endif %}">read more</a>
 			</small>
 
 			<div class="prayer-text">
 				<p class="categories"><span>category:</span>
-					<!-- {% if post %}
+					{% if post %}
 					{% assign categories = post.categories %}
 					{% else %}
 					{% assign categories = page.categories %}
 					{% endif %}
 					{% for category in categories %}
-					<a class="cat-link" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+				{% assign sumcaty = category_name %}
+				{% for post in site.posts %}
+				{% if post.categories contains sumcaty %}
+					<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
 					{% unless forloop.last %}&nbsp;{% endunless %}
-					{% endfor %} -->
-
-					{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
-						{% for aaa in site.pages %}
-							{% if aaa.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-							{{ page.categories[0] }}
-						</a>
-						{% endif %}
-					{% endfor %}
-					&nbsp;
-					{% assign caty = page.categories[1] | prepend: 'HomePage-' %}
-						{% for aaa in site.pages %}
-							{% if aaa.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-							{{ page.categories[1] }}
-						</a>
-						{% endif %}
-					{% endfor %}
-					&nbsp;
-					{% assign caty = page.categories[2] | prepend: 'HomePage-' %}
-						{% for aaa in site.pages %}
-							{% if aaa.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-							{{ page.categories[2] }}
-						</a>
-						{% endif %}
+					{% endif %}{% endfor %}
 					{% endfor %}
 				</p>
 				<hr>

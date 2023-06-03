@@ -30,7 +30,7 @@
             </div>
             <ul class="recentposts">
                 {% for category in site.categories %}
-                {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+                {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
                 {% assign sumcaty = category_name %}
                 {% for post in site.posts %}
                 {% if post.categories contains sumcaty %}
