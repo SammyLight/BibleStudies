@@ -1,7 +1,7 @@
 <!-- Html Elements for Search -->
 <form id="search-container">
   <label for="search-input"></label>
-  <input type="search" id="search-input" name="search-input" placeholder="search summaries...">
+  <input type="search" id="search-input" name="search-input" placeholder="search Summaries...">
   <ul id="results-container">
   </ul>
 </form>
@@ -14,6 +14,7 @@
     SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
+      searchResultTemplate: '<li><a href="{url}">{title}</a><small>{{ post.date | date: "%a, %b %d, %y." }}</small></li>',
       json: '../search-summaries.json'
     })
     </script>

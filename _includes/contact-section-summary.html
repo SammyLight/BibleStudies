@@ -33,15 +33,15 @@
                                     {% for category in site.categories %}
                                     {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{%
                                     endcapture %}
+                                    {% assign sumcaty = category_name %}
+                                    {% for post in site.posts %}
+                                    {% if post.categories contains sumcaty %}
                                     <li>
-                                        {% assign sumcaty = category_name %}
-                                        {% for sss in site.pages %}
-                                        {% if sss.categories contains sumcaty %}
-                                        <a href="{% if site.baseurl == "" %}{{sss.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{sss.url}}{% endif %}">
-                                            {{ sss.title }}
+                                        <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                            {{ post.title }}
                                         </a>
-                                        {% endif %}{% endfor %}
                                     </li>
+                                        {% endif %}{% endfor %}
                                     {% endfor %}
                                 </ul>
                             </div>

@@ -21,8 +21,8 @@
             </ul>
             <div class="sidebar-wrapper-header">
                 <h4 class="titles" title="Click me for all Links in Categories">
-                    {% for page in site.pages %}{% if page.title contains "Categories" %}
-                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                    {% for post in site.posts %}{% if post.title contains "Categories" %}
+                    <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                         style="text-decoration: none!important;">
                         <span>Categories</span>
                     </a>{% endif %}{% endfor %}
@@ -31,21 +31,28 @@
             <ul class="recentposts">
                 {% for category in site.categories %}
                 {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+                {% assign sumcaty = category_name %}
+                {% for post in site.posts %}
+                {% if post.categories contains sumcaty %}
                 <li>
-                    {% assign sumcaty = category_name %}
-                    {% for sss in site.pages %}
-                    {% if sss.categories contains sumcaty %}
-                    <a class="link" href="{% if site.baseurl == "" %}{{sss.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{sss.url}}{% endif %}">
-                        {{ sss.title }}
+                    <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                        {{ post.title }}
                     </a>
-                    {% endif %}{% endfor %}
                 </li>
+                    {% endif %}{% endfor %}
                 {% endfor %}
             </ul>
+            <small title="Click me for all Links in Categories">
+                {% for post in site.posts %}{% if post.title contains "Categories" %}
+                <a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+                    style="text-decoration: none!important;">
+                    <span>More categories...</span>
+                </a>{% endif %}{% endfor %}
+            </small>
             <div class="sidebar-wrapper-header">
                 <h4 class="titles" title="Click me for all Links in Archive">
-                    {% for page in site.pages %}{% if page.title contains "Archive" %}
-                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                    {% for post in site.posts %}{% if post.title contains "Archive" %}
+                    <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                         style="text-decoration: none!important;">
                         <span>Archives</span>
                     </a>{% endif %}{% endfor %}
@@ -56,15 +63,15 @@
             <h5 class="titles">{{ yearMonth.name }}</h5>
             <ul class="recentposts">
                 {% for post in yearMonth.items %}
-                <li><a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}
+                <li><a href="{{ post.url }}">{{ post.title }}
                         <br>
                         <small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
                 {% endfor %}
             </ul>
             {% endfor %}
             <small title="Click me for all Links in Archive">
-                {% for page in site.pages %}{% if page.title contains "Archive" %}
-                <a class="titles href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                {% for post in site.posts %}{% if post.title contains "Archive" %}
+                <a class="titles href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                     style="text-decoration: none!important;">
                     <span>More archives...</span>
                 </a>{% endif %}{% endfor %}
