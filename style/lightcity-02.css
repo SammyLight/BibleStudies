@@ -529,7 +529,7 @@ h3.titles {
 }
 h4.titles {
     font-size: 30px;
-    color: #F2F2F2;
+    /* color: #F2F2F2; */
 }
 h5.titles {
     font-size: 1.152025em;
