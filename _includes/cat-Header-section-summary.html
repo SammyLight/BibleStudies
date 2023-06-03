@@ -43,8 +43,8 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %}{% if page.title contains "Categories" %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                    {% for post in site.posts %}{% if post.title contains "Categories" %}
+                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                         <span>Categories</span>
                                     </a>{% endif %}{% endfor %}
                                 </div>
@@ -113,8 +113,8 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.title contains "Categories" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            {% for post in site.posts %}{% if page.title contains "Categories" %}
+                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                 <span>Categories</span>
                             </a>{% endif %}{% endfor %}
                         </li>
