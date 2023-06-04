@@ -30,17 +30,17 @@
             </div>
             <ul class="recentposts">
                 {% for category in site.categories %}
-                {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-                {% assign sumcaty = category_name %}
-                {% for post in site.posts %}
-                {% if post.categories contains sumcaty %}
-                <li>
-                    <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                        {{ post.title }}
-                    </a>
-                </li>
-                    {% endif %}{% endfor %}
-                {% endfor %}
+				{% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+				{% assign sumcaty = category_name %}
+				{% for post in site.posts %}
+				{% if post.categories contains sumcaty %}
+				<li>
+					<a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+						{{ post.title }}
+					</a>
+				</li>
+					{% endif %}{% endfor %}
+				{% endfor %}
             </ul>
             <small title="Click me for all Links in Categories">
                 {% for post in site.posts %}{% if post.title contains "Categories" %}
