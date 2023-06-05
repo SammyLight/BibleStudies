@@ -1,0 +1,28 @@
+---
+layout: cat-homepageTEMPLATE
+title: "General Resources"
+permalink: /General Resources/
+categories: ["HomePage-General Resources"]
+tags: page-categories
+---
+<style>
+	div>ol {
+		column-gap: 2em;
+		column-width: 12em;
+		padding-left: 1.5em;
+	}
+</style>
+<div class="homeBody-section container-fluid-inner">
+	<h1 class="titles">General Resources</h1>
+	<p>A collection of Useful Resources</p>
+
+	<ol id="nav">
+		{% for page in site.pages %}{% if page.categories contains "General Resources" %}<li><a
+				href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+		</li>
+		{% endif %}{% endfor %}
+	</ol>
+</div>
+{% include contact-section.html %}
+<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>

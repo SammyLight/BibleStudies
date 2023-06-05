@@ -26,6 +26,37 @@ permalink: /categories/
 		<div class="sidebar container-fluid-inner bg-image">
 			<div class="sidebar-wrapper">
 				<div class="sidebar-wrapper-header">
+					<h4 class="titles" title="Click me for all Links in Archive">
+						{% for post in site.posts %}{% if post.title contains "Archive" %}
+						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+							style="text-decoration: none!important;">
+							<span>Archives</span>
+						</a>{% endif %}{% endfor %}
+					</h4>
+				</div>
+				{% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1
+				%}
+				{% for yearMonth in postsByYearMonth %}
+				<h5 class="titles">{{ yearMonth.name }}</h5>
+				<ul class="recentposts">
+					{% for post in yearMonth.items %}
+					<li><a class="link"
+							href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
+							post.title }}
+							<br>
+							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
+					{% endfor %}
+				</ul>
+				{% endfor %}
+				<small title="Click me for all Links in Archive">
+					{% for post in site.posts %}{% if post.title contains "Archive" %}
+					<a class="titles"
+						href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+						style="text-decoration: none!important;">
+						<span>More archives...</span>
+					</a>{% endif %}{% endfor %}
+				</small>
+				<div class="sidebar-wrapper-header">
 					<h4 class="titles" title="Click me for all Links in Categories">
 						{% for post in site.posts %}{% if post.title contains "Categories" %}
 						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
@@ -35,67 +66,45 @@ permalink: /categories/
 					</h4>
 				</div>
 				<ul class="recentposts">
+					{% assign counter = '0' %}
 					{% for category in site.categories %}
-                {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
-				{% assign sumcaty = category_name %}
-				{% for post in site.posts %}
-				{% if post.categories contains sumcaty %}
-                <li>
-                    <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                        {{ post.title }}
-                    </a>
-                </li>
-                    {% endif %}{% endfor %}
-                {% endfor %}
-				</ul>
-				<div class="sidebar-wrapper-header">
-					<h4 class="titles" title="Click me for all Links in Archive">
-						{% for post in site.posts %}{% if post.title contains "Archive" %}
-						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-							style="text-decoration: none!important;">
-							<span>Archives</span>
-						</a>{% endif %}{% endfor %}
-					</h4>
-				</div>
-				{% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 2 %}
-				{% for yearMonth in postsByYearMonth %}
-				<h5 class="titles">{{ yearMonth.name }}</h5>
-				<ul class="recentposts">
-					{% for post in yearMonth.items %}
-					<li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}
-							<br>
-							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
+					{% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+					{% assign sumcaty = category_name %}
+					{% for post in site.posts %}
+					{% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+					<li>
+						<a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+							{{ post.title }}
+						</a>
+					</li>
+					{% endif %}{% endfor %}
 					{% endfor %}
 				</ul>
-				{% endfor %}
-					<small title="Click me for all Links in Archive">
-						{% for post in site.posts %}{% if post.title contains "Archive" %}
-						<a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-							style="text-decoration: none!important;">
-							<span>More archives...</span>
-						</a>{% endif %}{% endfor %}
-					</small>
+				<small title="Click me for all Links in Categories">
+					{% for post in site.posts %}{% if post.title contains "Categories" %}
+					<a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+						style="text-decoration: none!important;">
+						<span>More categories...</span>
+					</a>{% endif %}{% endfor %}
+				</small>
 			</div>
 		</div>
 	</aside>
 	<div class="col-lg-6">
-		<div class="container-fluid">
+		<div class="container-fluid-inner">
 			<div id="categories">
 				<h1 class="titles">{{ page.title }}</h1>
 				<p>Categories, all in one place.</p>
 				{% for tag in site.tags %}
 				<div class="archive-group">
 					{% capture tag_name %}{{ tag | first }}{% endcapture %}
-					<div id="#{{ tag_name | slugize }}"></div>
-					<p></p>
 
 					<h4 class="titles">{{ tag_name }}</h4>
-					<a name="{{ tag_name | slugize }}"></a>
 					<ol>
 						{% for post in site.tags[tag_name] %}
 						<li>
-							<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a> &nbsp; <span
-								class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+							<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
+							&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 						</li>
 						{% endfor %}
 					</ol>
