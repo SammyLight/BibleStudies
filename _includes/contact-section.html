@@ -16,10 +16,12 @@
                                     "" And page.date != nil %} {% assign my_array = my_array | push: page %} {% endif %}
                                     {% endfor %} {% for page in my_array limit:5 %}
                                     <li>
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
                                             page.title }}
 
-                                            <small class="archive-date" style="margin-top: 0;">{{ page.date | date_to_string }}.</small>
+                                            <small class="archive-date" style="margin-top: 0;">{{ page.date |
+                                                date_to_string }}.</small>
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -34,62 +36,24 @@
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
-                                    <li>
-                                        {% for page in site.pages %} {% if page.categories contains "HomePage-Angel of Yahweh" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Angel
-                                            of Yahweh
-                                        </a> {% endif %} {% endfor %}
-                                    </li>
-
-                                    <li>
-                                        {% for page in site.pages %}{% if page.categories contains
-                                        "HomePage-BibleTimelines" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible
-                                            Timelines
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-
-                                    <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible
-                                            Commentaries
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li> {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Bible
-                                            Doctrines
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-
-                                    <li> {% for page in site.pages %}{% if page.categories contains "HomePage-General Resources" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">General
-                                            Resources
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
-                                        {% for page in site.pages %}{% if page.categories contains "HomePage-Parables"
-                                        %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
-                                        {% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The
-                                            LAW
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
-                                        {% for page in site.pages %}{% if page.categories contains "HomePage-New Covenant" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The
-                                            New Covenant
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
-                                        {% for page in site.pages %}{% if page.categories contains "HomePage-Fall of Man" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">The
-                                            Two Falls of Man
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
+                                    {% assign counter = '0' %}
+                                    {% for page in site.pages %}
+                                    {% if page.layout == "cat-homepageTEMPLATE" and counter < '6' %} {% capture counter
+                                        %}{{ counter | plus:'1' }}{% endcapture %} <li>
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            {{ page.title }}
+                                        </a>
+                                        </li>
+                                        {% endif %}
+                                        {% endfor %}
                                 </ul>
+                                <small title="Click me for all Links in Categories">
+                                    {% for page in site.pages %}{% if page.title contains "Study Resources" %}
+                                    <a class="titles" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+                                        style="text-decoration: none!important;">
+                                        <span>More categories...</span>
+                                    </a>{% endif %}{% endfor %}
+                                </small>
                             </div>
                         </div>
                         <div class="footerLinks-header">
@@ -101,13 +65,15 @@
                                 <ul class="footerLinks-lists">
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "About Us" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Summary</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
@@ -118,13 +84,15 @@
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Bible Quiz</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Join Us" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
@@ -141,7 +109,9 @@
                         <p class="prayer-text"><i class="icons fas fa-phone-alt"></i><em> +234 703 777 9894, +234 902
                                 259 9514.</em></p>
                         <p class="prayer-text"><i class="icons fas fa-envelope"></i><em>
-                        <a href="mailto:lightcityteachingfellowship@gmail.com">lightcityteachingfellowship@gmail.com.</a></em></p>
+                                <a
+                                    href="mailto:lightcityteachingfellowship@gmail.com">lightcityteachingfellowship@gmail.com.</a></em>
+                        </p>
                     </div>
                 </div>
             </div>

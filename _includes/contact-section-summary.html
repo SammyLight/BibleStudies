@@ -30,20 +30,28 @@
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
+                                    {% assign counter = '0' %}
                                     {% for category in site.categories %}
                                     {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{%
                                     endcapture %}
                                     {% assign sumcaty = category_name %}
                                     {% for post in site.posts %}
-                                    {% if post.categories contains sumcaty %}
-                                    <li>
-                                        <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                    {% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %} 
+                                        <li>
+                                        <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                             {{ post.title }}
                                         </a>
-                                    </li>
+                                        </li>
                                         {% endif %}{% endfor %}
-                                    {% endfor %}
+                                        {% endfor %}
                                 </ul>
+                                <small title="Click me for all Links in Categories">
+                                    {% for post in site.posts %}{% if post.title contains "Categories" %}
+                                    <a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+                                        style="text-decoration: none!important;">
+                                        <span>More categories...</span>
+                                    </a>{% endif %}{% endfor %}
+                                </small>
                             </div>
                         </div>
                         <div class="footerLinks-header">

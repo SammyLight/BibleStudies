@@ -30,15 +30,15 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 {% if post %}
-					{% assign categories = post.categories %}
-					{% else %}
-					{% assign categories = page.categories %}
-					{% endif %}
-					{% for category in categories %}
-					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-				{% assign sumcaty = category_name %}
-				{% for post in site.posts %}
-				{% if post.categories contains sumcaty %}
+                                {% assign categories = post.categories %}
+                                {% else %}
+                                {% assign categories = page.categories %}
+                                {% endif %}
+                                {% for category in categories %}
+                                {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+                                {% assign sumcaty = category_name %}
+                                {% for post in site.posts %}
+                                {% if post.categories contains sumcaty %}
                                 <div class="mobile-headerLinks transition">
                                     <a class="linkTitle transition"
                                         href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
@@ -46,9 +46,9 @@
                                     </a>
                                 </div>
                                 {% unless forloop.last %}{% endunless %}
-					{% endif %}{% endfor %}
-					{% endfor %}
-                                
+                                {% endif %}{% endfor %}
+                                {% endfor %}
+
                                 <div class="mobile-headerLinks transition">
                                     <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
                                         <span>Bible App</span>
@@ -83,55 +83,24 @@
                         </a>{% endif %}{% endfor %}
                     </li>
                     {% if post %}
-					{% assign categories = post.categories %}
-					{% else %}
-					{% assign categories = page.categories %}
-					{% endif %}
-					{% for category in categories %}
-					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-				{% assign sumcaty = category_name %}
-				{% for post in site.posts %}
-				{% if post.categories contains sumcaty %}
+                    {% assign categories = post.categories %}
+                    {% else %}
+                    {% assign categories = page.categories %}
+                    {% endif %}
+                    {% for category in categories %}
+                    {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+                    {% assign sumcaty = category_name %}
+                    {% for post in site.posts %}
+                    {% if post.categories contains sumcaty %}
                     <li class="header-links-li transition">
-							<a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-								{{category}}
-							</a>
+                        <a class="iconLink transition"
+                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                            {{category}}
+                        </a>
                     </li>
                     {% unless forloop.last %}{% endunless %}
-					{% endif %}{% endfor %}
-					{% endfor %}
-                    <li class="header-links-li transition">
-                        {% assign caty = page.categories[1] | prepend: 'HomePage-' %}
-							{% for post in site.pages %}
-								{% if post.categories contains caty %}
-							<a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-								{{ page.categories[1] }}
-							</a>
-							{% endif %}
-						{% endfor %}
-                    </li>
-                    <li class="header-links-li transition">
-                        {% assign caty = page.categories[2] | prepend: 'HomePage-' %}
-							{% for post in site.pages %}
-								{% if post.categories contains caty %}
-							<a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-								{{ page.categories[2] }}
-							</a>
-							{% endif %}
-						{% endfor %}
-                    </li>
-                    <!-- <li class="header-links-li transition">
-                        {% if post %}
-                        {% assign categories = post.categories[0] %}
-                        {% else %}
-                        {% assign categories = page.categories[0] %}
-                        {% endif %}
-                        {% for category in categories %}
-                        <a class="iconLink transition"
-                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
-                        {% unless forloop.last %}&nbsp;{% endunless %}
-                        {% endfor %}
-                    </li> -->
+                    {% endif %}{% endfor %}
+                    {% endfor %}
                     <li class="header-links-li transition">
                         <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
                             <span>Bible App</span>

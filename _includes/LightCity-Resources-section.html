@@ -2,61 +2,73 @@
 	<div class="Resources-grid">
 		<h1 class="titles" title="Click me for More Latest Posts">
 			{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;border-bottom: none;">
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+				style="text-decoration: none!important;border-bottom: none;">
 				<span>Latest Posts</span>
 			</a>{% endif %}{% endfor %}
-		</h1>			
+		</h1>
 		<div class="homeResources-grid">
-				{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
-              {% assign my_array = "" | split: ',' %}
-              {% for page in sorted-pages %}
-                {% if page.date And page.date != "" And page.date != nil %}
-                    {% assign my_array = my_array | push: page %}
-                {% endif %}
-              {% endfor %}
-			  
-			  {% for page in my_array limit:5 %}
-                <small class="archive-date">{{ page.date | date_to_string }}.</small>
-             
-                <h3 class="titles"><a href="{% if site.baseurl == "" %}
+			{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
+			{% assign my_array = "" | split: ',' %}
+			{% for page in sorted-pages %}
+			{% if page.date And page.date != "" And page.date != nil %}
+			{% assign my_array = my_array | push: page %}
+			{% endif %}
+			{% endfor %}
+
+			{% for page in my_array limit:5 %}
+			<small class="archive-date">{{ page.date | date_to_string }}.</small>
+
+			<h3 class="titles"><a href="{% if site.baseurl == "" %}
 						{{page.url}}
 					{% elsif site.baseurl != "" %}
 						/{{site.baseurl}}{{page.url}}
 					{% endif %}">{{ page.title }}</a>
-				</h3>
+			</h3>
 
-				<p class="prayer-text">
-					{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
-						{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) | strip_html | truncatewords: 50 }}
-					{% else %}
-						{{ page.content | strip_html | truncatewords: 50 }}
-					{% endif %}
-				</p>
-				
-                <small><a class="titles-links" href="{% if site.baseurl == "" %}
+			<p class="prayer-text">
+				{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
+				{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) |
+				strip_html | truncatewords: 50 }}
+				{% else %}
+				{{ page.content | strip_html | truncatewords: 50 }}
+				{% endif %}
+			</p>
+
+			<small><a class="titles-links" href="{% if site.baseurl == "" %}
 						{{page.url}}
 					{% elsif site.baseurl != "" %}
 						/{{site.baseurl}}{{page.url}}
 					{% endif %}">read more</a>
-				</small>
+			</small>
 
-			  	<div class="prayer-text">
-					<p class="categories"><span>category:</span>
-						{% assign caty = page.categories[0] | prepend: 'HomePage-' %}
-							{% for aaa in site.pages %}
-								{% if aaa.categories contains caty %}
-							<a class="cat-link" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-								{{ page.categories[0] }}
-							</a>
-							{% endif %}
-						{% endfor %}
-					</p>
-					<hr>					
-				</div>
+			<div class="prayer-text">
+				<p class="categories"><span>category:</span>
+					{% if page %}
+					{% assign categories = page.categories %}
+					{% else %}
+					{% assign categories = post.categories %}
+					{% endif %}
+					{% for category in categories %}
+					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+					{% assign caty = category_name %}
+					{% for page in site.pages %}
+					{% if page.categories contains caty %}
+					<a class="cat-link"
+						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+						{{category}}
+					</a>
+					{% unless forloop.last %}&nbsp;{% endunless %}
+					{% endif %}{% endfor %}
+					{% endfor %}
+				</p>
+				<hr>
+			</div>
 			{% endfor %}
 			<h5 class="titles" title="Click me for More Latest Posts">
 				{% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
-				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-transform: capitalize;">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
+					style="text-transform: capitalize;">
 					<span>More Latest Posts</span>
 				</a>{% endif %}{% endfor %}
 			</h5>

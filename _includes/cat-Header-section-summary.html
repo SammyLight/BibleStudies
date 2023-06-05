@@ -113,10 +113,10 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            {% for post in site.posts %}{% if page.title contains "Categories" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                                <span>Categories</span>
-                            </a>{% endif %}{% endfor %}
+                            {% for post in site.posts %}{% if post.title contains "Categories" %}
+                                    <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                        <span>Categories</span>
+                                    </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
                             <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
