@@ -47,9 +47,9 @@
                                 </ul>
                                 <small title="Click me for all Links in Categories">
                                     {% for post in site.posts %}{% if post.title contains "Categories" %}
-                                    <a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
+                                    <a class="titles-links" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                                         style="text-decoration: none!important;">
-                                        <span>More categories...</span>
+                                        <span>More categories</span>
                                     </a>{% endif %}{% endfor %}
                                 </small>
                             </div>

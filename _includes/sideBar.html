@@ -1,5 +1,5 @@
 <aside class="col-lg-3 order-lg-2 content">
-    <div class="sidebar container-fluid-inner bg-image">
+    <div class="sidebar container-fluid-inner homeResources-grid-containter">
         <div class="sidebar-wrapper">
             <div class="sidebar-wrapper-header">
                 <h4 class="titles" title="Click me for More Latest Posts">
@@ -45,10 +45,8 @@
             </ul>
             <small title="Click me for all Links in Categories">
                 {% for page in site.pages %}{% if page.title contains "Study Resources" %}
-                <a class="titles"
-                    href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-                    style="text-decoration: none!important;">
-                    <span>More categories...</span>
+                <a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <span>More categories</span>
                 </a>{% endif %}{% endfor %}
             </small>
         </div>

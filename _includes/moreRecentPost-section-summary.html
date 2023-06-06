@@ -1,14 +1,14 @@
-<section id="Resources-section">
+<section id="Resources-section" class="container-fluid-inner">
 	<div class="Resources-grid">
-		<h1 class="titles container-fluid">More Latest Summaries</h1>
-
-		<div class="homeResources-grid container-fluid">
+		<h1 class="titles titles-inner">More Latest Summaries</h1>
+		<div class="homeResources-grid">
 			{% assign sorted-posts = site.posts | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {%
 			for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign
 			my_array = my_array | push: posts %} {% endif %}
 			{% endfor %}
 
 			{% for page in my_array limit:30 %}
+			<div class="homeResources-grid-containter">
 			<small class="archive-date">{{ page.date | date: "%a, %b %d, %y." }}</small>
 
 			<h3 class="titles"><a href="{% if site.baseurl == "" %}
@@ -51,8 +51,9 @@
 					{% endif %}{% endfor %}
 					{% endfor %}
 				</p>
-				<hr>
+				<!-- <hr> -->
 			</div>
+		</div>
 			{% endfor %}
 		</div>
 	</div>

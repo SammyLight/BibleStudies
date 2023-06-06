@@ -4,7 +4,9 @@
 
 <body class="fonts">
     {% include cat-Header-section-summary.html %} 
-    {% include search-summaries.html %}
+    <div id="search-container" class="homeResources-grid-containter" style="margin: 20px 16px;padding: 16px;">
+        {% include search-summaries.html %}
+    </div>
     {{ content }}
     {% include contact-section-summary.html %}
     <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>

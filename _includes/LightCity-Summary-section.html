@@ -1,6 +1,6 @@
 <section id="Resources-section">
 	<div class="Resources-grid">
-		<h1 class="titles" title="Click me for More Latest Summaries">
+		<h1 class="titles titles-inner" title="Click me for More Latest Summaries">
 			{% for page in site.pages %}{% if page.title contains "More Recent Summaries" %}
 			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
 				style="text-decoration: none!important;border-bottom: none;">
@@ -14,6 +14,7 @@
 			{% endfor %}
 
 			{% for page in my_array limit:5 %}
+			<div class="homeResources-grid-containter">
 			<small class="archive-date">{{ page.date | date: "%a, %b %d, %y." }}</small>
 
 			<h3 class="titles"><a href="{% if site.baseurl == "" %}
@@ -55,49 +56,14 @@
 					{% unless forloop.last %}&nbsp;{% endunless %}
 					{% endif %}{% endfor %}
 					{% endfor %}
-					<!-- {% assign caty = post.categories[0] | prepend: 'HomePage-' %}
-						{% for post in site.posts %}
-							{% if post.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-							{{ page.categories[0] }}
-						</a>
-						{% endif %}
-					{% endfor %}
-					&nbsp;
-					{% assign caty = post.categories[1] | prepend: 'HomePage-' %}
-						{% for post in site.posts %}
-							{% if post.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-							{{ page.categories[1] }}
-						</a>
-						{% endif %}
-					{% endfor %}
-					&nbsp;
-					{% assign caty = post.categories[2] | prepend: 'HomePage-' %}
-						{% for post in site.posts %}
-							{% if post.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-							{{ page.categories[2] }}
-						</a>
-						{% endif %}
-					{% endfor %}
-					&nbsp;
-					{% assign caty = post.categories[3] | prepend: 'HomePage-' %}
-						{% for post in site.posts %}
-							{% if post.categories contains caty %}
-						<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-							{{ page.categories[3] }}
-						</a>
-						{% endif %}
-					{% endfor %} -->
 				</p>
-				<hr>
+				<!-- <hr> -->
 			</div>
+		</div>
 			{% endfor %}
 			<h5 class="titles" title="Click me for More Latest Summaries">
 				{% for page in site.pages %}{% if page.title contains "More Recent Summaries" %}
-				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"
-					style="text-transform: capitalize;">
+				<a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
 					<span>More Latest Summaries</span>
 				</a>{% endif %}{% endfor %}
 			</h5>
