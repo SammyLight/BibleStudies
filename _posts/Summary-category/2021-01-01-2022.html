@@ -17,14 +17,18 @@ categories: ["HomePage-Year-2022"]
 		column-width: 24em;
 	}
 </style>
-<div class="homeBody-section container-fluid-inner">
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+		<div class="homeResources-grid-containter">
 	<h1 class="titles">{{ page.title }}</h1>
 	<p>A collection of our Teaching Summaries for the Year.</p>
 	<ol>
 		{% for post in site.categories.Year-2022 %}
-		<li>
+		<li class="all-links">
 			<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 		</li>
 			{% endfor %}
 	</ol>
+</div>
+</div>
 </div>

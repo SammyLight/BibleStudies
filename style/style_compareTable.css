@@ -23,7 +23,7 @@ table.comparisonTable > tr:first-child > td,
 table.comparisonTable tbody:only-child tr:first-child > td,
 table.comparisonTable th {
 	background: #e1ffd3;
-	color: white;
+	color: black;
 	font-weight: bold;
 }
 

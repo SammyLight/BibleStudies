@@ -11,15 +11,16 @@ tags: page-categories
 		column-width: 12em;
 	}
 	</style>
-	<div class="homeBody-section container-fluid-inner">
+	<div class="homeBody-section">
+		<div class="container-fluid-inner">
+			<div class="homeResources-grid-containter">
 	<h1 class="titles">Bible TimeLines</h1>
 	<p>A collection of Bible Timelines</p>
 
 	<ol id="nav">
-	        {% for page in site.pages %}{% if page.categories contains "Timeline" %}<li><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
+	        {% for page in site.pages %}{% if page.categories contains "Timeline" %}<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
             {% endif %}{% endfor %}
     </ol>
 	</div>
-	{% include contact-section.html %}
-	<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
-	<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+	</div>
+	</div>

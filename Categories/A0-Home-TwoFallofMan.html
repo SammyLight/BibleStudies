@@ -19,7 +19,9 @@ tags: page-categories
 		column-width: 24em;
 	}
 </style>
-<div class="homeBody-section container-fluid-inner">
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+		<div class="homeResources-grid-containter">
 	<h1 class="titles">The Two Falls of Man</h1>
 	<p>A collection of Useful Resources on the Falls of Man</p>
 	<div>
@@ -31,8 +33,7 @@ tags: page-categories
 				{% for page in site.pages %}
 				{% if page.categories contains "Fall of Man" %}
 				{% if page.subsection contains "Two Falls" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 				</li>
 				{% endif %}
 				{% endif %}
@@ -45,8 +46,7 @@ tags: page-categories
 				{% for page in site.pages %}
 				{% if page.categories contains "Fall of Man" %}
 				{% if page.subsection contains "Major Junctures" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 				</li>
 				{% endif %}
 				{% endif %}
@@ -54,6 +54,5 @@ tags: page-categories
 			</ol>
 	</div>
 </div>
-{% include contact-section.html %}
-<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
-<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+</div>
+</div>

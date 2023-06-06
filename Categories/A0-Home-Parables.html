@@ -18,7 +18,9 @@ tags: page-categories
 		column-width: 24em;
 	}
 </style>
-<div class="homeBody-section container-fluid-inner">
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+		<div class="homeResources-grid-containter">
 	<h1 class="titles">Parables</h1>
 	<p>A collection of Useful Resources on Parables</p>
 	<ol>
@@ -29,8 +31,7 @@ tags: page-categories
 			{% for page in site.pages %}
 			{% if page.categories contains "Parables" %}
 			{% if page.subsection contains "Parables of Jacob" %}
-			<li><a
-					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -44,8 +45,7 @@ tags: page-categories
 			{% for page in site.pages %}
 			{% if page.categories contains "Parables" %}
 			{% if page.subsection contains "Parables of Jesus" %}
-			<li><a
-					href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+			<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -53,6 +53,5 @@ tags: page-categories
 		</ol>
 	</ol>
 </div>
-{% include contact-section.html %}
-<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
-<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+</div>
+</div>

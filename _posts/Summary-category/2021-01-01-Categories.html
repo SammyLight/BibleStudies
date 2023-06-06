@@ -4,32 +4,26 @@ title: Categories
 permalink: /categories/
 ---
 <style>
-	div>ol {
-		/* list-style-type: upper-alpha; */
-		padding-left: 1.5em;
-	}
-
-	div>ol>ol {
-		padding-left: 20px;
-		padding-top: 10px;
-		column-gap: 4em;
-		column-width: 24em;
-	}
+    ol {
+		column-gap: 1.5em;
+    	column-width: 15em;
+        padding-left: 1.5em;
+        margin: 0;
+    }
 </style>
 
-<section id="homeBodyContent" class="homeBody-section flex1 order-lg-1">
-	<div class="visible-titles hover bg-image collapsible">
+<section class="homeBody-section flex1 order-lg-1">
+	<div class="visible-titles hover bg-image collapsible container-fluid-inner">
 		<h4 class="container-fluid-inner caretText">Latest Archives</h4>
-		<span id="caretID" class="container-fluid-inner caret"></span>
+		<span id="caretID" class="caret"></span>
 	</div>
 	<aside class="col-lg-3 order-lg-2 content">
-		<div class="sidebar container-fluid-inner bg-image">
+		<div class="sidebar container-fluid-inner homeResources-grid-containter">
 			<div class="sidebar-wrapper">
 				<div class="sidebar-wrapper-header">
 					<h4 class="titles" title="Click me for all Links in Archive">
 						{% for post in site.posts %}{% if post.title contains "Archive" %}
-						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-							style="text-decoration: none!important;">
+						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
 							<span>Archives</span>
 						</a>{% endif %}{% endfor %}
 					</h4>
@@ -40,8 +34,7 @@ permalink: /categories/
 				<h5 class="titles">{{ yearMonth.name }}</h5>
 				<ul class="recentposts">
 					{% for post in yearMonth.items %}
-					<li><a class="link"
-							href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
+					<li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
 							post.title }}
 							<br>
 							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
@@ -50,17 +43,14 @@ permalink: /categories/
 				{% endfor %}
 				<small title="Click me for all Links in Archive">
 					{% for post in site.posts %}{% if post.title contains "Archive" %}
-					<a class="titles"
-						href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-						style="text-decoration: none!important;">
-						<span>More archives...</span>
+					<a class="titles-links" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+						<span>More archives</span>
 					</a>{% endif %}{% endfor %}
 				</small>
 				<div class="sidebar-wrapper-header">
 					<h4 class="titles" title="Click me for all Links in Categories">
 						{% for post in site.posts %}{% if post.title contains "Categories" %}
-						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-							style="text-decoration: none!important;">
+						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
 							<span>Categories</span>
 						</a>{% endif %}{% endfor %}
 					</h4>
@@ -82,9 +72,8 @@ permalink: /categories/
 				</ul>
 				<small title="Click me for all Links in Categories">
 					{% for post in site.posts %}{% if post.title contains "Categories" %}
-					<a class="titles" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
-						style="text-decoration: none!important;">
-						<span>More categories...</span>
+					<a class="titles-links" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+						<span>More categories</span>
 					</a>{% endif %}{% endfor %}
 				</small>
 			</div>
@@ -96,19 +85,18 @@ permalink: /categories/
 				<h1 class="titles">{{ page.title }}</h1>
 				<p>Categories, all in one place.</p>
 				{% for tag in site.tags %}
-				<div class="archive-group">
 					{% capture tag_name %}{{ tag | first }}{% endcapture %}
-
-					<h4 class="titles">{{ tag_name }}</h4>
-					<ol>
-						{% for post in site.tags[tag_name] %}
-						<li>
-							<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
-							&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
-						</li>
-						{% endfor %}
-					</ol>
-				</div>
+					<div class="homeResources-grid-containter">
+						<h4 class="titles">{{ tag_name }}</h4>
+						<ol>
+							{% for post in site.tags[tag_name] %}
+							<li class="all-links">
+								<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
+								&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+							</li>
+							{% endfor %}
+						</ol>
+					</div>
 				{% endfor %}
 			</div>
 		</div>

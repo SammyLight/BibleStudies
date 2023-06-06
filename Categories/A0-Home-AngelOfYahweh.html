@@ -12,94 +12,86 @@ tags: page-categories
 	}
 
 	div>ol>ol {
-		padding-left: 20px;
-		padding-top: 10px;
+		padding: 10px 0 10px 20px;
 		column-gap: 4em;
 		column-width: 24em;
 	}
 </style>
 
-<div class="homeBody-section container-fluid-inner">
-	<h1 class="titles">Angel of Yahweh</h1>
-	<p>A collection of our Study on the Angel of Yahweh</p>
-	<div>
-		<ol>
-			<li>
-				<h4>The Angel of Yahweh</h4>
-			</li>
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+	<div class="homeResources-grid-containter">
+		<h1 class="titles">Angel of Yahweh</h1>
+		<p>A collection of our Study on the Angel of Yahweh</p>
+		<div>
 			<ol>
-				{% for page in site.pages %}
-				{% if page.categories contains "Angel of Yahweh" %}
-				{% if page.subsection contains "The Angel of Yahweh" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<li>
+					<h4>The Angel of Yahweh</h4>
 				</li>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
-			</ol>
-			<li>
-				<h4>Identifying The Angel of Yahweh</h4>
-			</li>
-			<ol>
-				{% for page in site.pages %}
-				{% if page.categories contains "Angel of Yahweh" %}
-				{% if page.subsection contains "Identifying the AoY" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<ol>
+					{% for page in site.pages %}
+					{% if page.categories contains "Angel of Yahweh" %}
+					{% if page.subsection contains "The Angel of Yahweh" %}
+					<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
+				<li>
+					<h4>Identifying The Angel of Yahweh</h4>
 				</li>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
-			</ol>
-			<li>
-				<h4>The Angel of Yahweh & The Lord Jesus Christ</h4>
-			</li>
-			<ol>
-				{% for page in site.pages %}
-				{% if page.categories contains "Angel of Yahweh" %}
-				{% if page.subsection contains "Jesus is the Angel of Yahweh" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<ol>
+					{% for page in site.pages %}
+					{% if page.categories contains "Angel of Yahweh" %}
+					{% if page.subsection contains "Identifying the AoY" %}
+					<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
+				<li>
+					<h4>The Angel of Yahweh & The Lord Jesus Christ</h4>
 				</li>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
-			</ol>
-			<li>
-				<h4>The Angel of Yahweh & Messiah Prophesies</h4>
-			</li>
-			<ol>
-				{% for page in site.pages %}
-				{% if page.categories contains "Angel of Yahweh" %}
-				{% if page.subsection contains "The AoY and the Messiah Prophesies" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<ol>
+					{% for page in site.pages %}
+					{% if page.categories contains "Angel of Yahweh" %}
+					{% if page.subsection contains "Jesus is the Angel of Yahweh" %}
+					<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
+				<li>
+					<h4>The Angel of Yahweh & Messiah Prophesies</h4>
 				</li>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
-			</ol>
-			<li>
-				<h4>The Angel of Yahweh, The Archangel Michael & The Lord Jesus Christ</h4>
-			</li>
-			<ol>
-				{% for page in site.pages %}
-				{% if page.categories contains "Angel of Yahweh" %}
-				{% if page.subsection contains "The AoY, Michael and Jesus Christ" %}
-				<li><a
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				<ol>
+					{% for page in site.pages %}
+					{% if page.categories contains "Angel of Yahweh" %}
+					{% if page.subsection contains "The AoY and the Messiah Prophesies" %}
+					<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
+				<li>
+					<h4>The Angel of Yahweh, The Archangel Michael & The Lord Jesus Christ</h4>
 				</li>
-				{% endif %}
-				{% endif %}
-				{% endfor %}
+				<ol>
+					{% for page in site.pages %}
+					{% if page.categories contains "Angel of Yahweh" %}
+					{% if page.subsection contains "The AoY, Michael and Jesus Christ" %}
+					<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
 			</ol>
-		</ol>
+		</div>
 	</div>
 </div>
-{% include contact-section.html %}
-<script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
-<script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
-</body>
-
-</html>
+</div>
