@@ -17,7 +17,7 @@ permalink: /archive/
 
 <section id="homeBodyContent" class="homeBody-section container-fluid-inner">
 	<h1 class="titles">{{ page.title }}</h1>
-	<p>Archives, all in one place.</p>
+	<p style="margin: 0 0 1em;">Archives, all in one place.</p>
 	{% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" %}
 	{% for yearMonth in postsByYearMonth %}
 	<div class="homeResources-grid-containter">
