@@ -1015,8 +1015,11 @@ footer a {
     padding: 20px 0;
 }
 .Contact-section p {
-    margin: 0.5em 0;
-    font-size: 0.6em!important;
+    display: grid;
+    grid-template-columns: 6% 96%;
+    place-items: baseline;
+    margin: 1em 0!important;
+    font-size: 0.88em!important;
 }
 .Contact-section .icons {
     font-size: 15px;
@@ -1056,11 +1059,8 @@ ul.footerLinks-lists {
 .footerLinks-lists p {
     font-size: 16px;
 }
-.Contact-section p {
-    margin: 1em 0;
-    font-size: 0.8em!important;
-}
 .Contact-section h5{
+    text-transform: capitalize;
     font-size: 17px!important;
 }
 
@@ -1101,14 +1101,19 @@ ul.footerLinks-lists {
 }
 .Contact-section h5 {
     font-size: 14px!important;
-}}
+}
+/* .Contact-section p {
+    font-size: 0.6em!important;
+} */
+}
 
 @media only screen and (max-width: 300px) {
-.Contact-section p {
-    font-size: .63em!important;
-}
 .Contact-section h5 {
 font-size: 10px!important;
+}
+.Contact-section p {
+    grid-template-columns: 8% 96%;
+    font-size: .67em!important;
 }}
 
 @media only screen and (min-width: 721px) {
