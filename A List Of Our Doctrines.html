@@ -4,25 +4,30 @@ title: "Doctrines"
 permalink: /Doctrines/
 categories: [""] 
 ---
-
-<section id="Doctrines-section">
-    <div class="homeBody-section flex1">
-        <div class="visible-titles hover bg-image collapsible">
-            <h4 class="container-fluid-inner caretText">Latest Posts</h4>
-            <span class="container-fluid-inner caret"></span>
-        </div>
-        {% include sideBar.html %}
-        <div class="col-lg-6 container-fluid-inner">
+<style>
+    .all-links{
+        margin: 0;
+    }
+</style>
+<section id="Doctrines-section" class="flex1 order-lg-1">
+    <div class="visible-titles hover bg-image collapsible container-fluid-inner">
+        <h4 class="container-fluid-inner caretText">Latest Posts</h4>
+        <span class="caret"></span>
+    </div>
+    {% include sideBar.html %}
+        <div class="col-lg-6">
+        <div id="Doctrines-section-inner" class="container-fluid-inner">
+            <div class="homeResources-grid-containter">
             <header>
                 <h1 class="titles">LightCity Doctrines</h1>
-                <h3 class="titles">Here is a list of Doctrines we treated thus far.</h3>
+                <p>Here is a list of Doctrines we treated thus far.</p>
             </header>
             <div>
-                <h3 class="titles">Instruction</h3>
+                <h4 class="titles">Instruction</h4>
                 <ol>
                     <li>Obedience</li>
                     <li>Consecration</li>
-                    <li>{% for page in site.pages %}{% if page.title contains "Head Covering" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.title contains "Head Covering" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             Head Covering
                         </a>{% endif %}{% endfor %}
@@ -35,34 +40,34 @@ categories: [""]
                     <li>Women through the Eyes of God</li>
                     <li>It is the Glory of God to Conceal a Matter</li>
                 </ol>
-                <h3 class="titles">Book/Chapter Studies</h3>
+                <h4 class="titles">Book/Chapter Studies</h4>
                 <ol>
                     <li>Isaiah 40</li>
                     <li>The 70 7s of Daniel Chapter 9</li>
                     <li>The Gospel According to Stephen</li>
-                    <li> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
+                    <li class="all-links"> {% for page in site.pages %}{% if page.categories contains "HomePage-Bible Commentaries" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Romans
                         </a>{% endif %}{% endfor %}
                     </li>
                 </ol>
-                <h3 class="titles">The Supernatural / Miraculous</h3>
+                <h4 class="titles">The Supernatural / Miraculous</h4>
                 <ol>
                     <li>The Children&rsquo;s Bread</li>
                     <li>Lifting of Hands and Power Transfer</li>
-                    <li>{% for page in site.pages %}{% if page.title contains "The Elements" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.title contains "The Elements" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             The Elements
                         </a>{% endif %}{% endfor %}
                     </li>
                 </ol>
-                <h3 class="titles">The Christian Response to Worldly Events</h3>
+                <h4 class="titles">The Christian Response to Worldly Events</h4>
                 <ol>
                     <li>The Truth about the One-World Government</li>
                     <li>The Christian Response to the #EndSARS Protest</li>
                 </ol>
-                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-Jesus" %}
+                <h4 class="titles all-links">{% for page in site.pages %}{% if page.categories contains "HomePage-Jesus" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}
-                    </a>{% endif %}{% endfor %}</h3>
+                    </a>{% endif %}{% endfor %}</h4>
                 <ol>
                     <li>The Law of Christ</li>
                     <li>Jesus as the Christ</li>
@@ -71,22 +76,22 @@ categories: [""]
                     <li>Jesus Fulfils the Law of Moses</li>
                     <li>When Jesus Became God&rsquo;s Son</li>
                 </ol>
-                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                <h4 class="titles all-links">{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
-                    </a>{% endif %}{% endfor %}</h3>
+                    </a>{% endif %}{% endfor %}</h4>
                 <ol>
                     <li>Parables of Jesus</li>
                     <li>Parables of Jacob</li>
                 </ol>
-                <h3 class="titles">Meaning of Biblical Expressions</h3>
+                <h4 class="titles">Meaning of Biblical Expressions</h4>
                 <ol>
                     <li>Hayah Asher Hayah</li>
                     <li>Moses&rsquo; Inability to Speak</li>
                     <li>I Desire Mercy and Not Sacrifice</li>
                 </ol>
-                <h3 class="titles">Spiritual Concepts</h3>
+                <h4 class="titles">Spiritual Concepts</h4>
                 <ol>
-                    <li>{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.categories contains "HomePage-Parables" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Parables
                         </a>{% endif %}{% endfor %}</li>
                     <li>Salvation</li>
@@ -97,40 +102,40 @@ categories: [""]
                     <li>The Sure Mercies of David</li>
                     <li>The Resurrection/Immortality</li>
                 </ol>
-                <h3 class="titles">{% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
+                <h4 class="titles all-links">{% for page in site.pages %}{% if page.categories contains "HomePage-The LAW" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                         The LAW of Moses
-                   </a>{% endif %}{% endfor %}</h3>
+                   </a>{% endif %}{% endfor %}</h4>
                 <ol>
                     <li>The Priesthood of Israel</li>
                     <li>The Law of the Sabbath</li>
                 </ol>
-                <h3>Angels and Supernatural Beings</h3>
+                <h4>Angels and Supernatural Beings</h4>
                 <ol>
-                    <li>
+                    <li class="all-links">
                         {% for page in site.pages %} {% if page.categories contains "HomePage-Angel of Yahweh" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             The Angel of Yahweh
                         </a>{% endif %}{% endfor %}
                     </li>
                 </ol>
-                <h3 class="titles">Biblical Events and Places</h3>
+                <h4 class="titles">Biblical Events and Places</h4>
                 <ol>
                     <li>Eden</li>
-                    <li>{% for page in site.pages %}{% if page.title contains "The Fall of Satan" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.title contains "The Fall of Satan" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             Fall of Satan
                         </a>{% endif %}{% endfor %}
                     </li>
-                    <li>{% for page in site.pages %}{% if page.title contains "Last Days Timeline" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.title contains "Last Days Timeline" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             The Last Days
                         </a>{% endif %}{% endfor %}
                     </li>
                 </ol>
-                <h3 class="titles">Biblical Questions</h3>
+                <h4 class="titles">Biblical Questions</h4>
                 <ol>
-                    <li>{% for page in site.pages %}{% if page.title contains "Is Swearing A Sin" %}
+                    <li class="all-links">{% for page in site.pages %}{% if page.title contains "Is Swearing A Sin" %}
                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             Is Swearing A Sin
                         </a>{% endif %}{% endfor %}
@@ -138,6 +143,7 @@ categories: [""]
                     <li>Why did God try to Kill Moses?</li>
                 </ol>
             </div>
+        </div>
         </div>
     </div>
 </section>
