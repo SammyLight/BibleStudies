@@ -11,6 +11,24 @@
 </div> -->
 <small class="archive-date" style="margin: 1em;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 {{content}}
+<ul class="PageNavigation">
+	<li class="all-links prev-link">
+		{% if page.previous.url %}
+		<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+			{{page.previous.title}}
+			<span>&laquo; Previous</span>
+		</a>
+		{% endif %}
+	</li>
+	<li class="all-links next-link">
+		{% if page.next.url %}
+		<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+			{{page.next.title}}
+			<span>Next &raquo;</span>
+		</a>
+		{% endif %}
+	</li>
+</ul>
 <div class="add_space"></div>
 {% include contact-section-summary.html %}
 <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
