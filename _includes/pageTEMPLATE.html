@@ -1,6 +1,6 @@
 <div class="toggleAllHeaders">
-    <p>Expand All</p>
-    <div>
+	<p>Expand All</p>
+	<div>
 		<input type="checkbox" class="checkbox" id="toggleAllBtn" />
 		<label class="label" for="toggleAllBtn">
 			<span id="closeAll" onclick="hideOrShowAllHnum()" class="close"></span>
@@ -12,6 +12,22 @@
 <small class="archive-date" style="margin: 1em;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 {{content}}
 <div class="add_space"></div>
+<ul class="PageNavigation">
+	{% if page.previous.url %}
+	<li class="all-links prev-link">
+		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">{{page.previous.title}}
+			<span>&laquo; Previous</span>
+		</a>
+	</li>
+		{% endif %}
+	{% if page.next.url %}
+	<li class="all-links next-link">
+		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">{{page.next.title}}
+			<span>Next &raquo;</span>
+		</a>
+	</li>
+		{% endif %}
+</ul>
 {% include contact-section.html %}
 <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
 <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
