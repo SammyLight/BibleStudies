@@ -1,8 +1,8 @@
---- 
-layout: homeTEMPLATE2 
+---
+layout: homeTEMPLATE2
 title: "Study Resources"
 permalink: /Study Resources/
-categories: [""] 
+categories: [""]
 ---
 
 <style>
@@ -15,78 +15,38 @@ categories: [""]
 </style>
 <section id="MAINResources-section">
     <div class="container-fluid-inner">
-    <div class="homeResources-grid-containter">
-        <h1 class="titles">LightCity Teaching Resources</h1>
-        <h2 class="titles" style="margin-top: 1em;">Angel of Yahweh</h2>
-        <p>A collection of our Study on the Angel of Yahweh.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Angel of Yahweh" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">Bible TimeLines</h2>
-        <p>A collection of Bible Timelines.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Timeline" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">Bible Commentaries</h2>
-        <p>A collection of Useful Resources on Bible Commentaries.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Bible Commentaries" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">General Resources</h2>
-        <p>A collection of Useful Resources.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "General Resources" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">Jesus</h2>
-        <p>A collection of Useful Resources on Jesus.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Jesus" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">The Two Falls of Man</h2>
-        <p>A collection of Useful Resources on the Falls of Man.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Fall of Man" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">The LAW</h2>
-        <p>A collection of Useful Resources on the LAW.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "The LAW" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
-    <div class="homeResources-grid-containter">
-        <h2 class="titles">Parables</h2>
-        <p>A collection of Useful Resources on Parables.</p>
-        <ol>
-            {% for page in site.pages %}{% if page.categories contains "Parables" %}
-            <li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a></li>
-            {% endif %}{% endfor %}
-        </ol>
-    </div>
+        <!-- <h1 class="titles" style="padding-top: 10px;">{{ page.title }}</h1> -->
+            <h1 class="titles">LightCity Teaching Resources.</h1>
+            <p style="margin: 0 0 1em;">Categories, all in one place.</p>
+            {% assign catarray = "Angel-of-Yahweh,Bible-Commentaries,BibleTimelines,General-Resources,Jesus,Parables,The-LAW,Fall-of-Man,New-Covenant"|split:',' %}
+
+            {% for cat in catarray %}
+            {% for page in site.pages %}
+            {% if page.categories contains cat %}
+            <div class="homeResources-grid-containter">
+                {% for page in site.pages %}
+                {% if page.categories contains cat %}
+                <h4 class="titles">
+                    {{ cat }}
+                </h4>
+                {% break %}
+                {% endif %}
+                {% endfor %}
+                <ol>
+                    {% for page in site.pages %}
+                    {% if page.categories contains cat %}
+                    <li class="all-links">
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+                        &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            {% break %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </section>

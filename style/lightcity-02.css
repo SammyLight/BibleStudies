@@ -267,8 +267,8 @@ textarea {
     border-bottom: none;
 }
 .mobile-headerLinks:hover {
-    background-color: #212121;
     background-color: #ffc107;
+    background-color: #212121;
 }
 .mobile-headerLinks a {
     color: #212121;
@@ -283,14 +283,15 @@ textarea {
 .closeNavBar {
     position: absolute;
     background-color: #dd1515!important;
-    color: #F2F2F2;
+    font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    color: #ffffff;
     top: 0;
     right: 0;
-    width: 50px;
-    height: 60px;
+    padding: 0 8px 11px;
+    line-height: 1;
     border-radius: 5px;
-    font-size: xx-large;
-    font-weight: 700;
+    font-size: xxx-large;
+    /* font-weight: 700; */
 }
 /* desktopHeader CSS */
 #desktopHeader {
@@ -370,7 +371,7 @@ textarea {
     padding: 10px 10px 10px 0;
     flex: 1 1 auto;
 }
-.churchLOGO a {
+.churchLOGO a, .mobileHeaderNav a:hover, .homeHeaderNav a:hover {
     border-bottom: none;
 }
 .headerUL {
@@ -531,7 +532,6 @@ a.titles-links{
     border-bottom: none;
     letter-spacing: 0px;
     font-weight: bold;
-
 }
 .titles-links::after{
     display: inline-block;
