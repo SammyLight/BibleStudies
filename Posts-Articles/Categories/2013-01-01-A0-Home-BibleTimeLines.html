@@ -1,0 +1,29 @@
+---
+layout: cat-homepageTEMPLATE
+title: "BibleTimelines"
+permalink: /BibleTimelines/
+categories: ["HomePageArticle-BibleTimelines"]
+---
+<style>
+	div>ol, div>ul{
+		column-gap: 3em;
+    	column-width: 15em;
+    	padding-left: 1.5em;
+	}
+	</style>
+	<div class="homeBody-section">
+		<div class="container-fluid-inner">
+			<div class="homeResources-grid-containter">
+	<h1 class="titles">Bible TimeLines</h1>
+	<p>A collection of Bible Timelines</p>
+	<ol>
+		{% for page in site.pages %}{% if page.categories contains "BibleTimelines" %}
+		<li class="all-links">
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+		</li>
+			{% endif %}
+			{% endfor %}
+	</ol>
+	</div>
+	</div>
+	</div>

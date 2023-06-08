@@ -1,0 +1,57 @@
+---
+layout: cat-homepageTEMPLATE
+title: "Angel Of Yahweh"
+permalink: /Angel Of Yahweh/
+categories: ["HomePageArticle-Angel-of-Yahweh"]
+---
+<style>
+	div>ol {
+		column-gap: 3em;
+		column-width: 15em;
+		padding-left: 1.5em;
+	}
+</style>
+
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+		<h1 class="titles">Angel of Yahweh</h1>
+		<p>A collection of our Study on the Angel of Yahweh.</p>
+
+		{% assign subcatarray = "The Angel of Yahweh,Identifying the AoY,Jesus is the Angel of Yahweh,The AoY and the Messiah Prophesies,The AoY Michael and Jesus Christ"|split:',' %}
+
+		{% for subcat in subcatarray %}
+		{% for page in site.pages %}
+		{% if page.categories contains "Angel-of-Yahweh" %}
+		{% if page.subsection contains subcat %}
+		<div class="homeResources-grid-containter">
+			{% for page in site.pages %}
+			{% if page.categories contains "Angel-of-Yahweh" %}
+			{% if page.subsection contains subcat %}
+			<h4 class="titles">{{ subcat }}</h4>
+			<ol>
+				{% break %}
+				{% endif %}
+				{% endif %}
+				{% endfor %}
+
+				{% for page in site.pages %}
+				{% if page.categories contains "Angel-of-Yahweh" %}
+				{% if page.subsection contains subcat %}
+				<li class="all-links">
+					<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
+						page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date:
+						"%a, %b
+						%d, %y" }}.</span>
+				</li>
+				{% endif %}
+				{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
+		{% break %}
+		{% endif %}
+		{% endif %}
+		{% endfor %}
+		{% endfor %}
+	</div>
+</div>

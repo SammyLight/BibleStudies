@@ -1,0 +1,29 @@
+---
+layout: cat-homepageTEMPLATE
+title: "General Resources"
+permalink: /General Resources/
+categories: ["HomePageArticle-General-Resources"]
+---
+<style>
+	div>ol {
+		column-gap: 3em;
+    	column-width: 15em;
+    	padding-left: 1.5em;
+	}
+</style>
+<div class="homeBody-section">
+	<div class="container-fluid-inner">
+		<div class="homeResources-grid-containter">
+	<h1 class="titles">General Resources</h1>
+	<p>A collection of Useful Resources on Random Topics.</p>
+	<ol>
+		{% for page in site.pages %}{% if page.categories contains "General-Resources" %}
+		<li class="all-links">
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+		</li>
+			{% endif %}
+			{% endfor %}
+	</ol>
+</div>
+</div>
+</div>
