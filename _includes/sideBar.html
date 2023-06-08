@@ -34,7 +34,7 @@
             <ul class="recentposts">
                 {% assign counter = '0' %}
                 {% for page in site.pages %}
-                {% if page.layout == "cat-homepageTEMPLATE" and counter < '5' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+                {% if page.layout == "cat-homepageTEMPLATE" and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
                 <li>
                     <a class="link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                         {{ page.title }}

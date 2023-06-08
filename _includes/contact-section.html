@@ -38,8 +38,9 @@
                                 <ul class="footerLinks-lists">
                                     {% assign counter = '0' %}
                                     {% for page in site.pages %}
-                                    {% if page.layout == "cat-homepageTEMPLATE" and counter < '6' %} {% capture counter
-                                        %}{{ counter | plus:'1' }}{% endcapture %} <li>
+                                    {% if page.layout == "cat-homepageTEMPLATE" and counter < '6' %}
+                                    {% capture counter %}{{ counter | plus:'1' }}{% endcapture %} 
+                                        <li>
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             {{ page.title }}
                                         </a>

@@ -45,7 +45,7 @@
 					{% assign categories = post.categories %}
 					{% endif %}
 					{% for category in categories %}
-					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+					{% capture category_name %}{{ category | prepend: 'HomePageArticle-' }}{% endcapture %}
 					{% assign caty = category_name %}
 					{% for page in site.pages %}
 					{% if page.categories contains caty %}
