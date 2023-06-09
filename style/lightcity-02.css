@@ -558,6 +558,7 @@ h1.titles {
     background-color: #fff;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 22px 22px!important;
     margin-bottom: -20px!important;
@@ -748,8 +749,8 @@ hr {
 }
 .homeResources-grid-containter{
     background-color: #fff;
-    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 22px 22px;
     margin-bottom: 20px;
