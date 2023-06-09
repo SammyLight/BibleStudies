@@ -176,7 +176,7 @@ textarea {
 .mobileButton {
     width: 50px;
     height: 50px;
-    color: #fff!important;
+    color: #ffffff!important;
 }
 .mobileButton::before {
     content: '\2261';
@@ -187,7 +187,7 @@ textarea {
     display: inline-block;
 }
 #headerLinks {
-    background-color: #fff;
+    background-color: #ffffff;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
@@ -555,7 +555,7 @@ h1.titles {
     border-bottom: none;
 }
 .titles-inner{
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
@@ -620,7 +620,7 @@ h1.titles {
     padding-top: 0;
 }}
 h3.subtitles {
-    color: #fff;
+    color: #ffffff;
     font-size: 1em;
     font-weight: 400;
 }
@@ -639,14 +639,8 @@ img {
     border-style: none;
 }
 .fonts {
-    background-color: floralwhite;
-    background-color: #F2F2F2;
-    background-color: #f6f6f6;
-    background-color: #F9FBFD;
-    background-color: #fff;
+    background-color: #ffffff;
     background-color: #f6f6f6!important;
-    color: #404040;
-    color: #000;
     color: #212121;
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -658,21 +652,10 @@ img {
     word-break: normal;
 }
 .bg-color {
-    background-color: #e9e9e9;
-    background-color: #2196F3;
-    background-color: #000;
-    background-color: #212121;
-    background-color: #e6e3e3;
-    background-color: rgba(255,248,0);
-    background-color: #ffc107;
     background-color: #f6f6f6;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px #212121;
-    box-shadow: 0 2px 4px #F2F2F2;
-    box-shadow: 0 1px 2px #d0d0d0;
-    box-shadow: 0 1px 2px rgba(190,190,190,.5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);   
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);   
 }
 /* .bg-image {
     background-image: url(../images/background.jpg);
@@ -748,7 +731,7 @@ hr {
     margin-bottom: 0;
 }
 .homeResources-grid-containter{
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -840,7 +823,7 @@ hr {
 .visible-titles {
     display: grid;
     grid-template-columns: 80% 17%;
-    background-color: #fff;
+    background-color: #ffffff;
     height: -webkit-fill-available;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
