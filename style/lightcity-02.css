@@ -558,7 +558,7 @@ h1.titles {
     background-color: #fff;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 22px 22px;
+    padding: 22px 22px!important;
     margin-bottom: -20px!important;
     position: relative;
 }
