@@ -9,13 +9,15 @@ categories: ["HomePageArticle-Jesus"]
 		column-gap: 3em;
     	column-width: 15em;
     	padding-left: 1.5em;
+		margin: 0;
 	}
 </style>
 
-<div class="homeBody-section">
-	<div class="container-fluid-inner">
-	<h1 class="titles">Jesus</h1>
-	<p>A collection of Useful Resources on Jesus.</p>
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
+		<h1 class="titles">Jesus</h1>
+		<p>A collection of Useful Resources on Jesus.</p>
+	</div>
 	{% assign subcatarray = "Jesus and the Angel of Yahweh,Trinity,Deity of Christ,Parables of Jesus"|split:',' %}
 			
 	{% for subcat in subcatarray %}
@@ -45,11 +47,10 @@ categories: ["HomePageArticle-Jesus"]
 					{% endif %}
 					{% endfor %}
 				</ol>
-		</div>
+	</div>
 			{% break %}
 			{% endif %}
 			{% endif %}
 			{% endfor %}
 			{% endfor %}
-</div>
 </div>

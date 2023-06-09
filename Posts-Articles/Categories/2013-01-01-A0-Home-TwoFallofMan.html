@@ -10,46 +10,47 @@ categories: ["HomePageArticle-Fall-of-Man"]
 		column-gap: 3em;
     	column-width: 15em;
     	padding-left: 1.5em;
+		margin: 0;
 	}
 </style>
-<div class="homeBody-section">
-	<div class="container-fluid-inner">
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
 		<h1 class="titles">The Two Falls of Man</h1>
-		<p>A collection of Useful Resources on the Falls of Man.</p>
-			{% assign subcatarray = "Two Falls,Major Junctures"|split:',' %}
-			
-			{% for subcat in subcatarray %}
-			{% for page in site.pages %}
+		<p style="margin: 0">A collection of Useful Resources on the Falls of Man.</p>
+	</div>
+	{% assign subcatarray = "Two Falls,Major Junctures"|split:',' %}
+	
+	{% for subcat in subcatarray %}
+	{% for page in site.pages %}
+	{% if page.categories contains "Fall-of-Man" %}
+	{% if page.subsection contains subcat %}
+	<div class="homeResources-grid-containter">
+		{% for page in site.pages %}
 		{% if page.categories contains "Fall-of-Man" %}
 		{% if page.subsection contains subcat %}
-			<div class="homeResources-grid-containter">
-				{% for page in site.pages %}
-				{% if page.categories contains "Fall-of-Man" %}
-				{% if page.subsection contains subcat %}
-						<h4 class="titles">{{ subcat }}</h4>
-						<ol>
-							{% break %}
-							{% endif %}
-							{% endif %}
-							{% endfor %}
-							{% for page in site.pages %}
-		{% if page.categories contains "Fall-of-Man" %}
-		{% if page.subsection contains subcat %}
-							<li class="all-links">
-								<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
-									page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date:
-									"%a, %b
-									%d, %y" }}.</span>
-							</li>
-							{% endif %}
-							{% endif %}
-							{% endfor %}
-						</ol>
-				</div>
+				<h4 class="titles">{{ subcat }}</h4>
+				<ol>
 					{% break %}
 					{% endif %}
 					{% endif %}
 					{% endfor %}
+					{% for page in site.pages %}
+		{% if page.categories contains "Fall-of-Man" %}
+		{% if page.subsection contains subcat %}
+					<li class="all-links">
+						<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
+							page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date:
+							"%a, %b
+							%d, %y" }}.</span>
+					</li>
+					{% endif %}
+					{% endif %}
 					{% endfor %}
-	</div>
+				</ol>
+		</div>
+	{% break %}
+	{% endif %}
+	{% endif %}
+	{% endfor %}
+	{% endfor %}
 </div>

@@ -9,21 +9,22 @@ categories: ["HomePageArticle-New-Covenant"]
 		column-gap: 2em;
 		column-width: 12em;
 		padding-left: 1.5em;
+		margin: 0;
 	}
 </style>
-<div class="homeBody-section">
-	<div class="container-fluid-inner">
-		<div class="homeResources-grid-containter">
-	<h1 class="titles">The New Covenant</h1>
-	<p>A collection of Useful Resources on The New Covenant</p>
-	<ol>
-		{% for page in site.pages %}{% if page.categories contains "New-Covenant" %}
-		<li class="all-links">
-			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
-		</li>
-		{% endif %}
-		{% endfor %}
-	</ol>
-</div>
-</div>
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
+		<h1 class="titles">The New Covenant</h1>
+		<p style="margin: 0">A collection of Useful Resources on The New Covenant</p>
+	</div>
+	<div class="homeResources-grid-containter">
+		<ol>
+			{% for page in site.pages %}{% if page.categories contains "New-Covenant" %}
+			<li class="all-links">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ol>
+	</div>
 </div>
