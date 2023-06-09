@@ -9,13 +9,15 @@ categories: ["HomePage-Book-of-Job"]
 		column-gap: 3em;
     	column-width: 15em;
     	padding-left: 1.5em;
+		margin: 0;
 	}
 </style>
-<div class="homeBody-section">
-	<div class="container-fluid-inner">
-		<div class="homeResources-grid-containter">
-	<h1 class="titles">{{ page.title }}</h1>
-	<p>A collection of our Teaching Summaries for the Book of Job.</p>
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
+		<h1 class="titles">{{ page.title }}</h1>
+		<p>A collection of our Teaching Summaries for the Book of Job.</p>
+	</div>
+	<div class="homeResources-grid-containter">
 		<ol>
 			{% for post in site.categories.Book-of-Job %}
 			<li class="all-links">
@@ -23,6 +25,5 @@ categories: ["HomePage-Book-of-Job"]
 			</li>
 				{% endfor %}
 		</ol>
-</div>
-</div>
+	</div>
 </div>

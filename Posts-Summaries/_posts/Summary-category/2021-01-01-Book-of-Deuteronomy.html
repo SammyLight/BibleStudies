@@ -23,7 +23,7 @@ categories: ["HomePage-Book-of-Deuteronomy"]
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
-				{% endfor %}
+			{% endfor %}
 		</ol>
 	</div>
 </div>

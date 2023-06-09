@@ -80,26 +80,24 @@ permalink: /categories/
 			</div>
 		</div>
 	</aside>
-	<div class="col-lg-6">
-		<div class="container-fluid-inner">
-			<div id="categories">
-				<h1 class="titles" style="padding-top: 10px;">{{ page.title }}</h1>
-				<p style="margin: 0 0 1em;">Categories, all in one place.</p>
-				{% for tag in site.tags %}
-					{% capture tag_name %}{{ tag | first }}{% endcapture %}
-					<div class="homeResources-grid-containter">
-						<h4 class="titles">{{ tag_name }}</h4>
-						<ol>
-							{% for post in site.tags[tag_name] %}
-							<li class="all-links">
-								<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
-								&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
-							</li>
-							{% endfor %}
-						</ol>
-					</div>
-				{% endfor %}
-			</div>
+	<div id="categories" class="col-lg-6 container-fluid-inner">
+		<div class="titles-inner">
+			<h1 class="titles">{{ page.title }}</h1>
+			<p>Categories, all in one place.</p>
 		</div>
+		{% for tag in site.tags %}
+			{% capture tag_name %}{{ tag | first }}{% endcapture %}
+			<div class="homeResources-grid-containter">
+				<h4 class="titles">{{ tag_name }}</h4>
+				<ol>
+					{% for post in site.tags[tag_name] %}
+					<li class="all-links">
+						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
+						&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+					</li>
+					{% endfor %}
+				</ol>
+			</div>
+		{% endfor %}
 	</div>
 </section>
