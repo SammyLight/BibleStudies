@@ -474,7 +474,7 @@ ul.header-links {
 .header-links a:hover,
 .header-links a:focus {
     color: #212121;
-    color: #F9FBFD;
+    color: #ffffff;
 }
 .header-links li:hover,
 .header-links li:focus {
@@ -517,6 +517,10 @@ h3 {
 .all-links a{
     color: #5f40f6;
     transition: color .2s ease-out,opacity .2s ease-out;
+}
+.all-links a:hover{
+    color: red;
+    border-bottom: 1px solid red!important;
 }
 a.titles-links{
     font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -874,7 +878,7 @@ hr {
 }
 .sidebar-wrapper {
     color: #212121!important;
-    color: #F9FBFD!important;
+    color: #ffffff!important;
 }
 .sidebar-wrapper span:hover{
     color: #d0d0d0;
@@ -889,11 +893,11 @@ hr {
     border-bottom: none;
 }
 .sidebar a {
-    color: #F9FBFD;
+    color: #ffffff;
 }
 .recentposts a {
     color: #212121!important;
-    color: #F9FBFD!important;
+    color: #ffffff!important;
 }
 .recentposts a:hover {
     color: #d0d0d0!important;
@@ -985,13 +989,13 @@ footer {
     background-color: #212121!important;
     font-size: .95em !important;
     color: #212121;
-    color: #F9FBFD;
+    color: #ffffff;
     border-top: 1px solid rgba(190,190,190,.5);
     border-top: 10px solid #ffc107;
 }
 footer a {
     color: #212121;
-    color: #F9FBFD;
+    color: #ffffff;
 }
 
 /* CONTACT-SECTION CSS */
@@ -1016,7 +1020,7 @@ footer a {
 .footerLinks-header h3, .Contact-section h3 {
     border-bottom: none;
     color: #212121;
-    color: #F9FBFD;
+    color: #ffffff;
     font-weight: 700!important;
     margin: 0;
 }
@@ -1065,7 +1069,7 @@ ul.footerLinks-lists {
 .caret22 {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
-    border-top: 12px solid #F9FBFD;
+    border-top: 12px solid #ffffff;
     float: right!important;
     margin-top: -20px;
 }
