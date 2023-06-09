@@ -654,10 +654,19 @@ header~h3:before {
 ol {
     list-style-type: lower-alpha;
 }
+ol,ul {
+    /* 	list-style-type: none; */
+    counter-reset: lister;
+    padding-inline-start: 10px;
+    	margin: auto;
+}
 ol>li>ol {
     list-style-type: lower-roman;
     padding-left: 0;
     margin: 0!important;
+}
+ol>li>ol>li>ol, ol>li>ol>li>ol>li>ol, ol>li>ol>li>ul, ol>li>ol>li>ul>li>ul{
+    padding: 0;
 }
 ol>li>ol>li>ol {
     list-style-type: decimal-leading-zero;
@@ -671,12 +680,7 @@ ol>li>ol>li>ol>li>ol>li>ol {
 ol>li>ol>li>ol>li>ol>li>ol>li>ol {
     list-style-type: decimal;
 }
-ol {
-    /* 	list-style-type: none; */
-    counter-reset: lister;
-    padding-inline-start: 20px;
-    /* 	margin: auto; */
-}
+
 body>li:first-child {
     margin-top: 0.6em;
 }
@@ -691,7 +695,7 @@ li:before {
     content: counters(lister, ".") ". ";
     display: table-cell;
     padding-right: 0.3em;
-    font-size: x-small;
+    font-size: small;
 }
 .footerLinks-lists li:before {
     content: " ";
