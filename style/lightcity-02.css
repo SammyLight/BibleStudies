@@ -287,7 +287,7 @@ textarea {
     color: #ffffff;
     top: 0;
     right: 0;
-    padding: 0 8px 11px;
+    padding: 0 13px 11px;
     line-height: 1;
     border-radius: 5px;
     font-size: xxx-large;
@@ -548,7 +548,7 @@ a.titles-links{
     margin-left: 2px;
 } */
 h1.titles {
-    font-size: 2.249690125em;
+    font-size: 2.1em;
     margin: 0;
     /* padding-top: 0.5em; */
     border-bottom: 1px solid #989898;
@@ -563,7 +563,7 @@ h1.titles {
     position: relative;
 }
 h2.titles {
-    font-size: 1.852025em;
+    font-size: 1.8em;
     margin: 0;
 }
 h3.titles {
@@ -822,9 +822,12 @@ hr {
     /* padding-top: 20px; */
 }
 @media only screen and (max-width: 1025px) {
-#Doctrines-section-inner, #Intro-to-the-Website{
+#Doctrines-section-inner, #Intro-to-the-Website, #categories{
     margin-top: 20px;
 }}
+#categories p{
+    margin: 0;
+}
 /* .homeBody-section-inner{
     padding-top: 40px;
 } */
