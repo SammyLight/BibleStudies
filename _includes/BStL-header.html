@@ -1,4 +1,3 @@
-
 <body class="scrollbar scrollbar-custom">
 	<!--HEAD-->
 	<nav id="head_1" class="grid2">
@@ -13,13 +12,13 @@
 	<section id="websiteNav">
 		<!--		<h3 style="display: none">Bible Timelines</h3>-->
 		<h4 style="display: none">
-			{% for page in site.pages %}{% if page.categories contains "HomePage-BibleTimelines" %}
+			{% for page in site.pages %}{% if page.categories contains "HomePageArticle-BibleTimelines" %}
 			<a id="timelinesHome" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">BibleTimelines Home</a>
 			{% endif %}{% endfor %}
 		</h4>
 		<ul style="display: none">
 
-			{% for page in site.pages %}{% if page.categories contains "Timeline" %}<li style="display: none"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
+			{% for page in site.pages %}{% if page.categories contains "BibleTimelines" %}<li class="all-links" style="display: none"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
 		        {% endif %}">{{page.title}}</a></li>
 			{% endif %}{% endfor %}
 		</ul>

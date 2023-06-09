@@ -21,11 +21,18 @@ title: "LightCity Resources"
 				<span>Bible App</span>
 			</a>
 		</div>
-		<div class="box transition">
+		<!-- <div class="box transition">
 			<a href="https://samuelawojuola.github.io/BibleApp-2/page2_versenotes.html">
 				<img class="" src="images/book-pencil-svgrepo-com.svg" alt="Pst Sam ElYah's Notes">
 				<span>Bible Notes</span>
 			</a>
+		</div> -->
+		<div class="box transition">
+			{% for page in site.pages %}{% if page.title contains "teaching summary" %}
+			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+				<img class="" src="images/book-pencil-svgrepo-com.svg" alt="teaching summary">
+				<span>Summaries</span>
+			</a>{% endif %}{% endfor %}
 		</div>
 		<div class="box transition">
 			{% for page in site.pages %}{% if page.title contains "Bible Quiz" %}

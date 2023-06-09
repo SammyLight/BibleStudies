@@ -32,25 +32,15 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                        {{page.title}}
-                                    </a>{% endif %}{% endfor %}
-                                </div>
-                                <!-- <div class="mobile-headerLinks transition">
-                                    {% assign caty = page.categories[0] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if aaa.categories contains caty %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[0] }}
-                                    </a>{% endif %}{% endfor %}
-                                </div>
-                                <div class="mobile-headerLinks transition">
-                                    {% assign caty = page.categories[1] | prepend: 'HomePage-' %} {% for aaa in site.pages %} {% if aaa.categories contains caty %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">{{ page.categories[1] }}
-                                    </a>{% endif %}{% endfor %}
-                                </div> -->
-                                <div class="mobile-headerLinks transition">
                                     {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                                     <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Summary</span>
+                                    </a>{% endif %}{% endfor %}
+                                </div>
+                                <div class="mobile-headerLinks transition">
+                                    {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        {{page.title}}
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
@@ -107,15 +97,15 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                <span>{{page.title}}</span>
-                            </a>{% endif %}{% endfor %}
-                        </li>
-                        <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                             <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                 <span>Summary</span>
+                            </a>{% endif %}{% endfor %}
+                        </li>
+                        <li class="header-links-li transition">
+                            {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                <span>{{page.title}}</span>
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">

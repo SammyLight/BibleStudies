@@ -31,12 +31,6 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                        {{page.title}}
-                                    </a>{% endif %}{% endfor %}
-                                </div>
-                                <div class="mobile-headerLinks transition">
                                     {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                                     <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Summary</span>
@@ -46,6 +40,12 @@
                                     {% for post in site.posts %}{% if post.title contains "Categories" %}
                                     <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                         <span>Categories</span>
+                                    </a>{% endif %}{% endfor %}
+                                </div>
+                                <div class="mobile-headerLinks transition">
+                                    {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+                                    <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        {{page.title}}
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="mobile-headerLinks transition">
@@ -101,12 +101,6 @@
                             </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
-                            {% for page in site.pages %}{% if page.title contains "Doctrines" %}
-                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                <span>{{page.title}}</span>
-                            </a>{% endif %}{% endfor %}
-                        </li>
-                        <li class="header-links-li transition">
                             {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                             <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                 <span>Summary</span>
@@ -117,6 +111,12 @@
                                     <a class="iconLink transition" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                         <span>Categories</span>
                                     </a>{% endif %}{% endfor %}
+                        </li>
+                        <li class="header-links-li transition">
+                            {% for page in site.pages %}{% if page.title contains "Doctrines" %}
+                            <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                <span>{{page.title}}</span>
+                            </a>{% endif %}{% endfor %}
                         </li>
                         <li class="header-links-li transition">
                             <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
