@@ -563,7 +563,7 @@ h1.titles {
     position: relative;
 }
 h2.titles {
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin: 0;
 }
 h3.titles {
@@ -747,8 +747,7 @@ hr {
 }
 .homeResources-grid-containter{
     background-color: #fff;
-    box-shadow: 0 2.8px 0px rgba(0,0,0,0.034), 3px 2px 6px rgba(0,0,0,0.048), 3px 8px 4px rgba(0,0,0,0.06), 2px 1px 17px 2px rgba(0,0,0,0.12);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 22px 22px;
     margin-bottom: 20px;
