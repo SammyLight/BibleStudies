@@ -62,11 +62,11 @@ textarea {
 .box-container {
     display: grid;
     place-items: center;
-    height: calc(100vh - 60px);
-    margin-top: 60px;
+    height: calc(100vh - 80px);
+    gap: 10px;
+    margin: 80px 16px 20px;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-gap: 20px;
-    gap: 20px */
+    grid-template-columns: 49% 49%;
 }
 .box {
     display: grid;
@@ -98,40 +98,57 @@ textarea {
     /* border-bottom: 1px solid rgba(190,190,190,.5); */
 }
 @media only screen and (max-width: 300px) {
+.box{
+    /* width: 50px; */
+}
 .box-container img {
-    width: 90px;
+    width: 60px;
 }
 .box-container span {
-    font-size: 18px;
+    font-size: 14px;
 }}
 @media only screen and (max-width: 439px) {
+.box{
+    /* width: 120px; */
+}
 .box-container img {
-    width: 120px;
+    width: 90px;
 }}
 @media only screen and (min-width: 540px) {
+.box{
+    /* width: 140px; */
+}
 .box-container img {
-    width: 140px;
+    width: 110px;
 }}
 @media only screen and (min-width: 768px) {
+.box{
+    /* width: 160px; */
+}
 .box-container img {
-    width: 200px;
+    width: 150px;
 }
 .box-container span {
-    font-size: 30px;
+    font-size: 25px;
 }}
-@media only screen and (min-width: 821px) {
-.box-container {
-    margin-top: 0;
-}
+@media only screen and (min-width: 820px) {
 .box-container img {
-    width: 230px;
+    width: 170px;
 }}
 @media only screen and (min-width: 1024px) {
+
+.box{
+    /* width: 170px; */
+}
 .box-container img {
-    width: 200px;
+    width: 120px;
 }
 .box-container span {
     margin: 0;
+}}
+@media only screen and (min-width: 1025px) {
+.box-container {
+    margin-top: 20px;
 }}
 
 
