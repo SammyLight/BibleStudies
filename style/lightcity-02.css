@@ -66,7 +66,7 @@ textarea {
     gap: 10px;
     margin: 80px 16px 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 49.5% 49.5%;
 }
 .box {
     display: grid;
@@ -85,6 +85,9 @@ textarea {
     border-bottom: none;
     width: -webkit-fill-available;
     height: 100%;
+}
+.box-container a:hover {
+    border-bottom: none!important;
 }
 .box-container img {
     place-self: center;
@@ -136,7 +139,6 @@ textarea {
     width: 170px;
 }}
 @media only screen and (min-width: 1024px) {
-
 .box{
     /* width: 170px; */
 }
