@@ -15,20 +15,24 @@
 <ul class="PageNavigation">
 	{% if page.previous.url %}
 	<li class="all-links prev-link">
-		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">{{page.previous.title}}
-			<span>&laquo; Previous</span>
+		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">
+			<span>&laquo; Previous summary</span>
+			{{page.previous.title}}			
 		</a>
 	</li>
 		{% endif %}
 	{% if page.next.url %}
 	<li class="all-links next-link">
-		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">{{page.next.title}}
-			<span>Next &raquo;</span>
+		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">
+			<span>Next summary &raquo;</span>
+			{{page.next.title}}			
 		</a>
 	</li>
 		{% endif %}
 </ul>
 {% include contact-section-summary.html %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="../script/victorScripts/preload.js"></script>
 <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
 <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
 <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
