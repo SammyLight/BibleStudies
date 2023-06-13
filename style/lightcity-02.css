@@ -22,6 +22,7 @@
   }
 @keyframes loader {
     from {
+        background-image: url(images/preload.svg);
         background-image: url(../images/preload.svg);
         background-size: cover;
         background-position: center;
@@ -29,6 +30,7 @@
         width: 50px;
     }
     to {
+        background-image: url(images/preload.svg);
         background-image: url(../images/preload.svg);
         background-size: cover;
         background-position: center;
