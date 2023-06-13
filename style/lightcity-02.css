@@ -1,6 +1,42 @@
 /* *{
 	box-sizing: border-box;
 } */
+/* PRELOAD CSS */
+.loader-bg{
+    display: grid;
+    place-content: center;
+    background: #f6f6f6!important;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+}
+.loader{
+    /* animation properties */
+    animation-name: loader;
+    animation-duration: 0.7s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 10px;  
+  }
+@keyframes loader {
+    from {
+        background-image: url(../images/preload.svg);
+        background-size: cover;
+        background-position: center;
+        height: 50px;
+        width: 50px;
+    }
+    to {
+        background-image: url(../images/preload.svg);
+        background-size: cover;
+        background-position: center;
+        height: 70px;
+        width: 70px;
+    }
+  }
+
 html {
     font-family: sans-serif;
 }
@@ -64,7 +100,7 @@ textarea {
     place-items: center;
     height: calc(100vh - 80px);
     gap: 10px;
-    margin: 80px 16px 20px;
+    margin: 20px 16px 20px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-columns: 49.5% 49.5%;
 }
@@ -73,6 +109,8 @@ textarea {
     border: 1px solid rgba(190,190,190,.5);
     width: -webkit-fill-available;
     height: -webkit-fill-available;
+    margin-bottom: 0!important;
+    padding: 8px!important;
 }
 .box:hover {
     background-color: #e8eff6;
@@ -93,7 +131,7 @@ textarea {
     place-self: center;
 }
 .box-container span {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     margin: 1em 0;
     text-transform: uppercase;
@@ -113,6 +151,9 @@ textarea {
 @media only screen and (max-width: 439px) {
 .box{
     /* width: 120px; */
+}
+.box-container {
+    grid-template-columns: 48.9% 48.9%;
 }
 .box-container img {
     width: 90px;

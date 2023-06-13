@@ -1,4 +1,38 @@
-
+/* PRELOAD CSS */
+.loader-bg{
+    display: grid;
+    place-content: center;
+    background: #f6f6f6!important;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+}
+.loader{
+    /* animation properties */
+    animation-name: loader;
+    animation-duration: 0.7s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 10px;  
+  }
+@keyframes loader {
+    from {
+        background-image: url(../images/preload.svg);
+        background-size: cover;
+        background-position: center;
+        height: 50px;
+        width: 50px;
+    }
+    to {
+        background-image: url(../images/preload.svg);
+        background-size: cover;
+        background-position: center;
+        height: 70px;
+        width: 70px;
+    }
+  }
 html {
     font-family: sans-serif;
 }
@@ -1126,39 +1160,50 @@ a.titles-links{
 .PageNavigation{
     display: grid;
     grid-template-columns: 50% 50%;
-    padding-right: 1em;
+    gap: 10px;
+    padding-right: 0.7em;
 }
 .PageNavigation a{
-    font-size: 30px;
+    color: #212121;
+    font-size: 25px;
     border-bottom: none;
-    text-decoration: underline;
+    text-decoration: none;
+}
+.PageNavigation a:hover{
+    color: #b6b6b6!important;
+    /* border-bottom: 1px solid rgba(190,190,190,.5); */
 }
 .PageNavigation li::before{
     content: "";
+}
+.PageNavigation .all-links{
+    margin: 7px 0 20px;
 }
 .prevnext{
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 0;
 }
-.prev-link, .prev-link span{
+.prev-link a, .prev-link span{
     display: grid;
     place-content: start;
 }
-.next-link span, .next-link{
+.next-link span, .next-link a{
     display: grid;
     place-content: end;
+    text-align: right;
 }
 .prev-link span, .next-link span{
-    font-size: 20px;
+    color: #adabab;
+    font-size: 14px;
     margin: 0.7em 0;
 }
 @media only screen and (max-width: 414px) {
 .PageNavigation a{
-    font-size: 20px;
+    font-size: 18px;
 }
 .prev-link span, .next-link span{
-    font-size: 16px;
+    font-size: 10px;
     margin: 0.5em 0;
 }}
 /* Scrollbar CSS */
