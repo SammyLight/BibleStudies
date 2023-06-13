@@ -4,7 +4,6 @@
 
 layout: pre-homeTEMPLATE
 title: "LightCity Resources"
-permalink: /LightCity Resources/
 ---
 
 <section id="pre-homeBodyContent" class="">
@@ -12,13 +11,13 @@ permalink: /LightCity Resources/
 		<div class="box homeResources-grid-containter transition">
 		{% for page in site.pages %}{% if page.title contains "LCTF" %}
 		<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-			<img class="" src="../images/library-book-svgrepo-com.svg" alt="lightcity Study Page">
+			<img class="" src="images/library-book-svgrepo-com.svg" alt="lightcity Study Page">
 			<span>Study Page</span>
 		</a>{% endif %}{% endfor %}
 		</div>
 		<div class="box homeResources-grid-containter transition">
 			<a href="https://samuelawojuola.github.io/BibleApp-2">
-				<img class="" src="../images/books-stack-svgrepo-com.svg" alt="lightcity Bible App">
+				<img class="" src="images/books-stack-svgrepo-com.svg" alt="lightcity Bible App">
 				<span>Bible App</span>
 			</a>
 		</div>
@@ -31,14 +30,14 @@ permalink: /LightCity Resources/
 		<div class="box homeResources-grid-containter transition">
 			{% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
 			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-				<img class="" src="../images/book-pencil-svgrepo-com.svg" alt="teaching summary">
+				<img class="" src="images/book-pencil-svgrepo-com.svg" alt="teaching summary">
 				<span>Summaries</span>
 			</a>{% endif %}{% endfor %}
 		</div>
 		<div class="box homeResources-grid-containter transition">
 			{% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
 			<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-				<img class="" src="../images/test-svgrepo-com2.svg" alt="lightcity Bible Quiz">
+				<img class="" src="images/test-svgrepo-com2.svg" alt="lightcity Bible Quiz">
 				<span>Bible Quiz</span>
 			</a>{% endif %}{% endfor %}
 		</div>
