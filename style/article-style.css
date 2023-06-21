@@ -992,8 +992,8 @@ footer a:hover {
 }
 .footerLinks-header h3, .Contact-section h3 {
     border-bottom: none;
-    color: #212121;
     color: #ffffff;
+    color: #ffc107;
     font-weight: 700!important;
     margin: 0;
     box-shadow: none;
@@ -1043,6 +1043,7 @@ ul.footerLinks-lists {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-top: 12px solid #ffffff;
+    border-top: 12px solid #ffc107;
     float: right!important;
     margin-top: -20px;
 }
