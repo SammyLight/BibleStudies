@@ -1140,7 +1140,7 @@ a.titles-links{
     background: #ffc107;
     color: #212121!important;
     padding: 10px 17px;
-    border-radius: 5px;
+    border-radius: 40px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom: none;
     letter-spacing: 0px;
@@ -1201,6 +1201,14 @@ a.titles-links{
 @media only screen and (max-width: 414px) {
 .PageNavigation a{
     font-size: 18px;
+}
+.PageNavigation {
+    display: block;
+    padding-right: 0.3em;
+}
+.PageNavigation .all-links {
+    display: grid;
+    margin: 0 0 15px;
 }
 .prev-link span, .next-link span{
     font-size: 10px;
