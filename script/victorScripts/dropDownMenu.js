@@ -11,9 +11,9 @@ window.onclick = function (event) {
     const myDropdown = document.querySelectorAll(".myDropdown, .myDropdown2");
     const elementsArray = [...myDropdown];
     elementsArray.forEach(element => {
-      if (element.classList.contains('show')) {
-        element.classList.remove('show');
+      if (element.classList.contains('slideIn')) {
         element.classList.remove('slideIn');
+        element.classList.add('slideOut');
       }
     });
   }

@@ -30,7 +30,7 @@ const cutheaderLink = elementArray.splice(5, 120);
 const headerLink2 = document.getElementById('header-links2');
 cutheaderLink.forEach(element => {
     headerLink2.append(element);
-    element.classList.add('slideIn');
+    // element.classList.add('slideIn');
 });
 
 const elementChild = document.querySelectorAll('.header-links2>.header-links-li>.iconLink');
@@ -39,7 +39,15 @@ elementChildArray.forEach(element => {
     element.classList.add('iconLink2');
 });
 
+document.getElementById("myDropdown2").classList.add("slideOut");
 function myFunctionTwo() {
-    document.getElementById("myDropdown2").classList.toggle("show");
-    document.getElementById("myDropdown2").classList.toggle("slideIn");
+    // document.getElementById("myDropdown2").classList.toggle("show");
+    // document.getElementById("myDropdown2").classList.add("slideIn");
+    if (myDropdown2.classList.contains('slideOut')) {
+        myDropdown2.classList.remove('slideOut');
+        myDropdown2.classList.add('slideIn');
+    } else {
+        myDropdown2.classList.remove('slideIn');
+        myDropdown2.classList.add('slideOut');
+    }
 }
