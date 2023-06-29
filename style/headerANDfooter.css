@@ -65,7 +65,7 @@ footer .archive-date {
     font-size: xx-large;
 }
 .mobileButton, .moreButton {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 600;
 }
 .moreButton{
@@ -192,7 +192,7 @@ footer .archive-date {
 .mobile-headerLinks a {
     color: #212121;
     text-decoration: none!important;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: 600;
     border-bottom: none;
 }
@@ -334,7 +334,7 @@ li.header-links-li:before {
     color: #F2F2F2;
     color: #212121;
     font-weight: 600;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none!important;
     display: -webkit-box;
     display: flex;
@@ -408,8 +408,7 @@ ul.header-links {
 
 .all-links{
     font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    /* font-weight: bold; */
-    line-height: 1;
+    font-weight: bold;
     margin: 7px 0 7px;
     padding: 0;
 }
