@@ -64,6 +64,10 @@ footer .archive-date {
     color: #212121!important;
     font-size: xx-large;
 }
+.mobileButton, .moreButton {
+    text-transform: uppercase;
+    font-weight: 600;
+}
 .moreButton{
     background-color: #212121;
     background-color: #ffc107;
@@ -92,7 +96,7 @@ footer .archive-date {
 .myDropdown {
    background-color: transparent; 
    position: absolute;
-   display: none;
+   visibility: hidden;
    z-index: 1;
    left: 0;
    top: 0;
@@ -114,7 +118,7 @@ footer .archive-date {
 .myDropdown2 {
     background-color: transparent;
     position: absolute;
-    display: block;
+    visibility: hidden;
     z-index: 1;
     right: 0;
     top: 3px;
@@ -147,7 +151,7 @@ footer .archive-date {
     }
 }
 .slideOut{
-    visibility: hidden;
+    /* visibility: hidden; */
     animation: slideOut 200ms ease-in-out forwards;
     transform-origin: left center;
 }
@@ -189,6 +193,7 @@ footer .archive-date {
     color: #212121;
     text-decoration: none!important;
     text-transform: uppercase;
+    font-weight: 600;
     border-bottom: none;
 }
 .linkTitle {
@@ -329,6 +334,7 @@ li.header-links-li:before {
     color: #F2F2F2;
     color: #212121;
     font-weight: 600;
+    text-transform: uppercase;
     text-decoration: none!important;
     display: -webkit-box;
     display: flex;

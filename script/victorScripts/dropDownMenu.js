@@ -1,15 +1,69 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
+var myDropdown = document.getElementById("myDropdown");
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  document.getElementById("myDropdown").classList.toggle("slideIn");
-  // myDropdown.classList.add('slideIn');
+  if (myDropdown.classList.contains('slideOut')) {
+    myDropdown.classList.remove('slideOut');
+    myDropdown.classList.add('slideIn');
+  } else {
+    myDropdown.classList.remove('slideIn');
+    myDropdown.classList.add('slideOut');
+  }
 }
+
+document.querySelector('.mobileButton').classList.add('Button');
+var createButton = document.createElement('button');
+createButton.classList.add('moreButton')
+createButton.classList.add('Button')
+createButton.type = 'Button'
+createButton.innerHTML = 'More <i class="fas fa-solid fa-caret-down"></i>'
+createButton.addEventListener('click', myFunctionTwo);
+var div1 = document.createElement('div');
+div1.classList.add('myDropdown2-content');
+div1.classList.add('container-fluid-inner');
+var div2 = document.createElement('div');
+div2.id = 'myDropdown2';
+div2.classList.add('myDropdown2');
+var ul1 = document.createElement('ul');
+ul1.id = 'header-links2';
+ul1.classList.add('header-links2');
+div2.append(ul1);
+div1.append(div2);
+var headerContainer = document.querySelector('.header-container');
+headerContainer.append(div1);
+function myFunctionTwo() {
+  if (div2.classList.contains('slideOut')) {
+    div2.classList.remove('slideOut');
+    div2.classList.add('slideIn');
+  } else {
+    div2.classList.remove('slideIn');
+    div2.classList.add('slideOut');
+  }
+}
+
+// const twoButtons = document.querySelectorAll(".Button");
+// const twoButtonsArray = [...twoButtons];
+// console.log(twoButtonsArray);
+// twoButtonsArray.forEach(element => {
+//   element.addEventListener('click', dropDownFunction);
+// });
+  
+const myDropdowns = document.querySelectorAll(".myDropdown, .myDropdown2");
+const elementsArray = [...myDropdowns];
+  elementsArray.forEach(element => {
+    element.classList.add("slideOut");
+      // if (element.classList.contains('slideOut')) {
+      //   element.classList.remove('slideOut');
+      //   element.classList.add('slideIn');
+      // } else {
+      //   element.classList.remove('slideIn');
+      //   element.classList.add('slideOut');
+      // }
+  });
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches('.Button')) {
-    const myDropdown = document.querySelectorAll(".myDropdown, .myDropdown2");
-    const elementsArray = [...myDropdown];
     elementsArray.forEach(element => {
       if (element.classList.contains('slideIn')) {
         element.classList.remove('slideIn');
@@ -18,3 +72,21 @@ window.onclick = function (event) {
     });
   }
 }
+
+var headerUL = document.querySelector('.headerUL');
+const headerLink1 = document.querySelectorAll('.header-links-li');
+const elementArray = [...headerLink1];
+if (elementArray.length > 5) {
+    headerUL.append(createButton);
+}
+const cutheaderLink = elementArray.splice(5, 120);
+const headerLink2 = document.getElementById('header-links2');
+cutheaderLink.forEach(element => {
+    headerLink2.append(element);
+});
+
+const elementChild = document.querySelectorAll('.header-links2>.header-links-li>.iconLink');
+const elementChildArray = [...elementChild];
+elementChildArray.forEach(element => {
+    element.classList.add('iconLink2');
+});
