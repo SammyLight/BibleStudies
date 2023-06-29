@@ -10,7 +10,9 @@
 	</div>
 </div>
 <small class="archive-date" style="margin: 1em;">{{ page.date | date: "%a, %b %d, %y." }}</small>
-{{content}}
+<article>
+	{{content}}
+</article>
 <div class="add_space"></div>
 <ul class="PageNavigation">
 	{% if page.previous.url %}
@@ -31,6 +33,7 @@
 {% include contact-section.html %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="../script/victorScripts/preload.js"></script>
+<script type="text/javascript" src="../script/victorScripts/generalscript.js"></script>
 <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
 <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
 <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>

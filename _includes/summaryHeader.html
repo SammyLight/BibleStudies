@@ -1,4 +1,4 @@
-<!-- <link type="text/css" href="/style/lightcity-02.css" rel="stylesheet"> -->
+<link type="text/css" href="../style/headerANDfooter.css" rel="stylesheet">
 <link type="text/css" href="../style/article-style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link type="text/css" href="../style/style_compareTable.css" rel="stylesheet">
@@ -10,28 +10,94 @@
     <div class="loader-bg">
         <div class="loader"></div>
     </div>
-    <nav id="homeHeader" class="bg-color bg-image">
-        <div class="mobileHeaderNav">
-            <div class="mobileLogoSize">
-                {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
-                <a
-                    href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                    <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
-                </a>{% endif %}{% endfor %}
-            </div>
-            <div class="mobileView">
-                <div class="mobileControls">
-                    <div class="mobileDropdown">
-                        <button onclick="myFunction()" class="mobileButton" type="button"></button>
-                        <div id="myDropdown" class="myDropdown transition">
-                            <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
-                                <div class="mobile-headerLinks transition">
-                                    {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
-                                    <a class="linkTitle transition"
-                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                        <span>Home</span>
-                                    </a>{% endif %}{% endfor %}
+    <div class="header-container">
+        <header id="mobileHeader">
+            <div id="homeHeader" class="bg-color bg-image">
+                <nav class="mobileHeaderNav">
+                    <div class="mobileLogoSize">
+                        {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
+                        <a
+                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                        </a>{% endif %}{% endfor %}
+                    </div>
+                    <div class="mobileControls">
+                        <div class="mobileDropdown">
+                            <button onclick="myFunction()" class="mobileButton" type="button"></button>
+                            <div id="myDropdown" class="myDropdown transition">
+                                <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
+                                    <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Home</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </div>
+                                    {% if post %}
+                                    {% assign categories = post.categories %}
+                                    {% else %}
+                                    {% assign categories = page.categories %}
+                                    {% endif %}
+                                    {% for category in categories %}
+                                    {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+                                    {% assign sumcaty = category_name %}
+                                    {% for post in site.posts %}
+                                    {% if post.categories contains sumcaty %}
+                                    <div class="mobile-headerLinks transition">
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                            {{category}}
+                                        </a>
+                                    </div>
+                                    {% unless forloop.last %}{% endunless %}
+                                    {% endif %}{% endfor %}
+                                    {% endfor %}
+
+                                    <div class="mobile-headerLinks transition">
+                                        <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
+                                            <span>Bible App</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>{{page.title}}</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Meeting Days</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </div>
+                                    <button id="closeNavBar" class="closeNavBar">x</button>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <header id="desktopHeader">
+            <div id="homeHeader" class="bg-color bg-image">
+                <div class="container-fluid-inner">
+                    <nav class="homeHeaderNav">
+                        <div class="mobileLogoSize">
+                            {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
+                            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                            </a>{% endif %}{% endfor %}
+                        </div>
+                        <div class="headerUL">
+                            <ul class="header-links">
+                                <li class="header-links-li transition">
+                                    {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
+                                    <a class="iconLink transition"
+                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
+                                    </a>{% endif %}{% endfor %}
+                                </li>
                                 {% if post %}
                                 {% assign categories = post.categories %}
                                 {% else %}
@@ -42,81 +108,38 @@
                                 {% assign sumcaty = category_name %}
                                 {% for post in site.posts %}
                                 {% if post.categories contains sumcaty %}
-                                <div class="mobile-headerLinks transition">
-                                    <a class="linkTitle transition"
+                                <li class="header-links-li transition">
+                                    <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                         {{category}}
                                     </a>
-                                </div>
+                                </li>
                                 {% unless forloop.last %}{% endunless %}
                                 {% endif %}{% endfor %}
                                 {% endfor %}
-
-                                <div class="mobile-headerLinks transition">
-                                    <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
+                                <li class="header-links-li transition">
+                                    <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
                                         <span>Bible App</span>
                                     </a>
-                                </div>
-                                <div class="mobile-headerLinks transition">
+                                </li>
+                                <li class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                                    <a class="linkTitle transition"
+                                    <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>{{page.title}}</span>
                                     </a>{% endif %}{% endfor %}
-                                </div>
-                                <div class="mobile-headerLinks transition">
+                                </li>
+                                <li class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "Join Us" %}
-                                    <a class="linkTitle transition"
+                                    <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Meeting Days</span>
                                     </a>{% endif %}{% endfor %}
-                                </div>
-                                <button id="closeNavBar" class="closeNavBar">x</button>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </div>
-            <div class="headerUL desktopView">
-                <ul class="header-links">
-                    <li class="header-links-li transition">
-                        {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
-                        <a class="iconLink transition"
-                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
-                        </a>{% endif %}{% endfor %}
-                    </li>
-                    {% if post %}
-                    {% assign categories = post.categories %}
-                    {% else %}
-                    {% assign categories = page.categories %}
-                    {% endif %}
-                    {% for category in categories %}
-                    {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-                    {% assign sumcaty = category_name %}
-                    {% for post in site.posts %}
-                    {% if post.categories contains sumcaty %}
-                    <li class="header-links-li transition">
-                        <a class="iconLink transition"
-                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                            {{category}}
-                        </a>
-                    </li>
-                    {% unless forloop.last %}{% endunless %}
-                    {% endif %}{% endfor %}
-                    {% endfor %}
-                    <li class="header-links-li transition">
-                        <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
-                            <span>Bible App</span>
-                        </a>
-                    </li>
-                    <li class="header-links-li transition">
-                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                        <a class="iconLink transition"
-                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                            <span>{{page.title}}</span>
-                        </a>{% endif %}{% endfor %}
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </header>
+    </div>

@@ -7,7 +7,7 @@
                         <div class="footerLinks-header">
                             <div class="visible-titles2 collapsible">
                                 <h3>Latest Posts</h3>
-                                <span class="caret22"></span>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
@@ -32,10 +32,10 @@
                         <div class="footerLinks-header space">
                             <div class="visible-titles2 collapsible">
                                 <h3>Categories</h3>
-                                <span class="caret22"></span>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
-                                <ul class="footerLinks-lists">
+                                <ul class="footerLinks-lists" style="margin-bottom: 10px!important;">
                                     {% assign counter = '0' %}
                                     {% for page in site.pages %}
                                     {% if page.layout == "cat-homepageTEMPLATE" and counter < '6' %}
@@ -59,7 +59,7 @@
                         <div class="footerLinks-header">
                             <div class="visible-titles2 collapsible">
                                 <h3>Pages</h3>
-                                <span class="caret22"></span>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
