@@ -1,7 +1,6 @@
 // "use strict";
 // Script for the Toggling between Questions and Question count
-var head = document.head;
-var body = document.body;
+
 var questions = document.querySelector('.QandA-Board>OL').children;
 var resultSection = document.getElementById('quizResult-section');
 var qandAsection = document.getElementById('QandA-section');
@@ -106,6 +105,20 @@ function showNewCatFunc() {
         // alert('does exist!');
     }
 }
+// function noPtagSshowNewCatFunc() {
+//     var parentElementOL = document.querySelector('.showNewCatCSS');
+//     console.log(parentElementOL);
+//     var parentElementLI = currentQuestion;
+//     var showNewCatPrevious = currentQuestion.previousElementSibling.querySelector('p');
+//     console.log(showNewCatPrevious);
+//     var showNewCat = currentQuestion.querySelector('p');
+//     if (!showNewCat) {
+//         let clone = showNewCatPrevious.cloneNode(true);
+//         parentElementLI.prepend(clone);
+//         showNewCatPrevious.remove();
+//         // alert('does not exist!');
+//     }
+// }
 function showNextOrPrevQuestion(n) {
     if ((n > totalQuestions) || (n < 1)) {
         slideIndex = 1;
@@ -239,49 +252,29 @@ function confirm() {
     var goodImg = document.createElement('IMG');
     goodImg.src = '../images/Trophy11.svg';
     goodImg.alt = 'Trophy';
-    var poorImg = document.createElement('IMG');
-    poorImg.src = '../images/sadEmoji.svg';
-    poorImg.alt = 'Trophy';
-    var poorScore = document.createElement('H5');
-    poorScore.innerHTML = "But unfortunately there's no trophy for you, you really need to do better next time.";
-
+    var poorScore = document.createElement('H3');
+    poorScore.innerHTML = 'No trophy for you, you really need to do better.';
     function failedPercentage(failedQuestionsArrayLength, totalQuestions) {
         return (100 * failedQuestionsArrayLength) / totalQuestions;
     }
-    function animationCssAndJsFunc() {
-        // CREATE ANIMATION CSS
-        var animationCssFile = document.createElement('link');
-        animationCssFile.id = 'animationCssFile'
-        animationCssFile.type = 'text/css';
-        animationCssFile.href = '../style/bibleQuizAnimation.css';
-        animationCssFile.rel = 'stylesheet';
-        head.appendChild(animationCssFile);
-
-        // CREATE ANIMATION JS
-        var animationJsFile = document.createElement('script');
-        animationJsFile.id = 'animationJsFile'
-        animationJsFile.type = 'text/javascript';
-        animationJsFile.src = '../script/victorScripts/QandAscriptsAnimation.js';
-        body.appendChild(animationJsFile);
-    }
     if (failedPercentage(failedQuestionsArrayLength, totalQuestions) == 0) {
         performance.innerHTML = 'Perfect Score';
-        animationCssAndJsFunc();
+        // resultImgContainer.insertBefore(perfectImg, quizCmlpt);
         resultImgContainer.append(perfectImg);
         clapSound.play();
-
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 20) {
         performance.innerHTML = 'Excellent Score';
-        animationCssAndJsFunc();
+        // resultImgContainer.insertBefore(excellentImg, quizCmlpt);
         resultImgContainer.append(excellentImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 40) {
         performance.innerHTML = 'Very Good Score';
-        animationCssAndJsFunc();
+        // resultImgContainer.insertBefore(veryGoodImg, quizCmlpt);
         resultImgContainer.append(veryGoodImg);
         clapSound.play();
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 60) {
         performance.innerHTML = 'Good Score';
+        // resultImgContainer.insertBefore(goodImg, quizCmlpt);
         resultImgContainer.append(goodImg);
         clapSound.play();
      } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 80) {
@@ -293,8 +286,18 @@ function confirm() {
                  poorPerPopup.style.display = 'none'
              }
          }
+        //  resultImgContainer.insertBefore(poorScore, quizCmlpt);
          resultImgContainer.append(poorScore);
-         resultImgContainer.insertBefore(poorImg, poorScore);
+        //  reviewBtn.innerHTML = 'Review Quiz >';
+        //  reviewBtn.removeAttribute('onclick');
+        //  newBtn.innerHTML = 'New Quiz >';
+        //  reviewBtn.addEventListener('click', alertFunc);
+        //  newBtn.addEventListener('click', alertFunc);
+        //  function alertFunc() {
+        //      poorPerPopup.style.display = 'block';
+        //      playWrongAnswerSound(); 
+        //      // alert('Your score is not good, please Redo Quiz.');
+        //     }
         } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 99.9 || failedPercentage(failedQuestionsArrayLength, totalQuestions) == 100) {
             performance.innerHTML = 'Very Poor Score';
             poorPerPopup.style.display = 'grid';
@@ -304,9 +307,20 @@ function confirm() {
                     poorPerPopup.style.display = 'none'
                 }
             }
+            // resultImgContainer.insertBefore(poorScore, quizCmlpt);
             resultImgContainer.append(poorScore);
-            resultImgContainer.insertBefore(poorImg, poorScore);
-        }
+            // reviewBtn.innerHTML = 'Review Quiz >';
+            // reviewBtn.removeAttribute('onclick');
+            // newBtn.innerHTML = 'New Quiz >';
+            // reviewBtn.addEventListener('click', alertFunc);
+            // newBtn.addEventListener('click', alertFunc);
+            // function alertFunc() {
+                // poorPerPopup.style.display = 'block';
+                // playWrongAnswerSound();
+                // // style.opacity = '0.6';
+                // // alert('Your score is not good, please Redo Quiz.');
+                // }
+    }
     
     // color selected options which are wrong 'pink'
     if (!currentQuestionsOptions.getAttribute('confirmed')) {
@@ -316,16 +330,18 @@ function confirm() {
             if (opt.style.backgroundColor == 'orange') {
                 opt.style.backgroundColor = 'pink';
                 opt.style.borderRight = rightBorder; //this indicates the option selected
-            }
-            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
-                explainButtonCreate(opt).addEventListener('click', showExplanation);
+                if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
+                    explainButtonCreate(opt).addEventListener('click', showExplanation);
+                }
             }
         });
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
-            rightAnswer.style.backgroundColor = 'green';
+            if (rightAnswer.style.borderRight == rightBorder) {
+                rightAnswer.style.backgroundColor = 'green';
                 rightAnswer.style.color = 'white';
+            }
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
@@ -417,7 +433,7 @@ function isClickedLiAnAnswer(event) {
                 previousClickedULArray.push(this);
                 if (previousClickedULArray.length == questionsArray.length) {
                     // show the "Quiz Result" li/button after the last Question has been answered;
-                    // quizResult = document.getElementById("quizResult").innerHTML = "Quiz Result";
+                    quizResult = document.getElementById("quizResult").innerHTML = "Quiz Result";
                     // quizResult.style.display = "block";
 
                 }
@@ -541,14 +557,8 @@ function explainButtonCreate(answer) {
     return explainButton;
 }
 function showAllQuestionsWithAnswers() {
-    var questionUL = document.querySelector('.QandA-Board>OL');
+    var questionUL = document.querySelector('.QandA-Board>OL')
     var displayAllQuestions = questionUL.cloneNode(true);
-    // var details = document.createElement('details');
-    // var questionLI = document.querySelector('.QandA-Board>OL>LI');
-    // details.append(questionLI);
-    // var questionDIV = document.querySelector('.QandA-Board>OL>LI>DIV');
-    // questionDIV.classList.add('collapsible');
-    // questionDIV.nextElementSibling.classList.add('content');
     var liFirstLevel = displayAllQuestions.querySelectorAll('LI:not(.option):not(.option li)');
 
     displayAllQuestions.querySelectorAll('.explainButton').forEach(elm =>{elm.remove()})
@@ -575,23 +585,10 @@ function showAllQuestionsWithAnswers() {
         // // removeIMG.length = 0;
         // removeIMG.splice(0,removeIMG.length);
     }
-    // document.getElementsByClassName('corAnswers-Board').append(details);
     liFirstLevel.forEach(element => {
         element.style.backgroundColor = '';
         var removeClass = element.querySelector('.insertedDIV');
         removeClass.classList.remove('insertedDIV'); 
-        var details = document.createElement('details');
-        var questionOL = element.parentElement;
-        questionOL.append(details);
-        details.append(element);
-        var summary = document.createElement('summary');
-        summary.append(removeClass);
-        details.prepend(summary);
-        var questionDIV = document.querySelector('.QandA-Board>OL>LI>DIV');
-        questionDIV.classList.add('collapsible');
-        questionDIV.nextElementSibling.classList.add('content');
-        // removeClass.classList.add('collapsible');
-        // removeClass.nextElementSibling.classList.add('content');
     });
     qandAsection.style.display = 'none';
     resultSection.style.display = 'none';
@@ -599,6 +596,27 @@ function showAllQuestionsWithAnswers() {
     CorrectedAnswersSection.style.display = 'grid';
     resultSound.play();
 }
+// redoQuiz.addEventListener('click', redoQuizFunc);
+// function redoQuizFunc() {
+//     document.querySelectorAll('li').forEach(element => {
+//         element.removeAttribute('style');
+//     });
+//     document.querySelectorAll('.QandA-Board>ol>li').forEach((element,i) => {
+//         if(i>0){
+//             element.style.display = 'none'
+//             questionIndex();
+//         }
+//     });
+//     document.querySelectorAll('.explainButton, .imgSizeRight, .imgSizeWrong').forEach(element => {
+//         element.remove();
+//     });
+//     document.querySelectorAll('[availablechances]').forEach(element => {
+//         element.setAttribute('availablechances', element.getAttribute('maxchances'));
+//         element.removeAttribute('confirmed');
+//     });
+//     resultSection.style.display = 'none';
+//     CorrectedAnswersSection.style.display = 'none';
+// }
 
 //PAGE PRELOAD
 setTimeout(function() {
@@ -692,9 +710,9 @@ function bgSoundPlayButton() {
 }
 
 // FOR TOGGLING THEMES
+var head = document.head;
 var antiqueWhiteCssFile;
 var blackPearlCssFile;
-var copperRoseCssFile;
 var crimsonCssFile;
 var darkCyanCssFile;
 var darkPurpleCssFile;
@@ -704,8 +722,6 @@ var antiqueWhiteThemeBtn = document.getElementById('antiqueWhite');
 antiqueWhiteThemeBtn.addEventListener('click', changeToAntiquewhiteTheme);
 var blackPearlThemeBtn = document.getElementById('blackPearl');
 blackPearlThemeBtn.addEventListener('click', changeToBlackPearlTheme);
-var copperRoseThemeBtn = document.getElementById('copperRose');
-copperRoseThemeBtn.addEventListener('click', changeToCopperRoseTheme);
 var crisomThemeBtn = document.getElementById('crimson');
 crisomThemeBtn.addEventListener('click', changeToCrimsonTheme);
 var darkCyanThemeBtn = document.getElementById('darkCyan');
@@ -720,7 +736,6 @@ function getDarkOrLightModeFROMCache(){
     if(colorMode = localStorage.getItem('colorMode')){
         if(colorMode=='DarkPurpleTheme'){changeToDarkPurpleTheme()}
         else if(colorMode=='BlackPearlTheme'){changeToBlackPearlTheme()}
-        else if(colorMode=='CopperRoseTheme'){changeToCopperRoseTheme()}
         else if(colorMode=='CrimsonTheme'){changeToCrimsonTheme()}
         else if(colorMode=='DarkCyanTheme'){changeToDarkCyanTheme()}
         else if(colorMode=='AntiquewhiteTheme'){changeToAntiquewhiteTheme()}
@@ -729,7 +744,7 @@ function getDarkOrLightModeFROMCache(){
 function changeToAntiquewhiteTheme() {
     setDarkOrLightModeInCache('AntiquewhiteTheme')
     antiqueWhiteCssFile = document.createElement('link');
-    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile'
+    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile"'
     antiqueWhiteCssFile.type = 'text/css';
     antiqueWhiteCssFile.href = '../style/bibleQuizBG-antiquewhite.css';
     antiqueWhiteCssFile.rel = 'stylesheet';
@@ -738,30 +753,15 @@ function changeToAntiquewhiteTheme() {
     crimsonCssFile.remove();
     darkCyanCssFile.remove();
     darkPurpleCssFile.remove();
-    copperRoseCssFile.remove();
 }
 function changeToBlackPearlTheme() {
     setDarkOrLightModeInCache('BlackPearlTheme')
     blackPearlCssFile = document.createElement('link');
-    blackPearlCssFile.id = 'blackPearlCssFile'
+    blackPearlCssFile.id = 'blackPearlCssFile"'
     blackPearlCssFile.type = 'text/css';
     blackPearlCssFile.href = '../style/bibleQuizBG-blackpearl.css';
     blackPearlCssFile.rel = 'stylesheet';
     head.appendChild(blackPearlCssFile);
-    antiqueWhiteCssFile.remove();
-    crimsonCssFile.remove();
-    darkCyanCssFile.remove();
-    copperRoseCssFile.remove();
-    darkPurpleCssFile.remove();
-}
-function changeToCopperRoseTheme() {
-    setDarkOrLightModeInCache('CopperRoseTheme')
-    copperRoseCssFile = document.createElement('link');
-    copperRoseCssFile.id = 'copperRoseCssFile'
-    copperRoseCssFile.type = 'text/css';
-    copperRoseCssFile.href = '../style/bibleQuizBG-copperrose.css';
-    copperRoseCssFile.rel = 'stylesheet';
-    head.appendChild(copperRoseCssFile);
     antiqueWhiteCssFile.remove();
     crimsonCssFile.remove();
     darkCyanCssFile.remove();
@@ -770,7 +770,7 @@ function changeToCopperRoseTheme() {
 function changeToCrimsonTheme() {
     setDarkOrLightModeInCache('CrimsonTheme')
     crimsonCssFile = document.createElement('link');
-    crimsonCssFile.id = 'crimsonCssFile'
+    crimsonCssFile.id = 'crimsonCssFile"'
     crimsonCssFile.type = 'text/css';
     crimsonCssFile.href = '../style/bibleQuizBG-crimson.css';
     crimsonCssFile.rel = 'stylesheet';
@@ -779,12 +779,11 @@ function changeToCrimsonTheme() {
     blackPearlCssFile.remove();
     darkCyanCssFile.remove();
     darkPurpleCssFile.remove();
-    copperRoseCssFile.remove();
 }
 function changeToDarkCyanTheme() {
     setDarkOrLightModeInCache('DarkCyanTheme')
     darkCyanCssFile = document.createElement('link');
-    darkCyanCssFile.id = 'darkCyanCssFile'
+    darkCyanCssFile.id = 'darkCyanCssFile"'
     darkCyanCssFile.type = 'text/css';
     darkCyanCssFile.href = '../style/bibleQuizBG-darkcyan.css';
     darkCyanCssFile.rel = 'stylesheet';
@@ -792,7 +791,6 @@ function changeToDarkCyanTheme() {
     antiqueWhiteCssFile.remove();
     blackPearlCssFile.remove();
     crimsonCssFile.remove();
-    copperRoseCssFile.remove();
     darkPurpleCssFile.remove();
 }
 function changeToDarkPurpleTheme() {
@@ -801,6 +799,5 @@ function changeToDarkPurpleTheme() {
     antiqueWhiteCssFile.remove();
     blackPearlCssFile.remove();
     crimsonCssFile.remove();
-    copperRoseCssFile.remove();
     darkCyanCssFile.remove();
 }

@@ -31,27 +31,23 @@ function lightOrDark(color) {
 	);
 
 	// Using the HSP value, determine whether the color is light or dark
-	// if (hsp > 127.5) {
-	if (hsp > 145.5) {
+	if (hsp > 127.5) {
 		return 'light';
 	} else {
 		return 'dark';
 	}
 }
 
-function darkOrLightBG(elm,bg) {
+function darkOrLightBG(x) {
 	var element, bgColor, brightness;
 
-	element = elm;
+	element = x;
 
 	// Get the element's background color
-	if(bg){bgColor = bg;}
-	else{bgColor = window.getComputedStyle(element, null).getPropertyValue('background-color');}
-	
+	bgColor = window.getComputedStyle(element, null).getPropertyValue('background-color');
+
 	// Call lightOrDark function to get the brightness (light or dark)
 	brightness = lightOrDark(bgColor);
-	console.log(bgColor);
-	console.log(brightness);
 
 	// If the background color is dark, add the light-text class to it
 	if (brightness == 'dark') {

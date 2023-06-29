@@ -33,6 +33,7 @@ function changeCSS(property, style, value, cssSectionID) {
                     rulesString = rulesString + mainCSS.cssRules[i].cssText;
                     if (i == (crL - 1)){
                         mainCSS_1.innerText = rulesString;
+                        console.log(rulesString)
                     }
                 }
                 break;
@@ -59,32 +60,6 @@ function fillDivColorInput(newColor) {
         var divToModify = document.querySelectorAll("div"+dCM);
         for(i=0; i<divToModify.length; i++){
             darkOrLightBG(divToModify[i])
-        }
-    }
-}
-
-function deleteNodeDivStyle(){
-    var dCM = '.opt_' + clickedDIV.getAttribute('divclassname');
-    var divColorStyles = document.getElementById('divColorStyles');
-    var allStyleSheets = document.styleSheets;
-    var newCssRules = '';
-    for(i=0; i<allStyleSheets.length; i++){
-        if(allStyleSheets[i] == divColorStyles.sheet){
-            //serch within the stylesheet
-            for (var j = 0; j < allStyleSheets[i].cssRules.length; j++) {
-                if ((allStyleSheets[i].cssRules[j].selectorText).toString() !== dCM) {
-                    newCssRules = newCssRules + allStyleSheets[i].cssRules[j].cssText + '\n';
-                }
-                if(j == allStyleSheets[i].cssRules.length - 1){
-                    // allStyleSheets[i].cssRules = newCssRules;
-                    divColorStyles.remove();
-                    var newStyleSheet = document.createElement('style');
-                    newStyleSheet.id = 'divColorStyles';
-                    newStyleSheet.innerHTML = newCssRules;
-                    document.getElementsByTagName('head')[0].appendChild(newStyleSheet);
-                }
-            }
-            break;
         }
     }
 }

@@ -1,12 +1,6 @@
 //PART OF THE HTML DOVUMNT TO SAVE
 //TO CREATE FILE TO SAVE
 function saveDynamicDataToFile() {
-	//remove selected class from any selected cell. in case ther is one
-	if(selectedGroup = storyLineTable.querySelectorAll('.selected')){
-		selectedGroup.forEach(element => {
-			element.classList.remove('selected')
-		});
-	}
 	var saveText = `---
 layout: bibleStoryLineTEMPLATE
 title: "` + storyLineTableTitleHeader.innerHTML + `"
@@ -15,10 +9,10 @@ categories: Timeline
 <style id="divColorStyles">` +
 		divColorStyles.innerHTML +
 		`</style>
-{% include BStL-preStorylineTable.html %}` +
-		// storyLineTable.innerHTML +
-		storyLineTable.outerHTML +
-		`
+{% include BStL-preStorylineTable.html %}
+<table id="storyLineTable">` +
+		storyLineTable.innerHTML +
+		`</table>
 
 {% include BStL-masterTableEND.html %}
  ` + masterNoteNote.innerHTML + `
@@ -45,10 +39,6 @@ categories: Timeline
 	saveText = saveText.replace(/<i>/g, "<em>");
 	saveText = saveText.replace(/<\/i>/g, "</em>");
 	saveText = saveText.replace(/([\s]*style=\"[^\"]*\")/g, "");
-	saveText = saveText.replace(/(showingDetail )/g, "");
-	saveText = saveText.replace(/(<p><\/p>)/g, "");//Remove emply paragraphs
-	saveText = saveText.replace(/(<p><ol>)/g, "<ol>");//Remove emply paragraphs
-	saveText = saveText.replace(/(<\/ol><\/p>)/g, "</ol>");//Remove emply paragraphs
 	// console.log(saveText);
 	////////////////////////////////////////////////////////////////////////////////////////////
 

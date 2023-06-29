@@ -429,10 +429,8 @@ function toggleDetailsSection() {
 
 	if (toggleDetailsCheckbox.checked == true) {
 		detailsSection.style.display = '';
-		noteZindexAboveEditor();
 	} else {
 		detailsSection.style.display = 'none';
-		noteZindexAboveEditor();
 	}
 }
 

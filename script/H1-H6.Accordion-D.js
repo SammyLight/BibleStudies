@@ -1,5 +1,5 @@
 /*HIDE ALL ELEMENTS THAT ARE NOT H1 (or H2)*/
-let b = document.querySelectorAll("body > *");
+let b = document.querySelectorAll("article > *");
 
 var htmlhArray = ["H6", "H5", "H4", "H3", "H2", "H1"];
 var displayNoneOrBlock = '';
@@ -56,9 +56,11 @@ for (i; i < b.length; i++) {
 		b[i].style.cursor = "pointer";
 
 		/* Prepend span element in headers to hold utf-8 symbols for open and close */
-		b[i].prepend(document.createElement("span"));
+		var spanOpen = document.createElement("span");
+		spanOpen.classList.add('fa');
+		b[i].prepend(spanOpen);
 		bhSpan = b[i].querySelectorAll("span")[0];
-		bhSpan.appendChild(document.createTextNode("\u2726 "));
+		bhSpan.appendChild(document.createTextNode("\uf105 "));
 	//	bhSpan.style.color = "blue";
 	} 
 	/* For Elements other than H1 - H6 and SCRIPT */
@@ -77,8 +79,8 @@ function togglefunction() {
 	/* To toggle open/close utf-8 icons */
 	
 	var hspan = this.querySelectorAll("span")[0];
-	var sopen = "\u2727 ";
-	var sclose = "\u2726 ";
+	var sopen = "\uf107 ";
+	var sclose = "\uf105 ";
 	if (hspan.innerHTML == sopen) {
 		hspan.innerHTML = sclose;
 		//  hspan.style.color = "blue";
@@ -128,4 +130,3 @@ function togglefunction() {
 	}
 
 }
-

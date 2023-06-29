@@ -8,7 +8,7 @@ function nodesconnector(pathXYcord, divClassLineConnects) {
 	path1.setAttributeNS(null, "d", pathXYcord);
 	//	path1.setAttributeNS(null, "stroke", "pink");
 	path1.setAttributeNS(null, "stroke-width", 19);
-	// path1.setAttributeNS(null, "opacity", 0.75);
+	path1.setAttributeNS(null, "opacity", 0.75);
 	path1.setAttributeNS(null, "fill", "none");
 	path1.classList.add("svg-connectors");
 	path1.classList.add(divClassLineConnects);

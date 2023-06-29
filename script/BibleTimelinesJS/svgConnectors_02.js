@@ -10,7 +10,7 @@ function nodesconnector2(pathXYcord, divClassforColor) {
 	path1.setAttributeNS(null, "stroke-width", 19);
 //		path1.setAttributeNS(null, "stroke-dasharray", 5);
 	//	path1.setAttributeNS(null, "stroke-dashoffset", 1);
-	// path1.setAttributeNS(null, "opacity", 0.75);
+	path1.setAttributeNS(null, "opacity", 0.75);
 	path1.setAttributeNS(null, "fill", "none");
 	path1.classList.add("svg-connectors2");
 	path1.classList.add(divClassforColor);
@@ -129,10 +129,9 @@ function generateCustomSVGConnectorsType2() {
 			}
 		}
 
-		// divDeleteButton.style.backgroundColor = '';
-		// connectFromButton.style.backgroundColor = '';
-		// connectToButton.style.backgroundColor = '';
-		// clearTimeout(deletButtonColorTimeOut);
+		divDeleteButton.style.backgroundColor = '';
+		connectFromButton.style.backgroundColor = '';
+		clearTimeout(deletButtonColorTimeOut);
 	}
 //	generateCustomSVGConnectorsType3();
 }

@@ -1,19 +1,37 @@
 var coll = document.getElementsByClassName("collapsible");
-var caretID = document.getElementById('caretID');
 var i;
+
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     var caretID = this.lastElementChild;
+//     if (content.style.maxHeight) {
+//       content.style.maxHeight = null;
+//       caretID.classList.add('fa-caret-right');
+//       caretID.classList.remove('fa-caret-down');
+//     } else {
+//       content.style.maxHeight = content.scrollHeight + "px";
+//       caretID.classList.remove('fa-caret-right');
+//       caretID.classList.add('fa-caret-down');
+//     }
+// });
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
+    var caretID = this.lastElementChild;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
-      caretID.classList.add('caret');
-      caretID.classList.remove('caret2');
+      caretID.classList.add('fa-caret-right');
+      caretID.classList.remove('fa-caret-down');
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
-      caretID.classList.remove('caret');
-      caretID.classList.add('caret2');
+      caretID.classList.remove('fa-caret-right');
+      caretID.classList.add('fa-caret-down');
     }
   });
 }
+
+
