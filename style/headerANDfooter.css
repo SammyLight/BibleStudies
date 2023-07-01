@@ -31,6 +31,15 @@ a {
     border-bottom: none!important;
     /* text-decoration-color: #d0d0d0!important; */
 }
+.homeResources-grid-containter{
+    background-color: #ffffff!important;
+    box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 22px 22px;
+    margin-bottom: 20px;
+    position: relative;
+}
 .archive-date {
     display: block;
     color: red;

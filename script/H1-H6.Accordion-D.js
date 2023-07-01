@@ -1,5 +1,5 @@
 /*HIDE ALL ELEMENTS THAT ARE NOT H1 (or H2)*/
-let b = document.querySelectorAll("article > *");
+let b = document.querySelectorAll("main > *");
 
 var htmlhArray = ["H6", "H5", "H4", "H3", "H2", "H1"];
 var displayNoneOrBlock = '';
