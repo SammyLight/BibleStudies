@@ -10,10 +10,12 @@
 			</label>
 		</div>
 	</div>
-	<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 </div>
-<article id="article" class="container-fluid-inner">
-	{{content}}
+<article id="article" class="homeResources-grid-containter container-fluid-inner">
+	<main>
+		<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
+		{{content}}
+	</main>
 </article>
 <div class="add_space"></div>
 <ul class="PageNavigation container-fluid-inner">

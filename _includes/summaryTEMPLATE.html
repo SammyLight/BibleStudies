@@ -1,28 +1,33 @@
 <div id="expandANDdate" class="container-fluid-inner">
-	<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
+	
 </div>
-<article id="article" class="container-fluid-inner">
-{{content}}
+<div>
+<article id="article" class="homeResources-grid-containter container-fluid-inner">
+	<main>
+		<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
+		{{content}}
+	</main>
 </article>
-<div class="add_space"></div>
-<ul class="PageNavigation container-fluid-inner">
+</div>
+<!-- <div class="add_space"></div> -->
+<div class="PageNavigation container-fluid-inner">
 	{% if page.previous.url %}
-	<li class="all-links prev-link">
+	<div class="all-links prev-link">
 		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">
 			<span>&laquo; Previous summary</span>
 			{{page.previous.title}}			
 		</a>
-	</li>
+	</div>
 		{% endif %}
 	{% if page.next.url %}
-	<li class="all-links next-link">
+	<div class="all-links next-link">
 		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">
 			<span>Next summary &raquo;</span>
 			{{page.next.title}}			
 		</a>
-	</li>
+	</div>
 		{% endif %}
-</ul>
+</div>
 {% include contact-section-summary.html %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="../script/victorScripts/preload.js"></script>
