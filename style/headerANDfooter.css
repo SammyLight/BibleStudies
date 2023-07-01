@@ -1,4 +1,31 @@
 /* custom CSS */
+.show {
+    display: block;
+}
+
+.container-fluid {
+    padding: 0 16px 0;
+}
+.container-fluid-inner {
+    margin: 0 16px 0;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.bg-color {
+    background-color: #2F4052;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);   
+}
+/* .bg-image {
+    background-image: url(../images/background.jpg);
+} */
+.transition {
+    transition: all 0.5s;
+}
 a {
     text-decoration: none!important;
     border-bottom: none!important;
@@ -137,12 +164,38 @@ footer .archive-date {
     margin: 0;
     list-style: none;
 }
-.slideIn {
-    visibility: visible;
-    animation: slideIn 400ms ease-in-out forwards;
+.slideInFromLeft {
+    visibility: visible!important;
+    animation: slideInFromLeft 400ms ease-in-out forwards;
     transform-origin: left center;
 }
-@keyframes slideIn {
+@keyframes slideInFromLeft {
+    0% {
+        transform: scaleX(0)
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}
+.slideInFromRight {
+    visibility: visible!important;
+    animation: slideInFromRight 400ms ease-in-out forwards;
+    transform-origin: right center;
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: scaleX(0)
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}
+.slideInFromTop {
+    visibility: visible!important;
+    animation: slideInFromTop 1000ms ease-in-out forwards;
+    transform-origin: top center;
+}
+@keyframes slideInFromTop {
     0% {
         transform: scaleX(0)
     }
@@ -151,7 +204,6 @@ footer .archive-date {
     }
 }
 .slideOut{
-    /* visibility: hidden; */
     animation: slideOut 200ms ease-in-out forwards;
     transform-origin: left center;
 }
@@ -422,18 +474,21 @@ ul.header-links {
 }
 a.titles-links{
     font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    text-transform: uppercase;
-    font-size: 12px;
+    text-transform: lowercase;
+    font-size: 14px;
     background: linear-gradient(91deg, #f55c90 30.03%, #e897a3 101.13%);
-    background: linear-gradient(91deg, #ffc107 30.03%, #f8d261 101.13%);
     background: #ffc107;
+    background: linear-gradient(91deg, #ffc107 30.03%, #f8d261 101.13%);
     color: #212121!important;
-    padding: 10px 17px;
+    padding: 6px 18px;
     border-radius: 40px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom: none;
     letter-spacing: 0px;
     font-weight: bold;
+    display: flex;
+    width: fit-content;
+    align-items: center;
 }
 .titles-links::after{
     display: inline-block;

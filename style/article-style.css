@@ -11,7 +11,7 @@
 .loader{
     /* animation properties */
     animation-name: loader;
-    animation-duration: 0.7s;
+    animation-duration: 0.5s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -45,7 +45,7 @@ body {
     counter-reset: header1 header2;
     margin: 0;
     font-size: 2em;
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 body *{
     -webkit-transition: all 0.1s ease-in-out;
@@ -54,11 +54,15 @@ body *{
     transition: all 0.1s ease-in-out;
 }
 article{
+    visibility: hidden;
     min-height: 100vh;
 }
+article, article>header, #expandANDdate{
+    visibility: hidden;
+}
 article a{
-    white-space: pre-wrap!important;
     color: tomato!important;
+    font-size: 85%;
 }
 footer {
     font-size: .75em !important;
@@ -69,6 +73,9 @@ footer {
 .container-fluid-inner {
     margin: 0 16px 0;
 }
+/* article.container-fluid-inner {
+    margin: 0 10px 0;
+} */
 a {
     color: #000;
     border-radius: 4px;
@@ -248,27 +255,27 @@ li {
 } */
 }
 
-/*PSAM 220516c*/
 header>h1:first-of-type, div>h1:first-of-type {
     font-family: 'Bitter', serif;
     font-family: "Times New Roman", Times, serif;
     padding-top: .50em;
-    /* border-bottom: 2px solid grey; */
-    /* border-bottom: 3px solid #212121; */
+    padding-left: .10em;
+    border-left: 10px solid tomato;
     border-bottom: none!important;
 }
-/*PSAM.220516a: the Rule for p below was added for alignment with H1 element*/
 
 p {
     margin: 0.75em 0.4em 0em 0.4em!important;
+    margin: 0.75em 0 0 0!important;
 }
 .displayNone{
     word-break: break-word;
 }
 /*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
 h1,h2,h3,h4,h5,h6 {
-    display: flex;
+    display: block;
     margin-left: 0.25em!important;
+    margin-left: 0!important;
     word-break: break-word;
     font-weight: bold!important;
     border-bottom: 2px solid rgba(190,190,190,.5);
@@ -276,12 +283,15 @@ h1,h2,h3,h4,h5,h6 {
     /* text-transform: uppercase; */
     /* box-shadow: -1px 2px 4px -4px rgba(190,190,190,.5); */
 }
+
 p,h1,h2,h3,h4,h5,h6 {
     margin: 1em 0.5em;
 }
 h1>a,h2>a,h3>a,h4>a,h5>a,h6>a {
     color: #111;
     text-decoration: none!important;
+    white-space: pre-wrap!important;
+    font-size: inherit;
 }
 h1:first-child,
 table {
@@ -362,8 +372,10 @@ ol {
 ol,ul {
     /* 	list-style-type: none; */
     counter-reset: lister;
-    padding-inline-start: 10px;
-    	margin: auto;
+    padding-inline-start: 0;
+    margin: auto;
+    margin-block-start: 0.7em;
+    /* margin-block-end: 0.7em; */
 }
 ol>li>ol {
     list-style-type: lower-roman;
@@ -391,10 +403,11 @@ body>li:first-child {
 }
 li {
     margin-left: 0;
-    display: list-item;
+    display: inherit;
+    display: table;
     counter-increment: lister;
     margin-bottom: 0.4em;
-    /*PSAM.220516a: from 0.6em to 0.4em*/
+    
 }
 @media only screen and (min-width: 540px) {
     li {
@@ -529,7 +542,7 @@ table ol {
     display: grid;
     grid-template-columns: 70% 30%;
     place-items: baseline;
-    margin: 1em 0.5em;
+    margin: 1em 0;
 }
 .toggleAllHeaders div {
     place-self: center end;
@@ -596,9 +609,8 @@ table ol {
 
 .PageNavigation{
     display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 10px;
-    padding-right: 0.7em;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
 }
 .PageNavigation a{
     color: #212121;
@@ -608,26 +620,24 @@ table ol {
 }
 .PageNavigation a:hover{
     color: #b6b6b6!important;
-    /* border-bottom: 1px solid rgba(190,190,190,.5); */
+    border-bottom: none!important;
 }
 .PageNavigation li::before{
     content: "";
+    padding: 0;
 }
 .PageNavigation .all-links{
     margin: 7px 0 20px;
-}
-.prevnext{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 0;
+    width: fit-content;
 }
 .prev-link a, .prev-link span{
     display: grid;
     place-content: start;
 }
-.next-link span, .next-link a{
+.next-link span, .next-link a, .next-link{
     display: grid;
     place-content: end;
+    place-self: end;
     text-align: right;
 }
 .prev-link span, .next-link span{
@@ -640,11 +650,10 @@ table ol {
     font-size: 18px;
 }
 .PageNavigation {
-    display: block;
+    grid-template-columns: 100%;
     padding-right: 0.3em;
 }
 .PageNavigation .all-links {
-    display: grid;
     margin: 0 0 15px;
 }
 .prev-link span, .next-link span{

@@ -4,9 +4,9 @@ var myDropdown = document.getElementById("myDropdown");
 function myFunction() {
   if (myDropdown.classList.contains('slideOut')) {
     myDropdown.classList.remove('slideOut');
-    myDropdown.classList.add('slideIn');
+    myDropdown.classList.add('slideInFromLeft');
   } else {
-    myDropdown.classList.remove('slideIn');
+    myDropdown.classList.remove('slideInFromLeft');
     myDropdown.classList.add('slideOut');
   }
 }
@@ -34,9 +34,9 @@ headerContainer.append(div1);
 function myFunctionTwo() {
   if (div2.classList.contains('slideOut')) {
     div2.classList.remove('slideOut');
-    div2.classList.add('slideIn');
+    div2.classList.add('slideInFromLeft');
   } else {
-    div2.classList.remove('slideIn');
+    div2.classList.remove('slideInFromLeft');
     div2.classList.add('slideOut');
   }
 }
@@ -54,9 +54,9 @@ const elementsArray = [...myDropdowns];
     element.classList.add("slideOut");
       // if (element.classList.contains('slideOut')) {
       //   element.classList.remove('slideOut');
-      //   element.classList.add('slideIn');
+      //   element.classList.add('slideInFromLeft');
       // } else {
-      //   element.classList.remove('slideIn');
+      //   element.classList.remove('slideInFromLeft');
       //   element.classList.add('slideOut');
       // }
   });
@@ -65,8 +65,8 @@ const elementsArray = [...myDropdowns];
 window.onclick = function (event) {
   if (!event.target.matches('.Button')) {
     elementsArray.forEach(element => {
-      if (element.classList.contains('slideIn')) {
-        element.classList.remove('slideIn');
+      if (element.classList.contains('slideInFromLeft')) {
+        element.classList.remove('slideInFromLeft');
         element.classList.add('slideOut');
       }
     });
