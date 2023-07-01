@@ -40,12 +40,12 @@ for (i; i < b.length; i++) {
 	var a = num;
 	
 	var btag = b[i].tagName.toUpperCase();
+	console.log(btag);
 	var showaar;
 	
 	/* For H1 to H6 */
 	if (htmlhArray.includes(btag)) {
 		showaar = btag;
-		
 		/* Add showaar classes to Headers */
 		var x = a - 1;
 		var showaarH = "H" + x;
@@ -68,7 +68,8 @@ for (i; i < b.length; i++) {
 
 	if ((btag != "H1") && (btag != "SCRIPT")) {
 		b[i].style.display = "none";
-		var h2showit = showaar
+		console.log(b[i]);
+		var h2showit = showaar;
 		if (!htmlhArray.includes(btag)) {b[i].classList.add(h2showit);}
 	}
 };

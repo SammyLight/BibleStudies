@@ -40,6 +40,10 @@ a {
     margin-bottom: 20px;
     position: relative;
 }
+#archive-date, #expandANDdate{
+    position: relative;
+    visibility: hidden;
+}
 .archive-date {
     display: block;
     color: red;
@@ -201,15 +205,45 @@ footer .archive-date {
 }
 .slideInFromTop {
     visibility: visible!important;
-    animation: slideInFromTop 1000ms ease-in-out forwards;
-    transform-origin: top center;
+    animation: slideInFromTop 2000ms ease-in-out forwards;
+    animation-fill-mode: forwards;
+    /* transform-origin: top left; */
 }
 @keyframes slideInFromTop {
     0% {
-        transform: scaleX(0)
+        top: -5em;
+        color: transparent;
+        /* transform: scaleX(0) */
+    }
+    40% {
+        color: transparent;
+        /* transform: scaleX(0) */
     }
     100% {
-        transform: scaleX(1)
+        color: tomato;
+        top: 0em;
+        /* transform: scaleX(1) */
+    }
+}
+.slideInFromBottom {
+    visibility: visible!important;
+    animation: slideInFromBottom 1000ms ease-in-out forwards;
+    /* transform-origin: bottom center; */
+}
+@keyframes slideInFromBottom {
+    0% {
+        bottom: -5em;
+        /* color: transparent; */
+        /* transform: scaleX(0) */
+    }
+    40% {
+        /* color: transparent; */
+        /* transform: scaleX(0) */
+    }
+    100% {
+        /* color: #212121; */
+        bottom: 0em;
+        /* transform: scaleX(1) */
     }
 }
 .slideOut{

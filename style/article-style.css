@@ -57,6 +57,7 @@ body *{
     min-height: 32px;
 }
 article{
+    display: block!important;
     min-height: 100vh;
     margin-bottom: 20px!important;
 }
