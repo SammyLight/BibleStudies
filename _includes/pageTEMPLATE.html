@@ -12,8 +12,8 @@
 	</div>
 </div>
 <article id="article" class="homeResources-grid-containter container-fluid-inner">
+	<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 	<main>
-		<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 		{{content}}
 	</main>
 </article>

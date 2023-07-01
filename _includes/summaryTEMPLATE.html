@@ -1,14 +1,12 @@
 <div id="expandANDdate" class="container-fluid-inner">
 	
 </div>
-<div>
 <article id="article" class="homeResources-grid-containter container-fluid-inner">
+	<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 	<main>
-		<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
 		{{content}}
 	</main>
 </article>
-</div>
 <!-- <div class="add_space"></div> -->
 <div class="PageNavigation container-fluid-inner">
 	{% if page.previous.url %}
