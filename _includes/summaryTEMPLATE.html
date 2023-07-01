@@ -1,9 +1,11 @@
-<small class="archive-date" style="margin: 1em;">{{ page.date | date: "%a, %b %d, %y." }}</small>
-<article>
+<div id="expandANDdate" class="container-fluid-inner">
+	<small class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
+</div>
+<article id="article" class="container-fluid-inner">
 {{content}}
 </article>
 <div class="add_space"></div>
-<ul class="PageNavigation">
+<ul class="PageNavigation container-fluid-inner">
 	{% if page.previous.url %}
 	<li class="all-links prev-link">
 		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">

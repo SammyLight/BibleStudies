@@ -5,7 +5,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-
+<style>
+	article h1, article h2, article h3, article h4, article h5, article h6 {
+    display: grid;
+    grid-template-columns: 3% 97%;
+}
+@media only screen and (max-width: 912px) {
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    grid-template-columns: 4% 96%;
+}}
+@media only screen and (max-width: 820px) {
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    grid-template-columns: 4% 94%;
+}}
+@media only screen and (max-width: 540px) {
+article h1, article h2, article h3, article h4, article h5, article h6 {
+    grid-template-columns: 7% 93%;
+}}
+article>header>h1{
+    display: block;
+}
+</style>
 <body class="fonts">
     <div class="loader-bg">
         <div class="loader"></div>
