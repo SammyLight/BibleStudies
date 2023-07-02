@@ -41,6 +41,7 @@ body {
     background-color: #f6f6f6!important;
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Playfair Display', serif;
     font-family: -system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     counter-reset: header1 header2;
     margin: 0;
@@ -322,10 +323,13 @@ h3>span:first-child,
 h4>span:first-child,
 h5>span:first-child,
 h6>span:first-child {
-    width: 45px;
+    /* width: 45px; */
     color: #5f666d;
     color: #111;
     display: flex;
+    height: -webkit-fill-available;
+    position: absolute;
+    left: -37px;
     align-items: center;
 }
 @media only screen and (max-width: 540px) {
@@ -335,7 +339,7 @@ h3>span:first-child,
 h4>span:first-child,
 h5>span:first-child,
 h6>span:first-child {
-    width: 30px;
+    /* width: 30px; */
 }}
 /* header~h1 {
     counter-increment: header1;
