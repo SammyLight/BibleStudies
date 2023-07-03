@@ -6,16 +6,17 @@ var displayNoneOrBlock = '';
 function hideOrShowAllHnum(){
 	htmlhArray.forEach(element => {
 		let h2showit = "." + element;
+		var allHeaders = document.querySelectorAll('h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5');
+		console.log(allHeaders);
 		if(displayNoneOrBlock=='none'){
 			document.querySelectorAll(htmlhArray.map(x=>'.'+x).toString()).forEach(sh=>{
-				console.log(displayNoneOrBlock)
+				// console.log(sh);
 				sh.style.display = displayNoneOrBlock;
 				// let h2showit = sh.classList.toString().match(/\bH[1-6]\b/) + "2showit";
 				// sh.classList.add(h2showit);
 			})
 		} else {
 			document.querySelectorAll(h2showit).forEach(sh=>{
-				console.log(displayNoneOrBlock)
 				sh.style.display = displayNoneOrBlock;
 				// sh.classList.remove(h2showit);
 			})
@@ -40,7 +41,6 @@ for (i; i < b.length; i++) {
 	var a = num;
 	
 	var btag = b[i].tagName.toUpperCase();
-	console.log(btag);
 	var showaar;
 	
 	/* For H1 to H6 */
@@ -68,7 +68,6 @@ for (i; i < b.length; i++) {
 
 	if ((btag != "H1") && (btag != "SCRIPT")) {
 		b[i].style.display = "none";
-		console.log(b[i]);
 		var h2showit = showaar;
 		if (!htmlhArray.includes(btag)) {b[i].classList.add(h2showit);}
 	}

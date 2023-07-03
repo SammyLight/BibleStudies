@@ -55,46 +55,6 @@ body *{
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-    cursor: pointer;
-}
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    cursor: pointer;
-    -webkit-appearance: button;
-}
-button {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-}
-button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-button,
-select {
-    text-transform: none;
-}
-button {
-    overflow: visible;
-}
-button,
-input,
-optgroup,
-textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
-}
 
 /* pre-home page CSS */
 .box-container {

@@ -1,4 +1,44 @@
 /* custom CSS */
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button,
+select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button,
+input,
+optgroup,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
 .show {
     display: block;
 }
@@ -203,9 +243,31 @@ footer .archive-date {
         transform: scaleX(1)
     }
 }
+.easeIn {
+    visibility: visible!important;
+    animation: easeIn 1000ms ease-in-out forwards;
+    animation-fill-mode: forwards;
+    /* transform-origin: top left; */
+}
+@keyframes easeIn {
+    0% {
+        top: -5em;
+        color: transparent;
+        /* transform: scaleX(0) */
+    }
+    80% {
+        color: transparent;
+        /* transform: scaleX(0) */
+    }
+    100% {
+        color: inherit;
+        top: 0em;
+        /* transform: scaleX(1) */
+    }
+}
 .slideInFromTop {
     visibility: visible!important;
-    animation: slideInFromTop 2000ms ease-in-out forwards;
+    animation: slideInFromTop 1000ms ease-in-out forwards;
     animation-fill-mode: forwards;
     /* transform-origin: top left; */
 }
@@ -220,7 +282,7 @@ footer .archive-date {
         /* transform: scaleX(0) */
     }
     100% {
-        color: tomato;
+        color: red;
         top: 0em;
         /* transform: scaleX(1) */
     }

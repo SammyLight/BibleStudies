@@ -62,9 +62,12 @@ article{
     min-height: 100vh;
     margin-bottom: 20px!important;
 }
-main, article>main>header, #expandANDdate{
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
     visibility: hidden;
 }
+/* main *:not(header):not(.H0):not(.H1):not(.H2):not(.H3):not(.H4):not(.H5){
+    visibility: hidden;
+} */
 article a{
     color: tomato!important;
     font-size: 85%;
@@ -98,57 +101,6 @@ img {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.1);
-}
-.transition {
-    transition: all 0.5s;
-}
-.bg-image {
-    /* background-image: url(../images/background.jpg); */
-}
-
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-    cursor: pointer;
-}
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    cursor: pointer;
-    -webkit-appearance: button;
-}
-button {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-}
-button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-button,
-select {
-    text-transform: none;
-}
-button {
-    overflow: visible;
-}
-button,
-input,
-optgroup,
-textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
-}
-
-.show {
-    display: block;
 }
 
 @media only screen and (max-width: 960px) {
@@ -324,8 +276,8 @@ h4>span:first-child,
 h5>span:first-child,
 h6>span:first-child {
     /* width: 45px; */
-    color: #5f666d;
-    color: #111;
+    /* color: #5f666d;
+    color: #111; */
     display: flex;
     height: -webkit-fill-available;
     position: absolute;
