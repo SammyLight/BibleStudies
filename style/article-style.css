@@ -62,14 +62,12 @@ article{
     min-height: 100vh;
     margin-bottom: 20px!important;
 }
-h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
+main>p, main>ol, main>ul, main>blockquote, main>table, main>span, h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
     visibility: hidden;
 }
-/* main *:not(header):not(.H0):not(.H1):not(.H2):not(.H3):not(.H4):not(.H5){
-    visibility: hidden;
-} */
 article a{
     color: tomato!important;
+    color: midnightblue!important;
     font-size: 85%;
 }
 .homeResources-grid-containter{
@@ -176,39 +174,39 @@ li {
 header>h1:first-of-type, div>h1:first-of-type {
     font-size: 75px!important;
     line-height: 75px;
-    font-size: 55px!important;
-    line-height: 55px;
+    font-size: 60px!important;
+    line-height: 60px;
 }
-/* h1 {
+h1 {
     font-size: 50px!important;
     line-height: 50px;
-    font-size: 45px!important;
+    font-size: 1.5em!important;
     line-height: 45px;
 }
 h2 {
     font-size: 43px!important;
     line-height: 43px;
-    font-size: 35px!important;
+    font-size: 1.3em!important;
     line-height: 35px;
 }
 h3 {
     font-size: 34px!important;
     line-height: 34px;
-    font-size: 30px!important;
+    font-size: 1.1em!important;
     line-height: 30px;
 }
 h4 {
     font-size: 27px!important;
     line-height: 27px;
-    font-size: 25px!important;
+    font-size: 0.9em!important;
     line-height: 25px;
 }
 h5, h6 {
     font-size: 24px!important;
     line-height: 24px;
-    font-size: 20px!important;
+    font-size: 0.8em!important;
     line-height: 20px;
-} */
+}
 /* p,
 li {
     font-size: 28px;
@@ -246,8 +244,6 @@ header>h1:first-of-type, div>h1:first-of-type {
 /*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
 h1,h2,h3,h4,h5,h6 {
     display: block;
-    /* margin-left: 0.25em!important;
-    margin: 1em 0; */
     margin-left: 0!important;
     word-break: break-word;
     font-weight: bold!important;
@@ -256,18 +252,22 @@ h1,h2,h3,h4,h5,h6 {
     /* text-transform: uppercase; */
     /* box-shadow: -1px 2px 4px -4px rgba(190,190,190,.5); */
 }
-
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 0;
+}
+h1 p,h2 p,h3 p,h4 p,h5 p,h6 p{
+    display: inline;
+    font-size: 18px!important;
+    font-size: inherit!important;
+}
 h1>a,h2>a,h3>a,h4>a,h5>a,h6>a {
-    color: #111;
+    color: #111!important;
     text-decoration: none!important;
     white-space: pre-wrap!important;
     font-size: inherit;
 }
-h1:first-child,
 table {
-    margin: 1em 0.5em;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 1em 0;
 }
 h1>span:first-child,
 h2>span:first-child,
