@@ -520,7 +520,7 @@ li.header-links-li:before {
     display: flex;
     position: relative;
     overflow: visible;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 .header-links-li {
     display: -webkit-box;
