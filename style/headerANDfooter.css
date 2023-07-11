@@ -154,6 +154,8 @@ footer .archive-date {
     color: #ffffff;
     color: #212121;
     padding: 12px 10px 15px;
+    padding: 16px 10px;
+    font-size: 95%!important;
 }
 .moreButton:hover{
     background-color: #ffc107;
@@ -520,7 +522,7 @@ li.header-links-li:before {
     display: flex;
     position: relative;
     overflow: visible;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 .header-links-li {
     display: -webkit-box;
