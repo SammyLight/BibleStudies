@@ -46,7 +46,7 @@ body {
     counter-reset: header1 header2;
     margin: 0;
     font-size: 2em;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 body *{
     -webkit-transition: all 0.1s ease-in-out;
@@ -62,13 +62,18 @@ article{
     min-height: 100vh;
     margin-bottom: 20px!important;
 }
-main>p, main>ol, main>ul, main>blockquote, main>table, main>span, h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
+main>h1,main>h2,main>h3,main>h4,main>h5,main>h6,main>p, main>ol, main>ul, main>blockquote, main>table, main>span, h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
     visibility: hidden;
 }
+/* main{
+    visibility: hidden;
+} */
 article a{
     color: tomato!important;
     color: midnightblue!important;
+    color: #39547f!important;
     font-size: 85%;
+    /* visibility: hidden; */
 }
 .homeResources-grid-containter{
     padding: 22px 15px;
@@ -105,18 +110,22 @@ img {
 header>h1:first-of-type, div>h1:first-of-type {
     font-size: 50px!important;
 }
-/* h1 {
+h1 {
     font-size: 38px!important;
+    font-size: 1.5em!important;
 }
 h2 {
     font-size: 34px!important;
+    font-size: 1.3em!important;
 }
 h3 {
     font-size: 30px!important;
+    font-size: 1.1em!important;
 }
 h4,h5,h6 {
     font-size: 26px!important;
-} */
+    font-size: 0.9em!important;
+}
 /* p,
 li {
     font-size: 30px;
@@ -129,19 +138,19 @@ header>h1:first-of-type, div>h1:first-of-type {
 }
 h1 {
     font-size: 30px!important;
-    font-size: 1em!important;
+    font-size: 0.9em!important;
 }
 h2 {
     font-size: 26px!important;
-    font-size: 0.8em!important;
+    font-size: 0.7em!important;
 }
 h3 {
     font-size: 22px!important;
-    font-size: 0.7em!important;
+    font-size: 0.6em!important;
 }
 h4,h5,h6 {
     font-size: 20px!important;
-    font-size: 0.6em!important;
+    font-size: 0.5em!important;
 }
 /* p, li {
     font-size: 20px!important;
@@ -180,19 +189,19 @@ header>h1:first-of-type, div>h1:first-of-type {
 h1 {
     font-size: 50px!important;
     line-height: 50px;
-    font-size: 1.5em!important;
+    font-size: 1.4em!important;
     line-height: 45px;
 }
 h2 {
     font-size: 43px!important;
     line-height: 43px;
-    font-size: 1.3em!important;
+    font-size: 1.2em!important;
     line-height: 35px;
 }
 h3 {
     font-size: 34px!important;
     line-height: 34px;
-    font-size: 1.1em!important;
+    font-size: 1em!important;
     line-height: 30px;
 }
 h4 {
@@ -244,6 +253,7 @@ header>h1:first-of-type, div>h1:first-of-type {
 /*PSAM.220516b: the Rule for h1-h6 below was added for better alignment*/
 h1,h2,h3,h4,h5,h6 {
     display: block;
+    margin-top: 1.2em;
     margin-left: 0!important;
     word-break: break-word;
     font-weight: bold!important;
