@@ -3,7 +3,7 @@
         <div class="bg-color bg-image">
             <div class="mobileHeaderNav">
                 <div class="mobileLogoSize">
-                    {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                    {% for page in site.pages %}{% if page.title contains "LCTF" %}
                     <a
                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                         <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
@@ -17,7 +17,7 @@
                             <div id="myDropdown" class="myDropdown transition">
                                 <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                                     <div class="mobile-headerLinks">
-                                        {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
                                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Home</span>
                                         </a>{% endif %}{% endfor %}
@@ -81,7 +81,7 @@
             <div class="container-fluid-inner">
                 <nav class="homeHeaderNav">
                     <div class="churchLOGO">
-                        {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                         </a>{% endif %}{% endfor %}
@@ -89,7 +89,7 @@
                     <div class="headerUL">
                         <ul id="header-links" class="header-links">
                             <li class="header-links-li transition">
-                                {% for page in site.pages %}{% if page.title contains "LightCity Resources" %}
+                                {% for page in site.pages %}{% if page.title contains "LCTF" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Home</span>
                                 </a>{% endif %}{% endfor %}

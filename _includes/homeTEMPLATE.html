@@ -5,14 +5,18 @@
 </head>
 
 <body class="fonts">
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
     {% include homeHeader-section.html %}
     <div id="search-container" class="homeResources-grid-containter" style="margin: 20px 16px;padding: 16px;">
     {% include search-articles.html %}
     </div>
     {{ content }}
     {% include contact-section.html %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/preload.js"></script>
 <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
-<script type="text/javascript" src="../script/victorScripts/preload.js"></script>
 <script type="text/javascript" src="../script/victorScripts/generalscript.js"></script>
 <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
 </body>
