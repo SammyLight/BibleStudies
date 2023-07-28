@@ -317,6 +317,7 @@ article ol, article ul {
     padding-inline-start: 0;
     padding-inline-start: 14px;
     list-style-type: decimal;
+    margin: 0;
     /* margin: auto;
     margin-block-start: 0.7em; */
     /* margin-block-end: 0.7em; */
@@ -356,7 +357,8 @@ article li {
     /* display: inherit;
     display: table;
     counter-increment: lister; */
-    margin-bottom: 0.4em;
+    /* margin-bottom: 0.4em; */
+    margin-top: 1em;
     
 }
 /* li:before {
