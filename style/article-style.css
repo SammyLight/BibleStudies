@@ -100,19 +100,19 @@ header>h1:first-of-type, div>h1:first-of-type {
 }
 h1 {
     font-size: 30px!important;
-    font-size: 0.9em!important;
+    font-size: 1.2em!important;
 }
 h2 {
     font-size: 26px!important;
-    font-size: 0.7em!important;
+    font-size: 1em!important;
 }
 h3 {
     font-size: 22px!important;
-    font-size: 0.6em!important;
+    font-size: 0.8em!important;
 }
 h4,h5,h6 {
     font-size: 20px!important;
-    font-size: 0.5em!important;
+    font-size: 0.7em!important;
 }
 /* p, li {
     font-size: 20px!important;
