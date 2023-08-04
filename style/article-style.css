@@ -510,7 +510,7 @@ table ol {
     display: grid;
     grid-template-columns: 70% 30%;
     place-items: baseline;
-    margin: 1em 0;
+    padding: 1em 0;
 }
 .toggleAllHeaders div {
     place-self: center end;
