@@ -114,32 +114,35 @@ h4,h5,h6 {
     font-size: 20px!important;
     font-size: 0.7em!important;
 }
-/* p, li {
+p, li {
     font-size: 20px!important;
-} */
-}
+    font-size: 0.9em!important;
+}}
 
 @media only screen and (max-width: 300px) {
 header>h1:first-of-type, div>h1:first-of-type {
     font-size: 25px!important;
 }
-/* h1 {
+h1 {
     font-size: 18px!important;
+    font-size: 1em!important;
 }
 h2 {
     font-size: 15px!important;
+    font-size: 0.8em!important;
 }
 h3 {
     font-size: 13px!important;
+    font-size: 0.7em!important;
 }
 h4,h5,h6 {
     font-size: 10px!important;
-} */
-/* p,
-li {
-    font-size: 18px!important;
-} */
+    font-size: 0.6em!important;
 }
+p,li {
+    font-size: 18px!important;
+    font-size: 0.8em!important;
+}}
 
 @media only screen and (min-width: 961px) {
 header>h1:first-of-type, div>h1:first-of-type {
