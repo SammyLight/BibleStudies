@@ -40,6 +40,10 @@ article a{
 .homeResources-grid-containter{
     padding: 22px 15px;
 }
+@media only screen and (max-width: 300px) {
+.homeResources-grid-containter{
+    padding: 18px 10px;
+}}
 footer {
     font-size: .75em !important;
 }
@@ -115,13 +119,14 @@ h4,h5,h6 {
     font-size: 0.7em!important;
 }
 p, li {
-    font-size: 20px!important;
     font-size: 0.9em!important;
+    font-size: 20px!important;
 }}
 
 @media only screen and (max-width: 300px) {
 header>h1:first-of-type, div>h1:first-of-type {
     font-size: 25px!important;
+    font-size: 1.15em!important;
 }
 h1 {
     font-size: 18px!important;
@@ -140,8 +145,8 @@ h4,h5,h6 {
     font-size: 0.6em!important;
 }
 p,li {
-    font-size: 18px!important;
     font-size: 0.8em!important;
+    font-size: 18px!important;
 }}
 
 @media only screen and (min-width: 961px) {
@@ -351,8 +356,8 @@ ol>li>ol>li>ol>li>ol>li>ol>li>ol {
 body>li:first-child {
     margin-top: 0.6em;
 }
-article li li {
-    margin: 0;
+article li li, article li li li, article li li li li {
+    margin: 0.2em 0 0 0;
 }
 article li {
     margin-left: 0;
