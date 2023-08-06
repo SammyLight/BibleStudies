@@ -85,7 +85,7 @@
                         </a>{% endif %}{% endfor %}
                     </div>
                     <div class="headerUL">
-                        <ul class="header-links">
+                        <ul id="header-links" class="header-links">
                             <li class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "LCTF" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">

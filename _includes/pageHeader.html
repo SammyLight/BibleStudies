@@ -80,6 +80,13 @@ h1>span:first-child, h2>span:first-child, h3>span:first-child, h4>span:first-chi
 h1>span:first-child, h2>span:first-child, h3>span:first-child, h4>span:first-child, h5>span:first-child, h6>span:first-child {
     left: -22px;
 }}
+@media only screen and (max-width: 300px) {
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    grid-template-columns: 10% 90%;
+    grid-template-columns: 90%;
+    width: 90%;
+    padding-left: 10%!important;
+}}
 @media only screen and (max-width: 280px) {
 h1>span:first-child, h2>span:first-child, h3>span:first-child, h4>span:first-child, h5>span:first-child, h6>span:first-child {
     left: -18px;
@@ -171,7 +178,7 @@ h1>span:first-child, h2>span:first-child, h3>span:first-child, h4>span:first-chi
                             </a>{% endif %}{% endfor %}
                         </div>
                         <div class="headerUL">
-                            <ul class="header-links">
+                            <ul id="header-links" class="header-links">
                                 <li class="header-links-li transition">
                                     {% for page in site.pages %} {% if page.title contains "LCTF" %}
                                     <a class="iconLink transition"
