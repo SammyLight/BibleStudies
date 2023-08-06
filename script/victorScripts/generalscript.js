@@ -26,7 +26,7 @@ function myArticle() {
 //     const myArticleTagNamesArray = [...myArticleTagNames];
 //     myArticleTagNamesArray.forEach(element => {
 //         element.classList.add('easeInn');
-//     });
+//   });
 // }
 
 // var myArticlePreEl = document.querySelectorAll('main > *:not(header):not(.H0):not(.H1):not(.H2):not(.H3):not(.H4):not(.H5), main > *:not(header) > *, main > *:not(header) > * > *, main > *:not(header) > * > * > *, main > *:not(header) > * > * > * > *, main > *:not(header) > * > * > * > * > *');
@@ -46,7 +46,6 @@ function myArticleText() {
     // const myArticlePreEl = document.querySelectorAll('main > *:not(header):not(main>h1):not(main>h2):not(main>h3):not(main>h4):not(main>h5):not(main>h6), main > *:not(header) > *:not(main>h1) > *, main > *:not(header) > *:not(main>h1) > * > *, main > *:not(header) > *:not(main>h1) > * > * > *, main > *:not(header) > *:not(main>h1) > * > * > * > *, main > *:not(header) > *:not(main>h1) > * > * > * > * > *');
     const myArticlePreEl = document.querySelectorAll('main > *:not(header):not(main>h1):not(main>h2):not(main>h3):not(main>h4):not(main>h5):not(main>h6), main > *:not(header) > *:not(.H0) > *, main > *:not(header) > *:not(.H0) > * > *, main > *:not(header) > *:not(.H0) > * > * > *, main > *:not(header) > *:not(.H0) > * > * > * > *, main > *:not(header) > *:not(.H0) > * > * > * > * > *');
     const myArticlePreElArray = [...myArticlePreEl];
-    console.log(myArticlePreElArray);
     myArticlePreElArray.forEach(element => {
         if (element.classList.contains('visibility')) {
             element.classList.remove('visibility');
@@ -79,4 +78,23 @@ function myArticleText() {
 // }
 
 
+// Get the container element
+var btnContainer = document.getElementById("header-links");
 
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("header-links-li");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+
+    // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+    // Add the active class to the current/clicked button
+    this.className += " active";
+  });
+}

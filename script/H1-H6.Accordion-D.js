@@ -68,7 +68,7 @@ for (i; i < b.length; i++) {
 
 	if ((btag != "H1") && (btag != "SCRIPT")) {
 		b[i].style.display = "none";
-		// b[i].style.visibility = "visible";
+		b[i].classList.add('marginLeft');
 		var h2showit = showaar;
 		if (!htmlhArray.includes(btag)) {b[i].classList.add(h2showit);}
 	}
