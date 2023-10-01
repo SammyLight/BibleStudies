@@ -2,7 +2,7 @@
 layout: cat-homepageTEMPLATE-summary
 title: "Hebrews"
 permalink: /Hebrews/
-categories: ["HomePage-Book-of-Hebrews"]
+categories: ["HomePage-Hebrews"]
 ---
 <style>
 	div>ol {
@@ -19,7 +19,7 @@ categories: ["HomePage-Book-of-Hebrews"]
 	</div>
 	<div class="homeResources-grid-containter">
 		<ol>
-			{% for post in site.categories.Book-of-Hebrews %}
+			{% for post in site.categories.Hebrews %}
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 			</li>

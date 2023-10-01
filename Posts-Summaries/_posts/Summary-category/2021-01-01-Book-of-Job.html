@@ -2,7 +2,7 @@
 layout: cat-homepageTEMPLATE-summary
 title: "Job"
 permalink: /Job/
-categories: ["HomePage-Book-of-Job"]
+categories: ["HomePage-Job"]
 ---
 <style>
 	div>ol {
@@ -19,7 +19,7 @@ categories: ["HomePage-Book-of-Job"]
 	</div>
 	<div class="homeResources-grid-containter">
 		<ol>
-			{% for post in site.categories.Book-of-Job %}
+			{% for post in site.categories.Job %}
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
