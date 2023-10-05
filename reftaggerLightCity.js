@@ -20,26 +20,20 @@ document.addEventListener('contextmenu', contextMenu_CreateNAppend);
 /* PREVENT DEFAULT CONTEXT MENU FOR WHEN ELEMENT CHANGES AFTER RIGHTCLICKING ON .crfnnote_btns buttons */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 let prevntDefault_cMenu = false;
-document.addEventListener('mouseover', preventContextMenu_mo);
+document.addEventListener('contextmenu', preventDefaultContextMenu);
 document.addEventListener('contextmenu', preventContextMenu);
-let timer_prevntDefault_cMenu;
-
-function preventContextMenu_mo(e) {
-    if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
-        clearTimeout(timer_prevntDefault_cMenu)
-        prevntDefault_cMenu = true;
-    } else {
-        clearTimeout(timer_prevntDefault_cMenu)
-        timer_prevntDefault_cMenu = setTimeout(() => {
-            prevntDefault_cMenu = false;
-        }, 1000);
-    }
-}
 function preventContextMenu(event) {
-    if (prevntDefault_cMenu) {event.preventDefault();}
+    if (preventDefaultContextMenu) {event.preventDefault();}
 }
 function preventDefaultContextMenu(e){
-  
+    if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
+        prevntDefault_cMenu = true;
+        setTimeout(() => {
+            prevntDefault_cMenu = false;
+        }, 100);
+    } else {
+        prevntDefault_cMenu = false;
+    }
 }
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
@@ -351,17 +345,20 @@ function contextMenu_CreateNAppend(e) {
         }
         #cmenu_navnclose_btns button.prv {
             background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             transform:rotate(-90deg);
             margin-left:2px;
             box-shadow:-1px -1px 1px var(--shadow-color);
         }
         #cmenu_navnclose_btns button.prv_verse {
             background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             margin-left:2px;
             box-shadow:1px 1px 1px var(--shadow-color);
         }
         #cmenu_navnclose_btns button.nxt_verse {
             background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             transform:rotate(-180deg);
             margin-left:1px;
             box-shadow:-1px -1px 1px var(--shadow-color);
@@ -925,7 +922,8 @@ loadVersion(bversionName)
 function loadVersion(versionName) {
     return new Promise((resolve, reject) => {
       const fullPathHead = '';
-      let request_Version_URL = fullPathHead + `bibles/${versionName}.json`;
+    //   let request_Version_URL = fullPathHead + `bibles/${versionName}.json`;
+      let request_Version_URL = fullPathHead + `../bibles/${versionName}.json`;
       let bibleVersion = new XMLHttpRequest();
       bibleVersion.open('GET', request_Version_URL);
       bibleVersion.responseType = 'json';
