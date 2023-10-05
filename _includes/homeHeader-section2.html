@@ -36,6 +36,13 @@
                                         </a>{% endif %}{% endfor %}
                                     </div>
                                     <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %}{% if page.title contains "Videos" %}
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Video</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
                                         {% for page in site.pages %}{% if page.title contains "Study Resources" %}
                                         <a class="linkTitle transition"
                                             href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -104,6 +111,12 @@
                                 {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Summary</span>
+                                </a>{% endif %}{% endfor %}
+                            </li>
+                            <li class="header-links-li transition">
+                                {% for page in site.pages %}{% if page.title contains "Videos" %}
+                                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                    <span>Video</span>
                                 </a>{% endif %}{% endfor %}
                             </li>
                             <li class="header-links-li transition">
