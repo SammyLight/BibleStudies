@@ -108,10 +108,10 @@ img {
 .transition {
     transition: all 0.5s;
 }
-.active {
-    /* background-color: #666; */
+/* .active {
+    background-color: #666;
     color: #ffc107;
-}
+} */
 a {
     text-decoration: none!important;
     border-bottom: none!important;

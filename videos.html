@@ -1,0 +1,51 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: videosTEMPLATE
+permalink: /Videos/
+title: "Videos"
+---
+
+<style>
+#homeBodyContent {
+    margin-top: 80px;
+}
+@media only screen and (min-width: 912px){
+#homeBodyContent {
+    margin-top: 20px;
+}}
+</style>
+
+<section id="homeBodyContent" class="homeBody-section">
+    <div class="videos-container container-fluid-inner">
+        <div class="videos-header">
+            <h1>LightCity Videos</h1>
+            <ul class="videos-headerUL nav-pills nav-justified">
+                <li class="nav-item videos-header-item active">
+                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-1">All</button>
+                </li>
+                <li class="nav-item videos-header-item">
+                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-2">Sunday</button>
+                </li>
+                <li class="nav-item videos-header-item">
+                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-3">Monday</button>
+                </li>
+                <li class="nav-item videos-header-item">
+                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-4">Wednesday</button>
+                </li>
+                <li class="nav-item videos-header-item">
+                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-5">Special Meetings</button>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="videotab-content">
+            {% include videosALL.html %}
+            {% include videosSUNDAY.html %}
+            {% include videosMONDAY.html %}
+            {% include videosWEDNESDAY.html %}
+            {% include videosSPECIALMEETING.html %}
+        </div>
+    </div>
+</section>
