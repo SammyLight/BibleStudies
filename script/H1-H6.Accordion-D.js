@@ -56,10 +56,10 @@ for (i; i < b.length; i++) {
 		b[i].style.cursor = "pointer";
 
 		/* Prepend span element in headers to hold utf-8 symbols for open and close */
-		var spanOpen = document.createElement("span");
+		var spanOpen = document.createElement("p");
 		spanOpen.classList.add('fa');
 		b[i].prepend(spanOpen);
-		bhSpan = b[i].querySelectorAll("span")[0];
+		bhSpan = b[i].querySelectorAll("p")[0];
 		bhSpan.appendChild(document.createTextNode("\uf105 "));
 	//	bhSpan.style.color = "blue";
 	} 
@@ -79,7 +79,7 @@ function togglefunction() {
 	
 	/* To toggle open/close utf-8 icons */
 	
-	var hspan = this.querySelectorAll("span")[0];
+	var hspan = this.querySelectorAll("p")[0];
 	var sopen = "\uf107 ";
 	var sclose = "\uf105 ";
 	if (hspan.innerHTML == sopen) {
