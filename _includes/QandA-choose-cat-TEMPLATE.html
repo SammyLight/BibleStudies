@@ -2,8 +2,6 @@
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
 <link type="text/css" href="../style/reftaggerLightCity.css" rel="stylesheet">
-<!-- <link type="text/css" href="../style/bibleApp.css" rel="stylesheet">
-<link type="text/css" href="../style/bibleApp-darkmode.css" rel="stylesheet"> -->
 <link type="text/css" href="style/bibleQuizNoBG.css" rel="stylesheet">
 <link id="darkPurpleCssFile" type="text/css" href="style/bibleQuizBG-darkpurple.css" rel="stylesheet">
 </head>
@@ -15,7 +13,7 @@
     <section id="chooseCat" class="choosecat-grid">
         <div id="cat-headerbar" class="container-fluid-inner">
             <div class="churchLOGO">
-                {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                     <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
@@ -23,7 +21,7 @@
             <div class="headerUL">
                 <ul class="header-links">
                     <li class="header-links-li transition">
-                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>Home</span>
                         </a>{% endif %}{% endfor %}
@@ -72,5 +70,8 @@
           {% include QandA-cat-settings.html %}
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script/victorScripts/recentposts.js"></script>
     <script type="text/javascript" src="script/victorScripts/preload.js"></script>
+    <script type="text/javascript" src="script/victorScripts/QandAscriptsChooseCategory.js"></script>
+    <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
 </body>

@@ -1,9 +1,7 @@
-{% include siteHead.html %}
-<link type="text/css" href="style/reftaggerLightCity.css" rel="stylesheet">
-<!-- <link type="text/css" href="style/bibleApp.css" rel="stylesheet">
-<link type="text/css" href="style/bibleApp-darkmode.css" rel="stylesheet"> -->
-<link type="text/css" href="style/headerANDfooter.css" rel="stylesheet">
-<link type="text/css" href="style/lightcity-02.css" rel="stylesheet">
+{% include homeHead.html %}
+<link type="text/css" href="../style/reftaggerLightCity.css" rel="stylesheet">
+<link type="text/css" href="../style/headerANDfooter.css" rel="stylesheet">
+<link type="text/css" href="../style/lightcity-02.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,26 +11,24 @@
     </div>
     {% include homeHeader-section.html %}
     <div id="search-container" class="homeResources-grid-containter" style="margin: 20px 16px;padding: 16px;">
-    {% include search-articles.html %}
+        {% include search-articles.html %}
     </div>
     {{ content }}
     {% include contact-section.html %}
-    <script src="script/interact.min.js"></script>
-    <script src="script/TSK.js"></script>
-    <script src="reftaggerLightCity.js"></script>
-    <script src="bibleApp_transliteration.js"></script>
-    <!-- <script src="toggleH1toH6Siblings.js"></script> -->
-    <script src="data/LSJ Full.js"></script>
-    <script src="data/strongsObjectRoots.js"></script>
-    <script src="data/strongsObjectWithFamilies2.js"></script>
-    <script src="data/morphParse_GreeknHebrew.js"></script>
-    <script src="data/bibleApp_reKeyedCrossReference.js"></script>
-
+    <script src="../script/interact.min.js"></script>
+    <script src="../script/TSK.js"></script>
+    <script src="../reftaggerLightCity.js"></script>
+    <script src="../bibleApp_transliteration.js"></script>
+    <script src="../data/LSJ Full.js"></script>
+    <script src="../data/strongsObjectRoots.js"></script>
+    <script src="../data/strongsObjectWithFamilies2.js"></script>
+    <script src="../data/morphParse_GreeknHebrew.js"></script>
+    <script src="../data/bibleApp_reKeyedCrossReference.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script/victorScripts/preload.js"></script>
-    <script type="text/javascript" src="script/victorScripts/recentposts.js"></script>
-    <script type="text/javascript" src="script/victorScripts/generalscript.js"></script>
-    <script type="text/javascript" src="script/victorScripts/dropDownMenu.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/preload.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/generalscript.js"></script>
+    <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

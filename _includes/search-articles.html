@@ -7,7 +7,7 @@
 </form>
     
     <!-- Script pointing to search-script.js -->
-    <script src="script/victorScripts/search.js" type="text/javascript"></script>
+    <script src="../script/victorScripts/search.js" type="text/javascript"></script>
     
     <!-- Configuration -->
     <script>
@@ -15,6 +15,6 @@
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       searchResultTemplate: '<li class="all-links"><a href="{url}">{title}</a><small>{{ post.date }}</small></li>',
-      json: 'search-articles.json'
+      json: '../search-articles.json'
     })
     </script>

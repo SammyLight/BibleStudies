@@ -15,26 +15,24 @@ let prev_contextmenu;
 let newStrongsDef = '';
 let rightClickedElm = null;
 document.addEventListener('click', appendCrossReferences);
-document.addEventListener('contextmenu', contextMenu_CreateNAppend);
+document.addEventListener('click', contextMenu_CreateNAppend);
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* PREVENT DEFAULT CONTEXT MENU FOR WHEN ELEMENT CHANGES AFTER RIGHTCLICKING ON .crfnnote_btns buttons */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 let prevntDefault_cMenu = false;
-document.addEventListener('contextmenu', preventDefaultContextMenu);
+let timer_prevntDefault_cMenu;
+document.addEventListener('mouseover', preventContextMenu_mo);
 document.addEventListener('contextmenu', preventContextMenu);
-function preventContextMenu(event) {
-    if (preventDefaultContextMenu) {event.preventDefault();}
-}
-function preventDefaultContextMenu(e){
+function preventContextMenu_mo(e) {
     if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
+        clearTimeout(timer_prevntDefault_cMenu);
         prevntDefault_cMenu = true;
-        setTimeout(() => {
-            prevntDefault_cMenu = false;
-        }, 100);
     } else {
-        prevntDefault_cMenu = false;
+        clearTimeout(timer_prevntDefault_cMenu)
+        timer_prevntDefault_cMenu = setTimeout(() => {prevntDefault_cMenu = false;}, 1000);
     }
 }
+function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefault();}}
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 function contextMenu_CreateNAppend(e) {
@@ -172,7 +170,7 @@ function contextMenu_CreateNAppend(e) {
                     if(i==arrOfStrnums.length-1){br = '<br>'}
                     let sn = arrOfStrnums[i];
                     if(!/[GHgh]\d+/.test(sn)){continue}
-                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="images/${searchicon}" alt="&#128270;"></button>`;
+                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="../images/${searchicon}" alt="&#128270;"></button>`;
                     xlitNlemma = `${xlitNlemma}${br}<code>${srchBtn}${getsStrongsLemmanNxLit(sn).lemma} (${getsStrongsLemmanNxLit(sn).xlit}, ${sn})</code>`
                 }
                 if (addquotes) {
@@ -182,7 +180,7 @@ function contextMenu_CreateNAppend(e) {
                 }
                 context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
             } else if (e.type == contextMenu_touch) { // For strongs number in verseNote
-                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
+                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="../images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
                 context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
             if (strnum = e.target.getAttribute('strnum')) {
@@ -344,20 +342,17 @@ function contextMenu_CreateNAppend(e) {
             width: 1.2em;
         }
         #cmenu_navnclose_btns button.prv {
-            background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
             background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             transform:rotate(-90deg);
             margin-left:2px;
             box-shadow:-1px -1px 1px var(--shadow-color);
         }
         #cmenu_navnclose_btns button.prv_verse {
-            background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
             background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             margin-left:2px;
             box-shadow:1px 1px 1px var(--shadow-color);
         }
         #cmenu_navnclose_btns button.nxt_verse {
-            background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
             background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
             transform:rotate(-180deg);
             margin-left:1px;
@@ -401,7 +396,7 @@ function mainBibleVersion(e){
 }
 function hideRightClickContextMenu() {contextMenu_Remove({'type':'click','key':'Escape','target':context_menu})}
 function contextMenu_Remove(e) {
-    if (e.type!='click' && e.key !== 'Escape'){return}
+    if (e.target.matches('[strnum],[ref]')||(e.type!='click' && e.key !== 'Escape')){return}
     if (typeof context_menu != 'undefined' && (e.target.id=='cmenu_closebtn' || !e.target.matches("#context_menu *"))) {
         // context_menu.removeEventListener('contextmenu', mainBibleVersion);
         // lightCityReftaggerContextMenuStyleInHead.remove();
@@ -922,7 +917,6 @@ loadVersion(bversionName)
 function loadVersion(versionName) {
     return new Promise((resolve, reject) => {
       const fullPathHead = '';
-    //   let request_Version_URL = fullPathHead + `bibles/${versionName}.json`;
       let request_Version_URL = fullPathHead + `../bibles/${versionName}.json`;
       let bibleVersion = new XMLHttpRequest();
       bibleVersion.open('GET', request_Version_URL);
@@ -1262,110 +1256,137 @@ function getCrossReference(x,bkn,bvName) {
 }
 pagemaster.addEventListener('keydown',compareThisSearchVerse)
 /* COMPARE THIS SEARCH VERSE */
+let firstClick=false;
 async function compareThisSearchVerse(e){
-    if(e.button==undefined){return};//any keydown will trigger this function so ensure there is a mouse click accompanying it or it will try to load a bible version
-    let dis = e.target;
-    let v = dis.closest('.verse');
-    let bvNme = dis.getAttribute('b_version');
-
-    // Check if current Bible Version has already been compared
-    if(!window[bvNme]){await loadVersion(bvNme)}
-    
-    // middleMouseButton or Right-click event (change the bible version)
-    if (e.button==1 || (!e.ctrlKey && e.button==2)) {changeLoadedVersion(v,dis)}
-    // Ctrl + Right-click (change just the verse)
-    else if (e.ctrlKey && e.button==2) {changeLoadedVersion(v,dis,true)}
-    // Left-click event with NO ctrlkey (show the compare verse for just this verse)
-    else if (!e.ctrlKey && e.button==0) {singleVerse(v,dis)}
-    // Ctrl + left-click (show all compare verses for clicked bible version)
-    else if ((e.ctrlKey && e.button==0)) {
-        //get all the verses in parent window
-        let parentWindow = dis.closest('#context_menu');
-        if(!parentWindow){parentWindow = dis.closest('#searchPreviewFixed, .compare_verses')}
-        let versionCompareBtns = parentWindow.querySelectorAll('.compare_withinsearchresult_button[b_version='+bvNme+']')
-        let addORremove = 'add';
-        if(dis.classList.contains('green_active')){addORremove = 'remove';}// Remove all
-        versionCompareBtns.forEach(cmpBtn => {
-            let v = elmAhasElmOfClassBasAncestor(cmpBtn,'.verse');
-            singleVerse(v,cmpBtn,addORremove)
-        });
-    }
-
-    function changeLoadedVersion(v,dis,just1verse){
-        let vParent = v.parentElement;
-        let bvNme = dis.getAttribute('b_version');
-        let nonCompVerses = [v];
-        if (!just1verse) {
-            nonCompVerses = vParent.querySelectorAll('.verse:not(.verse_compare)');//get all verses that are not compare verses
+    if (e.button==0) {
+        if (firstClick==false) {
+            firstClick=true;
+            setTimeout(() => {
+                if(firstClick){
+                    //Single Click
+                    firstClick=false
+                    compareThisSearchVerse_innerFunc()
+                }
+                //Has been changed by a second click
+                else if(firstClick==false) {
+                    return
+                };
+            }, 500);
         }
-        nonCompVerses.forEach(v => {
-            const oldcrfnnote = v.querySelector('.crfnnote').cloneNode(true);//get the crfnnote
-            oldcrfnnote.querySelector('.cbv').classList.remove('cbv');//former cbv (current bible version)
-            oldcrfnnote.querySelector(`[b_version="${bvNme}"]`).classList.add('cbv');//former cbv (current bible version)
-            const vccls = v.classList.contains('verse_compare');//check if v has verse_compare class
-            const vref = v.querySelector('code[ref]').getAttribute('ref');
-            const newVerse = createSingleVerseFromREFandVERSION(vref,bvNme);
-            vccls ? newVerse.classList.add('verse_compare') : null;
-            let vinfrag = newVerse.querySelector('.verse');
-            vinfrag.append(oldcrfnnote)//append old crfnnote to new v
-            let refcodeinv = vinfrag.querySelector('[ref]');
-            refcodeinv.innerText = `(${bvNme})${refcodeinv.innerText}`;//add version to reference text
-            vParent.insertBefore(newVerse, v)//replace old v with new verse
-            transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum,vParent)});
-            
-            // prevent contextmenu on strong's word in new verse
-            vParent.classList.add('ignorecmenu');
-            setTimeout(() => {vParent.classList.remove('ignorecmenu');}, 150);
-            v.remove()//remove old verse 
-            //If it is context menu, replace the version name of the reference
-            if((!just1verse && vParent.closest('#context_menu')) || !vParent.querySelector(`.verse:not(.verse_compare):not(.v_${bvNme})`)){
-                let cmtitlebarTextNode = context_menu.querySelector('.cmtitlebar').childNodes[0];
-                cmtitlebarTextNode.textContent = cmtitlebarTextNode.textContent.replace(/\s*\[[^\]]+\]/,` [${bvNme}]`)
-            }
-            //change the general book version
-            if (!just1verse) {
-                bversion=bvNme;
-                bversionName=bvNme;
-            }
-        });
+        //DoubleClick
+        else if (firstClick==true) {
+            firstClick=false
+            let evt = {'button':2,'target':e.target}
+            e=evt;
+            compareThisSearchVerse_innerFunc()
+        }
     }
-    function singleVerse(v,dis2,addORremove){
-        let vref = v.querySelector('code[ref]').getAttribute('ref');
-        let bvNme = dis2.getAttribute('b_version');
-        let vrefModified = vref.replace(/[:.]+/,'_');
-
+    async function compareThisSearchVerse_innerFunc() {
+        console.log(e.button);
+        if(e.button==undefined){return};//any keydown will trigger this function so ensure there is a mouse click accompanying it or it will try to load a bible version
+        let dis = e.target;
+        let v = dis.closest('.verse');
+        let bvNme = dis.getAttribute('b_version');
+    
         // Check if current Bible Version has already been compared
-        const prevComparedVerse = v.parentElement.querySelector('.verse_compare[ref="' + vrefModified + ' ' + bvNme + '"]')
-        if(((addORremove && addORremove=='remove') || !addORremove) && prevComparedVerse){
-            if(addORremove && addORremove=='add'){return}
-            prevComparedVerse.remove();
-            dis2.classList.remove('green_active');
-            if(!v.nextElementSibling || !v.nextElementSibling.matches('.verse_compare')){v.classList.remove('vrs_bein_comp')};
-            return
-        } else if(addORremove && addORremove=='remove'){return}
-
-        let newVerse = createSingleVerseFromREFandVERSION(vref, bvNme);
-        let newVerseInner = newVerse.querySelector('.verse');
-        newVerseInner.prepend(createNewElement('button','.closebtn','.cmenu_closebtn', '[onclick=removeCompareVerse(this)]'));
-        newVerseInner.classList.add('verse_compare');
-        newVerseInner.setAttribute('ref', vrefModified + ' ' + bvNme);
-        newVerseInner.querySelector('code[ref]').innerText=newVerseInner.querySelector('code[ref]').innerText.replace(/\[/,`[${bvNme} `);
-        insertElmAafterElmB(newVerse, v);
-        transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum/* ,tElm */)});
-        dis2.classList.add('green_active');
-        v.classList.add('vrs_bein_comp');
-        if(v.matches('.displaynone')){newVerseInner.classList.add('displaynone')}
-    }
-    function createSingleVerseFromREFandVERSION(vref, bvNme) {
-        let vrefObj = breakDownRef(vref);
-        let new_bk = vrefObj.bn;
-        let new_chp = vrefObj.bc;
-        let new_vn = vrefObj.cv;
-        let fullBkn = fullBookName(new_bk).fullBkn;
-        newRef2get = `${new_bk} ${new_chp}:${new_vn}`;
-        let newVerse = createSingleVerse(new_bk, new_chp, new_vn, fullBkn, bvNme);
-        createTransliterationAttr(newVerse);
-        return newVerse;
+        if(!window[bvNme]){await loadVersion(bvNme)}
+        
+        // middleMouseButton or Right-click event (change the bible version)
+        if (e.button==1 || (!e.ctrlKey && e.button==2)) {changeLoadedVersion(v,dis)}
+        // Ctrl + Right-click (change just the verse)
+        else if (e.ctrlKey && e.button==2) {changeLoadedVersion(v,dis,true)}
+        // Left-click event with NO ctrlkey (show the compare verse for just this verse)
+        else if (!e.ctrlKey && e.button==0) {singleVerse(v,dis)}
+        // Ctrl + left-click (show all compare verses for clicked bible version)
+        else if ((e.ctrlKey && e.button==0)) {
+            //get all the verses in parent window
+            let parentWindow = dis.closest('#context_menu');
+            if(!parentWindow){parentWindow = dis.closest('#searchPreviewFixed, .compare_verses')}
+            let versionCompareBtns = parentWindow.querySelectorAll('.compare_withinsearchresult_button[b_version='+bvNme+']')
+            let addORremove = 'add';
+            if(dis.classList.contains('green_active')){addORremove = 'remove';}// Remove all
+            versionCompareBtns.forEach(cmpBtn => {
+                let v = elmAhasElmOfClassBasAncestor(cmpBtn,'.verse');
+                singleVerse(v,cmpBtn,addORremove)
+            });
+        }
+    
+        function changeLoadedVersion(v,dis,just1verse){
+            let vParent = v.parentElement;
+            let bvNme = dis.getAttribute('b_version');
+            let nonCompVerses = [v];
+            if (!just1verse) {
+                nonCompVerses = vParent.querySelectorAll('.verse:not(.verse_compare)');//get all verses that are not compare verses
+            }
+            nonCompVerses.forEach(v => {
+                const oldcrfnnote = v.querySelector('.crfnnote').cloneNode(true);//get the crfnnote
+                oldcrfnnote.querySelector('.cbv').classList.remove('cbv');//former cbv (current bible version)
+                oldcrfnnote.querySelector(`[b_version="${bvNme}"]`).classList.add('cbv');//former cbv (current bible version)
+                const vccls = v.classList.contains('verse_compare');//check if v has verse_compare class
+                const vref = v.querySelector('code[ref]').getAttribute('ref');
+                const newVerse = createSingleVerseFromREFandVERSION(vref,bvNme);
+                vccls ? newVerse.classList.add('verse_compare') : null;
+                let vinfrag = newVerse.querySelector('.verse');
+                vinfrag.append(oldcrfnnote)//append old crfnnote to new v
+                let refcodeinv = vinfrag.querySelector('[ref]');
+                refcodeinv.innerText = `(${bvNme})${refcodeinv.innerText}`;//add version to reference text
+                vParent.insertBefore(newVerse, v)//replace old v with new verse
+                transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum,vParent)});
+                
+                // prevent contextmenu on strong's word in new verse
+                vParent.classList.add('ignorecmenu');
+                setTimeout(() => {vParent.classList.remove('ignorecmenu');}, 150);
+                v.remove()//remove old verse 
+                //If it is context menu, replace the version name of the reference
+                if((!just1verse && vParent.closest('#context_menu')) || !vParent.querySelector(`.verse:not(.verse_compare):not(.v_${bvNme})`)){
+                    let cmtitlebarTextNode = context_menu.querySelector('.cmtitlebar').childNodes[0];
+                    cmtitlebarTextNode.textContent = cmtitlebarTextNode.textContent.replace(/\s*\[[^\]]+\]/,` [${bvNme}]`)
+                }
+                //change the general book version
+                if (!just1verse) {
+                    bversion=bvNme;
+                    bversionName=bvNme;
+                }
+            });
+        }
+        function singleVerse(v,dis2,addORremove){
+            let vref = v.querySelector('code[ref]').getAttribute('ref');
+            let bvNme = dis2.getAttribute('b_version');
+            let vrefModified = vref.replace(/[:.]+/,'_');
+    
+            // Check if current Bible Version has already been compared
+            const prevComparedVerse = v.parentElement.querySelector('.verse_compare[ref="' + vrefModified + ' ' + bvNme + '"]')
+            if(((addORremove && addORremove=='remove') || !addORremove) && prevComparedVerse){
+                if(addORremove && addORremove=='add'){return}
+                prevComparedVerse.remove();
+                dis2.classList.remove('green_active');
+                if(!v.nextElementSibling || !v.nextElementSibling.matches('.verse_compare')){v.classList.remove('vrs_bein_comp')};
+                return
+            } else if(addORremove && addORremove=='remove'){return}
+    
+            let newVerse = createSingleVerseFromREFandVERSION(vref, bvNme);
+            let newVerseInner = newVerse.querySelector('.verse');
+            newVerseInner.prepend(createNewElement('button','.closebtn','.cmenu_closebtn', '[onclick=removeCompareVerse(this)]'));
+            newVerseInner.classList.add('verse_compare');
+            newVerseInner.setAttribute('ref', vrefModified + ' ' + bvNme);
+            newVerseInner.querySelector('code[ref]').innerText=newVerseInner.querySelector('code[ref]').innerText.replace(/\[/,`[${bvNme} `);
+            insertElmAafterElmB(newVerse, v);
+            transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum/* ,tElm */)});
+            dis2.classList.add('green_active');
+            v.classList.add('vrs_bein_comp');
+            if(v.matches('.displaynone')){newVerseInner.classList.add('displaynone')}
+        }
+        function createSingleVerseFromREFandVERSION(vref, bvNme) {
+            let vrefObj = breakDownRef(vref);
+            let new_bk = vrefObj.bn;
+            let new_chp = vrefObj.bc;
+            let new_vn = vrefObj.cv;
+            let fullBkn = fullBookName(new_bk).fullBkn;
+            newRef2get = `${new_bk} ${new_chp}:${new_vn}`;
+            let newVerse = createSingleVerse(new_bk, new_chp, new_vn, fullBkn, bvNme);
+            createTransliterationAttr(newVerse);
+            return newVerse;
+        }
     }
 }
 /* GETTING PREVIOUS OR NEXT VERSE */
@@ -2366,6 +2387,8 @@ function toggleCMenuTSK(){
 // target elements with the "draggable" class
 function enableInteractJSonEl(dragTarget, elmAffected) {
     // interact(elmAffected)
+    elmAffected.querySelector(dragTarget).style.touchAction = 'none';//to enable dragging by touch
+
     interact(dragTarget)
         .draggable({
             // enable inertial throwing

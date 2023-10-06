@@ -62,7 +62,7 @@
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                                         <a
                                             href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Main-Site</span>
@@ -80,6 +80,13 @@
                                         <a
                                             href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Summary</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
+                                        {% for page in site.pages %}{% if page.title contains "Videos" %}
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Video</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>

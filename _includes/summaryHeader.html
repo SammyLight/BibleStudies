@@ -36,26 +36,35 @@
                                             <span>Home</span>
                                         </a>{% endif %}{% endfor %}
                                     </div>
-                                    {% if post %}
-                                    {% assign categories = post.categories %}
-                                    {% else %}
-                                    {% assign categories = page.categories %}
-                                    {% endif %}
-                                    {% for category in categories %}
-                                    {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-                                    {% assign sumcaty = category_name %}
-                                    {% for post in site.posts %}
-                                    {% if post.categories contains sumcaty %}
-                                    <div class="mobile-headerLinks transition">
-                                        <a class="linkTitle transition"
-                                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                                            {{category}}
-                                        </a>
+                                    <div class="group-cats">
+                                        <p>summary categories</p>
+                                        {% if post %}
+                                        {% assign categories = post.categories %}
+                                        {% else %}
+                                        {% assign categories = page.categories %}
+                                        {% endif %}
+                                        {% for category in categories %}
+                                        {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+                                        {% assign sumcaty = category_name %}
+                                        {% for post in site.posts %}
+                                        {% if post.categories contains sumcaty %}
+                                        <div class="mobile-headerLinks transition">
+                                            <a class="linkTitle transition"
+                                                href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                                {{category}}
+                                            </a>
+                                        </div>
+                                        {% unless forloop.last %}{% endunless %}
+                                        {% endif %}{% endfor %}
+                                        {% endfor %}
                                     </div>
-                                    {% unless forloop.last %}{% endunless %}
-                                    {% endif %}{% endfor %}
-                                    {% endfor %}
-
+                                    <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %}{% if page.title contains "Videos" %}
+                                        <a class="linkTitle transition"
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Video</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </div>
                                     <div class="mobile-headerLinks transition">
                                         <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
                                             <span>Bible App</span>
@@ -75,7 +84,9 @@
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
                                     </div>
-                                    <button id="closeNavBar" class="closeNavBar">x</button>
+                                    <button id="closeNavBar" class="closeNavBar">
+                                        <div></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -94,52 +105,62 @@
                             </a>{% endif %}{% endfor %}
                         </div>
                         <div class="headerUL">
-                            <ul class="header-links">
-                                <li class="header-links-li transition">
+                            <div class="header-links">
+                                <div class="header-links-li transition">
                                     {% for page in site.pages %} {% if page.title contains "Teaching Summary" %}
                                     <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Home
                                     </a>{% endif %}{% endfor %}
-                                </li>
-                                {% if post %}
-                                {% assign categories = post.categories %}
-                                {% else %}
-                                {% assign categories = page.categories %}
-                                {% endif %}
-                                {% for category in categories %}
-                                {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-                                {% assign sumcaty = category_name %}
-                                {% for post in site.posts %}
-                                {% if post.categories contains sumcaty %}
-                                <li class="header-links-li transition">
+                                </div>
+                                <div class="group-cats">
+                                    <p>summary categories</p>
+                                    {% if post %}
+                                    {% assign categories = post.categories %}
+                                    {% else %}
+                                    {% assign categories = page.categories %}
+                                    {% endif %}
+                                    {% for category in categories %}
+                                    {% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+                                    {% assign sumcaty = category_name %}
+                                    {% for post in site.posts %}
+                                    {% if post.categories contains sumcaty %}
+                                    <div class="header-links-li transition">
+                                        <a class="iconLink transition"
+                                            href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                                            {{category}}
+                                        </a>
+                                    </div>
+                                    {% unless forloop.last %}{% endunless %}
+                                    {% endif %}{% endfor %}
+                                    {% endfor %}
+                                </div>
+                                <div class="header-links-li transition">
+                                    {% for page in site.pages %}{% if page.title contains "Videos" %}
                                     <a class="iconLink transition"
-                                        href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                                        {{category}}
-                                    </a>
-                                </li>
-                                {% unless forloop.last %}{% endunless %}
-                                {% endif %}{% endfor %}
-                                {% endfor %}
-                                <li class="header-links-li transition">
+                                        href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <span>Video</span>
+                                    </a>{% endif %}{% endfor %}
+                                </div>
+                                <div class="header-links-li transition">
                                     <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
                                         <span>Bible App</span>
                                     </a>
-                                </li>
-                                <li class="header-links-li transition">
+                                </div>
+                                <div class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                                     <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>{{page.title}}</span>
                                     </a>{% endif %}{% endfor %}
-                                </li>
-                                <li class="header-links-li transition">
+                                </div>
+                                <div class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "Join Us" %}
                                     <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Meeting Days</span>
                                     </a>{% endif %}{% endfor %}
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </nav>
                 </div>

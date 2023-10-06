@@ -3,10 +3,10 @@
         <div class="bg-color bg-image">
             <div class="mobileHeaderNav">
                 <div class="mobileLogoSize">
-                    {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                    {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                     <a
                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                        <img class="mobileLogo" src="images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                        <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
                     </a>{% endif %}{% endfor %}
                 </div>
                 <div>
@@ -17,7 +17,7 @@
                             <div id="myDropdown" class="myDropdown transition">
                                 <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                                     <div class="mobile-headerLinks">
-                                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Home</span>
                                         </a>{% endif %}{% endfor %}
@@ -73,7 +73,9 @@
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
                                     </div>
-                                    <button id="closeNavBar" class="closeNavBar">x</button>
+                                    <button id="closeNavBar" class="closeNavBar">
+                                        <div></div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -88,69 +90,69 @@
             <div class="container-fluid-inner">
                 <nav class="homeHeaderNav">
                     <div class="churchLOGO">
-                        {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                            <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                            <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                         </a>{% endif %}{% endfor %}
                     </div>
                     <div class="headerUL">
-                        <ul id="header-links" class="header-links">
-                            <li class="header-links-li transition">
-                                {% for page in site.pages %}{% if page.title contains "LCTF" %}
+                        <div id="header-links" class="header-links">
+                            <div class="header-links-li transition">
+                                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Home</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "About Us" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>About</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Summary</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Videos" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Video</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Study Resources" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Categories</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Doctrines" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>{{page.title}}</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
                                     <span>Bible App</span>
                                 </a>
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                                 <a class="iconLink transition"
                                     href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>{{page.title}}</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                            <li class="header-links-li transition">
+                            </div>
+                            <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "Join Us" %}
                                 <a class="iconLink transition"
                                     href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Meeting Days</span>
                                 </a>{% endif %}{% endfor %}
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>

@@ -78,6 +78,13 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
+                                        {% for page in site.pages %}{% if page.title contains "Videos" %}
+                                        <a
+                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Video</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
                                         <a href="https://samuelawojuola.github.io/BibleApp-2">
                                             <span>Bible App</span>
                                         </a>
