@@ -168,7 +168,7 @@ h1.titles {
     border-radius: 10px;
     padding: 22px 22px!important;
     margin-bottom: -20px!important;
-    position: relative;
+    /* position: relative; */
 }
 h2.titles {
     font-size: 1.7em;

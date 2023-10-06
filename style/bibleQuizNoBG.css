@@ -677,13 +677,8 @@ ul.header-links {
 .opacityBGTwo{
     grid-template-rows: 60px 80px auto 10%;
 }
-/* .QandAbody-section {
-    margin-top: 0!important;
-    padding: 0 10px;
-} */
-
 /* HEADER SECTION */
-.QandA-header {
+.QandA-header{
     border-radius: 3px;
     padding: 10px 0;
     overflow: hidden;;
@@ -695,20 +690,7 @@ ul.header-links {
     grid-template-areas: "col-1 col-2 col-3";
     width: -webkit-fill-available;
 }
-/* .QandA-headerinner {
-    border-radius: 3px;
-    padding: 10px;
-    overflow: hidden;;
-    display: inline-flex;
-    align-content: space-around;
-    place-content: space-between;
-    grid-template-rows: minmax(10px, 1fr) auto;
-    position: relative;
-    grid-template-areas: "col-1 col-2 col-3";
-    width: 95%;
-} */
-
-.quizCatLink {
+.quizCatLink{
     cursor: pointer;
     display: flex;
     place-content: start;
@@ -1714,6 +1696,7 @@ to {left: 0px;}
     white-space: nowrap;
 }
 .Result-Board h4 {
+    display: block!important;
     font-size: 1em;
     margin: 10px 0;
 }
