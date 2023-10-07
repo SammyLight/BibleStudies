@@ -316,6 +316,11 @@ function contextMenu_CreateNAppend(e) {
           transition:all 0.1s ease-in-out;
           transition: transform 0;
         }
+        @media only screen and (min-width: 650px) and (max-width: 960px){
+            .context_menu{ 
+            max-width: ${w+150}px!important;
+            max-height: ${h+150}px!important;
+        }}
         .cmenusrchbtn {display:none!important;}
         span.verse {display:block}
         .darkmode .context_menu {
