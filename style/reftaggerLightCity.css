@@ -1,4 +1,4 @@
-:root {
+:root{ 
     --verse-hover-shadow:
     -2px 0px 0px rgb(0 0 0/30%)
     ,2px 0px 0px rgb(0 0 0/30%)
@@ -16,9 +16,9 @@
     ,-2px 0px 2px 0px rgb(0 0 0/20%)
     ,2px 2px 2px 0px rgb(0 0 0/20%);
     --maxwidth-of-verses-per-row:20%;
-    --darkmode-bg1color: #00080d;
-    --darkmode-bg1color: #202124;
-    --darkmode-bg1color: #0d171b;
+    --darkmode-bg1color:#00080d;
+    --darkmode-bg1color:#202124;
+    --darkmode-bg1color:#0d171b;
     --fontsize-main:15px;
     --fontsize-refnsearch:8px;
     --fontsize-versionsbuttons:13px;
@@ -109,49 +109,49 @@
     --col2-border:0.05em;
     --btn-radius:0.25em;
 }
-.darkmode {
+.darkmode{ 
     --txtcolor:#e8e6e3;
     --ref-img:#202124;
     --whitesmoke:#202124;
     --darkmode-bg1color:#202124;
     --darkmode-border:#736b5e;
-    --darkslategray: rgb(107, 84, 0);
+    --darkslategray:rgb(107, 84, 0);
 }
 /* GENERAL */
-::-webkit-scrollbar {
-    width: 0.35em;
-    height: 0.35em;
+::-webkit-scrollbar{ 
+    width:0.35em;
+    height:0.35em;
 }
-::-webkit-scrollbar-thumb {
-    background: var(--scroll-thumb-bgcolor);
-    border-top: 2px solid var(--scroll-thumb-border-color);
-    border-bottom: 2px solid var(--scroll-thumb-border-color);
+::-webkit-scrollbar-thumb{ 
+    background:var(--scroll-thumb-bgcolor);
+    border-top:2px solid var(--scroll-thumb-border-color);
+    border-bottom:2px solid var(--scroll-thumb-border-color);
 }
-::-webkit-scrollbar-track {
-    background: var(--scroll-track-bg-color);
+::-webkit-scrollbar-track{ 
+    background:var(--scroll-track-bg-color);
 }
-::selection {
-    background-color: var(--selection);
-    color: black;
+::selection{ 
+    background-color:var(--selection);
+    color:black;
 }
 span[strnum]:not(.context_menu span[strnum]), span[ref]:not(.verse){
-    cursor: pointer;
-    text-decoration: dotted;
-    color: rgb(0, 106, 168);
+    cursor:pointer;
+    text-decoration:dotted;
+    color:rgb(0, 106, 168);
 }
-.displaynone {display:none !important;}
-span.translated:hover {
+.displaynone{ display:none !important;}
+span.translated:hover{ 
     border-bottom:1px solid var(--brown)!important;
     color:var(--brown);
 }
-sup {
+sup{ 
     font-weight:bold;
 }
-.translated[trans] {
+.translated[trans]{ 
     font-weight:600;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.crfnnote {
+.crfnnote{ 
     margin-bottom:5px;
     margin-top:5px;
     box-shadow:0 2px 2px var(--black),0 0 1px var(--black);
@@ -161,83 +161,83 @@ sup {
     z-index:1;
     direction:ltr;
 }
-.showing_crossref .crfnnote {
+.showing_crossref .crfnnote{ 
     box-shadow:0 1px 1px var(--grey);
 }
-.slideintoview {
-    display: block;
-    margin-left: 0px;
-    margin-top: 0;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+.slideintoview{ 
+    display:block;
+    margin-left:0px;
+    margin-top:0;
+    -webkit-transition:all 0.2s ease-in-out;
+    -moz-transition:all 0.2s ease-in-out;
+    -o-transition:all 0.2s ease-in-out;
+    transition:all 0.2s ease-in-out;
 }
-span[strnum] {
-    cursor: pointer;
-    border-radius: 1px!important;
+span[strnum]{ 
+    cursor:pointer;
+    border-radius:1px!important;
 }
 
 
-.strngsdefinition div {
-    overflow: hidden;
+.strngsdefinition div{ 
+    overflow:hidden;
 }
 /* CONTEXT_MENU */
-#context_menu.slideintoview, #context_menu.slideoutofview {
-    transition: none;
+#context_menu.slideintoview, #context_menu.slideoutofview{ 
+    transition:none;
 }
-#context_menu code {
+#context_menu code{ 
     font-size:var(--fontsize-ref);
 }
-#context_menu code:hover {
+#context_menu code:hover{ 
     z-index:3;
 }
 .cmenu_closebtn,
-#cmenu_navnclose_btns button {
+#cmenu_navnclose_btns button{ 
     background-color:whitesmoke!important;
     min-width:1em;
     height:1em;
     font-size:1em;
 }
-#cmenu_navnclose_btns button {
+#cmenu_navnclose_btns button{ 
     border-radius:2px;
     font-weight:bold;
     box-shadow:1px 1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button:not(:disabled):hover {
+#cmenu_navnclose_btns button:not(:disabled):hover{ 
     background-color:burlywood!important;
 }
 .cmenu_closebtn{
     background:url(images/cancel-svgrepo-com.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
 }
-#context_menu:not([strnum]) .cmtitlebar #cmenu_navnclose_btns {
+#context_menu:not([strnum]) .cmtitlebar #cmenu_navnclose_btns{ 
     display:flex;
     flex:1;
     justify-content:flex-end;
     margin-left:0.2em;
     padding:0;
 }
-#context_menu[strnum] .cmtitlebar #cmenu_navnclose_btns {
+#context_menu[strnum] .cmtitlebar #cmenu_navnclose_btns{ 
     position:absolute;
     display:flex;
     top:5px;
     right:0.2em;
 }
-#cmenu_navnclose_btns button.prv {
+#cmenu_navnclose_btns button.prv{ 
     background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-90deg);
     margin-left:2px;
     box-shadow:-1px -1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button.prv_verse {
+#cmenu_navnclose_btns button.prv_verse{ 
     background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     margin-left:2px;
     box-shadow:1px 1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button.nxt_verse {
+#cmenu_navnclose_btns button.nxt_verse{ 
     background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-180deg);
@@ -246,7 +246,7 @@ span[strnum] {
 }
 #cmenu_navnclose_btns button.nxt_verse,
 #cmenu_navnclose_btns button.cmenu_tsk,
-#cmenu_navnclose_btns button.nxt {
+#cmenu_navnclose_btns button.nxt{ 
     margin-right:0.3em!important;
 }
 #cmenu_navnclose_btns button.cmenu_tsk{
@@ -256,20 +256,20 @@ span[strnum] {
 #cmenu_navnclose_btns button.prv:not([indx]),
 #cmenu_navnclose_btns button.nxt:not([indx]),
 #cmenu_navnclose_btns button:disabled,
-#cmenu_navnclose_btns button[disabled] {
+#cmenu_navnclose_btns button[disabled]{ 
     /* display:none; */
     opacity:0.3;
 }
-#cmenu_navnclose_btns button.nxt {
+#cmenu_navnclose_btns button.nxt{ 
     background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(90deg) scaleY(-1);
     margin-right:2px;
 }
-#context_menu[strnum] .cmenu_closebtn {
+#context_menu[strnum] .cmenu_closebtn{ 
     right:0.3em;
 }
-.closebtn.cmenu_closebtn:hover {
+.closebtn.cmenu_closebtn:hover{ 
     background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
     background-color:transparent!important;
@@ -277,15 +277,15 @@ span[strnum] {
     border-radius:0.2em;
     transition:all 0.3s ease-in-out;
 }
-.closebtn.cmenu_closebtn:active {
+.closebtn.cmenu_closebtn:active{ 
     box-shadow:0px 0px 0px 1px rgba(155, 0, 0, 0.589)!important;
     border-radius:0.2em;
     transition:all 0.3s ease-in-out;
 }
-#context_menu {
+#context_menu{ 
     position:absolute;
     background:var(--whitesmoke);
-    width:400px;
+    width:auto;
     max-width:100%;
     max-height:80vh;
     padding:5px;
@@ -298,26 +298,26 @@ span[strnum] {
     overflow-x:hidden;
     resize:both;
 }
-#context_menu[strnum] {
+#context_menu[strnum]{ 
     padding:0px;
 }
-#context_menu:has(.strngsdefinition)>.cmtitlebar {
+#context_menu:has(.strngsdefinition)>.cmtitlebar{ 
     padding-left:10px;
     padding-right:10px;
     font-size:0.7em;
 }
-#context_menu .cmtitlebar {
-    position: sticky;
-    top: 0;
-    right: inherit;
-    background: var(--ref-img);
-    font-size: 0.8em;
-    font-weight: bold;
-    width: 100%;
-    padding-bottom: 10px;
-    z-index: 3;
+#context_menu .cmtitlebar{ 
+    position:sticky;
+    top:0;
+    right:inherit;
+    background:var(--ref-img);
+    font-size:0.8em;
+    font-weight:bold;
+    width:100%;
+    padding-bottom:10px;
+    z-index:3;
 }
-#context_menu:hover {
+#context_menu:hover{ 
     -webkit-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
     -moz-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
     box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
@@ -328,21 +328,21 @@ span[strnum] {
     box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 23px 0px 0px var(--grey);
 }
 #context_menu>hr+.strngsdefinition>hr:first-child{display:none;}
-#context_menu h2, #context_menu i  {font-size:inherit;}
-#context_menu .strngsdefinition div {display:block;}
-#context_menu div {z-index: 2;}
+#context_menu h2, #context_menu i { font-size:inherit;}
+#context_menu .strngsdefinition div{ display:block;}
+#context_menu div{ z-index:2;}
 #context_menu code:not(.cmtitlebar code):hover,
-#context_menu .crossrefs span:hover {
+#context_menu .crossrefs span:hover{ 
     text-decoration:underline;
     color:var(--blue);
     cursor:pointer;
 }
-#context_menu .cmtitlebar code {
+#context_menu .cmtitlebar code{ 
     display:inline-flex;
     align-items:center;
     font-size:1.2em;
 }
-#context_menu code button.cmenusrchbtn {
+#context_menu code button.cmenusrchbtn{ 
     width:1em;
     height:1em;
     
@@ -351,36 +351,36 @@ span[strnum] {
     border-radius:5px;
     margin-right:5px;
 }
-#context_menu code button.cmenusrchbtn img {
+#context_menu code button.cmenusrchbtn img{ 
     pointer-events:none;
 }
-#context_menu .verse {
+#context_menu .verse{ 
     padding:5px;
     display:block;
 }
-#context_menu .verse:hover {
+#context_menu .verse:hover{ 
     border-radius:3px;
     overflow:hidden;
 }
-#context_menu .crfnnote {
+#context_menu .crfnnote{ 
     margin-bottom:2px;
     border-radius:0!important;
 }
-#context_menu .crfnnote_btns {
+#context_menu .crfnnote_btns{ 
     margin-bottom:0;
 }
-#context_menu .crossrefs {
+#context_menu .crossrefs{ 
     border-radius:0!important;
     margin-bottom:0;
 }
 #context_menu div{z-index:2;}
 #context_menu[strnum] hr:not(:last-child){margin-top:0}
 #context_menu hr:last-child{margin-bottom:0}
-.crfnnote_btns button {
-    font-size: 0.7em!important;
+.crfnnote_btns button{ 
+    font-size:0.7em!important;
     font-weight:bold;
 }
-.crfnnote_btns {
+.crfnnote_btns{ 
     position:relative;
     display:flex;
     background:var(--ref-img);
@@ -388,9 +388,9 @@ span[strnum] {
     z-index:3;
     position:relative;
 }
-#context_menu #cmenu_closebtn {
-    background: url(images/cancel-svgrepo-com.svg) center no-repeat;
-    background: url(../images/cancel-svgrepo-com.svg) center no-repeat;
+#context_menu #cmenu_closebtn{ 
+    background:url(images/cancel-svgrepo-com.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
 }
 .crfnnote_btns::before{
     display:block;
@@ -400,7 +400,7 @@ span[strnum] {
     position:absolute;
     z-index:-1;
 }
-#context_menu:not([strnum]) hr {
+#context_menu:not([strnum]) hr{ 
     border:0!important;
     height:1px!important;
     background:var(--black)!important;
@@ -422,175 +422,175 @@ span[strnum] {
     padding-bottom:10px;
     z-index:3;
 }
-#context_menu:not([strnum]) .cmtitlebar {
+#context_menu:not([strnum]) .cmtitlebar{ 
     display:flex;
 }
 
 #context_menu:not(.win2) .cmtitlebar~span{
     font-size:var(--fontsize-scripture);
 }
-#context_menu .cmtitlebar::before {
-    position: absolute;
-    content: '';
-    left: -9px;
-    top: -5px;
-    width: 120%;
-    height: 100%;
-    background: var(--ref-img);
-    box-shadow: 0px -21px 0px 25px var(--scroll-track-bg-color);
-    z-index: -1;
-    pointer-events: none;
+#context_menu .cmtitlebar::before{ 
+    position:absolute;
+    content:'';
+    left:-9px;
+    top:-5px;
+    width:120%;
+    height:100%;
+    background:var(--ref-img);
+    box-shadow:0px -21px 0px 25px var(--scroll-track-bg-color);
+    z-index:-1;
+    pointer-events:none;
 }
-#context_menu:has(.strngsdefinition) #cmenu_navnclose_btns {
+#context_menu:has(.strngsdefinition) #cmenu_navnclose_btns{ 
     right:2em!important;
 }
 #context_menu .strnum:not(:hover){
     font-style:italic;
     box-shadow:inset 0px -1px 0px 0px;
 }
-#context_menu details {
-    border-bottom: 2px solid #aaa;
-    padding: 0.25em 0;
+#context_menu details{ 
+    border-bottom:2px solid #aaa;
+    padding:0.25em 0;
 }
-#context_menu summary {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    /* font-weight: bold; */
-    margin: -0.5em -0.5em 0;
-    padding: 0.5em;
-    cursor: pointer;
-    z-index: -10;
-    list-style: none;
+#context_menu summary{ 
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    /* font-weight:bold; */
+    margin:-0.5em -0.5em 0;
+    padding:0.5em;
+    cursor:pointer;
+    z-index:-10;
+    list-style:none;
 }
-#context_menu summary i {
+#context_menu summary i{ 
     font-size:0.7em;
 }
-#context_menu summary h2 {
+#context_menu summary h2{ 
     font-size:1em;
 }
-#context_menu summary>div:first-of-type {
+#context_menu summary>div:first-of-type{ 
     background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     min-width:1em;
     height:2em;
     margin:10px;
 }
-#context_menu details[open] summary {
-    border-bottom: 1px solid #aaa;
-    margin-bottom: 0.5em;
+#context_menu details[open] summary{ 
+    border-bottom:1px solid #aaa;
+    margin-bottom:0.5em;
 }
-#context_menu details[open] > summary > div:first-of-type {
-    background: url(images/arrow-down-svgrepo-com.svg) center no-repeat;
-    background: url(../images/arrow-down-svgrepo-com.svg) center no-repeat;
+#context_menu details[open] > summary > div:first-of-type{ 
+    background:url(images/arrow-down-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-down-svgrepo-com.svg) center no-repeat;
 }
-#context_menu .strngsdefinition p {
-    position: relative;
-    margin: 5px 10px;
-    font-size: 0.9em;
-    background-color: inherit;
+#context_menu .strngsdefinition p{ 
+    position:relative;
+    margin:5px 10px;
+    font-size:0.9em;
+    background-color:inherit;
 }
-#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    font-size: 98%;
+#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:98%;
 }
-#context_menu .strngsdefinition h1, #context_menu .strngsdefinition h2, #context_menu .strngsdefinition h3, #context_menu .strngsdefinition h4 {
-    font-size: inherit;
-    display: inline;
-    padding-top: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
+#context_menu .strngsdefinition h1, #context_menu .strngsdefinition h2, #context_menu .strngsdefinition h3, #context_menu .strngsdefinition h4{ 
+    font-size:inherit;
+    display:inline;
+    padding-top:0;
+    margin-top:0;
+    padding-bottom:0;
+    margin-bottom:0;
 }
-#context_menu .strngsdefinition h5, #context_menu .strngsdefinition h6 {
-    margin: 0px 5px 0px 0px;
-    padding-left: 7.5px;
-    border-bottom: 1px solid var(--grey);
-    font-style: italic;
-    background-color: rgb(72, 76, 89);
-    color: var(--white)!important;
-    z-index: 5;
+#context_menu .strngsdefinition h5, #context_menu .strngsdefinition h6{ 
+    margin:0px 5px 0px 0px;
+    padding-left:7.5px;
+    border-bottom:1px solid var(--grey);
+    font-style:italic;
+    background-color:rgb(72, 76, 89);
+    color:var(--white)!important;
+    z-index:5;
 }
 
 /* DARKMODE */
-.darkmode ::selection {
-    background-color: purple;
-    color: white;
+.darkmode ::selection{ 
+    background-color:purple;
+    color:white;
 }
-.darkmode #context_menu * {
-    color: var(--txtcolor);
-    border-color: var(--darkmode-border)!important;
+.darkmode #context_menu *{ 
+    color:var(--txtcolor);
+    border-color:var(--darkmode-border)!important;
 }
-.darkmode #context_menu {
-    border: 2px solid var(--darkslategray)!important;
-    box-shadow: inset 0px 23px 0px 0px var(--darkslategray);
+.darkmode #context_menu{ 
+    border:2px solid var(--darkslategray)!important;
+    box-shadow:inset 0px 23px 0px 0px var(--darkslategray);
 }
-.darkmode #context_menu .strngsdefinition h5, .darkmode #context_menu .strngsdefinition h6 {
-    background-color: var(--darkslategray);
+.darkmode #context_menu .strngsdefinition h5, .darkmode #context_menu .strngsdefinition h6{ 
+    background-color:var(--darkslategray);
 }
-.darkmode span[strnum]:not(.context_menu span[strnum]),.darkmode span[ref]:not(.verse){color: #a6ebe1;}
-.darkmode .context_menu span[strnum] {color: #a6ebe1;}
-/* .darkmode span[strnum]{color: #a6ebe1;} */
+.darkmode span[strnum]:not(.context_menu span[strnum]),.darkmode span[ref]:not(.verse){color:#a6ebe1;}
+.darkmode .context_menu span[strnum]{ color:#a6ebe1;}
+/* .darkmode span[strnum]{color:#a6ebe1;} */
 
-.darkmode .cmenu_closebtn, .darkmode .closebtn {background-color: transparent!important;}
-.darkmode #context_menu .cmtitlebar::before {box-shadow: inset 0px -0.15em 0px 0px var(--darkslategray);}
-.darkmode #context_menu code button.cmenusrchbtn {
-    border: rgb(166, 166, 166)!important;
-    background-color: transparent;
+.darkmode .cmenu_closebtn, .darkmode .closebtn{ background-color:transparent!important;}
+.darkmode #context_menu .cmtitlebar::before{ box-shadow:inset 0px -0.15em 0px 0px var(--darkslategray);}
+.darkmode #context_menu code button.cmenusrchbtn{ 
+    border:rgb(166, 166, 166)!important;
+    background-color:transparent;
 }
-.darkmode #cmenu_navnclose_btns button {
-    background-color: var(--buttons)!important;
-    color: var(--txtcolor)!important;
-    border: 1px solid var(--black);
+.darkmode #cmenu_navnclose_btns button{ 
+    background-color:var(--buttons)!important;
+    color:var(--txtcolor)!important;
+    border:1px solid var(--black);
 }
-.darkmode #cmenu_navnclose_btns button:hover {
-    color: black!important;
-    background-color: pink!important;
+.darkmode #cmenu_navnclose_btns button:hover{ 
+    color:black!important;
+    background-color:pink!important;
 }
-.darkmode #cmenu_navnclose_btns button.cmenu_closebtn {
-    background: url(images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
-    background: url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
+.darkmode #cmenu_navnclose_btns button.cmenu_closebtn{ 
+    background:url(images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.cmenu_closebtn:hover {
-    background: url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
-    background: url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
+.darkmode #cmenu_navnclose_btns button.cmenu_closebtn:hover{ 
+    background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.nxt_verse,
 .darkmode #cmenu_navnclose_btns button.nxt,
 .darkmode #cmenu_navnclose_btns button.prv_verse,
-.darkmode #cmenu_navnclose_btns button.prv {
-    background: url(images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
-    background: url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
+.darkmode #cmenu_navnclose_btns button.prv{ 
+    background:url(images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.nxt_verse:hover,
 .darkmode #cmenu_navnclose_btns button.nxt:hover,
 .darkmode #cmenu_navnclose_btns button.prv_verse:hover,
-.darkmode #cmenu_navnclose_btns button.prv:hover {
-    background: url(images/arrow-up-svgrepo-com.svg) center no-repeat;
-    background: url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+.darkmode #cmenu_navnclose_btns button.prv:hover{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.prv {
-    margin-top: -1px;
+.darkmode #cmenu_navnclose_btns button.prv{ 
+    margin-top:-1px;
 }
-.darkmode #cmenu_navnclose_btns button.nxt {
-    margin-top: 1px;
+.darkmode #cmenu_navnclose_btns button.nxt{ 
+    margin-top:1px;
 }
-#cmenu_navnclose_btns button {
+#cmenu_navnclose_btns button{ 
     box-shadow:inset 0 0 1px 0px !important;
     border:none!important;
 }
-#cmenu_navnclose_btns button, .darkmode #cmenu_navnclose_btns button {
+#cmenu_navnclose_btns button, .darkmode #cmenu_navnclose_btns button{ 
     margin-top:0!important;
 }
-.darkmode #context_menu details[open] > summary > div:first-of-type {
-    background: url(images/white-arrow-down-svgrepo-com.svg) center no-repeat;
-    background: url(../images/white-arrow-down-svgrepo-com.svg) center no-repeat;
+.darkmode #context_menu details[open] > summary > div:first-of-type{ 
+    background:url(images/white-arrow-down-svgrepo-com.svg) center no-repeat;
+    background:url(../images/white-arrow-down-svgrepo-com.svg) center no-repeat;
 }
-.darkmode #context_menu summary>div:first-of-type {
-    background: url(images/white-arrow-up-svgrepo-com.svg) center no-repeat;
-    background: url(../images/white-arrow-up-svgrepo-com.svg) center no-repeat;
-    min-width: 1em;
-    height: 2em;
-    margin: 10px;
+.darkmode #context_menu summary>div:first-of-type{ 
+    background:url(images/white-arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/white-arrow-up-svgrepo-com.svg) center no-repeat;
+    min-width:1em;
+    height:2em;
+    margin:10px;
 }
 /* *-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-* */
 #context_menu .b{font-weight:bold;}
@@ -604,9 +604,9 @@ span[strnum] {
 #context_menu sup{font-size:0.6em;}
 /* li li{list-style-type:lower-alpha;}
 li li li{list-style-type:lower-roman;} */
-#context_menu .verse {z-index:0;}
+#context_menu .verse{ z-index:0;}
 /* *-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-* */
-.verse_compare .cmenu_closebtn {
+.verse_compare .cmenu_closebtn{ 
     display:inline;
     border:none!important;
     width:0.65em!important;
@@ -614,17 +614,17 @@ li li li{list-style-type:lower-roman;} */
     height:0.65em!important;
 }
 .cbv, .green_active,
-.darkmode .cbv, .darkmode .green_active {
+.darkmode .cbv, .darkmode .green_active{ 
     background:#f8ffa5!important;
     color:maroon!important;
 }
-.cbv, .darkmode .cbv {background:#fff3d1!important;}
+.cbv, .darkmode .cbv{ background:#fff3d1!important;}
 button.compare_withinsearchresult_button:hover{
     color:maroon!important;
     background:var(--chpt) !important;
 }
-.nopointerevents {pointer-events: none!important;}
-.verse_compare {
+.nopointerevents{ pointer-events:none!important;}
+.verse_compare{ 
     box-shadow:2px 0 var(--verse_compare),
         inset 2px 0 var(--verse_compare),
         -2px 0 var(--verse_compare),
@@ -635,14 +635,14 @@ button.compare_withinsearchresult_button:hover{
     border-top-left-radius:0px!important;
     border-bottom-left-radius:0px!important;
 }
-.verse:not(.verse_compare) + .verse_compare {
+.verse:not(.verse_compare) + .verse_compare{ 
     border-top:3px solid var(--verse_compare);
 }
-.vrs_bein_comp {
+.vrs_bein_comp{ 
     box-shadow:inset -2px 0 var(--verse_compare),
         -10px 0 var(--verse_compare);
 }
-.verse_compare + .vrs_bein_comp {
+.verse_compare + .vrs_bein_comp{ 
     margin-top:10px;
     box-shadow:inset -2px 0 var(--verse_compare),
         inset 0 1px var(--verse_compare),
@@ -656,47 +656,47 @@ h2:not(.text_content>h2):not(.notemenu>h2):not(.strngsdefinition h2),
 h3:not(.text_content>h3):not(.notemenu>h3):not(.strngsdefinition h3),
 h4:not(.text_content>h4):not(.notemenu>h4):not(.strngsdefinition h4),
 h5:not(.text_content>h5):not(.notemenu>h5):not(.strngsdefinition h5),
-h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6) {
+h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6){ 
     display:flex;
-    align-items: center;
-    cursor: pointer;
+    align-items:center;
+    cursor:pointer;
 }
-.hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6 {display:none}
-h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::before {
-    margin: 0 0.5em;
-    width: 1em;
-    height: 1em;
-    flex-direction: column-reverse;
-    flex-grow: 0;
-    flex-shrink: 0;
+.hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6{ display:none}
+h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::before{ 
+    margin:0 0.5em;
+    width:1em;
+    height:1em;
+    flex-direction:column-reverse;
+    flex-grow:0;
+    flex-shrink:0;
 }
-.crossrefs h1::before,.crossrefs h2::before,.crossrefs h3::before,.crossrefs h4::before,.crossrefs h5::before,.crossrefs h6::before {
-    content: url(images/arrow-up-svgrepo-com.svg);
-    content: url(../images/arrow-up-svgrepo-com.svg);
+.crossrefs h1::before,.crossrefs h2::before,.crossrefs h3::before,.crossrefs h4::before,.crossrefs h5::before,.crossrefs h6::before{ 
+    content:url(images/arrow-up-svgrepo-com.svg);
+    content:url(../images/arrow-up-svgrepo-com.svg);
     transform:rotate(180deg);
 }
-.crossrefs .hidingsibs::before {
-    content: url(images/arrow-up-svgrepo-com.svg);
-    content: url(../images/arrow-up-svgrepo-com.svg);
+.crossrefs .hidingsibs::before{ 
+    content:url(images/arrow-up-svgrepo-com.svg);
+    content:url(../images/arrow-up-svgrepo-com.svg);
     transform:rotate(90deg);
 }
-.darkmode .crossrefs h1::before, .darkmode .crossrefs h2::before, .darkmode .crossrefs h3::before, .darkmode .crossrefs h4::before, .darkmode .crossrefs h5::before, .darkmode .crossrefs h6::before {
-    content: url(images/white-arrow-up-svgrepo-com.svg);
-    content: url(../images/white-arrow-up-svgrepo-com.svg);
+.darkmode .crossrefs h1::before, .darkmode .crossrefs h2::before, .darkmode .crossrefs h3::before, .darkmode .crossrefs h4::before, .darkmode .crossrefs h5::before, .darkmode .crossrefs h6::before{ 
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
     transform:rotate(180deg);
 }
-.darkmode .crossrefs .hidingsibs::before {
-    content: url(images/white-arrow-up-svgrepo-com.svg);
-    content: url(../images/white-arrow-up-svgrepo-com.svg);
+.darkmode .crossrefs .hidingsibs::before{ 
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
     transform:rotate(90deg);
 }
 /* *********** */
 #bible_versions>*:not(hr),
-#bibleapp_cache>*:not(hr) {
+#bibleapp_cache>*:not(hr){ 
     padding-right:3px;
     padding-left:3px;
 }
-#bible_versions {
+#bible_versions{ 
     font-size:var(--fontsize-main);
     min-width:150px;
 }
@@ -705,13 +705,13 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
 .strngsdefinition h3,
 .strngsdefinition h4,
 .strngsdefinition h5,
-.strngsdefinition h6 {
-    cursor: pointer;
+.strngsdefinition h6{ 
+    cursor:pointer;
 }
 .strngsdefinition h1,
 .strngsdefinition h2,
 .strngsdefinition h3,
-.strngsdefinition h4 {
+.strngsdefinition h4{ 
     font-size:inherit;
     display:inline;
     padding-top:0;
@@ -721,18 +721,18 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
 }
 .strngsdefinition h5{display:flex;}
 .strngsdefinition h5::before{
-    content: url(images/white-arrow-up-svgrepo-com.svg);
-    content: url(../images/white-arrow-up-svgrepo-com.svg);
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
     height:100%!important;
-    transform: rotate(0deg);
+    transform:rotate(0deg);
     margin-left:0;
 }
 .strngsdefinition h5.hidingsibs::before,
 .strngsdefinition h5.slduper::before{
-    transform: rotate(180deg);
+    transform:rotate(180deg);
 }
-.strngsdefinition h5,.strngsdefinition h6 {
-    position: relative;
+.strngsdefinition h5,.strngsdefinition h6{ 
+    position:relative;
     margin:0px 5px 0px 0px;
     padding-left:7.5px;
     border-bottom:1px solid var(--grey);
@@ -741,7 +741,7 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
     color:var(--white)!important;
     z-index:5;
 }
-#strongsdefinition_text h5, #strongsdefinition_text h6 {
+#strongsdefinition_text h5, #strongsdefinition_text h6{ 
     position:relative;
     margin:0px;
     padding-left:10px;
@@ -751,17 +751,17 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
     color:var(--white)!important;
     z-index:5;
 }
-.strngsdefinition p {
+.strngsdefinition p{ 
     position:relative;
     margin:5px 10px;
     font-size:0.9em;
     background-color:inherit;
 }
-.strngsdefinition div {
+.strngsdefinition div{ 
     overflow:hidden;
 }
 /* CROSSREFS */
-.verse_crossref_button,.verse_notes_button {
+.verse_crossref_button,.verse_notes_button{ 
     background:var(--greenish);
     font-style:italic!important;
     font-weight:bold!important;
@@ -785,52 +785,52 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
     opacity:1;
     /* z-index:2; */
 }
-.crossrefs h5 {
-    border-bottom: 1px solid;
+.crossrefs h5{ 
+    border-bottom:1px solid;
     margin:0;
-    margin-top: 0.5em;
+    margin-top:0.5em;
 }
-.crossrefs strong {
-    display: inline-block;
-    margin-top: 0.5em;
+.crossrefs strong{ 
+    display:inline-block;
+    margin-top:0.5em;
 }
-.compare_verses > span.verse:has(.crossrefs:not(.sld_up)):last-of-type {margin-bottom: 10em}
+.compare_verses > span.verse:has(.crossrefs:not(.sld_up)):last-of-type{ margin-bottom:10em}
 /* BUTTONS */
-#context_menu button * {pointer-events:none;}
-#context_menu button {
+#context_menu button *{ pointer-events:none;}
+#context_menu button{ 
     display:flex;
     align-items:center;
     justify-content:center;
     font-family:'  Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: calc(var(--fontsize-refnsearch)*1.5);
+    font-size:calc(var(--fontsize-refnsearch)*1.5);
     cursor:pointer;
     border:var(--buttons-border);
     background-color:var(--buttons);
     overflow:hidden;
 }
-#context_menu .buttons {
+#context_menu .buttons{ 
     width:auto;
     background:var(--ref-img);
     border-bottom:2px solid #70707072;
 }
 
-#context_menu button:disabled {
+#context_menu button:disabled{ 
     cursor:default;
-    pointer-events: none;
-    opacity: 0.3;
-    background-color: lightgrey;
+    pointer-events:none;
+    opacity:0.3;
+    background-color:lightgrey;
 }
-#context_menu button:not(:disabled):hover {
+#context_menu button:not(:disabled):hover{ 
     background-color:var(--chpt) !important;
 }
-.active_button {background-color:var(--chpt) !important;}
+.active_button{ background-color:var(--chpt) !important;}
 .red, span.red span{color:var(--redwords)!important;}
-.strongsnum {color:var(--strgs-num);}
-[strnum]:empty {display:none !important;}
+.strongsnum{ color:var(--strgs-num);}
+[strnum]:empty{ display:none !important;}
 /* ************ */
-#context_menu, #context_menu * {
+#context_menu, #context_menu *{ 
     box-sizing:border-box;
-    overflow-wrap: break-word;
+    overflow-wrap:break-word;
     -webkit-transition:all 0.1s ease-in-out;
     -moz-transition:all 0.1s ease-in-out;
     -o-transition:all 0.1s ease-in-out;
@@ -841,60 +841,60 @@ span[strnum~=dvnNm],
 span[strnum~=H3068]{
     font-variant:small-caps;
 }
-span[strnum] {
+span[strnum]{ 
     cursor:pointer;
     border-radius:1px!important;
 }
-span[strnum]:hover {
+span[strnum]:hover{ 
     z-index:1;
 }
-span[strnum] > span[strnum] {
+span[strnum] > span[strnum]{ 
     border:none;
     box-shadow:none;
     font-style:italic;
 }
 span.verse:hover:not(.vhlt),
-span.vmultiple:hover {
+span.vmultiple:hover{ 
     transition:background 0.05s ease-in-out;
     border-radius:0.1em;
 }
 span.vmultiple:hover{
     background-color:var(--whitesmoke);
     background-color:#eeeee251;
-    background-color: var(--vhlt4);
+    background-color:var(--vhlt4);
     transition:box-shadow 0.05s ease-in;
     box-shadow:0px 0px 5px 1px rgb(0 0 0/100%)!important;
     transition:250ms ease-in;
     z-index:4;
 }
-span.vmultiple:hover .verse {
+span.vmultiple:hover .verse{ 
     background:var(--vhlt4)!important;
 }
-span.translated:hover {
+span.translated:hover{ 
     border-bottom:3px solid var(--brown)!important;
     color:var(--brown);
 }
-span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated) {color:var(--translated-word)}
-.translated[trans] {
+span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated){ color:var(--translated-word)}
+.translated[trans]{ 
     font-weight:600;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 /* CONTEXT_MENU */
-#context_menu[strnum] {
+#context_menu[strnum]{ 
     max-height:80vh;
 }
-#context_menu.slideintoview, #context_menu.slideoutofview {
+#context_menu.slideintoview, #context_menu.slideoutofview{ 
     transition:none;
 }
-#context_menu[strnum] {
+#context_menu[strnum]{ 
     padding:0px;
 }
-#context_menu[strnum]>.cmtitlebar {
+#context_menu[strnum]>.cmtitlebar{ 
     padding-left:10px;
     padding-right:10px;
     font-size:0.7em;
 }
-#context_menu:hover {
+#context_menu:hover{ 
     -webkit-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
     -moz-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
     box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
@@ -905,8 +905,8 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 23px 0px 0px var(--grey);
 }
 #context_menu>hr+.strngsdefinition>hr:first-child{display:none;}
-#context_menu h2, #context_menu i  {font-size:inherit;}
-#context_menu .strngsdefinition div {display:block;}
+#context_menu h2, #context_menu i { font-size:inherit;}
+#context_menu .strngsdefinition div{ display:block;}
 .strngsdefinition a{color:grey; cursor:pointer}
 .strngsdefinition span[ref]{color:blueviolet}
 .strngsdefinition span[ref]:hover,
@@ -915,17 +915,17 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 .crossrefs>span:not(.notref):hover,
 #context_menu code:not(.cmtitlebar code):hover,
 #searchPreviewFixed [ref]:not(.verse_compare):not(#context_menu>span.verse):hover,
-#scriptureCompareWindow [ref]:not(.verse_compare):not(#context_menu>span.verse):hover {
+#scriptureCompareWindow [ref]:not(.verse_compare):not(#context_menu>span.verse):hover{ 
     text-decoration:underline;
     color:var(--blue);
     cursor:pointer;
 }
-#context_menu .cmtitlebar code {
+#context_menu .cmtitlebar code{ 
     display:inline-flex;
     align-items:center;
     font-size:1.2em;
 }
-#context_menu code button.cmenusrchbtn {
+#context_menu code button.cmenusrchbtn{ 
     width:1em;
     height:1em;
     
@@ -934,25 +934,25 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     border-radius:5px;
     margin-right:5px;
 }
-#context_menu code button.cmenusrchbtn img {
+#context_menu code button.cmenusrchbtn img{ 
     pointer-events:none;
 }
-#context_menu .verse {
+#context_menu .verse{ 
     padding:5px;
     display:block;
 }
-#context_menu .verse:hover {
+#context_menu .verse:hover{ 
     border-radius:3px;
     overflow:hidden;
 }
-#context_menu .crfnnote {
+#context_menu .crfnnote{ 
     margin-bottom:2px;
     border-radius:0!important;
 }
-#context_menu .crfnnote_btns {
+#context_menu .crfnnote_btns{ 
     margin-bottom:0;
 }
-#context_menu .crossrefs {
+#context_menu .crossrefs{ 
     border-radius:0!important;
     margin-bottom:0;
 }
@@ -960,14 +960,14 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 #context_menu[strnum] hr:not(:last-child){margin-top:0}
 #context_menu hr:last-child{margin-bottom:0}
 .crfnnote_btns button,.verse_crossref_button{font-size:0.55em;}
-.crfnnote_btns button {
+.crfnnote_btns button{ 
     font-style:italic;
     font-size:0.5em;
     font-weight:bold;
-    flex: 0.25 0.25 auto;
+    flex:0.25 0.25 auto;
 }
 #context_menu:not([strnum]) hr,
-.compare_verses hr {
+.compare_verses hr{ 
     border:0!important;
     height:0.25px!important;
     background:var(--black)!important;
@@ -977,7 +977,7 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     align-items:center;
 }
 #context_menu:not([strnum]) hr::before,
-.compare_verses hr::before {
+.compare_verses hr::before{ 
     content:attr(vrange);
     width:auto;
     height:auto;
@@ -991,9 +991,9 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     margin-left:50%;
     background:var(--whitesmoke);
 }
-#refnav_col2 hr::before {background: linear-gradient(transparent, transparent, var(--buttons)60%, transparent)!important;}
-.compare_verses hr {margin-top:1em;}
-.compare_verses hr::before {font-size:0.6em;}
+#refnav_col2 hr::before{ background:linear-gradient(transparent, transparent, var(--buttons)60%, transparent)!important;}
+.compare_verses hr{ margin-top:1em;}
+.compare_verses hr::before{ font-size:0.6em;}
 #context_menu .strngsdefinition:last-child hr:last-of-type{display:none;}
 #context_menu .cmtitlebar{
     position:sticky;
@@ -1006,14 +1006,14 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     padding-bottom:10px;
     z-index:10;
 }
-#context_menu:not([strnum]) .cmtitlebar {
+#context_menu:not([strnum]) .cmtitlebar{ 
     display:flex;
 }
 .verse_note #context_menu .cmtitlebar{
     box-shadow:0px -26.5px 8px 17px var(--scroll-track-bg-color);
 }
 
-#context_menu .cmtitlebar::before {
+#context_menu .cmtitlebar::before{ 
     position:absolute;
     content:'';
     left:-9px;
