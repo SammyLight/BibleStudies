@@ -198,6 +198,7 @@ footer .archive-date{
     display: block;
     line-height: 1;
     margin: -0.15rem 0.55rem 0.20rem;
+    margin: 0 0.55rem 0.20rem;
 }
 .mobileButton{ 
     /* text-transform:uppercase; */
@@ -532,12 +533,6 @@ footer .archive-date{
     height:-webkit-fill-available;
     border-bottom:none;
 }}
-@media only screen and (min-width:768px){ 
-.closeNavBar{ 
-    width:50px;
-    height:60px;
-    font-size:xxx-large;
-}}
 @media only screen and (max-width:768px){ 
 .linkTitle{ 
     padding:30px 30px;
@@ -564,12 +559,22 @@ footer .archive-date{
     margin-top:0;
 }}
 /* homeHeader */
+#homeHeader{ 
+    position:relative;
+    height:auto;
+    min-height:50px;
+}
+.homeHeaderNav{ 
+    display:flex;
+    position:relative;
+    overflow:visible;
+    font-size:1.3em;
+}
 .homeHeaderNav .churchLOGO{ 
     display:-webkit-box;
     display:flex;
     -webkit-box-align:center;
     align-items:center;
-    padding:10px 10px 10px 0;
     flex:1 1 auto;
 }
 .churchLOGO a{ 
@@ -584,7 +589,6 @@ footer .archive-date{
     justify-content:flex-start;
 }
 div.header-links{ 
-    /* column-gap:0.5em; */
     display:-webkit-box;
     /* display:flex; */
     -webkit-box-orient:horizontal;
@@ -595,23 +599,24 @@ div.header-links{
     margin:0!important;
     padding:0;
 }
+div.header-links{ 
+    -webkit-box-pack:center;
+    justify-content:center;
+}
+.header-links-li{ 
+    display:-webkit-box;
+    display:flex;
+    list-style-type:none;
+    margin:0;
+}
+.header-links-li>a{ 
+    -webkit-box-align:center;
+}
 .iconLink{ 
     display:-webkit-inline-box;
     display:inline-flex;
     -webkit-box-align:center;
     align-items:center;
-}
-.header-links-li{ 
-    list-style-type:none;
-    margin:0;
-}
-div.header-links-li{ 
-    counter-increment:none;
-}
-
-div.header-links-li:before{ 
-    content:" ";
-    padding:0;
 }
 .header-links-li>a,.moreButton{ 
     color:#F2F2F2;
@@ -644,39 +649,7 @@ div.header-links-li:before{
 .header-links-li>a{ 
     font-size:63%!important;
     padding:4px 2px;
-}}
-@media only screen and (min-width:912px){ 
-#homeHeader{ 
-    position:relative;
-    height:auto;
-    min-height:50px;
-}
-.homeHeaderNav{ 
-    display:flex;
-    position:relative;
-    overflow:visible;
-    font-size:1.3em;
-}
-div.header-links{ 
-    -webkit-box-pack:center;
-    justify-content:center;
-}
-.header-links-li{ 
-    display:-webkit-box;
-    display:flex;
-    list-style-type:none;
-    margin:0;
-}
-.header-links-li>a{ 
-    -webkit-box-align:center;
-}}
-@media only screen and (min-width:960px){ 
-#homeHeader{ 
-    min-width:801px;
-}
-.headerUL{ 
-    margin-left:20px;
-}}
+}} 
 .header-links a:hover,.header-links a:focus,
 .header-links2 a:hover,.header-links2 a:focus{ 
     color:#e9e9e9;
