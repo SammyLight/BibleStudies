@@ -1239,7 +1239,6 @@ body:not(#versenotepage) span[class*=v_]:not(#context_menu span[class*=v_]):hove
     background:palegoldenrod!important;
     color:black!important;
 }
-
 /* HIGHLIGHT VMULTIPLE */
 span.vmultiple:hover{
     background-color:var(--whitesmoke);
@@ -2142,7 +2141,6 @@ border-right:var(--col2-border) solid auto!important;
     font-size:40px;
     flex-grow:1;
 }
-
 /* SEARCH */
 #wordsearch{
     background-color:var(--buttons)!important;
@@ -2228,7 +2226,6 @@ border-right:var(--col2-border) solid auto!important;
 .verses_input{ 
     font-size:calc(var(--fontsize-main)*0.85)!important;
 }
-
 /* AVAILABLE NOTES */
 #bibleapp_available_notes{
     max-width:300px;
@@ -2453,7 +2450,6 @@ input:focus{
     border:1px solid grey;
     padding-left:0.5em;
 }
-
 /* VERSE GROUPS */
 .v_markers{ 
     display:flex;
@@ -2826,7 +2822,6 @@ body:not(.darkmode) #bottomleft_btns button, body:not(.darkmode) #topbartogglebt
     border-radius:0.25em;
     margin-top:1em;
 }
-
 /* button:not(#refnav_col2 button):focus,  */
 #app_settings button:not(.refnav_col2_closebtn):active,
 #top_horizontal_bar_buttons button:active,
@@ -3168,7 +3163,6 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
     display:flex;
     flex-wrap:wrap;
 }
-
 /* NEW SEARCH DESIGN */
 .biblebooksgroup_inputndropdown{ 
     position:relative;

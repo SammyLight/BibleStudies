@@ -6,7 +6,6 @@
 	border-left:20px solid transparent;
 	border-right:20px solid transparent;
 }
-
 /* PRELOAD CSS */
 .loader-bg{
     background:crimson;
@@ -14,11 +13,9 @@
 .loader:before, .loader:after{
     border:1em solid #ff5733;
 }
-
 body{
     background-color:crimson;
 }
-
 /* Custom CSS */
 .explainButton{
     color:black;
@@ -40,7 +37,6 @@ body{
     border:1px solid black;
     color:white;
 }
-
 /* Choose QandA-Categories CSS */
 .choosecat-grid{ 
     background-color:crimson;
@@ -66,7 +62,6 @@ body{
 .choosecat-grid h2{ 
     color:orange;
 }
-
 @media  only screen and (min-width:1024px){
 .choosecat-Child:hover{ 
     background-color:black;
@@ -84,7 +79,6 @@ body{
 .choosecat-Adult a:hover{ 
     color:black;
 }}
-
 /* QandA-Categories CSS */
 .cat-bibleQuiz-section{
     background-color:crimson;
@@ -103,7 +97,6 @@ body{
     background-color:white;
     background-color:rgb(138, 11, 36);
 }
-
 /* END OF HEADER SECTION */
 #cat-bibleQuiz-inner h1{
     text-shadow:7px 7px orange,
@@ -139,7 +132,6 @@ body{
 .cat-grid>a:hover{
     background-color:#f0f0f0ff;
 }
-
 /* DESKTOP VIEW */
 
 /* QandA CSS */
@@ -153,7 +145,6 @@ body{
 .fade{ 
     background-color:rgba(0,0,0,0.4);
 }
-
 /* HEADER SECTION */
 .QandA-header{ 
     box-shadow:0 3px 4px rgb(138, 11, 36);
@@ -206,7 +197,6 @@ body{
 #questioncount{
     color:orange;
 }
-
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
     color:white!important;
@@ -243,7 +233,6 @@ body{
 .QandA-Board>ol>li>ul>li>ul{
     color:aliceblue;
 }
-
 /* MOBILE VIEW */
 @media  only screen and (max-width:657px){
 /* HEADER SECTION */
@@ -258,7 +247,6 @@ body{
     background:linear-gradient(45deg,#743ad5, #d53a9d);
     background:linear-gradient(45deg,#d53a9d,#FFA500);  
 }}
-
 @media only screen and (min-width:658px){
 
 /* HEADER SECTION */
@@ -269,7 +257,6 @@ body{
        linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
 }}
-
 @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:rgb(138, 11, 36);
@@ -294,7 +281,6 @@ body{
     background-color:rgb(99, 21, 21);
     border:rgb(99, 21, 21);
 }}
-
 /* QUIZ RESULT CSS */
 #quizResult-section{
     background-color:transparent;
@@ -358,17 +344,14 @@ body{
 .btn-bg-color>a:hover{ 
     color:white!important;
 }
-
 @media only screen and (max-width:1023px){
 .Result-img{ 
     border-bottom:1px solid white;
 }}
-
 @media only screen and (min-width:1024px){
 .Result-img{ 
     border-right:1px solid white;
 }}
-
 /* CORRECTED ANSWERS CSS */
 #CorrectedAnswers-section{ 
     background-color:crimson;
@@ -427,7 +410,6 @@ body{
 .totalQuestionsColor{
     color:#414141!important;
 }
-
 /* Scrollbar CSS */
 /* width */
 ::-webkit-scrollbar{ 

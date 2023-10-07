@@ -77,7 +77,6 @@ img{
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);
 }
-
 @media only screen and (max-width:960px){ 
 header>h1:first-of-type, div>h1:first-of-type{ 
     font-size:50px!important;
@@ -227,7 +226,6 @@ header>h1:first-of-type, div>h1:first-of-type{
 header>h1:first-of-type, div>h1:first-of-type{ 
     padding-top:.50em;
 }}
-
 /* p{ 
     margin:0.75em 0.4em 0em 0.4em!important;
     margin:0.75em 0 0 0!important;
@@ -466,7 +464,6 @@ li:before{
 .churchLOGO-img{ 
     height:30px;
 }}
-
 /* Table CSS */
 td,
 th{ 
@@ -483,10 +480,8 @@ th:first-child{
     /* text-align:right; */
     border-right:2.5px solid grey;
 }
-
 @media only screen and (max-width:540px){ 
-td,
-th{ 
+td,th{ 
     padding-right:0;
     padding-left:0;
 }

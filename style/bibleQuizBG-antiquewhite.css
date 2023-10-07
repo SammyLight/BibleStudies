@@ -9,7 +9,6 @@ body{
 	border-left:20px solid transparent;
 	border-right:20px solid transparent;
 }
-
 /* PRELOAD CSS */
 .loader-bg{
     background:antiquewhite;
@@ -17,7 +16,6 @@ body{
 .loader:before, .loader:after{
     border:1em solid #ff5733;
 }
-
 /* Custom CSS */
 hr{ 
     background-color:brown;
@@ -40,7 +38,6 @@ hr{
     background-color:#b91742;
     border:#b91742;
 }
-
 /* Choose QandA-Categories CSS */
 .choosecat-grid{ 
     background-color:rgb(0 0 0 / 68%);
@@ -67,7 +64,6 @@ hr{
 .choosecat-grid h2{ 
     color:darkkhaki;
 }
-
 @media  only screen and (min-width:1024px){
 .choosecat-Child:hover{ 
     background-color:brown;
@@ -85,7 +81,6 @@ hr{
 .choosecat-Adult a:hover{ 
     color:brown;
 }}
-
 /* QandA-Categories CSS */
 .cat-bibleQuiz-section{
     background-color:antiquewhite;
@@ -104,7 +99,6 @@ hr{
 .header-links li:hover, .header-links li:focus{ 
     background-color:brown;
 }
-
 /* END OF HEADER SECTION */
 #cat-bibleQuiz-inner h1{
     text-shadow:7px 7px orange,
@@ -141,7 +135,6 @@ hr{
 .cat-grid>a:hover{
     background-color:#f0f0f0ff;
 }
-
 /* DESKTOP VIEW */
 
 /* QandA CSS */
@@ -155,7 +148,6 @@ hr{
 .fade{ 
     background-color:rgba(0,0,0,0.4);
 }
-
 /* HEADER SECTION */
 .QandA-header{ 
     box-shadow:0 3px 4px rgb(235 202 159);
@@ -207,7 +199,6 @@ hr{
 #questioncount{
     color:chocolate;
 }
-
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
     color:brown!important;
@@ -245,7 +236,6 @@ hr{
 .QandA-Board>ol>li>ul>li>ul{
     color:aliceblue;
 }
-
 /* MOBILE VIEW */
 @media  only screen and (max-width:657px){
 /* HEADER SECTION */
@@ -260,13 +250,11 @@ hr{
     background:linear-gradient(45deg,#743ad5, #d53a9d);
     background:linear-gradient(45deg,#d53a9d,#FFA500);  
 }}
-
 /* FONT SIZES HEADER SECTION */
 @media only screen and (max-width:657px){
 #questionhint:hover{
     text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;
 }}
-
 /* END OF MOBILE VIEW */
 /* DESKTOP VIEW */
 @media only screen and (min-width:658px){
@@ -279,7 +267,6 @@ hr{
        linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
 }}
-
 @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:brown;
@@ -289,7 +276,6 @@ hr{
 .quizCatLink a:hover{ 
     color:aliceblue!important;   
 }}
-
 @media only screen and (min-width:1024px){
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
@@ -304,7 +290,6 @@ hr{
     border:brown;
     color:aliceblue!important;
 }}
-
 /* QUIZ RESULT CSS */
 #quizResult-section{
     background-color:transparent;
@@ -372,17 +357,14 @@ hr{
 .btn-bg-color>a:hover{ 
     color:brown!important;
 }
-
 @media only screen and (max-width:1023px){
 .Result-img{ 
     border-bottom:1px solid brown;
 }}
-
 @media only screen and (min-width:1024px){
 .Result-img{ 
     border-right:1px solid brown;
 }}
-
 /* CORRECTED ANSWERS CSS */
 #CorrectedAnswers-section{ 
     background-color:antiquewhite;
@@ -444,7 +426,6 @@ hr{
 .totalQuestionsColor{
     color:#414141!important;
 }
-
 /* Scrollbar CSS */
 /* width */
 ::-webkit-scrollbar{ 

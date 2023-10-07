@@ -510,7 +510,6 @@ span[strnum]{
     color:var(--white)!important;
     z-index:5;
 }
-
 /* DARKMODE */
 .darkmode ::selection{ 
     background-color:purple;

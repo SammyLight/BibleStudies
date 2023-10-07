@@ -6,7 +6,6 @@
         font-size:50px;
     }
 }
-
 /* Make search input grow with text till max-width */
 @media screen and (min-device-width:912px) {
     #searchdiv {

@@ -44,7 +44,6 @@ body{
         width:70px;
     }
   }
-
 /* custom CSS */
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -152,7 +151,6 @@ footer .archive-date{
 .archive-date{ 
     font-size:16px;
 }}
-
 /* mobile view */
 #mobileHeader{ 
     display:none;
@@ -162,10 +160,7 @@ footer .archive-date{
     margin-left:16px;
     display:-webkit-box;
     display:flex;
-    -webkit-box-align:center;
-    /* align-items:center; */
-    -webkit-box-pack:start;
-    justify-content:flex-start;
+    place-items: center;
 }
 #mobileHeader .mobileLogoSize,
 #homeHeader .mobileLogoSize{ 
@@ -336,7 +331,6 @@ footer .archive-date{
         /* transform:scaleX(1) */
     }
 }
-
 /* .easeInn{ 
     visibility:visible!important;
     animation:easeInn 1000ms ease-in-out forwards;
@@ -511,6 +505,10 @@ footer .archive-date{
     height:auto;
     min-width:30px;
 }
+#mobileHeader .mobileLogo,
+#homeHeader .mobileLogo{ 
+    height:40px;
+}
 .mobile-headerLinks{ 
     font-size:40px;
 }
@@ -563,12 +561,10 @@ footer .archive-date{
 .linkTitle{ 
     padding:20px 20px;
 }}
-
 @media only screen and (min-width:1024px){ 
 .homeBody-section{ 
     margin-top:0;
 }}
-
 /* homeHeader */
 .homeHeaderNav .churchLOGO{ 
     display:-webkit-box;
@@ -739,7 +735,6 @@ a.titles-links{
     -o-transition:transform 0.3s ease-out;
     transition:transform 0.3s ease-out;
 }
-
 /* FOOTER CSS */
 footer{ 
     background-color:#212121!important;
@@ -753,7 +748,6 @@ footer a{
     color:#212121;
     color:#ffffff;
 }
-
 /* CONTACT-SECTION CSS */
 #Contact-section>div{
     padding:20px 0;
@@ -810,7 +804,6 @@ ul.footerLinks-lists{
     text-transform:capitalize;
     font-size:17px!important;
 }
-
 /* FOOTER LINKS CSS */
 @media only screen and (max-width:720px){ 
 .footerLinks-header h3,
@@ -908,7 +901,7 @@ li>a>span{
     color:inherit!important;
 }
 /* @media only screen and (min-width:650px) and (max-width:960px){
-    .context_menu{ 
+.context_menu{ 
     max-width:450px!important;
     max-height:450px!important;
 }} */

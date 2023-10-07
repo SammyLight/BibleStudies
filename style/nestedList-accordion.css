@@ -4,7 +4,6 @@
     /* symbols:A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; */
     suffix:" ";
 }
-
 /* body>ol,
 ol.meganestedlist{ 
     overflow-y:scroll;
@@ -26,7 +25,6 @@ ol.meganestedlist span{
     position:relative;
     left:-8px;
 }
-
 /* EVENTLISTNER ON PSUEDO-ELEMENT (BEFORE) ONLY */
 body>ol li,
 ol.meganestedlist li{ 
@@ -41,7 +39,6 @@ ol.meganestedlist a{
     /* border-right:5px solid black; */
     /* border-bottom:2px solid black; */
 }
-
 /* COUNTER RESET */
 body>ol, body>ol ol,
 ol.meganestedlist, .meganestedlist ol{ 
@@ -62,7 +59,6 @@ body>ol li>ol,
 ol.meganestedlist li>ol{ 
     counter-reset:indent;
 }
-
 /* COUNTER INCREMENT */
 body>ol>li,
 ol.meganestedlist>li{ 
@@ -116,7 +112,6 @@ body>ol li>ol>li::before,
 ol.meganestedlist li>ol>li::before{ 
     counter-increment:indent;
 }
-
 /* COUNTER APPLIED */
 body>ol>li:before,
 ol.meganestedlist>li:before{ 
