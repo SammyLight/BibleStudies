@@ -161,6 +161,7 @@ footer .archive-date{
     display:-webkit-box;
     display:flex;
     place-items: center;
+    min-height: 60px;
 }
 #mobileHeader .mobileLogoSize,
 #homeHeader .mobileLogoSize{ 
@@ -175,27 +176,28 @@ footer .archive-date{
     /* padding:10px 10px 10px 0; */
 }
 .mobileControls{
-    width:50px;
+    /* width:50px;
     height:100%;
     display:grid;
-    place-content:center;
-    /* margin-right:16px; */
+    place-content:center; */
+    margin-right:16px;
 }
 .mobileButton{ 
-    width:50px;
+    /* width:50px;
     height:50px;
-    /* width:60px;
-    height:40px;
-    color:#ffffff!important;
-    border-color:rgba(255,255,255,.1);
-    border:1px solid black;
-    border-radius:0.25rem; */
+    width:60px;
+    height:40px; */
+    border:1px solid rgb(131, 131, 131);
+    border-radius:0.25rem;
 }
 .mobileButton::before{ 
     content:'\2261';
     color:#212121!important;
+    font-size:30px;
     font-size:xx-large;
-    /* font-size:30px; */
+    display: block;
+    line-height: 1;
+    margin: -0.15rem 0.55rem 0.20rem;
 }
 .mobileButton{ 
     /* text-transform:uppercase; */
@@ -493,10 +495,6 @@ footer .archive-date{
 }
 #mobileHeader{ 
     display:block!important;
-}
-#mobileHeader .mobileControls button{ 
-    border:none;
-    background-color:transparent;
 }
 .mobile-homeHeaderNav{ 
     width:70vw;
