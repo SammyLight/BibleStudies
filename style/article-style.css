@@ -97,16 +97,18 @@ h4,h5,h6{
     font-size:26px!important;
     font-size:0.9em!important;
 }
-/* .context_menu{
-    max-width:450px!important;
-    max-height:450px!important;
-} */
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:36px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:14px!important;
 }}
 @media only screen and (max-width:650px){
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:26px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:16px!important;
 }}
 @media only screen and (max-width:441px){ 
 header>h1:first-of-type, div>h1:first-of-type{ 
@@ -132,6 +134,9 @@ h4,h5,h6{
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:0.9em;
     font-size:20px;
+}
+#context_menu code,#context_menu .buttons{
+    font-size:14px!important;
 }
 blockquote,blockquote>p{
     font-size:0.8em;
@@ -162,10 +167,13 @@ p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
     font-size:0.8em;
     font-size:18px;
 }
+#context_menu code,#context_menu .buttons{
+    font-size:12px!important;
+}
 blockquote,blockquote>p{
     font-size:16px!important;
 }}
-@media only screen and (min-width:961px){ 
+@media only screen and (min-width:912px){ 
 header>h1:first-of-type, div>h1:first-of-type{ 
     font-size:75px!important;
     line-height:75px;
@@ -204,6 +212,56 @@ h5, h6{
 }
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:22.4px;
+}
+#context_menu code,#context_menu .buttons{
+    font-size:16px!important;
+}}
+@media only screen and (min-width:912px){ 
+header>h1:first-of-type, div>h1:first-of-type{ 
+    font-size:75px!important;
+    line-height:75px;
+    font-size:60px!important;
+    line-height:60px;
+}
+h1{ 
+    font-size:50px!important;
+    line-height:50px;
+    font-size:1.4em!important;
+    line-height:45px;
+}
+h2{ 
+    font-size:43px!important;
+    line-height:43px;
+    font-size:1.2em!important;
+    line-height:35px;
+}
+h3{ 
+    font-size:34px!important;
+    line-height:34px;
+    font-size:1em!important;
+    line-height:30px;
+}
+h4{ 
+    font-size:27px!important;
+    line-height:27px;
+    font-size:0.9em!important;
+    line-height:25px;
+}
+h5, h6{ 
+    font-size:24px!important;
+    line-height:24px;
+    font-size:0.8em!important;
+    line-height:20px;
+}
+p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:22.4px;
+}
+#context_menu code,#context_menu .buttons{
+    font-size:16px!important;
+}}
+@media only screen and (min-width:1024px){ 
+#context_menu code,#context_menu .buttons{
+    font-size:14px!important;
 }}
 article>main>header{
     display:grid;

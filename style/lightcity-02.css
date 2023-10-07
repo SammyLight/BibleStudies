@@ -196,9 +196,18 @@ p.titles{
     margin-inline-start:0;
     margin-inline-end:0;
 }
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:18px;
+}
+#context_menu code {
+    font-size:12px!important;
+}
 @media only screen and (min-width:760px){ 
-#homeBodyContent p{ 
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:38px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:18px!important;
 }
 h1.titles{ 
     font-size:50px;
@@ -213,9 +222,12 @@ h2,
 h3{ 
     font-size:1.649690125em;
 }}
-@media only screen and (min-width:1025px){ 
-#homeBodyContent p{ 
+@media only screen and (min-width:1024px){ 
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:24px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:14px!important;
 }
 h1.titles{ 
     padding-top:0;
