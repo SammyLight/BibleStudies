@@ -16,6 +16,8 @@ let newStrongsDef = '';
 let rightClickedElm = null;
 document.addEventListener('click', appendCrossReferences);
 document.addEventListener('click', contextMenu_CreateNAppend);
+document.addEventListener('contextmenu', contextMenu_CreateNAppend);
+// document.addEventListener('touchstart', contextMenu_CreateNAppend);
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* PREVENT DEFAULT CONTEXT MENU FOR WHEN ELEMENT CHANGES AFTER RIGHTCLICKING ON .crfnnote_btns buttons */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
@@ -27,9 +29,12 @@ function preventContextMenu_mo(e) {
     if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
         clearTimeout(timer_prevntDefault_cMenu);
         prevntDefault_cMenu = true;
+        document.addEventListener('contextmenu', preventContextMenu);
     } else {
         clearTimeout(timer_prevntDefault_cMenu)
-        timer_prevntDefault_cMenu = setTimeout(() => {prevntDefault_cMenu = false;}, 1000);
+        timer_prevntDefault_cMenu = setTimeout(() => {
+            prevntDefault_cMenu = false;
+            document.removeEventListener('contextmenu', preventContextMenu);}, 1000);
     }
 }
 function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefault();}}
@@ -38,18 +43,40 @@ function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefau
 function contextMenu_CreateNAppend(e) {
 	if (!e.target.matches('span[ref], .crossrefs>span:not(.notref), .translated, .strnum, #context_menu span:not(.notref):not(.verse)')||e.target.closest('.ignorecmenu')){return} // Select the element(s) that the context menu will be attached to
 	if (!e.target.matches('#context_menu *')){cmenu_backwards_navigation_arr=[];} // Reset the cmenu_backwards_navigation_arr if the context menu is not called from context_menu
+    let addquotes = true,prv_indx='',currentContextMenu_style, cmenu_cmt_dX, cmenu_cmt_dY, cmenu_dX,cmenu_dY, prv_cmenuIndx=false, prv_title='',cmenu_tsk_display='displaynone',dzabled='disabled';
+    // formerContextMenu_Coordinates.transform = context_menu.style.transform;
+	let parentIsContextMenu=false;
+    if (e.target.closest('.context_menu')) {
+        //This is a temporary solution
+        //Do not create context_menu if etarget is strongs number in a context menu
+        //so that strong's number words can be changed to their transliteration back and forth
+        //only right click will create context menu for strongs number
+        if (e.type=='click' && e.target.matches('.context_menu .translated, .context_menu .translated .strnum')) {
+            return
+        }
+        parentIsContextMenu = true;
+        prev_contextmenu=context_menu.cloneNode(true);
+        /* Store the old cmenu to go back to it */
+        currentContextMenu_style = context_menu.getAttribute('style');
+        cmenu_cmt_dX = context_menu.querySelector('.cmtitlebar').getAttribute('data-x');
+        cmenu_cmt_dY = context_menu.querySelector('.cmtitlebar').getAttribute('data-y');
+        cmenu_dX = context_menu.getAttribute('data-x');
+        cmenu_dY = context_menu.getAttribute('data-y');
+    } else {
+        currentContextMenu_style='';
+    }
 
+    // console.log({parentIsContextMenu});
+    // console.log({currentContextMenu_style,cmenu_cmt_dX,cmenu_cmt_dY});
 	if (!document.head.querySelector('#lightCityReftaggerContextMenuStyleInHead')) {
-		addContextMenuStyleToHead();
+        addContextMenuStyleToHead();
 	}
     parentIsContextMenu = 0;
-    let addquotes = true,prv_indx='',currentContextMenu_style,cmenu_cmt_dX, cmenu_cmt_dY, cmenu_dX,cmenu_dY, prv_cmenuIndx=false, prv_title='',cmenu_tsk_display='displaynone',dzabled='disabled';
-    // formerContextMenu_Coordinates.transform = context_menu.style.transform;
-    let newCmenu = createNewContextMenu()
-    ifForStrongsNumberORforCrossRef()
-    appendORpositionContextMenu()
+    let newCmenu = createNewContextMenu();
+    ifForStrongsNumberORforCrossRef();
+    appendORpositionContextMenu();
     e.preventDefault();
-
+    
     // Create Context Menu if Not available
     function createNewContextMenu(){
         // If there isn't a contextMenu already, create one
@@ -130,6 +157,7 @@ function contextMenu_CreateNAppend(e) {
         /* || If eTraget is a [Translated Strongs Word] or the [Strongs Number] itself || */
         /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
         if (e.target.matches('.translated, .strnum')) {
+            console.log(e.type);
             // On Mobile Devices
             if (isMobileDevice && contextMenu_touch!="touchstart") {
                 // remove windows selection
@@ -151,10 +179,11 @@ function contextMenu_CreateNAppend(e) {
                 originalWord = e.target.parentElement.getAttribute("translation");
             }
             
-            // If the traget is a strong's number
+            // If the target is a strong's number
             if (e.target.getAttribute('strnum')) {
                 rightClickedElm = e.target;
                 firstShadowColorOfElem = getBoxShadowColor(rightClickedElm);
+                console.log('strongs');
                 getCurrentStrongsDef(e);
             }
             let menu_inner;
@@ -163,6 +192,7 @@ function contextMenu_CreateNAppend(e) {
             if(document.body.matches('.darkmode')){
                 searchicon = 'search-svgrepo-com(2)-DarkMode.svg';
             }
+            console.log({originalWord,newStrongsDef,context_menu});
             if (originalWord) {
                 let xlitNlemma = '',br = '';
                 for (let i = 0; i < arrOfStrnums.length; i++) {
@@ -170,17 +200,22 @@ function contextMenu_CreateNAppend(e) {
                     if(i==arrOfStrnums.length-1){br = '<br>'}
                     let sn = arrOfStrnums[i];
                     if(!/[GHgh]\d+/.test(sn)){continue}
-                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="../images/${searchicon}" alt="&#128270;"></button>`;
+                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="images/${searchicon}" alt="&#128270;"></button>`;
                     xlitNlemma = `${xlitNlemma}${br}<code>${srchBtn}${getsStrongsLemmanNxLit(sn).lemma} (${getsStrongsLemmanNxLit(sn).xlit}, ${sn})</code>`
-                }
+                    console.log({xlitNlemma});
+                    console.log(getsStrongsLemmanNxLit(sn));
+    }
                 if (addquotes) {
                     menu_inner = `${xlitNlemma}<hr>“${originalWord.trim()}”`;
                 } else {
                     menu_inner = `${xlitNlemma}<hr>${originalWord.trim()}`;
                 }
+                console.log(menu_inner);
                 context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
-            } else if (e.type == contextMenu_touch) { // For strongs number in verseNote
-                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="../images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
+                console.log('01');
+            } else if ([contextMenu_touch,'click','touchstart'].includes(e.type)) { // For strongs number in verseNote
+                console.log('02');
+                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
                 context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
             if (strnum = e.target.getAttribute('strnum')) {
@@ -298,86 +333,102 @@ function contextMenu_CreateNAppend(e) {
             }
         }
     }
-    function addContextMenuStyleToHead(w=300,h=300) {
+    function addContextMenuStyleToHead(w=450,h=400) {
         const lightCityReftaggerContextMenuStyleInHead = document.createElement('style');
         lightCityReftaggerContextMenuStyleInHead.id='lightCityReftaggerContextMenuStyleInHead';
         lightCityReftaggerContextMenuStyleInHead.textContent = `.context_menu {
-          display: none;
-          position: absolute!important;
-          padding: 0;
-          margin: 0;
-          max-width: ${w}px!important;
-          max-height: ${h}px!important;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          box-shadow:-1px -1px 2px 0px black, 1px 5px 6px -3px black!important;
-          overflow-y:auto;
-          z-index: 100!important;
-          transition:all 0.1s ease-in-out;
-          transition: transform 0;
-        }
-        @media only screen and (min-width: 650px) and (max-width: 960px){
+            display: none;
+            position: absolute!important;
+            padding: 0;
+            margin: 0;
+            max-width: ${w}px!important;
+            max-height: ${h}px!important;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow:-1px -1px 2px 0px black, 1px 5px 6px -3px black!important;
+            overflow-y:auto;
+            z-index: 100!important;
+            transition:all 0.1s ease-in-out;
+            transition: transform 0;
+          }
+          @media only screen and (max-width: 414px){
             .context_menu{ 
-            max-width: ${w+150}px!important;
-            max-height: ${h+150}px!important;
+            max-width: ${w-100}px!important;
+            max-height: ${h-100}px!important;
+            min-width: 300px!important;
         }}
-        .cmenusrchbtn {display:none!important;}
-        span.verse {display:block}
-        .darkmode .context_menu {
-            background-color: var(--darkmode-bg1color)!important;
-        }
-        
-        .strngsdefinition h1, .strngsdefinition h2, .strngsdefinition h3, .strngsdefinition h4, .strngsdefinition h5, .strngsdefinition h6 {
-            display: flex;
-            box-shadow: none!important;
-            border-radius: 0px!important;
-        }
-        .strngsdefinition summary h1::before, .strngsdefinition summary h2::before, .strngsdefinition summary h3::before, .strngsdefinition summary h4::before, .strngsdefinition summary h5::before, .strngsdefinition summary h6::before {
-            content:''!important;
-        }
-        #cmenu_navnclose_btns {
-            margin-right: -5px;
-            font-size:12px;
-        }
-        #context_menu[strnum] #cmenu_navnclose_btns {
-            margin-right: -20px;
-        }
-        #cmenu_navnclose_btns button {
-            height: 1.2em;
-            width: 1.2em;
-        }
-        #cmenu_navnclose_btns button.prv {
-            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
-            transform:rotate(-90deg);
-            margin-left:2px;
-            box-shadow:-1px -1px 1px var(--shadow-color);
-        }
-        #cmenu_navnclose_btns button.prv_verse {
-            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
-            margin-left:2px;
-            box-shadow:1px 1px 1px var(--shadow-color);
-        }
-        #cmenu_navnclose_btns button.nxt_verse {
-            background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
-            transform:rotate(-180deg);
-            margin-left:1px;
-            box-shadow:-1px -1px 1px var(--shadow-color);
-        }
-        .verse:not(.v_accented) .eng2grk::after {
-            content: attr(translation);
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-            top: -0.5em;
-            font-style: italic;
-            color: crimson;
-        }
-        `;
+      //   @media only screen and (min-width: 650px) and (max-width: 960px){
+      //       .context_menu{ 
+      //       max-width: ${w+150}px!important;
+      //       max-height: ${h+150}px!important;
+      //   }}
+          .cmenusrchbtn {display:none!important;}
+          span.verse {display:block}
+          .darkmode .context_menu {
+              background-color: var(--darkmode-bg1color)!important;
+          }
+          .strngsdefinition h1, .strngsdefinition h2, .strngsdefinition h3, .strngsdefinition h4, .strngsdefinition h5, .strngsdefinition h6 {
+              display: flex;
+              box-shadow: none!important;
+              border-radius: 0px!important;
+          }
+          .strngsdefinition summary h1::before, .strngsdefinition summary h2::before, .strngsdefinition summary h3::before, .strngsdefinition summary h4::before, .strngsdefinition summary h5::before, .strngsdefinition summary h6::before {
+              content:''!important;
+          }
+          #cmenu_navnclose_btns {
+              margin-right: -5px;
+              font-size:12px;
+          }
+          #context_menu[strnum] #cmenu_navnclose_btns {
+              margin-right: -20px;
+          }
+          #cmenu_navnclose_btns button {
+              height: 1.2em;
+              width: 1.2em;
+          }
+          #cmenu_navnclose_btns button.prv {
+              background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+              transform:rotate(-90deg);
+              margin-left:2px;
+              box-shadow:-1px -1px 1px var(--shadow-color);
+          }
+          #cmenu_navnclose_btns button.prv_verse {
+              background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+              margin-left:2px;
+              box-shadow:1px 1px 1px var(--shadow-color);
+          }
+          #cmenu_navnclose_btns button.nxt_verse {
+              background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+              transform:rotate(-180deg);
+              margin-left:1px;
+              box-shadow:-1px -1px 1px var(--shadow-color);
+          }
+          .verse:not(.v_accented) .eng2grk::after {
+              content: attr(translation);
+              font-size: 75%;
+              line-height: 0;
+              position: relative;
+              vertical-align: baseline;
+              top: -0.5em;
+              font-style: italic;
+              color: crimson;
+          }
+          #cmenu_navnclose_btns button.nxt {
+            transform:rotate(-90deg) scaleY(-1);
+         }
+          `;
         document.head.append(lightCityReftaggerContextMenuStyleInHead);
     }
     
     if (newCmenu){cmenu_backwards_navigation_arr=[]}
+    if (parentIsContextMenu) {
+        context_menu.setAttribute('style',currentContextMenu_style);            
+        context_menu.querySelector('.cmtitlebar').setAttribute('data-x',cmenu_cmt_dX);
+        context_menu.querySelector('.cmtitlebar').setAttribute('data-y',cmenu_cmt_dY);
+        context_menu.setAttribute('data-y',cmenu_dX);
+        context_menu.setAttribute('data-x',cmenu_dY);
+        if(cm_dtl = context_menu.querySelector('details')){cm_dtl.open = true;}
+    }
     // Remove ContextMenu Eventlistner
     enableInteractJSonEl('.cmtitlebar', context_menu);
     context_menu.addEventListener('mouseenter', add_cMenuNavigationByKeys);
@@ -391,6 +442,7 @@ document.addEventListener('keydown', contextMenu_Remove);
 //     bversionName = e.target.getAttribute('ref').split(' ').pop();
 //     localStorage.getItem('bversionName',bversionName)
 // }
+document.addEventListener('dblclick', mainBibleVersion);
 document.addEventListener('contextmenu', mainBibleVersion);
 function mainBibleVersion(e){
     if(e.target.matches('button.compare_withinsearchresult_button')){
@@ -401,7 +453,8 @@ function mainBibleVersion(e){
 }
 function hideRightClickContextMenu() {contextMenu_Remove({'type':'click','key':'Escape','target':context_menu})}
 function contextMenu_Remove(e) {
-    if (e.target.matches('[strnum],[ref]')||(e.type!='click' && e.key !== 'Escape')){return}
+    //Don't remove the cmenu if it is a strong's number 
+    if ((e.target.matches('[strnum],[ref],.crossrefs span') && !e.target.closest('.context_menu'))||(e.type!='click' && e.key !== 'Escape')){return}
     if (typeof context_menu != 'undefined' && (e.target.id=='cmenu_closebtn' || !e.target.matches("#context_menu *"))) {
         // context_menu.removeEventListener('contextmenu', mainBibleVersion);
         // lightCityReftaggerContextMenuStyleInHead.remove();
@@ -1265,29 +1318,27 @@ let firstClick=false;
 async function compareThisSearchVerse(e){
     if (e.button==0) {
         if (firstClick==false) {
+            //Double Click on version btn will compare version
             firstClick=true;
             setTimeout(() => {
                 if(firstClick){
-                    //Single Click
-                    firstClick=false
-                    compareThisSearchVerse_innerFunc()
+                    firstClick=false;
+                    mainBibleVersion({'target':e.target});
+                    let evt = {'button':2,'target':e.target};
+                    e=evt;
+                    compareThisSearchVerse_innerFunc();
                 }
                 //Has been changed by a second click
-                else if(firstClick==false) {
-                    return
-                };
-            }, 500);
+                else if(firstClick==false) {return};
+            }, 250);
         }
-        //DoubleClick
+        //Single Click on version btn will change the version in the context menu
         else if (firstClick==true) {
             firstClick=false
-            let evt = {'button':2,'target':e.target}
-            e=evt;
             compareThisSearchVerse_innerFunc()
         }
     }
     async function compareThisSearchVerse_innerFunc() {
-        console.log(e.button);
         if(e.button==undefined){return};//any keydown will trigger this function so ensure there is a mouse click accompanying it or it will try to load a bible version
         let dis = e.target;
         let v = dis.closest('.verse');
@@ -2335,16 +2386,16 @@ function getCurrentStrongsDef(e) {
         strnum=approvedStrnum;
         getsStrongsDefinition(strnum);
     }
-    if (e.type == contextMenu_touch) {
+    // if (e.type == contextMenu_touch) {
         context_menu.classList.add('rightclicked');
         context_menu.removeAttribute('strnum');
         if (strnum) {
             context_menu.setAttribute('strnum', strnum);
         }
         newStrongsDef = currentStrongsDef;
-    } else if (e.type != contextMenu_touch) {
-        newStrongsDef = '';
-    }
+    // } else if (e.type != contextMenu_touch) {
+    //     newStrongsDef = '';
+    // }
 }
 
 /* C-Menu History Navigation */
@@ -2392,8 +2443,8 @@ function toggleCMenuTSK(){
 // target elements with the "draggable" class
 function enableInteractJSonEl(dragTarget, elmAffected) {
     // interact(elmAffected)
-    elmAffected.querySelector(dragTarget).style.touchAction = 'none';//to enable dragging by touch
-
+    let dt=elmAffected.querySelector(dragTarget);
+    dt?(dt.style.touchAction = 'none'):null;//to enable dragging by touch
     interact(dragTarget)
         .draggable({
             // enable inertial throwing

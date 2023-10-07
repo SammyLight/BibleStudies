@@ -36,13 +36,9 @@
     --ref-hlt:#dde3db;
     --searchedword-hlt:maroon;
     --searchedword-hlt2:blue;
-    --ref-img:url(images/background.jpg);
     --ref-img:url(../images/background.jpg);
     --translated-word:#01003b;
     /* --ref-img:#D7D5D1; */
-    --img-cancel:url(images/cancel-svgrepo-com.svg);
-    --img-chkbox:url(images/check-box-svgrepo-com.svg);
-    --ref-paper:url(images/IyEMTp.jpg);
     --img-cancel:url(../images/cancel-svgrepo-com.svg);
     --img-chkbox:url(../images/check-box-svgrepo-com.svg);
     --ref-paper:url(../images/IyEMTp.jpg);
@@ -208,7 +204,6 @@ span[strnum]{
     background-color:burlywood!important;
 }
 .cmenu_closebtn{
-    background:url(images/cancel-svgrepo-com.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
 }
 #context_menu:not([strnum]) .cmtitlebar #cmenu_navnclose_btns{ 
@@ -225,20 +220,17 @@ span[strnum]{
     right:0.2em;
 }
 #cmenu_navnclose_btns button.prv{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-90deg);
     margin-left:2px;
     box-shadow:-1px -1px 1px var(--shadow-color);
 }
 #cmenu_navnclose_btns button.prv_verse{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     margin-left:2px;
     box-shadow:1px 1px 1px var(--shadow-color);
 }
 #cmenu_navnclose_btns button.nxt_verse{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-180deg);
     margin-left:1px;
@@ -261,16 +253,14 @@ span[strnum]{
     opacity:0.3;
 }
 #cmenu_navnclose_btns button.nxt{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
-    transform:rotate(90deg) scaleY(-1);
+    transform:rotate(-90deg) scaleY(-1);
     margin-right:2px;
 }
 #context_menu[strnum] .cmenu_closebtn{ 
     right:0.3em;
 }
 .closebtn.cmenu_closebtn:hover{ 
-    background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
     background-color:transparent!important;
     box-shadow:0px 0px 0px 1px rgba(155, 0, 0, 0.281)!important;
@@ -285,7 +275,8 @@ span[strnum]{
 #context_menu{ 
     position:absolute;
     background:var(--whitesmoke);
-    width:auto;
+    /* width:auto; */
+    min-width:450px;
     max-width:100%;
     max-height:80vh;
     padding:5px;
@@ -311,11 +302,11 @@ span[strnum]{
     top:0;
     right:inherit;
     background:var(--ref-img);
-    font-size:0.8em;
+    font-size:0.9em;
     font-weight:bold;
     width:100%;
     padding-bottom:10px;
-    z-index:3;
+    z-index:10;
 }
 #context_menu:hover{ 
     -webkit-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
@@ -389,7 +380,6 @@ span[strnum]{
     position:relative;
 }
 #context_menu #cmenu_closebtn{ 
-    background:url(images/cancel-svgrepo-com.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
 }
 .crfnnote_btns::before{
@@ -411,17 +401,6 @@ span[strnum]{
     align-items:flex-end;
 }
 #context_menu .strngsdefinition:last-child hr:last-of-type{display:none;}
-#context_menu .cmtitlebar{
-    position:sticky;
-    top:0;
-    right:inherit;
-    background:var(--ref-img);
-    font-size:0.8em;
-    font-weight:bold;
-    width:100%;
-    padding-bottom:10px;
-    z-index:3;
-}
 #context_menu:not([strnum]) .cmtitlebar{ 
     display:flex;
 }
@@ -470,7 +449,6 @@ span[strnum]{
     font-size:1em;
 }
 #context_menu summary>div:first-of-type{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     min-width:1em;
     height:2em;
@@ -481,7 +459,6 @@ span[strnum]{
     margin-bottom:0.5em;
 }
 #context_menu details[open] > summary > div:first-of-type{ 
-    background:url(images/arrow-down-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-down-svgrepo-com.svg) center no-repeat;
 }
 #context_menu .strngsdefinition p{ 
@@ -546,25 +523,21 @@ span[strnum]{
     background-color:pink!important;
 }
 .darkmode #cmenu_navnclose_btns button.cmenu_closebtn{ 
-    background:url(images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.cmenu_closebtn:hover{ 
-    background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
     background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.nxt_verse,
 .darkmode #cmenu_navnclose_btns button.nxt,
 .darkmode #cmenu_navnclose_btns button.prv_verse,
 .darkmode #cmenu_navnclose_btns button.prv{ 
-    background:url(images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.nxt_verse:hover,
 .darkmode #cmenu_navnclose_btns button.nxt:hover,
 .darkmode #cmenu_navnclose_btns button.prv_verse:hover,
 .darkmode #cmenu_navnclose_btns button.prv:hover{ 
-    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
 }
 .darkmode #cmenu_navnclose_btns button.prv{ 
@@ -581,11 +554,9 @@ span[strnum]{
     margin-top:0!important;
 }
 .darkmode #context_menu details[open] > summary > div:first-of-type{ 
-    background:url(images/white-arrow-down-svgrepo-com.svg) center no-repeat;
     background:url(../images/white-arrow-down-svgrepo-com.svg) center no-repeat;
 }
 .darkmode #context_menu summary>div:first-of-type{ 
-    background:url(images/white-arrow-up-svgrepo-com.svg) center no-repeat;
     background:url(../images/white-arrow-up-svgrepo-com.svg) center no-repeat;
     min-width:1em;
     height:2em;
@@ -669,23 +640,19 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
     flex-grow:0;
     flex-shrink:0;
 }
-.crossrefs h1::before,.crossrefs h2::before,.crossrefs h3::before,.crossrefs h4::before,.crossrefs h5::before,.crossrefs h6::before{ 
-    content:url(images/arrow-up-svgrepo-com.svg);
+.crossrefs h1::before,.crossrefs h2::before,.crossrefs h3::before,.crossrefs h4::before,.crossrefs h5::before,.crossrefs h6::before{
     content:url(../images/arrow-up-svgrepo-com.svg);
     transform:rotate(180deg);
 }
 .crossrefs .hidingsibs::before{ 
-    content:url(images/arrow-up-svgrepo-com.svg);
     content:url(../images/arrow-up-svgrepo-com.svg);
     transform:rotate(90deg);
 }
-.darkmode .crossrefs h1::before, .darkmode .crossrefs h2::before, .darkmode .crossrefs h3::before, .darkmode .crossrefs h4::before, .darkmode .crossrefs h5::before, .darkmode .crossrefs h6::before{ 
-    content:url(images/white-arrow-up-svgrepo-com.svg);
+.darkmode .crossrefs h1::before, .darkmode .crossrefs h2::before, .darkmode .crossrefs h3::before, .darkmode .crossrefs h4::before, .darkmode .crossrefs h5::before, .darkmode .crossrefs h6::before{
     content:url(../images/white-arrow-up-svgrepo-com.svg);
     transform:rotate(180deg);
 }
 .darkmode .crossrefs .hidingsibs::before{ 
-    content:url(images/white-arrow-up-svgrepo-com.svg);
     content:url(../images/white-arrow-up-svgrepo-com.svg);
     transform:rotate(90deg);
 }
@@ -720,7 +687,6 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
 }
 .strngsdefinition h5{display:flex;}
 .strngsdefinition h5::before{
-    content:url(images/white-arrow-up-svgrepo-com.svg);
     content:url(../images/white-arrow-up-svgrepo-com.svg);
     height:100%!important;
     transform:rotate(0deg);
@@ -994,17 +960,6 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 .compare_verses hr{ margin-top:1em;}
 .compare_verses hr::before{ font-size:0.6em;}
 #context_menu .strngsdefinition:last-child hr:last-of-type{display:none;}
-#context_menu .cmtitlebar{
-    position:sticky;
-    top:0;
-    right:inherit;
-    background:var(--ref-img);
-    font-size:0.8em;
-    font-weight:bold;
-    width:100%;
-    padding-bottom:10px;
-    z-index:10;
-}
 #context_menu:not([strnum]) .cmtitlebar{ 
     display:flex;
 }

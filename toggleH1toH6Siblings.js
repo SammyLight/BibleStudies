@@ -7,7 +7,7 @@ function toggleH1to6siblings(e, eTarget){
     const h1to6arr = ['H1','H2','H3','H4','H5','H6'];
     if(e){
         if(e.target.matches('[strnum]')||!['H1','H2','H3','H4','H5','H6'].some(hx=>{return e.target.matches(`.context_menu ${hx}`)})){return}
-        e.preventDefault();
+        if(e.type!='keydown'){e.preventDefault()}
         // hElm = e.target or closest heading ancestor;
         hElm = h1to6arr.includes(e.target.tagName.toUpperCase())==true ? e.target : (e.target.closest('h1,h2,h3,h4,h5,h6') ? e.target.closest('h1,h2,h3,h4,h5,h6') : e.target);
     }else{hElm = eTarget}
@@ -15,13 +15,9 @@ function toggleH1to6siblings(e, eTarget){
     const eTargetParent = hElm.parentElement
     if(!h1to6arr.includes(hTag.toUpperCase()) || eTargetParent.contentEditable=='true'){return}
     function unhideAllH1to6() {
-        eTargetParent.querySelectorAll('.hidingsibs').forEach(y=>{
-            y.classList.remove('hidingsibs')
-        })
+        eTargetParent.querySelectorAll('.hidingsibs').forEach(y=>{y.classList.remove('hidingsibs')})
         h1to6arr.forEach(x=>{
-            eTargetParent.querySelectorAll('.hidby_'+ x).forEach(y=>{
-                y.classList.remove('hidby_'+ x)
-            })
+            eTargetParent.querySelectorAll('.hidby_'+ x).forEach(y=>{y.classList.remove('hidby_'+ x)})
         })
     }
     if(h1to6arr.includes(hTag.toUpperCase())){
