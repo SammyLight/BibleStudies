@@ -101,7 +101,7 @@ h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:fir
     <div class="header-container">
         <header id="mobileHeader">
             <div id="homeHeader" class="bg-color bg-image">
-                <nav class="mobileHeaderNav">
+                <nav class="mobileHeaderNav container-fluid-inner">
                     <div class="mobileLogoSize">
                         {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                         <a
@@ -111,7 +111,8 @@ h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:fir
                     </div>
                     <div class="mobileControls">
                         <div class="mobileDropdown">
-                            <button onclick="myFunction()" class="mobileButton" type="button"></button>
+                            <button onclick="myFunction()" class="mobileButton" type="button">
+                            </button>
                             <div id="myDropdown" class="myDropdown transition">
                                 <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                                     <div class="mobile-headerLinks transition">

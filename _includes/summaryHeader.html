@@ -16,7 +16,7 @@
     <div class="header-container">
         <header id="mobileHeader">
             <div id="homeHeader" class="bg-color bg-image">
-                <nav class="mobileHeaderNav">
+                <nav class="mobileHeaderNav container-fluid-inner">
                     <div class="mobileLogoSize">
                         {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
                         <a
@@ -26,7 +26,8 @@
                     </div>
                     <div class="mobileControls">
                         <div class="mobileDropdown">
-                            <button onclick="myFunction()" class="mobileButton" type="button"></button>
+                            <button onclick="myFunction()" class="mobileButton" type="button">
+                            </button>
                             <div id="myDropdown" class="myDropdown transition">
                                 <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
                                     <div class="mobile-headerLinks transition">

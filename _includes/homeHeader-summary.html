@@ -1,7 +1,7 @@
 <div class="header-container">
     <header id="mobileHeader">
         <div class="bg-color bg-image">
-            <div class="mobileHeaderNav">
+            <div class="mobileHeaderNav container-fluid-inner">
                 <div class="mobileLogoSize">
                     {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
