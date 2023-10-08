@@ -193,12 +193,12 @@ footer .archive-date{
 .mobileButton::before{ 
     content:'\2261';
     color:#212121!important;
-    font-size:30px;
     font-size:xx-large;
+    font-size:30px;
     display: block;
     line-height: 1;
-    margin: -0.15rem 0.55rem 0.20rem;
     margin: 0 0.55rem 0.20rem;
+    margin: -0.15rem 0.55rem 0.20rem;
 }
 .mobileButton{ 
     /* text-transform:uppercase; */
