@@ -157,7 +157,6 @@ footer .archive-date{
 }
 #mobileHeader .mobileHeaderNav,
 #homeHeader .mobileHeaderNav{ 
-    margin-left:16px;
     display:-webkit-box;
     display:flex;
     place-items: center;
@@ -175,29 +174,17 @@ footer .archive-date{
     height:50px;
     /* padding:10px 10px 10px 0; */
 }
-.mobileControls{
-    /* width:50px;
-    height:100%;
-    display:grid;
-    place-content:center; */
-    margin-right:16px;
+.mobileDropdown{ 
+    display:flex;
 }
 .mobileButton{ 
-    width: 50px;
-    height: 35px;
+    background:url(../images/hamburger-menu-svgrepo-com.svg) no-repeat center;
+    width:50px;
+    height:35px;
     border:1px solid rgb(131, 131, 131);
     border-radius:0.25rem;
 }
-.mobileButton::before{ 
-    content:'\2261';
-    color:#212121!important;
-    font-size:xx-large;
-    font-size:30px;
-    display: block;
-    line-height: 1;
-    margin: -0.15rem 0.55rem 0.20rem;
-    margin: 0 0.55rem 0.20rem;
-}
+
 .mobileButton{ 
     /* text-transform:uppercase; */
     font-weight:600;
@@ -210,10 +197,6 @@ footer .archive-date{
     background-color:#fff;
     overflow-y:scroll;
     -webkit-overflow-scrolling:touch;
-}
-.mobileDropdown{ 
-    /* position:relative; */
-    display:inline-block;
 }
 .myDropdown{ 
    background-color:transparent; 

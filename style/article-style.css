@@ -56,12 +56,6 @@ footer{
 .container-fluid{ 
     padding:0 16px 0;
 }
-.container-fluid-inner{ 
-    margin:0 16px 0;
-}
-/* article.container-fluid-inner{ 
-    margin:0 10px 0;
-} */
 a{ 
     color:#000;
     border-radius:4px;
