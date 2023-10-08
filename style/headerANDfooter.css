@@ -438,15 +438,15 @@ footer .archive-date{
 .closeNavBar{ 
     position:absolute;
     /* background-color:#dd1515!important; */
-    top:3px;
-    right:3px;
+    top: 13px;
+    right: 16px;
     border-radius:5px;
     border:1px solid grey!important;
 }
 .closeNavBar>div{
     background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
-    width:1.2em;
-    height:1.2em;
+    width: 1.5em;
+    height: 1.5em;
     padding:5px
 }
 /* desktopHeader CSS */
