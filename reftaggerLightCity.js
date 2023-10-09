@@ -352,16 +352,17 @@ function contextMenu_CreateNAppend(e) {
             transition: transform 0;
           }
           @media only screen and (max-width: 414px){
-            .context_menu{ 
-            max-width: ${w-100}px!important;
-            max-height: ${h-100}px!important;
-            min-width: 300px!important;
-        }}
-      //   @media only screen and (min-width: 650px) and (max-width: 960px){
-      //       .context_menu{ 
-      //       max-width: ${w+150}px!important;
-      //       max-height: ${h+150}px!important;
-      //   }}
+              .context_menu{ 
+                  max-width: ${w-100}px!important;
+                  max-height: ${h-100}px!important;
+                  min-width: 300px!important;
+                }
+            }
+        //     @media only screen and (min-width: 650px) and (max-width: 960px){
+        //       .context_menu{ 
+        //       max-width: ${w+150}px!important;
+        //       max-height: ${h+150}px!important;
+        //   }}
           .cmenusrchbtn {display:none!important;}
           span.verse {display:block}
           .darkmode .context_menu {
