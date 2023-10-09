@@ -24,7 +24,6 @@ document.addEventListener('contextmenu', touchORclickCMenu);
 
 // Touchstart event
 function touchORclickCMenu(e) {
-    console.log(e.target.closest('.context_menu [strnum],.context_menu .crossrefs span, .context_menu [ref]'));
     if (['click'].includes(e.type)) {
         contextMenu_CreateNAppend(e)
     }//if it is a click, run contextMenu_CreateNAppend function
@@ -39,9 +38,7 @@ function touchORclickCMenu(e) {
                touchStartTime = Date.now();// Record the timestamp when the touch starts
                
                // Touchend event
-               console.log('preventdefaultCmenu');
                document.addEventListener("touchend", touchDownEnded);// Clear the timeout when the touch ends
-               console.log('sadgfafg,hj.hgdfs');
 
                context_menu.style.userSelect = 'none';
                // Set a timeout to check if the touch has ended after 300ms
@@ -52,12 +49,10 @@ function touchORclickCMenu(e) {
                     //    preventContextMenu_mo(null,false)
                        contextMenu_CreateNAppend({'type':'contextmenu','target':e.target,'truecontextmenu':false});
                        context_menu.style.userSelect = '';
-                       console.log('preventdefaultCmenu');
                        // e.preventDefault();
                        let selectionsTimer = setInterval(() => {
                            let selection = window.getSelection();
                            if (selection.rangeCount > 0) {
-                               console.log('preventdefaultCmenu---22222');
                                window.getSelection().removeRange(window.getSelection().getRangeAt(0));
                                clearInterval(selectionsTimer);
                             }
