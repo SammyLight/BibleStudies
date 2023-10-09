@@ -157,7 +157,7 @@ function contextMenu_CreateNAppend(e) {
         /* || If eTraget is a [Translated Strongs Word] or the [Strongs Number] itself || */
         /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
         if (e.target.matches('.translated, .strnum')) {
-            console.log(e.type);
+            // console.log(e.type);
             // On Mobile Devices
             if (isMobileDevice && contextMenu_touch!="touchstart") {
                 // remove windows selection
@@ -183,7 +183,7 @@ function contextMenu_CreateNAppend(e) {
             if (e.target.getAttribute('strnum')) {
                 rightClickedElm = e.target;
                 firstShadowColorOfElem = getBoxShadowColor(rightClickedElm);
-                console.log('strongs');
+                // console.log('strongs');
                 getCurrentStrongsDef(e);
             }
             let menu_inner;
@@ -192,7 +192,7 @@ function contextMenu_CreateNAppend(e) {
             if(document.body.matches('.darkmode')){
                 searchicon = 'search-svgrepo-com(2)-DarkMode.svg';
             }
-            console.log({originalWord,newStrongsDef,context_menu});
+            // console.log({originalWord,newStrongsDef,context_menu});
             if (originalWord) {
                 let xlitNlemma = '',br = '';
                 for (let i = 0; i < arrOfStrnums.length; i++) {
@@ -202,19 +202,19 @@ function contextMenu_CreateNAppend(e) {
                     if(!/[GHgh]\d+/.test(sn)){continue}
                     let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="images/${searchicon}" alt="&#128270;"></button>`;
                     xlitNlemma = `${xlitNlemma}${br}<code>${srchBtn}${getsStrongsLemmanNxLit(sn).lemma} (${getsStrongsLemmanNxLit(sn).xlit}, ${sn})</code>`
-                    console.log({xlitNlemma});
-                    console.log(getsStrongsLemmanNxLit(sn));
+                    // console.log({xlitNlemma});
+                    // console.log(getsStrongsLemmanNxLit(sn));
     }
                 if (addquotes) {
                     menu_inner = `${xlitNlemma}<hr>“${originalWord.trim()}”`;
                 } else {
                     menu_inner = `${xlitNlemma}<hr>${originalWord.trim()}`;
                 }
-                console.log(menu_inner);
+                // console.log(menu_inner);
                 context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
-                console.log('01');
+                // console.log('01');
             } else if ([contextMenu_touch,'click','touchstart'].includes(e.type)) { // For strongs number in verseNote
-                console.log('02');
+                // console.log('02');
                 let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
                 context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
@@ -2039,7 +2039,7 @@ function parseVerseText(vT, verseSpan) {
             }
         }
     } else {
-        // if (/'missing'/.test(vT)){console.log(vT)}
+        // if (/'missing'/.test(vT)){// console.log(vT)}
         vT = vT.replace(/<hi type="bold">/g, '<span class="b">');
         vT = vT.replace(/<hi type="italic">/g, '<span class="i">');
         vT = vT.replace(/<\/hi>/g, '</span>');
