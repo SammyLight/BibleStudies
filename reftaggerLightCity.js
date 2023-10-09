@@ -24,6 +24,7 @@ document.addEventListener('contextmenu', contextMenu_CreateNAppend);
 let prevntDefault_cMenu = false;
 let timer_prevntDefault_cMenu;
 document.addEventListener('mouseover', preventContextMenu_mo);
+document.addEventListener('touchstart', preventContextMenu_mo);
 document.addEventListener('contextmenu', preventContextMenu);
 function preventContextMenu_mo(e) {
     if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
