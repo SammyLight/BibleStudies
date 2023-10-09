@@ -1,3 +1,3 @@
 setTimeout(function() {
   $('.loader-bg').fadeToggle();
-}, 1500);
+}, 1000);
