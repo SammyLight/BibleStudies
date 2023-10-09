@@ -13,7 +13,7 @@ function toggleH1to6siblings(e, eTarget){
     }else{hElm = eTarget}
     hTag = hElm.tagName;
     const eTargetParent = hElm.parentElement
-    if(!h1to6arr.includes(hTag.toUpperCase()) || eTargetParent.contentEditable=='true'){return}
+    if(!h1to6arr.includes(hTag.toUpperCase()) || eTargetParent.contentEditable=='true' || e.target.closest('details.strngsdefinition > summary') ){return}
     function unhideAllH1to6() {
         eTargetParent.querySelectorAll('.hidingsibs').forEach(y=>{y.classList.remove('hidingsibs')})
         h1to6arr.forEach(x=>{
