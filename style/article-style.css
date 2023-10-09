@@ -286,8 +286,14 @@ header>h1:first-of-type, div>h1:first-of-type{
     word-break:break-word;
 }
 /*PSAM.220516b:the Rule for h1-h6 below was added for better alignment*/
+/* h1:not(.text_content>h1):not(.notemenu>h1):not(.strngsdefinition h1), h2:not(.text_content>h2):not(.notemenu>h2):not(.strngsdefinition h2), h3:not(.text_content>h3):not(.notemenu>h3):not(.strngsdefinition h3), h4:not(.text_content>h4):not(.notemenu>h4):not(.strngsdefinition h4), h5:not(.text_content>h5):not(.notemenu>h5):not(.strngsdefinition h5), h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6),
+h1:not(h1.H0),h2:not(h2.H1),h3:not(h3.H2),h4:not(h4.H3),h5:not(h5.H4),h6:not(h6.H5){
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+} */
 h1,h2,h3,h4,h5,h6{ 
-    display:block;
+    display: block;
     margin-top:1.2em;
     margin-left:0!important;
     word-break:break-word;

@@ -621,7 +621,7 @@ button.compare_withinsearchresult_button:hover{
     border-top-left-radius:5px;
 }
 /* FOR TOGGLEH1TOH6SIBLINGS */
-h1:not(.text_content>h1):not(.notemenu>h1):not(.strngsdefinition h1),
+/* h1:not(.text_content>h1):not(.notemenu>h1):not(.strngsdefinition h1),
 h2:not(.text_content>h2):not(.notemenu>h2):not(.strngsdefinition h2),
 h3:not(.text_content>h3):not(.notemenu>h3):not(.strngsdefinition h3),
 h4:not(.text_content>h4):not(.notemenu>h4):not(.strngsdefinition h4),
@@ -630,7 +630,7 @@ h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6){
     display:flex;
     align-items:center;
     cursor:pointer;
-}
+} */
 .hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6{ display:none}
 h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::before{ 
     margin:0 0.5em;
