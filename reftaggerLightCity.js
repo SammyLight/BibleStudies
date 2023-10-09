@@ -976,7 +976,7 @@ loadVersion(bversionName)
 function loadVersion(versionName) {
     return new Promise((resolve, reject) => {
       const fullPathHead = '';
-      let request_Version_URL = fullPathHead + `bibles/${versionName}.json`;
+      let request_Version_URL = fullPathHead + `../bibles/${versionName}.json`;
       let bibleVersion = new XMLHttpRequest();
       bibleVersion.open('GET', request_Version_URL);
       bibleVersion.responseType = 'json';
