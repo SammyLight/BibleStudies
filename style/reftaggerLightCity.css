@@ -631,7 +631,9 @@ h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6){
     align-items:center;
     cursor:pointer;
 } */
-.hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6{ display:none}
+.hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6{ 
+    display:none;
+}
 h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::before{ 
     margin:0 0.5em;
     width:1em;
