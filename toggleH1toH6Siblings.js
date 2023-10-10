@@ -1,7 +1,7 @@
 document.body.addEventListener('click', toggleH1to6siblings);
 document.body.addEventListener('contextmenu', toggleH1to6siblings);
 document.body.addEventListener('keydown', toggleH1to6siblings);
-document.body.querySelectorAll('h6,h5,h4,h3,h2,h1').forEach(x=>{toggleH1to6siblings(null, x)})
+document.body.querySelectorAll('H1:not(main>h1)','H2:not(main>h2)','H3:not(main>h3)','H4:not(main>h4)','H5:not(main>h5)','H6:not(main>h6)').forEach(x=>{toggleH1to6siblings(null, x)})
 function toggleH1to6siblings(e, eTarget){
     let hElm, hTag;
     const h1to6arr = ['H1','H2','H3','H4','H5','H6'];
@@ -13,7 +13,7 @@ function toggleH1to6siblings(e, eTarget){
     }else{hElm = eTarget}
     hTag = hElm.tagName;
     const eTargetParent = hElm.parentElement
-    if(!h1to6arr.includes(hTag.toUpperCase()) || eTargetParent.contentEditable=='true' || e.target.closest('details.strngsdefinition > summary') ){return}
+    if(!h1to6arr.includes(hTag.toUpperCase()) || eTargetParent.contentEditable=='true'){return}
     function unhideAllH1to6() {
         eTargetParent.querySelectorAll('.hidingsibs').forEach(y=>{y.classList.remove('hidingsibs')})
         h1to6arr.forEach(x=>{
