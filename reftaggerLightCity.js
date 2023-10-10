@@ -1,7 +1,7 @@
 let showingXref=localStorage.getItem('showingXref')?JSON.parse(localStorage.getItem('showingXref')):false;
 let main = document.body;
 let pagemaster = document.body;
-let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
+let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
 let contextMenu_touch="contextmenu";
 let bibleversions_Array = ['KJV','ESV','NIV’84','ABP-en','ABP-gr','NET'];
 
@@ -15,18 +15,83 @@ let prev_contextmenu;
 let newStrongsDef = '';
 let rightClickedElm = null;
 document.addEventListener('click', appendCrossReferences);
-document.addEventListener('click', contextMenu_CreateNAppend);
-document.addEventListener('contextmenu', contextMenu_CreateNAppend);
-// document.addEventListener('touchstart', contextMenu_CreateNAppend);
+document.addEventListener('click', touchORclickCMenu);
+document.addEventListener('touchstart', touchORclickCMenu);
+document.addEventListener('contextmenu', touchORclickCMenu);
+
+// Touchstart event
+let cmenuGlobalVars={'stillTouching':false,'stopCMenu':false};
+function touchORclickCMenu(e) {
+	if ((['click','touchstart','contextmenu'].includes(e.type) && cmenuGlobalVars['stopCMenu']==true) || (e.target.matches('#context_menu .crossrefs span') && !e.target.innerText.match(/\d+/g)) || (!e.target.matches('[ref],.strnum[strnum],#context_menu .translated,#context_menu [strnum],#context_menu .crossrefs span'))){
+        touchEndFunction ();
+        return
+    } // do not run if not any of these elements
+    
+    if ((!cmenuGlobalVars['stillTouching'] && ['click','contextmenu'].includes(e.type)) || (cmenuGlobalVars['stillTouching'] && e.type=='click' && e.target.closest('.context_menu .strngsdefinition [strnum]')) || (cmenuGlobalVars['stillTouching'] && e.type=='contextmenu' && e.target.closest('.context_menu'))) {
+        touchEndFunction ();
+        contextMenu_CreateNAppend(e);
+    }//if it is a click, run contextMenu_CreateNAppend function
+    else if (e.type=='touchstart'){
+        cmenuGlobalVars['stillTouching']=true;
+        e.target.addEventListener('touchend',touchORclickCMenu);//to know when the touch has ended and
+        e.target.addEventListener('touchmove',touchMoveInCMenu);//to prevent running of contextmenu if touch moves (on the assumption that the intention of touchmove scrolling) 
+        
+        //Inside contextmenu
+        if(!e.target.closest('.context_menu')){contextMenu_CreateNAppend({'type':'click','target':e.target,'truecontextmenu':false})}
+        
+        //NOT Inside contextmenu
+        else {
+            // I DONT WANT CLICKING TO RUN CMENU IF IT IS INSIDE THE CONTEXT_MENU
+            // If touch has not ended in 300ms, then run contextmenu
+            let touchEndCheckTimeout = setTimeout(function() {
+                if (cmenuGlobalVars['stillTouching']==true && cmenuGlobalVars['stopCMenu']==false) {
+                    document.addEventListener('touchend',touchEndFunction);//to know when the touch has ended and
+                    document.addEventListener('contextmenu',preventContextMenu);//to know when the touch has ended and
+                    contextMenu_CreateNAppend({'type':'contextmenu','target':e.target,'truecontextmenu':false});
+                    document.body.style.userSelect = 'none';// Disable Selection of Text Until Touch has ended
+                    context_menu.style.userSelect = 'none';// Disable Selection of Text Until Touch has ended
+                    let selectionsTimer = setTimeout(() => {
+                        clearTimeout(selectionsTimer);
+                        clearTimeout(touchEndCheckTimeout);
+                    }, 300);
+                }
+                clearTimeout(touchEndCheckTimeout);
+            }, 400);
+        }
+        
+    }
+    else if (e.type=='touchend'){
+        touchEndFunction();
+        console.log('touch ended');
+    }
+    function touchEndFunction(){
+        let touchEndCheckTimeout = setTimeout(() => {
+            cmenuGlobalVars['stopCMenu']=false;
+            cmenuGlobalVars['stillTouching']=false;
+            clearTimeout(touchEndCheckTimeout);
+            let selection = window.getSelection();
+            if (selection.rangeCount > 0) {window.getSelection().removeRange(window.getSelection().getRangeAt(0));}
+            typeof context_menu != 'undefined' ? context_menu.style.userSelect = '':null;//allow selection after touch has ended
+            document.removeEventListener('touchend',touchEndFunction);
+            document.removeEventListener('contextmenu',preventContextMenu);//to know when the touch has ended and
+            document.body.style.userSelect = '';// Disable Selection of Text Until Touch has ended
+            e.target?(e.target.removeEventListener('touchend',touchORclickCMenu),e.target.removeEventListener('touchmove',touchMoveInCMenu)):null;
+        }, 0);//Delayed because 'click' registers after 'touchend' if touchend follows touchstart immediately
+    }
+    function touchMoveInCMenu(){cmenuGlobalVars['stopCMenu']=true;console.log('touchMoved');}
+    function preventContextMenu(event) {event.preventDefault();}
+}
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* PREVENT DEFAULT CONTEXT MENU FOR WHEN ELEMENT CHANGES AFTER RIGHTCLICKING ON .crfnnote_btns buttons */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 let prevntDefault_cMenu = false;
 let timer_prevntDefault_cMenu;
 document.addEventListener('mouseover', preventContextMenu_mo);
-document.addEventListener('contextmenu', preventContextMenu);
-function preventContextMenu_mo(e) {
-    if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
+document.addEventListener('touchstart', preventContextMenu_mo);
+// document.addEventListener('contextmenu', preventContextMenu);
+function preventContextMenu_mo(e,allowdefaultCmenu) {
+    if(!e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')||!allowdefaultCmenu){return}
+    if(prevntDefault_cMenu == false){
         clearTimeout(timer_prevntDefault_cMenu);
         prevntDefault_cMenu = true;
         document.addEventListener('contextmenu', preventContextMenu);
@@ -36,8 +101,8 @@ function preventContextMenu_mo(e) {
             prevntDefault_cMenu = false;
             document.removeEventListener('contextmenu', preventContextMenu);}, 1000);
     }
+    function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefault();}}
 }
-function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefault();}}
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 function contextMenu_CreateNAppend(e) {
@@ -56,6 +121,7 @@ function contextMenu_CreateNAppend(e) {
         }
         parentIsContextMenu = true;
         prev_contextmenu=context_menu.cloneNode(true);
+        prev_contextmenu.addEventListener('contextmenu', function(e){e.preventDefault()});
         /* Store the old cmenu to go back to it */
         currentContextMenu_style = context_menu.getAttribute('style');
         cmenu_cmt_dX = context_menu.querySelector('.cmtitlebar').getAttribute('data-x');
@@ -75,7 +141,7 @@ function contextMenu_CreateNAppend(e) {
     let newCmenu = createNewContextMenu();
     ifForStrongsNumberORforCrossRef();
     appendORpositionContextMenu();
-    e.preventDefault();
+    if (!e.hasOwnProperty('truecontextmenu')) {e.preventDefault();}
     
     // Create Context Menu if Not available
     function createNewContextMenu(){
@@ -89,6 +155,7 @@ function contextMenu_CreateNAppend(e) {
             context_menu_replacement.style.display = 'block';
             document.body.prepend(context_menu_replacement);
             document.body.appendChild(context_menu);
+            context_menu_replacement.addEventListener('contextmenu', function(e){e.preventDefault()})
             return true
         }
         return false
@@ -103,6 +170,7 @@ function contextMenu_CreateNAppend(e) {
         if (elmAhasElmOfClassBasAncestor(e.target, '.context_menu')) {
             parentIsContextMenu = 1;
             prev_contextmenu=context_menu.cloneNode(true);
+            prev_contextmenu.addEventListener('contextmenu', function(e){e.preventDefault()});
 
             /* Store the old cmenu to go back to it */
             currentContextMenu_style = context_menu.getAttribute('style');
@@ -157,12 +225,12 @@ function contextMenu_CreateNAppend(e) {
         /* || If eTraget is a [Translated Strongs Word] or the [Strongs Number] itself || */
         /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
         if (e.target.matches('.translated, .strnum')) {
-            console.log(e.type);
+            // console.log(e.type);
             // On Mobile Devices
-            if (isMobileDevice && contextMenu_touch!="touchstart") {
+            if ((isMobileDevice && contextMenu_touch!="touchstart") || !e.hasOwnProperty('truecontextmenu')) {
                 // remove windows selection
                 // (because on mobile, the user has to press and hold for contextmenu which also selects the text)
-                window.getSelection().removeRange(window.getSelection().getRangeAt(0))
+                (window.getSelection().rangeCount > 0) ? window.getSelection().removeRange(window.getSelection().getRangeAt(0)):null;
             }
             if (e.target.getAttribute("translation")) {
                 originalWord = e.target.getAttribute("translation");
@@ -183,7 +251,7 @@ function contextMenu_CreateNAppend(e) {
             if (e.target.getAttribute('strnum')) {
                 rightClickedElm = e.target;
                 firstShadowColorOfElem = getBoxShadowColor(rightClickedElm);
-                console.log('strongs');
+                // console.log('strongs');
                 getCurrentStrongsDef(e);
             }
             let menu_inner;
@@ -192,7 +260,7 @@ function contextMenu_CreateNAppend(e) {
             if(document.body.matches('.darkmode')){
                 searchicon = 'search-svgrepo-com(2)-DarkMode.svg';
             }
-            console.log({originalWord,newStrongsDef,context_menu});
+            // console.log({originalWord,newStrongsDef,context_menu});
             if (originalWord) {
                 let xlitNlemma = '',br = '';
                 for (let i = 0; i < arrOfStrnums.length; i++) {
@@ -202,19 +270,14 @@ function contextMenu_CreateNAppend(e) {
                     if(!/[GHgh]\d+/.test(sn)){continue}
                     let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="../images/${searchicon}" alt="&#128270;"></button>`;
                     xlitNlemma = `${xlitNlemma}${br}<code>${srchBtn}${getsStrongsLemmanNxLit(sn).lemma} (${getsStrongsLemmanNxLit(sn).xlit}, ${sn})</code>`
-                    console.log({xlitNlemma});
-                    console.log(getsStrongsLemmanNxLit(sn));
-    }
+                }
                 if (addquotes) {
                     menu_inner = `${xlitNlemma}<hr>“${originalWord.trim()}”`;
                 } else {
                     menu_inner = `${xlitNlemma}<hr>${originalWord.trim()}`;
                 }
-                console.log(menu_inner);
                 context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
-                console.log('01');
             } else if ([contextMenu_touch,'click','touchstart'].includes(e.type)) { // For strongs number in verseNote
-                console.log('02');
                 let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="../images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
                 context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
@@ -305,20 +368,15 @@ function contextMenu_CreateNAppend(e) {
                 // const clickedElementTop = clickedElementRect.top;//for position fixed
                 // const clickedElementTop = clickedElement.offsetTop;
                 const clickedElementTop = getOffsetRelativeToAncestor(clickedElement).top;//because of elements in table or nested in positioned ancestor(s)
-              
-                // Check if there is enough space below the clicked element
-                if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 < windowHeight + window.scrollY + scrollBarHeight) {
+                // console.log({clickedElementTop,'elmHeight':clickedElement.offsetHeight,menuHeight,windowHeight,'wscrllY':window.scrollY,scrollBarHeight});
+
+                // Enough Space Above In Visible Part of Window
+                if (clickedElementTop >= menuHeight) {
+                    context_menu.style.top = (clickedElementTop - menuHeight ) + 'px';
+                }
+                // Enough Space Below (Visible and Non Visible) Part of Window
+                else if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 > -windowHeight + window.scrollY + scrollBarHeight) {
                     context_menu.style.top = (clickedElementTop + clickedElement.offsetHeight ) + 'px';
-                }
-                // Otherwise, position the menu above the clicked element
-                else if (clickedElementTop /* - window.scrollY */ - menuHeight + windowHeight > 0) {
-                    let cmenuTop = clickedElementTop - menuHeight;
-                    context_menu.style.top = cmenuTop + 'px';
-                    if((cmenuTop - window.scrollY)<0){context_menu.scrollIntoView({ behavior: 'smooth' })}
-                }
-                // If there is not enough space both below and above, position it at the bottom of the viewport
-                else {
-                    context_menu.style.top = (windowHeight/*  + window.scrollY */ - menuHeight + windowHeight) + 'px';
                 }
               
                 // Adjust x position if menu is off the right side of the page
@@ -352,16 +410,17 @@ function contextMenu_CreateNAppend(e) {
             transition: transform 0;
           }
           @media only screen and (max-width: 414px){
-            .context_menu{ 
-            max-width: ${w-100}px!important;
-            max-height: ${h-100}px!important;
-            min-width: 300px!important;
-        }}
-      //   @media only screen and (min-width: 650px) and (max-width: 960px){
-      //       .context_menu{ 
-      //       max-width: ${w+150}px!important;
-      //       max-height: ${h+150}px!important;
-      //   }}
+              .context_menu{ 
+                  max-width: ${w-100}px!important;
+                  max-height: ${h-100}px!important;
+                  min-width: 300px!important;
+                }
+            }
+        //     @media only screen and (min-width: 650px) and (max-width: 960px){
+        //       .context_menu{ 
+        //       max-width: ${w+150}px!important;
+        //       max-height: ${h+150}px!important;
+        //   }}
           .cmenusrchbtn {display:none!important;}
           span.verse {display:block}
           .darkmode .context_menu {
@@ -455,7 +514,7 @@ function hideRightClickContextMenu() {contextMenu_Remove({'type':'click','key':'
 function contextMenu_Remove(e) {
     //Don't remove the cmenu if it is a strong's number 
     if ((e.target.matches('[strnum],[ref],.crossrefs span') && !e.target.closest('.context_menu'))||(e.type!='click' && e.key !== 'Escape')){return}
-    if (typeof context_menu != 'undefined' && (e.target.id=='cmenu_closebtn' || !e.target.matches("#context_menu *"))) {
+    if (typeof context_menu != 'undefined' && (['cmenu_closebtn','context_menu'].includes(e.target.id) || !e.target.closest('#context_menu'))) {
         // context_menu.removeEventListener('contextmenu', mainBibleVersion);
         // lightCityReftaggerContextMenuStyleInHead.remove();
         context_menu.matches('.showingXref')?showingXref=true:showingXref=false;
@@ -2038,7 +2097,7 @@ function parseVerseText(vT, verseSpan) {
             }
         }
     } else {
-        // if (/'missing'/.test(vT)){console.log(vT)}
+        // if (/'missing'/.test(vT)){// console.log(vT)}
         vT = vT.replace(/<hi type="bold">/g, '<span class="b">');
         vT = vT.replace(/<hi type="italic">/g, '<span class="i">');
         vT = vT.replace(/<\/hi>/g, '</span>');
