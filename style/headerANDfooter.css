@@ -437,14 +437,14 @@ footer .archive-date{
 }
 .closeNavBar{ 
     position:absolute;
-    /* background-color:#dd1515!important; */
+    background-color:#dd1515!important;
     top: 13px;
     right: 16px;
     border-radius:5px;
-    border:1px solid grey!important;
+    border:1px solid #dd1515!important;
 }
 .closeNavBar>div{
-    background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
     width: 1.5em;
     height: 1.5em;
     padding:5px
