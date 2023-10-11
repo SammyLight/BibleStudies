@@ -276,15 +276,16 @@ function contextMenu_CreateNAppend(e) {
                 } else {
                     menu_inner = `${xlitNlemma}<hr>${originalWord.trim()}`;
                 }
-                context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
+                context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
             } else if ([contextMenu_touch,'click','touchstart'].includes(e.type)) { // For strongs number in verseNote
                 let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="../images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
-                context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div id="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
+                context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
             if (strnum = e.target.getAttribute('strnum')) {
-                context_menu.setAttribute('strnum', strnum)
+                context_menu.setAttribute('strnum', strnum);
+                context_menu.innerHTML += `<div class="buttombar"><div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div>`;
             } else {
-                context_menu.removeAttribute('strnum')
+                context_menu.removeAttribute('strnum');
             }
         }
     
@@ -308,7 +309,7 @@ function contextMenu_CreateNAppend(e) {
                 }
                 cmtitletext = cmtitletext + ' [' + bversionName + ']';
                 // cmtitlebar.innerText=e.target.innerText;
-                cmtitlebar.innerHTML = cmtitletext + `<div id="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenu_goToPrevOrNextVerse('prev')"></button><button class="nxt_verse" onclick="cmenu_goToPrevOrNextVerse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn" id="cmenu_closebtn"></button></div></div>`;
+                cmtitlebar.innerHTML = cmtitletext + `<div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenu_goToPrevOrNextVerse('prev')"></button><button class="nxt_verse" onclick="cmenu_goToPrevOrNextVerse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn" id="cmenu_closebtn"></button></div></div>`;
                 context_menu.append(cmtitlebar);
             }
             let vHolder = getCrossReference(e.target);
@@ -325,9 +326,10 @@ function contextMenu_CreateNAppend(e) {
             // context_menu.append(getCrossReference(e.target));
             
             if (strnum = e.target.getAttribute('strnum')) {
-                context_menu.setAttribute('strnum', strnum)
+                context_menu.setAttribute('strnum', strnum);
             } else {
-                context_menu.removeAttribute('strnum')
+                context_menu.removeAttribute('strnum');
+                context_menu.innerHTML += `<div class="buttombar"><div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenu_goToPrevOrNextVerse('prev')"></button><button class="nxt_verse" onclick="cmenu_goToPrevOrNextVerse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn" id="cmenu_closebtn"></button></div></div></div>`;
             }
             transliterateAllStoredWords()
         }
@@ -532,6 +534,7 @@ function remove_cMenuNavigationByKeys(e) {
 }
 function cMenuNavigationByKeys(e) {
     let key_code = e.which || e.keyCode;
+    let cmenu_navnclose_btns = context_menu.querySelector('.cmenu_navnclose_btns');
     switch (key_code) {
         // case e.shiftKey && 37: //left arrow key
         case 37: //left arrow key
@@ -2485,10 +2488,12 @@ function cmenu_goBackFront(x){
     enableInteractJSonEl('.cmtitlebar', context_menu);
 
     if(calledByPrv){
-        let nxtBtn=context_menu.querySelector('.cmtitlebar .nxt');
-        nxtBtn.setAttribute('indx',indx+1);
-        nxtBtn.setAttribute('title',prvTitle);
-        nxtBtn.removeAttribute('disabled');
+        let nxtBtnZ=context_menu.querySelectorAll('.nxt');
+        nxtBtnZ.forEach(nxtBtn=>{
+            nxtBtn.setAttribute('indx',indx+1);
+            nxtBtn.setAttribute('title',prvTitle);
+            nxtBtn.removeAttribute('disabled');
+        })
     }
 }
 /* To Toggle TSK in CMenu When Present */
