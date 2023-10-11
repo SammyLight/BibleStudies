@@ -61,7 +61,7 @@ lite-youtube .lty-playbtn:focus{
     filter:grayscale(100%);
 }
 /* channel image and name */
-.channelImgAndNameContainer{
+.chaNamAndVideoTitle{
     position:absolute;
     top:10px;
     left:10px;
@@ -71,11 +71,11 @@ lite-youtube .lty-playbtn:focus{
     overflow-x: auto;
     white-space: nowrap;
 }
-.channelImgAndNameContainer::-webkit-scrollbar{ 
+.chaNamAndVideoTitle::-webkit-scrollbar{ 
     display: none;
 }
 /* channel image */
-.channelImgAndNameContainer > .lty-channelimg{ 
+.chaNamAndVideoTitle > .lty-channelimg{ 
     display:block;
     background-image:url("https://yt3.ggpht.com/AI2QaRc-PEAN2mc4a69n73fltXwO_9howEBEsui0Mzz_1VBWnYzGiAQAFQe5_NWLaMev-GGbRg=s88-c-k-c0x00ffffff-no-rj");
     background-position:center;
@@ -88,7 +88,7 @@ lite-youtube .lty-playbtn:focus{
     z-index:1;
 }
 @media only screen and (max-width:414px){
-.channelImgAndNameContainer > .lty-channelimg{ 
+.chaNamAndVideoTitle > .lty-channelimg{ 
     width:35px;
     height:35px;
 }}
