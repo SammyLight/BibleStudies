@@ -60,8 +60,22 @@ lite-youtube:hover > .lty-playbtn,
 lite-youtube .lty-playbtn:focus{ 
     filter:grayscale(100%);
 }
+/* channel image and name */
+.channelImgAndNameContainer{
+    position:absolute;
+    top:10px;
+    left:10px;
+    right: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.channelImgAndNameContainer::-webkit-scrollbar{ 
+    display: none;
+}
 /* channel image */
-lite-youtube > .lty-channelimg{ 
+.channelImgAndNameContainer > .lty-channelimg{ 
     display:block;
     background-image:url("https://yt3.ggpht.com/AI2QaRc-PEAN2mc4a69n73fltXwO_9howEBEsui0Mzz_1VBWnYzGiAQAFQe5_NWLaMev-GGbRg=s88-c-k-c0x00ffffff-no-rj");
     background-position:center;
@@ -70,17 +84,38 @@ lite-youtube > .lty-channelimg{
     width:40px;
     height:40px;
     /* margin:10px; */
-    top:10px;
-    left:10px;
-    position:absolute;
     border-radius:100%;
-    /* z-index:-1; */
+    z-index:1;
 }
 @media only screen and (max-width:414px){
-lite-youtube > .lty-channelimg{ 
+.channelImgAndNameContainer > .lty-channelimg{ 
     width:35px;
     height:35px;
 }}
+/* Video Title */
+.moving-text{
+    color: #ffffff;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.moving-text:hover{
+    animation-play-state:paused;
+}
+@keyframes marquee{
+    0%{transform:translateX(100%)}
+    100%{transform:translateX(-100%);}
+}
+/* @keyframes marquee{
+    0%{transform:translateX(0%)}
+    20%{transform:translateX(-20%)}
+    100%{transform:translateX(-100%);}
+} */
+/* media query to enable animation for only those who want it */
+@media (prefers-reduced-motion: no-preference){
+    .moving-text{
+        animation:marquee 20s linear infinite;
+    }
+}
 /* Post-click styles */
 lite-youtube.lyt-activated{ 
     cursor:unset;

@@ -33,7 +33,6 @@
 }
 .videos-header-item:hover, .videos-header-item.active{ 
     color: #ffc107;
-    /* padding-bottom: 7px; */
     border-bottom: 3px solid #ffc107!important;
 }
 @media only screen and (max-width: 414px){ 
