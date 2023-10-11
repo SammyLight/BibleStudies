@@ -97,6 +97,7 @@ lite-youtube .lty-playbtn:focus{
     color: #ffffff;
     margin-top: 5px;
     margin-left: 10px;
+    z-index: -1;
 }
 .moving-text:hover{
     animation-play-state:paused;
