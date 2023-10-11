@@ -189,70 +189,70 @@ span[strnum]{
     z-index:3;
 }
 .cmenu_closebtn,
-#cmenu_navnclose_btns button{ 
+.cmenu_navnclose_btns button{ 
     background-color:whitesmoke!important;
     min-width:1em;
     height:1em;
     font-size:1em;
 }
-#cmenu_navnclose_btns button{ 
+.cmenu_navnclose_btns button{ 
     border-radius:2px;
     font-weight:bold;
     box-shadow:1px 1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button:not(:disabled):hover{ 
+.cmenu_navnclose_btns button:not(:disabled):hover{ 
     background-color:burlywood!important;
 }
 .cmenu_closebtn{
     background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
 }
-#context_menu:not([strnum]) .cmtitlebar #cmenu_navnclose_btns{ 
+#context_menu:not([strnum]) .cmtitlebar .cmenu_navnclose_btns{ 
     display:flex;
     flex:1;
     justify-content:flex-end;
     margin-left:0.2em;
     padding:0;
 }
-#context_menu[strnum] .cmtitlebar #cmenu_navnclose_btns{ 
+#context_menu[strnum] .cmtitlebar .cmenu_navnclose_btns{ 
     position:absolute;
     display:flex;
     top:5px;
     right:0.2em;
 }
-#cmenu_navnclose_btns button.prv{ 
+.cmenu_navnclose_btns button.prv{ 
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-90deg);
     margin-left:2px;
     box-shadow:-1px -1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button.prv_verse{ 
+.cmenu_navnclose_btns button.prv_verse{ 
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     margin-left:2px;
     box-shadow:1px 1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button.nxt_verse{ 
+.cmenu_navnclose_btns button.nxt_verse{ 
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-180deg);
     margin-left:1px;
     box-shadow:-1px -1px 1px var(--shadow-color);
 }
-#cmenu_navnclose_btns button.nxt_verse,
-#cmenu_navnclose_btns button.cmenu_tsk,
-#cmenu_navnclose_btns button.nxt{ 
+.cmenu_navnclose_btns button.nxt_verse,
+.cmenu_navnclose_btns button.cmenu_tsk,
+.cmenu_navnclose_btns button.nxt{ 
     margin-right:0.3em!important;
 }
-#cmenu_navnclose_btns button.cmenu_tsk{
+.cmenu_navnclose_btns button.cmenu_tsk{
     padding-left:3px;
     padding-right:3px;
 }
-#cmenu_navnclose_btns button.prv:not([indx]),
-#cmenu_navnclose_btns button.nxt:not([indx]),
-#cmenu_navnclose_btns button:disabled,
-#cmenu_navnclose_btns button[disabled]{ 
+.cmenu_navnclose_btns button.prv:not([indx]),
+.cmenu_navnclose_btns button.nxt:not([indx]),
+.cmenu_navnclose_btns button:disabled,
+.cmenu_navnclose_btns button[disabled]{ 
     /* display:none; */
     opacity:0.3;
 }
-#cmenu_navnclose_btns button.nxt{ 
+.cmenu_navnclose_btns button.nxt{ 
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
     transform:rotate(-90deg) scaleY(-1);
     margin-right:2px;
@@ -420,7 +420,7 @@ span[strnum]{
     z-index:-1;
     pointer-events:none;
 }
-#context_menu:has(.strngsdefinition) #cmenu_navnclose_btns{ 
+#context_menu:has(.strngsdefinition) .cmenu_navnclose_btns{ 
     right:2em!important;
 }
 #context_menu .strnum:not(:hover){
@@ -513,44 +513,44 @@ span[strnum]{
     border:rgb(166, 166, 166)!important;
     background-color:transparent;
 }
-.darkmode #cmenu_navnclose_btns button{ 
+.darkmode .cmenu_navnclose_btns button{ 
     background-color:var(--buttons)!important;
     color:var(--txtcolor)!important;
     border:1px solid var(--black);
 }
-.darkmode #cmenu_navnclose_btns button:hover{ 
+.darkmode .cmenu_navnclose_btns button:hover{ 
     color:black!important;
     background-color:pink!important;
 }
-.darkmode #cmenu_navnclose_btns button.cmenu_closebtn{ 
+.darkmode .cmenu_navnclose_btns button.cmenu_closebtn{ 
     background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.cmenu_closebtn:hover{ 
+.darkmode .cmenu_navnclose_btns button.cmenu_closebtn:hover{ 
     background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.nxt_verse,
-.darkmode #cmenu_navnclose_btns button.nxt,
-.darkmode #cmenu_navnclose_btns button.prv_verse,
-.darkmode #cmenu_navnclose_btns button.prv{ 
+.darkmode .cmenu_navnclose_btns button.nxt_verse,
+.darkmode .cmenu_navnclose_btns button.nxt,
+.darkmode .cmenu_navnclose_btns button.prv_verse,
+.darkmode .cmenu_navnclose_btns button.prv{ 
     background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.nxt_verse:hover,
-.darkmode #cmenu_navnclose_btns button.nxt:hover,
-.darkmode #cmenu_navnclose_btns button.prv_verse:hover,
-.darkmode #cmenu_navnclose_btns button.prv:hover{ 
+.darkmode .cmenu_navnclose_btns button.nxt_verse:hover,
+.darkmode .cmenu_navnclose_btns button.nxt:hover,
+.darkmode .cmenu_navnclose_btns button.prv_verse:hover,
+.darkmode .cmenu_navnclose_btns button.prv:hover{ 
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
 }
-.darkmode #cmenu_navnclose_btns button.prv{ 
+.darkmode .cmenu_navnclose_btns button.prv{ 
     margin-top:-1px;
 }
-.darkmode #cmenu_navnclose_btns button.nxt{ 
+.darkmode .cmenu_navnclose_btns button.nxt{ 
     margin-top:1px;
 }
-#cmenu_navnclose_btns button{ 
+.cmenu_navnclose_btns button{ 
     box-shadow:inset 0 0 1px 0px !important;
     border:none!important;
 }
-#cmenu_navnclose_btns button, .darkmode #cmenu_navnclose_btns button{ 
+.cmenu_navnclose_btns button, .darkmode .cmenu_navnclose_btns button{ 
     margin-top:0!important;
 }
 .darkmode #context_menu details[open] > summary > div:first-of-type{ 
@@ -997,19 +997,4 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     display:flex;
     justify-content: center;
 }
-/* .buttombar::before,.buttombar::after {
-    position: absolute;
-    content: '';
-    left: 0px;
-    top: -0%;
-    width: 120%;
-    height: 100%;
-    background: var(--ref-img);
-    z-index:-1;
-    pointer-events:none;
-}
-.buttombar::after {
-    left: -100px;
-    background: var(--ref-img);
-} */
 #context_menu {padding:0!important;}
