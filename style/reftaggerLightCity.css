@@ -420,9 +420,9 @@ span[strnum]{
     z-index:-1;
     pointer-events:none;
 }
-#context_menu:has(.strngsdefinition) .cmenu_navnclose_btns{ 
+/* #context_menu:has(.strngsdefinition) .cmenu_navnclose_btns{ 
     right:2em!important;
-}
+} */
 #context_menu .strnum:not(:hover){
     font-style:italic;
     box-shadow:inset 0px -1px 0px 0px;
@@ -478,8 +478,8 @@ span[strnum]{
     padding-bottom:0;
     margin-bottom:0;
 }
-#context_menu .strngsdefinition h5, #context_menu .strngsdefinition h6{ 
-    margin:0px 5px 0px 0px;
+#context_menu .strngsdefinition h5, #context_menu .strngsdefinition h6{
+    margin: 0;
     padding-left:7.5px;
     border-bottom:1px solid var(--grey);
     font-style:italic;
@@ -998,3 +998,18 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     justify-content: center;
 }
 #context_menu {padding:0!important;}
+.cmtitlebar {
+    touch-action: none;
+    padding-bottom: 0em;
+    /* display: flex;
+    align-items: center; */
+    border-bottom: 1px solid var(--scroll-track-bg-color);
+    box-shadow: 0px -25.5px 6px 28px #000000;
+}
+.cmtitlebar::before,.cmtitlebar::after {
+    width: 0!important;
+    height: 0!important;
+}
+.context_menu:not([strnum]) .cmtitlebar .cmenu_navnclose_btns {
+    margin-top: 0.2em;
+}
