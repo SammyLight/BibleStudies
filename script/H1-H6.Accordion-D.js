@@ -65,7 +65,6 @@ for (i; i < b.length; i++) {
 	} 
 	/* For Elements other than H1 - H6 and SCRIPT */
 	/* HIDE ALL ELEMENTS THAT ARE NOT H1 */
-
 	if ((btag != "H1") && (btag != "SCRIPT")) {
 		b[i].style.display = "none";
 		b[i].classList.add('marginLeft');

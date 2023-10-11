@@ -15,7 +15,6 @@ class LiteYTEmbed extends HTMLElement {
         this.videoId = this.getAttribute('videoid');
 
         let playBtnEl = this.querySelector('.lty-playbtn');
-        console.log(playBtnEl);
         // A label for the button takes priority over a [playlabel] attribute on the custom-element
         this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play';
 
@@ -33,12 +32,18 @@ class LiteYTEmbed extends HTMLElement {
         }
 
         // Set up channel image
-        let channelImg = document.createElement('div');
+        var chaNamAndVideoTitle = document.createElement('div');
+        chaNamAndVideoTitle.classList.add('chaNamAndVideoTitle');
+        var channelImg = document.createElement('div');
         channelImg.classList.add('lty-channelimg');
-        this.append(channelImg);
-
-        // // get video title
-        // this.videoTitle = this.getAttribute('playlabel');
+        chaNamAndVideoTitle.prepend(channelImg);
+        this.append(chaNamAndVideoTitle);
+        // Set up video title
+        var videoTitle = this.parentElement.nextElementSibling.textContent;
+        var createDivElement = document.createElement('div');
+        createDivElement.classList.add('moving-text');
+        createDivElement.append(videoTitle);
+        chaNamAndVideoTitle.append(createDivElement);
 
         // Set up play button, and its visually hidden label
         if (!playBtnEl) {
@@ -160,7 +165,6 @@ class LiteYTEmbed extends HTMLElement {
         iframeEl.height = 315;
         // No encoding necessary as [title] is safe. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#:~:text=Safe%20HTML%20Attributes%20include
         iframeEl.title = this.playLabel;
-        // console.log(iframeEl);
         iframeEl.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
         iframeEl.allowFullscreen = true;
         // AFAIK, the encoding here isn't necessary for XSS, but we'll do it only because this is a URL
