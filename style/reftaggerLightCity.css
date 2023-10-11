@@ -292,11 +292,11 @@ span[strnum]{
 #context_menu[strnum]{ 
     padding:0px;
 }
-#context_menu:has(.strngsdefinition)>.cmtitlebar{ 
+/* #context_menu:has(.strngsdefinition)>.cmtitlebar{ 
     padding-left:10px;
     padding-right:10px;
     font-size:0.7em;
-}
+} */
 #context_menu .cmtitlebar{ 
     position:sticky;
     top:0;
@@ -427,7 +427,7 @@ span[strnum]{
     font-style:italic;
     box-shadow:inset 0px -1px 0px 0px;
 }
-#context_menu details{ 
+#context_menu details:not(.strngsdefinition){ 
     border-bottom:2px solid #aaa;
     padding:0.25em 0;
 }
@@ -454,7 +454,7 @@ span[strnum]{
     height:2em;
     margin:10px;
 }
-#context_menu details[open] summary{ 
+#context_menu details:not(.strngsdefinition)[open] summary{ 
     border-bottom:1px solid #aaa;
     margin-bottom:0.5em;
 }
@@ -858,8 +858,8 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 }
 #context_menu[strnum]>.cmtitlebar{ 
     padding-left:10px;
-    padding-right:10px;
-    font-size:0.7em;
+/*     padding-right:10px;
+    font-size:0.7em; */
 }
 #context_menu:hover{ 
     -webkit-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
@@ -984,3 +984,32 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 #context_menu:not(.win2) .cmtitlebar~span{
     font-size:var(--fontsize-scripture);
 }
+/* BOTTOM BAR FOR CONTEXT MENU */
+.buttombar {
+    position:sticky;
+    bottom:0;
+    right:0;
+    background:var(--ref-img);
+    border-top: 2px solid var(--scroll-track-bg-color);
+    z-index: 10!important;
+}
+.buttombar .cmenu_navnclose_btns {
+    display:flex;
+    justify-content: center;
+}
+/* .buttombar::before,.buttombar::after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: -0%;
+    width: 120%;
+    height: 100%;
+    background: var(--ref-img);
+    z-index:-1;
+    pointer-events:none;
+}
+.buttombar::after {
+    left: -100px;
+    background: var(--ref-img);
+} */
+#context_menu {padding:0!important;}
