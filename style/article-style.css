@@ -293,7 +293,7 @@ h1:not(main>h1),h2:not(main>h2),h3:not(main>h3),h4:not(main>h4),h5:not(main>h5),
     cursor:pointer;
 } */
 h1,h2,h3,h4,h5,h6{ 
-    display: block;
+    display:block;
     margin-top:1.2em;
     margin-left:0!important;
     word-break:break-word;
@@ -525,18 +525,18 @@ li:before{
 /* Table CSS */
 td,
 th{ 
-    border:1px solid grey;
+    border:1px solid var(--grey);
     padding-right:5px;
     padding-left:5px;
-    border-right:2.5px solid grey;
-    border-bottom:2.5px solid grey;
+    border-right:2.5px solid var(--grey);
+    border-bottom:2.5px solid var(--grey);
 }
 th{ 
     text-transform:uppercase;
 }
 th:first-child{ 
     /* text-align:right; */
-    border-right:2.5px solid grey;
+    border-right:2.5px solid var(--grey);
 }
 @media only screen and (max-width:540px){ 
 td,th{ 
@@ -596,7 +596,7 @@ table ol{
 	/* position:absolute; */
 }
 .label{ 
-	background-color:#111;
+	background-color:var(--black);
 	border-radius:50px;
 	cursor:pointer;
 	display:flex;
@@ -627,8 +627,8 @@ table ol{
 }
 
 .open, .close{ 
-	color:#f1c40f;
-    color:floralwhite;
+	color:var(--vivid-orange);
+    color:var(--white);
 }
 .open::before{ 
 	content:"\2727 ";
@@ -636,7 +636,6 @@ table ol{
 .close::before{ 
 	content:"\2726 ";
 }
-
 .PageNavigation{
     display:grid;
     grid-template-columns:48% 48%;
@@ -671,7 +670,7 @@ table ol{
     text-align:right;
 }
 .prev-link span, .next-link span{
-    color:#adabab;
+    color:var(--gray);
     font-size:14px;
     margin:0.7em 0;
 }

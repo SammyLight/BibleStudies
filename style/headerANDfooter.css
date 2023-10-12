@@ -3,8 +3,10 @@
     --white:#ffffff;
     --black:#212121;
     --gray:#9D9D9D;
+    --grey:grey;
     --light-gray:#F0F0F0;
     --vivid-orange:#ffc107;
+    --light-vivid-orange:#f8d261;
     --supernova:#5f40f6;
     --red:red;
 }
@@ -120,10 +122,10 @@ img{
 .transition{ 
     transition:all 0.5s;
 }
-/* .active{ 
-    background-color:#666;
-    color:var(--vivid-orange);
-} */
+.active{ 
+    color:var(--vivid-orange)!important;
+    border-bottom:3px solid var(--vivid-orange)!important;
+}
 a{ 
     text-decoration:none!important;
     border-bottom:none!important;
@@ -137,6 +139,12 @@ a{
     padding:22px 22px;
     margin-bottom:20px;
     position:relative;
+}
+.homeResources-grid-containter ol{
+    column-gap:5em;
+    column-width:15em;
+    padding-left:1.5em;
+    margin:0;
 }
 #archive-date, #expandANDdate{
     position:relative;
@@ -167,8 +175,8 @@ footer .archive-date{
 #homeHeader .mobileHeaderNav{ 
     display:-webkit-box;
     display:flex;
-    place-items: center;
-    min-height: 60px;
+    place-items:center;
+    min-height:60px;
 }
 #mobileHeader .mobileLogoSize,
 #homeHeader .mobileLogoSize{ 
@@ -446,15 +454,15 @@ footer .archive-date{
 .closeNavBar{ 
     position:absolute;
     background-color:#dd1515!important;
-    top: 13px;
-    right: 16px;
+    top:13px;
+    right:16px;
     border-radius:5px;
     border:1px solid #dd1515!important;
 }
 .closeNavBar>div{
     background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
-    width: 1.5em;
-    height: 1.5em;
+    width:1.5em;
+    height:1.5em;
     padding:5px
 }
 /* desktopHeader CSS */
@@ -670,18 +678,22 @@ a.titles-links{
     text-transform:lowercase;
     font-size:14px;
     background:linear-gradient(91deg, #f55c90 30.03%, #e897a3 101.13%);
-    background:var(--vivid-orange);
     background:linear-gradient(91deg, var(--vivid-orange) 30.03%, #f8d261 101.13%);
+    background:var(--vivid-orange);
     color:var(--black)!important;
     padding:6px 18px;
     border-radius:40px;
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom:none;
     letter-spacing:0px;
-    font-weight:bold;
+    font-weight:600;
     display:flex;
     width:fit-content;
     align-items:center;
+}
+a.titles-links:hover{
+    color:var(--black)!important;
+    background:var(--light-vivid-orange);
 }
 .titles-links::after{
     display:inline-block;
@@ -697,7 +709,7 @@ a.titles-links{
 /* FOOTER CSS */
 footer{ 
     background-color:var(--black)!important;
-    font-size:.95em !important;
+    font-size:.95em!important;
     color:var(--black);
     color:var(--white);
     border-top:1px solid rgba(190,190,190,.5);
@@ -842,6 +854,10 @@ font-size:10px!important;
 .caret2{
     display:none!important;
 }}
+@media only screen and (min-width:820px){
+.footerLinks-lists a{ 
+    font-size:26px;
+}}
 @media only screen and (min-width:1060px){ 
 .Contact-section-inner{ 
     display:grid;
@@ -850,6 +866,9 @@ font-size:10px!important;
 .footerLinks-wrapper{ 
     display:grid;
     grid-template-columns:43% 30% 27%;
+}
+.footerLinks-lists a{ 
+    font-size:22px;
 }}
 li>span,li>em>span,p>span,p>em>span{ 
     color:rgb(0, 106, 168)!important;
@@ -859,8 +878,3 @@ h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
 li>a>span{ 
     color:inherit!important;
 }
-/* @media only screen and (min-width:650px) and (max-width:960px){
-.context_menu{ 
-    max-width:450px!important;
-    max-height:450px!important;
-}} */

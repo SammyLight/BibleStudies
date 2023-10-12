@@ -199,9 +199,17 @@ p.titles{
 #context_menu code {
     font-size:12px!important;
 }
+@media only screen and (min-width:540px){
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:20px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:14px!important;
+}   
+}
 @media only screen and (min-width:760px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:38px;
+    font-size:30px;
 }
 #context_menu code,#context_menu .buttons {
     font-size:18px!important;
@@ -218,6 +226,26 @@ h4.titles{
 h2,
 h3{ 
     font-size:1.649690125em;
+}}
+@media only screen and (min-width:820px){ 
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:38px;
+}
+#context_menu code,#context_menu .buttons {
+    font-size:18px!important;
+}
+h1.titles{ 
+    font-size:55px;
+}
+h3.titles{ 
+    font-size:35px;
+}
+h4.titles{ 
+    font-size:32px;
+}
+h2,
+h3{ 
+    font-size:1.849690125em;
 }}
 @media only screen and (min-width:1024px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
@@ -262,24 +290,28 @@ h3.subtitles{
     color:inherit;
 }
 .archive-date{ 
-    display:block;
-    color:var(--gray);
-    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0;
-    line-height:17px;
-    margin-top:20px;
+    display:inline;
+    color: var(--grey)!important;
+    font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-top: 20px;
+    margin-left: -8px;
+    white-space:nowrap;
 }
 .archive-date-summary{ 
     display:inline;
-    color:var(--gray);
-    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0;
-    line-height:17px;
-    margin-top:20px;
+    color: var(--grey)!important;
+    font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-top: 20px;
+    margin-left: -8px;    
+    white-space:nowrap;
 }
 .homeResources-grid .archive-date,
 .homeResources-grid .archive-date-summary{ 
@@ -294,20 +326,39 @@ h3.subtitles{
     font-size:87%;
 }
 .categories{ 
+    display:flex;
+    place-items:center;
+    gap:0;
     margin-top:24px;
     font-size:80%!important;
 }
 .categories span{ 
-    color:#898181;
+    color:var(--grey)!important;
 }
 a.cat-link{ 
     text-decoration:none;
-    color:#5e7d65 !important;
+    color:#5e7d65!important;
+    color:var(--supernova)!important;
+    font-weight:600;
+    padding:0 7px;
+    border-right: 1px solid;
+    white-space: nowrap;
+    /* color:var(--black)!important;
+    background-color:var(--vivid-orange);
+    padding:6px 18px;
+    border-radius:40px;
+    box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+a.cat-link:last-child{
+    border: none;
+}
+a.cat-link:hover{
+    color:var(--red)!important;
 }
 hr{ 
     margin-top:20px;
     border:0;
-    border-top:1px solid #898181;
+    border-top:1px solid var(--gray);
     clear:both;
     margin-top:20px;
     margin-bottom:0;
@@ -495,19 +546,19 @@ a.link{
     padding:0.2em 0 0.5em 0;
 }}
 @media only screen and (min-width:760px){ 
-/* a.cat-link{
-    font-size:18px;
-} */
 a.link{
-    font-size:20px;
+    font-size:22px;
 }}
 @media only screen and (min-width:820px){ 
 .caretText{
     font-size:40px;
+}
+a.link{
+    font-size:26px;
 }}
 @media only screen and (min-width:1025px){ 
 .content{ 
-    display:block !important;
+    display:block!important;
     height:auto;
     min-height:1000px;
 }
@@ -515,11 +566,13 @@ a.link{
     min-height:0;
 }
 .sidebar{ 
-    /* margin-top:1em!important; */
     margin-left:0!important;
 }
 .visible-titles{ 
     display:none;
+}
+a.link{
+    font-size:20px;
 }
 .flex1{ 
     display:flex;
@@ -536,7 +589,7 @@ a.link{
 }}
 
 blockquote{ 
-    font:italic 1.2rem Vollkorn !important;
+    font:italic 1.2rem Vollkorn!important;
 }
 /*  ADDED TO MAKE IT BEAUTIFUL*/
 p,li{ 
@@ -569,7 +622,7 @@ h3{
     max-width:40em;
     padding:1em;
     margin:1em auto;
-    border:1px solid lightgrey;
+    border:1px solid var(--light-gray);
 }
 #search-input{ 
     display:inline-block;
