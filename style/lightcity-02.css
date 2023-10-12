@@ -1,6 +1,3 @@
-/* *{
-	box-sizing:border-box;
-} */
 body{ 
     display:block;
     font-family:'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -34,11 +31,11 @@ body *{
     padding:8px!important;
 }
 .box:hover{ 
-    background-color:#e8eff6;
+    background-color:var(--bgColor-smoke-white);
     box-shadow:0 4px 6px rgba(190,190,190,.5);
 }
 .box-container a{ 
-    color:#212121;
+    color:var(--black);
     display:grid;
     place-content:center;
     border-bottom:none;
@@ -157,7 +154,7 @@ h1.titles{
     border-bottom:none;
 }
 .titles-inner{
-    background-color:#ffffff;
+    background-color:var(--white);
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);
@@ -233,15 +230,13 @@ h1.titles{
     padding-top:0;
 }}
 h3.subtitles{ 
-    color:#ffffff;
+    color:var(--white);
     font-size:1em;
     font-weight:400;
 }
 .fonts{ 
-    background-color:#ffffff;
-    background-color:#f6f6f6!important;
-    color:#363636;
-    color:#212121;
+    background-color:var(--bgColor-smoke-white)!important;
+    color:var(--black);
     font-family:'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-family:-system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size:1.1em;
@@ -268,7 +263,7 @@ h3.subtitles{
 }
 .archive-date{ 
     display:block;
-    color:#6b6161;
+    color:var(--gray);
     font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
     font-size:12px;
     font-weight:500;
@@ -278,7 +273,7 @@ h3.subtitles{
 }
 .archive-date-summary{ 
     display:inline;
-    color:#6b6161;
+    color:var(--gray);
     font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
     font-size:12px;
     font-weight:500;
@@ -288,7 +283,7 @@ h3.subtitles{
 }
 .homeResources-grid .archive-date,
 .homeResources-grid .archive-date-summary{ 
-    color:red;
+    color:var(--red);
     margin:0 0 20px;
 }
 .recentposts .archive-date{ 
@@ -393,7 +388,7 @@ hr{
 .visible-titles{ 
     display:grid;
     grid-template-columns:80% 17%;
-    background-color:#ffffff;
+    background-color:var(--white);
     height:-webkit-fill-available;
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius:10px;
@@ -427,16 +422,16 @@ hr{
 }
 .sidebar{ 
     /* border-radius:1%;
-    background-color:#ffc107;
+    background-color:var(--vivid-orange);
     background-color:#3b3d41;
     box-shadow:0 1px 2px rgba(190,190,190,.5);
-    box-shadow:0 1px 2px #212121; */
-    background-color:#212121!important;
+    box-shadow:0 1px 2px var(--black); */
+    background-color:var(--black)!important;
     padding:0 10px 20px;
 }
 .sidebar-wrapper{ 
-    color:#212121!important;
-    color:#ffffff!important;
+    color:var(--black)!important;
+    color:var(--white)!important;
 }
 .sidebar-wrapper span:hover{
     color:#d0d0d0;
@@ -451,11 +446,11 @@ hr{
     border-bottom:none;
 }
 .sidebar a{ 
-    color:#ffffff;
+    color:var(--white);
 }
 .recentposts a{ 
-    color:#212121!important;
-    color:#ffffff!important;
+    color:var(--black)!important;
+    color:var(--white)!important;
 }
 .recentposts a:hover{ 
     color:#d0d0d0!important;

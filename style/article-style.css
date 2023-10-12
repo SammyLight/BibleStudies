@@ -1,6 +1,6 @@
 body{ 
     /* background-image:url(../images/background.jpg); */
-    background-color:#f6f6f6!important;
+    background-color:var(--bgColor-smoke-white)!important;
     counter-reset:header1 header2;
     display:block;
     font-family:'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -299,7 +299,7 @@ h1,h2,h3,h4,h5,h6{
     word-break:break-word;
     font-weight:bold!important;
     border-bottom:2px solid rgba(190,190,190,.5);
-    border-bottom:1px solid #212121;
+    border-bottom:1px solid var(--black);
     /* text-transform:uppercase; */
     /* box-shadow:-1px 2px 4px -4px rgba(190,190,190,.5); */
 }
@@ -486,7 +486,7 @@ blockquote:before{
     vertical-align:-0.4em;
 }
 .sidenote{ 
-    color:#212121;
+    color:var(--black);
     background-color:rgb(250, 255, 211);
 }
 .sidenote p{ 
@@ -610,7 +610,7 @@ table ol{
 }
 
 .label .ball{ 
-	background-color:#fff;
+	background-color:var(--white);
 	border-radius:50%;
 	position:absolute;
 	top:2px;
@@ -643,7 +643,7 @@ table ol{
     gap:4%;
 }
 .PageNavigation a{
-    color:#212121;
+    color:var(--black);
     font-size:25px;
     border-bottom:none;
     text-decoration:none;

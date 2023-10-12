@@ -21,26 +21,15 @@ title: "Videos"
     <div class="videos-container container-fluid-inner">
         <div class="titles-inner videos-header">
             <h1 class="titles">LightCity Videos</h1>
-            <ul class="videos-headerUL nav-pills nav-justified">
-                <li class="nav-item videos-header-item active">
-                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-1">All</button>
-                </li>
-                <li class="nav-item videos-header-item">
-                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-2">Sunday</button>
-                </li>
-                <li class="nav-item videos-header-item">
-                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-3">Monday</button>
-                </li>
-                <li class="nav-item videos-header-item">
-                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-4">Wednesday</button>
-                </li>
-                <li class="nav-item videos-header-item">
-                    <button class="nav-link videos-header-link" data-toggle="pill" href="#tab-content-5">Special Meetings</button>
-                </li>
-            </ul>
+            <div class="videos-header-btns-cont">
+                <button id="tab1" class="videos-header-btns active" title="#tab1">All</button>
+                <button id="tab2" class="videos-header-btns" title="#tab2">Sunday</button>
+                <button id="tab3" class="videos-header-btns" title="#tab3">Monday</button>
+                <button id="tab4" class="videos-header-btns" title="#tab4">Wednesday</button>
+                <button id="tab5" class="videos-header-btns" title="#tab5">Special Meetings</button>
+            </div>
         </div>
-        
-        <div class="videotab-content">
+        <div class="videotab-content-wrapper">
             {% include videosALL.html %}
             {% include videosSUNDAY.html %}
             {% include videosMONDAY.html %}
