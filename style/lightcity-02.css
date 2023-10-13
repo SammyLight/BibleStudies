@@ -189,6 +189,10 @@ p.titles{
     margin-inline-start:0;
     margin-inline-end:0;
 }
+@media only screen and (max-width:300px){
+h1.titles {
+    font-size: 1.4em;
+}}
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:18px;
 }
