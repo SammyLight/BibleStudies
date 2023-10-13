@@ -13,10 +13,30 @@
 </div>
 <article class="homeResources-grid-containter container-fluid-inner">
 	<small id="archive-date" class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
+	<!-- <time id="archive-date" class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</time> -->
+	<!-- <time datetime="{{2008-02-14 20:00}}">Valentines day</time> -->
 	<main>
 		{{content}}
 	</main>
 </article>
+<ul class="PageNavigation container-fluid-inner">
+	{% if page %}
+	{% assign curpage = page.date %}
+	{% assign sorted-pages = site.pages | sort: 'date < curpage' %} 
+	{% assign my_array = "" | split: ',' %}
+	{% for page in sorted-pages %} 
+	{% if page.date And page.date != "" And page.date != nil %} 
+	{% assign my_array = my_array | push: page %}
+	{% endif %}
+	{% endfor %} {% for page in my_array limit:1 %}
+	<li class="all-links prev-link">
+		<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}
+			<small class="archive-date">{{ page.date | date_to_string }}.</small>
+		</a>
+	</li>
+	{% endfor %}
+	{% endif %}
+</ul>
 <div class="add_space"></div>
 <ul class="PageNavigation container-fluid-inner">
 	{% if page.previous.url %}
@@ -38,8 +58,8 @@
 <script src="../script/interact.min.js"></script>
 <script src="../script/TSK.js"></script>
 <script src="../script/reftaggerLightCity.js"></script>
-<script src="../script/toggleH1toH6Siblings.js"></script>
 <script src="../script/bibleApp_transliteration.js"></script>
+<script src="../script/toggleH1toH6Siblings.js"></script>
 <script src="../data/LSJ Full.js"></script>
 <script src="../data/strongsObjectRoots.js"></script>
 <script src="../data/strongsObjectWithFamilies2.js"></script>

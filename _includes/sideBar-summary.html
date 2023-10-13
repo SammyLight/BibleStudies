@@ -14,10 +14,8 @@
                 <!-- {% assign sorted-posts = site.posts | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {% for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign my_array = my_array | push: posts %} {% endif %}
                 {% endfor %}  -->
                 {% for post in site.posts limit:5 %}
-                <li><a class="link"
-                        href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
+                <li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
                         post.title }}
-                        <br>
                         <small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
                 {% endfor %}
             </ul>
@@ -36,12 +34,12 @@
                 {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
                 {% assign sumcaty = category_name %}
                 {% for post in site.posts %}
-                {% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1'
-                    }}{% endcapture %} <li>
+                {% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %} 
+                <li>
                     <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                         {{ post.title }}
                     </a>
-                    </li>
+                </li>
                     {% endif %}{% endfor %}
                     {% endfor %}
             </ul>

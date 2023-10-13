@@ -11,17 +11,15 @@
                             </div>
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
-                                    {% assign sorted-pages = site.pages | sort: 'date' | reverse %} {% assign my_array =
-                                    "" | split: ',' %} {% for page in sorted-pages %} {% if page.date And page.date !=
-                                    "" And page.date != nil %} {% assign my_array = my_array | push: page %} {% endif %}
+                                    {% assign sorted-pages = site.pages | sort: 'date' | reverse %}
+                                    {% assign my_array = "" | split: ',' %}
+                                    {% for page in sorted-pages %}
+                                    {% if page.date And page.date != "" And page.date != nil %}
+                                    {% assign my_array = my_array | push: page %} {% endif %}
                                     {% endfor %} {% for page in my_array limit:5 %}
                                     <li>
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
-                                            page.title }}
-
-                                            <small class="archive-date" style="margin-top: 0;">{{ page.date |
-                                                date_to_string }}.</small>
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}
+                                            <small class="archive-date">{{ page.date | date_to_string }}.</small>
                                         </a>
                                     </li>
                                     {% endfor %}
@@ -65,22 +63,19 @@
                                 <ul class="footerLinks-lists">
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "About Us" %}
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Summary</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Videos" %}
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Video</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
@@ -91,15 +86,13 @@
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Bible Quiz</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Join Us" %}
-                                        <a
-                                            href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
