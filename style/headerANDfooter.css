@@ -128,7 +128,7 @@ a{
     margin-bottom:20px;
     position:relative;
 }
-.homeResources-grid-containter ol{
+#categories ol,#MAINResources-section ol{
     column-gap:5em;
     column-width:15em;
     padding-left:1.5em;
