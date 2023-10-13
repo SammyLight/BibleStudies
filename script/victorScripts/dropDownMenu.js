@@ -40,25 +40,11 @@ function myFunctionTwo() {
     div2.classList.add('slideOut');
   }
 }
-
-// const twoButtons = document.querySelectorAll(".Button");
-// const twoButtonsArray = [...twoButtons];
-// console.log(twoButtonsArray);
-// twoButtonsArray.forEach(element => {
-//   element.addEventListener('click', dropDownFunction);
-// });
   
 const myDropdowns = document.querySelectorAll(".myDropdown, .myDropdown2");
 const elementsArray = [...myDropdowns];
   elementsArray.forEach(element => {
     element.classList.add("slideOut");
-      // if (element.classList.contains('slideOut')) {
-      //   element.classList.remove('slideOut');
-      //   element.classList.add('slideInFromLeft');
-      // } else {
-      //   element.classList.remove('slideInFromLeft');
-      //   element.classList.add('slideOut');
-      // }
   });
 
 // Close the dropdown menu if the user clicks outside of it
@@ -90,3 +76,43 @@ const elementChildArray = [...elementChild];
 elementChildArray.forEach(element => {
     element.classList.add('iconLink2');
 });
+
+// // // active page
+// const allBtns = document.querySelectorAll(".header-links-li a");
+// console.log(allBtns);
+// // // const allTabs = document.querySelectorAll(".videotab-content");
+
+// allBtns.forEach((elem) => {
+//   elem.addEventListener('click', function() {
+//     const linkId = elem.id;
+//     const titleBtnClick = elem.href;
+
+//     allBtns.forEach((link) => {
+//       if (link.href == titleBtnClick){
+//         link.classList.add("active");
+//       } else {
+//         link.classList.remove('active');
+//       }
+//     });
+
+//     allTabs.forEach((tab) => {
+//       if (tab.id.includes(linkId)) {
+//         tab.classList.add("videotab-content--active");  
+//       } else {
+//         tab.classList.remove('videotab-content--active');
+//       }
+//     });
+//   });
+// });
+
+// // Add active class to the current button (highlight it)
+// var header = document.getElementById("header-links");
+// var btns = header.getElementsByClassName("header-links-li");
+// console.log(btns);
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//   var current = document.getElementsByClassName("active");
+//   current[0].className = current[0].className.replace(" active", "");
+//   this.className += " active";
+//   });
+// }

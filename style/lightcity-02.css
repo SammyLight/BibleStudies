@@ -119,13 +119,9 @@ body *{
     width:100%;
     z-index:1100;
 }
-@media only screen and (max-width:911px){ 
-#search-container{ 
-    margin-top:80px!important;
-}}
 a{ 
     text-decoration:none!important;
-    /* text-decoration-color:#d0d0d0!important; */
+    /* text-decoration-color:(--light-grey)!important; */
 }
 a:hover{ 
     border-bottom:1px solid rgba(190,190,190,.5);
@@ -209,10 +205,10 @@ p.titles{
 }
 @media only screen and (min-width:760px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:30px;
+    font-size:28px;
 }
 #context_menu code,#context_menu .buttons {
-    font-size:18px!important;
+    font-size:16px!important;
 }
 h1.titles{ 
     font-size:50px;
@@ -229,7 +225,7 @@ h3{
 }}
 @media only screen and (min-width:820px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:38px;
+    font-size:30px;
 }
 #context_menu code,#context_menu .buttons {
     font-size:18px!important;
@@ -315,12 +311,12 @@ h3.subtitles{
 }
 .homeResources-grid .archive-date,
 .homeResources-grid .archive-date-summary{ 
-    color:var(--red);
+    color: var(--red)!important;;
     margin:0 0 20px;
 }
 .recentposts .archive-date{ 
-    /*     color:#d0d0d0; */
     margin-top:0;
+    margin-left: 5px;
 }
 .small,small{ 
     font-size:87%;
@@ -444,9 +440,13 @@ hr{
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius:10px;
     padding:5px 0;
-    color:#898181;
+    color:var(--grey);
     font-size:22px!important;
 }
+.visible-titles.active{
+    color:var(--grey)!important;
+    border-bottom:none!important;
+} 
 .caret{ 
     /* border-top:12px solid transparent;
     border-left:15px solid #898181;
@@ -481,12 +481,7 @@ hr{
     padding:0 10px 20px;
 }
 .sidebar-wrapper{ 
-    color:var(--black)!important;
     color:var(--white)!important;
-}
-.sidebar-wrapper span:hover{
-    color:#d0d0d0;
-    color:#7e7d7d;
 }
 .sidebar-wrapper-header h4, .sidebar-wrapper h5{
     padding:20px 0 0;
@@ -498,14 +493,12 @@ hr{
 }
 .sidebar a{ 
     color:var(--white);
-}
+} 
 .recentposts a{ 
-    color:var(--black)!important;
-    color:var(--white)!important;
+   color:var(--white)!important;
 }
-.recentposts a:hover{ 
-    color:#d0d0d0!important;
-    /* text-decoration:underline; */
+.recentposts a:hover, .sidebar-wrapper-header a:hover{ 
+    color:var(--grey)!important;
 }
 .sidebar li:before{ 
     content:" ";

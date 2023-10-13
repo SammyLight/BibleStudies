@@ -1,7 +1,7 @@
 document.body.addEventListener('click', toggleH1to6siblings);
 document.body.addEventListener('contextmenu', toggleH1to6siblings);
 document.body.addEventListener('keydown', toggleH1to6siblings);
-document.body.querySelectorAll('H1:not(main>h1)','H2:not(main>h2)','H3:not(main>h3)','H4:not(main>h4)','H5:not(main>h5)','H6:not(main>h6)').forEach(x=>{toggleH1to6siblings(null, x)})
+document.body.querySelectorAll('H1:not(main>h1):not(.homeResources-grid-containter>h1):not(.homeResources-grid>h1):not(.titles-inner>h1)','H2:not(main>h2):not(.homeResources-grid-containter>h2):not(.homeResources-grid>h2):not(.titles-inner>h2)','H3:not(main>h3):not(.homeResources-grid-containter>h3):not(.homeResources-grid>h3):not(.titles-inner>h3)','H4:not(main>h4):not(.homeResources-grid-containter>h4):not(.homeResources-grid>h4):not(.titles-inner>h4)','H5:not(main>h5):not(.homeResources-grid-containter>h5):not(.homeResources-grid>h5):not(.titles-inner>h5)','H6:not(main>h6):not(.homeResources-grid-containter>h6):not(.homeResources-grid>h6):not(.titles-inner>h6)').forEach(x=>{toggleH1to6siblings(null, x)})
 function toggleH1to6siblings(e, eTarget){
     let hElm, hTag;
     const h1to6arr = ['H1','H2','H3','H4','H5','H6'];

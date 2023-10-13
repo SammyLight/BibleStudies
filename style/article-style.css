@@ -648,7 +648,7 @@ table ol{
     text-decoration:none;
 }
 .PageNavigation a:hover{
-    color:#b6b6b6!important;
+    color:var(--light-gray)!important;
     border-bottom:none!important;
 }
 .PageNavigation li::before{

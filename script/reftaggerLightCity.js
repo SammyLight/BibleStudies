@@ -69,8 +69,8 @@ function touchORclickCMenu(e) {
             cmenuGlobalVars['stopCMenu']=false;
             cmenuGlobalVars['stillTouching']=false;
             clearTimeout(touchEndCheckTimeout);
-            let selection = window.getSelection();
-            if (selection.rangeCount > 0) {window.getSelection().removeRange(window.getSelection().getRangeAt(0));}
+            // let selection = window.getSelection();
+            // if (selection.rangeCount > 0) {window.getSelection().removeRange(window.getSelection().getRangeAt(0));}
             typeof context_menu != 'undefined' ? context_menu.style.userSelect = '':null;//allow selection after touch has ended
             document.removeEventListener('touchend',touchEndFunction);
             document.removeEventListener('contextmenu',preventContextMenu);//to know when the touch has ended and

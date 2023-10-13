@@ -32,6 +32,9 @@
     color:var(--gray);
     transition:all 0.2s ease-in-out;
 }
+.videos-header-btns:hover{
+    color:var(--black);
+}
 @media only screen and (max-width:414px){ 
 .videos-header-btns{ 
     font-size:22px!important;
