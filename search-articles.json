@@ -2,14 +2,15 @@
 ---
 [
   {% for page in site.pages %}
-    {
-
-      "title"    : "{{ page.title | escape }}",
-      "url"      : "{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}",
-      "category" : "{{ page.categories | join: ', ' }}",
-      "tags"     : "{{ page.tags | join: ', ' }}",
-      "date"     : "{{ page.date }}"
-
-    } {% unless forloop.last %},{% endunless %}
+    {% if page.collection %}
+      {
+        "title"    : "{{ page.title | escape }}",
+        "collection": "{{ page.collection }}",
+        "url"      : "{% if site.baseurl == "" %}{{ page.url }}{% elsif site.baseurl != "" %}/{{ site.baseurl }}{{ page.url }}{% endif %}",
+        "category" : "{{ page.categories | join: ', ' }}",
+        "tags"     : "{{ page.tags | join: ', ' }}",
+        "date"     : "{{ page.date }}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]
