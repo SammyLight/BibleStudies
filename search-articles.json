@@ -1,9 +1,10 @@
 ---
 ---
 [
-  {% for page in site.pages %}
-    {% if page.collection %}
+  {% assign filtered_pages = site.pages | where: 'layout', 'pageTEMPLATE' %}
+  {% for page in filtered_pages %}
       {
+        "layout"    : "{{ page.layout }}",
         "title"    : "{{ page.title | escape }}",
         "collection": "{{ page.collection }}",
         "url"      : "{% if site.baseurl == "" %}{{ page.url }}{% elsif site.baseurl != "" %}/{{ site.baseurl }}{{ page.url }}{% endif %}",
@@ -11,6 +12,5 @@
         "tags"     : "{{ page.tags | join: ', ' }}",
         "date"     : "{{ page.date }}"
       }{% unless forloop.last %},{% endunless %}
-    {% endif %}
   {% endfor %}
 ]
