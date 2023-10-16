@@ -648,7 +648,7 @@ table ol{
     text-decoration:none;
 }
 .PageNavigation a:hover{
-    color:var(--light-gray)!important;
+    color:var(--gray)!important;
     border-bottom:none!important;
 }
 .PageNavigation li::before{
@@ -659,20 +659,33 @@ table ol{
     margin:7px 0 20px;
     width:fit-content;
 }
+.prev-link {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  
+.next-link {
+    grid-area: 1 / 2 / 2 / 3;
+  }
 .prev-link a, .prev-link span{
     display:grid;
     place-content:start;
 }
-.next-link span, .next-link a, .next-link{
+.next-link p, .next-link a, .next-link{
     display:grid;
     place-content:end;
     place-self:end;
     text-align:right;
 }
-.prev-link span, .next-link span{
+.prev-link p, .next-link p{
     color:var(--gray);
     font-size:14px;
     margin:0.7em 0;
+}
+.prev-link span, .next-link span{
+    display:contents;
+    color:var(--inherit)!important;
+    font-size:var(--inherit);
+    margin:0;
 }
 @media only screen and (max-width:414px){ 
 .PageNavigation a{
@@ -685,7 +698,7 @@ table ol{
 .PageNavigation .all-links{ 
     margin:0 0 15px;
 }
-.prev-link span, .next-link span{
+.prev-link p, .next-link p{
     font-size:10px;
     margin:0.5em 0;
 }}

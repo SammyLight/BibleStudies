@@ -239,6 +239,7 @@ h1.titles{
 }
 h3.titles{ 
     font-size:35px;
+    line-height: 1.25;
 }
 h4.titles{ 
     font-size:32px;
