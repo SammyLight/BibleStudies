@@ -688,12 +688,19 @@ table ol{
     margin:0;
 }
 @media only screen and (max-width:414px){ 
-.PageNavigation a{
-    font-size:18px;
-}
 .PageNavigation{ 
     grid-template-columns:100%;
     padding-right:0.3em;
+}
+.prev-link {
+    grid-area:auto;
+  }
+  
+.next-link {
+    grid-area:auto;
+  }
+.PageNavigation a{
+    font-size:18px;
 }
 .PageNavigation .all-links{ 
     margin:0 0 15px;
