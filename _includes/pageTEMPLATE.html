@@ -13,47 +13,49 @@
 </div>
 <article class="homeResources-grid-containter container-fluid-inner">
 	<small id="archive-date" class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</small>
-	<!-- <time id="archive-date" class="archive-date" style="margin: 1em 0;">{{ page.date | date: "%a, %b %d, %y." }}</time> -->
-	<!-- <time datetime="{{2008-02-14 20:00}}">Valentines day</time> -->
 	<main>
 		{{content}}
 	</main>
 </article>
-<ul class="PageNavigation container-fluid-inner">
-	{% if page %}
-	{% assign curpage = page.date %}
-	{% assign sorted-pages = site.pages | sort: 'date < curpage' %} 
+<div class="PageNavigation container-fluid-inner">
+	{% assign sorted_post_pages = site.pages | sort: 'date' %}
 	{% assign my_array = "" | split: ',' %}
-	{% for page in sorted-pages %} 
-	{% if page.date And page.date != "" And page.date != nil %} 
-	{% assign my_array = my_array | push: page %}
+	{% for page in sorted_post_pages %}
+	{% if page.date and page.date != "" and page.date != nil %}
+		{% assign my_array = my_array | push: page %}
 	{% endif %}
-	{% endfor %} {% for page in my_array limit:1 %}
-	<li class="all-links prev-link">
-		<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}
-			<small class="archive-date">{{ page.date | date_to_string }}.</small>
-		</a>
-	</li>
 	{% endfor %}
+	{% assign current_page = page %}
+	{% assign previous_page = nil %}
+	{% assign next_page = nil %}
+	{% assign found_current_page = false %}
+	{% for page in my_array %}
+	{% if page == current_page %}
+		{% assign found_current_page = true %}
+	{% elsif found_current_page %}
+		{% assign next_page = page %}
+		{% break %}
+	{% else %}
+		{% assign previous_page = page %}
 	{% endif %}
-</ul>
-<div class="add_space"></div>
-<ul class="PageNavigation container-fluid-inner">
-	{% if page.previous.url %}
-	<li class="all-links prev-link">
-		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">{{page.previous.title}}
-			<span>&laquo; Previous</span>
+	{% endfor %}
+	{% if previous_page != nil %}
+	<div class="all-links prev-link">
+		<a href="{% if site.baseurl == "" %}{{previous_page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{previous_page.url}}{% endif %}">
+			<p>&laquo; Previous article</p>
+			{{ previous_page.title }}		
 		</a>
-	</li>
-		{% endif %}
-	{% if page.next.url %}
-	<li class="all-links next-link">
-		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">{{page.next.title}}
-			<span>Next &raquo;</span>
+	</div>
+	{% endif %}
+	{% if next_page != nil %}
+	<div class="all-links next-link">
+		<a href="{% if site.baseurl == "" %}{{next_page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{next_page.url}}{% endif %}">
+			<p>Next article &raquo;</p>
+			{{ next_page.title }}			
 		</a>
-	</li>
-		{% endif %}
-</ul>
+	</div>
+	{% endif %}
+</div>
 {% include contact-section.html %}
 <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
 <script type="text/javascript" src="../script/victorScripts/slideInscript.js"></script>

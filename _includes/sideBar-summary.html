@@ -28,20 +28,25 @@
                     </a>{% endif %}{% endfor %}
                 </h4>
             </div>
-            <ul class="recentposts">
-                {% assign counter = '0' %}
+            <ul class="recentposts reducedLength">
+                {% assign counter = 0 %}
+
                 {% for category in site.categories %}
-                {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
-                {% assign sumcaty = category_name %}
-                {% for post in site.posts %}
-                {% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %} 
-                <li>
-                    <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-                        {{ post.title }}
-                    </a>
-                </li>
-                    {% endif %}{% endfor %}
-                    {% endfor %}
+                  {% capture category_name %}HomePage-{{ category | first }}{% endcapture %}
+                  {% assign sumcaty = category_name %}
+                  
+                  {% for post in site.posts %}
+                    {% if post.categories contains sumcaty and post.layout == 'cat-homepageTEMPLATE-summary' %}
+                      {% capture counter %}{{ counter | plus: 1 }}{% endcapture %}
+                      <li>
+                        <a class="link" href="{% if site.baseurl == "" %}{{ post.url }}{% else %}/{{ site.baseurl }}{{ post.url }}{% endif %}">
+                          {{ post.title }}
+                        </a>
+                      </li>
+                      {% if counter >= '6' %}{% break %}{% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}                
             </ul>
             <small title="Click me for all Links in Categories">
                 {% for post in site.posts %}{% if post.title contains "Categories" %}

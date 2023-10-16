@@ -10,7 +10,7 @@
 	{% if page.previous.url %}
 	<div class="all-links prev-link">
 		<a href="{% if site.baseurl == "" %}{{page.previous.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.previous.url}}{% endif %}">
-			<span>&laquo; Previous summary</span>
+			<p>&laquo; Previous summary</p>
 			{{page.previous.title}}			
 		</a>
 	</div>
@@ -18,7 +18,7 @@
 	{% if page.next.url %}
 	<div class="all-links next-link">
 		<a href="{% if site.baseurl == "" %}{{page.next.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.next.url}}{% endif %}">
-			<span>Next summary &raquo;</span>
+			<p>Next summary &raquo;</p>
 			{{page.next.title}}			
 		</a>
 	</div>
