@@ -381,7 +381,7 @@ td,th{
     border-bottom:2.5px solid var(--grey);}
 th{ 
     text-transform:uppercase;}
-table em,table u,table strong,table sup{
+table em,table u,table sup{
     word-break:break-word;}
 table p{ 
     margin:0.3em!important;}
