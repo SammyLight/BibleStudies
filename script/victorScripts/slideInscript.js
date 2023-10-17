@@ -25,7 +25,7 @@ const handleAnimation = () => {
         element.classList.add('easeInTwo');
       }
     });
-  }, 1700);
+  }, 1600);
 };
 // Call the handleAnimation function after a delay
 setTimeout(handleAnimation, 1500);

@@ -45,13 +45,6 @@ class LiteYTEmbed extends HTMLElement {
         createDivElement.append(videoTitle);
         chaNamAndVideoTitle.append(createDivElement);
 
-        // var videoTitleTest = this.getAttribute('title');
-        // console.log(videoTitleTest);
-        
-        // const videoTitleTest = document.createElement('nav');
-        // videoTitleTest.title = this.playLabel;
-        // console.log(videoTitleTest);
-
         // Set up play button, and its visually hidden label
         if (!playBtnEl) {
             playBtnEl = document.createElement('button');
