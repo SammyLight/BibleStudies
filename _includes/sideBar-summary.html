@@ -20,13 +20,13 @@
                 {% endfor %}
             </ul>
             <div class="sidebar-wrapper-header">
-                <h4 class="titles" title="Click me for all Links in Categories">
+                <h3 class="titles" title="Click me for all Links in Categories">
                     {% for post in site.posts %}{% if post.title contains "Categories" %}
                     <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                         style="text-decoration: none!important;">
                         <span>Categories</span>
                     </a>{% endif %}{% endfor %}
-                </h4>
+                </h3>
             </div>
             <ul class="recentposts reducedLength">
                 {% assign counter = 0 %}
@@ -66,7 +66,7 @@
             </div>
             {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1 %}
             {% for yearMonth in postsByYearMonth %}
-            <h5 class="titles">{{ yearMonth.name }}</h5>
+            <h4 class="titles">{{ yearMonth.name }}</h4>
             <ul class="recentposts">
                 {% for post in yearMonth.items %}
                 <li><a href="{{ post.url }}">{{ post.title }}

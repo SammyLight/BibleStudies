@@ -14,19 +14,16 @@
 			{% if page.date And page.date != "" And page.date != nil %}
 			{% assign my_array = my_array | push: page %}
 			{% endif %}
-			{% endfor %}
-			
+			{% endfor %}			
 			{% for page in my_array limit:5 %}
 			<div class="homeResources-grid-containter">
 				<small class="archive-date">{{ page.date | date_to_string }}.</small>
-
-				<h3 class="titles"><a href="{% if site.baseurl == "" %}
+				<h2 class="titles"><a href="{% if site.baseurl == "" %}
 							{{page.url}}
 						{% elsif site.baseurl != "" %}
 							/{{site.baseurl}}{{page.url}}
 						{% endif %}">{{ page.title }}</a>
-				</h3>
-
+				</h2>
 				<p class="prayer-text">
 					{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
 					{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) |
@@ -35,14 +32,12 @@
 					{{ page.content | strip_html | truncatewords: 50 }}
 					{% endif %}
 				</p>
-
 				<small><a class="titles-links" href="{% if site.baseurl == "" %}
 							{{page.url}}
 						{% elsif site.baseurl != "" %}
 							/{{site.baseurl}}{{page.url}}
 						{% endif %}">read more</a>
 				</small>
-
 				<div class="prayer-text">
 					<p class="categories"><span>category:</span>
 						{% if page %}
@@ -63,7 +58,6 @@
 						{% endif %}{% endfor %}
 						{% endfor %}
 					</p>
-					<!-- <hr> -->
 				</div>
 			</div>
 			{% endfor %}
@@ -76,13 +70,3 @@
 		</div>
 	</div>
 </section>
-<!-- <script>
-	var tooltipSpan = document.getElementById('tooltip-span');
-
-window.onmousemove = function (e) {
-    var x = e.clientX,
-        y = e.clientY;
-    tooltipSpan.style.top = (y + 20) + 'px';
-    tooltipSpan.style.left = (x + 20) + 'px';
-};
-</script> -->

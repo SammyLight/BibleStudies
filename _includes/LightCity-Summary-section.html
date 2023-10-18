@@ -12,18 +12,15 @@
 			for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign
 			my_array = my_array | push: posts %} {% endif %}
 			{% endfor %}
-
 			{% for page in my_array limit:5 %}
 			<div class="homeResources-grid-containter">
 			<small class="archive-date">{{ page.date | date: "%a, %b %d, %y." }}</small>
-
-			<h3 class="titles"><a href="{% if site.baseurl == "" %}
+			<h2 class="titles"><a href="{% if site.baseurl == "" %}
 						{{page.url}}
 					{% elsif site.baseurl != "" %}
 						/{{site.baseurl}}{{page.url}}
 					{% endif %}">{{ page.title }}</a>
-			</h3>
-
+			</h2>
 			<p class="prayer-text">
 				{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
 				{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) |
@@ -32,14 +29,12 @@
 				{{ page.content | strip_html | truncatewords: 50 }}
 				{% endif %}
 			</p>
-
 			<small><a class="titles-links" href="{% if site.baseurl == "" %}
 						{{page.url}}
 					{% elsif site.baseurl != "" %}
 						/{{site.baseurl}}{{page.url}}
 					{% endif %}">Read more</a>
 			</small>
-
 			<div class="prayer-text">
 				<p class="categories"><span>category:</span>
 					{% if post %}
@@ -57,7 +52,6 @@
 					{% endif %}{% endfor %}
 					{% endfor %}
 				</p>
-				<!-- <hr> -->
 			</div>
 		</div>
 			{% endfor %}
