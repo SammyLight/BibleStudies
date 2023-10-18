@@ -17,7 +17,7 @@ permalink: /archive/
 			{% for post in yearMonth.items %}
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }} 
-					<small class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y." }}</small>
+					&nbsp; <small class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y." }}</small>
 				</a>
 			</li>
 			{% endfor %}
