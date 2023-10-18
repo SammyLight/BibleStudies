@@ -40,12 +40,12 @@ permalink: /categories/
 					</a>{% endif %}{% endfor %}
 				</small>
 				<div class="sidebar-wrapper-header">
-					<h4 class="titles" title="Click me for all Links in Categories">
+					<h3 class="titles" title="Click me for all Links in Categories">
 						{% for post in site.posts %}{% if post.title contains "Categories" %}
 						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
 							<span>Categories</span>
 						</a>{% endif %}{% endfor %}
-					</h4>
+					</h3>
 				</div>
 				<ul class="recentposts">
 					{% assign counter = '0' %}
@@ -88,7 +88,7 @@ permalink: /categories/
 		{% for tag in site.tags %}
 			{% capture tag_name %}{{ tag | first }}{% endcapture %}
 			<div class="homeResources-grid-containter">
-				<h4 class="titles">{{ tag_name }}</h4>
+				<h2 class="titles">{{ tag_name }}</h2>
 				<ol>
 					{% for post in site.tags[tag_name] %}
 					<li class="all-links">
