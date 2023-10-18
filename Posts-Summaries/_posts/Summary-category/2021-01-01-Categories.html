@@ -49,19 +49,26 @@ permalink: /categories/
 				</div>
 				<ul class="recentposts">
 					{% assign counter = '0' %}
-					{% for category in site.categories %}
-					{% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
-					{% assign sumcaty = category_name %}
-					{% for post in site.posts %}
-					{% if post.categories contains sumcaty and counter < '6' %}
-					 {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
-					<li>
-						<a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
-							{{ post.title }}
-						</a>
-					</li>
-					{% endif %}{% endfor %}
-					{% endfor %}
+                {% assign recent_posts = "" | split: "," %}
+                {% for category in site.categories %}
+                  {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
+                  {% assign sumcaty = category_name %}
+                  {% for post in site.posts %}
+                    {% if post.categories contains sumcaty and counter < '6' %}
+                      {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+                      {% capture recent_posts %}{{ recent_posts | append: post.id | append: "," }}{% endcapture %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                {% assign post_ids = recent_posts | split: "," | reverse %}
+                {% for post_id in post_ids %}
+                  {% assign post = site.posts | where: "id", post_id | first %}
+                  <li>
+                    <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
+                      {{ post.title }}
+                    </a>
+                  </li>
+                {% endfor %}
 				</ul>
 				<small title="Click me for all Links in Categories">
 					{% for post in site.posts %}{% if post.title contains "Categories" %}
@@ -72,7 +79,8 @@ permalink: /categories/
 			</div>
 		</div>
 	</aside>
-	<div id="categories" class="col-lg-6 container-fluid-inner">
+	<div id="categories" class="col-lg-6">
+	<div class="postCategories container-fluid-inner">
 		<div class="titles-inner">
 			<h1 class="titles">{{ page.title }}</h1>
 			<p>Categories, all in one place.</p>
@@ -91,5 +99,6 @@ permalink: /categories/
 				</ol>
 			</div>
 		{% endfor %}
+	</div>
 	</div>
 </section>
