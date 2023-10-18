@@ -27,7 +27,6 @@ permalink: /categories/
 					{% for post in yearMonth.items %}
 					<li>
 						<a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{	post.title }}
-							<br>
 							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small>
 						</a>
 					</li>
