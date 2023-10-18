@@ -56,13 +56,13 @@
                 </a>{% endif %}{% endfor %}
             </small>
             <div class="sidebar-wrapper-header">
-                <h4 class="titles" title="Click me for all Links in Archive">
+                <h3 class="titles" title="Click me for all Links in Archive">
                     {% for post in site.posts %}{% if post.title contains "Archive" %}
                     <a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}"
                         style="text-decoration: none!important;">
                         <span>Archives</span>
                     </a>{% endif %}{% endfor %}
-                </h4>
+                </h3>
             </div>
             {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1 %}
             {% for yearMonth in postsByYearMonth %}
