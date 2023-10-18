@@ -14,7 +14,8 @@ categories: ["HomePageArticle-General-Resources"]
 		<ol>
 			{% for page in site.pages %}{% if page.categories contains "General-Resources" %}
 			<li class="all-links">
-				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a>
+				 &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
 				{% endif %}
 				{% endfor %}

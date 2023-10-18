@@ -21,7 +21,7 @@ categories: ["HomePageArticle-Bible-Commentaries"]
 		{% for page in site.pages %}
 		{% if page.categories contains "Bible-Commentaries" %}
 		{% if page.subsection contains biblebook %}
-		<h4 class="titles titlesTwo">{{ biblebook }}</h4>
+		<h2 class="titles titlesTwo">{{ biblebook }}</h2>
 		<ol>
 			{% break %}
 			{% endif %}
@@ -31,7 +31,9 @@ categories: ["HomePageArticle-Bible-Commentaries"]
 			{% for page in site.pages %}
 			{% if page.categories contains "Bible-Commentaries" %}
 			{% if page.subsection contains biblebook %}
-			<li class="all-links"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>&nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+			<li class="all-links">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+				&nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
 			{% endif %}
 			{% endif %}
@@ -54,7 +56,7 @@ categories: ["HomePageArticle-Bible-Commentaries"]
 		{% for page in site.pages %}
 		{% if page.categories contains "Bible-Commentaries" %}
 		{% if page.subsection contains biblebook %}
-		<h4 class="titles titlesTwo">{{ biblebook }}</h4>
+		<h2 class="titles titlesTwo">{{ biblebook }}</h2>
 		<ol>
 			{% break %}
 			{% endif %}

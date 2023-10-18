@@ -21,7 +21,7 @@ categories: ["HomePageArticle-Angel-of-Yahweh"]
 		{% for page in site.pages %}
 		{% if page.categories contains "Angel-of-Yahweh" %}
 		{% if page.subsection contains subcat %}
-		<h4 class="titles">{{ subcat }}</h4>
+		<h2 class="titles">{{ subcat }}</h2>
 		<ol>
 			{% break %}
 			{% endif %}
@@ -32,10 +32,8 @@ categories: ["HomePageArticle-Angel-of-Yahweh"]
 			{% if page.categories contains "Angel-of-Yahweh" %}
 			{% if page.subsection contains subcat %}
 			<li class="all-links">
-				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{
-					page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date:
-					"%a, %b
-					%d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> 
+					&nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
 			</li>
 			{% endif %}
 			{% endif %}
