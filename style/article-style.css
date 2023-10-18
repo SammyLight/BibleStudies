@@ -302,9 +302,9 @@ li:before{
     height:30px;}}
 /* Table CSS */
 .table-container{
-    max-width: 100%;
-  overflow-x: auto; /* Add horizontal scroll if necessary */}
-table {table-layout: fixed;}
+    max-width:100%;
+  overflow-x:auto; /* Add horizontal scroll if necessary */}
+table {table-layout:fixed;}
 td,th{ 
     border:1px solid var(--grey);
     padding-right:5px;
@@ -408,8 +408,8 @@ table ol{
 .PageNavigation .all-links{
     margin:7px 0 20px;
     width:fit-content;}
-.prev-link {grid-area: 1 / 1 / 2 / 2;}
-.next-link {grid-area: 1 / 2 / 2 / 3;}
+.prev-link {grid-area:1 / 1 / 2 / 2;}
+.next-link {grid-area:1 / 2 / 2 / 3;}
 .prev-link a, .prev-link span{
     display:grid;
     place-content:start;}

@@ -218,33 +218,33 @@ h1.titles{
     color:inherit;}
 .archive-date{ 
     display:inline;
-    color: var(--grey)!important;
-    font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 17px;
-    margin-top: 20px;
-    margin-left: -8px;
+    color:var(--grey)!important;
+    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:0;
+    line-height:17px;
+    margin-top:20px;
+    margin-left:-8px;
     white-space:nowrap;}
 .archive-date-summary{ 
     display:inline;
-    color: var(--grey)!important;
-    font-family: Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 17px;
-    margin-top: 20px;
-    margin-left: -8px;    
+    color:var(--grey)!important;
+    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:0;
+    line-height:17px;
+    margin-top:20px;
+    margin-left:-8px;    
     white-space:nowrap;}
 .homeResources-grid .archive-date,
 .homeResources-grid .archive-date-summary{ 
-    color: var(--red)!important;;
+    color:var(--red)!important;;
     margin:0 0 20px;}
 .recentposts .archive-date{ 
     margin-top:0;
-    margin-left: 5px;}
+    margin-left:5px;}
 .small,small{ 
     font-size:87%;}
 .categories{ 
@@ -261,8 +261,8 @@ a.cat-link{
     color:var(--supernova)!important;
     font-weight:600;
     padding:0 7px;
-    border-right: 1px solid;
-    white-space: nowrap;
+    border-right:1px solid;
+    white-space:nowrap;
     /* color:var(--black)!important;
     background-color:var(--vivid-orange);
     padding:6px 18px;
@@ -270,7 +270,7 @@ a.cat-link{
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1); */
 }
 a.cat-link:last-child{
-    border: none;}
+    border:none;}
 a.cat-link:hover{
     color:var(--red)!important;}
 hr{ 

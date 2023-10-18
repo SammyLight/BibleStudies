@@ -125,7 +125,7 @@ a{
     visibility:hidden;}
 .archive-date{ 
     display:block;
-    color: var(--red);
+    color:var(--red);
     font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
     font-size:12px;
     font-weight:500;
@@ -416,7 +416,7 @@ footer .archive-date{
     right:0;
     display:flex;
     place-content:end;
-    width: fit-content;
+    width:fit-content;
     height:-webkit-fill-available;
     border-bottom:none;}
 #search-container{ 
@@ -604,7 +604,7 @@ ul.footerLinks-lists{
     font-size:16px!important;
     line-height:1.2;
     list-style-type:none;
-    margin: 10px;}
+    margin:12px 0;}
 .footerLinks-lists a{ 
     font-size:16px;}
 .footerLinks-lists p{ 

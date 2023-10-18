@@ -6,8 +6,7 @@ lite-youtube{
     background-position:center center;
     background-size:cover;
     cursor:pointer;
-    max-width:720px;
-}
+    max-width:720px;}
 /* gradient */
 lite-youtube::before{ 
     content:'';
@@ -20,24 +19,19 @@ lite-youtube::before{
     height:60px;
     padding-bottom:50px;
     width:100%;
-    transition:all 0.2s cubic-bezier(0, 0, 0.2, 1);
-}
-/* responsive iframe with a 16:9 aspect ratio
-    thanks https://css-tricks.com/responsive-iframes/
-*/
+    transition:all 0.2s cubic-bezier(0, 0, 0.2, 1);}
+/* responsive iframe with a 16:9 aspect ratio */
 lite-youtube::after{ 
     content:"";
     display:block;
-    padding-bottom:calc(100% / (16 / 9));
-}
+    padding-bottom:calc(100% / (16 / 9));}
 lite-youtube > iframe{ 
     width:100%;
     height:100%;
     position:absolute;
     top:0;
     left:0;
-    border:0;
-}
+    border:0;}
 /* play button */
 lite-youtube > .lty-playbtn{ 
     display:block;
@@ -53,27 +47,21 @@ lite-youtube > .lty-playbtn{
     z-index:1;
     filter:none;
     transition:filter .1s cubic-bezier(0, 0, 0.2, 1);
-    border:0;
-}
-
+    border:0;}
 lite-youtube:hover > .lty-playbtn,
 lite-youtube .lty-playbtn:focus{ 
-    filter:grayscale(100%);
-}
+    filter:grayscale(100%);}
 /* channel image and name */
 .chaNamAndVideoTitle{
     position:absolute;
     top:10px;
     left:10px;
-    right: 20px;
-    display: grid;
-    grid-template-columns: auto auto;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-.chaNamAndVideoTitle::-webkit-scrollbar{ 
-    display: none;
-}
+    right:20px;
+    display:grid;
+    grid-template-columns:auto auto;
+    overflow-x:auto;
+    white-space:nowrap;}
+.chaNamAndVideoTitle::-webkit-scrollbar{display:none;}
 /* channel image */
 .chaNamAndVideoTitle > .lty-channelimg{ 
     display:block;
@@ -85,23 +73,19 @@ lite-youtube .lty-playbtn:focus{
     height:40px;
     /* margin:10px; */
     border-radius:100%;
-    z-index:1;
-}
+    z-index:1;}
 @media only screen and (max-width:414px){
 .chaNamAndVideoTitle > .lty-channelimg{ 
     width:35px;
-    height:35px;
-}}
+    height:35px;}}
 /* Video Title */
 .moving-text{
-    color: #ffffff;
-    margin-top: 5px;
-    margin-left: 10px;
-    z-index: -1;
-}
+    color:#ffffff;
+    margin-top:5px;
+    margin-left:10px;
+    z-index:-1;}
 .moving-text:hover{
-    animation-play-state:paused;
-}
+    animation-play-state:paused;}
 @keyframes marquee{
     0%{transform:translateX(100%)}
     100%{transform:translateX(-100%);}
@@ -109,24 +93,16 @@ lite-youtube .lty-playbtn:focus{
 /* @keyframes marquee{
     0%{transform:translateX(0%)}
     20%{transform:translateX(-20%)}
-    100%{transform:translateX(-100%);}
-} */
+    100%{transform:translateX(-100%);}} */
 /* media query to enable animation for only those who want it */
-/* @media (prefers-reduced-motion: no-preference){
-    .moving-text{
-        animation:marquee 20s linear infinite;
-    }
-} */
+/* @media (prefers-reduced-motion:no-preference){
+    .moving-text{animation:marquee 20s linear infinite;}} */
 /* Post-click styles */
-lite-youtube.lyt-activated{ 
-    cursor:unset;
-}
+lite-youtube.lyt-activated{cursor:unset;}
 lite-youtube.lyt-activated::before,
 lite-youtube.lyt-activated > .lty-playbtn{ 
     opacity:0;
-    pointer-events:none;
-}
-
+    pointer-events:none;}
 .lyt-visually-hidden{ 
     clip:rect(0 0 0 0);
     clip-path:inset(50%);
@@ -134,5 +110,4 @@ lite-youtube.lyt-activated > .lty-playbtn{
     overflow:hidden;
     position:absolute;
     white-space:nowrap;
-    width:1px;
-  }
+    width:1px;}
