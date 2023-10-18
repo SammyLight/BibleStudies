@@ -140,7 +140,7 @@ h6.titles{
     padding:22px 22px!important;
     margin-bottom:-20px!important;}
 @media only screen and (max-width:539px){
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+#homeBodyContent p,#homeBodyContent li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:18px;}
 #context_menu code{
     font-size:12px!important;}
@@ -160,7 +160,7 @@ h4.titles{font-size:14px;}
 h5.titles{font-size:12px;}
 h6.titles{font-size:10px;}}
 @media only screen and (min-width:540px){
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+#homeBodyContent p,#homeBodyContent li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:20px;}
 #context_menu code,#context_menu .buttons{
     font-size:14px!important;}
@@ -172,7 +172,7 @@ h4.titles{font-size:20px;}
 h5.titles{font-size:18px;}
 h6.titles{font-size:16px;}}
 @media only screen and (min-width:760px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+#homeBodyContent p,#homeBodyContent li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:32px;}
 #context_menu code,#context_menu .buttons{
     font-size:18px!important;}
@@ -189,7 +189,7 @@ h5.titles,h6.titles{font-size:22px;}
     -ms-flex-order:2;
     order:2;}}
 @media only screen and (min-width:820px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+#homeBodyContent p,#homeBodyContent li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:30px;}
 #context_menu code,#context_menu .buttons{
     font-size:18px!important;}
@@ -200,7 +200,7 @@ h3.titles{font-size:30px;}
 h4.titles{font-size:28px;}
 h5.titles,h6.titles{font-size:24px;}}
 @media only screen and (min-width:1024px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+#homeBodyContent p,#homeBodyContent li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:24px;}
 #context_menu code,#context_menu .buttons{
     font-size:14px!important;}
@@ -407,7 +407,8 @@ ul.recentposts{
     list-style:none;
     margin:0;}
 .recentposts li{ 
-    padding:0.2em 0;}
+    padding:0.2em 0;
+    line-height:1.25;}
 a.cat-link{
     font-size:12px;}
 a.link{
@@ -424,8 +425,9 @@ a.cat-link{
     font-size:16px;}
 a.link{
     font-size:18px;}
-.recentposts li{ 
-    padding:0.2em 0 0.5em 0;}}
+/* .recentposts li{ 
+    padding:0.2em 0 0.5em 0;} */
+}
 @media only screen and (min-width:760px){ 
 a.link{
     font-size:22px;}}
