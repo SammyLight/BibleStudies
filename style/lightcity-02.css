@@ -113,11 +113,23 @@ h2{
     font-size:1.649690125em;}
 h3{ 
     font-size:1.349690125em;}
-
 h1.titles{ 
-    font-size:2.1em;
     margin:0;
     border-bottom:1px solid #989898;
+    border-bottom:none;}
+
+h2.titles{ 
+    margin:0;}
+h3.titles{ 
+    margin:0;
+    border-bottom:none!important;}
+h5.titles{ 
+    border-bottom:none;
+    padding-top:1em;
+    padding-bottom:2em;
+    margin:0;}
+h6.titles{ 
+    padding-bottom:1em;
     border-bottom:none;}
 .titles-inner{
     background-color:var(--white);
@@ -127,67 +139,61 @@ h1.titles{
     border-radius:10px;
     padding:22px 22px!important;
     margin-bottom:-20px!important;}
-h2.titles{ 
-    font-size:1.7em;
-    margin:0;}
-h3.titles{ 
-    font-size:24px;
-    margin:0;
-    border-bottom:none!important;}
-h4.titles{ 
-    font-size:22px;}
-h5.titles{ 
-    font-size:1.152025em;
-    border-bottom:none;
-    padding-top:1em;
-    padding-bottom:2em;
-    margin:0;}
-h6.titles{ 
-    padding-bottom:1em;
-    font-size:1.15em;
-    border-bottom:none;}
-p.titles{ 
-    opacity:0.60;
-    margin-inline-start:0;
-    margin-inline-end:0;}
-@media only screen and (max-width:300px){
-h1.titles{
-    font-size: 1.4em;}}
+@media only screen and (max-width:539px){
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:18px;}
 #context_menu code{
     font-size:12px!important;}
+h1.titles{font-size:30px;}
+h2.titles{font-size:22px;}
+h3.titles{font-size:20px;}
+h4.titles{font-size:18px;}
+h5.titles{font-size:16px;}
+h6.titles{font-size:14px;}}
+@media only screen and (max-width:300px){
+h1.titles{font-size:24px;}
+h2.titles{font-size:18px;}
+h3.titles{font-size:16px;}
+h4.titles{font-size:14px;}
+h5.titles{font-size:12px;}
+h6.titles{font-size:10px;}}
 @media only screen and (min-width:540px){
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:20px;}
 #context_menu code,#context_menu .buttons{
-    font-size:14px!important;}}
+    font-size:14px!important;}
+h1.titles{font-size:30px;}
+h2.titles{font-size:24px;}
+h3.titles{font-size:22px;}
+h4.titles{font-size:20px;}
+h5.titles{font-size:18px;}
+h6.titles{font-size:16px;}}
 @media only screen and (min-width:760px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:28px;}
+    font-size:32px;}
 #context_menu code,#context_menu .buttons{
-    font-size:16px!important;}
-h1.titles{ 
-    font-size:50px;}
-h3.titles{ 
-    font-size:30px;}
-h4.titles{ 
-    font-size:28px;}
-h2,h3{font-size:1.649690125em;}}
+    font-size:18px!important;}
+h1.titles{font-size:50px;}
+h2.titles{font-size:30px;}
+h3.titles{font-size:28px;}
+h4.titles{font-size:26px;}
+h5.titles,h6.titles{font-size:22px;}
+.order-lg-1{ 
+    -ms-flex-order:1;
+    order:1;}
+.order-lg-2{ 
+    -ms-flex-order:2;
+    order:2;}}
 @media only screen and (min-width:820px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:30px;}
 #context_menu code,#context_menu .buttons{
     font-size:18px!important;}
-h1.titles{ 
-    font-size:55px;}
-h3.titles{ 
-    font-size:35px;
-    line-height: 1.25;}
-h4.titles{ 
-    font-size:32px;}
-h2,h3{ 
-    font-size:1.849690125em;}}
+h1.titles{font-size:55px;}
+h2.titles{font-size:35px;}
+h3.titles{font-size:30px;}
+h4.titles{font-size:28px;}
+h5.titles,h6.titles{font-size:24px;}}
 @media only screen and (min-width:1024px){ 
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:24px;}
@@ -195,10 +201,6 @@ h2,h3{
     font-size:14px!important;}
 h1.titles{ 
     padding-top:0;}}
-h3.subtitles{ 
-    color:var(--white);
-    font-size:1em;
-    font-weight:400;}
 .fonts{ 
     background-color:var(--bgColor-smoke-white)!important;
     color:var(--black);
@@ -210,14 +212,6 @@ h3.subtitles{
     letter-spacing:1px;
     text-align:left;
     word-break:normal;}
-@media only screen and (min-width:760px){ 
-.order-lg-1{ 
-    -ms-flex-order:1;
-
-    order:1;}
-.order-lg-2{ 
-    -ms-flex-order:2;
-    order:2;}}
 /* END OF CUSTOM CSS */
 #Resources-section a{ 
     text-decoration:none;
@@ -383,20 +377,15 @@ hr{
     outline:none;
     font-size:15px;}
 .sidebar{ 
-    /* border-radius:1%;
-    background-color:var(--vivid-orange);
-    background-color:#3b3d41;
-    box-shadow:0 1px 2px rgba(190,190,190,.5);
-    box-shadow:0 1px 2px var(--black); */
     background-color:var(--black)!important;
     padding:0 10px 20px;}
 .sidebar-wrapper{ 
     color:var(--white)!important;}
-.sidebar-wrapper-header h4, .sidebar-wrapper h5{
+.sidebar-wrapper-header h3, .sidebar-wrapper h4{
     padding:20px 0 0;
     margin:0;
     border-bottom:none;}
-.sidebar-wrapper-header h4>a{
+.sidebar-wrapper-header h3>a{
     border-bottom:none;}
 .sidebar a{ 
     color:var(--white);} 
