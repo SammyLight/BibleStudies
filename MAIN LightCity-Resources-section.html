@@ -27,9 +27,7 @@ categories: [""]
             <div class="homeResources-grid-containter">
                 {% for page in site.pages %}
                 {% if page.categories contains cat %}
-                <h4 class="titles">
-                    {{ cat }}
-                </h4>
+                <h2 class="titles">{{ cat }}</h2>
                 {% break %}
                 {% endif %}
                 {% endfor %}
