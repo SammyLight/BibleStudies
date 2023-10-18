@@ -145,6 +145,7 @@ h6.titles{
 #context_menu code{
     font-size:12px!important;}
 h1.titles{font-size:30px;}
+h1.titlesTwo{font-size:26px;}
 h2.titles{font-size:22px;}
 h3.titles{font-size:20px;}
 h4.titles{font-size:18px;}
@@ -152,6 +153,7 @@ h5.titles{font-size:16px;}
 h6.titles{font-size:14px;}}
 @media only screen and (max-width:300px){
 h1.titles{font-size:24px;}
+h1.titlesTwo{font-size:20px;}
 h2.titles{font-size:18px;}
 h3.titles{font-size:16px;}
 h4.titles{font-size:14px;}
@@ -163,6 +165,7 @@ h6.titles{font-size:10px;}}
 #context_menu code,#context_menu .buttons{
     font-size:14px!important;}
 h1.titles{font-size:30px;}
+h1.titlesTwo{font-size:26px;}
 h2.titles{font-size:24px;}
 h3.titles{font-size:22px;}
 h4.titles{font-size:20px;}
@@ -174,6 +177,7 @@ h6.titles{font-size:16px;}}
 #context_menu code,#context_menu .buttons{
     font-size:18px!important;}
 h1.titles{font-size:50px;}
+h1.titlesTwo{font-size:40px;}
 h2.titles{font-size:30px;}
 h3.titles{font-size:28px;}
 h4.titles{font-size:26px;}
@@ -190,6 +194,7 @@ h5.titles,h6.titles{font-size:22px;}
 #context_menu code,#context_menu .buttons{
     font-size:18px!important;}
 h1.titles{font-size:55px;}
+h1.titlesTwo{font-size:45px;}
 h2.titles{font-size:35px;}
 h3.titles{font-size:30px;}
 h4.titles{font-size:28px;}
