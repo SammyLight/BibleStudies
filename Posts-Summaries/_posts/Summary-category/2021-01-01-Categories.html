@@ -13,23 +13,24 @@ permalink: /categories/
 		<div class="sidebar container-fluid-inner homeResources-grid-containter">
 			<div class="sidebar-wrapper">
 				<div class="sidebar-wrapper-header">
-					<h4 class="titles" title="Click me for all Links in Archive">
+					<h3 class="titles" title="Click me for all Links in Archive">
 						{% for post in site.posts %}{% if post.title contains "Archive" %}
 						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
 							<span>Archives</span>
 						</a>{% endif %}{% endfor %}
-					</h4>
+					</h3>
 				</div>
-				{% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1
-				%}
+				{% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'" | slice:0, 1	%}
 				{% for yearMonth in postsByYearMonth %}
-				<h5 class="titles">{{ yearMonth.name }}</h5>
+				<h4 class="titles">{{ yearMonth.name }}</h4>
 				<ul class="recentposts">
 					{% for post in yearMonth.items %}
-					<li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
-							post.title }}
+					<li>
+						<a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{	post.title }}
 							<br>
-							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
+							<small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small>
+						</a>
+					</li>
 					{% endfor %}
 				</ul>
 				{% endfor %}
