@@ -486,12 +486,15 @@ function contextMenu_CreateNAppend(e) {
         context_menu.setAttribute('style',currentContextMenu_style);            
         context_menu.querySelector('.cmtitlebar').setAttribute('data-x',cmenu_cmt_dX);
         context_menu.querySelector('.cmtitlebar').setAttribute('data-y',cmenu_cmt_dY);
+        context_menu.querySelector('.buttombar').setAttribute('data-x',cmenu_cmt_dX);
+        context_menu.querySelector('.buttombar').setAttribute('data-y',cmenu_cmt_dY);
         context_menu.setAttribute('data-y',cmenu_dX);
         context_menu.setAttribute('data-x',cmenu_dY);
         if(cm_dtl = context_menu.querySelector('details')){cm_dtl.open = true;}
     }
     // Remove ContextMenu Eventlistner
     enableInteractJSonEl('.cmtitlebar', context_menu);
+    enableInteractJSonEl('.buttombar', context_menu);
     context_menu.addEventListener('mouseenter', add_cMenuNavigationByKeys);
     context_menu.addEventListener('mouseleave', remove_cMenuNavigationByKeys);
 }
@@ -2483,9 +2486,12 @@ function cmenu_goBackFront(x){
     context_menu.setAttribute('style',currentContextMenu_style);
     context_menu.querySelector('.cmtitlebar').setAttribute('data-x',cmenu_cmt_dX);
     context_menu.querySelector('.cmtitlebar').setAttribute('data-y',cmenu_cmt_dY);
+    context_menu.querySelector('.buttombar').setAttribute('data-x',cmenu_cmt_dX);
+    context_menu.querySelector('.buttombar').setAttribute('data-y',cmenu_cmt_dY);
     context_menu.setAttribute('data-x',cmenu_dX);
     context_menu.setAttribute('data-y',cmenu_dY);
     enableInteractJSonEl('.cmtitlebar', context_menu);
+    enableInteractJSonEl('.buttombar', context_menu);
 
     if(calledByPrv){
         let nxtBtnZ=context_menu.querySelectorAll('.nxt');
@@ -2530,10 +2536,6 @@ function enableInteractJSonEl(dragTarget, elmAffected) {
 }
 function dragMoveListener(moveTye,dragTarget,elmAffected,event) {
     var target = event.target;
-    // if(moveTye=='drag' && target==elmAffected){
-    //     target=elmAffected.querySelector(dragTarget)
-    // }
-    
     // keep the dragged position in the data-x/data-y attributes
     var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
     var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -2545,6 +2547,13 @@ function dragMoveListener(moveTye,dragTarget,elmAffected,event) {
     // update the position attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
+    //In case it is contextmenu Update both buttombar and cmtitlebar
+    let target_2;
+    if(target.closest('#context_menu')){
+        if(target.closest('.cmtitlebar')){target_2=context_menu.querySelector('.buttombar');}
+        else if(target.closest('.buttombar')){target_2=context_menu.querySelector('.cmtitlebar');}
+        target_2 ? (target_2.setAttribute('data-x', x),target_2.setAttribute('data-y', y)) : null;
+    }
 }
 // this function is used later in the resizing and gesture
 // window.dragMoveListener = dragMoveListener;
