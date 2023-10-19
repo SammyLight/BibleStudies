@@ -89,8 +89,8 @@ footer .archive-date{color:var(--gray);}
     color:var(--DM-supernova);
     transition:color .2s ease-out,opacity .2s ease-out;}
 .all-links a:hover{
-    color:var(--red);
-    border-bottom:1px solid var(--red)!important;}
+    color:var(--DM-red);
+    border-bottom:1px solid var(--DM-red)!important;}
 a.titles-links{
     background:linear-gradient(91deg, var(--DM-vivid-orange) 30.03%, var(--DM-light-vivid-orange) 101.13%);
     background:var(--DM-vivid-orange);
@@ -134,7 +134,7 @@ li>a>span{
 .recentposts a{color:var(--DM-black)!important;}
 .recentposts a:hover, .sidebar-wrapper-header a:hover{color:var(--grey)!important;}
 .homeResources-grid .archive-date,
-.homeResources-grid .archive-date-summary{color:var(--red)!important;}
+.homeResources-grid .archive-date-summary{color:var(--DM-red)!important;}
 a.cat-link{ 
     text-decoration:none;
     color:var(--DM-supernova)!important;}
@@ -148,7 +148,7 @@ a.cat-link{
 ::placeholder{
     color:var(--DM-black);}
 /* styles from article-style.css */
-.leftBorderForArticleTitle{background-color:var(--red);}
+.leftBorderForArticleTitle{background-color:var(--DM-red);}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
     border-bottom:2px solid rgba(190,190,190,.5);
     border-bottom:1px solid var(--DM-black);}
