@@ -86,7 +86,7 @@ footer .archive-date{color:var(--gray);}
     background-color:var(--DM-vivid-orange);
     background-color:var(--DM-light-grey);}
 .all-links a{
-    color:var(--supernova);
+    color:var(--DM-supernova);
     transition:color .2s ease-out,opacity .2s ease-out;}
 .all-links a:hover{
     color:var(--red);
@@ -137,7 +137,7 @@ li>a>span{
 .homeResources-grid .archive-date-summary{color:var(--red)!important;}
 a.cat-link{ 
     text-decoration:none;
-    color:var(--supernova)!important;}
+    color:var(--DM-supernova)!important;}
 .titles-inner {
     background-color:var(--DM-bgColor-smoke-white)!important;
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
