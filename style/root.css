@@ -23,6 +23,7 @@
     --DM-black: #e1e1e1; /* Light gray for text on dark backgrounds */
     --DM-gray: #6b6b6b; /* Light gray text color */
     --DM-light-gray: #111; /* Dark gray background for contrast */
+    --DM-translated-word:#9898cf;
     --DM-grey: grey; /* Keep grey as it is */
     --DM-light-grey: #292929; /* Darken the light gray */
     --DM-vivid-orange: #f1a509; /* Darken the vivid orange */

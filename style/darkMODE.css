@@ -184,4 +184,20 @@ blockquote:before{color:var(--DM-light-purple);}
     color:var(--gray);}
 .video-box h3{
     color:var(--DM-black);}
+/* styles from video.css */
+#context_menu{
+    background:var(--DM-bgColor-smoke-white);}
+#context_menu .cmtitlebar {
+    background:var(--DM-bgColor-smoke-white);}
+.cmtitlebar {
+    border-bottom: 1px solid var(--scroll-track-bg-color);
+    box-shadow: 0px -25.5px 6px 28px #000000;}
+span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated) {
+    color: var(--DM-translated-word);}
+.cmenu_closebtn, .cmenu_navnclose_btns button{
+    background-color:var(--DM-light-grey)!important;
+    box-shadow: 1px 1px 1px var(--shadow-color)!important;}
+.buttombar {
+    background: var(--ref-img) var(--DM-bgColor-smoke-white);
+    border-top: 2px solid var(--scroll-track-bg-color);}
 }
