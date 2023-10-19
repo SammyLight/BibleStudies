@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark){
 body{
     background-color:var(--DM-light-gray)!important;
     color:var(--DM-black);}
@@ -119,7 +119,7 @@ footer a{
 @media only screen and (max-width:720px){ 
 .visible-titles2{color:var(--DM-vivid-orange);}}
 li>span,li>em>span,p>span,p>em>span{ 
-    color:rgb(0, 106, 168)!important;}
+    color:rgb(20 157 237)!important;}
 h1>span,h2>span,h3>span,h4>span,h5>span,h6>span,
 h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
 li>a>span{ 
@@ -138,12 +138,12 @@ li>a>span{
 a.cat-link{ 
     text-decoration:none;
     color:var(--DM-supernova)!important;}
-.titles-inner {
+.titles-inner{
     background-color:var(--DM-bgColor-smoke-white)!important;
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
-#search-input {
+#search-input{
     background-color:var(--DM-bgColor-smoke-white);}
 ::placeholder{
     color:var(--DM-black);}
@@ -187,17 +187,40 @@ blockquote:before{color:var(--DM-light-purple);}
 /* styles from video.css */
 #context_menu{
     background:var(--DM-bgColor-smoke-white);}
-#context_menu .cmtitlebar {
+#context_menu .buttons{
+    background:var(--DM-bgColor-smoke-white);
+    border-bottom:2px solid #70707072;}
+#context_menu .cmtitlebar{
     background:var(--DM-bgColor-smoke-white);}
-.cmtitlebar {
-    border-bottom: 1px solid var(--scroll-track-bg-color);
-    box-shadow: 0px -25.5px 6px 28px #000000;}
-span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated) {
-    color: var(--DM-translated-word);}
-.cmenu_closebtn, .cmenu_navnclose_btns button{
+.cmtitlebar{
+    border-bottom:1px solid var(--scroll-track-bg-color);
+    box-shadow:0px -25.5px 6px 28px #000000;}
+#context_menu #cmenu_closebtn,.cmenu_closebtn{
+    background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;}
+#context_menu #cmenu_closebtn:hover,.cmenu_closebtn:hover{
+    background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;}
+.cmenu_navnclose_btns button.prv_verse,.cmenu_navnclose_btns button.nxt_verse,
+.cmenu_navnclose_btns button.prv,.cmenu_navnclose_btns button.nxt,
+#context_menu summary>div:first-of-type{
+    background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;}
+.cmenu_navnclose_btns button.prv_verse:hover,.cmenu_navnclose_btns button.nxt_verse:hover,
+.cmenu_navnclose_btns button.prv:hover,.cmenu_navnclose_btns button.nxt:hover{
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;}
+.cmenu_tsk:hover{color:var(--black);}
+#context_menu code:not(.cmtitlebar code):hover{color:rgb(20 157 237)!important;}
+#context_menu details[open] > summary > div:first-of-type{
+    background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
+    transform:rotate(-180deg);}
+span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated){
+    color:var(--DM-translated-word);}
+#context_menu:not([strnum]) hr,.compare_verses hr{
+    background:var(--DM-black)!important;}
+#context_menu:not([strnum]) hr::before,.compare_verses hr::before{
+    background:var(--DM-bgColor-smoke-white);}
+.cmenu_closebtn,.cmenu_navnclose_btns button{
     background-color:var(--DM-light-grey)!important;
-    box-shadow: 1px 1px 1px var(--shadow-color)!important;}
-.buttombar {
-    background: var(--ref-img) var(--DM-bgColor-smoke-white);
-    border-top: 2px solid var(--scroll-track-bg-color);}
+    box-shadow:1px 1px 1px var(--shadow-color)!important;}
+.buttombar{
+    background:var(--DM-bgColor-smoke-white);
+    border-top:2px solid var(--scroll-track-bg-color);}
 }

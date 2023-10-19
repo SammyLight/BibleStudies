@@ -989,6 +989,7 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     position:sticky;
     bottom:0;
     right:0;
+    padding: 5px 0;
     background:var(--ref-img);
     border-top: 2px solid var(--scroll-track-bg-color);
     z-index: 10!important;
