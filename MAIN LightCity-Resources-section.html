@@ -1,0 +1,43 @@
+---
+layout: homeTEMPLATE2
+title: "Study Resources"
+permalink: /Study Resources/
+categories: [""]
+---
+
+<section id="homeBodyContent">
+    <div class="container-fluid-inner">
+        <div class="titles-inner">
+            <h1 class="titles">LightCity Teaching Resources</h1>
+            <p>Categories, all in one place.</p>
+        </div>
+            {% assign catarray = "Angel-of-Yahweh,Bible-Commentaries,BibleTimelines,General-Resources,Jesus,Parables,The-LAW,Fall-of-Man,New-Covenant"|split:',' %}
+
+            {% for cat in catarray %}
+            {% for page in site.pages %}
+            {% if page.categories contains cat %}
+            <div class="homeResources-grid-containter">
+                {% for page in site.pages %}
+                {% if page.categories contains cat %}
+                <h2 class="titles">{{ cat }}</h2>
+                {% break %}
+                {% endif %}
+                {% endfor %}
+                <ol>
+                    {% for page in site.pages %}
+                    {% if page.categories contains cat %}
+                    <li class="all-links">
+                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{page.title}}</a>
+                        &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            {% break %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
