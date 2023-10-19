@@ -518,7 +518,7 @@ function mainBibleVersion(e){
 function hideRightClickContextMenu() {contextMenu_Remove({'type':'click','key':'Escape','target':context_menu})}
 function contextMenu_Remove(e) {
     //Don't remove the cmenu if it is a strong's number 
-    if ((e.target.matches('[strnum],[ref],.crossrefs span') && !e.target.closest('.context_menu'))||(e.type!='click' && e.key !== 'Escape')){return}
+    if (e.target.matches('.verse_compare .cmenu_closebtn,[strnum]:not(.context_menu [strnum]),[ref]:not(.context_menu [ref]),.crossrefs span:not(.context_menu .crossrefs span)')||(e.type!='click' && e.key !== 'Escape')){return}
     if (typeof context_menu != 'undefined' && (['cmenu_closebtn','context_menu'].includes(e.target.id) || !e.target.closest('#context_menu'))) {
         // context_menu.removeEventListener('contextmenu', mainBibleVersion);
         // lightCityReftaggerContextMenuStyleInHead.remove();
