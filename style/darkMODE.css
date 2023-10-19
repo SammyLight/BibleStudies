@@ -159,8 +159,7 @@ blockquote:before{color:var(--DM-light-purple);}
 .sidenote{ 
     color:var(--DM-bgColor-smoke-white);
     background:var(--DM-bgColor-blockquote);}
-.label{ 
-    background-color:var(--DM-black);}
+.label{background-color:var(--DM-bgColor-smoke-white);}
 .label .ball{ 
     background-color:var(--DM-black);}
 .open, .close{ 
