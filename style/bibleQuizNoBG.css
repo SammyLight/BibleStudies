@@ -58,13 +58,15 @@
 	}
 }
 /* PRELOAD CSS */
-.loader-bg{
+.loader-bg-bibleQuiz{
+    display:grid;
+    place-content:center;
     height:100%;
     position:fixed;
     width:100%;
     z-index:999999;
 }
-.loader{
+.loader-bibleQuiz{
     border:0 soild transparent;
     border-radius:50%;
     height:150px;
@@ -73,7 +75,7 @@
     top:calc(45vh - 75px);
     left:calc(46vw - 75px);
 }
-.loader:before, .loader:after{
+.loader-bibleQuiz:before, .loader-bibleQuiz:after{
     content:'';
     border-radius:50%;
     width:inherit;
@@ -84,7 +86,7 @@
     animation:loader 2s linear infinite;
     opacity:0;
 }
-.loader:before{
+.loader-bibleQuiz:before{
     animation-delay:.5s;
 }
 @keyframes loader{
@@ -100,7 +102,6 @@
         opacity:0;
     }
 }
-
 html{ 
     font-size:100%;
     font-size:62.5%;

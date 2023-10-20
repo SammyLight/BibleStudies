@@ -7,10 +7,10 @@
 	border-right:20px solid transparent;
 }
 /* PRELOAD CSS */
-.loader-bg{
+.loader-bg-bibleQuiz{
     background:crimson;
 }
-.loader:before, .loader:after{
+.loader-bibleQuiz:before, .loader-bibleQuiz:after{
     border:1em solid #ff5733;
 }
 body{
