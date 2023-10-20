@@ -822,7 +822,7 @@ document.addEventListener('mouseover', function (e) {
             background-color:var(--strnum-hover)!important;
             border-bottom:2px solid maroon!important;
             box-shadow: 0px 0px 0px 1px grey;
-            color:black!important;
+            color:var(--black)!important;
             transition: all 0.05s ease-in;
             `;
         let headPart = document.getElementsByTagName('head')[0];

@@ -124,7 +124,7 @@ function changeToAntiquewhiteTheme() {
     antiqueWhiteCssFile = document.createElement('link');
     antiqueWhiteCssFile.id = 'antiqueWhiteCssFile'
     antiqueWhiteCssFile.type = 'text/css';
-    antiqueWhiteCssFile.href = 'style/bibleQuizBG-antiquewhite.css';
+    antiqueWhiteCssFile.href = '../style/bibleQuizBG-antiquewhite.css';
     antiqueWhiteCssFile.rel = 'stylesheet';
     head.appendChild(antiqueWhiteCssFile);
     blackPearlCssFile.remove();
@@ -138,7 +138,7 @@ function changeToBlackPearlTheme() {
     blackPearlCssFile = document.createElement('link');
     blackPearlCssFile.id = 'blackPearlCssFile'
     blackPearlCssFile.type = 'text/css';
-    blackPearlCssFile.href = 'style/bibleQuizBG-blackpearl.css';
+    blackPearlCssFile.href = '../style/bibleQuizBG-blackpearl.css';
     blackPearlCssFile.rel = 'stylesheet';
     head.appendChild(blackPearlCssFile);
     antiqueWhiteCssFile.remove();
@@ -152,7 +152,7 @@ function changeToCopperRoseTheme() {
     copperRoseCssFile = document.createElement('link');
     copperRoseCssFile.id = 'copperRoseCssFile'
     copperRoseCssFile.type = 'text/css';
-    copperRoseCssFile.href = 'style/bibleQuizBG-copperrose.css';
+    copperRoseCssFile.href = '../style/bibleQuizBG-copperrose.css';
     copperRoseCssFile.rel = 'stylesheet';
     head.appendChild(copperRoseCssFile);
     antiqueWhiteCssFile.remove();
@@ -165,7 +165,7 @@ function changeToCrimsonTheme() {
     crimsonCssFile = document.createElement('link');
     crimsonCssFile.id = 'crimsonCssFile'
     crimsonCssFile.type = 'text/css';
-    crimsonCssFile.href = 'style/bibleQuizBG-crimson.css';
+    crimsonCssFile.href = '../style/bibleQuizBG-crimson.css';
     crimsonCssFile.rel = 'stylesheet';
     head.appendChild(crimsonCssFile);
     antiqueWhiteCssFile.remove();
@@ -179,7 +179,7 @@ function changeToDarkCyanTheme() {
     darkCyanCssFile = document.createElement('link');
     darkCyanCssFile.id = 'darkCyanCssFile'
     darkCyanCssFile.type = 'text/css';
-    darkCyanCssFile.href = 'style/bibleQuizBG-darkcyan.css';
+    darkCyanCssFile.href = '../style/bibleQuizBG-darkcyan.css';
     darkCyanCssFile.rel = 'stylesheet';
     head.appendChild(darkCyanCssFile);
     antiqueWhiteCssFile.remove();

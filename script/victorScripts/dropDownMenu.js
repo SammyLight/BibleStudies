@@ -22,7 +22,7 @@ div1.classList.add('myDropdown2-content', 'container-fluid-inner');
 var div2 = document.createElement('div');
 div2.id = 'myDropdown2';
 div2.classList.add('myDropdown2');
-var ul1 = document.createElement('ul');
+var ul1 = document.createElement('div');
 ul1.id = 'header-links2';
 ul1.classList.add('header-links2');
 div2.append(ul1);
@@ -38,7 +38,6 @@ function myFunctionTwo() {
     div2.classList.add('slideOut');
   }
 }
-
 const myDropdowns = document.querySelectorAll(".myDropdown, .myDropdown2");
 const elementsArray = [...myDropdowns];
   elementsArray.forEach(element => {
@@ -56,7 +55,6 @@ window.onclick = function (event) {
     });
   }
 }
-
 var headerUL = document.querySelector('.headerUL');
 const headerLink1 = document.querySelectorAll('.header-links-li');
 const elementArray = [...headerLink1];
@@ -68,7 +66,6 @@ const headerLink2 = document.getElementById('header-links2');
 cutheaderLink.forEach(element => {
     headerLink2.append(element);
 });
-
 const elementChild = document.querySelectorAll('.header-links2>.header-links-li>.iconLink');
 const elementChildArray = [...elementChild];
 elementChildArray.forEach(element => {

@@ -231,8 +231,8 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     background:var(--ref-img);
     border-top:2px solid var(--scroll-track-bg-color);}
 .crossrefs{
-    background: var(--crossrefbackground);
-    box-shadow: inset 0 1px 4px var(--black);}
+    background:var(--crossrefbackground);
+    box-shadow:inset 0 1px 4px var(--black);}
 .crossrefs h1::before, .crossrefs h2::before, .crossrefs h3::before, .crossrefs h4::before, .crossrefs h5::before, .crossrefs h6::before,.crossrefs .hidingsibs::before{
-    content: url(../images/arrow-up-svgrepo-com.svg);}
+    content:url(../images/arrow-up-svgrepo-com.svg);}
 .crossrefs span:hover{color:blue;}

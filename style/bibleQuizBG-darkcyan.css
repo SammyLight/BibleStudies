@@ -1,155 +1,122 @@
 .animation-area{ 
-	background:linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-}
+	background:linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);}
 .box-area li{ 
 	border-bottom:160px solid rgb(228, 222, 211);
 	border-left:20px solid transparent;
-	border-right:20px solid transparent;
-}
+	border-right:20px solid transparent;}
 /* PRELOAD CSS */
 .loader-bg-bibleQuiz{
-    background:darkcyan;
-}
+    background:darkcyan;}
 .loader-bibleQuiz:before, .loader-bibleQuiz:after{
-    border:1em solid #ff5733;
-}
+    border:1em solid #ff5733;}
 body{
-    background-color:darkcyan;
-}
+    background-color:darkcyan;}
 /* Custom CSS */
 .explainButton{
     color:black;
     background-color:white;
     border:1px solid white;
-    box-shadow:0 1px 2px rgba(0, 0, 0, 0.4);
-}
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.4);}
 #quizCatName{ 
     color:#fff;
-    color:rgb(71, 71, 71);
-}
+    color:rgb(71, 71, 71);}
 #confirmButton{ 
     background-color:white;
     border:1px solid white;
-    color:black;
-}
+    color:black;}
 #confirmButton:hover{ 
     background-color:black;
     border:1px solid black;
-    color:white;
-}
+    color:white;}
 /* Choose QandA-Categories CSS */  
 .choosecat-grid{ 
     background-color:darkcyan;
     /* box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 68%); */
-    color:white!important;
-}
+    color:white!important;}
 .choosecat-Child{ 
     background-color:white;
     border:1px solid white;
-    color:black;
-}
+    color:black;}
 .choosecat-Child a{ 
-    color:black;
-}
+    color:black;}
 .choosecat-Adult{ 
     background-color:black;
     border:1px solid black;
-    color:white;
-}
+    color:white;}
 .choosecat-Adult a{ 
-    color:white;
-}
+    color:white;}
 .choosecat-grid h2{ 
-    color:white;
-}
+    color:white;}
 @media  only screen and (min-width:1024px){
 .choosecat-Child:hover{ 
     background-color:black;
     border:1px solid black;
-    color:white;
-}
+    color:white;}
 .choosecat-Adult:hover{ 
     background-color:white;
     border:1px solid white;
-    color:black;
-}
+    color:black;}
 .choosecat-Child a:hover{ 
-    color:white;
-}
+    color:white;}
 .choosecat-Adult a:hover{ 
-    color:black;
-}}
+    color:black;}}
 /* QandA-Categories CSS */
 .cat-bibleQuiz-section{
-    background-color:darkcyan;
-}/* HEADER SECTION */
+    background-color:darkcyan;}/* HEADER SECTION */
 #cat-headerbar{
-    box-shadow:0 3px 4px rgb(0, 94, 94);
-}
+    border:1px solid darkcyan;
+    box-shadow:0 3px 4px rgb(0, 94, 94);}
 .header-links-li>a{ 
-    color:white;
-}
+    color:white;}
 .header-links a:hover, .header-links a:focus{ 
-    color:white;
-}
+    color:white;}
 .header-links li:hover, .header-links li:focus{ 
     background-color:white;
-    background-color:rgb(0, 94, 94);
-}
+    background-color:rgb(0, 94, 94);}
 /* END OF HEADER SECTION */
 #cat-bibleQuiz-inner h1{
     text-shadow:7px 7px orange,
                  18px 18px black;
     -webkit-text-fill-color:transparent;
     -webkit-text-stroke-width:4px;
-    -webkit-text-stroke-color:honeydew;
-}
+    -webkit-text-stroke-color:honeydew;}
 #cat-bibleQuiz-inner h5, #cat-bibleQuiz-inner h6{ 
-    color:black;
-}
+    color:black;}
 #cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol{
-    color:white;
-}
+    color:white;}
 /* MOBILE CSS */
 @media screen and (max-width:590px){
 #cat-bibleQuiz-inner h1{
     -webkit-text-fill-color:transparent;
     -webkit-text-stroke-width:2px;
     text-shadow:3px 3px orange,
-                 10px 10px black;
-}}
+                 10px 10px black;}}
 .cat-grid>a{ 
-    box-shadow:1px 1px 3px rgb(0 0 0 / 20%);
-}
+    box-shadow:1px 1px 3px rgb(0 0 0 / 20%);}
 .cat-grid>a{ 
     color:#272727;
     text-shadow:0 1px 1px #fff;
     background-color:aliceblue;
     box-shadow:0 3px 4px rgb(0, 94, 94);
-    border:1px solid #bfc3c8;
-}
+    border:1px solid #bfc3c8;}
 .cat-grid>a:hover{
-    background-color:#f0f0f0ff;
-}
+    background-color:#f0f0f0ff;}
 /* DESKTOP VIEW */
 
 /* QandA CSS */
 #QandA-section{
     background-color:#009688;
-    background-color:darkcyan;
-}
+    background-color:darkcyan;}
 #QandA-section a{ 
     color:white;
     /* text-decoration:none; */
 }
 .fade{ 
-    background-color:rgba(0,0,0,0.4);
-}
+    background-color:rgba(0,0,0,0.4);}
 /* HEADER SECTION */
 .QandA-header{ 
     box-shadow:0 3px 4px rgb(0, 94, 94);
-    color:white;
-}/* .QandA-headerinner{ 
+    color:white;}/* .QandA-headerinner{ 
     background-color:#40315f;
     background-color:#1a0f30;
     background-color:#EED0A9;
@@ -157,30 +124,24 @@ body{
     border:1px solid #EC7272;
     color:#e0dfdf;
     color:lightblue;
-    color:chocolate;
-} */
+    color:chocolate;} */
 
 .quizCatLink a{ 
-    color:white;
-}
+    color:white;}
 .quizCatLink span>i{
     background:-webkit-linear-gradient(#f3ec78, #af4261);
     -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
+    -webkit-text-fill-color:transparent;}
 #settingsContent, #catSettingsContent{ 
     background-color:darkcyan;
     border:1px solid darkcyan;
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 73%);
-    color:white!important;
-}
+    color:white!important;}
 #settingsContent a, #catSettingsContent a{ 
-    color:white;
-}
+    color:white;}
 #nextPrevButton{ 
     border:1px solid #969292;
-    border:1px solid #E38B29;
-}
+    border:1px solid #E38B29;}
 #playButton, #pauseButton, #playButtonCat, #pauseButtonCat{ 
     color:white;
     /* background:rgba(115, 67, 167, 0.8);
@@ -188,38 +149,29 @@ body{
     box-shadow:2px 2px 4px rgba(0, 0, 0, 0.4); */
 }
 .vl{ 
-    border-left:3px solid white;
-}/* .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
-    text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;
-} */
+    border-left:3px solid white;}/* .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
+    text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;} */
 #questioncount{
-    color:orange;
-}
+    color:orange;}
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
-    color:white!important;
-}
+    color:white!important;}
 .showHintCSS{
-    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 73%);
-}
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 73%);}
 .showHintCSS, .showNewCatCSS{
     background-color:darkcyan;
     border:1px solid darkcyan;
-    color:white!important;
-}
+    color:white!important;}
 .closeHint, .closeSettings, .closeCatSettings{
     background-color:red;
-    color:white!important;
-}
+    color:white!important;}
 .showHintCSS>a, .showNewCatCSS>a{ 
-    color:white!important;
-}
+    color:white!important;}
 .QandA-Board>ol>li>ul>li::before{ 
     background-color:white;
     /* border:1px solid brown; */
     box-shadow:2px 1px 7px rgb(0, 94, 94);
-    color:black;
-}
+    color:black;}
 .QandA-Board>ol>li>ul>li::after{ 
     background:linear-gradient(45deg,#743ad5,#d53a9d);
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
@@ -228,8 +180,7 @@ body{
        linear-gradient(#fff 0 0); 
 }
 .QandA-Board>ol>li>ul>li>ul{
-    color:white;
-}
+    color:white;}
 /* MOBILE VIEW */
 @media  only screen and (max-width:657px){
 /* HEADER SECTION */
@@ -238,8 +189,7 @@ body{
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
     -webkit-mask:
        linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-}
+       linear-gradient(#fff 0 0);}
 .QandA-Board>ol>li>ul>li::after{ 
     background:linear-gradient(45deg,#743ad5, #d53a9d);
     background:linear-gradient(45deg,#d53a9d,#FFA500);  
@@ -252,14 +202,12 @@ body{
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
     -webkit-mask:
        linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-}}
+       linear-gradient(#fff 0 0);}}
 @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:rgb(0, 94, 94);
     border:1px solid rgb(0, 94, 94);
-    color:white!important;
-}
+    color:white!important;}
 .quizCatLink a:hover{ 
     color:white!important;   
 }}/* END OF MOBILE VIEW */
@@ -275,99 +223,76 @@ body{
   }
 .QandA-Board>ol>li>ul>li:hover, .QandA-Board>ol>li>ul>li:active{
     background-color:rgb(0, 94, 94);
-    border:rgb(0, 94, 94);
-}}
+    border:rgb(0, 94, 94);}}
 /* QUIZ RESULT CSS */
 #quizResult-section{
-    background-color:transparent;
-}
+    background-color:transparent;}
 .Result-BoardHeader{
     border:1px solid #EC7272;
     box-shadow:0 3px 4px rgb(0, 94, 94);
-    color:white;
-}
+    color:white;}
 .Result-BoardHeader>ul a{
-    color:white;
-}
+    color:white;}
 .Result-Board{ 
     background:darkcyan;
     border:1px solid darkcyan;
     color:white!important;
-    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 85%);
-}
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 85%);}
 .Result-Board-inner{ 
     background-color:darkcyan;
     /* border:1px solid brown; */
 }
 .Result-Board h2{ 
-    color:white!important;
-}
+    color:white!important;}
 .performance ol{ 
-    color:red;
-}
+    color:red;}
 .performance ol:first-of-type{ 
-    color:green;
-}
+    color:green;}
 #poorPerPopup{
     background-color:darkcyan;
     border:1px solid darkcyan;
     color:white;
-    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 95%);
-}
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 95%);}
 .btn-bg-color{ 
     background-color:white;
-    border: 1px solid white;
-    color:black;
-}
+    border:1px solid white;
+    color:black;}
 .btn-bg-outline{ 
     background-color:black;
     border:1px solid black;
-    color:white;
-}
+    color:white;}
 .btn-bg-outline:hover{ 
     background-color:white;
-    border: 1px solid white;
-    color:black;
-}
+    border:1px solid white;
+    color:black;}
 .btn-bg-color>a{ 
-    color:black!important;
-}
+    color:black!important;}
 .btn-bg-color:hover{
     background-color:black!important;
     border:1px solid black;
-    color:white;
-}
+    color:white;}
 .btn-bg-color>a:hover{ 
-    color:white!important;
-}
+    color:white!important;}
 @media only screen and (max-width:1023px){
 .Result-img{ 
-    border-bottom:1px solid white;
-}}
+    border-bottom:1px solid white;}}
 @media only screen and (min-width:1024px){
 .Result-img{ 
-    border-right:1px solid white;
-}}
+    border-right:1px solid white;}}
 /* CORRECTED ANSWERS CSS */
 #CorrectedAnswers-section{ 
-    background-color:darkcyan;
-}
+    background-color:darkcyan;}
 .corAnswers-BoardHeader{
     box-shadow:0 3px 4px rgb(0, 94, 94);
-    color:white;
-}
+    color:white;}
 .corAnswers-Board-Header{
-    color:white;
-}
+    color:white;}
 .corAnswers-Board-Header>h1{ 
-    color:white;
-}
+    color:white;}
 .questionsH1{
-    color:white!important;
-}
+    color:white!important;}
 .ansANDexpH1{
-    color:black!important;
-}
+    color:black!important;}
 .corAnswers-Board a{ 
     color:inherit;
     /* text-decoration:none; */
@@ -375,36 +300,27 @@ body{
 .corAnswers-Board>ol>details{ 
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
-    color:white;
-}/* .corAnswers-Board>ol>li>div{ 
-    border-right:2px solid white;
-} */
+    color:white;}/* .corAnswers-Board>ol>li>div{ 
+    border-right:2px solid white;} */
 .corAnswers-Board>ol>details>li>ul>li>strong{ 
-    color:black!important;
-}
+    color:black!important;}
 .corAnswers-Board>ol>details>li>ul>li>ul{ 
-    color:black!important;
-}
+    color:black!important;}
 .corAnswers-btn>button{
     background-color:white;
     border:1px solid white;
-    color:black;
-}
+    color:black;}
 .corAnswers-btn>button:hover{ 
     background-color:black;
     border:1px solid black;
-    color:white!important;
-}
+    color:white!important;}
 .corAnswers-btn>button>a{ 
-    color:black!important;
-}
+    color:black!important;}
 .corAnswers-btn>button>a:hover{ 
     background-color:black!important;
-    color:white!important;
-}
+    color:white!important;}
 .totalQuestionsColor{
-    color:#414141!important;
-}
+    color:#414141!important;}
 /* Scrollbar CSS */
 /* width */
 ::-webkit-scrollbar{ 

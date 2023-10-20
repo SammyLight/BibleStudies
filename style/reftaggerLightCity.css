@@ -479,7 +479,7 @@ span[strnum]{
     margin-bottom:0;
 }
 #context_menu .strngsdefinition h5, #context_menu .strngsdefinition h6{
-    margin: 0;
+    margin:0;
     padding-left:7.5px;
     border-bottom:1px solid var(--grey);
     font-style:italic;
@@ -789,7 +789,7 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
 }
 #context_menu button:not(:disabled):hover{ 
     background-color:var(--chpt) !important;
-    color: maroon!important;
+    color:maroon!important;
 }
 .active_button{ background-color:var(--chpt) !important;}
 .red, span.red span{color:var(--redwords)!important;}
@@ -990,28 +990,28 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     position:sticky;
     bottom:0;
     right:0;
-    padding: 5px 0;
+    padding:5px 0;
     background:var(--ref-img);
-    border-top: 2px solid var(--scroll-track-bg-color);
-    z-index: 10!important;
+    border-top:2px solid var(--scroll-track-bg-color);
+    z-index:10!important;
 }
 .buttombar .cmenu_navnclose_btns {
     display:flex;
-    justify-content: center;
+    justify-content:center;
 }
 #context_menu {padding:0!important;}
 .cmtitlebar {
-    touch-action: none;
-    padding-bottom: 0em;
-    /* display: flex;
-    align-items: center; */
-    border-bottom: 1px solid var(--scroll-track-bg-color);
-    box-shadow: 0px -25.5px 6px 28px #000000;
+    touch-action:none;
+    padding-bottom:0em;
+    /* display:flex;
+    align-items:center; */
+    border-bottom:1px solid var(--scroll-track-bg-color);
+    box-shadow:0px -25.5px 6px 28px #000000;
 }
 .cmtitlebar::before,.cmtitlebar::after {
-    width: 0!important;
-    height: 0!important;
+    width:0!important;
+    height:0!important;
 }
 .context_menu:not([strnum]) .cmtitlebar .cmenu_navnclose_btns {
-    margin-top: 0.2em;
+    margin-top:0.2em;
 }
