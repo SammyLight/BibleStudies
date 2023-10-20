@@ -26,7 +26,9 @@
 			</p>
 			<small><a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">Read more</a></small>
 			<div class="prayer-text">
-				<p class="categories"><span>category:</span>
+				<p class="categories">
+					<span>category:</span>
+					<span class="cat-list">
 					{% if post %}
 					{% assign categories = post.categories %}
 					{% else %}
@@ -34,13 +36,14 @@
 					{% endif %}
 					{% for category in categories %}
 					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
-				{% assign sumcaty = category_name %}
-				{% for post in site.posts %}
-				{% if post.categories contains sumcaty %}
+					{% assign sumcaty = category_name %}
+					{% for post in site.posts %}
+					{% if post.categories contains sumcaty %}
 					<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
 					{% unless forloop.last %}&nbsp;{% endunless %}
 					{% endif %}{% endfor %}
 					{% endfor %}
+					</span>
 				</p>
 			</div>
 		</div>
@@ -54,13 +57,3 @@
 		</div>
 	</div>
 </section>
-<!-- <script>
-	var tooltipSpan = document.getElementById('tooltip-span');
-
-window.onmousemove = function (e) {
-    var x = e.clientX,
-        y = e.clientY;
-    tooltipSpan.style.top = (y + 20) + 'px';
-    tooltipSpan.style.left = (x + 20) + 'px';
-};
-</script> -->
