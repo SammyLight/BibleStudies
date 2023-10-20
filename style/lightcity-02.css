@@ -251,6 +251,7 @@ h1.titles{padding-top:0;}}
     margin-top:24px;
     font-size:80%!important;}
 .categories span{color:var(--grey)!important;}
+.categories span:hover{color:var(--grey)!important;}
 .cat-list{
     overflow:auto;
     white-space:nowrap;}
