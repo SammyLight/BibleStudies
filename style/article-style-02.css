@@ -1,0 +1,59 @@
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    display: grid;
+    grid-template-columns: 3% 97%;
+    grid-template-columns: 97%;
+    place-content: start;
+    position: relative;
+    display: -webkit-inline-box;
+    width: 97%;
+    padding-left: 3%!important;}
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    margin-left: 3%!important;}
+header>h1:first-of-type, div>h1:first-of-type, header>p {
+    display: block!important;
+    margin-left: 0!important;}
+@media only screen and (min-width: 913px) and (max-width: 1024px){
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -30px;}}
+@media only screen and (max-width: 912px) {
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    grid-template-columns: 4% 96%;
+    grid-template-columns: 96%;
+    width: 96%;
+    padding-left: 4%!important;}
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    margin-left: 4%!important;}
+}
+@media only screen and (max-width: 820px) {
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    grid-template-columns: 4% 94%;
+    grid-template-columns: 94%;
+    width: 94%;
+    padding-left: 6%!important;}
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -42px;
+    margin-left: 6%!important;}}
+@media only screen and (max-width: 540px) {
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    grid-template-columns: 7% 93%;
+    grid-template-columns: 93%;
+    width: 93%;
+    padding-left: 7%!important;}
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -35px;
+    margin-left: 7%!important;}}
+@media only screen and (max-width: 414px) {
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -25px;}}
+@media only screen and (max-width: 375px) {
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -22px;}}
+@media only screen and (max-width: 300px) {
+h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5 {
+    grid-template-columns: 10% 90%;
+    grid-template-columns: 90%;
+    width: 90%;
+    padding-left: 10%!important;}}
+@media only screen and (max-width: 280px) {
+h1>p:first-child, h2>p:first-child, h3>p:first-child, h4>p:first-child, h5>p:first-child, h6>p:first-child {
+    left: -18px;}}
