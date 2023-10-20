@@ -1,7 +1,7 @@
 <div id="settingsContent">
     <div class="settingsContentInner">
         <div id="themeSettings">
-            <div class="collapsible">Change Theme <i class="fas fa-solid fa-angle-right"></i></div>
+            <div class="collapsible">Change Theme <i class="fas fa-solid fa-caret-right"></i></div>
             <ul class="content">
                 <li id="antiqueWhite">Antiquewhite</li>
                 <li id="blackPearl">BlackPearl</li>
@@ -11,15 +11,14 @@
                 <li id="darkPurple">DarkPurple</li>
             </ul>
         </div>
-        <div onclick="window.location.reload()">Restart Quiz <i class="fas fa-solid fa-angle-right"></i></div>
-        <div id="rules" onclick="showRules()">Quiz Rules <i class="fas fa-solid fa-angle-right"></i></div>
+        <div onclick="window.location.reload()">Restart Quiz</div>
+        <div id="rules" onclick="showRules()">Quiz Rules</div>
         <div>
             {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
             {% for aaa in site.pages %}
             {% if aaa.subsection contains caty %}
-            <a
-                href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
-                <span>Quit Quiz <i class="fas fa-solid fa-angle-right"></i></span>
+            <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                <span>Quit Quiz</span>
             </a>
             {% endif %}
             {% endfor %}

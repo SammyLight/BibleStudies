@@ -1,23 +1,23 @@
 {% include homeHead.html %}
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
-<link type="text/css" href="style/reftaggerLightCity.css" rel="stylesheet">
-<link type="text/css" href="style/bibleQuizNoBG.css" rel="stylesheet">
+<link type="text/css" href="../style/reftaggerLightCity.css" rel="stylesheet">
+<link type="text/css" href="../style/bibleQuizNoBG.css" rel="stylesheet">
 <link type="text/css" href="../style/darkMODE.css" rel="stylesheet">
 <link id="theme-stylesheet" type="text/css" href="../style/lightMODE.css" rel="stylesheet">
 <link type="text/css" href="../style/root.css" rel="stylesheet">
-<link id="darkPurpleCssFile" type="text/css" href="style/bibleQuizBG-darkpurple.css" rel="stylesheet">
+<link id="darkPurpleCssFile" type="text/css" href="../style/bibleQuizBG-darkpurple.css" rel="stylesheet">
 </head>
 
 <body>
     <section id="cat-bibleQuiz" class="cat-bibleQuiz-section">
-        <audio id="categorySound" src="audio/categorySound.mp3" loop="true"></audio>
-        <audio id="clickSound" src="audio/clickSound.mp3"></audio>
+        <audio id="categorySound" src="../audio/categorySound.mp3" loop="true"></audio>
+        <audio id="clickSound" src="../audio/clickSound.mp3"></audio>
         <div id="cat-headerbar" class="container-fluid-inner">
             <div class="churchLOGO">
                 {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                    <img class="churchLOGO-img" src="images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                    <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
             </div>
             <div class="headerUL">
@@ -79,7 +79,7 @@
         </section>
     </section>
     <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
-    <script type="text/javascript" src="script/victorScripts/QandAscriptsChooseCategory.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/QandAscriptsChooseCategory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script> 
 </body>
