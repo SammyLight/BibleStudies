@@ -19,6 +19,10 @@ button,input,optgroup,textarea{color:inherit;}
     color:var(--vivid-orange)!important;
     border-bottom:3px solid var(--vivid-orange)!important;}
 a{/* text-decoration-color:var(--light-grey)!important; */}
+::selection{ 
+    background-color:var(--selection);
+    color:var(--black);
+}
 .homeResources-grid-containter{
     background-color:var(--white)!important;
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);

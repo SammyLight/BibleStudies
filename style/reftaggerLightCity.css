@@ -128,7 +128,7 @@
 }
 ::selection{ 
     background-color:var(--selection);
-    color:black;
+    color:var(--black);
 }
 span[strnum]:not(.context_menu span[strnum]), span[ref]:not(.verse){
     cursor:pointer;
