@@ -16,7 +16,10 @@ links.forEach(elm => {
         clickSoundTwo.play();
     });
   });
-
+//PAGE PRELOAD
+setTimeout(function() {
+    $('.loader-bg-bibleQuiz').fadeToggle();
+}, 1500);
 // const buttonPauseCat = document.querySelector("#pauseButtonCat");
 // const buttonPlayCat = document.querySelector("#playButtonCat");
 // const audioElementCat = document.querySelector("AUDIO");

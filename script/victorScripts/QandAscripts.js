@@ -602,7 +602,7 @@ function showAllQuestionsWithAnswers() {
 
 //PAGE PRELOAD
 setTimeout(function() {
-    $('.loader-bg').fadeToggle();
+    $('.loader-bg-bibleQuiz').fadeToggle();
 }, 1500);
 
 //SOUND
