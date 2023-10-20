@@ -218,7 +218,7 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 #context_menu:not([strnum]) hr::before,.compare_verses hr::before{
     background:var(--DM-bgColor-smoke-white);}
 .cmenu_closebtn,.cmenu_navnclose_btns button{
-    background-color:var(--DM-light-grey)!important;
+    background-color:var(--grey)!important;
     box-shadow:1px 1px 1px var(--shadow-color)!important;}
 .buttombar{
     background:var(--DM-bgColor-smoke-white);
