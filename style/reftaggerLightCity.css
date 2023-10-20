@@ -789,6 +789,7 @@ h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::b
 }
 #context_menu button:not(:disabled):hover{ 
     background-color:var(--chpt) !important;
+    color: maroon!important;
 }
 .active_button{ background-color:var(--chpt) !important;}
 .red, span.red span{color:var(--redwords)!important;}

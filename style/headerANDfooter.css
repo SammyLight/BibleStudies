@@ -254,7 +254,7 @@ footer .archive-date{
     place-content:center;
     position:relative;}
 .group-cats p{
-    font-size:40%!important;
+    font-size:45%!important;
     position:absolute;
     margin:0 10px;
     bottom:0;
@@ -578,4 +578,6 @@ input:checked + .slider.round::before{
 #moon-icon{
   right:10px;
   color:var(--black);}
+.crossrefs h5{display:flex;}
+.crossrefs h5::before{place-self:end;}
   

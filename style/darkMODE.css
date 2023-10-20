@@ -120,6 +120,8 @@ footer a{
 .visible-titles2{color:var(--DM-vivid-orange);}}
 li>span,li>em>span,p>span,p>em>span{ 
     color:rgb(20 157 237)!important;}
+li>span:hover,li>em>span:hover,p>span:hover,p>em>span:hover{ 
+    color:rgb(0, 106, 168)!important;}
 h1>span,h2>span,h3>span,h4>span,h5>span,h6>span,
 h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
 li>a>span{ 
@@ -188,7 +190,7 @@ blockquote:before{color:var(--DM-light-purple);}
 #context_menu{
     background:var(--DM-bgColor-smoke-white);}
 #context_menu .buttons{
-    background:var(--DM-bgColor-smoke-white);
+    background:var(--DM-light-gray);
     border-bottom:2px solid #70707072;}
 #context_menu .cmtitlebar{
     background:var(--DM-bgColor-smoke-white);}
@@ -207,7 +209,7 @@ blockquote:before{color:var(--DM-light-purple);}
 .cmenu_navnclose_btns button.prv:hover,.cmenu_navnclose_btns button.nxt:hover{
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;}
 .cmenu_tsk:hover{color:var(--black);}
-#context_menu code:not(.cmtitlebar code):hover{color:rgb(20 157 237)!important;}
+#context_menu code:not(.cmtitlebar code):hover,.crossrefs span:hover{color:rgb(20 157 237)!important;}
 #context_menu details[open] > summary > div:first-of-type{
     background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
     transform:rotate(-180deg);}
@@ -223,4 +225,9 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 .buttombar{
     background:var(--DM-bgColor-smoke-white);
     border-top:2px solid var(--scroll-track-bg-color);}
+.crossrefs {
+    background: var(--DM-bgColor-smoke-white);
+    box-shadow: inset 0 1px 4px var(--black);}
+.crossrefs h1::before, .crossrefs h2::before, .crossrefs h3::before, .crossrefs h4::before, .crossrefs h5::before, .crossrefs h6::before,.crossrefs .hidingsibs::before{
+    content: url(../images/arrow-up-svgrepo-com-DarkMode.svg);}
 }

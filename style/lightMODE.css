@@ -123,6 +123,8 @@ footer a{
 .visible-titles2{color:var(--vivid-orange);}}
 li>span,li>em>span,p>span,p>em>span{ 
     color:rgb(0, 106, 168)!important;}
+li>span:hover,li>em>span:hover,p>span:hover,p>em>span:hover{ 
+    color:rgb(20 157 237)!important;}
 h1>span,h2>span,h3>span,h4>span,h5>span,h6>span,
 h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
 li>a>span{ 
@@ -224,3 +226,9 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
 .buttombar{
     background:var(--ref-img);
     border-top:2px solid var(--scroll-track-bg-color);}
+.crossrefs{
+    background: var(--crossrefbackground);
+    box-shadow: inset 0 1px 4px var(--black);}
+.crossrefs h1::before, .crossrefs h2::before, .crossrefs h3::before, .crossrefs h4::before, .crossrefs h5::before, .crossrefs h6::before,.crossrefs .hidingsibs::before{
+    content: url(../images/arrow-up-svgrepo-com.svg);}
+.crossrefs span:hover{color:blue;}
