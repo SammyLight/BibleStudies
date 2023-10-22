@@ -157,6 +157,7 @@ a.cat-link{
     color:var(--inherit);
 border:1px solid var(--light-vivid-orange);}
 /* styles from article-style.css */
+article img{background-color:var(--bgColor-smoke-white);}
 .leftBorderForArticleTitle{background-color:tomato;}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
     border-bottom:2px solid rgba(190,190,190,.5);
