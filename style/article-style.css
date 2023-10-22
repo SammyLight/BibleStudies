@@ -57,7 +57,9 @@ p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:26px;}
 #context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}}
+    font-size:14px!important;}
+blockquote,blockquote>p{
+    font-size:24px!important;}}
 @media only screen and (max-width:441px){ 
 header>h1:first-of-type, div>h1:first-of-type{ 
     font-size:34px!important;}
@@ -101,7 +103,9 @@ h5,h6{font-size:20px!important;}
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:24px;}
 #context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}}
+    font-size:14px!important;}
+blockquote,blockquote>p{
+    font-size:22px!important;}}
 article>main>header{
     display:grid;
     grid-template-columns:10px auto;}
