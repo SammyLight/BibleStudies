@@ -15,10 +15,12 @@ body *{
     transition:all 0.1s ease-in-out;}
 #expandANDdate{min-height:32px;}
 article{
+    font-family: Verdana!important;
     display:block!important;
     min-height:100vh;
     margin-bottom:20px!important;}
 article img{margin-top:10px;}
+main{font-family: Verdana!important;}
 main>h1,main>h2,main>h3,main>h4,main>h5,main>h6,main>p, main>ol, main>ul, main>blockquote, main>table, main>span, h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
     visibility:hidden;}
 article a{
