@@ -386,12 +386,9 @@ table ol{
     grid-template-columns:100%;
     padding-right:0.3em;}
 .prev-link{grid-area:auto;}
-  
 .next-link{grid-area:auto;}
-.PageNavigation a{
-    font-size:18px;}
-.PageNavigation .all-links{ 
-    margin:0 0 15px;}
+.PageNavigation a{font-size:18px;}
+.PageNavigation .all-links{margin:0 0 15px;}
 .prev-link p, .next-link p{
     font-size:10px!important;
     margin:0.5em 0;}}

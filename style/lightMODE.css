@@ -18,11 +18,9 @@ button,input,optgroup,textarea{color:inherit;}
 .active{ 
     color:var(--vivid-orange)!important;
     border-bottom:3px solid var(--vivid-orange)!important;}
-a{/* text-decoration-color:var(--light-grey)!important; */}
 ::selection{ 
     background-color:var(--selection);
-    color:var(--black);
-}
+    color:var(--black);}
 .homeResources-grid-containter{
     background-color:var(--white)!important;
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
@@ -133,7 +131,6 @@ h1>span,h2>span,h3>span,h4>span,h5>span,h6>span,
 h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
 li>a>span{ 
     color:inherit!important;}
-
 /* styles from lightcity-02.css */
 .visible-titles{ 
     background-color:var(--white);
@@ -157,7 +154,8 @@ a.cat-link{
 #search-input{
     background-color:var(--white);}
 ::placeholder{
-    color:var(--inherit);}
+    color:var(--inherit);
+border:1px solid var(--light-vivid-orange);}
 /* styles from article-style.css */
 .leftBorderForArticleTitle{background-color:tomato;}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
@@ -180,7 +178,9 @@ blockquote:before{color:var(--light-purple);}
 .PageNavigation a{
     color:var(--black);}
 .PageNavigation a:hover{
-    color:var(--gray)!important;}
+    color:var(--gray)!important;
+    text-decoration:none!important;
+    border-bottom:none!important;}
 .prev-link p, .next-link p{
     color:var(--gray);}
 .prev-link span, .next-link span{

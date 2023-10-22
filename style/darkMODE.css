@@ -6,7 +6,6 @@ body{
 .loader-bg{
     background:var(--black)!important;}
 .loader{
-    /* animation properties */
     background-image:url(../images/preload.svg);}
 /* custom CSS */
 button{background-color:transparent;}
@@ -19,11 +18,9 @@ button,input,optgroup,textarea{color:var(--DM-inherit);}
 .active{ 
     color:var(--DM-vivid-orange)!important;
     border-bottom:3px solid var(--DM-vivid-orange)!important;}
-a{/* text-decoration-color:var(--light-grey)!important; */}
 ::selection{ 
     background-color:var(--selection);
-    color:var(--DM-black);
-}
+    color:var(--DM-black);}
 #Resources-section .titles>a:hover{color:var(--gray);}
 .homeResources-grid-containter{
     background-color:var(--DM-bgColor-smoke-white)!important;
@@ -174,7 +171,9 @@ blockquote:before{color:var(--DM-light-purple);}
 .PageNavigation a{
     color:var(--DM-black);}
 .PageNavigation a:hover{
-    color:var(--gray)!important;}
+    color:var(--gray)!important;
+    text-decoration:none!important;
+    border-bottom:none!important;}
 .prev-link p, .next-link p{
     color:var(--gray);}
 .prev-link span, .next-link span{
