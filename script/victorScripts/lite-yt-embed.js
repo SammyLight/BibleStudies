@@ -39,12 +39,33 @@ class LiteYTEmbed extends HTMLElement {
         chaNamAndVideoTitle.prepend(channelImg);
         this.append(chaNamAndVideoTitle);
         // Set up video title
-        var videoTitle = this.parentElement.nextElementSibling.textContent;
-        var createDivElement = document.createElement('div');
-        createDivElement.classList.add('moving-text');
-        createDivElement.append(videoTitle);
-        chaNamAndVideoTitle.append(createDivElement);
-
+        const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
+        const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
+        fetch(oEmbedURL)
+        .then(response => {
+            if (response.status === 200) {
+            return response.json();
+            } else {
+            throw new Error("Failed to retrieve video information.");
+            }
+        })
+        .then(data => {
+            var videoTitle = document.createElement('h3');
+            videoTitle.classList.add('video-title');
+            videoTitle.append(data.title);
+            var videoBox = this.parentElement.parentElement;
+            videoBox.append(videoTitle);
+            var createDivElement = document.createElement('div');
+                createDivElement.classList.add('moving-text');
+                createDivElement.append(data.title);
+                chaNamAndVideoTitle.append(createDivElement);
+            // console.log("Video Title:", data.title);
+            // console.log("Video Author:", data.author_name);
+            // console.log("Video Description:", data.description);
+        })
+        .catch(error => {
+            console.error(error);
+        });
         // Set up play button, and its visually hidden label
         if (!playBtnEl) {
             playBtnEl = document.createElement('button');
