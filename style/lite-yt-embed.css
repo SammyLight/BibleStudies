@@ -80,6 +80,7 @@ lite-youtube .lty-playbtn:focus{
     height:35px;}}
 /* Video Title */
 .moving-text{
+    display:none;
     color:#ffffff;
     margin-top:5px;
     margin-left:10px;
