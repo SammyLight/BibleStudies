@@ -64,19 +64,19 @@ class LiteYTEmbed extends HTMLElement {
         //     // console.log("Video Description:", data.description);
         // })
         .then(data => {
-            const videoTitleNotSeen = document.createElement('h3');
-            videoTitleNotSeen.classList.add('video-title-notSeen');
-            videoTitleNotSeen.append(data.title);
-            this.append(videoTitleNotSeen);
+            // const videoTitleNotSeen = document.createElement('h3');
+            // videoTitleNotSeen.classList.add('video-title-notSeen, moving-text');
+            // videoTitleNotSeen.append(data.title);
+            // this.append(videoTitleNotSeen);
             const videoBox = this.parentElement.parentElement;
             const videoTitleSeen = document.createElement('h3');
             videoTitleSeen.classList.add('video-title');
             videoTitleSeen.append(data.title);
             videoBox.append(videoTitleSeen);
-            // const createDivElement = document.createElement('div');
-            //     createDivElement.classList.add('moving-text');
-            //     createDivElement.append(data.title);
-            //     chaNamAndVideoTitle.append(createDivElement);
+            const createDivElement = document.createElement('div');
+                createDivElement.classList.add('moving-text');
+                createDivElement.append(data.title);
+                chaNamAndVideoTitle.append(createDivElement);
             // console.log("Video Title:", data.title);
             // console.log("Video Author:", data.author_name);
             // console.log("Video Description:", data.description);

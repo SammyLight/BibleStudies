@@ -9,7 +9,7 @@ function handleVideoSearch() {
   displayedVideos.clear();
   embeddedVideos.forEach((video) => {
     const videoDescriptionElement = video.querySelector(".chaNamAndVideoTitle");
-    const videoTitleElement = video.querySelector(".video-title-notSeen");
+    const videoTitleElement = video.querySelector(".moving-text");
     const videoId = video.getAttribute("videoid");
     if (videoTitleElement) {
       const videoTitle = videoTitleElement.textContent.toLowerCase();
@@ -20,12 +20,6 @@ function handleVideoSearch() {
         const duplicateVideoDescriptionElements = videoClone.querySelectorAll(".chaNamAndVideoTitle");
         duplicateVideoDescriptionElements.forEach((el) => {
           if (el !== videoDescriptionElement) {
-            el.remove();
-          }
-        });
-        const duplicateVideoTitleElements = videoClone.querySelectorAll(".video-title-notSeen");
-        duplicateVideoTitleElements.forEach((el) => {
-          if (el !== videoTitleElement) {
             el.remove();
           }
         });
