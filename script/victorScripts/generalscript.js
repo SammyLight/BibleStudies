@@ -1,3 +1,16 @@
+//active link
+document.addEventListener('DOMContentLoaded', function() {
+  var currentUrl = window.location.pathname;
+  console.log(currentUrl);
+  var menuLinks = document.querySelectorAll('.header-links a');
+  console.log(menuLinks);
+  
+  menuLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+});
 var getTables = document.querySelectorAll('main>table');
 var getTablesArray = [...getTables];
 getTablesArray.forEach(element => {
