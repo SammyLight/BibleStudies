@@ -99,3 +99,6 @@
 @media only screen and (min-width:1025px){
 .videos-container-inner{ 
     grid-template-columns:repeat(3, 1fr);}}
+/* search CSS */
+#searchResults{margin-top:15px;}
+.video-title-notSeen{display:none;}

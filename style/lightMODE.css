@@ -151,11 +151,10 @@ a.cat-link{
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1);
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
-#search-input{
+#search-input,#videoSearch{
     background-color:var(--white);}
 ::placeholder{
-    color:var(--inherit);
-border:1px solid var(--light-vivid-orange);}
+    color:var(--inherit);}
 /* styles from article-style.css */
 article img{background-color:var(--bgColor-smoke-white);}
 .leftBorderForArticleTitle{background-color:tomato;}
@@ -197,6 +196,8 @@ blockquote:before{color:var(--light-purple);}
     color:var(--black);}
 .video-box h3{
     color:var(--gray);}
+#searchResults .homeResources-grid-containter {
+    background-color:var(--bgColor-smoke-white)!important;}
 /* styles from reftaggerLightCity.css */
 #context_menu{
     background:var(--whitesmoke);}

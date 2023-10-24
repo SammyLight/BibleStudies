@@ -14,6 +14,7 @@
     --supernova:#5f40f6;
     --red:red;
     --light-purple:rgb(83, 0, 83, 0.5);
+    --selection:rgba(0, 0, 255, 0.1);
     --inherit:inherit;
     /* darkMODE Theme */
     --DM-bgColor-smoke-white:#1e1e1e; /* Darker background color */
@@ -22,6 +23,7 @@
     --DM-white:#ffffff; /* Keep white as it is */
     --DM-black:#e1e1e1; /* Light gray for text on dark backgrounds */
     --DM-gray:#6b6b6b; /* Light gray text color */
+    --DM-grayTwo:#2b2b2b; /* Keep grey as it is */
     --DM-light-gray:#111; /* Dark gray background for contrast */
     --DM-translated-word:#d6d6fb;
     --DM-grey:grey; /* Keep grey as it is */
