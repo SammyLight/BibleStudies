@@ -147,7 +147,8 @@ a.cat-link{
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
 #search-input,#videoSearch{
-    background-color:var(--DM-bgColor-smoke-white);}
+    background-color:var(--DM-bgColor-smoke-white);
+    border:1px solid var(--DM-black);}
 ::placeholder{
     color:var(--DM-black);}
 /* styles from article-style.css */

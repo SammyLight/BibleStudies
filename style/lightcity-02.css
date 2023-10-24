@@ -475,6 +475,7 @@ h3{
     margin:1em auto;
     border:1px solid var(--light-gray);}
 #search-input,#videoSearch{ 
+    border-radius:6px;
     display:inline-block;
     padding:0.5em;
     width:100%;
