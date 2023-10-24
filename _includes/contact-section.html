@@ -62,7 +62,7 @@
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "About Us" %}
+                                        {% for page in site.pages %}{% if page.title contains "About" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
