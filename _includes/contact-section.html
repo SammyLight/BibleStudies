@@ -47,7 +47,7 @@
                                         {% endfor %}
                                 </ul>
                                 <small title="Click me for all Links in Categories">
-                                    {% for page in site.pages %}{% if page.title contains "Study Resources" %}
+                                    {% for page in site.pages %}{% if page.title contains "Study-Resources" %}
                                     <a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>More categories</span>
                                     </a>{% endif %}{% endfor %}
@@ -62,21 +62,27 @@
                             <div class="min-height content">
                                 <ul class="footerLinks-lists">
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "About" %}
+                                        {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Articles</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
+                                        {% for page in site.pages %}{% if page.title contains "About-us" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "Teaching Summary" %}
+                                        {% for page in site.pages %}{% if page.title contains "Teaching-Summary" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>Summary</span>
+                                            <span>Summaries</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "Videos" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>Video</span>
+                                            <span>Videos</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
@@ -91,7 +97,7 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                        {% for page in site.pages %}{% if page.title contains "Join-us" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
