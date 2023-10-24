@@ -49,16 +49,34 @@ class LiteYTEmbed extends HTMLElement {
             throw new Error("Failed to retrieve video information.");
             }
         })
+        // .then(data => {
+        //     var videoTitle = document.createElement('h3');
+        //     videoTitle.classList.add('video-title');
+        //     videoTitle.append(data.title);
+        //     var videoBox = this.parentElement.parentElement;
+        //     videoBox.append(videoTitle);
+        //     var createDivElement = document.createElement('div');
+        //         createDivElement.classList.add('moving-text');
+        //         createDivElement.append(data.title);
+        //         chaNamAndVideoTitle.append(createDivElement);
+        //     // console.log("Video Title:", data.title);
+        //     // console.log("Video Author:", data.author_name);
+        //     // console.log("Video Description:", data.description);
+        // })
         .then(data => {
-            var videoTitle = document.createElement('h3');
-            videoTitle.classList.add('video-title');
-            videoTitle.append(data.title);
-            var videoBox = this.parentElement.parentElement;
-            videoBox.append(videoTitle);
-            var createDivElement = document.createElement('div');
-                createDivElement.classList.add('moving-text');
-                createDivElement.append(data.title);
-                chaNamAndVideoTitle.append(createDivElement);
+            const videoTitleNotSeen = document.createElement('h3');
+            videoTitleNotSeen.classList.add('video-title-notSeen');
+            videoTitleNotSeen.append(data.title);
+            this.append(videoTitleNotSeen);
+            const videoBox = this.parentElement.parentElement;
+            const videoTitleSeen = document.createElement('h3');
+            videoTitleSeen.classList.add('video-title');
+            videoTitleSeen.append(data.title);
+            videoBox.append(videoTitleSeen);
+            // const createDivElement = document.createElement('div');
+            //     createDivElement.classList.add('moving-text');
+            //     createDivElement.append(data.title);
+            //     chaNamAndVideoTitle.append(createDivElement);
             // console.log("Video Title:", data.title);
             // console.log("Video Author:", data.author_name);
             // console.log("Video Description:", data.description);
@@ -66,6 +84,7 @@ class LiteYTEmbed extends HTMLElement {
         .catch(error => {
             console.error(error);
         });
+
         // Set up play button, and its visually hidden label
         if (!playBtnEl) {
             playBtnEl = document.createElement('button');
