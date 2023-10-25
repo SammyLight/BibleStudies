@@ -43,7 +43,7 @@
                                         {% for post in site.posts %}
                                         {% if post.categories contains sumcaty %}
                                         <div class="mobile-headerLinks transition">
-                                            <a class="linkTitle transition"
+                                            <a class="linkTitle transition active"
                                                 href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                                 {{category}}
                                             </a>
@@ -74,11 +74,6 @@
                                         </a>{% endif %}{% endfor %}
                                     </div>
                                     <div class="mobile-headerLinks transition">
-                                        <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
-                                            <span>Bible App</span>
-                                        </a>
-                                    </div>
-                                    <div class="mobile-headerLinks transition">
                                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                                         <a class="linkTitle transition"
                                             href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -86,7 +81,12 @@
                                         </a>{% endif %}{% endfor %}
                                     </div>
                                     <div class="mobile-headerLinks transition">
-                                        {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                        <a class="linkTitle transition" href="samuelawojuola.github.io/BibleApp-2">
+                                            <span>Bible App</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        {% for page in site.pages %}{% if page.title contains "Join-us" %}
                                         <a class="linkTitle transition"
                                             href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Meeting Days</span>
@@ -127,7 +127,7 @@
                                     {% for post in site.posts %}
                                     {% if post.categories contains sumcaty %}
                                     <div class="header-links-li transition">
-                                        <a class="iconLink transition"
+                                        <a class="iconLink transition active"
                                             href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                             {{category}}
                                         </a>
@@ -158,11 +158,6 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="header-links-li transition">
-                                    <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
-                                        <span>Bible App</span>
-                                    </a>
-                                </div>
-                                <div class="header-links-li transition">
                                     {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                                     <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -170,7 +165,12 @@
                                     </a>{% endif %}{% endfor %}
                                 </div>
                                 <div class="header-links-li transition">
-                                    {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                    <a class="iconLink transition" href="https://samuelawojuola.github.io/BibleApp-2">
+                                        <span>Bible App</span>
+                                    </a>
+                                </div>
+                                <div class="header-links-li transition">
+                                    {% for page in site.pages %}{% if page.title contains "Join-us" %}
                                     <a class="iconLink transition"
                                         href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                         <span>Meeting Days</span>
