@@ -30,17 +30,25 @@
                             <div class="min-height content">
                                 <ul class="footerLinks-lists active-link" style="margin-bottom: 10px!important;">
                                     {% assign counter = '0' %}
+                                    {% assign recent_posts = "" | split: "," %}
                                     {% for category in site.categories %}
                                     {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
                                     {% assign sumcaty = category_name %}
                                     {% for post in site.posts %}
-                                    {% if post.categories contains sumcaty and counter < '6' %} {% capture counter %}{{ counter | plus:'1' }}{% endcapture %} 
+                                        {% if post.categories contains sumcaty and counter < '6' %}
+                                        {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+                                        {% capture recent_posts %}{{ recent_posts | append: post.id | append: "," }}{% endcapture %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% endfor %}
+                                    {% assign post_ids = recent_posts | split: "," | reverse %}
+                                    {% for post_id in post_ids %}
+                                    {% assign post = site.posts | where: "id", post_id | first %}
                                     <li>
                                         <a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">
                                             {{ post.title }}
                                         </a>
                                     </li>
-                                    {% endif %}{% endfor %}
                                     {% endfor %}
                                 </ul>
                                 <small title="Click me for all Links in Categories">
@@ -66,12 +74,6 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "About-us" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>About Us</span>
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
                                         {% for page in site.pages %}{% if page.title contains "Teaching-Summary" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Summaries</span>
@@ -84,14 +86,20 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
+                                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Bible Quiz</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
                                         <a href="https://samuelawojuola.github.io/BibleApp-2">
                                             <span>Bible App</span>
                                         </a>
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                                        {% for page in site.pages %}{% if page.title contains "About-us" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>Bible Quiz</span>
+                                            <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>

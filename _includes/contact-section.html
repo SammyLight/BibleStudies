@@ -68,12 +68,6 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "About-us" %}
-                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>About Us</span>
-                                        </a>{% endif %}{% endfor %}
-                                    </li>
-                                    <li>
                                         {% for page in site.pages %}{% if page.title contains "Teaching-Summary" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Summaries</span>
@@ -86,14 +80,20 @@
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>
+                                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                                        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                            <span>Bible Quiz</span>
+                                        </a>{% endif %}{% endfor %}
+                                    </li>
+                                    <li>
                                         <a href="https://samuelawojuola.github.io/BibleApp-2">
                                             <span>Bible App</span>
                                         </a>
                                     </li>
                                     <li>
-                                        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                                        {% for page in site.pages %}{% if page.title contains "About-us" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
-                                            <span>Bible Quiz</span>
+                                            <span>About Us</span>
                                         </a>{% endif %}{% endfor %}
                                     </li>
                                     <li>

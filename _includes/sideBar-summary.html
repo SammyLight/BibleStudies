@@ -11,8 +11,6 @@
                 </h4>
             </div>
             <ul class="recentposts">
-                <!-- {% assign sorted-posts = site.posts | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {% for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign my_array = my_array | push: posts %} {% endif %}
-                {% endfor %}  -->
                 {% for post in site.posts limit:5 %}
                 <li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
                         post.title }}
