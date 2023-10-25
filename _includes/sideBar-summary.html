@@ -11,7 +11,7 @@
                 </h4>
             </div>
             <ul class="recentposts">
-                {% for post in site.posts limit:5 %}
+                {% for post in site.posts limit:6 %}
                 <li><a class="link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{
                         post.title }}
                         <small class="archive-date">{{ post.date | date: "%a, %b %d, %y." }}</small></a></li>
