@@ -24,7 +24,7 @@ div2.id = 'myDropdown2';
 div2.classList.add('myDropdown2');
 var ul1 = document.createElement('div');
 ul1.id = 'header-links2';
-ul1.classList.add('header-links2');
+ul1.classList.add('header-links2', 'active-link');
 div2.append(ul1);
 div1.append(div2);
 var headerContainer = document.querySelector('.header-container');
@@ -43,7 +43,6 @@ const elementsArray = [...myDropdowns];
   elementsArray.forEach(element => {
     element.classList.add("slideOut");
   });
-
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches('.Button')) {
