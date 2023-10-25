@@ -77,6 +77,8 @@ footer .archive-date{color:var(--gray);}
 /* homeHeader */
 .header-links-li>a,.moreButton{ 
     color:var(--black);}
+.header-links-li>.active {
+    border-bottom: 3px solid var(--vivid-orange)!important;}
 .moreButton{background-color:var(--vivid-orange);}
 .moreButton:hover{
     background-color:var(--black);
