@@ -71,3 +71,13 @@ const elementChildArray = [...elementChild];
 elementChildArray.forEach(element => {
     element.classList.add('iconLink2');
 });
+//active link
+document.addEventListener('DOMContentLoaded', function() {
+  var currentUrl = window.location.pathname;
+  var menuLinks = document.querySelectorAll('.active-link a'); 
+  menuLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+});
