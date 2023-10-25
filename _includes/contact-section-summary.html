@@ -10,7 +10,7 @@
                                 <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
-                                <ul class="footerLinks-lists">
+                                <ul class="footerLinks-lists active-link">
                                     {% for post in site.posts limit:5 %}
                                     <li>
                                         <a href="{{ post.url }}">{{ post.title }}
@@ -28,7 +28,7 @@
                                 <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
-                                <ul class="footerLinks-lists" style="margin-bottom: 10px!important;">
+                                <ul class="footerLinks-lists active-link" style="margin-bottom: 10px!important;">
                                     {% assign counter = '0' %}
                                     {% for category in site.categories %}
                                     {% capture category_name %}{{ category | first | prepend: 'HomePage-' }}{% endcapture %}
@@ -58,7 +58,7 @@
                                 <i class="caret2 fas fa-solid fa-caret-right"></i>
                             </div>
                             <div class="min-height content">
-                                <ul class="footerLinks-lists">
+                                <ul class="footerLinks-lists active-link">
                                     <li>
                                         {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
                                         <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">

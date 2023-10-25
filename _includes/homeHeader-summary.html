@@ -14,7 +14,7 @@
                             <button onclick="myFunction()" class="mobileButton" type="button">
                             </button>
                             <div id="myDropdown" class="myDropdown">
-                                <div class="mobile-homeHeaderNav bg-image dropdown_menu-6">
+                                <div class="mobile-homeHeaderNav active-link">
                                     <div class="mobile-headerLinks">
                                         {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
                                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -66,7 +66,7 @@
                                         </a>{% endif %}{% endfor %}
                                     </div>
                                     <div class="mobile-headerLinks transition">
-                                        {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                        {% for page in site.pages %}{% if page.title contains "Join-us" %}
                                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                             <span>Meeting Days</span>
                                         </a>{% endif %}{% endfor %}
@@ -94,7 +94,7 @@
                         </a>{% endif %}{% endfor %}
                     </div>
                     <div class="headerUL">
-                        <div id="header-links" class="header-links">
+                        <div id="header-links" class="header-links active-link">
                             <div class="header-links-li transition">
                                 {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
                                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
@@ -144,7 +144,7 @@
                                 </a>{% endif %}{% endfor %}
                             </div>
                             <div class="header-links-li transition">
-                                {% for page in site.pages %}{% if page.title contains "Join Us" %}
+                                {% for page in site.pages %}{% if page.title contains "Join-us" %}
                                 <a class="iconLink transition"
                                     href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                     <span>Meeting Days</span>
