@@ -357,30 +357,47 @@ function contextMenu_CreateNAppend(e) {
             }
 
             positionContextMenu(e, menuWidth, menuHeight)
+            // function positionContextMenu(event, menuWidth, menuHeight) {
+            //     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+            //     const windowWidth = document.documentElement.clientWidth;
+            //     const scrollBarHeight = window.innerHeight - document.documentElement.clientHeight;
+            //     const windowHeight = document.documentElement.clientHeight;
+              
+            //     const clickedElement = event.target;
+            //     const clickedElementRect = clickedElement.getBoundingClientRect();
+            //     const clickedElementTop = getOffsetRelativeToAncestor(clickedElement).top;//because of elements in table or nested in positioned ancestor(s)
+
+            //     // Enough Space Above In Visible Part of Window
+            //     if (clickedElementTop >= menuHeight) {
+            //         context_menu.style.top = (clickedElementTop - menuHeight ) + 'px';
+            //     }
+            //     // Enough Space Below (Visible and Non Visible) Part of Window
+            //     else if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 > -windowHeight + window.scrollY + scrollBarHeight) {
+            //         context_menu.style.top = (clickedElementTop + clickedElement.offsetHeight ) + 'px';
+            //     }
             function positionContextMenu(event, menuWidth, menuHeight) {
                 const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-                // const windowWidth = window.innerWidth - scrollBarWidth;
                 const windowWidth = document.documentElement.clientWidth;
                 const scrollBarHeight = window.innerHeight - document.documentElement.clientHeight;
-                // const windowHeight = window.innerHeight - scrollBarHeight;
                 const windowHeight = document.documentElement.clientHeight;
               
                 const clickedElement = event.target;
                 const clickedElementRect = clickedElement.getBoundingClientRect();
-                // const clickedElementTop = clickedElementRect.top;//for position fixed
-                // const clickedElementTop = clickedElement.offsetTop;
                 const clickedElementTop = getOffsetRelativeToAncestor(clickedElement).top;//because of elements in table or nested in positioned ancestor(s)
-                // console.log({clickedElementTop,'elmHeight':clickedElement.offsetHeight,menuHeight,windowHeight,'wscrllY':window.scrollY,scrollBarHeight});
-
-                // Enough Space Above In Visible Part of Window
-                if (clickedElementTop >= menuHeight) {
-                    context_menu.style.top = (clickedElementTop - menuHeight ) + 'px';
-                }
-                // Enough Space Below (Visible and Non Visible) Part of Window
-                else if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 > -windowHeight + window.scrollY + scrollBarHeight) {
+                const spaceBelow = windowHeight - (clickedElementRect.top + clickedElement.offsetHeight);
+            
+                // Enough Space Below In Visible Part of Window
+                if (spaceBelow >= menuHeight+10) {
                     context_menu.style.top = (clickedElementTop + clickedElement.offsetHeight ) + 'px';
                 }
-              
+                // Enough Space Above In Visible Part of Window
+                else if (clickedElementTop-window.scrollY >= menuHeight+20) {
+                    context_menu.style.top = (clickedElementTop - menuHeight ) + 'px';
+                }
+                // // Enough Space Below (Visible and Non Visible) Part of Window
+                else if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 > -windowHeight + window.scrollY + scrollBarHeight) {
+                    context_menu.style.top = (clickedElementTop + clickedElement.offsetHeight ) + 'px';
+                }  
                 // Adjust x position if menu is off the right side of the page
                 const clickedElementLeft = clickedElementRect.left + window.scrollX;
                 if (clickedElementLeft + menuWidth > windowWidth + window.scrollX + scrollBarWidth) {
