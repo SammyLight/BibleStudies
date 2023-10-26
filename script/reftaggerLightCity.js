@@ -138,6 +138,7 @@ function contextMenu_CreateNAppend(e) {
         addContextMenuStyleToHead();
 	}
     parentIsContextMenu = 0;
+    let oldcMenuHeight = null;
     let newCmenu = createNewContextMenu();
     ifForStrongsNumberORforCrossRef();
     appendORpositionContextMenu();
@@ -171,6 +172,7 @@ function contextMenu_CreateNAppend(e) {
             parentIsContextMenu = 1;
             prev_contextmenu=context_menu.cloneNode(true);
             prev_contextmenu.addEventListener('contextmenu', function(e){e.preventDefault()});
+            oldcMenuHeight = context_menu.offsetHeight;
 
             /* Store the old cmenu to go back to it */
             currentContextMenu_style = context_menu.getAttribute('style');
@@ -283,7 +285,7 @@ function contextMenu_CreateNAppend(e) {
             }
             if (strnum = e.target.getAttribute('strnum')) {
                 context_menu.setAttribute('strnum', strnum);
-                context_menu.innerHTML += `<div class="buttombar"><div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div>`;
+                context_menu.innerHTML += `<div class="bottombar" style="width: 100%;"><div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenuprvNxtverse('prev')"></button><button class="nxt_verse" onclick="cmenuprvNxtverse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div></div>`;
             } else {
                 context_menu.removeAttribute('strnum');
             }
@@ -309,7 +311,7 @@ function contextMenu_CreateNAppend(e) {
                 }
                 cmtitletext = cmtitletext + ' [' + bversionName + ']';
                 // cmtitlebar.innerText=e.target.innerText;
-                cmtitlebar.innerHTML = cmtitletext + `<div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenu_goToPrevOrNextVerse('prev')"></button><button class="nxt_verse" onclick="cmenu_goToPrevOrNextVerse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn" id="cmenu_closebtn"></button></div></div>`;
+                cmtitlebar.innerHTML = cmtitletext + `<div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenuprvNxtverse('prev')"></button><button class="nxt_verse" onclick="cmenuprvNxtverse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>`;
                 context_menu.append(cmtitlebar);
             }
             let vHolder = getCrossReference(e.target);
@@ -357,7 +359,7 @@ function contextMenu_CreateNAppend(e) {
             }
 
             positionContextMenu(e, menuWidth, menuHeight)
-            function positionContextMenu(event, menuWidth, menuHeight) {
+	    function positionContextMenu(event, menuWidth, menuHeight) {
                 const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
                 // const windowWidth = window.innerWidth - scrollBarWidth;
                 const windowWidth = document.documentElement.clientWidth;
@@ -370,15 +372,20 @@ function contextMenu_CreateNAppend(e) {
                 // const clickedElementTop = clickedElementRect.top;//for position fixed
                 // const clickedElementTop = clickedElement.offsetTop;
                 const clickedElementTop = getOffsetRelativeToAncestor(clickedElement).top;//because of elements in table or nested in positioned ancestor(s)
-                // console.log({clickedElementTop,'elmHeight':clickedElement.offsetHeight,menuHeight,windowHeight,'wscrllY':window.scrollY,scrollBarHeight});
-
-                // Enough Space Above In Visible Part of Window
-                if (clickedElementTop >= menuHeight) {
-                    context_menu.style.top = (clickedElementTop - menuHeight ) + 'px';
-                }
-                // Enough Space Below (Visible and Non Visible) Part of Window
-                else if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 > -windowHeight + window.scrollY + scrollBarHeight) {
+              
+                // Check if there is enough space below the clicked element
+                if (clickedElementTop + clickedElement.offsetHeight + menuHeight + 10 < windowHeight + window.scrollY + scrollBarHeight) {
                     context_menu.style.top = (clickedElementTop + clickedElement.offsetHeight ) + 'px';
+                }
+                // Otherwise, position the menu above the clicked element
+                else if (clickedElementTop /* - window.scrollY */ - menuHeight + windowHeight > 0) {
+                    let cmenuTop = clickedElementTop - menuHeight;
+                    context_menu.style.top = cmenuTop + 'px';
+                    if((cmenuTop - window.scrollY)<0){context_menu.scrollIntoView({ behavior: 'smooth' })}
+                }
+                // If there is not enough space both below and above, position it at the bottom of the viewport
+                else {
+                    context_menu.style.top = (windowHeight/*  + window.scrollY */ - menuHeight + windowHeight) + 'px';
                 }
               
                 // Adjust x position if menu is off the right side of the page
@@ -497,15 +504,37 @@ function contextMenu_CreateNAppend(e) {
     enableInteractJSonEl('.buttombar', context_menu);
     context_menu.addEventListener('mouseenter', add_cMenuNavigationByKeys);
     context_menu.addEventListener('mouseleave', remove_cMenuNavigationByKeys);
+    
+    /* For Height Animation */
+    oldcMenuHeight?cmenuChangeOfHeightAnimation(oldcMenuHeight):null;
+    /* Temporary solution for the top of cmenu being off visible area */
+    const elementRect = context_menu.getBoundingClientRect();
+    const isInView = (elementRect.top >= 0 && elementRect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+    if (!isInView) {context_menu.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+}
+function cmenuChangeOfHeightAnimation(oldcMenuHeight) {
+    let newcMenuHeight = context_menu.getBoundingClientRect().height;
+    context_menu.style.height = `${oldcMenuHeight}px`;
+    let bottombar = context_menu.querySelector('.bottombar');
+    // bottombar.style.marginTop = `${oldcMenuHeight - 15}px`;
+    distanceToAncestorBottom(bottombar,context_menu)>5?bottombar.style.position='absolute':null;
+    document.body.style.pointerEvents='none';
+    setTimeout(() => {
+        // bottombar.style.marginTop = '0px';
+        context_menu.style.height = `${newcMenuHeight}px`;
+        setTimeout(() => { bottombar.style.position = ''; }, 310);
+        setTimeout(() => {context_menu.style.height = '';}, 310);
+        setTimeout(() => {document.body.style.pointerEvents='';}, 330);
+    }, 100);
+}
+function cmenuprvNxtverse(prvNxt) {
+    let oldcMenuHeight = context_menu.getBoundingClientRect().height;
+    cmenu_goToPrevOrNextVerse(prvNxt);
+    cmenuChangeOfHeightAnimation(oldcMenuHeight)
 }
 document.addEventListener('click', contextMenu_Remove);
 document.addEventListener('keydown', contextMenu_Remove);
 // document.addEventListener('click', mainBibleVersion);
-// function mainBibleVersion(e){
-//     if(!e.target.matches('span.verse[ref]')){return}
-//     bversionName = e.target.getAttribute('ref').split(' ').pop();
-//     localStorage.getItem('bversionName',bversionName)
-// }
 document.addEventListener('dblclick', mainBibleVersion);
 document.addEventListener('contextmenu', mainBibleVersion);
 function mainBibleVersion(e){
@@ -2474,25 +2503,25 @@ function cmenu_goBackFront(x){
     let cmenu_dX = context_menu.getAttribute('data-x');
     let cmenu_dY = context_menu.getAttribute('data-y');
     let currentContextMenu_style = context_menu.getAttribute('style');
+    let oldcMenuHeight = context_menu.offsetHeight;//For change of height animation
     /* Replace the context menu with the save one */
     let cMenuParent = context_menu.parentElement;
     let prev_contextmenu=context_menu;
     if (calledByPrv) {
         /* Add the cmenu to the cmenu_backwards_navigation_arr */
         cmenu_backwards_navigation_arr.splice(indx+1,1,prev_contextmenu);
-        prvTitle=prev_contextmenu.querySelector('.cmtitlebar button.prv').getAttribute('title')
+        prvTitle=prev_contextmenu.querySelector('.cmtitlebar button.prv').getAttribute('title');
     }
     cMenuParent.replaceChild(cmenu_backwards_navigation_arr[indx], context_menu);
     context_menu.setAttribute('style',currentContextMenu_style);
     context_menu.querySelector('.cmtitlebar').setAttribute('data-x',cmenu_cmt_dX);
     context_menu.querySelector('.cmtitlebar').setAttribute('data-y',cmenu_cmt_dY);
-    context_menu.querySelector('.buttombar').setAttribute('data-x',cmenu_cmt_dX);
-    context_menu.querySelector('.buttombar').setAttribute('data-y',cmenu_cmt_dY);
+    context_menu.querySelector('.bottombar').setAttribute('data-x',cmenu_cmt_dX);
+    context_menu.querySelector('.bottombar').setAttribute('data-y',cmenu_cmt_dY);
     context_menu.setAttribute('data-x',cmenu_dX);
     context_menu.setAttribute('data-y',cmenu_dY);
     enableInteractJSonEl('.cmtitlebar', context_menu);
-    enableInteractJSonEl('.buttombar', context_menu);
-
+    enableInteractJSonEl('.bottombar', context_menu);
     if(calledByPrv){
         let nxtBtnZ=context_menu.querySelectorAll('.nxt');
         nxtBtnZ.forEach(nxtBtn=>{
@@ -2501,6 +2530,9 @@ function cmenu_goBackFront(x){
             nxtBtn.removeAttribute('disabled');
         })
     }
+    
+    /* For Height Change Animation */
+    cmenuChangeOfHeightAnimation(oldcMenuHeight);
 }
 /* To Toggle TSK in CMenu When Present */
 function toggleCMenuTSK(){
