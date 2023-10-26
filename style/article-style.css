@@ -209,7 +209,7 @@ article li{
     margin-left:0;
     display:list-item;
     margin-top:1em;}
-li>span,li>strong>span,li>em>span,li>strong>em>span,p>span,p>em>span,blockquote>span,blockquote>em>span,blockquote>p>em>span{ 
+em>span,li>span,li>strong>span,li>em>span,li>strong>em>span,p>span,p>em>span,blockquote>span,blockquote>em>span,blockquote>p>em>span{ 
     font-style:initial;}
 /* li:before{ 
     content:counters(lister, ".") ". ";
