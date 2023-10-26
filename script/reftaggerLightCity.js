@@ -1,9 +1,9 @@
 let showingXref=localStorage.getItem('showingXref')?JSON.parse(localStorage.getItem('showingXref')):false;
 let main = document.body;
 let pagemaster = document.body;
-let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
+let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
 let contextMenu_touch="contextmenu";
-let bibleversions_Array = ['KJV','ESV','NIV’84','ABP-gr','NET'];
+let bibleversions_Array = ['KJV','ESV','NIV’84','ABP-en','ABP-gr','NET'];
 
 
 /* **** ****************************** **** */
@@ -15,83 +15,16 @@ let prev_contextmenu;
 let newStrongsDef = '';
 let rightClickedElm = null;
 document.addEventListener('click', appendCrossReferences);
-document.addEventListener('click', touchORclickCMenu);
-document.addEventListener('touchstart', touchORclickCMenu);
-document.addEventListener('contextmenu', touchORclickCMenu);
-
-// Touchstart event
-let cmenuGlobalVars={'stillTouching':false,'stopCMenu':false};
-function touchORclickCMenu(e) {
-	if ((['click','touchstart','contextmenu'].includes(e.type) && cmenuGlobalVars['stopCMenu']==true) || (e.target.matches('#context_menu .crossrefs span') && !e.target.innerText.match(/\d+/g)) || (!e.target.matches('[ref],.strnum[strnum],#context_menu .translated,#context_menu [strnum],#context_menu .crossrefs span'))){
-        touchEndFunction ();
-        return
-    } // do not run if not any of these elements
-    
-    if ((!cmenuGlobalVars['stillTouching'] && ['click','contextmenu'].includes(e.type)) || (cmenuGlobalVars['stillTouching'] && e.type=='click' && e.target.closest('.context_menu .strngsdefinition [strnum]')) || (cmenuGlobalVars['stillTouching'] && e.type=='contextmenu' && e.target.closest('.context_menu'))) {
-        touchEndFunction ();
-        contextMenu_CreateNAppend(e);
-    }//if it is a click, run contextMenu_CreateNAppend function
-    else if (e.type=='touchstart'){
-        cmenuGlobalVars['stillTouching']=true;
-        e.target.addEventListener('touchend',touchORclickCMenu);//to know when the touch has ended and
-        e.target.addEventListener('touchmove',touchMoveInCMenu);//to prevent running of contextmenu if touch moves (on the assumption that the intention of touchmove scrolling) 
-        
-        //Inside contextmenu
-        if(!e.target.closest('.context_menu')){contextMenu_CreateNAppend({'type':'click','target':e.target,'truecontextmenu':false})}
-        
-        //NOT Inside contextmenu
-        else {
-            // I DONT WANT CLICKING TO RUN CMENU IF IT IS INSIDE THE CONTEXT_MENU
-            // If touch has not ended in 300ms, then run contextmenu
-            let touchEndCheckTimeout = setTimeout(function() {
-                if (cmenuGlobalVars['stillTouching']==true && cmenuGlobalVars['stopCMenu']==false) {
-                    document.addEventListener('touchend',touchEndFunction);//to know when the touch has ended and
-                    document.addEventListener('contextmenu',preventContextMenu);//to know when the touch has ended and
-                    contextMenu_CreateNAppend({'type':'contextmenu','target':e.target,'truecontextmenu':false});
-                    document.body.style.userSelect = 'none';// Disable Selection of Text Until Touch has ended
-                    context_menu.style.userSelect = 'none';// Disable Selection of Text Until Touch has ended
-                    let selectionsTimer = setTimeout(() => {
-                        clearTimeout(selectionsTimer);
-                        clearTimeout(touchEndCheckTimeout);
-                    }, 300);
-                }
-                clearTimeout(touchEndCheckTimeout);
-            }, 400);
-        }
-        
-    }
-    else if (e.type=='touchend'){
-        touchEndFunction();
-        console.log('touch ended');
-    }
-    function touchEndFunction(){
-        let touchEndCheckTimeout = setTimeout(() => {
-            cmenuGlobalVars['stopCMenu']=false;
-            cmenuGlobalVars['stillTouching']=false;
-            clearTimeout(touchEndCheckTimeout);
-            // let selection = window.getSelection();
-            // if (selection.rangeCount > 0) {window.getSelection().removeRange(window.getSelection().getRangeAt(0));}
-            typeof context_menu != 'undefined' ? context_menu.style.userSelect = '':null;//allow selection after touch has ended
-            document.removeEventListener('touchend',touchEndFunction);
-            document.removeEventListener('contextmenu',preventContextMenu);//to know when the touch has ended and
-            document.body.style.userSelect = '';// Disable Selection of Text Until Touch has ended
-            e.target?(e.target.removeEventListener('touchend',touchORclickCMenu),e.target.removeEventListener('touchmove',touchMoveInCMenu)):null;
-        }, 0);//Delayed because 'click' registers after 'touchend' if touchend follows touchstart immediately
-    }
-    function touchMoveInCMenu(){cmenuGlobalVars['stopCMenu']=true;console.log('touchMoved');}
-    function preventContextMenu(event) {event.preventDefault();}
-}
+document.addEventListener('contextmenu', contextMenu_CreateNAppend);
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* PREVENT DEFAULT CONTEXT MENU FOR WHEN ELEMENT CHANGES AFTER RIGHTCLICKING ON .crfnnote_btns buttons */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 let prevntDefault_cMenu = false;
 let timer_prevntDefault_cMenu;
 document.addEventListener('mouseover', preventContextMenu_mo);
-document.addEventListener('touchstart', preventContextMenu_mo);
-// document.addEventListener('contextmenu', preventContextMenu);
-function preventContextMenu_mo(e,allowdefaultCmenu) {
-    if(!e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')||!allowdefaultCmenu){return}
-    if(prevntDefault_cMenu == false){
+document.addEventListener('contextmenu', preventContextMenu);
+function preventContextMenu_mo(e) {
+    if(e.target.matches('.verse_crossref_button,.compare_withinsearchresult_button')){
         clearTimeout(timer_prevntDefault_cMenu);
         prevntDefault_cMenu = true;
         document.addEventListener('contextmenu', preventContextMenu);
@@ -101,27 +34,18 @@ function preventContextMenu_mo(e,allowdefaultCmenu) {
             prevntDefault_cMenu = false;
             document.removeEventListener('contextmenu', preventContextMenu);}, 1000);
     }
-    function preventContextMenu(event) {if (prevntDefault_cMenu) {event.preventDefault();}}
 }
+function preventContextMenu(e) {if (prevntDefault_cMenu) {e.preventDefault();}}
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 /* ******* ******* ******* **** *** **** ******* ******* ***** ************* ** ************** ******* */
 function contextMenu_CreateNAppend(e) {
-	if (!e.target.matches('span[ref], .crossrefs>span:not(.notref), .translated, .strnum, #context_menu span:not(.notref):not(.verse)')||e.target.closest('.ignorecmenu')){return} // Select the element(s) that the context menu will be attached to
+    if (!e.target.matches('span[ref], .crossrefs>span:not(.notref), .translated, .strnum, #context_menu span:not(.notref):not(.verse)')||e.target.closest('.ignorecmenu')){return} // Select the element(s) that the context menu will be attached to
 	if (!e.target.matches('#context_menu *')){cmenu_backwards_navigation_arr=[];} // Reset the cmenu_backwards_navigation_arr if the context menu is not called from context_menu
     let addquotes = true,prv_indx='',currentContextMenu_style, cmenu_cmt_dX, cmenu_cmt_dY, cmenu_dX,cmenu_dY, prv_cmenuIndx=false, prv_title='',cmenu_tsk_display='displaynone',dzabled='disabled';
     // formerContextMenu_Coordinates.transform = context_menu.style.transform;
 	let parentIsContextMenu=false;
     if (e.target.closest('.context_menu')) {
-        //This is a temporary solution
-        //Do not create context_menu if etarget is strongs number in a context menu
-        //so that strong's number words can be changed to their transliteration back and forth
-        //only right click will create context menu for strongs number
-        if (e.type=='click' && e.target.matches('.context_menu .translated, .context_menu .translated .strnum')) {
-            return
-        }
         parentIsContextMenu = true;
-        prev_contextmenu=context_menu.cloneNode(true);
-        prev_contextmenu.addEventListener('contextmenu', function(e){e.preventDefault()});
         /* Store the old cmenu to go back to it */
         currentContextMenu_style = context_menu.getAttribute('style');
         cmenu_cmt_dX = context_menu.querySelector('.cmtitlebar').getAttribute('data-x');
@@ -131,7 +55,7 @@ function contextMenu_CreateNAppend(e) {
     } else {
         currentContextMenu_style='';
     }
-
+    
     // console.log({parentIsContextMenu});
     // console.log({currentContextMenu_style,cmenu_cmt_dX,cmenu_cmt_dY});
 	if (!document.head.querySelector('#lightCityReftaggerContextMenuStyleInHead')) {
@@ -156,7 +80,6 @@ function contextMenu_CreateNAppend(e) {
             context_menu_replacement.style.display = 'block';
             document.body.prepend(context_menu_replacement);
             document.body.appendChild(context_menu);
-            context_menu_replacement.addEventListener('contextmenu', function(e){e.preventDefault()})
             return true
         }
         return false
@@ -168,10 +91,9 @@ function contextMenu_CreateNAppend(e) {
         /* ||||||||||||||||||||||||||||||||||||||||||||||| */
         /* || FOR WHEN IT IS CALLED FROM A CONTEXT-MENU || */
         /* ||||||||||||||||||||||||||||||||||||||||||||||| */
-        if (elmAhasElmOfClassBasAncestor(e.target, '.context_menu')) {
+        if (e.target.closest('.context_menu')) {
             parentIsContextMenu = 1;
             prev_contextmenu=context_menu.cloneNode(true);
-            prev_contextmenu.addEventListener('contextmenu', function(e){e.preventDefault()});
             oldcMenuHeight = context_menu.offsetHeight;
 
             /* Store the old cmenu to go back to it */
@@ -180,8 +102,11 @@ function contextMenu_CreateNAppend(e) {
             cmenu_cmt_dY = context_menu.querySelector('.cmtitlebar').getAttribute('data-y');
             cmenu_dX = context_menu.getAttribute('data-x');
             cmenu_dY = context_menu.getAttribute('data-y');
+
+            /* For contextMenu whose parent was contextMenu:
+            In case it is one that is called from the array
+            and there are other saved cmenus in the array */
             if(typeof prv_cmenuIndx === 'number'){
-                /* For contextMenu whose parent was contextMenu: In case it is one that is called from the array and there are other saved cmenus in the array */
                 cmenu_backwards_navigation_arr.splice(prv_cmenuIndx+1,0,prev_contextmenu);
                 cmenu_backwards_navigation_arr.length=prv_cmenuIndx+2;
                 prv_indx=`indx="${prv_cmenuIndx+1}"`;
@@ -227,12 +152,11 @@ function contextMenu_CreateNAppend(e) {
         /* || If eTraget is a [Translated Strongs Word] or the [Strongs Number] itself || */
         /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
         if (e.target.matches('.translated, .strnum')) {
-            // console.log(e.type);
             // On Mobile Devices
-            if ((isMobileDevice && contextMenu_touch!="touchstart") || !e.hasOwnProperty('truecontextmenu')) {
+            if (isMobileDevice && contextMenu_touch!="touchstart") {
                 // remove windows selection
                 // (because on mobile, the user has to press and hold for contextmenu which also selects the text)
-                (window.getSelection().rangeCount > 0) ? window.getSelection().removeRange(window.getSelection().getRangeAt(0)):null;
+                window.getSelection().removeRange(window.getSelection().getRangeAt(0))
             }
             if (e.target.getAttribute("translation")) {
                 originalWord = e.target.getAttribute("translation");
@@ -249,11 +173,10 @@ function contextMenu_CreateNAppend(e) {
                 originalWord = e.target.parentElement.getAttribute("translation");
             }
             
-            // If the target is a strong's number
+            // If the traget is a strong's number
             if (e.target.getAttribute('strnum')) {
                 rightClickedElm = e.target;
                 firstShadowColorOfElem = getBoxShadowColor(rightClickedElm);
-                // console.log('strongs');
                 getCurrentStrongsDef(e);
             }
             let menu_inner;
@@ -262,7 +185,6 @@ function contextMenu_CreateNAppend(e) {
             if(document.body.matches('.darkmode')){
                 searchicon = 'search-svgrepo-com(2)-DarkMode.svg';
             }
-            // console.log({originalWord,newStrongsDef,context_menu});
             if (originalWord) {
                 let xlitNlemma = '',br = '';
                 for (let i = 0; i < arrOfStrnums.length; i++) {
@@ -270,7 +192,8 @@ function contextMenu_CreateNAppend(e) {
                     if(i==arrOfStrnums.length-1){br = '<br>'}
                     let sn = arrOfStrnums[i];
                     if(!/[GHgh]\d+/.test(sn)){continue}
-                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src="../images/${searchicon}" alt="&#128270;"></button>`;
+                    // let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img src=images/${searchicon}" alt="&#128270;"></button>`;
+                    let srchBtn = `<button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${sn}')"><img alt="&#128270;"></button>`;
                     xlitNlemma = `${xlitNlemma}${br}<code>${srchBtn}${getsStrongsLemmanNxLit(sn).lemma} (${getsStrongsLemmanNxLit(sn).xlit}, ${sn})</code>`
                 }
                 if (addquotes) {
@@ -279,15 +202,20 @@ function contextMenu_CreateNAppend(e) {
                     menu_inner = `${xlitNlemma}<hr>${originalWord.trim()}`;
                 }
                 context_menu.innerHTML = `<div class="cmtitlebar">${menu_inner}<div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}`;
-            } else if ([contextMenu_touch,'click','touchstart'].includes(e.type)) { // For strongs number in verseNote
-                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')"><img src="../images/${searchicon}" alt="&#128270;"></button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
+                console.log('01');
+            } else if ([contextMenu_touch].includes(e.type)) { // For strongs number in verseNote
+                console.log('02');
+                // let _img=`<img src="images/${searchicon}" alt="&#128270;">`;
+                console.log('verseNote');
+                let _img=``;
+                let srchBtn = `<code><button class="cmenusrchbtn" onmouseup="searchInputsValueChange(event,'${arrOfStrnums}')">${_img}</button>${arrOfStrnums} (${getsStrongsLemmanNxLit(arrOfStrnums).lemma}, ${getsStrongsLemmanNxLit(arrOfStrnums).xlit})</code>`;
                 context_menu.innerHTML = `<div class="cmtitlebar">${srchBtn}<div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div>${newStrongsDef}</div>`;
             }
             if (strnum = e.target.getAttribute('strnum')) {
-                context_menu.setAttribute('strnum', strnum);
-                context_menu.innerHTML += `<div class="bottombar" style="width: 100%;"><div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenuprvNxtverse('prev')"></button><button class="nxt_verse" onclick="cmenuprvNxtverse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div></div>`;
+                context_menu.setAttribute('strnum', strnum)
+                context_menu.innerHTML += `<div class="bottombar" style="width: 100%;"><div class="cmenu_navnclose_btns"><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div>`
             } else {
-                context_menu.removeAttribute('strnum');
+                context_menu.removeAttribute('strnum')
             }
         }
     
@@ -331,7 +259,7 @@ function contextMenu_CreateNAppend(e) {
                 context_menu.setAttribute('strnum', strnum);
             } else {
                 context_menu.removeAttribute('strnum');
-                context_menu.innerHTML += `<div class="buttombar"><div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenu_goToPrevOrNextVerse('prev')"></button><button class="nxt_verse" onclick="cmenu_goToPrevOrNextVerse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn" id="cmenu_closebtn"></button></div></div></div>`;
+                context_menu.innerHTML += `<div class="bottombar" style="width: 100%;"><div class="cmenu_navnclose_btns"><button class="prv_verse" onclick="cmenuprvNxtverse('prev')"></button><button class="nxt_verse" onclick="cmenuprvNxtverse('next')"></button><button class="cmenu_tsk ${cmenu_tsk_display}" onclick="toggleCMenuTSK(this)">TSK</button><button class="prv" ${prv_indx} ${prv_title} onclick="cmenu_goBackFront(this)" ${dzabled}></button><button class="nxt" onclick="cmenu_goBackFront(this)" disabled></button><button class="closebtn cmenu_closebtn" onclick="hideRightClickContextMenu()"></button></div></div></div>`;
             }
             transliterateAllStoredWords()
         }
@@ -359,7 +287,7 @@ function contextMenu_CreateNAppend(e) {
             }
 
             positionContextMenu(e, menuWidth, menuHeight)
-	    function positionContextMenu(event, menuWidth, menuHeight) {
+            function positionContextMenu(event, menuWidth, menuHeight) {
                 const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
                 // const windowWidth = window.innerWidth - scrollBarWidth;
                 const windowWidth = document.documentElement.clientWidth;
@@ -493,15 +421,15 @@ function contextMenu_CreateNAppend(e) {
         context_menu.setAttribute('style',currentContextMenu_style);            
         context_menu.querySelector('.cmtitlebar').setAttribute('data-x',cmenu_cmt_dX);
         context_menu.querySelector('.cmtitlebar').setAttribute('data-y',cmenu_cmt_dY);
-        context_menu.querySelector('.buttombar').setAttribute('data-x',cmenu_cmt_dX);
-        context_menu.querySelector('.buttombar').setAttribute('data-y',cmenu_cmt_dY);
+        context_menu.querySelector('.bottombar').setAttribute('data-x',cmenu_cmt_dX);
+        context_menu.querySelector('.bottombar').setAttribute('data-y',cmenu_cmt_dY);
         context_menu.setAttribute('data-y',cmenu_dX);
         context_menu.setAttribute('data-x',cmenu_dY);
         if(cm_dtl = context_menu.querySelector('details')){cm_dtl.open = true;}
     }
     // Remove ContextMenu Eventlistner
     enableInteractJSonEl('.cmtitlebar', context_menu);
-    enableInteractJSonEl('.buttombar', context_menu);
+    enableInteractJSonEl('.bottombar', context_menu);
     context_menu.addEventListener('mouseenter', add_cMenuNavigationByKeys);
     context_menu.addEventListener('mouseleave', remove_cMenuNavigationByKeys);
     
@@ -534,7 +462,6 @@ function cmenuprvNxtverse(prvNxt) {
 }
 document.addEventListener('click', contextMenu_Remove);
 document.addEventListener('keydown', contextMenu_Remove);
-// document.addEventListener('click', mainBibleVersion);
 document.addEventListener('dblclick', mainBibleVersion);
 document.addEventListener('contextmenu', mainBibleVersion);
 function mainBibleVersion(e){
@@ -546,14 +473,14 @@ function mainBibleVersion(e){
 }
 function hideRightClickContextMenu() {contextMenu_Remove({'type':'click','key':'Escape','target':context_menu})}
 function contextMenu_Remove(e) {
-    //Don't remove the cmenu if it is a strong's number 
-    if ((e.target.matches('[strnum],[ref],.crossrefs span') && !e.target.closest('.context_menu'))||(e.type!='click' && e.key !== 'Escape')){return}
-    if (typeof context_menu != 'undefined' && (['cmenu_closebtn','context_menu'].includes(e.target.id) || !e.target.closest('#context_menu'))) {
-        // context_menu.removeEventListener('contextmenu', mainBibleVersion);
-        // lightCityReftaggerContextMenuStyleInHead.remove();
-        context_menu.matches('.showingXref')?showingXref=true:showingXref=false;
-        localStorage.setItem('showingXref',showingXref)
-        context_menu.remove();
+    //Don't remove the cmenu if it is a strong's number
+    if (e.target.matches('.verse_compare .cmenu_closebtn,[strnum]:not(.context_menu [strnum]),[ref]:not(.context_menu [ref]),.crossrefs span:not(.context_menu .crossrefs span)')||(e.type!='click' && e.key !== 'Escape')){return}
+    if (typeof context_menu != 'undefined') {
+        if (e.target.matches('.cmenu_navnclose_btns .cmenu_closebtn, #context_menu') || !e.target.closest('#context_menu')) {
+            context_menu.matches('.showingXref')?showingXref=true:showingXref=false;
+            localStorage.setItem('showingXref',showingXref)
+            context_menu.remove();
+        }
     }
 }
 function add_cMenuNavigationByKeys(e) {
@@ -566,7 +493,8 @@ function remove_cMenuNavigationByKeys(e) {
 }
 function cMenuNavigationByKeys(e) {
     let key_code = e.which || e.keyCode;
-    let cmenu_navnclose_btns = context_menu.querySelector('.cmenu_navnclose_btns');
+    cmenu_navnclose_btns = typeof context_menu != 'undefined' ? context_menu.querySelector('.cmenu_navnclose_btns'): null;
+    if (!cmenu_navnclose_btns) {return}
     switch (key_code) {
         // case e.shiftKey && 37: //left arrow key
         case 37: //left arrow key
@@ -1068,8 +996,8 @@ if (bv = localStorage.getItem('bversionName')) {
 loadVersion(bversionName)
 function loadVersion(versionName) {
     return new Promise((resolve, reject) => {
-      const fullPathHead = '';
-      let request_Version_URL = fullPathHead + `../bibles/${versionName}.json`;
+      const fullPathHead = document.querySelectorAll('body')[0].baseURI.split('resources/app')[0];
+      let request_Version_URL = fullPathHead + `resources/app/src/bibles/${versionName}.json`;
       let bibleVersion = new XMLHttpRequest();
       bibleVersion.open('GET', request_Version_URL);
       bibleVersion.responseType = 'json';
@@ -1408,135 +1336,110 @@ function getCrossReference(x,bkn,bvName) {
 }
 pagemaster.addEventListener('keydown',compareThisSearchVerse)
 /* COMPARE THIS SEARCH VERSE */
-let firstClick=false;
 async function compareThisSearchVerse(e){
-    if (e.button==0) {
-        if (firstClick==false) {
-            //Double Click on version btn will compare version
-            firstClick=true;
-            setTimeout(() => {
-                if(firstClick){
-                    firstClick=false;
-                    mainBibleVersion({'target':e.target});
-                    let evt = {'button':2,'target':e.target};
-                    e=evt;
-                    compareThisSearchVerse_innerFunc();
-                }
-                //Has been changed by a second click
-                else if(firstClick==false) {return};
-            }, 250);
-        }
-        //Single Click on version btn will change the version in the context menu
-        else if (firstClick==true) {
-            firstClick=false
-            compareThisSearchVerse_innerFunc()
-        }
+    if(e.button==undefined){return};//any keydown will trigger this function so ensure there is a mouse click accompanying it or it will try to load a bible version
+    let dis = e.target;
+    let v = elmAhasElmOfClassBasAncestor(dis,'.verse');
+    let bvNme = dis.getAttribute('b_version');
+
+    // Check if current Bible Version has already been compared
+    if(!window[bvNme]){await loadVersion(bvNme)}
+    
+    // middleMouseButton or Right-click event (change the bible version)
+    if (e.button==1 || (!e.ctrlKey && e.button==2)) {changeLoadedVersion(v,dis)}
+    // Ctrl + Right-click (change just the verse)
+    else if (e.ctrlKey && e.button==2) {changeLoadedVersion(v,dis,true)}
+    // Left-click event with NO ctrlkey (show the compare verse for just this verse)
+    else if (!e.ctrlKey && e.button==0) {singleVerse(v,dis)}
+    // Ctrl + left-click (show all compare verses for clicked bible version)
+    else if ((e.ctrlKey && e.button==0)) {
+        //get all the verses in parent window
+        let parentWindow = dis.closest('#context_menu');
+        if(!parentWindow){parentWindow = dis.closest('#searchPreviewFixed, .compare_verses')}
+        let versionCompareBtns = parentWindow.querySelectorAll('.compare_withinsearchresult_button[b_version='+bvNme+']')
+        let addORremove = 'add';
+        if(dis.classList.contains('green_active')){addORremove = 'remove';}// Remove all
+        versionCompareBtns.forEach(cmpBtn => {
+            let v = elmAhasElmOfClassBasAncestor(cmpBtn,'.verse');
+            singleVerse(v,cmpBtn,addORremove)
+        });
     }
-    async function compareThisSearchVerse_innerFunc() {
-        if(e.button==undefined){return};//any keydown will trigger this function so ensure there is a mouse click accompanying it or it will try to load a bible version
-        let dis = e.target;
-        let v = dis.closest('.verse');
+
+    function changeLoadedVersion(v,dis,just1verse){
+        let vParent = v.parentElement;
         let bvNme = dis.getAttribute('b_version');
-    
-        // Check if current Bible Version has already been compared
-        if(!window[bvNme]){await loadVersion(bvNme)}
-        
-        // middleMouseButton or Right-click event (change the bible version)
-        if (e.button==1 || (!e.ctrlKey && e.button==2)) {changeLoadedVersion(v,dis)}
-        // Ctrl + Right-click (change just the verse)
-        else if (e.ctrlKey && e.button==2) {changeLoadedVersion(v,dis,true)}
-        // Left-click event with NO ctrlkey (show the compare verse for just this verse)
-        else if (!e.ctrlKey && e.button==0) {singleVerse(v,dis)}
-        // Ctrl + left-click (show all compare verses for clicked bible version)
-        else if ((e.ctrlKey && e.button==0)) {
-            //get all the verses in parent window
-            let parentWindow = dis.closest('#context_menu');
-            if(!parentWindow){parentWindow = dis.closest('#searchPreviewFixed, .compare_verses')}
-            let versionCompareBtns = parentWindow.querySelectorAll('.compare_withinsearchresult_button[b_version='+bvNme+']')
-            let addORremove = 'add';
-            if(dis.classList.contains('green_active')){addORremove = 'remove';}// Remove all
-            versionCompareBtns.forEach(cmpBtn => {
-                let v = elmAhasElmOfClassBasAncestor(cmpBtn,'.verse');
-                singleVerse(v,cmpBtn,addORremove)
-            });
+        let nonCompVerses = [v];
+        if (!just1verse) {
+            nonCompVerses = vParent.querySelectorAll('.verse:not(.verse_compare)');//get all verses that are not compare verses
         }
-    
-        function changeLoadedVersion(v,dis,just1verse){
-            let vParent = v.parentElement;
-            let bvNme = dis.getAttribute('b_version');
-            let nonCompVerses = [v];
-            if (!just1verse) {
-                nonCompVerses = vParent.querySelectorAll('.verse:not(.verse_compare)');//get all verses that are not compare verses
+        nonCompVerses.forEach(v => {
+            const oldcrfnnote = v.querySelector('.crfnnote').cloneNode(true);//get the crfnnote
+            oldcrfnnote.querySelector('.cbv').classList.remove('cbv');//former cbv (current bible version)
+            oldcrfnnote.querySelector(`[b_version="${bvNme}"]`).classList.add('cbv');//former cbv (current bible version)
+            const vccls = v.classList.contains('verse_compare');//check if v has verse_compare class
+            const vref = v.querySelector('code[ref]').getAttribute('ref');
+            const newVerse = createSingleVerseFromREFandVERSION(vref,bvNme);
+            vccls ? newVerse.classList.add('verse_compare') : null;
+            let vinfrag = newVerse.querySelector('.verse');
+            vinfrag.append(oldcrfnnote)//append old crfnnote to new v
+            let refcodeinv = vinfrag.querySelector('[ref]');
+            refcodeinv.innerText = `(${bvNme})${refcodeinv.innerText}`;//add version to reference text
+            vParent.insertBefore(newVerse, v)//replace old v with new verse
+            transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum,vParent)});
+            
+            // prevent contextmenu on strong's word in new verse
+            vParent.classList.add('ignorecmenu');
+            setTimeout(() => {vParent.classList.remove('ignorecmenu');}, 150);
+            v.remove()//remove old verse 
+            //If it is context menu, replace the version name of the reference
+            if((!just1verse && vParent.closest('#context_menu')) || !vParent.querySelector(`.verse:not(.verse_compare):not(.v_${bvNme})`)){
+                let cmtitlebarTextNode = context_menu.querySelector('.cmtitlebar').childNodes[0];
+                cmtitlebarTextNode.textContent = cmtitlebarTextNode.textContent.replace(/\s*\[[^\]]+\]/,` [${bvNme}]`)
             }
-            nonCompVerses.forEach(v => {
-                const oldcrfnnote = v.querySelector('.crfnnote').cloneNode(true);//get the crfnnote
-                oldcrfnnote.querySelector('.cbv').classList.remove('cbv');//former cbv (current bible version)
-                oldcrfnnote.querySelector(`[b_version="${bvNme}"]`).classList.add('cbv');//former cbv (current bible version)
-                const vccls = v.classList.contains('verse_compare');//check if v has verse_compare class
-                const vref = v.querySelector('code[ref]').getAttribute('ref');
-                const newVerse = createSingleVerseFromREFandVERSION(vref,bvNme);
-                vccls ? newVerse.classList.add('verse_compare') : null;
-                let vinfrag = newVerse.querySelector('.verse');
-                vinfrag.append(oldcrfnnote)//append old crfnnote to new v
-                let refcodeinv = vinfrag.querySelector('[ref]');
-                refcodeinv.innerText = `(${bvNme})${refcodeinv.innerText}`;//add version to reference text
-                vParent.insertBefore(newVerse, v)//replace old v with new verse
-                transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum,vParent)});
-                
-                // prevent contextmenu on strong's word in new verse
-                vParent.classList.add('ignorecmenu');
-                setTimeout(() => {vParent.classList.remove('ignorecmenu');}, 150);
-                v.remove()//remove old verse 
-                //If it is context menu, replace the version name of the reference
-                if((!just1verse && vParent.closest('#context_menu')) || !vParent.querySelector(`.verse:not(.verse_compare):not(.v_${bvNme})`)){
-                    let cmtitlebarTextNode = context_menu.querySelector('.cmtitlebar').childNodes[0];
-                    cmtitlebarTextNode.textContent = cmtitlebarTextNode.textContent.replace(/\s*\[[^\]]+\]/,` [${bvNme}]`)
-                }
-                //change the general book version
-                if (!just1verse) {
-                    bversion=bvNme;
-                    bversionName=bvNme;
-                }
-            });
-        }
-        function singleVerse(v,dis2,addORremove){
-            let vref = v.querySelector('code[ref]').getAttribute('ref');
-            let bvNme = dis2.getAttribute('b_version');
-            let vrefModified = vref.replace(/[:.]+/,'_');
-    
-            // Check if current Bible Version has already been compared
-            const prevComparedVerse = v.parentElement.querySelector('.verse_compare[ref="' + vrefModified + ' ' + bvNme + '"]')
-            if(((addORremove && addORremove=='remove') || !addORremove) && prevComparedVerse){
-                if(addORremove && addORremove=='add'){return}
-                prevComparedVerse.remove();
-                dis2.classList.remove('green_active');
-                if(!v.nextElementSibling || !v.nextElementSibling.matches('.verse_compare')){v.classList.remove('vrs_bein_comp')};
-                return
-            } else if(addORremove && addORremove=='remove'){return}
-    
-            let newVerse = createSingleVerseFromREFandVERSION(vref, bvNme);
-            let newVerseInner = newVerse.querySelector('.verse');
-            newVerseInner.prepend(createNewElement('button','.closebtn','.cmenu_closebtn', '[onclick=removeCompareVerse(this)]'));
-            newVerseInner.classList.add('verse_compare');
-            newVerseInner.setAttribute('ref', vrefModified + ' ' + bvNme);
-            newVerseInner.querySelector('code[ref]').innerText=newVerseInner.querySelector('code[ref]').innerText.replace(/\[/,`[${bvNme} `);
-            insertElmAafterElmB(newVerse, v);
-            transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum/* ,tElm */)});
-            dis2.classList.add('green_active');
-            v.classList.add('vrs_bein_comp');
-            if(v.matches('.displaynone')){newVerseInner.classList.add('displaynone')}
-        }
-        function createSingleVerseFromREFandVERSION(vref, bvNme) {
-            let vrefObj = breakDownRef(vref);
-            let new_bk = vrefObj.bn;
-            let new_chp = vrefObj.bc;
-            let new_vn = vrefObj.cv;
-            let fullBkn = fullBookName(new_bk).fullBkn;
-            newRef2get = `${new_bk} ${new_chp}:${new_vn}`;
-            let newVerse = createSingleVerse(new_bk, new_chp, new_vn, fullBkn, bvNme);
-            createTransliterationAttr(newVerse);
-            return newVerse;
-        }
+            //change the general book version
+            if (!just1verse) {
+                bversion=bvNme;
+                bversionName=bvNme;
+            }
+        });
+    }
+    function singleVerse(v,dis2,addORremove){
+        let vref = v.querySelector('code[ref]').getAttribute('ref');
+        let bvNme = dis2.getAttribute('b_version');
+        let vrefModified = vref.replace(/[:.]+/,'_');
+
+        // Check if current Bible Version has already been compared
+        const prevComparedVerse = v.parentElement.querySelector('.verse_compare[ref="' + vrefModified + ' ' + bvNme + '"]')
+        if(((addORremove && addORremove=='remove') || !addORremove) && prevComparedVerse){
+            if(addORremove && addORremove=='add'){return}
+            prevComparedVerse.remove();
+            dis2.classList.remove('green_active');
+            if(!v.nextElementSibling || !v.nextElementSibling.matches('.verse_compare')){v.classList.remove('vrs_bein_comp')};
+            return
+        } else if(addORremove && addORremove=='remove'){return}
+
+        let newVerse = createSingleVerseFromREFandVERSION(vref, bvNme);
+        let newVerseInner = newVerse.querySelector('.verse');
+        newVerseInner.prepend(createNewElement('button','.closebtn','.cmenu_closebtn', '[onclick=removeCompareVerse(this)]'));
+        newVerseInner.classList.add('verse_compare');
+        newVerseInner.setAttribute('ref', vrefModified + ' ' + bvNme);
+        newVerseInner.querySelector('code[ref]').innerText=newVerseInner.querySelector('code[ref]').innerText.replace(/\[/,`[${bvNme} `);
+        insertElmAafterElmB(newVerse, v);
+        transliteratedWords_Array.forEach(storedStrnum=>{showTransliteration(storedStrnum/* ,tElm */)});
+        dis2.classList.add('green_active');
+        v.classList.add('vrs_bein_comp');
+        if(v.matches('.displaynone')){newVerseInner.classList.add('displaynone')}
+    }
+    function createSingleVerseFromREFandVERSION(vref, bvNme) {
+        let vrefObj = breakDownRef(vref);
+        let new_bk = vrefObj.bn;
+        let new_chp = vrefObj.bc;
+        let new_vn = vrefObj.cv;
+        let fullBkn = fullBookName(new_bk).fullBkn;
+        newRef2get = `${new_bk} ${new_chp}:${new_vn}`;
+        let newVerse = createSingleVerse(new_bk, new_chp, new_vn, fullBkn, bvNme);
+        createTransliterationAttr(newVerse);
+        return newVerse;
     }
 }
 /* GETTING PREVIOUS OR NEXT VERSE */
@@ -1872,7 +1775,7 @@ function removeCompareVerse(dis){
         else{v_cps=v_cps.previousElementSibling}
     }
     v_origin.querySelector(`button.compare_withinsearchresult_button[b_version=${vCl}]`).classList.remove('green_active');
-    v_c.remove();// remove comp verse
+    v_c.remove()
 }
 function elmAhasElmOfClassBasAncestor(a, ancestorsClass, limit = 'BODY') {
     while (a.parentElement && a.parentElement.tagName.toUpperCase() != limit) {
@@ -2132,7 +2035,7 @@ function parseVerseText(vT, verseSpan) {
             }
         }
     } else {
-        // if (/'missing'/.test(vT)){// console.log(vT)}
+        // if (/'missing'/.test(vT)){console.log(vT)}
         vT = vT.replace(/<hi type="bold">/g, '<span class="b">');
         vT = vT.replace(/<hi type="italic">/g, '<span class="i">');
         vT = vT.replace(/<\/hi>/g, '</span>');
@@ -2410,7 +2313,13 @@ function createNewElement(elmTagName,classIdAttr){
 	}
     return newElm
 }
-
+function distanceToAncestorBottom(element, ancestor) {
+    if (!element || !ancestor) {console.error('Element or ancestor not found.');return null;}
+    const elementRect = element.getBoundingClientRect();
+    const ancestorRect = ancestor.getBoundingClientRect();
+    const distance = ancestorRect.bottom - elementRect.bottom;
+    return distance;
+}
 /* SLIDE UP & SLIDE DOWN */
 let slideUpDownTimer;
 function slideUpDown(elm, upOrDown){
@@ -2538,7 +2447,7 @@ function cmenu_goBackFront(x){
 function toggleCMenuTSK(){
     context_menu.querySelectorAll('.crfnnote').forEach(crfn=>{crfn.classList.toggle('displaynone')});
     context_menu.classList.toggle('showingXref')?showingXref=true:showingXref=false;
-    localStorage.setItem('showingXref',showingXref)
+    localStorage.setItem('showingXref',showingXref);
 }
 
 /* MAKING CONTEXT_MENU DRAGGABLE */
@@ -2579,11 +2488,11 @@ function dragMoveListener(moveTye,dragTarget,elmAffected,event) {
     // update the position attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
-    //In case it is contextmenu Update both buttombar and cmtitlebar
+    //In case it is contextmenu Update both bottombar and cmtitlebar
     let target_2;
     if(target.closest('#context_menu')){
-        if(target.closest('.cmtitlebar')){target_2=context_menu.querySelector('.buttombar');}
-        else if(target.closest('.buttombar')){target_2=context_menu.querySelector('.cmtitlebar');}
+        if(target.closest('.cmtitlebar')){target_2=context_menu.querySelector('.bottombar');}
+        else if(target.closest('.bottombar')){target_2=context_menu.querySelector('.cmtitlebar');}
         target_2 ? (target_2.setAttribute('data-x', x),target_2.setAttribute('data-y', y)) : null;
     }
 }
