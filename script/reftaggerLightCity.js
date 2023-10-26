@@ -384,7 +384,7 @@ function contextMenu_CreateNAppend(e) {
                 const clickedElement = event.target;
                 const clickedElementRect = clickedElement.getBoundingClientRect();
                 const clickedElementTop = getOffsetRelativeToAncestor(clickedElement).top;//because of elements in table or nested in positioned ancestor(s)
-                const spaceBelow = windowHeight - (clickedElementRect.top + clickedElement.offsetHeight);
+                const spaceBelow = window.innerHeight - (clickedElementRect.top + clickedElement.offsetHeight);
             
                 // Enough Space Below In Visible Part of Window
                 if (spaceBelow >= menuHeight+10) {
