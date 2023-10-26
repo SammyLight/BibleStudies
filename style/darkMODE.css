@@ -36,12 +36,12 @@ footer .archive-date{color:var(--gray);}
 .mobile-homeHeaderNav{ 
     background-color:var(--DM-bgColor-smoke-white);
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 75%);}
-.mobile-headerLinks{ 
-    border-bottom:1px solid var(--grey);}
+.mobile-headerLinks .active{border-bottom:1px solid var(--DM-vivid-orange)!important;}
 .mobile-headerLinks:hover{ 
     background-color:var(--DM-light-grey);}
 .mobile-headerLinks a{ 
-    color:var(--DM-black);}
+    color:var(--DM-black);
+    border-bottom:1px solid var(--grey)!important;}
 .iconLink2{border-bottom:1px solid var(--DM-black)!important;}
 .closeNavBar{ 
     background-color:#dd1515!important;
@@ -72,7 +72,6 @@ footer .archive-date{color:var(--gray);}
     border-bottom:3px solid var(--DM-vivid-orange);}
 @media only screen and (max-width:820px){ 
 .group-cats{
-    border-bottom:1px solid var(--grey);
     border-right:4px solid var(--DM-vivid-orange);}}
 /* homeHeader */
 .header-links-li>a{ 

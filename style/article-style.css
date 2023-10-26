@@ -96,7 +96,7 @@ blockquote,blockquote>p,blockquote>p>em{
         padding-top:.50em;}}
 @media only screen and (min-width:1024px){
 header>h1:first-of-type, div>h1:first-of-type{ 
-    font-size:38px!important;}
+    font-size:42px!important;}
 h1{font-size:32px!important;}
 h2{font-size:29px!important;}
 h3{font-size:26px!important;}
