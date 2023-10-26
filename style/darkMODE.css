@@ -120,9 +120,9 @@ footer a{
 /* FOOTER LINKS CSS */
 @media only screen and (max-width:720px){ 
 .visible-titles2{color:var(--DM-vivid-orange);}}
-li>span,li>em>span,p>span,p>em>span,blockquote>span,blockquote>em>span,blockquote>p>em>span{ 
+li>span,li>em>span,li>strong>em>span,p>span,p>em>span,blockquote>span,blockquote>em>span,blockquote>p>em>span{ 
     color:rgb(20 157 237)!important;}
-li>span:hover,li>em>span:hover,p>span:hover,p>em>span:hover,blockquote>span:hover,blockquote>em>span:hover,blockquote>p>em>span:hover{ 
+li>span:hover,li>em>span:hover,li>strong>em>span:hover,p>span:hover,p>em>span:hover,blockquote>span:hover,blockquote>em>span:hover,blockquote>p>em>span:hover{ 
     color:rgb(0, 106, 168)!important;}
 h1>span,h2>span,h3>span,h4>span,h5>span,h6>span,
 h1>a>span,h2>a>span,h3>a>span,h4>a>span,h5>a>span,h6>a>span,
