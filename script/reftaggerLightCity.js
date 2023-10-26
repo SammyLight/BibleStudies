@@ -500,7 +500,7 @@ function contextMenu_CreateNAppend(e) {
     /* Temporary solution for the top of cmenu being off visible area */
     const elementRect = context_menu.getBoundingClientRect();
     const isInView = (elementRect.top >= 0 && elementRect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
-    if (!isInView) {context_menu.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+    if (!isInView) {context_menu.scrollIntoView({ behavior: 'smooth', block: 'nearest' })}
 }
 document.addEventListener('click', contextMenu_Remove);
 document.addEventListener('keydown', contextMenu_Remove);
