@@ -153,6 +153,8 @@ a.cat-link{
 ::placeholder{
     color:var(--DM-black);}
 /* styles from article-style.css */
+article>main{
+    font-family:Verdana!important;}
 article img{background-color:var(--bgColor-smoke-white);}
 .leftBorderForArticleTitle{background-color:var(--DM-red);}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
