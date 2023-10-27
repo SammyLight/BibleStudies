@@ -287,7 +287,9 @@ td,th{
 th{ 
     text-transform:uppercase;}
 table em,table u,table sup{
-    word-break:break-word;}
+    /* word-break:break-word; */
+    width:fit-content;
+    display:-webkit-inline-box;}
 table p{ 
     margin:0.3em!important;}
 table sup{
