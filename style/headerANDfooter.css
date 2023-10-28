@@ -425,12 +425,9 @@ ul.footerLinks-lists{
     padding:0;
     margin:0!important;}
 .footerLinks-lists li{ 
-    font-size:16px!important;
     line-height:1.2;
     list-style-type:none;
     margin:12px 0;}
-.footerLinks-lists a{ 
-    font-size:16px;}
 .footerLinks-lists p{ 
     font-size:16px;}
 .Contact-section h5{
@@ -490,24 +487,18 @@ font-size:10px!important;}
 .footerLinks-wrapper{ 
     display:grid;
     grid-template-columns:43% 36% 21%;}
-.footerLinks-lists a{ 
-    font-size:22px;} 
 .min-height{ 
     width:80%;}
 .caret2{
     display:none!important;}}
-@media only screen and (min-width:820px){
-.footerLinks-lists a{ 
-    font-size:26px;}}
 @media only screen and (min-width:1060px){ 
 .Contact-section-inner{ 
     display:grid;
     grid-template-columns:75% 25%;}
 .footerLinks-wrapper{ 
     display:grid;
-    grid-template-columns:43% 30% 27%;}
-.footerLinks-lists a{ 
-    font-size:22px;}}
+    grid-template-columns:43% 30% 27%;}}
+.footerLinks-lists a{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 /* lightANDdarkMODE toggle button */
 #theme-toggle-container{
     position:fixed;

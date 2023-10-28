@@ -202,6 +202,18 @@ h5.titles,h6.titles{font-size:24px;}}
 #context_menu code,#context_menu .buttons{font-size:14px!important;}
 li.all-links{font-size:20px;}
 h1.titles{padding-top:0;}}
+#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
+    font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+#context_menu code{
+    font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
+li.all-links{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h1.titles{font-size:calc(34px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h1.titlesTwo{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h2.titles{font-size:calc(22px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h3.titles{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h4.titles{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h5.titles,h6.titles{font-size:calc(14px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h1.titles,h1.titlesTwo,h2.titles,h3.titles,h4.titles,h5.titles,h6.titles{line-height:1.15;}
 .fonts{ 
     font-family:'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-family:-system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -377,7 +389,7 @@ hr{
     padding:0 10px 20px;}
 .sidebar-wrapper{ 
     color:var(--white)!important;}
-.sidebar-wrapper-header h3, .sidebar-wrapper h4{
+.sidebar-wrapper-header h2, .sidebar-wrapper h3{
     padding:20px 0 0;
     margin:0;
     border-bottom:none;}
@@ -388,7 +400,7 @@ hr{
     display:block;
     padding-right:0;}
 ul.recentposts{ 
-    padding:10px 0;
+    padding:0 0 10px 0;
     list-style:none;
     margin:0;}
 .recentposts li{ 
@@ -396,31 +408,17 @@ ul.recentposts{
     line-height:1.25;}
 a.cat-link{
     font-size:12px;}
-a.link{
-    font-size:16px;}
 @media only screen and (max-width:1024px){ 
 aside.content{ 
     max-height:0;
     overflow:hidden;
     transition:max-height 0.3s ease-out;}}
 @media only screen and (min-width:540px){ 
-.caretText{
-    font-size:30px;}
 a.cat-link{
     font-size:16px;}
-a.link{
-    font-size:18px;}
 /* .recentposts li{ 
     padding:0.2em 0 0.5em 0;} */
 }
-@media only screen and (min-width:760px){ 
-a.link{
-    font-size:22px;}}
-@media only screen and (min-width:820px){ 
-.caretText{
-    font-size:40px;}
-a.link{
-    font-size:26px;}}
 @media only screen and (min-width:1025px){ 
 .content{ 
     display:block!important;
@@ -430,10 +428,7 @@ a.link{
     min-height:0;}
 .sidebar{ 
     margin-left:0!important;}
-.visible-titles{ 
-    display:none;}
-a.link{
-    font-size:20px;}
+.visible-titles{display:none;}
 .flex1{ 
     display:flex;}
 .col-lg-6{ 
@@ -444,7 +439,9 @@ a.link{
     -ms-flex:0 0 27%;
     flex:0 0 27%;
     max-width:27%;}}
-
+    .caretText{
+        font-size:calc(24px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+a.link{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 blockquote{ 
     font:italic 1.2rem Vollkorn!important;}
 /*  ADDED TO MAKE IT BEAUTIFUL*/
