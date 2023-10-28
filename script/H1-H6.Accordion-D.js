@@ -1,29 +1,40 @@
 /*HIDE ALL ELEMENTS THAT ARE NOT H1 (or H2)*/
 let b = document.querySelectorAll("main > *");
-
 var htmlhArray = ["H6", "H5", "H4", "H3", "H2", "H1"];
 var displayNoneOrBlock = '';
-function hideOrShowAllHnum(){
-	htmlhArray.forEach(element => {
-		let h2showit = "." + element;
-		var allHeaders = document.querySelectorAll('h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5');
-		console.log(allHeaders);
-		if(displayNoneOrBlock=='none'){
-			document.querySelectorAll(htmlhArray.map(x=>'.'+x).toString()).forEach(sh=>{
-				// console.log(sh);
-				sh.style.display = displayNoneOrBlock;
-				// let h2showit = sh.classList.toString().match(/\bH[1-6]\b/) + "2showit";
-				// sh.classList.add(h2showit);
-			})
-		} else {
-			document.querySelectorAll(h2showit).forEach(sh=>{
-				sh.style.display = displayNoneOrBlock;
-				// sh.classList.remove(h2showit);
-			})
-		}
-	});
-	if(displayNoneOrBlock=='none'){displayNoneOrBlock='';}
-	else {displayNoneOrBlock='none';}
+
+function hideOrShowAllHnum() {
+    const sopen = "\uf107 ";
+    const sclose = "\uf105 ";
+	const allIconsH0 = document.querySelectorAll('h1.H0>p.fa');
+    allIconsH0.forEach(icon => {
+        if (icon.textContent.trim() === sopen.trim()) {
+            icon.textContent = sclose;
+        } else {
+            icon.textContent = sopen;
+        }
+    });
+    htmlhArray.forEach(element => {
+        const h2showit = "." + element;
+        const allIcons = document.querySelectorAll(h2showit + ">p.fa");
+        allIcons.forEach(icon => {
+            if (icon.textContent.trim() === sopen.trim()) {
+                icon.textContent = sclose;
+            } else {
+                icon.textContent = sopen;
+            }
+        });
+        if (displayNoneOrBlock === 'none') {
+            document.querySelectorAll(h2showit).forEach(sh => {
+                sh.style.display = displayNoneOrBlock;
+            });
+        } else {
+            document.querySelectorAll(h2showit).forEach(sh => {
+                sh.style.display = displayNoneOrBlock;
+            });
+        }
+    });
+    displayNoneOrBlock = displayNoneOrBlock === 'none' ? '' : 'none';
 }
 
 /* To ensure it starts hiding element after the first H1 and not from before it, if there is another element before it */
