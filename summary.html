@@ -21,7 +21,7 @@ title: "Teaching-Summary"
             <div class="prayer-text">
                 <p>This is our 
 					<span class="all-links">
-						{% for page in site.pages %}{% if page.title contains "Join Us" %}
+						{% for page in site.pages %}{% if page.title contains "Join-us" %}
 						<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
 							<span>Meeting Days</span>
 						</a>{% endif %}{% endfor %}

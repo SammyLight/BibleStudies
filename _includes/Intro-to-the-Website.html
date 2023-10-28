@@ -5,7 +5,7 @@
 			<p style="margin-bottom: 0;">This is the official Bible Study Website of LightCity Teaching Fellowship. Please see the 
 				<span class="all-links">
 					{% for page in site.pages %}
-					{% if page.title contains "About Us" %} 
+					{% if page.title contains "About-us" %} 
 					<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">About Us </a>
 					{% endif %}{% endfor %}
 				</span> page to know more about us.

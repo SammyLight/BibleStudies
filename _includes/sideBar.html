@@ -2,12 +2,12 @@
     <div class="sidebar container-fluid-inner homeResources-grid-containter">
         <div class="sidebar-wrapper">
             <div class="sidebar-wrapper-header">
-                <h3 class="titles" title="Click me for More Latest Posts">
+                <h2 class="titles" title="Click me for More Latest Posts">
                     {% for page in site.pages %}{% if page.title contains "More Recent Posts" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
                         <span>Latest Posts</span>
                     </a>{% endif %}{% endfor %}
-                </h3>
+                </h2>
             </div>
             <ul class="recentposts">
                 {% assign sorted-pages = site.pages | sort: 'date' | reverse %} 
@@ -21,12 +21,12 @@
                 {% endfor %}
             </ul>
             <div class="sidebar-wrapper-header">
-                <h4 class="titles" title="Click me for all Links in Categories">
+                <h2 class="titles" title="Click me for all Links in Categories">
                     {% for page in site.pages %}{% if page.title contains "Study-Resources" %}
                     <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}" style="text-decoration: none!important;">
                         <span>Categories</span>
                     </a>{% endif %}{% endfor %}
-                </h4>
+                </h2>
             </div>
             <ul class="recentposts">
                 {% assign counter = '0' %}
