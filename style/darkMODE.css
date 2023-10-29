@@ -1,4 +1,4 @@
-@media (prefers-color-scheme:dark){
+@media (prefers-color-scheme:light){
 body{
     background-color:var(--DM-light-gray)!important;
     color:var(--DM-black);}
