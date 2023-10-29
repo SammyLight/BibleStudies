@@ -250,7 +250,7 @@ li::marker{
     color:var(--black);
     background-color:var(--bgColor-emphasize);}
 blockquote{
-    font-family:Vollkorn;
+    font-family:Vollkorn!important;;
     border-radius:10px;
     margin:1em 15px;
     padding:0.5em 10px;
