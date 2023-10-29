@@ -8,8 +8,9 @@
     overflow:inherit;
     flex-wrap:nowrap;
     position:relative;
-    gap:8px;
-    padding-top:8px;}
+    margin-top:8px;
+    border-radius:6px;}
+    .videos-header-btns-cont>.active{border-radius:6px;}
 .videos-header-btns-cont::-webkit-scrollbar{ 
     display:none;}
 .videos-header-btns{
@@ -20,23 +21,22 @@
     padding:8px 15px;
     margin-bottom:-1px;
     transition:all 0.2s ease-in-out;}
-@media only screen and (max-width:414px){ 
-.videos-header-btns{ 
-    font-size:22px!important;}}
-@media only screen and (max-width:540px){ 
-.videos-header-btns{ 
-    font-size:24px!important;}}
 @media only screen and (min-width:541px){ 
 .videos-header-btns{ 
-    font-size:30px!important;
-    padding:8px 20px;}}
+    padding:8px 25px;}}
+@media only screen and (min-width:768px){ 
+.videos-header-btns{ 
+    padding:8px 27px;}}
 @media only screen and (min-width:960px){ 
 .videos-header-btns{ 
-    padding:8px 30px;}}
+    padding:8px 45px;}}
 @media only screen and (min-width:1025px){ 
 .videos-header-btns{ 
-    font-size:35px!important;
-    padding:8px 55px;}}
+    padding:8px 60px;}}
+@media only screen and (min-width:1290px){ 
+.videos-header-btns{ 
+    padding:8px 68px;}}
+    .videos-header-btns{font-size: calc(24px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
 .videotab-content-wrapper{ 
     padding:15px 0 0 0;}
 .videotab-content{ 

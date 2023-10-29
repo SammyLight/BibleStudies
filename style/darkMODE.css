@@ -184,10 +184,10 @@ blockquote:before{color:var(--DM-light-purple);}
 .prev-link span, .next-link span{
     color:var(--inherit)!important;}
 /* styles from video.css */
-.videos-header-btns-cont{border-bottom:1px solid var(--DM-black);}
+.videos-header-btns-cont{background-color:var(--DM-grayTwo)!important;}
 .videos-header-btns-cont>.active{
-    outline:none;
-    color:var(--DM-vivid-orange);
+    background-color:var(--DM-vivid-orange)!important;
+    color:var(--black)!important;
     border-bottom:3px solid var(--DM-vivid-orange);}
 .videos-header-btns{color:var(--DM-black);}
 .videos-header-btns:hover{

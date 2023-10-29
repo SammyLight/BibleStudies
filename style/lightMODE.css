@@ -189,12 +189,12 @@ blockquote:before{color:var(--light-purple);}
 .prev-link span, .next-link span{
     color:var(--inherit)!important;}
 /* styles from video.css */
-.videos-header-btns-cont{border-bottom:1px solid var(--light-gray);}
+.videos-header-btns-cont{background-color:var(--bgColor-smoke-white)!important;}
 .videos-header-btns-cont>.active{
-    outline:none;
-    color:var(--vivid-orange);
+    background-color:var(--vivid-orange)!important;
+    color:var(--white)!important;
     border-bottom:3px solid var(--vivid-orange);}
-.videos-header-btns{color:var(--gray);}
+.videos-header-btns{color:var(--black);}
 .videos-header-btns:hover{
     color:var(--black);}
 .video-box h3{
