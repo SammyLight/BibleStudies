@@ -1,4 +1,3 @@
-@media (prefers-color-scheme:light){
 body{
     background-color:var(--DM-light-gray)!important;
     color:var(--DM-black);}
@@ -240,4 +239,3 @@ span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.tr
     box-shadow:inset 0 1px 4px var(--black);}
 .crossrefs h1::before, .crossrefs h2::before, .crossrefs h3::before, .crossrefs h4::before, .crossrefs h5::before, .crossrefs h6::before,.crossrefs .hidingsibs::before{
     content:url(../images/arrow-up-svgrepo-com-DarkMode.svg);}
-}
