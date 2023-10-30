@@ -8,7 +8,7 @@
     overflow:inherit;
     flex-wrap:nowrap;
     position:relative;
-    margin-top:8px;
+    margin-top:12px;
     border-radius:6px;}
     .videos-header-btns-cont>.active{border-radius:6px;}
 .videos-header-btns-cont::-webkit-scrollbar{ 
@@ -18,25 +18,27 @@
     position:relative;
     white-space:nowrap;
     font-weight:600;
-    padding:8px 15px;
-    margin-bottom:-1px;
+    padding:3px 15px;
     transition:all 0.2s ease-in-out;}
 @media only screen and (min-width:541px){ 
 .videos-header-btns{ 
-    padding:8px 25px;}}
+    padding:3px 25px;}}
 @media only screen and (min-width:768px){ 
 .videos-header-btns{ 
-    padding:8px 27px;}}
-@media only screen and (min-width:960px){ 
+    padding:3px 30px;}}
+@media only screen and (min-width:912px){ 
 .videos-header-btns{ 
-    padding:8px 45px;}}
-@media only screen and (min-width:1025px){ 
+    padding:3px 35px;}}
+@media only screen and (min-width:990px){ 
 .videos-header-btns{ 
-    padding:8px 60px;}}
+    padding:3px 45px;}}
+@media only screen and (min-width:1110px){ 
+.videos-header-btns{ 
+    padding:3px 60px;}}
 @media only screen and (min-width:1290px){ 
 .videos-header-btns{ 
-    padding:8px 68px;}}
-    .videos-header-btns{font-size: calc(24px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
+    padding:3px 75px;}}
+    .videos-header-btns{font-size: calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
 .videotab-content-wrapper{ 
     padding:15px 0 0 0;}
 .videotab-content{ 

@@ -406,19 +406,11 @@ ul.recentposts{
 .recentposts li{ 
     padding:0.4em 0;
     line-height:1.25;}
-a.cat-link{
-    font-size:12px;}
 @media only screen and (max-width:1024px){ 
 aside.content{ 
     max-height:0;
     overflow:hidden;
     transition:max-height 0.3s ease-out;}}
-@media only screen and (min-width:540px){ 
-a.cat-link{
-    font-size:16px;}
-/* .recentposts li{ 
-    padding:0.2em 0 0.5em 0;} */
-}
 @media only screen and (min-width:1025px){ 
 .content{ 
     display:block!important;
@@ -439,9 +431,11 @@ a.cat-link{
     -ms-flex:0 0 27%;
     flex:0 0 27%;
     max-width:27%;}}
-    .caretText{
-        font-size:calc(24px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+.caretText{
+    font-size:calc(24px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 a.link{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+a.cat-link{
+    font-size:calc(13px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 blockquote{ 
     font:italic 1.2rem Vollkorn!important;}
 /*  ADDED TO MAKE IT BEAUTIFUL*/
