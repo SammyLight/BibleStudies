@@ -18,7 +18,7 @@ button,input,optgroup,textarea{color:var(--DM-inherit);}
     color:var(--DM-vivid-orange)!important;
     border-bottom:3px solid var(--DM-vivid-orange)!important;}
 ::selection{ 
-    background-color:var(--selection);
+    background-color:var(--DM-light-purple);
     color:var(--DM-black);}
 #Resources-section .titles>a:hover{color:var(--gray);}
 .homeResources-grid-containter{
@@ -159,6 +159,9 @@ article img{background-color:var(--bgColor-smoke-white);}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
     border-bottom:2px solid rgba(190,190,190,.5);
     border-bottom:1px solid var(--DM-black);}
+.emphasize{ 
+    color:var(--DM-black);
+    background-color:var(--light-purple);}
 blockquote{ 
     background:var(--DM-bgColor-blockquote);
     border-left:10px solid var(--DM-light-purple);}

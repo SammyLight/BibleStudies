@@ -164,6 +164,9 @@ article img{background-color:var(--bgColor-smoke-white);}
 article h1,article h2,article h3,article h4, articleh5,article h6{ 
     border-bottom:2px solid rgba(190,190,190,.5);
     border-bottom:1px solid var(--black);}
+.emphasize{ 
+    color:var(--black);
+    background-color:var(--bgColor-emphasize);}
 blockquote{ 
     background:var(--bgColor-blockquote);
     border-left:10px solid var(--light-purple);}

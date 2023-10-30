@@ -196,9 +196,8 @@ header~h3:before{
 
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 
-article ol,article ul{ 
-    padding-inline-start:0;
-    padding-inline-start:14px;
+article ol,article ul{
+    padding-left:14px;
     list-style-type:decimal;
     margin:0;}
 ol>li>ol{ 
@@ -240,15 +239,15 @@ li::marker{
     font-weight:600;}
 @media only screen and (min-width:540px){ 
 article ol, article ul{ 
-    padding-inline-start:18px;}
+    padding-left:18px;}
 li::marker{ 
     font-size:80%;
     font-weight:600;}}
 .italize{ 
     font-style:italic;}
-.emphasize{ 
-    color:var(--black);
-    background-color:var(--bgColor-emphasize);}
+.emphasize{
+    padding-left:20px;
+    padding-right:5px;}
 blockquote{
     font-family:Vollkorn!important;;
     border-radius:10px;
@@ -287,7 +286,9 @@ li:before{
     height:40px;}
 @media only screen and (max-width:540px){ 
 .churchLOGO-img{ 
-    height:30px;}}
+    height:30px;}
+.emphasize{
+    padding-left:10px;}}
 /* Table CSS */
 .table-container{
     max-width:100%;
@@ -301,8 +302,9 @@ td,th{
     border-bottom:2.5px solid var(--grey);}
 th{ 
     text-transform:uppercase;}
+table ul, table ol{ 
+    padding-left:35px!important;}
 table em,table u,table sup{
-    /* word-break:break-word; */
     width:fit-content;
     display:-webkit-inline-box;}
 table p{ 
@@ -320,11 +322,8 @@ td,th{
     font-size:16px!important;} */
 table sup{
     font-size:12px;}
-table ul{ 
-    padding-left:0.2em!important;
-    margin:0.5em 0!important;}
-table ol{ 
-    padding-left:0.2em!important;
+table ul, table ol{ 
+    padding-left:27px!important;
     margin:0.5em 0!important;}}
 /*DVIC 221119c*/
 .add_space{
