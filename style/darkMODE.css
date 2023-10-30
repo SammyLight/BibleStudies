@@ -3,7 +3,7 @@ body{
     color:var(--DM-black);}
 /* PRELOAD CSS */
 .loader-bg{
-    background:var(--black)!important;}
+    background:var(--bgColor-smoke-white)!important;}
 .loader{
     background-image:url(../images/preload.svg);}
 /* custom CSS */
