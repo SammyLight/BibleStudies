@@ -186,7 +186,9 @@ blockquote:before{color:var(--DM-light-purple);}
 .prev-link span, .next-link span{
     color:var(--inherit)!important;}
 /* styles from video.css */
-.videos-header-btns-cont{background-color:var(--DM-grayTwo)!important;}
+.videos-header-btns-cont{
+    background-color:var(--DM-grayTwo)!important;
+    box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
 .videos-header-btns-cont>.active{
     background-color:var(--DM-vivid-orange)!important;
     color:var(--black)!important;

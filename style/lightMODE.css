@@ -192,7 +192,9 @@ blockquote:before{color:var(--light-purple);}
 .prev-link span, .next-link span{
     color:var(--inherit)!important;}
 /* styles from video.css */
-.videos-header-btns-cont{background-color:var(--bgColor-smoke-white)!important;}
+.videos-header-btns-cont{
+    background-color:var(--bgColor-smoke-white)!important;
+    box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
 .videos-header-btns-cont>.active{
     background-color:var(--vivid-orange)!important;
     color:var(--white)!important;

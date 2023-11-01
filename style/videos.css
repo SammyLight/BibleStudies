@@ -13,12 +13,12 @@
 .videos-header-btns-cont::-webkit-scrollbar{display:none;}
 .videos-header-btns{
     display:flex;
-    position:relative;
-    white-space:nowrap;
+    font-size: calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;
     font-weight:600;
+    position:relative;
     padding:3px 15px;
     transition:all 0.2s ease-in-out;
-    box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
+    white-space:nowrap;}
 @media only screen and (min-width:541px){ 
 .videos-header-btns{padding:3px 25px;}}
 @media only screen and (min-width:768px){ 
@@ -31,7 +31,6 @@
 .videos-header-btns{padding:3px 60px;}}
 @media only screen and (min-width:1290px){ 
 .videos-header-btns{padding:3px 75px;}}
-    .videos-header-btns{font-size: calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
 .videotab-content-wrapper{padding:15px 0 0 0;}
 .videotab-content{ 
     display:none;
@@ -45,7 +44,7 @@
 .videos-container-inner{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax( min(100%, 240px), 1fr));
-    gap:20px;}
+    gap:10px;}
 .video-box{margin-bottom:10px;}
 .video-box.homeResources-grid-containter{padding:10px 10px 22px 10px;}
 .iframe-container{
