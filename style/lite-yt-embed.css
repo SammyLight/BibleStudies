@@ -73,8 +73,8 @@ lite-youtube > .lty-playbtn{
     background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
-    width:40px;
-    height:40px;
+    width:35px;
+    height:35px;
     /* margin:10px; */
     border-radius:100%;
     z-index:1;}
