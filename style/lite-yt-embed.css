@@ -78,15 +78,12 @@ lite-youtube > .lty-playbtn{
     /* margin:10px; */
     border-radius:100%;
     z-index:1;}
-@media only screen and (max-width:600px){
-.chaNamAndVideoTitle > .lty-channelimg{ 
-    width:35px;
-    height:35px;}}
 /* Video Title */
 .moving-text{
     display:none;
     color:#ffffff;
-    margin-top:5px;
+    font-size:calc(10px + (24 - 16)*((100vw - 320px) / (1920 - 320)));
+    /* margin-top:5px; */
     margin-left:10px;
     z-index:-1;}
 .moving-text:hover{

@@ -117,8 +117,11 @@ h5,h6{font-size:calc(14px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));
     font-size:calc(20px + (18 - 6)*((100vw - 320px)/(1920 - 320)));}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:calc(13px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
+#context_menu code,#context_menu .buttons,.crfnnote_btns button,#context_menu:not([strnum]) hr::before{
+    font-size:calc(8px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;
+    font-size:14px!important;}
+#context_menu .cmtitlebar{
+    font-size:16px!important;}
 blockquote,blockquote>p,blockquote>p>em{font-size:calc(16px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 article>main>header{
     display:grid;

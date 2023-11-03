@@ -10,6 +10,7 @@
     --grey:grey;
     --light-grey:#d0d0d0;
     --vivid-orange:#ffc107;
+    --vivid-orange-trans:#ffc1071c;
     --light-vivid-orange:#f8d261;
     --supernova:#5f40f6;
     --red:red;
@@ -29,6 +30,7 @@
     --DM-grey:grey; /* Keep grey as it is */
     --DM-light-grey:#292929; /* Darken the light gray */
     --DM-vivid-orange:#f1a509; /* Darken the vivid orange */
+    --DM-vivid-orange-trans:#f1a40909; /* Darken the vivid orange */
     --DM-light-vivid-orange:#ffe35e; /* Lighten the light vivid orange */
     --DM-supernova:#9a74f6; /* Darken the supernova color */
     --DM-red:#ff3c3c; /* Bright red for alerts */

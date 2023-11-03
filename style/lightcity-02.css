@@ -97,29 +97,18 @@ body *{
     top:0;
     width:100%;
     z-index:1100;}
-a{ 
-    text-decoration:none!important;}
-a:hover{ 
-    border-bottom:1px solid rgba(190,190,190,.5);}
+a{text-decoration:none!important;}
 h1,h2,h3,h4,h5,h6{ 
     font-weight:700;
     line-height:1.25;
     letter-spacing:.03em;
     margin:0;
     border-bottom:none;}
-h1{ 
-    font-size:1.949690125em;}
-h2{ 
-    font-size:1.649690125em;}
-h3{ 
-    font-size:1.349690125em;}
 h1.titles{ 
     margin:0;
     border-bottom:1px solid #989898;
     border-bottom:none;}
-
-h2.titles{ 
-    margin:0;}
+h2.titles{margin:0;}
 h3.titles{ 
     margin:0;
     border-bottom:none!important;}
@@ -135,77 +124,22 @@ h6.titles{
     border-radius:10px;
     padding:22px 22px!important;
     margin-bottom:-20px!important;}
-@media only screen and (max-width:539px){
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:18px;}
-#context_menu code{
-    font-size:12px!important;}
-li.all-links{font-size:16px;}
-h1.titles{font-size:30px;}
-h1.titlesTwo{font-size:26px;}
-h2.titles{font-size:22px;}
-h3.titles{font-size:20px;}
-h4.titles{font-size:18px;}
-h5.titles{font-size:16px;}
-h6.titles{font-size:14px;}}
-@media only screen and (max-width:300px){
-li.all-links{font-size:14px;}
-h1.titles{font-size:24px;}
-h1.titlesTwo{font-size:20px;}
-h2.titles{font-size:18px;}
-h3.titles{font-size:16px;}
-h4.titles{font-size:14px;}
-h5.titles{font-size:12px;}
-h6.titles{font-size:10px;}}
-@media only screen and (min-width:540px){
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:20px;}
-#context_menu code,#context_menu .buttons{font-size:14px!important;}
-li.all-links{font-size:18px;}
-h1.titles{font-size:30px;}
-h1.titlesTwo{font-size:26px;}
-h2.titles{font-size:24px;}
-h3.titles{font-size:22px;}
-h4.titles{font-size:20px;}
-h5.titles{font-size:18px;}
-h6.titles{font-size:16px;}}
 @media only screen and (min-width:760px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:30px;}
-#context_menu code,#context_menu .buttons{font-size:18px!important;}
-li.all-links{font-size:24px;}
-h1.titles{font-size:50px;}
-h1.titlesTwo{font-size:40px;}
-h2.titles{font-size:30px;}
-h3.titles{font-size:28px;}
-h4.titles{font-size:26px;}
-h5.titles,h6.titles{font-size:22px;}
 .order-lg-1{ 
     -ms-flex-order:1;
     order:1;}
 .order-lg-2{ 
     -ms-flex-order:2;
     order:2;}}
-@media only screen and (min-width:820px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:32px;}
-#context_menu code,#context_menu .buttons{font-size:18px!important;}
-h1.titles{font-size:55px;}
-h1.titlesTwo{font-size:45px;}
-h2.titles{font-size:35px;}
-h3.titles{font-size:30px;}
-h4.titles{font-size:28px;}
-h5.titles,h6.titles{font-size:24px;}}
-@media only screen and (min-width:1024px){ 
-#homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:24px;}
-#context_menu code,#context_menu .buttons{font-size:14px!important;}
-li.all-links{font-size:20px;}
+@media only screen and (min-width:1024px){
 h1.titles{padding-top:0;}}
 #homeBodyContent p,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
     font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
-#context_menu code{
-    font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
+#context_menu code,#context_menu .buttons,.crfnnote_btns button,#context_menu:not([strnum]) hr::before{
+    font-size:calc(8px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;
+    font-size:14px!important;}
+#context_menu .cmtitlebar{
+    font-size:16px!important;}
 li.all-links{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h1.titles{font-size:calc(34px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h1.titlesTwo{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
@@ -227,41 +161,17 @@ h1.titles,h1.titlesTwo,h2.titles,h3.titles,h4.titles,h5.titles,h6.titles{line-he
 #Resources-section a{ 
     text-decoration:none;
     color:inherit;}
-.archive-date{ 
-    display:inline;
-    color:var(--grey)!important;
-    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size:10px;
-    font-weight:500;
-    letter-spacing:0;
-    line-height:17px;
-    margin-top:20px;
-    margin-left:-8px;
-    white-space:nowrap;}
-.archive-date-summary{ 
-    display:inline;
-    color:var(--grey)!important;
-    font-family:Sanchez, Georgia, "Times New Roman", Times, serif;
-    font-size:10px;
-    font-weight:500;
-    letter-spacing:0;
-    line-height:17px;
-    margin-top:20px;
-    margin-left:-8px;    
-    white-space:nowrap;}
 .homeResources-grid .archive-date,
 .homeResources-grid .archive-date-summary{margin:0 0 20px;}
 .recentposts .archive-date{ 
     margin-top:0;
     margin-left:5px;}
-.small,small{ 
-    font-size:87%;}
 .categories{ 
     display:flex;
     place-items:center;
     gap:0;
     margin-top:24px;
-    font-size:80%!important;}
+    font-size:calc(10px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;}
 .categories span{color:var(--grey)!important;}
 .categories span:hover{color:var(--grey)!important;}
 .cat-list{
@@ -281,10 +191,8 @@ a.cat-link{
     border-radius:40px;
     box-shadow:4px 4px 10px rgba(0, 0, 0, 0.1); */
 }
-a.cat-link:last-child{
-    border:none;}
-a.cat-link:hover{
-    color:var(--red)!important;}
+a.cat-link:last-child{border:none;}
+a.cat-link:hover{color:var(--red)!important;}
 hr{ 
     margin-top:20px;
     border:0;
@@ -308,36 +216,23 @@ hr{
     height:100%;
     min-height:93px;}}
 @media only screen and (min-width:760px){ 
-.homeResources-grid{ 
-    display:-ms-grid;
-    /* display:grid;
-    -ms-grid-columns:(1fr)[3]; */
-}
-.grids{ 
-    min-height:129px;}
-.small,small{ 
-    font-size:20px;}
-.archive-date{ 
-    font-size:16px;}}
+.homeResources-grid{display:-ms-grid;}
+.grids{min-height:129px;}}
 @media only screen and (min-width:960px){ 
 .Agrids{ 
     -webkit-box-flex:0;
-    flex:0 0 31%;}
-.archive-date{ 
-    font-size:16px;}}
+    flex:0 0 31%;}}
 /* MEETING-DAYS CSS */
 @media only screen and (min-width:1025px){ 
 .meeting-grid{ 
     display:-ms-grid;
     display:grid;
-    /* -ms-grid-columns:(1fr)[2]; */
     grid-template-columns:repeat(2, 1fr);
     grid-gap:20px;
     gap:20px;
     -webkit-box-orient:horizontal;
     -webkit-box-direction:normal;
     flex-flow:row wrap;}}
-
 #MAINResources-section,
 #homeBodyContent,
 #meetingdays-section,
@@ -364,10 +259,6 @@ hr{
 .visible-titles.active{
     border-bottom:none!important;} 
 .caret{ 
-    /* border-top:12px solid transparent;
-    border-left:15px solid #898181;
-    border-bottom:12px solid transparent;
-    margin-left:17px; */
     place-self:center end;
     transition:max-height 0.3s ease-out;}
 .caretText{ 
