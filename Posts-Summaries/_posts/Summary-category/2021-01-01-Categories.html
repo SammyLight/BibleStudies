@@ -93,7 +93,7 @@ permalink: /categories/
 					{% for post in site.tags[tag_name] %}
 					<li class="all-links">
 						<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{post.title}}</a>
-						&nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+						&nbsp; <small class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</small>
 					</li>
 					{% endfor %}
 				</ol>

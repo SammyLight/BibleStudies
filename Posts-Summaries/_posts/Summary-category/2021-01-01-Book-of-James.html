@@ -14,7 +14,7 @@ categories: ["HomePage-James"]
 		<ol>
 			{% for post in site.categories.James %}
 			<li class="all-links">
-				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <span class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <small class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</small>
 			</li>
 			{% endfor %}
 		</ol>
