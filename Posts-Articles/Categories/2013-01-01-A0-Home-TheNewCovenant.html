@@ -14,7 +14,7 @@ categories: ["HomePageArticle-New-Covenant"]
 		<ol>
 			{% for page in site.pages %}{% if page.categories contains "New-Covenant" %}
 			<li class="all-links">
-				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</span>
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <small class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</small>
 			</li>
 			{% endif %}
 			{% endfor %}

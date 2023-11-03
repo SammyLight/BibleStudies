@@ -31,7 +31,7 @@ categories: ["HomePageArticle-Parables"]
 			{% if page.subsection contains subcat %}
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> 
-				&nbsp; <span class="archive-date-summary">{{ page.date | date: "%a, %b	%d, %y" }}.</span>
+				&nbsp; <small class="archive-date-summary">{{ page.date | date: "%a, %b	%d, %y" }}.</small>
 			</li>
 			{% endif %}
 			{% endif %}
