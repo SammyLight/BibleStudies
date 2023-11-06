@@ -142,12 +142,13 @@ h1.titles{padding-top:0;}}
     font-size:16px!important;}
 li.all-links{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h1.titles{font-size:calc(34px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
-h1.titlesTwo{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h2.titles{font-size:calc(22px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h3.titles{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h4.titles{font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
 h5.titles,h6.titles{font-size:calc(14px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
-h1.titles,h1.titlesTwo,h2.titles,h3.titles,h4.titles,h5.titles,h6.titles{line-height:1.15;}
+h1.titlesTwo{font-size:calc(22px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h2.titlesTwo{font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)));}
+h1.titles,h1.titlesTwo,h2.titles,h2.titlesTwo,h3.titles,h4.titles,h5.titles,h6.titles{line-height:1.15;}
 .fonts{ 
     font-family:'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-family:-system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
