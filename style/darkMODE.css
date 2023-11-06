@@ -14,7 +14,7 @@ button,input,optgroup,textarea{color:var(--DM-inherit);}
     background-color:var(--DM-bgColor-smoke-white);
     box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
-.active{ 
+.active,.cat-active{ 
     color:var(--DM-vivid-orange)!important;
     border-bottom:3px solid var(--DM-vivid-orange)!important;}
 ::selection{ 
