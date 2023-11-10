@@ -2,7 +2,7 @@
 layout: cat-homepageTEMPLATE-summary
 title: "2 Kings"
 permalink: /2 Kings/
-categories: ["HomePage-IIKings"]
+categories: ["HomePage-2-Kings"]
 ---
 
 <div id="categories" class="homeBody-section container-fluid-inner">
@@ -12,7 +12,7 @@ categories: ["HomePage-IIKings"]
 	</div>
 	<div class="homeResources-grid-containter">
 		<ol>
-			{% for post in site.categories.IIKings %}
+			{% for post in site.categories['2-Kings'] %}
 			<li class="all-links">
 				<a href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{ post.title }}</a> &nbsp; <small class="archive-date-summary">{{ post.date | date: "%a, %b %d, %y" }}.</small>
 			</li>

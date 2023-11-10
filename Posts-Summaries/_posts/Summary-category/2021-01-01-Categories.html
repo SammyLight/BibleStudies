@@ -88,7 +88,7 @@ permalink: /categories/
 		{% for tag in site.tags %}
 			{% capture tag_name %}{{ tag | first }}{% endcapture %}
 			<div class="homeResources-grid-containter">
-				<h2 class="titles">{{ tag_name }}</h2>
+				<h2 class="titles ArtSumCatName">{{ tag_name }}</h2>
 				<ol>
 					{% for post in site.tags[tag_name] %}
 					<li class="all-links">
