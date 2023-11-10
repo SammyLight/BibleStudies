@@ -1,5 +1,5 @@
-<section id="Resources-section" class="container-fluid-inner">
-	<div class="Resources-grid">
+<section id="homeBodyContent" class="container-fluid-inner">
+	<div id="Resources-section" class="Resources-grid">
 		<h1 class="titles titles-inner">More Latest Posts</h1>
 		<div class="homeResources-grid">
 			{% assign sorted-pages = site.pages | sort: 'date' | reverse %}
@@ -9,18 +9,14 @@
 			{% assign my_array = my_array | push: page %}
 			{% endif %}
 			{% endfor %}
-
 			{% for page in my_array limit:30 %}
 			<div class="homeResources-grid-containter">
 			<small class="archive-date">{{ page.date | date_to_string }}.</small>
-
-			<h3 class="titles"><a href="{% if site.baseurl == "" %}
-						{{page.url}}
-					{% elsif site.baseurl != "" %}
-						/{{site.baseurl}}{{page.url}}
-					{% endif %}">{{ page.title }}</a>
-			</h3>
-
+			<h2 class="titles">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+					{{ page.title }}
+				</a>
+			</h2>
 			<p class="prayer-text">
 				{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
 				{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) |
@@ -29,14 +25,9 @@
 				{{ page.content | strip_html | truncatewords: 50 }}
 				{% endif %}
 			</p>
-
-			<small><a class="titles-links" href="{% if site.baseurl == "" %}
-						{{page.url}}
-					{% elsif site.baseurl != "" %}
-						/{{site.baseurl}}{{page.url}}
-					{% endif %}">read more</a>
+			<small>
+				<a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">read more</a>
 			</small>
-
 			<div class="prayer-text">
 				<p class="categories"><span>category:</span>
 					{% if page %}
@@ -49,14 +40,12 @@
 					{% assign caty = category_name %}
 					{% for page in site.pages %}
 					{% if page.categories contains caty %}
-					<a class="cat-link"
-						href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}
+					<a class="cat-link ArtSumCatName" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}
 					</a>
 					{% unless forloop.last %}&nbsp;{% endunless %}
 					{% endif %}{% endfor %}
 					{% endfor %}
 				</p>
-				<!-- <hr> -->
 			</div>
 			</div>
 			{% endfor %}

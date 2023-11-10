@@ -42,7 +42,7 @@
 						{% assign caty = category_name %}
 						{% for page in site.pages %}
 						{% if page.categories contains caty %}
-							<a class="cat-link" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}</a>
+							<a class="cat-link ArtSumCatName" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}</a>
 						{% unless forloop.last %}&nbsp;{% endunless %}
 						{% endif %}{% endfor %}
 						{% endfor %}

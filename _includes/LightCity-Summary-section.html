@@ -39,7 +39,7 @@
 					{% assign sumcaty = category_name %}
 					{% for post in site.posts %}
 					{% if post.categories contains sumcaty %}
-					<a class="cat-link" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
+					<a class="cat-link ArtSumCatName" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
 					{% unless forloop.last %}&nbsp;{% endunless %}
 					{% endif %}{% endfor %}
 					{% endfor %}

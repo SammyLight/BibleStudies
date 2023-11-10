@@ -40,8 +40,8 @@
                                         {% assign caty = category_name %}
                                         {% for page in site.pages %}
                                         {% if page.categories contains caty %}
-                                        <div class="mobile-headerLinks activeClass transition">
-                                            <a class="linkTitle transition active" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                                        <div class="mobile-headerLinks transition">
+                                            <a class="linkTitle transition ArtSumCatName active" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                                                 <span>{{category}}</span>
                                             </a>
                                         </div>
@@ -119,8 +119,8 @@
                                     {% for page in site.pages %}
                                     {% if page.categories contains caty %}
                                     {% if page.layout == "cat-homepageTEMPLATE" %}
-                                    <div class="header-links-li activeClass transition">
-                                        <a class="iconLink transition active" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}
+                                    <div class="header-links-li transition">
+                                        <a class="iconLink transition ArtSumCatName active" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{category}}
                                         </a>
                                     </div>
                                     {% unless forloop.last %}{% endunless %}
