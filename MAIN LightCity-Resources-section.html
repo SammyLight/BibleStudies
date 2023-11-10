@@ -19,7 +19,7 @@ categories: [""]
             <div class="homeResources-grid-containter">
                 {% for page in site.pages %}
                 {% if page.categories contains cat %}
-                <h2 class="titles">{{ cat }}</h2>
+                <h2 class="titles ArtSumCatName">{{ cat }}</h2>
                 {% break %}
                 {% endif %}
                 {% endfor %}
