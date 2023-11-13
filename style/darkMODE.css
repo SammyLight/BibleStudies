@@ -172,7 +172,7 @@ blockquote{
 blockquote:before{color:var(--DM-light-purple);}
 .sidenote{ 
     color:var(--DM-bgColor-smoke-white);
-    background:var(--DM-bgColor-blockquote);}
+    background:var(--DM-vivid-orange-trans);}
 .label{background-color:var(--DM-bgColor-smoke-white);}
 .label .ball{ 
     background-color:var(--DM-black);}
