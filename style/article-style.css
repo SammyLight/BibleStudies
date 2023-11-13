@@ -178,7 +178,7 @@ li::marker{
     font-size:60%;}
 @media only screen and (min-width:540px){ 
 article ol, article ul{ 
-    padding-left:28px;}
+    padding-left:30px;}
 li::marker{ 
     font-size:80%;}}
 .italize{ 
