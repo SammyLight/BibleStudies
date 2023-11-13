@@ -137,7 +137,7 @@ header~h3:before{
 @import url(//db.onlinewebfonts.com/c/9a95ac248797ec280789f4ece8fe3fd3?family=Sally);
 
 article ol,article ul{
-    padding-left:14px;
+    padding-left:18px;
     list-style-type:decimal;
     margin:0;}
 ol>li>ol{ 
@@ -175,14 +175,12 @@ li li:before{
     content:" ";
     padding-right:0;}
 li::marker{ 
-    font-size:60%;
-    font-weight:600;}
+    font-size:60%;}
 @media only screen and (min-width:540px){ 
 article ol, article ul{ 
-    padding-left:18px;}
+    padding-left:28px;}
 li::marker{ 
-    font-size:80%;
-    font-weight:600;}}
+    font-size:80%;}}
 .italize{ 
     font-style:italic;}
 .emphasize{
