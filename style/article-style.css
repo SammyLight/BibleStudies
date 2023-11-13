@@ -22,6 +22,8 @@ article img{margin-top:10px;}
 main{
     line-height:1.45;
     letter-spacing: 1px;}
+article>main{
+    font-family:Verdana!important;}
 main>h1,main>h2,main>h3,main>h4,main>h5,main>h6,main>p, main>ol, main>ul, main>blockquote, main>table, main>span, h1.H0, h2.H1, h3.H2, h4.H3, h5.H4, h6.H5, article>main>header, article>main>div, #expandANDdate, .visibility{
     visibility:hidden;}
 article a{
@@ -43,70 +45,6 @@ a{
 img{ 
     vertical-align:middle;
     border-style:none;}
-.bg-color{
-    box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
-/* @media only screen and (max-width:1023px){ 
-header>h1:first-of-type, div>h1:first-of-type{ 
-    font-size:50px!important;}
-h1{font-size:38px!important;}
-h2{font-size:34px!important;}
-h3{font-size:30px!important;}
-h4{font-size:26px!important;}
-h5,h6{font-size:24px!important;}
-p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:28px;}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}
-blockquote,blockquote>p,blockquote>p>em{font-size:24px!important;}}
-@media only screen and (max-width:650px){
-p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:26px;}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}
-blockquote,blockquote>p,blockquote>p>em{font-size:22px!important;}}
-@media only screen and (max-width:441px){ 
-header>h1:first-of-type, div>h1:first-of-type{ 
-    font-size:34px!important;}
-h1{font-size:27px!important;}
-h2{font-size:23px!important;}
-h3{font-size:20px!important;}
-h4{font-size:17px!important;}
-h5,h6{font-size:14px!important;}
-p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:20px}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}
-blockquote,blockquote>p,blockquote>p>em,blockquote>p>em{font-size:18px;}}
-@media only screen and (max-width:300px){ 
-header>h1:first-of-type, div>h1:first-of-type{ 
-    font-size:26px!important;}
-h1{font-size:22px!important;}
-h2{font-size:18px!important;}
-h3{font-size:15px!important;}
-h4{font-size:13px!important;}
-h5,h6{font-size:11px!important;}
-p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:18px;}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:12px!important;}
-blockquote,blockquote>p,blockquote>p>em{
-    font-size:16px!important;}}
-@media only screen and (min-width:912px){ 
-    header>h1:first-of-type, div>h1:first-of-type{ 
-        padding-top:.50em;}}
-@media only screen and (min-width:1024px){
-header>h1:first-of-type, div>h1:first-of-type{ 
-    font-size:42px!important;}
-h1{font-size:32px!important;}
-h2{font-size:29px!important;}
-h3{font-size:26px!important;}
-h4{font-size:23px!important;}
-h5,h6{font-size:20px!important;}
-p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:24px;}
-#context_menu code,#context_menu .buttons,.crfnnote_btns button{
-    font-size:14px!important;}
-blockquote,blockquote>p,blockquote>p>em{font-size:20px!important;}} */
 header>h1:first-of-type, div>h1:first-of-type{ 
     font-size:calc(36px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 h1{font-size:calc(26px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
@@ -115,8 +53,7 @@ h3{font-size:calc(20px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 h4{font-size:calc(17px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 h5,h6{font-size:calc(14px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;}
 p,li,#context_menu *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){ 
-    font-size:calc(16px + (24 - 16)*((100vw - 320px) / (1920 - 320)));
-    font-size:calc(20px + (18 - 6)*((100vw - 320px)/(1920 - 320)));}
+    font-size:calc(18px + (18 - 6)*((100vw - 320px)/(1920 - 320)));}
 #context_menu code,#context_menu .buttons,.crfnnote_btns button,#context_menu:not([strnum]) hr::before{
     font-size:calc(8px + (18 - 6)*((100vw - 320px)/(1920 - 320)))!important;
     font-size:14px!important;}

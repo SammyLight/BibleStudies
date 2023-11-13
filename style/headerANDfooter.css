@@ -253,7 +253,7 @@ a{
     width:-webkit-fill-available;
     /* border-radius:4px; */
     z-index:1;}
-@media only screen and (max-width:820px){ 
+@media only screen and (max-width:900px){ 
 #desktopHeader{display:none;}
 #mobileHeader{display:block!important;}
 .mobile-homeHeaderNav{width:50vw;}
