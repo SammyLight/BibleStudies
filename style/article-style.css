@@ -356,3 +356,7 @@ table ul, table ol{
 ::-webkit-scrollbar-track{background:inherit;}
 ::-webkit-scrollbar-thumb{background:#888;}
 ::-webkit-scrollbar-thumb:hover{background:#555;}
+.pureHTMLtimeline{
+    color: black!important;
+    margin-top: 20px;
+    width: 100%!important;}
