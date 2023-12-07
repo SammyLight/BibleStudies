@@ -44,4 +44,19 @@ if (kxv = document.getElementsByClassName('pureHTMLtimeline')[0]) {
       window.addEventListener('load', scaleElementWidthToParent);
   }, 5000);
 }
-document.querySelectorAll('br:only-child').forEach(br=>{br.remove()})
+
+// Select the elements with tabindex="1" and class="event_node"
+var elements = document.querySelectorAll('.event_node[tabindex="1"]');
+console.log(elements);
+// Filter out elements without child nodes
+var elementsWithChildren = Array.from(elements).filter(function (element) {
+  return element.hasChildNodes();
+});
+// Check if the element is found
+if (elementsWithChildren.length > 0) {
+  elementsWithChildren.forEach(function (element) {
+    element.style.height = 'auto';
+  });
+} else {
+    console.error('Element not found');
+}
