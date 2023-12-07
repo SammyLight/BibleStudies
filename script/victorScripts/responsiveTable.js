@@ -45,18 +45,35 @@ if (kxv = document.getElementsByClassName('pureHTMLtimeline')[0]) {
   }, 5000);
 }
 
-// Select the elements with tabindex="1" and class="event_node"
-var elements = document.querySelectorAll('.event_node[tabindex="1"]');
-console.log(elements);
-// Filter out elements without child nodes
-var elementsWithChildren = Array.from(elements).filter(function (element) {
-  return element.hasChildNodes();
+// Select all elements with class "event_node"
+var elements = document.querySelectorAll('.event_node');
+
+// Convert NodeList to an array for easier manipulation
+var elementsArrayTable = Array.from(elements);
+console.log(elementsArrayTable);
+
+// Filter out elements that don't meet the conditions
+var filteredElements = elementsArrayTable.filter(function (element) {
+    // Check if the element has tabindex="1" or has child nodes or has a text node as the first child
+    return (
+        element.getAttribute('tabindex') === '1' ||
+        element.childElementCount > 0 ||
+        (element.firstChild && element.firstChild.nodeType === 3 && element.firstChild.nodeValue.trim() !== '')
+    );
 });
-// Check if the element is found
-if (elementsWithChildren.length > 0) {
-  elementsWithChildren.forEach(function (element) {
-    element.style.height = 'auto';
-  });
+
+// // Filter out elements without child elements that are elements
+// filteredElements = filteredElements.filter(function (element) {
+//   return Array.from(element.children).some(function (child) {
+//       return child.nodeType === 1 || (child.nodeType === 3 && child.nodeValue.trim() !== '' && child.nodeValue.trim() !== '&nbsp;');
+//   });
+// });
+
+// Check if any qualifying elements are found
+if (filteredElements.length > 0) {
+    filteredElements.forEach(function (element) {
+        element.style.height = 'auto';
+    });
 } else {
-    console.error('Element not found');
+    console.error('No qualifying elements found');
 }
