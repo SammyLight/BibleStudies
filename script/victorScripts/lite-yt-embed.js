@@ -11,6 +11,10 @@
  *   https://github.com/vb/lazyframe
  */
 class LiteYTEmbed extends HTMLElement {
+    constructor() {
+        super();
+        this.hasFetchedVideoInfo = false;
+    }
     connectedCallback() {
         this.videoId = this.getAttribute('videoid');
 
@@ -30,7 +34,6 @@ class LiteYTEmbed extends HTMLElement {
         if (!this.style.backgroundImage) {
           this.style.backgroundImage = `url("https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg")`;
         }
-
         // Set up channel image
         var chaNamAndVideoTitle = document.createElement('div');
         chaNamAndVideoTitle.classList.add('chaNamAndVideoTitle');
@@ -41,49 +44,68 @@ class LiteYTEmbed extends HTMLElement {
         // Set up video title
         const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
         const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
-        fetch(oEmbedURL)
-        .then(response => {
-            if (response.status === 200) {
-            return response.json();
-            } else {
-            throw new Error("Failed to retrieve video information.");
-            }
-        })
-        // .then(data => {
-        //     var videoTitle = document.createElement('h3');
-        //     videoTitle.classList.add('video-title');
-        //     videoTitle.append(data.title);
-        //     var videoBox = this.parentElement.parentElement;
-        //     videoBox.append(videoTitle);
-        //     var createDivElement = document.createElement('div');
-        //         createDivElement.classList.add('moving-text');
-        //         createDivElement.append(data.title);
-        //         chaNamAndVideoTitle.append(createDivElement);
-        //     // console.log("Video Title:", data.title);
-        //     // console.log("Video Author:", data.author_name);
-        //     // console.log("Video Description:", data.description);
-        // })
-        .then(data => {
-            // const videoTitleNotSeen = document.createElement('h3');
-            // videoTitleNotSeen.classList.add('video-title-notSeen, moving-text');
-            // videoTitleNotSeen.append(data.title);
-            // this.append(videoTitleNotSeen);
-            const videoBox = this.parentElement.parentElement;
-            const videoTitleSeen = document.createElement('h3');
-            videoTitleSeen.classList.add('video-title');
-            videoTitleSeen.append(data.title);
-            videoBox.append(videoTitleSeen);
-            const createDivElement = document.createElement('div');
+        if (!this.hasFetchedVideoInfo) {
+            fetch(oEmbedURL)
+            .then(response => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    throw new Error("Failed to retrieve video information.");
+                }
+            })
+            .then(data => {
+                const videoBox = this.parentElement.parentElement;
+                // Check if a .video-title element already exists
+                const existingVideoTitle = videoBox.querySelector('.video-title');                
+                if (!existingVideoTitle) {
+                  // If it doesn't exist, create a new h3.video-title element
+                  const videoTitleSeen = document.createElement('h3');
+                  videoTitleSeen.classList.add('video-title');
+                  videoTitleSeen.append(data.title);
+                  videoBox.append(videoTitleSeen);
+                }
+                const createDivElement = document.createElement('div');
                 createDivElement.classList.add('moving-text');
                 createDivElement.append(data.title);
                 chaNamAndVideoTitle.append(createDivElement);
-            // console.log("Video Title:", data.title);
-            // console.log("Video Author:", data.author_name);
-            // console.log("Video Description:", data.description);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+
+                // Create a set to track processed video boxes
+                const processedVideoBoxes = new Set();
+                // Get all video-box elements
+                const videoBoxElements = document.querySelectorAll('.video-box');
+                // Loop through each video-box element
+                videoBoxElements.forEach(function (videoBoxElement) {
+                    // Check if the modification has already been done
+                    if (!processedVideoBoxes.has(videoBoxElement)) {
+                        // Get the video title element within the current video-box
+                        const videoTitleElement = videoBoxElement.querySelector('.video-title');
+                        // Extract the date from the video title
+                        const videoTitleText = videoTitleElement.textContent;
+                        const dateMatch = videoTitleText.match(/\d{1,2}(?:st|nd|rd|th)\s\w{3}\.\s\d{4}\./);
+                        // Check if a date match is found
+                        if (dateMatch && dateMatch.length > 0) {
+                            // Create a span element
+                            const VideoDateElement = document.createElement('span');
+                            VideoDateElement.classList.add('video-date');
+                            VideoDateElement.textContent = dateMatch[0];
+                            // Create a new text node with the modified text (excluding the date)
+                            const modifiedText = document.createTextNode(videoTitleText.replace(dateMatch[0], ''));
+                            videoTitleElement.innerHTML = '';
+                            // Append the modified text and the span element to the video title
+                            videoTitleElement.appendChild(modifiedText);
+                            videoTitleElement.appendChild(VideoDateElement);
+                            // Add the date as an attribute to the current video-box
+                            videoBoxElement.setAttribute('date-posted', dateMatch[0]);
+                            processedVideoBoxes.add(videoBoxElement);
+                        }
+                    }
+                });
+                this.hasFetchedVideoInfo = true;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
 
         // Set up play button, and its visually hidden label
         if (!playBtnEl) {
