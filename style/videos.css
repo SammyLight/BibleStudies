@@ -18,7 +18,8 @@
     position:relative;
     padding:3px 15px;
     transition:all 0.2s ease-in-out;
-    white-space:nowrap;}
+    white-space:nowrap;
+    gap:5px;}
 @media only screen and (min-width:541px){ 
 .videos-header-btns{padding:3px 25px;}}
 @media only screen and (min-width:768px){ 
@@ -35,14 +36,14 @@
 .videotab-content{ 
     display:none;
     animation:fadein 0.3s ease-in-out;}
-.videotab-content--active{display:block;}
+.videotab-content--active{display:grid;}
 @keyframes fadein {
     from {opacity:0;}
     to   {opacity:1;}}
 @media only screen and (max-width:375px){
 .videotab-content-wrapper>.container-fluid-inner{margin:0 3px 0;}}
-.videos-container-inner{
-    display:grid;
+.videotab-content{
+    /* display:grid; */
     grid-template-columns:repeat(auto-fit, minmax( min(100%, 240px), 1fr));
     gap:10px;}
 .video-box{margin-bottom:10px;}
@@ -76,6 +77,6 @@
     padding:5px 5px 18px 5px;}
 .video-box h3{padding:5px 5px 0;}}
 @media only screen and (min-width:1260px){
-.videos-container-inner{grid-template-columns:repeat(4, 1fr);}}
+.videotab-content{grid-template-columns:repeat(4, 1fr);}}
 /* search CSS */
 #searchResults{padding-top:5px;}
