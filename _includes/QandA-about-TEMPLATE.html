@@ -22,13 +22,13 @@
             </div>
             <div class="headerUL">
                 <ul class="header-links">
-                    <li class="header-links-li activeClass transition">
+                    <li class="header-links-li transition">
                         {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
                         <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>Q-Home</span>
                         </a>{% endif %}{% endfor %}
                     </li>
-                    <li class="header-links-li activeClass transition">
+                    <li class="header-links-li transition">
                         {% for page in site.pages %}{% if page.title contains "Rules" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>About</span>
