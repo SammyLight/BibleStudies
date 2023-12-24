@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     }
-    setTimeout(updateButton, 1300);
+    setTimeout(updateButton, 1650);
 
     elem.addEventListener('click', function() {
       allBtns.forEach((button) => {
@@ -191,5 +191,5 @@ document.addEventListener("DOMContentLoaded", function () {
         datesMap[date] = videoBox;
       }
     });
-  }, 1200);
+  }, 1500);
 });
