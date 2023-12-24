@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
           // Get the index of the button in the array
           const indexToMove = btnArray.indexOf(theButtonMatch);
           // Move the button to the second position
-          if (indexToMove !== -1) {
+          if (indexToMove !== -1 && indexToMove !== 1) {
             const movedElement = btnArray.splice(indexToMove, 1)[0];
-        btnArray.splice(1, 0, movedElement);
+            btnArray.splice(1, 0, movedElement);
             // Remove existing buttons from the DOM
             document.querySelectorAll('.videos-header-btns').forEach((button) => {
               button.remove();

@@ -64,10 +64,10 @@ class LiteYTEmbed extends HTMLElement {
                   videoTitleSeen.append(data.title);
                   videoBox.append(videoTitleSeen);
                 }
-                const createDivElement = document.createElement('div');
-                createDivElement.classList.add('moving-text');
-                createDivElement.append(data.title);
-                chaNamAndVideoTitle.append(createDivElement);
+                // const createDivElement = document.createElement('div');
+                // createDivElement.classList.add('moving-text');
+                // createDivElement.append(data.title);
+                // chaNamAndVideoTitle.append(createDivElement);
 
                 // Create a set to track processed video boxes
                 const processedVideoBoxes = new Set();
@@ -81,23 +81,68 @@ class LiteYTEmbed extends HTMLElement {
                         const videoTitleElement = videoBoxElement.querySelector('.video-title');
                         // Extract the date from the video title
                         const videoTitleText = videoTitleElement.textContent;
-                        const dateMatch = videoTitleText.match(/\d{1,2}(?:st|nd|rd|th)\s\w{3}\.\s\d{4}\./);
+                        // Regular expression for the first date format: "23rd Dec. 2023"
+                        const firstDateFormatMatch = videoTitleText.match(/(\d{1,2}(?:st|nd|rd|th)?)\s?(\w{3})\.\s?(\d{4})\.?/);
+                        // Regular expression for the second date format: "Sun, Dec 24, 2023."
+                        const secondDateFormatMatch = videoTitleText.match(/(?:\w{3},\s)?(\w{3})\s(\d{1,2}),\s(\d{4})\.?/);
                         // Check if a date match is found
-                        if (dateMatch && dateMatch.length > 0) {
-                            // Create a span element
-                            const VideoDateElement = document.createElement('span');
-                            VideoDateElement.classList.add('video-date');
-                            VideoDateElement.textContent = dateMatch[0];
-                            // Create a new text node with the modified text (excluding the date)
-                            const modifiedText = document.createTextNode(videoTitleText.replace(dateMatch[0], ''));
-                            videoTitleElement.innerHTML = '';
-                            // Append the modified text and the span element to the video title
-                            videoTitleElement.appendChild(modifiedText);
-                            videoTitleElement.appendChild(VideoDateElement);
-                            // Add the date as an attribute to the current video-box
-                            videoBoxElement.setAttribute('date-posted', dateMatch[0]);
-                            processedVideoBoxes.add(videoBoxElement);
-                        }
+                        if (firstDateFormatMatch && firstDateFormatMatch.length > 0) {
+                            const [dayMatch, monthMatch, yearMatch] = firstDateFormatMatch.slice(1);
+                            const day = dayMatch || '';
+                            const month = monthMatch || '';
+                            const year = yearMatch || '';
+                            // Manually construct the date string in a format recognized by the Date constructor
+                            const dateString = `${month} ${day.replace(/\D/g, '')}, ${year}`;
+                            const dateObject = new Date(dateString);
+                             // Check if the dateObject is valid
+                            if (!isNaN(dateObject)) {
+                                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
+                                // Create a span element
+                                const VideoDateElement = document.createElement('span');
+                                VideoDateElement.classList.add('video-date');
+                                VideoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
+                                // Create a new text node with the modified text (excluding the date)
+                                const modifiedText = document.createTextNode(videoTitleText.replace(firstDateFormatMatch[0], ''));
+                                videoTitleElement.innerHTML = '';
+                                // Append the modified text and the span element to the video title
+                                videoTitleElement.appendChild(modifiedText);
+                                videoTitleElement.appendChild(VideoDateElement);
+                                // Add the date as an attribute to the current video-box
+                                videoBoxElement.setAttribute('date-posted', dayOfWeek + ', ' + dateString);
+                                processedVideoBoxes.add(videoBoxElement);
+                            } else {
+                                console.error('Invalid date object:', dateObject);
+                            }
+                        } else if (secondDateFormatMatch && secondDateFormatMatch.length > 0) {
+                            const [, monthMatch, dayMatch, yearMatch] = secondDateFormatMatch;
+                            const day = dayMatch || '';
+                            const month = monthMatch || '';
+                            const year = yearMatch || '';
+                            const dateString = `${month} ${day}, ${year}`;
+                            const dateObject = new Date(dateString);
+                             // Check if the dateObject is valid
+                            if (!isNaN(dateObject)) {
+                                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
+                                // Create a span element
+                                const VideoDateElement = document.createElement('span');
+                                VideoDateElement.classList.add('video-date');
+                                VideoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
+                                // Create a new text node with the modified text (excluding the date)
+                                const modifiedText = document.createTextNode(videoTitleText.replace(secondDateFormatMatch[0], ''));
+                                videoTitleElement.innerHTML = '';
+                                // Append the modified text and the span element to the video title
+                                videoTitleElement.appendChild(modifiedText);
+                                videoTitleElement.appendChild(VideoDateElement);
+                                // Add the date as an attribute to the current video-box
+                                videoBoxElement.setAttribute('date-posted', dayOfWeek + ', ' + dateString);
+                                processedVideoBoxes.add(videoBoxElement);
+                            } else {
+                                console.error('Invalid date object:', dateObject);
+                            }
+                        } else {
+                            // No match for either format
+                            console.error('No date match found');
+                          }
                     }
                 });
                 this.hasFetchedVideoInfo = true;
