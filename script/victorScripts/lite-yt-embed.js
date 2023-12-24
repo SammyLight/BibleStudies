@@ -10,6 +10,7 @@
  *   https://github.com/Daugilas/lazyYT
  *   https://github.com/vb/lazyframe
  */
+function runFirstPartOfCode() {
 class LiteYTEmbed extends HTMLElement {
     constructor() {
         super();
@@ -285,7 +286,7 @@ class LiteYTEmbed extends HTMLElement {
 }
 // Register custom element
 customElements.define('lite-youtube', LiteYTEmbed);
-
+}
 
 
 const firstBtn = document.querySelector(".videos-header-btns-cont button").classList.add('active');
@@ -294,6 +295,8 @@ const allBtns = document.querySelectorAll(".videos-header-btns-cont button");
 const allTabs = document.querySelectorAll(".videotab-content");
 
 document.addEventListener("DOMContentLoaded", function () {
+      // Run the first part of the code
+  runFirstPartOfCode();
   setTimeout(function () {
     const tab1Content = document.querySelector('#tab1-content');
     // Create an array to store all video boxes from all tabs
@@ -391,9 +394,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }, 1500);
-});
+// });
 
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
   // Convert allTabs to an array using Array.from or the spread operator
   const tabsArrayAll = Array.from(allTabs);
   const tabsArrayFirst = tabsArrayAll.length > 0 ? [tabsArrayAll[0]] : [];
