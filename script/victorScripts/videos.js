@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateButton() {
       // Find the corresponding tab for the button
       const correspondingTab = tabsArray.find((tab) => tab.id === linkId + "-content");
-
       if (correspondingTab) {
         // Count the children of the corresponding tab
         const tabChildrenCount = correspondingTab.children.length;
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
         elem.appendChild(document.createTextNode(originalText));
         elem.appendChild(tabChildrenCountElement);
       }
-
       // Find the corresponding tab for the button (for the first tab)
       if (tabsArrayFirst) {
         const firstCorrespondingTab = tabsArrayFirst.find((tab) => tab.id === linkId + "-content");
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     }
-    setTimeout(updateButton, 1100);
+    setTimeout(updateButton, 1300);
 
     elem.addEventListener('click', function() {
       allBtns.forEach((button) => {
@@ -98,24 +96,65 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
-    // Retrieve tab1Content for the first tab
     const tab1Content = document.querySelector('#tab1-content');
-    
     // Create an array to store all video boxes from all tabs
     const allVideoBoxes = [];
-    var clonedVideoBox;
-
+    let latestVideoBox;
+    let latestDate = new Date(0); // Initialize with a very early date
+    let tabOfLatestVideoBox;
     // Assuming allTabs is a NodeList or an array of tabs
     Array.from(allTabs).slice(1).forEach((tab) => {
       const linkId = tab.id;
-
       // Retrieve all video boxes for the current tab
       const allVideoBox = document.querySelectorAll(`#${linkId} .video-box`);
-
       // Push video boxes into the array
       allVideoBoxes.push(...allVideoBox);
+      // Iterate over video boxes for the current tab
+      allVideoBoxes.forEach((videoBox) => {
+        const dateAttribute = videoBox.getAttribute('date-posted');
+        const currentDate = new Date(dateAttribute.replace(/(\d+)(st|nd|rd|th)/, '$1'));
+        // Check if the current video box has a later date than the latest one
+        if (currentDate > latestDate) {
+          latestDate = currentDate;
+          latestVideoBox = videoBox;
+          tabOfLatestVideoBox = tab;
+        }
+      });
     });
-
+    if (tabOfLatestVideoBox) {
+      const parentOfLatestVideoBox = latestVideoBox.parentNode;
+      const parentElement = document.querySelector('.videos-header-btns-cont');
+      let btnId;
+      let theButtonMatch;
+      let parentOfLatestVideoBoxId;
+      const btnArray = Array.from(allBtns);
+      // Get the ID of the parent of the latest video box
+      parentOfLatestVideoBoxId = parentOfLatestVideoBox.id;
+      for (const elem of btnArray.slice(1)) {
+        btnId = elem.id;
+        if (parentOfLatestVideoBoxId.includes(btnId)) {
+          theButtonMatch = elem;
+          // Find the button whose ID matches theButtonMatch.id
+          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
+          // Get the index of the button in the array
+          const indexToMove = btnArray.indexOf(theButtonMatch);
+          // Move the button to the second position
+          if (indexToMove !== -1) {
+            const movedElement = btnArray.splice(indexToMove, 1)[0];
+        btnArray.splice(1, 0, movedElement);
+            // Remove existing buttons from the DOM
+            document.querySelectorAll('.videos-header-btns').forEach((button) => {
+              button.remove();
+            });
+            // Insert buttons in the updated order
+            btnArray.forEach((button) => {
+              parentElement.appendChild(button);
+            });
+          }
+          break; // Break out of the loop once a match is found
+        }
+      }
+    }    
     // Sort all video boxes based on date
     allVideoBoxes.sort((boxA, boxB) => {
       const dateAString = boxA.getAttribute('date-posted');
@@ -129,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
     allVideoBoxes.reverse();
     // Append sorted video boxes to the first tab
     allVideoBoxes.forEach((videoBox) => {
-      clonedVideoBox = videoBox.cloneNode(true);
+      const clonedVideoBox = videoBox.cloneNode(true);
       tab1Content.appendChild(clonedVideoBox);
     });      
     // Check for video boxes with the same date in the first tab
@@ -141,8 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (datesMap[date]) {
         // Handle the video boxes with the same date in the first tab
         videoBox.classList.add('same-date1');  
-        datesMap[date].classList.add('same-date2');  
-        console.log(datesMap[date]); 
+        datesMap[date].classList.add('same-date2');
         // Swap positions in the DOM
         const parent = datesMap[date].parentNode;
         parent.removeChild(videoBox);
@@ -153,5 +191,5 @@ document.addEventListener("DOMContentLoaded", function () {
         datesMap[date] = videoBox;
       }
     });
-  }, 1000);
+  }, 1200);
 });
