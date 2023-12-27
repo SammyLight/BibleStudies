@@ -36,12 +36,12 @@ function runFirstPartOfCode() {
             this.style.backgroundImage = `url("https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg")`;
             }
             // Set up channel image
-            var chaNamAndVideoTitle = document.createElement('div');
-            chaNamAndVideoTitle.classList.add('chaNamAndVideoTitle');
+            var chaNameAndVideoTitle = document.createElement('div');
+            chaNameAndVideoTitle.classList.add('chaNameAndVideoTitle');
             var channelImg = document.createElement('div');
             channelImg.classList.add('lty-channelimg');
-            chaNamAndVideoTitle.prepend(channelImg);
-            this.append(chaNamAndVideoTitle);
+            chaNameAndVideoTitle.prepend(channelImg);
+            this.append(chaNameAndVideoTitle);
             // Set up video title
             const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
             const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
@@ -65,10 +65,10 @@ function runFirstPartOfCode() {
                     videoTitleSeen.append(data.title);
                     videoBox.append(videoTitleSeen);
                     }
-                    // const createDivElement = document.createElement('div');
-                    // createDivElement.classList.add('moving-text');
-                    // createDivElement.append(data.title);
-                    // chaNamAndVideoTitle.append(createDivElement);
+                    const createDivElement = document.createElement('div');
+                    createDivElement.classList.add('moving-text');
+                    createDivElement.append(data.title);
+                    chaNameAndVideoTitle.append(createDivElement);
 
                     // Create a set to track processed video boxes
                     const processedVideoBoxes = new Set();
@@ -287,5 +287,3 @@ function runFirstPartOfCode() {
     // Register custom element
     customElements.define('lite-youtube', LiteYTEmbed);
 }
-
-

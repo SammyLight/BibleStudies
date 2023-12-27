@@ -8,7 +8,7 @@ function handleVideoSearch() {
   searchResultsContainer.innerHTML = "";
   displayedVideos.clear();
   embeddedVideos.forEach((video) => {
-    const videoDescriptionElement = video.querySelector(".chaNamAndVideoTitle");
+    const videoDescriptionElement = video.querySelector(".chaNameAndVideoTitle");
     const videoTitleElement = video.querySelector(".moving-text");
     const videoId = video.getAttribute("videoid");
     if (videoTitleElement) {
@@ -17,7 +17,7 @@ function handleVideoSearch() {
         // Clone the embedded video element
         const videoClone = video.cloneNode(true);
          // Remove duplicate child elements in the clone
-        const duplicateVideoDescriptionElements = videoClone.querySelectorAll(".chaNamAndVideoTitle");
+        const duplicateVideoDescriptionElements = videoClone.querySelectorAll(".chaNameAndVideoTitle");
         duplicateVideoDescriptionElements.forEach((el) => {
           if (el !== videoDescriptionElement) {
             el.remove();

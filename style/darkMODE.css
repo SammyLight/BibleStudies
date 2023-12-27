@@ -52,7 +52,7 @@ button,input,optgroup,textarea{color:var(--DM-inherit);}
 .closeNavBar>div{
     background:url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;}
 .myDropdown{background-color:transparent;}
-.myDropdown2{background-color:transparent;}
+.myDropdownDesk{background-color:transparent;}
 .header-links2{ 
     background-color:var(--DM-vivid-orange);
     background-color:var(--DM-bgColor-smoke-white);

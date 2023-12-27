@@ -166,14 +166,14 @@ a{
     left:0;
     top:0;
     width:100%;}
-.myDropdown2{
+.myDropdownDesk{
     position:absolute;
     visibility:hidden;
     z-index:1;
     right:0;
     top:3px;
     width:auto;}
-.myDropdown2-content{
+.myDropdownDesk-content{
     position:relative;}
 .header-links2{ 
     text-align:left;

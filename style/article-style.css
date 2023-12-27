@@ -357,6 +357,12 @@ table ul, table ol{
 ::-webkit-scrollbar-thumb{background:#888;}
 ::-webkit-scrollbar-thumb:hover{background:#555;}
 .pureHTMLtimeline{
-    color: black!important;
-    margin-top: 20px;
-    width: 100%!important;}
+    color:black!important;
+    margin-top:20px;
+    width:-webkit-fill-available!important;}
+/* .pureHTMLtimeline>div{height:auto!important;} */
+/* [event_node][tabindex="1"],
+[event_node]:has(>span[ref]) {
+    border: 2px solid red;
+    height: auto;
+} */
