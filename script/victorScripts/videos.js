@@ -14,92 +14,74 @@ document.addEventListener("DOMContentLoaded", function () {
     let latestDate = new Date(0); // Initialize with a very early date
     let tabOfLatestVideoBox;
     let previousVideoBoxOne;
-    let previousLatestDateOne = new Date(0); // Initialize with a very early date
-    let tabOfPreviousVideoBoxOne;
+    let previousDateOne;
+    let tabOfpreviousVideoBoxOne;
     let previousVideoBoxTwo;
-    let tabOfPreviousVideoBoxTwo;
-    let previousLatestDateTwo = new Date(0); // Initialize with a very early date
+    let previousDateTwo;
+    let tabOfpreviousVideoBoxTwo;
     let previousVideoBoxThree;
-    let previousLatestDateThree = new Date(0); // Initialize with a very early date
-    let tabOfPreviousVideoBoxThree;
-    
+    let previousDateThree;
+    let tabOfpreviousVideoBoxThree;    
     // Assuming allTabs is a NodeList or an array of tabs
     Array.from(allTabs).slice(1).forEach((tab) => {
       const linkId = tab.id;
-      // Reset the array for each tab iteration
-      // allVideoBoxes.length = 0;
       // Retrieve all video boxes for the current tab
       const allVideoBox = document.querySelectorAll(`#${linkId} .video-box`);
       // Push video boxes into the array
       allVideoBoxes.push(...allVideoBox);
-      function areDatesEqual(date1, date2) {
-        return date1.getTime() === date2.getTime();
-      }
       // Iterate over video boxes for the current tab
       allVideoBoxes.forEach((videoBox) => {
         const dateAttribute = videoBox.getAttribute('date-posted');
         const currentDate = new Date(dateAttribute.replace(/(\d{1,2})(st|nd|rd|th)?/, '$1'));
-    
         // Check if the current video box has a later date than the latest one
         if (currentDate > latestDate) {
-          // Move the previous values one step back
-          previousLatestDateThree = previousLatestDateTwo;
+          // Update the latest video box information
           previousVideoBoxThree = previousVideoBoxTwo;
-          tabOfPreviousVideoBoxThree = tabOfPreviousVideoBoxTwo;
-    
-          previousLatestDateTwo = previousLatestDateOne;
+          previousDateThree = previousDateTwo;
+          tabOfpreviousVideoBoxThree = tabOfpreviousVideoBoxTwo;
+
           previousVideoBoxTwo = previousVideoBoxOne;
-          tabOfPreviousVideoBoxTwo = tabOfPreviousVideoBoxOne;
+          previousDateTwo = previousDateOne;
+          tabOfpreviousVideoBoxTwo = tabOfpreviousVideoBoxOne;
     
-          previousLatestDateOne = latestDate;
           previousVideoBoxOne = latestVideoBox;
-          tabOfPreviousVideoBoxOne = tabOfLatestVideoBox;
+          previousDateOne = latestDate;
+          tabOfpreviousVideoBoxOne = tabOfLatestVideoBox;
     
-          // Update the latest values
           latestDate = currentDate;
           latestVideoBox = videoBox;
           tabOfLatestVideoBox = tab;
-        } else if (!previousVideoBoxOne || (currentDate > new Date(previousVideoBoxOne.getAttribute('date-posted').replace(/(\d{1,2})(st|nd|rd|th)?/, '$1')) && currentDate.toDateString() !== latestDate.toDateString() && currentDate.toDateString() !== previousLatestDateOne.toDateString())) {
-          // Check if the current video box has a date greater than the previous one and is not the same as the latest date and not the same as the date of previousVideoBoxOne
-          previousLatestDateThree = previousLatestDateTwo;
+        } else if (currentDate > previousDateOne && currentDate < latestDate) {
+          // Update the previous video box information
           previousVideoBoxThree = previousVideoBoxTwo;
-          tabOfPreviousVideoBoxThree = tabOfPreviousVideoBoxTwo;
-        
-          previousLatestDateTwo = previousLatestDateOne;
+          previousDateThree = previousDateTwo;
+          tabOfpreviousVideoBoxThree = tabOfpreviousVideoBoxTwo;
+
           previousVideoBoxTwo = previousVideoBoxOne;
-          tabOfPreviousVideoBoxTwo = tabOfPreviousVideoBoxOne;
-        
-          previousLatestDateOne = currentDate;
+          previousDateTwo = previousDateOne;
+          tabOfpreviousVideoBoxTwo = tabOfpreviousVideoBoxOne;
+    
+          previousDateOne = currentDate;
           previousVideoBoxOne = videoBox;
-          tabOfPreviousVideoBoxOne = tab;
-        } else if (!previousVideoBoxTwo || (currentDate > new Date(previousVideoBoxTwo.getAttribute('date-posted').replace(/(\d{1,2})(st|nd|rd|th)?/, '$1')) && currentDate.toDateString() !== latestDate.toDateString() && currentDate.toDateString() !== previousLatestDateOne.toDateString())) {
-          // Check if the current video box has a date greater than the previous one and is not the same as the latest date and not the same as the date of previousVideoBoxTwo
-          previousLatestDateThree = previousLatestDateTwo;
+          tabOfpreviousVideoBoxOne = tab;
+        } else if (currentDate > previousDateTwo && currentDate < previousDateOne && currentDate < latestDate) {
+          // Update the previous video box information
           previousVideoBoxThree = previousVideoBoxTwo;
-          tabOfPreviousVideoBoxThree = tabOfPreviousVideoBoxTwo;
-        
-          previousLatestDateTwo = currentDate;
+          previousDateThree = previousDateTwo;
+          tabOfpreviousVideoBoxThree = tabOfpreviousVideoBoxTwo;
+          
+          previousDateTwo = currentDate;
           previousVideoBoxTwo = videoBox;
-          tabOfPreviousVideoBoxTwo = tab;
-        } else if (!previousVideoBoxThree || (currentDate > new Date(previousVideoBoxThree.getAttribute('date-posted').replace(/(\d{1,2})(st|nd|rd|th)?/, '$1')) && currentDate.toDateString() !== latestDate.toDateString() && currentDate.toDateString() !== previousLatestDateOne.toDateString() && currentDate.toDateString() !== previousLatestDateTwo.toDateString())) {
-          // Check if the current video box has a date greater than the previous one and is not the same as the latest date and not the same as the date of previousVideoBoxThree
-          previousLatestDateThree = currentDate;
+          tabOfpreviousVideoBoxTwo = tab;
+        } else if (currentDate > previousDateThree && currentDate < previousDateTwo && currentDate < previousDateOne && currentDate < latestDate) {
+          // Update the previous video box information
+          previousDateThree = currentDate;
           previousVideoBoxThree = videoBox;
-          tabOfPreviousVideoBoxThree = tab;
+          tabOfpreviousVideoBoxThree = tab;
         }
       });
     });
-    
-    // The variables now hold the desired previous video boxes and their dates
-    console.log(latestVideoBox);
-    console.log(tabOfLatestVideoBox);
-    console.log(previousVideoBoxOne);
-    console.log(tabOfPreviousVideoBoxOne);
-    console.log(previousVideoBoxTwo);
-    console.log(tabOfPreviousVideoBoxTwo);
-    console.log(previousVideoBoxThree);
-    console.log(tabOfPreviousVideoBoxThree);
-    
+
     let moved = false; // Flag to track whether the buttons have been moved
     const btnArray = Array.from(allBtns);
     // Iterate over buttons
@@ -126,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       
       // Check for tabOfPreviousVideoBoxOne condition
-      if (tabOfPreviousVideoBoxOne) {
+      if (tabOfpreviousVideoBoxOne) {
         const parentOfPreviousVideoBoxOne = previousVideoBoxOne.parentNode;
         const parentOfPreviousVideoBoxOneId = parentOfPreviousVideoBoxOne.id;
         if (parentOfPreviousVideoBoxOneId.includes(btnId)) {
@@ -140,14 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // console.log(indexToMove);
             const movedElement = btnArray.splice(indexToMove, 1)[0];
             // console.log(movedElement);
-            btnArray.splice(1, 0, movedElement);
+            btnArray.splice(2, 0, movedElement);
             moved = true; // Set the flag to true
           }
         }
       }
 
       // Check for tabOfPreviousVideoBoxTwo condition
-      if (tabOfPreviousVideoBoxTwo) {
+      if (tabOfpreviousVideoBoxTwo) {
         const parentOfPreviousVideoBoxTwo = previousVideoBoxTwo.parentNode;
         const parentOfPreviousVideoBoxTwoId = parentOfPreviousVideoBoxTwo.id;
         if (parentOfPreviousVideoBoxTwoId.includes(btnId)) {
@@ -161,13 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
             // console.log(indexToMove);
             const movedElement = btnArray.splice(indexToMove, 1)[0];
             // console.log(movedElement);
-            btnArray.splice(1, 0, movedElement);
+            btnArray.splice(3, 0, movedElement);
             moved = true; // Set the flag to true
           }
         }
       }
       // Check for tabOfPreviousVideoBoxThree condition
-      if (tabOfPreviousVideoBoxThree) {
+      if (tabOfpreviousVideoBoxThree) {
         const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
         const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
         if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
@@ -181,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // console.log(indexToMove);
             const movedElement = btnArray.splice(indexToMove, 1)[0];
             // console.log(movedElement);
-            btnArray.splice(1, 0, movedElement);
+            btnArray.splice(4, 0, movedElement);
             moved = true; // Set the flag to true
           }
         }
@@ -204,9 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btnArray.forEach((button) => {
         parentElement.appendChild(button);
       });
-    }
-    
-
+    } 
     // Sort all video boxes based on date
     allVideoBoxes.sort((boxA, boxB) => {
       const dateAString = boxA.getAttribute('date-posted');
@@ -334,3 +314,78 @@ document.addEventListener("DOMContentLoaded", function () {
 //     });
 //   });
 // });
+
+// // Create an array to store all video boxes from all tabs
+// const allVideoBoxes = [];
+// let latestVideoBox;
+// let latestDate = new Date(0); // Initialize with a very early date
+// let tabOfLatestVideoBox;
+// const previousVideoBoxes = [];
+// const previousDates = [];
+// const tabOfPreviousVideoBoxes = [];
+
+// // Assuming allTabs is a NodeList or an array of tabs
+// Array.from(allTabs).slice(1).forEach((tab) => {
+//   const linkId = tab.id;
+//   // Retrieve all video boxes for the current tab
+//   const allVideoBox = document.querySelectorAll(`#${linkId} .video-box`);
+//   // Push video boxes into the array
+//   allVideoBoxes.push(...allVideoBox);
+
+//   // Iterate over video boxes for the current tab
+//   allVideoBox.forEach((videoBox) => {
+//     const dateAttribute = videoBox.getAttribute('date-posted');
+//     const currentDate = new Date(dateAttribute.replace(/(\d{1,2})(st|nd|rd|th)?/, '$1'));
+
+//     if (currentDate > latestDate) {
+//       // Update the latest video box information
+//       previousVideoBoxes[2] = previousVideoBoxes[1];
+//       previousDates[2] = previousDates[1];
+//       tabOfPreviousVideoBoxes[2] = tabOfPreviousVideoBoxes[1];
+
+//       previousVideoBoxes[1] = previousVideoBoxes[0];
+//       previousDates[1] = previousDates[0];
+//       tabOfPreviousVideoBoxes[1] = tabOfPreviousVideoBoxes[0];
+
+//       previousVideoBoxes[0] = latestVideoBox;
+//       previousDates[0] = latestDate;
+//       tabOfPreviousVideoBoxes[0] = tabOfLatestVideoBox;
+
+//       latestDate = currentDate;
+//       latestVideoBox = videoBox;
+//       tabOfLatestVideoBox = tab;
+//     } else {
+//       findPreviousVideoBox(currentDate, videoBox, tab); // Pass 'tab' as a parameter
+//     }
+//   });
+// });
+
+// // Function to find the previous video box
+// function findPreviousVideoBox(currentDate, videoBox, tab) {
+//   for (let i = 0; i < previousVideoBoxes.length; i++) {
+//     if (currentDate > previousDates[i] && currentDate < latestDate) {
+//       // Update the previous video box information
+//       previousVideoBoxes[i + 1] = previousVideoBoxes[i];
+//       previousDates[i + 1] = previousDates[i];
+//       tabOfPreviousVideoBoxes[i + 1] = tabOfPreviousVideoBoxes[i];
+
+//       previousDates[i] = currentDate;
+//       previousVideoBoxes[i] = videoBox;
+//       tabOfPreviousVideoBoxes[i] = tab;
+//     }
+//   }
+// }
+// // Now, you have the information in the arrays previousVideoBoxes, previousDates, and tabOfPreviousVideoBoxes.
+
+// // Now, `previousVideoBox` contains the video box with the date immediately preceding `latestDate` and not equal to it
+//     console.log(latestVideoBox);
+//     console.log(tabOfLatestVideoBox);
+
+//     console.log(previousVideoBoxes[0]);
+//     console.log(tabOfPreviousVideoBoxes[0]);
+
+//     console.log(previousVideoBoxes[1]);
+//     console.log(tabOfPreviousVideoBoxes[1]);
+
+//     console.log(previousVideoBoxes[2]);    
+//     console.log(tabOfPreviousVideoBoxes[2]);
