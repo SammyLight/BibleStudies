@@ -17,7 +17,7 @@ button,input,optgroup,textarea{color:var(--DM-inherit);}
 .active,.cat-active{ 
     color:var(--DM-vivid-orange)!important;
     border-bottom:3px solid var(--DM-vivid-orange)!important;}
-::selection{ 
+::selection,.highlighted{ 
     background-color:var(--DM-light-purple);
     color:var(--DM-black);}
 #Resources-section .titles>a:hover{color:var(--gray);}

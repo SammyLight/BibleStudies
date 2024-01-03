@@ -18,7 +18,7 @@ button,input,optgroup,textarea{color:inherit;}
 .active,.cat-active{ 
     color:var(--vivid-orange)!important;
     border-bottom:3px solid var(--vivid-orange)!important;}
-::selection{ 
+::selection,.highlighted{ 
     background-color:var(--selection);
     color:var(--black);}
 .homeResources-grid-containter{
@@ -206,18 +206,15 @@ blockquote:before{color:var(--light-purple);}
 .videos-header-btns{color:var(--black);}
 .videos-header-btns:hover{
     color:var(--black);}
-.video-box h3{
-    color:var(--gray);}
+.video-box h3{color:var(--DM-grayTwo);}
 #searchResults .homeResources-grid-containter {
     background-color:var(--bgColor-smoke-white)!important;}
 /* styles from reftaggerLightCity.css */
-#context_menu{
-    background:var(--whitesmoke);}
+#context_menu{background:var(--whitesmoke);}
 #context_menu .buttons{
     background:var(--ref-img);
     border-bottom:2px solid #70707072;}
-#context_menu .cmtitlebar{
-    background:var(--ref-img);}
+#context_menu .cmtitlebar{background:var(--ref-img);}
 .cmtitlebar{
     border-bottom:1px solid var(--scroll-track-bg-color);
     box-shadow:0px -25.5px 6px 28px #000000;}

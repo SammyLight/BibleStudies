@@ -15,7 +15,8 @@
     --supernova:#5f40f6;
     --red:red;
     --light-purple:rgb(83, 0, 83, 0.5);
-    --selection:rgba(0, 0, 255, 0.1);
+    /* --selection:rgba(0, 0, 255, 0.1); */
+    --selection:#f8d261;
     --inherit:inherit;
     /* darkMODE Theme */
     --DM-bgColor-smoke-white:#1e1e1e; /* Darker background color */
