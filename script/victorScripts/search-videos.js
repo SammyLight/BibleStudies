@@ -1,6 +1,7 @@
 // Get references to the search input and search results container
 const videoSearchInput = document.getElementById("videoSearch");
 const searchResultsContainer = document.getElementById("searchResults");
+const searchFromTab1Content = document.querySelector('#tab1-content');
 // Create a Set to keep track of displayed videos to avoid duplicates
 const displayedVideos = new Set();
 // Add an event listener to the search input for handling video search
@@ -10,7 +11,7 @@ function handleVideoSearch() {
   // Get the lowercase search query from the input
   const searchQuery = videoSearchInput.value.toLowerCase();
   // Get all video-box elements (or lite-youtube elements, depending on your actual use case)
-  const videoBoxes = document.querySelectorAll(".video-box");
+  const videoBoxes = searchFromTab1Content.querySelectorAll(".video-box");
   // Clear the search results container and reset the displayed videos set
   searchResultsContainer.innerHTML = "";
   displayedVideos.clear();
