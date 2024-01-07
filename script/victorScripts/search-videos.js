@@ -71,12 +71,15 @@ function handleVideoSearch() {
   displayedVideoCountElement.classList.add('displayedVideoCountElement');
   displayedVideoCountElement.style.paddingTop = '6px'
   displayedVideoCountElement.style.position = 'absolute'
-  displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
-
-  // Append the count element to the search results container
+  if (displayedVideoCount === 0) {
+    displayedVideoCountElement.innerHTML = 'Search Results: No match found...';
+  } else {
+    displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
+  }
+  // Prepend the count element to the search results container
   searchResultsContainer.prepend(displayedVideoCountElement);
-  searchResultsContainer.style.paddingTop = '36px'
-
+  // Adjust the padding based on the condition
+  searchResultsContainer.style.paddingTop = displayedVideoCount === 0 ? '30px' : '40px';
   // If the search input is empty, clear the displayed videos
   if (searchQuery === "") {
     searchResultsContainer.style.paddingTop = '0'
