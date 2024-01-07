@@ -81,6 +81,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+    // console.log(latestVideoBox);
+    // console.log(tabOfLatestVideoBox);
+
+    // console.log(previousVideoBoxOne);
+    // console.log(tabOfpreviousVideoBoxOne);
+
+    // console.log(previousVideoBoxTwo);
+    // console.log(tabOfpreviousVideoBoxTwo);
+
+    // console.log(previousVideoBoxThree);    
+    // console.log(tabOfpreviousVideoBoxThree);
 
     let moved = false; // Flag to track whether the buttons have been moved
     const btnArray = Array.from(allBtns);
@@ -148,26 +159,26 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       }
-      // Check for tabOfPreviousVideoBoxThree condition
-      if (tabOfpreviousVideoBoxThree) {
-        const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
-        const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
-        if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
-          // console.log(btnId);
-          theButtonMatch = elem;
-          // console.log(theButtonMatch);
-          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
+      // // Check for tabOfPreviousVideoBoxThree condition
+      // if (tabOfpreviousVideoBoxThree) {
+      //   const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
+      //   const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
+      //   if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
+      //     // console.log(btnId);
+      //     theButtonMatch = elem;
+      //     // console.log(theButtonMatch);
+      //     theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
     
-          const indexToMove = btnArray.indexOf(theButtonMatch);
-          if (indexToMove !== -1) {
-            // console.log(indexToMove);
-            const movedElement = btnArray.splice(indexToMove, 1)[0];
-            // console.log(movedElement);
-            btnArray.splice(4, 0, movedElement);
-            moved = true; // Set the flag to true
-          }
-        }
-      }
+      //     const indexToMove = btnArray.indexOf(theButtonMatch);
+      //     if (indexToMove !== -1) {
+      //       // console.log(indexToMove);
+      //       const movedElement = btnArray.splice(indexToMove, 1)[0];
+      //       // console.log(movedElement);
+      //       btnArray.splice(4, 0, movedElement);
+      //       moved = true; // Set the flag to true
+      //     }
+      //   }
+      // }
     
       // Break out of the loop if the buttons have been moved
       // if (moved) {
