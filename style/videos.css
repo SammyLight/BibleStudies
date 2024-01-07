@@ -79,5 +79,5 @@
 @media only screen and (min-width:1260px){
 .videotab-content, .searchvideotab-content{grid-template-columns:repeat(4, 1fr);}}
 /* search CSS */
-#searchResults{padding-top:16px;}
+#searchResults{position:relative;}
 .highlighted{border-radius: 2px;}
