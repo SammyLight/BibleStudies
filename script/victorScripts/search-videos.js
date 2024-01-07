@@ -22,23 +22,64 @@ function handleVideoSearch() {
     const videoTitleElement = video.getAttribute("video-title");
     const videoIdElement = video.querySelector("lite-youtube");
     const videoId = videoIdElement.getAttribute("videoid");
+
     // Check if videoTitleElement has a value
     if (videoTitleElement) {
       // Convert video title to lowercase for case-insensitive comparison
-      const videoTitle = videoTitleElement.toLowerCase();
+      const originalVideoTitle = videoTitleElement; // Store the original title
+      const videoTitle = originalVideoTitle.toLowerCase();
+      // let displayedVideoCount = 0;
       // Check if the video title includes the search query and the video hasn't been displayed
-      if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {
+      if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {    
         // Clone the videoBox element
         const videoClone = video.cloneNode(true);
-        // Append the cloned video to the search results container
-        searchResultsContainer.appendChild(videoClone);
+      //   // Create a modified version of the video title with the matched part highlighted
+      // const highlightedTitle = originalVideoTitle.replace(
+      //   new RegExp(searchQuery, "gi"),
+      //   (match) => `<span class="highlighted">${match}</span>`
+      // );
+      // // Find the .video-title element in the cloned video box
+      // const videoCloneTitle = videoClone.querySelector('.video-title');
+
+      // // Clear existing content inside .video-title
+      // videoCloneTitle.innerHTML = '';
+
+      // // Create a DocumentFragment to safely append the highlighted content
+      // const fragment = document.createDocumentFragment();
+
+      // // Iterate through the nodes in the highlightedTitle string
+      // const tempDiv = document.createElement('div');
+      // tempDiv.innerHTML = highlightedTitle;
+      // while (tempDiv.firstChild) {
+      //   fragment.appendChild(tempDiv.firstChild);
+      // }
+
+      // // Append the DocumentFragment to the .video-title element
+      // videoCloneTitle.appendChild(fragment);
+
+      searchResultsContainer.appendChild(videoClone);
         // Add the videoId to the displayed videos set to avoid duplicates
         displayedVideos.add(videoId);
       }
     }
   });
+  // The displayed video count
+  const displayedVideoCount = searchResultsContainer.children.length;
+
+  // Create a div element to display the count
+  const displayedVideoCountElement = document.createElement('div');
+  displayedVideoCountElement.classList.add('displayedVideoCountElement');
+  displayedVideoCountElement.style.paddingTop = '6px'
+  displayedVideoCountElement.style.position = 'absolute'
+  displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
+
+  // Append the count element to the search results container
+  searchResultsContainer.prepend(displayedVideoCountElement);
+  searchResultsContainer.style.paddingTop = '36px'
+
   // If the search input is empty, clear the displayed videos
   if (searchQuery === "") {
+    searchResultsContainer.style.paddingTop = '0'
     searchResultsContainer.innerHTML = "";
     displayedVideos.clear();
   }
