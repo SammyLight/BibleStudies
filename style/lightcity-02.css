@@ -276,9 +276,7 @@ hr{
     border:none;
     outline:none;
     font-size:15px;}
-.sidebar{ 
-    background-color:var(--black)!important;
-    padding:0 10px 20px;}
+.sidebar{padding:0 10px 20px;}
 .sidebar-wrapper{ 
     color:var(--white)!important;}
 .sidebar-wrapper-header h2, .sidebar-wrapper h3{
