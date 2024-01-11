@@ -81,3 +81,7 @@
 /* search CSS */
 #searchResults{position:relative;}
 .highlighted{border-radius: 2px;}
+.displayedVideoCountElement{
+    position:absolute;
+    padding-top:6px;
+}

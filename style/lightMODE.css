@@ -18,9 +18,10 @@ button,input,optgroup,textarea{color:inherit;}
 .active,.cat-active{ 
     color:var(--vivid-orange)!important;
     border-bottom:3px solid var(--vivid-orange)!important;}
-::selection,.highlighted{ 
+::selection{ 
     background-color:var(--selection);
     color:var(--black);}
+.highlighted{color:var(--DM-vivid-orange)!important;}
 .homeResources-grid-containter{
     background-color:var(--white)!important;
     box-shadow:7px 8px 16px -5px rgba(0, 0, 0, 0.14);
