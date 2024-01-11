@@ -1,124 +1,151 @@
-// Get references to the search input and search results container
 const videoSearchInput = document.getElementById("videoSearch");
 const searchResultsContainer = document.getElementById("searchResults");
 const searchFromTab1Content = document.querySelector('#tab1-content');
-// Create a Set to keep track of displayed videos to avoid duplicates
+const allTabSearch = document.querySelectorAll(".videotab-content");
+const tabsArrayAllSearch = Array.from(allTabSearch);
+const tabsArraySearch = tabsArrayAllSearch.slice(1);
 const displayedVideos = new Set();
-// Add an event listener to the search input for handling video search
-videoSearchInput.addEventListener("input", () => handleVideoSearch());
-
-// Add another event listener for highlighting
+let debounceTimer;
+let observer;
+// Event listener for highlighting
 videoSearchInput.addEventListener("input", () => {
-  const searchQuery = videoSearchInput.value.toLowerCase();
-  handleHightlight(searchQuery);
-});
-
-// // Function to handle video search
-// function handleVideoSearch() {
-//   // Get the lowercase search query from the input
-//   const searchQuery = videoSearchInput.value.toLowerCase();
-//   // Get all video-box elements (or lite-youtube elements, depending on your actual use case)
-//   const videoBoxes = searchFromTab1Content.querySelectorAll(".video-box");
-//   // Clear the search results container and reset the displayed videos set
-//   searchResultsContainer.innerHTML = "";
-//   displayedVideos.clear();
-
-//   // Loop through each videoBox element
-//   videoBoxes.forEach((video) => {
-//     // Get the values of video-title and videoid attributes
-//     const videoTitleElement = video.getAttribute("video-title");
-//     const videoIdElement = video.querySelector("lite-youtube");
-//     const videoId = videoIdElement.getAttribute("videoid");
-
-//     // Check if videoTitleElement has a value
-//     if (videoTitleElement) {
-//       // Convert video title to lowercase for case-insensitive comparison
-//       const originalVideoTitle = videoTitleElement; // Store the original title
-//       const videoTitle = originalVideoTitle.toLowerCase();
-//       // let displayedVideoCount = 0;
-//       // Check if the video title includes the search query and the video hasn't been displayed
-//       if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {    
-//         // Clone the videoBox element
-//         const videoClone = video.cloneNode(true);
-//       searchResultsContainer.appendChild(videoClone);
-//         // Add the videoId to the displayed videos set to avoid duplicates
-//         displayedVideos.add(videoId);
-//       }
-//     }
-//   });
-
-//   // The displayed video count
-//   const displayedVideoCount = searchResultsContainer.children.length;
-//   // Create a div element to display the count
-//   const displayedVideoCountElement = document.createElement('div');
-//   displayedVideoCountElement.classList.add('displayedVideoCountElement');
-//   displayedVideoCountElement.style.paddingTop = '6px'
-//   displayedVideoCountElement.style.position = 'absolute'
-//   if (displayedVideoCount === 0) {
-//     displayedVideoCountElement.innerHTML = 'Search Results: No match found...';
-//   } else {
-//     displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
-//   }
-//   // Prepend the count element to the search results container
-//   searchResultsContainer.prepend(displayedVideoCountElement);
-//   // Adjust the padding based on the condition
-//   searchResultsContainer.style.paddingTop = displayedVideoCount === 0 ? '30px' : '40px';
-//   // If the search input is empty, clear the displayed videos
-//   if (searchQuery === "") {
-//     searchResultsContainer.style.paddingTop = '0'
-//     searchResultsContainer.innerHTML = "";
-//     displayedVideos.clear();
-//   }
-// }
-
-function handleHightlight(searchQuery) {
-  const videoBoxes = searchFromTab1Content.querySelectorAll(".video-box");
-  // Create a document fragment to store the cloned video boxes
-  const fragment = document.createDocumentFragment();
-  videoBoxes.forEach((video) => {
-    const videoTitleElement = video.getAttribute("video-title");
-    if (videoTitleElement && videoTitleElement.toLowerCase().includes(searchQuery)) {
-      const originalVideoTitle = videoTitleElement;
-      const highlightedTitle = originalVideoTitle.replace(
-        new RegExp(searchQuery, "i"),
-        (match) => `<span class="highlighted">${match}</span>`
-      );
-      const videoClone = video.cloneNode(true);
-      const videoCloneTitle = videoClone.querySelector('.video-title');
-      videoCloneTitle.innerHTML = highlightedTitle;
-      fragment.appendChild(videoClone);
-      displayedVideos.add(videoTitleElement);
-    }
+    const searchQuery = videoSearchInput.value.toLowerCase();
+    handleHighLight(searchQuery);
   });
-  // Clear the search results container only if there is a valid search query
-  if (searchQuery) {
+// Event listener for handling video search
+videoSearchInput.addEventListener("input", () => {
+    handleVideoSearch();
+});
+// Function to handle video highlight
+function handleHighLight(searchQuery) {
+    // Disconnect the observer if it's already connected
+    if (observer) {
+        observer.disconnect();
+    }
+    const videoBoxes = searchResultsContainer.querySelectorAll(".video-box");
+    videoBoxes.forEach((video) => {
+        const videoTitleElement = video.querySelector(".video-title");
+        var modifiedText;
+        var videoDateElement;
+        // Extract the date from the video title
+        const videoTitleText = videoTitleElement.textContent;
+        // Regular expression for the first date format: "23rd Dec. 2023"
+        const firstDateFormatMatch = videoTitleText.match(/(\d{1,2}(?:st|nd|rd|th)?)\s?(\w{3})\.\s?(\d{4})\.?/);
+        // Regular expression for the second date format: "Sun, Dec 24, 2023."
+        const secondDateFormatMatch = videoTitleText.match(/(?:\w{3},\s)?(\w{3})\s(\d{1,2}),\s(\d{4})\.?/);
+        // Check if a date match is found
+        if (firstDateFormatMatch && firstDateFormatMatch.length > 0) {
+            const [dayMatch, monthMatch, yearMatch] = firstDateFormatMatch.slice(1);
+            const day = dayMatch || '';
+            const month = monthMatch || '';
+            const year = yearMatch || '';
+            // Manually construct the date string in a format recognized by the Date constructor
+            const dateString = `${month} ${day.replace(/\D/g, '')}, ${year}`;
+            const dateObject = new Date(dateString);
+            // Check if the dateObject is valid
+            if (!isNaN(dateObject)) {
+                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
+                // Create a span element
+                videoDateElement = document.createElement('span');
+                videoDateElement.classList.add('video-date');
+                videoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
+                // Create a new text node with the modified text (excluding the date)
+                modifiedText = document.createTextNode(videoTitleText.replace(firstDateFormatMatch[0], ''));
+                videoTitleElement.innerHTML = '';
+                // Append the modified text and the span element to the video title
+                videoTitleElement.appendChild(modifiedText);
+                videoTitleElement.appendChild(videoDateElement);
+            } else {
+                console.error('Invalid date object:', dateObject);
+            }
+        } else if (secondDateFormatMatch && secondDateFormatMatch.length > 0) {
+            const [, monthMatch, dayMatch, yearMatch] = secondDateFormatMatch;
+            const day = dayMatch || '';
+            const month = monthMatch || '';
+            const year = yearMatch || '';
+            const dateString = `${month} ${day}, ${year}`;
+            const dateObject = new Date(dateString);
+            // Check if the dateObject is valid
+            if (!isNaN(dateObject)) {
+                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
+                // Create a span element
+                videoDateElement = document.createElement('span');
+                videoDateElement.classList.add('video-date');
+                videoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
+                // Create a new text node with the modified text (excluding the date)
+                modifiedText = document.createTextNode(videoTitleText.replace(secondDateFormatMatch[0], ''));
+                videoTitleElement.innerHTML = '';
+                // Append the modified text and the span element to the video title
+                videoTitleElement.appendChild(modifiedText);
+                videoTitleElement.appendChild(videoDateElement);
+            } else {
+                console.error('Invalid date object:', dateObject);
+            }
+        } else {
+            // No match for either format
+            console.error('No date match found');
+        }
+        if (videoTitleElement) {
+            // Use modifiedText instead of originalVideo
+            const highlightedTitle = modifiedText.textContent.replace(
+                new RegExp(searchQuery, "gi"),
+                (match) => `<span class="highlighted">${match}</span>`
+            );
+            const highlightedTitleElement = document.createElement('span');
+            highlightedTitleElement.innerHTML = highlightedTitle;
+            // Clear the existing content in videoTitleElement
+            videoTitleElement.innerHTML = '';
+            // Append the highlightedTitle and videoDateElement to videoTitleElement
+            videoTitleElement.innerHTML = highlightedTitle;
+            videoTitleElement.appendChild(videoDateElement);
+        }
+    });
+    // Create the observer if it doesn't exist
+    if (!observer) {
+        observer = new MutationObserver(() => {
+            handleHighLight(videoSearchInput.value.toLowerCase());
+        });
+    }
+    // Reconnect the observer to detect further changes
+    observer.observe(searchResultsContainer, { childList: true, subtree: true, attributes: true });
+}
+// Function to handle video search
+function handleVideoSearch() {
+    const searchQuery = videoSearchInput.value.toLowerCase();
     searchResultsContainer.innerHTML = "";
-    searchResultsContainer.appendChild(fragment);
-    
-    // The displayed video count
+    displayedVideos.clear();
+    tabsArraySearch.forEach(tab => {
+        const videoBoxes = tab.querySelectorAll(".video-box");
+        videoBoxes.forEach((video) => {
+            const videoTitleElement = video.getAttribute("video-title");
+            const videoIdElement = video.querySelector("lite-youtube");
+            const videoId = videoIdElement.getAttribute("videoid");
+            if (videoTitleElement) {
+                const originalVideoTitle = videoTitleElement;
+                const videoTitle = originalVideoTitle.toLowerCase();
+                if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {
+                    const videoClone = video.cloneNode(true);
+                    searchResultsContainer.appendChild(videoClone);
+                    displayedVideos.add(videoId);
+                }
+            }
+        });
+    });
     const displayedVideoCount = searchResultsContainer.children.length;
-    // Create a div element to display the count
     const displayedVideoCountElement = document.createElement('div');
     displayedVideoCountElement.classList.add('displayedVideoCountElement');
     displayedVideoCountElement.style.paddingTop = '6px';
     displayedVideoCountElement.style.position = 'absolute';
     if (displayedVideoCount === 0) {
-      displayedVideoCountElement.innerHTML = 'Search Results: No match found...';
+        displayedVideoCountElement.innerHTML = 'Search Results: No match found...';
     } else {
-      displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
-    }  
-    // Prepend the count element to the search results container
-    searchResultsContainer.prepend(displayedVideoCountElement);  
-    // Adjust the padding based on the condition
+        displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
+    }
+    searchResultsContainer.prepend(displayedVideoCountElement);
     searchResultsContainer.style.paddingTop = displayedVideoCount === 0 ? '30px' : '40px';
-  } else if (searchQuery === "") {
-      searchResultsContainer.style.paddingTop = '0'
-      searchResultsContainer.innerHTML = "";
-      displayedVideos.clear();
-  }
+    if (searchQuery === "") {
+        searchResultsContainer.style.paddingTop = '0';
+        searchResultsContainer.innerHTML = "";
+        displayedVideos.clear();
+    }
 }
-// Use MutationObserver to detect changes and reapply highlighting
-const observer = new MutationObserver(() => {
-  handleHightlight(videoSearchInput.value.toLowerCase());
-});
-observer.observe(searchFromTab1Content, { childList: true, subtree: true });
