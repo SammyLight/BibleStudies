@@ -1,6 +1,5 @@
 const videoSearchInput = document.getElementById("videoSearch");
 const searchResultsContainer = document.getElementById("searchResults");
-const searchFromTab1Content = document.querySelector('#tab1-content');
 const allTabSearch = document.querySelectorAll(".videotab-content");
 const tabsArrayAllSearch = Array.from(allTabSearch);
 const tabsArraySearch = tabsArrayAllSearch.slice(1);
@@ -26,7 +25,7 @@ function handleHighLight(searchQuery) {
     videoBoxes.forEach((video) => {
         const videoTitleElement = video.querySelector(".video-title");
         var modifiedText;
-        var videoDateElement;
+        var videoDate;
         // Extract the date from the video title
         const videoTitleText = videoTitleElement.textContent;
         // Regular expression for the first date format: "23rd Dec. 2023"
@@ -45,16 +44,10 @@ function handleHighLight(searchQuery) {
             // Check if the dateObject is valid
             if (!isNaN(dateObject)) {
                 const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
-                // Create a span element
-                videoDateElement = document.createElement('span');
-                videoDateElement.classList.add('video-date');
-                videoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
                 // Create a new text node with the modified text (excluding the date)
-                modifiedText = document.createTextNode(videoTitleText.replace(firstDateFormatMatch[0], ''));
-                videoTitleElement.innerHTML = '';
-                // Append the modified text and the span element to the video title
-                videoTitleElement.appendChild(modifiedText);
-                videoTitleElement.appendChild(videoDateElement);
+                modifiedText = document.createTextNode(videoTitleText.replace(secondDateFormatMatch[0], ''));
+                // Create a new text node with the date (excluding the modified text)
+                videoDate = document.createTextNode(dayOfWeek + ', ' + dateString + '.');
             } else {
                 console.error('Invalid date object:', dateObject);
             }
@@ -68,16 +61,10 @@ function handleHighLight(searchQuery) {
             // Check if the dateObject is valid
             if (!isNaN(dateObject)) {
                 const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
-                // Create a span element
-                videoDateElement = document.createElement('span');
-                videoDateElement.classList.add('video-date');
-                videoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
                 // Create a new text node with the modified text (excluding the date)
                 modifiedText = document.createTextNode(videoTitleText.replace(secondDateFormatMatch[0], ''));
-                videoTitleElement.innerHTML = '';
-                // Append the modified text and the span element to the video title
-                videoTitleElement.appendChild(modifiedText);
-                videoTitleElement.appendChild(videoDateElement);
+                // Create a new text node with the date (excluding the modified text)
+                videoDate = document.createTextNode(dayOfWeek + ', ' + dateString + '.');
             } else {
                 console.error('Invalid date object:', dateObject);
             }
@@ -95,9 +82,19 @@ function handleHighLight(searchQuery) {
             highlightedTitleElement.innerHTML = highlightedTitle;
             // Clear the existing content in videoTitleElement
             videoTitleElement.innerHTML = '';
-            // Append the highlightedTitle and videoDateElement to videoTitleElement
+            // Append the highlightedTitle and videoDate to videoTitleElement
             videoTitleElement.innerHTML = highlightedTitle;
-            videoTitleElement.appendChild(videoDateElement);
+            // Highlight the date and append it to videoTitleElement
+        if (videoDate) {
+            const highlightedDate = videoDate.textContent.replace(
+                new RegExp(searchQuery, "gi"),
+                (match) => `<span class="highlighted">${match}</span>`
+            );
+            const highlightedDateElement = document.createElement('span');
+            highlightedDateElement.classList.add('video-date');
+            highlightedDateElement.innerHTML = highlightedDate;
+            videoTitleElement.appendChild(highlightedDateElement);
+        }
         }
     });
     // Create the observer if it doesn't exist
