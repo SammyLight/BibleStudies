@@ -76,23 +76,21 @@ function handleHighLight(searchQuery) {
                 new RegExp(searchQuery, "gi"),
                 (match) => `<span class="highlighted">${match}</span>`
             );
-            const highlightedTitleElement = document.createElement('span');
-            highlightedTitleElement.innerHTML = highlightedTitle;
             // Clear the existing content in videoTitleElement
             videoTitleElement.innerHTML = '';
             // Append the highlightedTitle and videoDate to videoTitleElement
             videoTitleElement.innerHTML = highlightedTitle;
             // Highlight the date and append it to videoTitleElement
-        if (videoDate) {
-            const highlightedDate = videoDate.textContent.replace(
-                new RegExp(searchQuery, "gi"),
-                (match) => `<span class="highlighted">${match}</span>`
-            );
-            const highlightedDateElement = document.createElement('span');
-            highlightedDateElement.classList.add('video-date');
-            highlightedDateElement.innerHTML = highlightedDate;
-            videoTitleElement.appendChild(highlightedDateElement);
-        }
+            if (videoDate) {
+                const highlightedDate = videoDate.textContent.replace(
+                    new RegExp(searchQuery, "gi"),
+                    (match) => `<span class="highlighted">${match}</span>`
+                );
+                const highlightedDateElement = document.createElement('span');
+                highlightedDateElement.classList.add('video-date');
+                highlightedDateElement.innerHTML = highlightedDate;
+                videoTitleElement.appendChild(highlightedDateElement);
+            }
         }
     });
     // Create the observer if it doesn't exist
