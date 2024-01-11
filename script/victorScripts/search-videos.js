@@ -72,8 +72,11 @@ function handleHighLight(searchQuery) {
         }
         if (videoTitleElement) {
             // Use modifiedText instead of originalVideo
+            const escapedSearchQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(escapedSearchQuery, 'gi');
+        
             const highlightedTitle = modifiedText.textContent.replace(
-                new RegExp(searchQuery, "gi"),
+                regex,
                 (match) => `<span class="highlighted">${match}</span>`
             );
             // Clear the existing content in videoTitleElement
@@ -83,7 +86,7 @@ function handleHighLight(searchQuery) {
             // Highlight the date and append it to videoTitleElement
             if (videoDate) {
                 const highlightedDate = videoDate.textContent.replace(
-                    new RegExp(searchQuery, "gi"),
+                    regex,
                     (match) => `<span class="highlighted">${match}</span>`
                 );
                 const highlightedDateElement = document.createElement('span');
