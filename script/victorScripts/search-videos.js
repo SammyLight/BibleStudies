@@ -1,8 +1,6 @@
 const videoSearchInput = document.getElementById("videoSearch");
 const searchResultsContainer = document.getElementById("searchResults");
-const allTabSearch = document.querySelectorAll(".videotab-content");
-const tabsArrayAllSearch = Array.from(allTabSearch);
-const tabsArraySearch = tabsArrayAllSearch.slice(1);
+const searchFromTab1Content = document.querySelector('#tab1-content');
 const displayedVideos = new Set();
 let debounceTimer;
 let observer;
@@ -111,22 +109,20 @@ function handleVideoSearch() {
     const searchQuery = videoSearchInput.value.toLowerCase();
     searchResultsContainer.innerHTML = "";
     displayedVideos.clear();
-    tabsArraySearch.forEach(tab => {
-        const videoBoxes = tab.querySelectorAll(".video-box");
-        videoBoxes.forEach((video) => {
-            const videoTitleElement = video.getAttribute("video-title");
-            const videoIdElement = video.querySelector("lite-youtube");
-            const videoId = videoIdElement.getAttribute("videoid");
-            if (videoTitleElement) {
-                const originalVideoTitle = videoTitleElement;
-                const videoTitle = originalVideoTitle.toLowerCase();
-                if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {
-                    const videoClone = video.cloneNode(true);
-                    searchResultsContainer.appendChild(videoClone);
-                    displayedVideos.add(videoId);
-                }
+    const videoBoxes = searchFromTab1Content.querySelectorAll(".video-box");
+    videoBoxes.forEach((video) => {
+        const videoTitleElement = video.getAttribute("video-title");
+        const videoIdElement = video.querySelector("lite-youtube");
+        const videoId = videoIdElement.getAttribute("videoid");
+        if (videoTitleElement) {
+            const originalVideoTitle = videoTitleElement;
+            const videoTitle = originalVideoTitle.toLowerCase();
+            if (videoTitle.includes(searchQuery) && !displayedVideos.has(videoId)) {
+                const videoClone = video.cloneNode(true);
+                searchResultsContainer.appendChild(videoClone);
+                displayedVideos.add(videoId);
             }
-        });
+        }
     });
     const displayedVideoCount = searchResultsContainer.children.length;
     const displayedVideoCountElement = document.createElement('div');
