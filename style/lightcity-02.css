@@ -124,6 +124,7 @@ h6.titles{
     border-radius:10px;
     padding:22px 22px!important;
     margin-bottom:-20px!important;}
+.titles-inner p{margin:0;}
 @media only screen and (min-width:760px){ 
 .order-lg-1{ 
     -ms-flex-order:1;
