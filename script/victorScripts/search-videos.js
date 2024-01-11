@@ -125,14 +125,14 @@ function handleVideoSearch() {
         }
     });
     const displayedVideoCount = searchResultsContainer.children.length;
-    const displayedVideoCountElement = document.createElement('div');
+    const displayedVideoCountElement = document.createElement('em');
     displayedVideoCountElement.classList.add('displayedVideoCountElement');
-    displayedVideoCountElement.style.paddingTop = '6px';
-    displayedVideoCountElement.style.position = 'absolute';
     if (displayedVideoCount === 0) {
         displayedVideoCountElement.innerHTML = 'Search Results: No match found...';
+    } else if (displayedVideoCount === 1) {
+        displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount  + ' video.';
     } else {
-        displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount;
+        displayedVideoCountElement.innerHTML = 'Search Results: ' + displayedVideoCount  + ' videos.';
     }
     searchResultsContainer.prepend(displayedVideoCountElement);
     searchResultsContainer.style.paddingTop = displayedVideoCount === 0 ? '30px' : '40px';
