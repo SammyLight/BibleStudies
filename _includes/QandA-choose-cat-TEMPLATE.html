@@ -14,7 +14,7 @@
     <section id="chooseCat" class="choosecat-grid">
         <div id="cat-headerbar" class="container-fluid-inner">
             <div class="churchLOGO">
-                {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
                 <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                     <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
                 </a>{% endif %}{% endfor %}
@@ -22,7 +22,7 @@
             <div class="headerUL">
                 <ul class="header-links">
                     <li class="header-links-li transition">
-                        {% for page in site.pages %}{% if page.title contains "LightCity Teaching Fellowship" %}
+                        {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
                         <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
                             <span>Home</span>
                         </a>{% endif %}{% endfor %}
