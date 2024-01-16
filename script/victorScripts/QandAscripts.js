@@ -1,6 +1,6 @@
 // "use strict";
 // Script for the Toggling between Questions and Question count
-var head = document.head;
+var head = document.head || document.getElementsByTagName('head')[0];
 var body = document.body;
 var questions = document.querySelector('.QandA-Board>OL').children;
 var resultSection = document.getElementById('quizResult-section');
@@ -32,6 +32,7 @@ var currentQuestion;
 var nextQuestion;
 var questionCount;
 var previousQuestion = questions[0]; //the first question is the initial previousQuestion
+var optChildSpan;
 var questionsArray = [];
 var passFailSequenceArray = [];
 var passedQuestionsArray = [];
@@ -40,7 +41,7 @@ var previousClickedULArray = [];
 var clickedOptionsArray = [];
 var confirmButtonHasBeenClicked;
 var notLastQuestion = 1;
-var rightBorder = '3px solid brown';
+var rightBorder = '10px solid brown';
 var modal = document.getElementById('completeQuiz');
 var slideIndex = 1;
 function plusDivs(n) {
@@ -58,25 +59,58 @@ for (i = 0; i < questions.length; i++) {
     if (i > 0) {
         questions[i].style.display = "none";
     } //Previous Viewed Question
-    questions[i].setAttribute('qid', i + 1);
-    var chances = questions[i].querySelectorAll('LI > STRONG').length;
+    questions[i].setAttribute('question', i + 1);
+    var chances;
+    // Check if the first structure exists
+    var liStrongElements = questions[i].querySelectorAll('LI > STRONG').length;
+    if (liStrongElements > 0) {
+        chances = liStrongElements;
+    } else {
+        // If the first structure doesn't exist, use the second structure
+        chances = questions[i].querySelectorAll('LI > SPAN > STRONG').length;
+    }
     questions[i].querySelectorAll('UL')[0].setAttribute('availablechances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
     questions[i].querySelectorAll('UL')[0].setAttribute('maxchances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
-    
+
     var parentElementLI = questions[i];
     var parentElementLINowDiv = parentElementLI.firstChild;
+    // console.log(parentElementLINowDiv);
     var parentElmTextNode = parentElementLINowDiv.textContent.replace(/(\((.*)\)[\s\n\r]*)/,'<p>$2</p>');
     parentElementLINowDiv.remove();
-    var createDIV = document.createElement("div");
-    createDIV.innerHTML = parentElmTextNode;
-    if(pIn_createDIV = createDIV.querySelector('p')){
-    parentElementLI.prepend(pIn_createDIV)}
-    createDIV.classList.add('insertedDIV');
-    parentElementLI.prepend(createDIV)
+    var createDiv = document.createElement("div");
+    var createDivInner = document.createElement("div");
+    createDivInner.innerHTML = parentElmTextNode;
+    if(pIn_createDiv = createDivInner.querySelector('p')){
+    parentElementLI.prepend(pIn_createDiv)}
+    createDiv.classList.add('insertedDiv');
+    createDivInner.classList.add('insertedDivInner');
+    createDiv.prepend(createDivInner)
+    parentElementLI.prepend(createDiv)
 
     var allOptionsUnderQuestion = document.querySelectorAll('.QandA-Board>OL>LI>UL>LI');
     allOptionsUnderQuestion.forEach(element => {
+        // Check if the element already has the 'option' class
+    if (!element.classList.contains('option')) {
         element.classList.add('option');
+        var optionsNode = element.firstChild;
+        if (optionsNode) {
+            let contentToAdd;
+            if (optionsNode.nodeType === 1) { // Node.ELEMENT_NODE
+                // Clone the HTML element and append it to createSpan
+                contentToAdd = optionsNode.cloneNode(true);
+                optionsNode.remove();
+            } else if (optionsNode.nodeType === 3) { // Node.TEXT_NODE
+                const textContent = optionsNode.textContent; 
+                optionsNode.remove();
+                // Create a new text node with the content
+                contentToAdd = document.createTextNode(textContent);
+            }
+            const createSpan = document.createElement('span');
+            createSpan.classList.add('insertedSpan');
+            createSpan.appendChild(contentToAdd);
+            element.appendChild(createSpan);
+        }
+    }
     });
     questions[i].querySelector('UL').addEventListener('click', isClickedLiAnAnswer);
     questionsArray.push(questions[i]);
@@ -313,9 +347,14 @@ function confirm() {
         confirmButton.innerText = 'Next';
         greyOutOFF(nextquestionbutton);
         currentQuestion.querySelectorAll('.option').forEach(opt => {
-            if (opt.style.backgroundColor == 'orange') {
-                opt.style.backgroundColor = 'pink';
-                opt.style.borderRight = rightBorder; //this indicates the option selected
+            if (opt.style.background == 'orange') {
+                optChildSpan = opt.querySelector('span');
+                console.log(optChildSpan);
+                // elementSpan.style.removeProperty('background');
+                // opt.style.background = 'pink';
+                // opt.style.borderRight = rightBorder; //this indicates the option selected
+                optChildSpan.style.background = 'pink';
+                optChildSpan.style.borderRight = rightBorder; //this indicates the option selected
             }
             if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
                 explainButtonCreate(opt).addEventListener('click', showExplanation);
@@ -324,8 +363,12 @@ function confirm() {
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
-            rightAnswer.style.backgroundColor = 'green';
-                rightAnswer.style.color = 'white';
+            optChildSpan = rightAnswer.querySelector('span');
+            // rightAnswer.style.background = 'green';
+            // rightAnswer.style.color = 'white';
+            optChildSpan.style.background = 'green';
+            optChildSpan.style.color = 'white';
+                console.log(optChildSpan);
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
@@ -343,10 +386,11 @@ function confirm() {
             var currentOptions = currentQuestion.querySelectorAll('.option');
             for (i = 0; i < currentOptions.length; i++) {
                 var opt = currentOptions[i];
+                optChildSpan = opt.querySelector('span');
                 // Check if any wrong option was selected or if the/any right option was not selected
                 if (contnueChecking) {
                     //check if any wrong option has been selected
-                    if ((opt.querySelector('strong') == null) && (opt.style.borderRight == rightBorder)) {
+                    if ((opt.querySelector('strong') == null) && (optChildSpan.style.borderRight == rightBorder)) {
                         currentQuestion.setAttribute('rightorwrong', 0);
                         failedQuestionsArray.push(currentQuestion);
                         passFailSequenceArray.push('fail');
@@ -354,14 +398,14 @@ function confirm() {
                         contnueChecking = 0; //stop checking if any wrong option has been selected
                         playWrongAnswerSound();
                     } else if (opt.querySelector('strong')) { // check if the or any (in case they are more than one) right option was not selected
-                        if (opt.style.borderRight != rightBorder) {
+                        if (optChildSpan.style.borderRight != rightBorder) {
                             currentQuestion.setAttribute('rightorwrong', 0);
                             failedQuestionsArray.push(currentQuestion);
                             passFailSequenceArray.push('fail');
                             rOw = 0;
                             contnueChecking = 0; //stop checking if any wrong option has been selected
                             playWrongAnswerSound();
-                        } else if (opt.style.borderRight == rightBorder) {
+                        } else if (optChildSpan.style.borderRight == rightBorder) {
                             currentQuestion.setAttribute('rightorwrong', 1);
                             rOw = 1;
                             rightAnswerIcon();
@@ -374,10 +418,10 @@ function confirm() {
                     passFailSequenceArray.push('pass');
                     playRightAnswerSound();
                 }
-                if ((opt.style.backgroundColor == 'green') && (opt.style.borderRight == rightBorder)) {
+                if ((optChildSpan.style.background == 'green') && (optChildSpan.style.borderRight == rightBorder)) {
                     rightAnswerIcon();
                 }
-                if (opt.style.backgroundColor == 'pink') {
+                if (optChildSpan.style.background == 'pink') {
                     wrongAnswerIcon();
                 }
             }
@@ -388,14 +432,18 @@ function confirm() {
         var img = new Image(23, 23);
         img.classList.add('imgSizeRight');
         img.src = "../images/correct-gif2.gif";
-        opt.prepend(img);
+        if (!optChildSpan.querySelector('.imgSizeRight')) {
+            optChildSpan.prepend(img);            
+        }
     }
     //WRONG ANSWER ICON
     function wrongAnswerIcon() {
         var img = new Image(33, 33);
         img.classList.add('imgSizeWrong');
         img.src = "../images/wrong-gif3.gif";
-        opt.prepend(img);
+        if (!optChildSpan.querySelector('.imgSizeWrong')) {
+            optChildSpan.prepend(img);            
+        }
     }
 }
 var actualClickedOption;
@@ -407,8 +455,11 @@ function isClickedLiAnAnswer(event) {
         var chancesLeft = actualClickedOption.parentElement.getAttribute('availablechances');
         var maxchances = actualClickedOption.parentElement.getAttribute('maxchances');
         var rightAnswer = null;
-        if ((chancesLeft > 0) && (actualClickedOption.style.backgroundColor != 'orange')) { //it hasn't been clicked
-            actualClickedOption.style.backgroundColor = 'orange';
+        var actualClickedOptionSpan;
+        if ((chancesLeft > 0) && (actualClickedOption.style.background != 'orange')) { //it hasn't been clicked
+            actualClickedOptionSpan = actualClickedOption.querySelector('span');
+            actualClickedOptionSpan.style.background = 'orange';
+            actualClickedOption.style.background = 'orange';
             confirmButton.style.backgroundColor = '#fb6340';
             confirmButton.style.border = '#fb6340';
             actualClickedOption.parentElement.setAttribute('availablechances', chancesLeft - 1);
@@ -423,8 +474,10 @@ function isClickedLiAnAnswer(event) {
                 }
             }
 
-        } else if ((chancesLeft < maxchances) && (actualClickedOption.style.backgroundColor == 'orange')) { //it has been clicked
-            actualClickedOption.style.backgroundColor = '';
+        } else if ((chancesLeft < maxchances) && (actualClickedOption.style.background == 'orange')) { //it has been clicked
+            actualClickedOptionSpan = actualClickedOption.querySelector('span');
+            actualClickedOptionSpan.style.background = '';
+            actualClickedOption.style.background = '';
             chancesLeft = Number(chancesLeft) + 1
             actualClickedOption.parentElement.setAttribute('availablechances', chancesLeft);
             if (chancesLeft == maxchances) {
@@ -562,36 +615,41 @@ function showAllQuestionsWithAnswers() {
     });
     var optClone = displayAllQuestions.querySelectorAll('.option');
     for (k = 0; k < optClone.length; k++) {
+        var optSpanClone = optClone[k].querySelector('span');
+        var optImgClone = optSpanClone.querySelectorAll('img');
+        // Iterate through each img element and remove it
+        optImgClone.forEach(function(img) {
+            img.remove();
+        });
         optClone[k].style.border = 'none';
-        if ((optClone[k].style.backgroundColor != 'green')) { //find all wrong options to display none them (correct options have lightGreen background)
-            optClone[k].style.display = 'none'; //display none all options LIs that are wrong options (their backgroundColor != 'lightgreen') 
+        optSpanClone.style.border = 'none';
+        optSpanClone.style.removeProperty('color');
+        if ((optSpanClone.style.background != 'green')) { //find all wrong options to display none them (correct options have green background)
+            optSpanClone.parentElement.style.display = 'none'; //display none all options LIs that are wrong options (their backgroundColor != 'green') 
         }
-        optClone[k].style.backgroundColor = ''//remove all backgroundcolors
-        // // var parentOfIMG = optClone[k].querySelectorAll('.option');
-        // removeIMG = optClone[k].querySelectorAll('IMG');
-        // console.log(removeIMG);
-        // // parentOfIMG.removeChild(removeIMG);
-        // // removeIMG = [];
-        // // removeIMG.length = 0;
-        // removeIMG.splice(0,removeIMG.length);
+        optClone[k].style.background = ''//remove all backgroundcolors
+        optSpanClone.style.background = ''//remove all backgroundcolors
+        optSpanClone.classList.remove('insertedSpan'); 
     }
     // document.getElementsByClassName('corAnswers-Board').append(details);
     liFirstLevel.forEach(element => {
         element.style.backgroundColor = '';
-        var removeClass = element.querySelector('.insertedDIV');
-        removeClass.classList.remove('insertedDIV'); 
+        var removeinsertedDivClass = element.querySelector('.insertedDiv');
+        removeinsertedDivClass.classList.remove('insertedDiv'); 
+        var removeinsertedDivInnerClass = element.querySelector('.insertedDivInner');
+        removeinsertedDivInnerClass.classList.remove('insertedDivInner');
         var details = document.createElement('details');
         var questionOL = element.parentElement;
         questionOL.append(details);
         details.append(element);
         var summary = document.createElement('summary');
-        summary.append(removeClass);
+        summary.append(removeinsertedDivClass);
         details.prepend(summary);
         var questionDIV = document.querySelector('.QandA-Board>OL>LI>DIV');
         questionDIV.classList.add('collapsible');
         questionDIV.nextElementSibling.classList.add('content');
-        // removeClass.classList.add('collapsible');
-        // removeClass.nextElementSibling.classList.add('content');
+        // removeinsertedDivClass.classList.add('collapsible');
+        // removeinsertedDivClass.nextElementSibling.classList.add('content');
     });
     qandAsection.style.display = 'none';
     resultSection.style.display = 'none';
