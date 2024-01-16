@@ -156,6 +156,12 @@ body{
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
     color:white!important;}
+.insertedDiv {
+    background:linear-gradient(45deg,#FFA500,#d53a9d);
+}
+.insertedDivInner{
+    background: darkcyan;
+}
 .showHintCSS{
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 73%);}
 .showHintCSS, .showNewCatCSS{
@@ -167,42 +173,38 @@ body{
     color:white!important;}
 .showHintCSS>a, .showNewCatCSS>a{ 
     color:white!important;}
-.QandA-Board>ol>li>ul>li::before{ 
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5,#d53a9d);
+    background:linear-gradient(45deg,#FFA500,#d53a9d); 
+}
+.insertedSpan::before{ 
     background-color:white;
     /* border:1px solid brown; */
     box-shadow:2px 1px 7px rgb(0, 94, 94);
     color:black;}
-.QandA-Board>ol>li>ul>li::after{ 
-    background:linear-gradient(45deg,#743ad5,#d53a9d);
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0); 
+.insertedSpan{ 
+    background:darkcyan; 
 }
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>span>ul{
     color:white;}
 /* MOBILE VIEW */
-@media  only screen and (max-width:657px){
+@media  only screen and (max-width:1023px){
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);}
-.QandA-Board>ol>li>ul>li::after{ 
+.QandA-Board>ol>li>ul>li{ 
     background:linear-gradient(45deg,#743ad5, #d53a9d);
     background:linear-gradient(45deg,#d53a9d,#FFA500);  
 }}
-@media only screen and (min-width:658px){
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5, #d53a9d);
+    background:linear-gradient(45deg,#d53a9d,#FFA500);  
+}}
+/* END OF MOBILE VIEW */
 
+/* DESKTOP VIEW */
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);}}
 @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:rgb(0, 94, 94);
@@ -210,18 +212,10 @@ body{
     color:white!important;}
 .quizCatLink a:hover{ 
     color:white!important;   
-}}/* END OF MOBILE VIEW */
-
-/* DESKTOP VIEW */
+}}
 @media only screen and (min-width:1024px){
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-  }
-.QandA-Board>ol>li>ul>li:hover, .QandA-Board>ol>li>ul>li:active{
+.insertedSpan:hover, .insertedSpan:active{
     background-color:rgb(0, 94, 94);
     border:rgb(0, 94, 94);}}
 /* QUIZ RESULT CSS */
@@ -302,9 +296,9 @@ body{
     border-bottom:1px solid #ccc;
     color:white;}/* .corAnswers-Board>ol>li>div{ 
     border-right:2px solid white;} */
-.corAnswers-Board>ol>details>li>ul>li>strong{ 
+.corAnswers-Board>ol>details>li>ul>li>span>strong{ 
     color:black!important;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     color:black!important;}
 .corAnswers-btn>button{
     background-color:white;

@@ -579,7 +579,8 @@ button{
     justify-content:center;
     width:100%;}
 #settings>img{ 
-    height:-webkit-fill-available;}
+    height:-webkit-fill-available;
+    width:95%;}
 #settingsContent, #catSettingsContent, #poorPerPopup{ 
     border-radius:6px;
     display:none;
@@ -807,20 +808,34 @@ button{
 from{ right:-300px;}
 to{ left:0px;}
 }
-
 .QandA-Board>ol>li>ul{ 
     list-style-type:none;
     padding:0;
     counter-reset:alphabeticList;}
 .QandA-Board>ol>li>ul>li,
-.QandA-Board>ol>li>ul>li>strong{ 
+.insertedSpan>strong{ 
     font-weight:400!important;}
 .removeMaxHeight{
     max-height:none!important;}
-.insertedDIV{ 
+.insertedDiv,.QandA-Board>ol>li>ul>li{
+    display: block;
+    position: relative;
+    padding: 2px;}
+.insertedDivInner{
+    display: grid;}
+.insertedDiv, .insertedDivInner{ 
     max-height:-webkit-fill-available;
-    max-height:500px;}
+    max-height:500px;
+    border-radius: 20px;}
+.QandA-Board>ol>li>ul>li,.insertedSpan{
+    border-width:5px;
+    border-radius:24px;
+    border-radius:40px;
+    position:relative;
+}
 .QandA-Board>ol>li>ul>li{
+    margin-top:20px;}
+.insertedSpan{
     display:-ms-grid;
     display:grid;
     place-content:center;
@@ -828,18 +843,12 @@ to{ left:0px;}
     grid-template-columns:7% 93%;
     align-content:space-around;
     grid-template-areas:"col-1 col-2"
-                         "row-1 row-2";
-    font-family:poppins!important;
-    font-family:'DynaPuff', cursive!important;
-    font-style:normal;
-    border-width:5px;
+                        "row-1 row-2";
     cursor:pointer;
     text-align:left;
     padding:0.7em 0.5em;
-    margin-top:20px;
-    border-radius:24px;
-    position:relative;}
-.QandA-Board>ol>li>ul>li::before{ 
+}
+.insertedSpan::before{ 
     counter-increment:alphabeticList;
     content:counter(alphabeticList, upper-alpha);
     display:grid;
@@ -851,18 +860,7 @@ to{ left:0px;}
     height:20px;
     border-radius:50%;
     margin-right:0.5em;}
-.QandA-Board>ol>li>ul>li::after{ 
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:24px;
-    /* border-radius:4px;  */
-    padding:3px; 
-    /* width:100%; */
-    -webkit-mask-composite:xor;
-            mask-composite:exclude; 
-}
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>ul, .QandA-Board>ol>li>ul>li>span>ul{
     -webkit-animation-name:bounceIn;
     -moz-animation-name:bounceIn;
     -o-animation-name:bounceIn;
@@ -887,13 +885,10 @@ to{ left:0px;}
     list-style:none;
     text-align:left;}
 
-
 /* MOBILE VIEW */
 @media  only screen and (max-width:657px){
 #QandA-section{
-    grid-template-rows:10% 10% 4% auto 10%;
-    
-}
+    grid-template-rows:10% 10% 4% auto 10%;}
 .opacityBG{
     grid-template-rows:10% 10% 4% auto 10%;
     min-height:calc(100vh - 80px);}
@@ -925,23 +920,14 @@ to{ left:0px;}
     padding:10px;} */
 
 /* QandA-BOARD SECTION */
-.insertedDIV{ 
+.insertedDiv, .insertedDivInner{ 
     position:relative;
     min-height:130px;
     max-height:300px;
     width:-webkit-fill-available;
-    display:grid;
-    place-content:center;
-    padding:15px 10px;}
-  .insertedDIV::before{ 
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:10px;
-    padding:5px;
-    padding:2px;
-    -webkit-mask-composite:xor;
-            mask-composite:exclude; 
+    place-content:center;}
+.insertedDivInner{
+    padding:15px 10px;
 }
 .QandA-Board>ol>li{
     display:grid;
@@ -966,18 +952,19 @@ to{ left:0px;}
     /* margin-top:50px; */
     place-self:baseline;
     width:100%;}
-.QandA-Board>ol>li>ul>li{ 
-    grid-template-columns:13% 87%;
-    margin-top:10px;
-    /* padding:1em 0.7em; */
+.QandA-Board>ol>li>ul>li>span>ul {
+    margin-top: 5px;
+}
+.QandA-Board>ol>li>ul>li,.insertedSpan{
     min-height:20px;
     max-height:100px;}
-.QandA-Board>ol>li>ul>li::before{
+.QandA-Board>ol>li>ul>li{ 
+    margin-top:10px;}
+.insertedSpan{ 
+    grid-template-columns:13% 87%;}
+.insertedSpan::before{
     margin-left:6px;}
-.QandA-Board>ol>li>ul>li::after{ 
-    padding:2px;  
-}
-.QandA-Board>ol>li>ul>li:first-child, .QandA-Board>ol>li>ul>li>ul{ 
+.QandA-Board>ol>li>ul>li>span>ul{ 
     margin-top:5px;}
 #quizCatName, #confirmButton{ 
     grid-area:col-1;}}
@@ -1017,6 +1004,9 @@ to{ left:0px;}
 #quizCatName, #confirmButton{ 
     font-size:1.375em!important; /* 22px */
 }}
+@media  only screen and (max-width:490px){
+.insertedDiv,.QandA-Board>ol>li>ul>li{
+    padding: 2px;}}
 @media  only screen and (max-width:300px){
 #playButton, #pauseButton, #playButtonCat, #pauseButtonCat{ 
     width:28px;
@@ -1025,18 +1015,22 @@ to{ left:0px;}
     margin:0px 4px;}
 .QandA-BoardLinks{
     margin-top:15px;}
-.insertedDIV{ 
+.insertedDiv, .insertedDivInner{ 
     min-height:110px;
     max-height:250px;
+}
+.insertedDivInner{ 
     padding:12px 7px
 }
-.QandA-Board>ol>li>ul>li{ 
-    grid-template-columns:18% 82%;
-    margin-top:5px;
-    padding:0.7em 0.5em;
+.QandA-Board>ol>li>ul>li,.insertedSpan{ 
     min-height:20px;
     max-height:80px;}
-.QandA-Board>ol>li>ul>li::before{ 
+.QandA-Board>ol>li>ul>li{ 
+    margin-top:5px;}
+.insertedSpan{ 
+    grid-template-columns:18% 82%;
+    padding:0.7em 0.5em;}
+.insertedSpan::before{ 
     width:17px;
     height:17px;}
 .imgSizeRight{ 
@@ -1099,7 +1093,7 @@ to{ left:0px;}
     place-content:center;}
 /* HEADER SECTION */
 .QandA-header{
-    grid-template-columns:30% 10% 55%;
+    grid-template-columns:25% 15% 55%;
     padding:15px 0;}
 #questioncount{ 
     grid-template-columns:100%;
@@ -1107,23 +1101,14 @@ to{ left:0px;}
 .Hint-img>img{ 
     height:80px;}
 /* QandA-BOARD SECTION */
-.insertedDIV{ 
-    position:relative;
+.insertedDiv, .insertedDivInner{ 
     min-height:225px;
     max-height:450px;
     width:-webkit-fill-available;
-    display:grid;
+  }
+  .insertedDivInner{ 
     place-content:center;
     padding:30px 20px
-  }
-  .insertedDIV::before{ 
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:20px;
-    padding:3px;
-    -webkit-mask-composite:xor;
-            mask-composite:exclude; 
   }
 .QandA-Board>ol>li{
     /* grid-template-rows:60% 10% 30%;
@@ -1141,23 +1126,25 @@ to{ left:0px;}
     /* margin-top:40px; */
     place-self:baseline;
     width:100%;}
-.QandA-Board>ol>li>ul>li{
-    padding:0.5em 0.5em;
+/* .QandA-Board>ol>li>ul>li:first-child {
+    margin-top: 10px;
+} */
+.QandA-Board>ol>li>ul>li,.insertedSpan{
     min-height:30px;
     max-height:120px;}
-.QandA-Board>ol>li>ul>li:first-child{
-    margin-top:10px;}
-.QandA-Board>ol>li>ul>li::after{
-    padding:3px;}
-.QandA-Board>ol>li>ul>li>ul{
+.insertedSpan{
+    padding:0.5em 0.5em;}
+.QandA-Board>ol>li>ul>li>span>ul{
     margin-top:10px;}
 #quizCatName,#confirmButton{ 
     grid-area:col-1;}}
 @media only screen and (min-width:912px){
-.QandA-Board>ol>li>ul>li{
-    max-height:140px;}}
+.QandA-Board>ol>li>ul>li,.insertedSpan{
+    max-height:140px;}
+.insertedSpan {
+    padding: 0.8em 0.5em;
+}}
 @media only screen and (min-width:1024px){
-
 /* HEADER SECTION */
 .QandA-header{
     grid-template-columns:20% 20% 55%;
@@ -1192,23 +1179,14 @@ to{ left:0px;}
     place-self:center;}
 .QandA-Board>ol{ 
     margin-bottom:20px;}
-.insertedDIV{ 
+.insertedDiv, .insertedDivInner{ 
     position:relative;
     min-height:250px;
     width:-webkit-fill-available;
-    display:grid;
+  }
+  .insertedDivInner{ 
     place-content:center;
     padding:30px 20px
-  }
-.insertedDIV::before{ 
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:20px;
-    padding:8px;
-    padding:4px;
-    -webkit-mask-composite:xor;
-            mask-composite:exclude; 
   }
 .QandA-Board>ol>li{ 
     grid-template-rows:250px 50px;
@@ -1231,14 +1209,16 @@ to{ left:0px;}
     place-self:center;
     margin:0;
     width:100%;}
-.QandA-Board>ol>li>ul>li{
-    grid-template-columns:10% 90%;
-    padding:0.7em 0.5em;
+.QandA-Board>ol>li>ul>li:first-child {
+    margin-top:0;
+}
+.QandA-Board>ol>li>ul>li,.insertedSpan{
     max-height:200px;}
-.QandA-Board>ol>li>ul>li:hover, .QandA-Board>ol>li>ul>li:active{
+.insertedSpan{
+    grid-template-columns:10% 90%;
+    padding:0.7em 0.5em;}
+.insertedSpan:hover,.insertedSpan:active,.insertedSpan>strong:hover, .insertedSpan>strong:active{
     font-weight:bold!important;}
-.QandA-Board>ol>li>ul>li:first-child{
-    margin-top:0;}
 .imgSizeWrong{ 
     left:-2px;}
 .QandA-BoardLinks{ 
@@ -1246,15 +1226,15 @@ to{ left:0px;}
 #quizCatName, #confirmButton{ 
     margin-bottom:10px;
     grid-area:auto;}}
-/* DESKTOP FONT SIZES CSS */
 
+/* DESKTOP FONT SIZES CSS */
 @media only screen and (min-width:658px){
 #settingsContent, #catSettingsContent, #poorPerPopup{
     font-size:2.25em;}
     
 /* FONT SIZES HEADER SECTION */
-.quizCatLink, #nextPrevButton,#questionhint{
-    font-size:2.4em!important;  /* 40px */
+.quizCatLink, #nextPrevButton, #questionhint {
+    font-size: 2em!important;
 }
 #questioncount{
     font-size:2.25em!important; /* 36px */
@@ -1281,13 +1261,17 @@ to{ left:0px;}
 }}
 /* FONT SIZES QandA-BOARD SECTION */
 @media only screen and (min-width:820px) and (max-width:1023px){
+.quizCatLink, #nextPrevButton, #questionhint {
+    font-size: 2.2em!important;
+}
 .QandA-Board>ol>li{ 
     font-size:3em;
     line-height:48px;}
-.insertedDIV{ 
-    min-height:230px;
+.insertedDiv, .insertedDivInner{ 
+    min-height:230px;}
+.insertedDivInner{ 
     padding:35px 20px;}
-.QandA-Board>ol>li>ul>li::before{
+.insertedSpan::before{
     font-size:20px;
     width:30px;
     height:30px;}
@@ -1295,13 +1279,17 @@ to{ left:0px;}
     width:35px;
     height:35px;}}
 @media only screen and (min-width:912px) and (max-width:1023px){
+.quizCatLink, #nextPrevButton, #questionhint {
+    font-size: 2.4em!important;
+}
 .QandA-Board>ol>li{ 
     font-size:3.55em;
     line-height:50px;}
-.insertedDIV{ 
-    min-height:240px;
+.insertedDiv, .insertedDivInner{ 
+    min-height:240px;}
+.insertedDivInner{ 
     padding:40px 20px;}
-.QandA-Board>ol>li>ul>li::before{
+.insertedSpan::before{
     font-size:25px;
     width:35px;
     height:35px;}
@@ -1333,9 +1321,70 @@ to{ left:0px;}
 .QandA-Board>ol>li>ul>li{ 
     font-size:0.55em;  /* 22px */
     line-height:24px;}
-.QandA-Board>ol>li>ul>li>ul{ 
+.QandA-Board>ol>li>ul>li>span>ul{ 
     font-size:0.546em;  /* 12px */
     line-height:16px;}}
+
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+.opacityBGTwo {
+    grid-template-rows:8% 10% auto 10%;
+}
+.quizCatLink, #nextPrevButton, #questionhint {
+    font-size: 2.2em!important;
+}
+#questioncount {
+    font-size: 2.25em!important;
+}
+.Hint-img>img {
+    height: 90px;
+}
+.QandAbody-section,.QandA-Board {
+    display:block;
+    width:100%;
+    place-self:start;
+}
+.QandA-Board>ol{margin:0;}
+.QandA-Board>ol>li {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 95%;
+    place-content: start center;
+    grid-template-areas: none;
+    border-radius: 3px!important;
+    text-align: left;
+    text-align: center;
+    margin: 0;
+}
+.QandA-Board>ol>li>ul {
+    grid-area: auto;
+    place-self: center;
+    width: 100%;
+}
+.insertedDiv, .insertedDivInner{ 
+    min-height:300px;}
+.insertedDivInner{ 
+    padding:45px 30px;}
+.QandA-Board>ol>li>ul>li:first-child {
+    margin-top: 20px;
+}
+.insertedSpan {
+    padding: 0.8em 0.5em;
+}
+/* FONT SIZES QandA-BOARD SECTION */
+.QandA-Board>ol>li{ 
+    font-size:3.55em;
+    line-height:50px;}
+.QandA-Board>ol>li>ul>li {
+    font-size: 0.7273em;
+    line-height: 34px;
+}
+.insertedSpan::before{
+    font-size:25px;
+    width:35px;
+    height:35px;}
+.imgSizeRight, .imgSizeWrong{
+    width:40px;
+    height:40px;}}
 /* QUIZ RESULT CSS */
 #quizResult-section{
     font-family:poppins!important;
@@ -1592,6 +1641,13 @@ to{ left:0px;}
     height:300px;}
 #questionsIndex{ 
     font-size:1.9em;}}
+    @media only screen and (min-width: 1024px) and (min-height: 1366px){
+.Result-Board h2{ 
+    font-size:3.5em;}
+.Result-img>img{ 
+    height:300px;}
+#questionsIndex{ 
+    font-size:1.9em;}}
 /* DESKTOP VIEW FONT SIZES CSS */
 @media only screen and (min-width:1024px){
 .Result-Board h2{ 
@@ -1686,8 +1742,6 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{
     list-style-type:circle!important;
     padding:10px 0 0 0;}
-.corAnswers-Board>ol>details>li>ul>li>img{ 
-    display:none!important;}
 .corAnswers-Board>ol>details>li>ul>li>ul{ 
     list-style-type:none;
     margin-top:10px;

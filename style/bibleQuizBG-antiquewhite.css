@@ -158,6 +158,12 @@ hr{
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
     color:brown!important;}
+.insertedDiv {
+    background:linear-gradient(45deg,#FFA500,#d53a9d);
+}
+.insertedDivInner{
+    background: antiquewhite;
+}
 .showHintCSS{
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%);}
 .showHintCSS, .showNewCatCSS{
@@ -170,49 +176,36 @@ hr{
     color:aliceblue!important;}
 .showHintCSS>a, .showNewCatCSS>a{ 
     color:brown!important;}
-
-.QandA-Board>ol>li>ul>li::before{ 
-    background-color:antiquewhite;
-    /* border:1px solid brown; */
-    box-shadow:2px 1px 7px brown;
-    color:brown;}
-.QandA-Board>ol>li>ul>li::after{ 
+.QandA-Board>ol>li>ul>li{ 
     background:linear-gradient(45deg,#743ad5,#d53a9d);
     background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0); 
+}
+.insertedSpan::before{ 
+    background-color:antiquewhite;
+    box-shadow:2px 1px 7px brown;
+    color:brown;}
+.insertedSpan{ 
+    background:antiquewhite; 
 }
 .QandA-Board>ol>li>ul>li>ul{
     color:aliceblue;}
 /* MOBILE VIEW */
-@media  only screen and (max-width:657px){
+@media  only screen and (max-width:1023px){
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);}
-.QandA-Board>ol>li>ul>li::after{ 
+.QandA-Board>ol>li>ul>li{ 
     background:linear-gradient(45deg,#743ad5, #d53a9d);
     background:linear-gradient(45deg,#d53a9d,#FFA500);  
 }}
-/* FONT SIZES HEADER SECTION */
-@media only screen and (max-width:657px){
-#questionhint:hover{
-    text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;}}
-/* END OF MOBILE VIEW */
-/* DESKTOP VIEW */
-@media only screen and (min-width:658px){
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5, #d53a9d);
+    background:linear-gradient(45deg,#d53a9d,#FFA500);  
+}}/* END OF MOBILE VIEW */
 
+/* DESKTOP VIEW */
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);}}
 @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:brown;
@@ -222,15 +215,8 @@ hr{
     color:aliceblue!important;   
 }}
 @media only screen and (min-width:1024px){
-/* HEADER SECTION */
 /* QandA-BOARD SECTION */
-.insertedDIV::before{ 
-    background:linear-gradient(45deg,#FFA500,#d53a9d); 
-    -webkit-mask:
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
-  }
-.QandA-Board>ol>li>ul>li:hover, .QandA-Board>ol>li>ul>li:active{
+.insertedSpan:hover, .insertedSpan:active{
     background-color:brown;
     border:brown;
     color:aliceblue!important;}}
