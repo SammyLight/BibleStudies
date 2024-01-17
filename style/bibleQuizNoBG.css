@@ -123,6 +123,7 @@ hr{
     transition:max-height 0.3s ease-out;
     margin:0;
     padding:0;}
+.explainButton,#confirmButton,.popupBtn>button, .Result-btn>button,.corAnswers-btn>button,details>summary:first-of-type{cursor:pointer;}
 .explainButton{
     position:absolute;
     border-radius:6px;
@@ -830,7 +831,7 @@ to{ left:0px;}
 .QandA-Board>ol>li>ul>li,.insertedSpan{
     border-width:5px;
     border-radius:24px;
-    border-radius:40px;
+    /* border-radius:40px; */
     position:relative;
 }
 .QandA-Board>ol>li>ul>li{
@@ -876,7 +877,7 @@ to{ left:0px;}
     -o-animation-timing-function:ease-out;
     -ms-animation-timing-function:ease-out;
     animation-timing-function:ease-out;}
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
     display:inline-flex;
     display:none;
     grid-area:row-2;
@@ -957,7 +958,8 @@ to{ left:0px;}
 }
 .QandA-Board>ol>li>ul>li,.insertedSpan{
     min-height:20px;
-    max-height:100px;}
+    /* max-height:100px; */
+}
 .QandA-Board>ol>li>ul>li{ 
     margin-top:10px;}
 .insertedSpan{ 
@@ -998,7 +1000,7 @@ to{ left:0px;}
 .QandA-Board>ol>li>ul>li{ 
     font-size:0.85em; /* 18px */
     line-height:20px;}
-.QandA-Board>ol>li>ul>li>ul{ 
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{ 
     font-size:0.667em; /* 12px */
     line-height:14px;}
 #quizCatName, #confirmButton{ 
@@ -1024,12 +1026,13 @@ to{ left:0px;}
 }
 .QandA-Board>ol>li>ul>li,.insertedSpan{ 
     min-height:20px;
-    max-height:80px;}
+    /* max-height:80px; */
+}
 .QandA-Board>ol>li>ul>li{ 
     margin-top:5px;}
 .insertedSpan{ 
-    grid-template-columns:18% 82%;
-    padding:0.7em 0.5em;}
+    grid-template-columns:13% 87%;
+    padding:0.5em 0.2em;}
 .insertedSpan::before{ 
     width:17px;
     height:17px;}
@@ -1052,7 +1055,7 @@ to{ left:0px;}
     height:45px;}
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
-    font-size:1.375em; /* 22px */
+    font-size:1.275em; /* 22px */
     line-height:22px;}
 .showHintCSS{ 
     font-size:1.0634em; /* 24px */
@@ -1061,9 +1064,9 @@ to{ left:0px;}
     font-size:0.7634em;
     line-height:10px;}
 .QandA-Board>ol>li>ul>li{ 
-    font-size:0.75em; /* 16px */
+    font-size:0.72em; /* 16px */
     line-height:18px;}
-.QandA-Board>ol>li>ul>li>ul{ 
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{ 
     font-size:0.467em; /* 10px */
     line-height:12px;}
 .QandA-Board>ol>li>ul>li::before{ 
@@ -1131,7 +1134,8 @@ to{ left:0px;}
 } */
 .QandA-Board>ol>li>ul>li,.insertedSpan{
     min-height:30px;
-    max-height:120px;}
+    /* max-height:120px; */
+}
 .insertedSpan{
     padding:0.5em 0.5em;}
 .QandA-Board>ol>li>ul>li>span>ul{
@@ -1140,7 +1144,8 @@ to{ left:0px;}
     grid-area:col-1;}}
 @media only screen and (min-width:912px){
 .QandA-Board>ol>li>ul>li,.insertedSpan{
-    max-height:140px;}
+    /* max-height:140px; */
+}
 .insertedSpan {
     padding: 0.8em 0.5em;
 }}
@@ -1213,7 +1218,8 @@ to{ left:0px;}
     margin-top:0;
 }
 .QandA-Board>ol>li>ul>li,.insertedSpan{
-    max-height:200px;}
+    /* max-height:200px; */
+}
 .insertedSpan{
     grid-template-columns:10% 90%;
     padding:0.7em 0.5em;}
@@ -1253,7 +1259,7 @@ to{ left:0px;}
     font-size:0.7273em; /* 32px */
     line-height:34px
 }
-.QandA-Board>ol>li>ul>li>ul{ 
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{ 
     font-size:0.75em; /* 24px */
     line-height:26px;}
 #quizCatName, #confirmButton{ 
@@ -1742,7 +1748,7 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{
     list-style-type:circle!important;
     padding:10px 0 0 0;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     list-style-type:none;
     margin-top:10px;
     padding:0;}
@@ -1830,7 +1836,7 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{ 
     font-size:0.88em;/* 22p.3x */
     line-height:26px;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     font-size:0.8888em; /* 14.5px */
     line-height:20px;}
 .corAnswers-btn>button{
@@ -1853,7 +1859,7 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{ 
     font-size:0.815em; /* 26px */
     line-height:28px;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     font-size:0.844em; /* 22px */
     line-height:24px;}}
 @media only screen and (min-width:912px){
@@ -1866,7 +1872,7 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{ 
     font-size:0.943em; /* 32px */
     line-height:34px;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     font-size:0.875em; /* 32px */
     line-height:30px;}}
 @media only screen and (min-width:1024px){
@@ -1879,6 +1885,6 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>li>ul>li{ 
     font-size:0.89em; /* 38px */
     line-height:34px;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     font-size:0.812em; /* 26px */
     line-height:28px;}}

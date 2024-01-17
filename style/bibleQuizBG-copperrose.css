@@ -190,7 +190,7 @@ body{
 .insertedSpan{ 
     background:#583d3d; 
 }
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
     color:#f0f6fc;}
 /* MOBILE VIEW */
 /* MOBILE VIEW */

@@ -185,7 +185,7 @@ body{
 .insertedSpan{ 
     background:darkcyan; 
 }
-.QandA-Board>ol>li>ul>li>span>ul{
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
     color:white;}
 /* MOBILE VIEW */
 @media  only screen and (max-width:1023px){

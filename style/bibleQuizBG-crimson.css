@@ -187,7 +187,7 @@ body{
 .insertedSpan{ 
     background:crimson; 
 }
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
     color:aliceblue;}
 /* MOBILE VIEW */
 @media  only screen and (max-width:1023px){

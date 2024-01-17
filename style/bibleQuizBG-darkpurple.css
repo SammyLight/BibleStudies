@@ -13,12 +13,9 @@ body{
     border:1em solid #ff5733;}
 /* Custom CSS */
 .explainButton{
-    color:#d0d0d0;
-    color:#fff;
-    background-color:brown;
-    border:1px solid brown;
-    background-color:#D61C4E;
-    border:1px solid #D61C4E;
+    color:#D61C4E;
+    background-color:#Dfff;
+    border:1px solid #Dfff;
     box-shadow:0 1px 2px #373433;}
 #quizCatName{ 
     color:#fff;

@@ -187,7 +187,7 @@ hr{
 .insertedSpan{ 
     background:antiquewhite; 
 }
-.QandA-Board>ol>li>ul>li>ul{
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
     color:aliceblue;}
 /* MOBILE VIEW */
 @media  only screen and (max-width:1023px){
@@ -304,9 +304,9 @@ hr{
     color:brown;}
 /* .corAnswers-Board>ol>li>div{ 
     border-right:2px solid brown;} */
-.corAnswers-Board>ol>details>li>ul>li>strong{ 
+.corAnswers-Board>ol>details>li>ul>li>span>strong{ 
     color:chocolate!important;}
-.corAnswers-Board>ol>details>li>ul>li>ul{ 
+.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
     color:chocolate!important;}
 .corAnswers-btn>button{
     background-color:brown;
