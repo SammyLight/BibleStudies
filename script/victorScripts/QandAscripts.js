@@ -63,14 +63,43 @@ for (i = 0; i < questions.length; i++) {
         questions[i].style.display = "none";
     } //Previous Viewed Question
     questions[i].setAttribute('question', i + 1);
+
+    var allOptionsUnderQuestion = document.querySelectorAll('.QandA-Board>OL>LI>UL>LI');
+    allOptionsUnderQuestion.forEach(element => {
+        // Check if the element already has the 'option' class
+        if (!element.classList.contains('option')) {
+            element.classList.add('option');
+            var optionsNode = element.firstChild;
+            if (optionsNode) {
+                let contentToAdd;
+                if (optionsNode.nodeType === 1) { // Node.ELEMENT_NODE
+                    // Clone the HTML element and append it to createSpan
+                    contentToAdd = optionsNode.cloneNode(true);
+                    optionsNode.remove();
+                } else if (optionsNode.nodeType === 3) { // Node.TEXT_NODE
+                    const textContent = optionsNode.textContent; 
+                    optionsNode.remove();
+                    // Create a new text node with the content
+                    contentToAdd = document.createTextNode(textContent);
+                }
+                const createSpan = document.createElement('span');
+                createSpan.classList.add('insertedSpan');
+                createSpan.appendChild(contentToAdd);
+                element.appendChild(createSpan);
+            }
+        }
+    });
+
     var chances;
     // Check if the first structure exists
-    var liStrongElements = questions[i].querySelectorAll('LI > STRONG').length;
+    var liStrongElements = questions[i].querySelectorAll('.option > STRONG').length;
     if (liStrongElements > 0) {
         chances = liStrongElements;
+        console.log(chances);
     } else {
         // If the first structure doesn't exist, use the second structure
-        chances = questions[i].querySelectorAll('LI > SPAN > STRONG').length;
+        chances = questions[i].querySelectorAll('.option > SPAN > STRONG').length;
+        console.log(chances);
     }
     questions[i].querySelectorAll('UL')[0].setAttribute('availablechances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
     questions[i].querySelectorAll('UL')[0].setAttribute('maxchances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
@@ -90,31 +119,6 @@ for (i = 0; i < questions.length; i++) {
     createDiv.prepend(createDivInner)
     parentElementLI.prepend(createDiv)
 
-    var allOptionsUnderQuestion = document.querySelectorAll('.QandA-Board>OL>LI>UL>LI');
-    allOptionsUnderQuestion.forEach(element => {
-        // Check if the element already has the 'option' class
-    if (!element.classList.contains('option')) {
-        element.classList.add('option');
-        var optionsNode = element.firstChild;
-        if (optionsNode) {
-            let contentToAdd;
-            if (optionsNode.nodeType === 1) { // Node.ELEMENT_NODE
-                // Clone the HTML element and append it to createSpan
-                contentToAdd = optionsNode.cloneNode(true);
-                optionsNode.remove();
-            } else if (optionsNode.nodeType === 3) { // Node.TEXT_NODE
-                const textContent = optionsNode.textContent; 
-                optionsNode.remove();
-                // Create a new text node with the content
-                contentToAdd = document.createTextNode(textContent);
-            }
-            const createSpan = document.createElement('span');
-            createSpan.classList.add('insertedSpan');
-            createSpan.appendChild(contentToAdd);
-            element.appendChild(createSpan);
-        }
-    }
-    });
     questions[i].querySelector('UL').addEventListener('click', isClickedLiAnAnswer);
     questionsArray.push(questions[i]);
 }
@@ -351,7 +355,7 @@ function confirm() {
         greyOutOFF(nextquestionbutton);
         currentQuestion.querySelectorAll('.option').forEach(opt => {
             if (opt.style.background == 'orange') {
-                optChildSpan = opt.querySelector('span');
+                optChildSpan = opt.querySelector('span.insertedSpan');
                 optChildSpan.style.background = wrongAnswerBackground;
                 optChildSpan.style.borderRight = rightBorder; //this indicates the option selected
                 optChildSpan.style.color = 'white';
@@ -363,7 +367,7 @@ function confirm() {
         // indicate correct options with 'lightGreen' color
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
-            optChildSpan = rightAnswer.querySelector('span');
+            optChildSpan = rightAnswer.querySelector('span.insertedSpan');
             optChildSpan.style.background = rightAnswerBackground;
             optChildSpan.style.color = 'white';
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
@@ -383,7 +387,7 @@ function confirm() {
             var currentOptions = currentQuestion.querySelectorAll('.option');
             for (i = 0; i < currentOptions.length; i++) {
                 var opt = currentOptions[i];
-                optChildSpan = opt.querySelector('span');
+                optChildSpan = opt.querySelector('span.insertedSpan');
                 // Check if any wrong option was selected or if the/any right option was not selected
                 if (contnueChecking) {
                     //check if any wrong option has been selected
@@ -454,7 +458,7 @@ function isClickedLiAnAnswer(event) {
         var rightAnswer = null;
         var actualClickedOptionSpan;
         if ((chancesLeft > 0) && (actualClickedOption.style.background != 'orange')) { //it hasn't been clicked
-            actualClickedOptionSpan = actualClickedOption.querySelector('span');
+            actualClickedOptionSpan = actualClickedOption.querySelector('span.insertedSpan');
             actualClickedOptionSpan.style.background = 'orange';
             actualClickedOption.style.background = 'orange';
             confirmButton.style.backgroundColor = '#fb6340';
@@ -472,7 +476,7 @@ function isClickedLiAnAnswer(event) {
             }
 
         } else if ((chancesLeft < maxchances) && (actualClickedOption.style.background == 'orange')) { //it has been clicked
-            actualClickedOptionSpan = actualClickedOption.querySelector('span');
+            actualClickedOptionSpan = actualClickedOption.querySelector('span.insertedSpan');
             actualClickedOptionSpan.style.background = '';
             actualClickedOption.style.background = '';
             chancesLeft = Number(chancesLeft) + 1
@@ -584,7 +588,7 @@ function explainButtonCreate(opt) {
     explainButton.classList.add('explainButton');
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
-    const answerSpan = opt.querySelector('span');
+    const answerSpan = opt.querySelector('span.insertedSpan');
     answerSpan.append(explainButton);
     // opt.append(explainButton);
     return explainButton;
@@ -594,7 +598,7 @@ function explainButtonCreate(answer) {
     explainButton.classList.add('explainButton');
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
-    const answerSpan = answer.querySelector('span');
+    const answerSpan = answer.querySelector('span.insertedSpan');
     answerSpan.append(explainButton);
     // answer.append(explainButton);
     return explainButton;
@@ -621,7 +625,7 @@ function showAllQuestionsWithAnswers() {
     });
     var optClone = displayAllQuestions.querySelectorAll('.option');
     for (k = 0; k < optClone.length; k++) {
-        var optSpanClone = optClone[k].querySelector('span');
+        var optSpanClone = optClone[k].querySelector('span.insertedSpan');
         var optImgClone = optSpanClone.querySelectorAll('img');
         var optExplainClone = optClone[k].querySelector('ul');
         console.log(optExplainClone);
