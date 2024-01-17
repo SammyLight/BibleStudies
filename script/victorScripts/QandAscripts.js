@@ -41,7 +41,10 @@ var previousClickedULArray = [];
 var clickedOptionsArray = [];
 var confirmButtonHasBeenClicked;
 var notLastQuestion = 1;
-var rightBorder = '10px solid brown';
+var rightBorder = '7px solid white';
+// var wrongAnswerBackground = '#95160C';
+var wrongAnswerBackground = 'red';
+var rightAnswerBackground = 'green';
 var modal = document.getElementById('completeQuiz');
 var slideIndex = 1;
 function plusDivs(n) {
@@ -240,7 +243,7 @@ function confirm() {
                 if (pf == 'fail') {
                     indexSpan.style.color = 'darkred';
                 } else if (pf == 'pass') {
-                    indexSpan.style.color = 'green';                    
+                    indexSpan.style.color = rightAnswerBackground;                    
                 }
                 //append the span element to the questionIndex
                 if (k < passFailSequenceArray.length - 1) {
@@ -342,19 +345,16 @@ function confirm() {
             resultImgContainer.insertBefore(poorImg, poorScore);
         }
     
-    // color selected options which are wrong 'pink'
+    // color selected options which are wrong wrongAnswerBackground
     if (!currentQuestionsOptions.getAttribute('confirmed')) {
         confirmButton.innerText = 'Next';
         greyOutOFF(nextquestionbutton);
         currentQuestion.querySelectorAll('.option').forEach(opt => {
             if (opt.style.background == 'orange') {
                 optChildSpan = opt.querySelector('span');
-                console.log(optChildSpan);
-                // elementSpan.style.removeProperty('background');
-                // opt.style.background = 'pink';
-                // opt.style.borderRight = rightBorder; //this indicates the option selected
-                optChildSpan.style.background = 'pink';
+                optChildSpan.style.background = wrongAnswerBackground;
                 optChildSpan.style.borderRight = rightBorder; //this indicates the option selected
+                optChildSpan.style.color = 'white';
             }
             if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
                 explainButtonCreate(opt).addEventListener('click', showExplanation);
@@ -364,11 +364,8 @@ function confirm() {
         currentQuestion.querySelectorAll('STRONG').forEach(element => {
             var rightAnswer = isClickedElmOrParentAnOptionLI(element);
             optChildSpan = rightAnswer.querySelector('span');
-            // rightAnswer.style.background = 'green';
-            // rightAnswer.style.color = 'white';
-            optChildSpan.style.background = 'green';
+            optChildSpan.style.background = rightAnswerBackground;
             optChildSpan.style.color = 'white';
-                console.log(optChildSpan);
                 if ((rightAnswer.querySelector('UL')) && (!rightAnswer.querySelector('.explainButton'))) {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
@@ -418,10 +415,10 @@ function confirm() {
                     passFailSequenceArray.push('pass');
                     playRightAnswerSound();
                 }
-                if ((optChildSpan.style.background == 'green') && (optChildSpan.style.borderRight == rightBorder)) {
+                if ((optChildSpan.style.background == rightAnswerBackground) && (optChildSpan.style.borderRight == rightBorder)) {
                     rightAnswerIcon();
                 }
-                if (optChildSpan.style.background == 'pink') {
+                if (optChildSpan.style.background == wrongAnswerBackground) {
                     wrongAnswerIcon();
                 }
             }
@@ -440,7 +437,7 @@ function confirm() {
     function wrongAnswerIcon() {
         var img = new Image(33, 33);
         img.classList.add('imgSizeWrong');
-        img.src = "../images/wrong-gif3.gif";
+        img.src = "../images/wrong-gif6.gif";
         if (!optChildSpan.querySelector('.imgSizeWrong')) {
             optChildSpan.prepend(img);            
         }
@@ -573,8 +570,13 @@ document.addEventListener('mouseup', function(e) {
 });
 //TO SHOW EXPLANATION
 function showExplanation() {
-    this.parentNode.querySelector('UL').classList.toggle("show");
-    this.parentNode.classList.toggle("removeMaxHeight");
+    const explainUl = this.parentNode.parentNode.querySelector('UL');
+    explainUl.classList.toggle("show");
+    explainUl.classList.add("explainUl");
+    this.parentNode.parentNode.classList.toggle("removeMaxHeight");
+    if (explainUl.classList.contains("show")) {
+        this.parentNode.appendChild(explainUl);
+    }
 }
 //TO CREATE AN EXPLANATION BUTTON
 function explainButtonCreate(opt) {
@@ -582,7 +584,9 @@ function explainButtonCreate(opt) {
     explainButton.classList.add('explainButton');
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
-    opt.append(explainButton);
+    const answerSpan = opt.querySelector('span');
+    answerSpan.append(explainButton);
+    // opt.append(explainButton);
     return explainButton;
 }
 function explainButtonCreate(answer) {
@@ -590,7 +594,9 @@ function explainButtonCreate(answer) {
     explainButton.classList.add('explainButton');
     explainButton.innerText = 'Explanation';
     // 'answer' represents clicked correct answer
-    answer.append(explainButton);
+    const answerSpan = answer.querySelector('span');
+    answerSpan.append(explainButton);
+    // answer.append(explainButton);
     return explainButton;
 }
 function showAllQuestionsWithAnswers() {
@@ -617,6 +623,8 @@ function showAllQuestionsWithAnswers() {
     for (k = 0; k < optClone.length; k++) {
         var optSpanClone = optClone[k].querySelector('span');
         var optImgClone = optSpanClone.querySelectorAll('img');
+        var optExplainClone = optClone[k].querySelector('ul');
+        console.log(optExplainClone);
         // Iterate through each img element and remove it
         optImgClone.forEach(function(img) {
             img.remove();
@@ -624,12 +632,15 @@ function showAllQuestionsWithAnswers() {
         optClone[k].style.border = 'none';
         optSpanClone.style.border = 'none';
         optSpanClone.style.removeProperty('color');
-        if ((optSpanClone.style.background != 'green')) { //find all wrong options to display none them (correct options have green background)
-            optSpanClone.parentElement.style.display = 'none'; //display none all options LIs that are wrong options (their backgroundColor != 'green') 
+        if ((optSpanClone.style.background != rightAnswerBackground)) { //find all wrong options to display none them (correct options have green background)
+            optSpanClone.parentElement.style.display = 'none'; //display none all options LIs that are wrong options (their backgroundColor != rightAnswerBackground) 
         }
         optClone[k].style.background = ''//remove all backgroundcolors
         optSpanClone.style.background = ''//remove all backgroundcolors
         optSpanClone.classList.remove('insertedSpan'); 
+        if (optExplainClone) {
+            optSpanClone.appendChild(optExplainClone);
+        }
     }
     // document.getElementsByClassName('corAnswers-Board').append(details);
     liFirstLevel.forEach(element => {
