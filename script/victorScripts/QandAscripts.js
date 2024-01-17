@@ -63,6 +63,17 @@ for (i = 0; i < questions.length; i++) {
         questions[i].style.display = "none";
     } //Previous Viewed Question
     questions[i].setAttribute('question', i + 1);
+    var chances;
+    // Check if the first structure exists
+    var liStrongElements = questions[i].querySelectorAll('LI > STRONG').length;
+    if (liStrongElements > 0) {
+        chances = liStrongElements;
+    } else {
+        // If the first structure doesn't exist, use the second structure
+        chances = questions[i].querySelectorAll('LI > SPAN > STRONG').length;
+    }
+    questions[i].querySelectorAll('UL')[0].setAttribute('availablechances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
+    questions[i].querySelectorAll('UL')[0].setAttribute('maxchances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
 
     var allOptionsUnderQuestion = document.querySelectorAll('.QandA-Board>OL>LI>UL>LI');
     allOptionsUnderQuestion.forEach(element => {
@@ -89,20 +100,6 @@ for (i = 0; i < questions.length; i++) {
             }
         }
     });
-
-    var chances;
-    // Check if the first structure exists
-    var liStrongElements = questions[i].querySelectorAll('.option > STRONG').length;
-    if (liStrongElements > 0) {
-        chances = liStrongElements;
-        console.log(chances);
-    } else {
-        // If the first structure doesn't exist, use the second structure
-        chances = questions[i].querySelectorAll('.option > SPAN > STRONG').length;
-        console.log(chances);
-    }
-    questions[i].querySelectorAll('UL')[0].setAttribute('availablechances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
-    questions[i].querySelectorAll('UL')[0].setAttribute('maxchances', chances); //Create availableChances atribute to count number of answers to a question. These will be the number of clicks possible
 
     var parentElementLI = questions[i];
     var parentElementLINowDiv = parentElementLI.firstChild;
@@ -310,7 +307,6 @@ function confirm() {
         animationCssAndJsFunc();
         resultImgContainer.append(perfectImg);
         clapSound.play();
-
     } else if (failedPercentage(failedQuestionsArrayLength, totalQuestions) <= 20) {
         performance.innerHTML = 'Excellent Score';
         animationCssAndJsFunc();
@@ -374,14 +370,12 @@ function confirm() {
                     explainButtonCreate(rightAnswer).addEventListener('click', showExplanation);
                 }            
         });
-    
         currentQuestionsOptions.setAttribute('confirmed', 'yes');
         if (!previousClickedULArray.includes(currentQuestionsOptions)) {
             previousClickedULArray.push(currentQuestionsOptions)
         }
-
         //To set whether a question was missed or not
-        var contnueChecking = 1;
+        var continueChecking = 1;
         var rOw = null;
         if (currentQuestion.getAttribute('rightorwrong') == null) {
             var currentOptions = currentQuestion.querySelectorAll('.option');
@@ -389,14 +383,14 @@ function confirm() {
                 var opt = currentOptions[i];
                 optChildSpan = opt.querySelector('span.insertedSpan');
                 // Check if any wrong option was selected or if the/any right option was not selected
-                if (contnueChecking) {
+                if (continueChecking) {
                     //check if any wrong option has been selected
                     if ((opt.querySelector('strong') == null) && (optChildSpan.style.borderRight == rightBorder)) {
                         currentQuestion.setAttribute('rightorwrong', 0);
                         failedQuestionsArray.push(currentQuestion);
                         passFailSequenceArray.push('fail');
                         rOw = 0;
-                        contnueChecking = 0; //stop checking if any wrong option has been selected
+                        continueChecking = 0; //stop checking if any wrong option has been selected
                         playWrongAnswerSound();
                     } else if (opt.querySelector('strong')) { // check if the or any (in case they are more than one) right option was not selected
                         if (optChildSpan.style.borderRight != rightBorder) {
@@ -404,7 +398,7 @@ function confirm() {
                             failedQuestionsArray.push(currentQuestion);
                             passFailSequenceArray.push('fail');
                             rOw = 0;
-                            contnueChecking = 0; //stop checking if any wrong option has been selected
+                            continueChecking = 0; //stop checking if any wrong option has been selected
                             playWrongAnswerSound();
                         } else if (optChildSpan.style.borderRight == rightBorder) {
                             currentQuestion.setAttribute('rightorwrong', 1);
