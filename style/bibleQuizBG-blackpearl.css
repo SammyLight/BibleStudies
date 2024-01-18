@@ -207,14 +207,14 @@ body{
 
 /* HEADER SECTION */
 /* QandA-BOARD SECTION */
-@media only screen and (min-width:912px){
+/* @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:#1c222b;
     border:1px solid #1c222b;
     color:#f0f6fc!important;}
 .quizCatLink a:hover{ 
     color:#f0f6fc!important;   
-}}
+}} */
 /* END OF MOBILE VIEW */
 
 /* DESKTOP VIEW */
@@ -304,7 +304,7 @@ body{
 .corAnswers-Board>ol>details>li>ul>li>span>strong{ 
     color:aqua!important;}
 .corAnswers-Board>ol>details>li>ul>li>span>ul{ 
-    color:#f0f6fc!important;}
+    color:aqua!important;}
 .corAnswers-btn>button{
     background-color:#f0f6fc;
     border:1px solid #f0f6fc;

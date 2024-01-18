@@ -210,14 +210,14 @@ body{
 
 /* DESKTOP VIEW */
 /* HEADER SECTION */
-@media only screen and (min-width:912px){
+/* @media only screen and (min-width:912px){
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
     background-color:#161e3d;
     border:1px solid #161e3d;
     color:#fff!important;}
 .quizCatLink a:hover{ 
     color:antiquewhite!important;   
-}}
+}} */
 @media only screen and (min-width:1024px){
 /* QandA-BOARD SECTION */
 .insertedSpan:hover, .insertedSpan:active{

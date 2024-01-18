@@ -656,9 +656,6 @@ button{
     justify-content:center;
     align-items:center;
     width:50%;}
-.quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
-    /* font-size:1.588em!important; */
-    font-weight:bold;}
 #questionhint{ 
     border-radius:3px;
     cursor:pointer;
@@ -1219,8 +1216,8 @@ to{ left:0px;}
 .insertedSpan{
     grid-template-columns:10% 90%;
     padding:0.7em 0.5em;}
-.insertedSpan:hover,.insertedSpan:active,.insertedSpan>strong:hover, .insertedSpan>strong:active{
-    font-weight:bold!important;}
+/* .insertedSpan:hover,.insertedSpan:active,.insertedSpan>strong:hover, .insertedSpan>strong:active{
+    font-weight:bold!important;} */
 .imgSizeWrong{ 
     left:-2px;}
 .QandA-BoardLinks{ 
