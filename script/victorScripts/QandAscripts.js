@@ -501,9 +501,9 @@ function showHintFunc() {
 function closeHintFunc() {
     if (showHint.className == "showHintCSS") {
         showHint.className = "";
-      }
-      clickSound.play(); 
-      closeHintSound.play();
+    }
+    clickSound.play(); 
+    closeHintSound.play();
 }
 //CLICK ANYWHERE TO CLOSE HINT
 document.addEventListener('mouseup', function(e) {
@@ -513,15 +513,20 @@ document.addEventListener('mouseup', function(e) {
             container.className = "";
             closeHintSound.play();
             clickSound.play();
-          }
         }
+    }
 });
 var settingsContent;
+var settingsReviewContent;
 var rulesContent;
 var closeSettings = document.createElement("SPAN");
 closeSettings.classList.add('closeSettings');
 closeSettings.innerText = 'x';
 closeSettings.addEventListener('click', closeSettingsFunc);
+var closeSettingsReview = document.createElement("SPAN");
+closeSettingsReview.classList.add('closeSettings');
+closeSettingsReview.innerText = 'x';
+closeSettingsReview.addEventListener('click', closeSettingsReviewFunc);
 var closeRules = document.createElement("SPAN");
 closeRules.classList.add('closeSettings');
 closeRules.innerText = 'x';
@@ -533,6 +538,12 @@ function showSettings() {
     settingsContent.classList.toggle("show");
     showHintSound.play();
     settingsContent.prepend(closeSettings);
+}
+function showSettingsReview() {
+    settingsReviewContent = document.getElementById("settingsReviewContent");
+    settingsReviewContent.classList.toggle("show");
+    showHintSound.play();
+    settingsReviewContent.prepend(closeSettingsReview);
 }
 function showRules() {
     rulesContent = document.getElementById("rulesContent");
@@ -548,6 +559,13 @@ function closeSettingsFunc() {
       clickSound.play(); 
       closeHintSound.play();
 }
+function closeSettingsReviewFunc() {
+    if (settingsReviewContent.className == "show") {
+        settingsReviewContent.className = "";
+      }
+      clickSound.play(); 
+      closeHintSound.play();
+}
 function closeRulesFunc() {
     if (rulesContent.className == "show") {
         rulesContent.className = "";
@@ -557,13 +575,23 @@ function closeRulesFunc() {
 }
 //CLICK ANYWHERE TO CLOSE SETTINGS
 document.addEventListener('mouseup', function(e) {
-    var container = document.getElementById("settingsContent");
-    if (!container.contains(e.target)) {
-        if (container.className == "show") {
-            container.className = "";
-            closeHintSound.play();
-            clickSound.play();
-          }
+    var settingsContentContainer = document.getElementById("settingsContent");
+        if (!settingsContentContainer.contains(e.target)) {
+            if (settingsContentContainer.className == "show") {
+                settingsContentContainer.className = "";
+                closeHintSound.play();
+                clickSound.play();
+            }
+        }
+});
+document.addEventListener('mouseup', function(e) {
+    var settingsReviewContentContainer = document.getElementById("settingsReviewContent");
+        if (!settingsReviewContentContainer.contains(e.target)) {
+            if (settingsReviewContentContainer.className == "show") {
+                settingsReviewContentContainer.className = "";
+                closeHintSound.play();
+                clickSound.play();
+            }
         }
 });
 //TO SHOW EXPLANATION
@@ -717,6 +745,8 @@ links.forEach(a => {
 
 const buttonPause = document.querySelector("#pauseButton");
 const buttonPlay = document.querySelector("#playButton");
+const buttonPauseFromResult = document.querySelector("#pauseButtonFromResult");
+const buttonPlayFromResult = document.querySelector("#playButtonFromResult");
 const icon = document.querySelector("#pauseAndPlayButton > i");
 const audioElement = document.querySelector("audio");
 const quizBgSound = document.getElementById("quizBgSound");
@@ -731,6 +761,8 @@ resultSound.addEventListener('ended', function() {
 
 buttonPause.addEventListener('click', bgSoundPauseButton);
 buttonPlay.addEventListener('click', bgSoundPlayButton);
+buttonPauseFromResult.addEventListener('click', bgSoundPauseButtonFromResult);
+buttonPlayFromResult.addEventListener('click', bgSoundPlayButtonFromResult);
 
 window.addEventListener("DOMContentLoaded", () => {
     quizBgSound.volume = 0.2;
@@ -757,6 +789,24 @@ function bgSoundPlayButton() {
         }
     }
 }
+function bgSoundPauseButtonFromResult() {
+    if (resultSound.play()){
+        resultSound.pause();
+        buttonPauseFromResult.style.opacity = '0.3';
+        buttonPlayFromResult.style.opacity = '1';
+    } 
+}
+function bgSoundPlayButtonFromResult() {
+    if (resultSound.paused){
+        resultSound.play();
+        if (buttonPlayFromResult.style.opacity == '1') {
+            buttonPlayFromResult.style.opacity = '0.3';
+        }
+        if (buttonPauseFromResult.style.opacity == '0.3') {
+            buttonPauseFromResult.style.opacity = '1'
+        }
+    }
+}
 
 // FOR TOGGLING THEMES
 var antiqueWhiteCssFile;
@@ -767,18 +817,31 @@ var darkCyanCssFile;
 var darkPurpleCssFile;
 
 darkPurpleCssFile = document.getElementById('darkPurpleCssFile');
-var antiqueWhiteThemeBtn = document.getElementById('antiqueWhite');
-antiqueWhiteThemeBtn.addEventListener('click', changeToAntiquewhiteTheme);
-var blackPearlThemeBtn = document.getElementById('blackPearl');
-blackPearlThemeBtn.addEventListener('click', changeToBlackPearlTheme);
-var copperRoseThemeBtn = document.getElementById('copperRose');
-copperRoseThemeBtn.addEventListener('click', changeToCopperRoseTheme);
-var crisomThemeBtn = document.getElementById('crimson');
-crisomThemeBtn.addEventListener('click', changeToCrimsonTheme);
-var darkCyanThemeBtn = document.getElementById('darkCyan');
-darkCyanThemeBtn.addEventListener('click', changeToDarkCyanTheme);
-var darkPurpleThemeBtn = document.getElementById('darkPurple');
-darkPurpleThemeBtn.addEventListener('click', changeToDarkPurpleTheme);
+
+const antiqueWhiteThemeBtn = document.getElementsByClassName('antiqueWhite');
+Array.from(antiqueWhiteThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToAntiquewhiteTheme);
+});
+const blackPearlThemeBtn = document.getElementsByClassName('blackPearl');
+Array.from(blackPearlThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToBlackPearlTheme);
+});
+const copperRoseThemeBtn = document.getElementsByClassName('copperRose');
+Array.from(copperRoseThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToCopperRoseTheme);
+});
+const crisomThemeBtn = document.getElementsByClassName('crimson');
+Array.from(crisomThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToCrimsonTheme);
+});
+const darkCyanThemeBtn = document.getElementsByClassName('darkCyan');
+Array.from(darkCyanThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToDarkCyanTheme);
+});
+const darkPurpleThemeBtn = document.getElementsByClassName('darkPurple');
+Array.from(darkPurpleThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToDarkPurpleTheme);
+});
 
 function setDarkOrLightModeInCache(colorMode){
     localStorage.setItem('colorMode', colorMode)
