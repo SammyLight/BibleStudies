@@ -356,7 +356,7 @@ function confirm() {
                 optChildSpan.style.borderRight = rightBorder; //this indicates the option selected
                 optChildSpan.style.color = 'white';
             }
-            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton'))) {
+            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton')) && (opt.style.background == 'orange')) {
                 explainButtonCreate(opt).addEventListener('click', showExplanation);
             }
         });
