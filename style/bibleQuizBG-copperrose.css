@@ -135,16 +135,16 @@ body{
     background:-webkit-linear-gradient(#f3ec78, #af4261);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;}
-#settingsContent, #catSettingsContent{ 
+#settingsContent, #settingsReviewContent, #catSettingsContent{ 
     background-color:#583d3d;
     border:1px solid #583d3d;
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 87%);
     color:#f0f6fc!important;}
-#settingsContent a, #catSettingsContent a{ 
+#settingsContent a, #settingsReviewContent a, #catSettingsContent a{ 
     color:#f0f6fc;}
 #nextPrevButton{ 
     border:1px solid #969292;}
-#playButton, #pauseButton, #playButtonCat, #pauseButtonCat{ 
+#playButton, #pauseButton, #playButtonCat, #pauseButtonCat, #playButtonFromResult, #pauseButtonFromResult{ 
     color:#f0f6fc;
     /* background:rgba(115, 67, 167, 0.8);
     background:brown;
@@ -154,7 +154,7 @@ body{
     border-left:3px solid #f0f6fc;}
 /* .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
     text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;} */
-#questioncount{
+#questioncount,span[ref]:not(.verse){
     color:#D3756B;}
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 

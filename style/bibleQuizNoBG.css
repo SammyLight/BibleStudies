@@ -103,8 +103,8 @@ body{
 #quizResult-section, #CorrectedAnswers-section,.corAnswers-Board .explainButton, audio{
     display:none;}
 /* Custom CSS */
-a{ 
-    text-decoration:none;}
+.option>span>ul>li>span[ref]:not(.verse){color:#FFA500!important;}
+a{text-decoration:none;}
 ul, ol, li{
     list-style-type:none;
     list-style-type:disc;}
@@ -431,7 +431,6 @@ ul.header-links{
     gap:10px;
     grid-template-columns:repeat(2, 1fr);
     grid-gap:10px;
-    -ms-grid-columns:(1fr)[2];
     -webkit-box-direction:normal;
     -webkit-box-orient:horizontal;}}
 @media only screen and (min-width:351px){
@@ -442,7 +441,6 @@ ul.header-links{
     gap:10px;
     grid-template-columns:repeat(2, 1fr);
     grid-gap:10px;
-    -ms-grid-columns:(1fr)[2];
     -webkit-box-direction:normal;
     -webkit-box-orient:horizontal;}}
 @media only screen and (min-width:540px){
@@ -452,7 +450,6 @@ ul.header-links{
     margin-top:15px;
     grid-template-columns:repeat(3, 1fr);
     grid-gap:20px;
-    -ms-grid-columns:(1fr)[3];
     -webkit-box-direction:normal;
     -webkit-box-orient:horizontal;}}
 @media only screen and (min-width:821px){
@@ -461,7 +458,6 @@ ul.header-links{
     gap:15px;
     grid-template-columns:repeat(4, 1fr);
     grid-gap:15px;
-    -ms-grid-columns:(1fr)[4];
     -webkit-box-direction:normal;
     -webkit-box-orient:horizontal;}}
 @media only screen and (min-width:960px){
@@ -582,7 +578,7 @@ button{
 #settings>img{ 
     height:-webkit-fill-available;
     width:95%;}
-#settingsContent, #catSettingsContent, #poorPerPopup{ 
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
     border-radius:6px;
     display:none;
     font-size:1.25em;
@@ -596,7 +592,7 @@ button{
     z-index:3;
     gap:10px;
     text-transform:uppercase;}
-#settingsContent a, #catSettingsContent a, #poorPerPopup a{
+#settingsContent a, #settingsReviewContent a, #catSettingsContent a, #poorPerPopup a{
     text-decoration:none;}
 .settingsContentInner, .catSettingsContentInner, #poorPerPopup{ 
     display:grid;
@@ -624,12 +620,12 @@ button{
 #audioSettings .fa-volume-up, #catAudioSettings .fa-volume-up{ 
     opacity:0.5;
     font-size:14px;}
-#playButton, #pauseButton, #playButtonCat, #pauseButtonCat{ 
+#playButton, #pauseButton, #playButtonCat, #pauseButtonCat, #playButtonFromResult, #pauseButtonFromResult{ 
     font-size:1.25em!important;
     padding:0;
     place-self:center;
     cursor:pointer;}
-#playButton, #playButtonCat{
+#playButton, #playButtonCat, #playButtonFromResult{
     opacity:0.2;}
 .vl{ 
     margin:0 15px;
@@ -753,7 +749,7 @@ button{
 .showHintCSS>a, .showNewCatCSS>a{ 
     text-decoration:underline;
     place-self:center;}
-.QandA-Board>ol>li, .showHintCSS, #rulesContent, #settingsContent, #catSettingsContent, #poorPerPopup, #quizResult-section{ 
+.QandA-Board>ol>li, .showHintCSS, #rulesContent, #settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup, #quizResult-section{ 
     -webkit-animation-name:bounceIn;
     -moz-animation-name:bounceIn;
     -o-animation-name:bounceIn;
@@ -1010,7 +1006,7 @@ to{ left:0px;}
 .insertedDiv,.QandA-Board>ol>li>ul>li{
     padding: 2px;}}
 @media  only screen and (max-width:300px){
-#playButton, #pauseButton, #playButtonCat, #pauseButtonCat{ 
+#playButton, #pauseButton, #playButtonCat, #pauseButtonCat, #playButtonFromResult, #pauseButtonFromResult{ 
     width:28px;
     height:28px;}
 .vl{ 
@@ -1044,12 +1040,12 @@ to{ left:0px;}
     height:27px;}}
 /* FONT SIZES QandA-BOARD SECTION */
 @media only screen and (max-width:300px){
-#settingsContent, #catSettingsContent, #poorPerPopup{ 
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
     font-size:1.05em;}
 /* HEADER SECTION */
 #questioncount, #questionhint, .quizCatLink, #nextPrevButton, #questionhint{ 
     font-size:0.9em!important;}
-#playButton, #pauseButton, #playButtonCat, #pauseButtonCat{
+#playButton, #pauseButton, #playButtonCat, #pauseButtonCat, #playButtonFromResult, #pauseButtonFromResult{
     font-size:0.8em!important;}
 .Hint-img>img{ 
     height:45px;}
@@ -1154,7 +1150,7 @@ to{ left:0px;}
 .QandA-header{
     grid-template-columns:20% 20% 55%;
     padding:10px 0;}
-#settingsContent, #catSettingsContent, #poorPerPopup{ 
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
     gap:15px;
     width:50vw;}
 #themeSettings ul, #catThemeSettings ul{ 
@@ -1235,7 +1231,7 @@ to{ left:0px;}
 
 /* DESKTOP FONT SIZES CSS */
 @media only screen and (min-width:658px){
-#settingsContent, #catSettingsContent, #poorPerPopup{
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{
     font-size:2.25em;}
     
 /* FONT SIZES HEADER SECTION */
@@ -1303,7 +1299,7 @@ to{ left:0px;}
     width:40px;
     height:40px;}}
 @media only screen and (min-width:1024px){
-#settingsContent, #catSettingsContent, #poorPerPopup{ 
+#settingsContent, #settingsReviewContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
     font-size:2em;}
 #themeSettings ul, #catThemeSettings ul{ 
     font-size:22px!important;}
@@ -1684,11 +1680,9 @@ to{ left:0px;}
 .corAnswers-BoardHeader{
     border-radius:3px;
     overflow:hidden;
-    display:flex;}
+    display:flex;
+    position:relative;}
 .corAnswers-BoardHeader>div{ 
-    font-family:poppins!important;
-    font-family:'DynaPuff', cursive!important;
-    font-style:normal;
     width:-webkit-fill-available;
     height:-webkit-fill-available;
     grid-template-columns:100%;
@@ -1696,6 +1690,14 @@ to{ left:0px;}
     place-items:center;
     font-size:2.5em;
     text-transform:capitalize;}
+.corAnswers-BoardHeader #settings{
+    position: absolute;
+    right: 2px;
+    place-self: center;
+    width: 5%;}
+.corAnswers-BoardHeader #settings>img{
+    width:100%;
+}
 .corAnswers-Board-Header{
     display:grid;
     /* grid-template-columns:48% 52%; */
