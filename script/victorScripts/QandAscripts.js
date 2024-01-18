@@ -42,9 +42,9 @@ var clickedOptionsArray = [];
 var confirmButtonHasBeenClicked;
 var notLastQuestion = 1;
 var rightBorder = '7px solid white';
-// var wrongAnswerBackground = '#95160C';
 var wrongAnswerBackground = 'red';
 var rightAnswerBackground = 'green';
+var optSelectedBackground = 'orange';
 var modal = document.getElementById('completeQuiz');
 var slideIndex = 1;
 function plusDivs(n) {
@@ -350,13 +350,13 @@ function confirm() {
         confirmButton.innerText = 'Next';
         greyOutOFF(nextquestionbutton);
         currentQuestion.querySelectorAll('.option').forEach(opt => {
-            if (opt.style.background == 'orange') {
+            if (opt.style.background == optSelectedBackground) {
                 optChildSpan = opt.querySelector('span.insertedSpan');
                 optChildSpan.style.background = wrongAnswerBackground;
                 optChildSpan.style.borderRight = rightBorder; //this indicates the option selected
                 optChildSpan.style.color = 'white';
             }
-            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton')) && (opt.style.background == 'orange')) {
+            if ((opt.querySelector('UL')) && (!opt.querySelector('.explainButton')) && (opt.style.background == optSelectedBackground)) {
                 explainButtonCreate(opt).addEventListener('click', showExplanation);
             }
         });
@@ -451,11 +451,11 @@ function isClickedLiAnAnswer(event) {
         var maxchances = actualClickedOption.parentElement.getAttribute('maxchances');
         var rightAnswer = null;
         var actualClickedOptionSpan;
-        if ((chancesLeft > 0) && (actualClickedOption.style.background != 'orange')) { //it hasn't been clicked
+        if ((chancesLeft > 0) && (actualClickedOption.style.background != optSelectedBackground)) { //it hasn't been clicked
             actualClickedOptionSpan = actualClickedOption.querySelector('span.insertedSpan');
-            actualClickedOptionSpan.style.background = 'orange';
-            actualClickedOption.style.background = 'orange';
-            confirmButton.style.backgroundColor = '#fb6340';
+            actualClickedOptionSpan.style.background = optSelectedBackground;
+            actualClickedOption.style.background = optSelectedBackground;
+            confirmButton.style.background = '#fb6340';
             confirmButton.style.border = '#fb6340';
             actualClickedOption.parentElement.setAttribute('availablechances', chancesLeft - 1);
 
@@ -469,7 +469,7 @@ function isClickedLiAnAnswer(event) {
                 }
             }
 
-        } else if ((chancesLeft < maxchances) && (actualClickedOption.style.background == 'orange')) { //it has been clicked
+        } else if ((chancesLeft < maxchances) && (actualClickedOption.style.background == optSelectedBackground)) { //it has been clicked
             actualClickedOptionSpan = actualClickedOption.querySelector('span.insertedSpan');
             actualClickedOptionSpan.style.background = '';
             actualClickedOption.style.background = '';
