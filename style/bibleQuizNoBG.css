@@ -520,8 +520,7 @@ ul.header-links{
     font-size:2.2em;}
 #cat-bibleQuiz-inner h6{
     font-size:1.7em;}}
-@media screen and (min-width:1024px){
-}
+
 /* QandA CSS */
 #QandA-section{
     font-family:poppins!important;
@@ -592,6 +591,45 @@ button{
     z-index:3;
     gap:10px;
     text-transform:uppercase;}
+.darkPurple,
+.darkCyan,
+.crimson,
+.copperRose,
+.blackPearl,
+.antiqueWhite{
+    display:grid;
+    grid-template-columns:70% 25%;
+}
+.darkPurple>span,
+.darkCyan>span,
+.crimson>span,
+.copperRose>span,
+.blackPearl>span,
+.antiqueWhite>span{
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    margin-top:2px;
+}
+@media screen and (max-width:541px){
+.darkPurple,
+.darkCyan,
+.crimson,
+.copperRose,
+.blackPearl,
+.antiqueWhite{
+    grid-template-columns:85% 15%;
+}
+.darkPurple>span,
+.darkCyan>span,
+.crimson>span,
+.copperRose>span,
+.blackPearl>span,
+.antiqueWhite>span{
+    width:12px;
+    height:12px;
+    margin-top:3px;
+}}
 #settingsContent a, #settingsReviewContent a, #catSettingsContent a, #poorPerPopup a{
     text-decoration:none;}
 .settingsContentInner, .catSettingsContentInner, #poorPerPopup{ 
@@ -1296,7 +1334,7 @@ to{ left:0px;}
     width:40px;
     height:40px;}}
 @media only screen and (min-width:1024px){
-#settingsContent, #settingsReviewContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{ 
     font-size:2em;}
 #themeSettings ul, #catThemeSettings ul{ 
     font-size:22px!important;}
@@ -1672,7 +1710,7 @@ to{ left:0px;}
     grid-template-rows:70px 70px auto 8%;
     height:auto;
     min-height:calc(100vh - 50px);
-    /* padding:5px 10px 0; */
+    position:relative;
 }
 .corAnswers-BoardHeader{
     border-radius:3px;
@@ -1783,9 +1821,14 @@ details > summary:first-of-type{
 .corAnswers-Board>ol>details>summary>div{ 
     grid-template-columns:85%;}}
 @media only screen and (min-width:490px){
+.corAnswers-BoardHeader #settings{
+    width:13%;}
+#settingsReviewContent{top:160px;}
 .corAnswers-Board>ol>details>li>ul{
     padding-inline-start:25px;}}
 @media only screen and (min-width:541px){
+.corAnswers-BoardHeader #settings{
+    width:11%;}
 .corAnswers-Board>ol>details>summary>div{ 
     margin-top:-35px;}
 .corAnswers-Board>ol>details>li>ul{
@@ -1795,22 +1838,29 @@ details > summary:first-of-type{
 .corAnswers-btn>button{
     width:50%;}}
 @media only screen and (min-width:768px){
+.corAnswers-BoardHeader #settings{
+    width:8%;}
+#settingsReviewContent{top:220px;}
 .corAnswers-Board-Header, .corAnswers-Board, .corAnswers-btn{ 
     width:99%;}}
 @media only screen and (min-width:821px){
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:45px;}}
 @media only screen and (min-width:912px){ 
+.corAnswers-BoardHeader #settings{
+    width:6%;}
 .corAnswers-Board>ol>details>summary>div{ 
     margin-top:-40px;}}
 @media only screen and (min-width:1024px){
+.corAnswers-BoardHeader #settings{
+    width:5%;}
+#settingsReviewContent{top:100px;}
 .corAnswers-Board>ol>details>summary>div{ 
     margin-top:-43px;}
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:53px;}}
-/* @media only screen and (min-width:1025px){
-.corAnswers-Board>ol>details>li>ul{ 
-    padding-inline-start:67px;}} */
+@media only screen and (min-width: 1024px) and (min-height: 1366px){ 
+#settingsReviewContent{top:350px;}}
 @media only screen and (min-width:1280px){
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:67px;}}
