@@ -11,8 +11,18 @@
                 <li class="darkPurple">DarkPurple</li>
             </ul>
         </div>
-        <div onclick="window.location.reload()">Restart Quiz</div>
+        <div onclick="window.location.reload()">Redo Quiz</div>
         <div id="rules" onclick="showRules()">Quiz Rules</div>
+        <div>
+            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
+            {% for aaa in site.pages %}
+            {% if aaa.subsection contains caty %}
+            <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                <span>New Quiz</span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <hr>
     <div id="audioSettings">
