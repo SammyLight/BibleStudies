@@ -1705,11 +1705,10 @@ to{ left:0px;}
     font-family:poppins!important;
     font-family:'DynaPuff', cursive!important;
     font-style:normal;
-    /* display:grid; */
-    grid-template-rows:10% 10% auto 11%;
     grid-template-rows:70px 70px auto 8%;
+    grid-template-rows: 60px 80px auto 20px;
     height:auto;
-    min-height:calc(100vh - 50px);
+    min-height:calc(100vh - 90px);
     position:relative;
 }
 .corAnswers-BoardHeader{
@@ -1735,7 +1734,6 @@ to{ left:0px;}
 }
 .corAnswers-Board-Header{
     display:grid;
-    /* grid-template-columns:48% 52%; */
     grid-template-rows:100%;
     place-self:center;
     height:-webkit-fill-available;}
@@ -1748,7 +1746,6 @@ to{ left:0px;}
     align-items:center;}
 .corAnswers-Board{ 
     display:grid;
-    /* grid-template-rows:100%; */
     place-self:start center;}
 .corAnswers-Board ol{ 
     list-style:none;
@@ -1757,19 +1754,15 @@ to{ left:0px;}
 .corAnswers-Board p{ 
     display:none!important;}
 .corAnswers-Board>ol>details{ 
-    /* display:flex; */
     font-family:jaf-bernino-sans-condensed,sans-serif!important;
     font-family:'DynaPuff', cursive!important;
     font-style:normal;
-    /* margin-top:3px; */
     margin:0!important;
     padding:1em 0;
     place-content:start;
     place-items:start;
     text-align:left;
     word-break:break-word;
-    /* height:-webkit-fill-available;
-    overflow:hidden; */
 }
 details > summary:first-of-type{ 
     display:list-item;}
@@ -1791,8 +1784,6 @@ details > summary:first-of-type{
     padding:0;}
 .corAnswers-btn{
     display:flex;
-    /* justify-content:center;
-    justify-self:center; */
     place-self:start center;
     height:fit-content;
     padding:1em 0;}
@@ -1800,7 +1791,6 @@ details > summary:first-of-type{
     font-family:'DynaPuff', cursive!important;
     border-radius:6px;
     margin:5px 5px 5px 0;
-    /* padding:0.5em; */
     font-size:2em!important; /* 25px */
     text-transform:uppercase;}
 .corAnswers-btn>button>a{ 
@@ -1813,17 +1803,30 @@ details > summary:first-of-type{
     text-decoration:none!important;}
 .corAnswers-Board-Header, .corAnswers-Board, .corAnswers-btn{ 
     width:97%;}
+.corAnswers-Board>ol>details>li>ul>li>ul>li,.corAnswers-Board>ol>details>li>ul>li>span>ul>li{ 
+    margin-top:10px;
+    list-style-type:decimal;}
+.corAnswers-Board>ol>details>li>ul>li>ul>li>ul>li,.corAnswers-Board>ol>details>li>ul>li>span>ul>li>ul>li{ 
+    list-style:lower-alpha;}
+@media only screen and (max-width:767px){
+.corAnswers-BoardHeader #settings{
+    width:9%;}
+#settingsReviewContent{top:200px;}}
+@media only screen and (max-width:541px){
+.corAnswers-BoardHeader #settings{
+    width:11%;}
+#settingsReviewContent{top:160px;}}
+@media only screen and (max-width:490px){
+.corAnswers-BoardHeader #settings{
+    width:13%;}}
 @media only screen and (max-width:300px){
 #CorrectedAnswers-section{ 
-    grid-template-rows:50px 50px auto 8%;}
+    grid-template-rows:40px 50px auto 10%}
 .corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{ 
     font-size:0.875em;}
 .corAnswers-Board>ol>details>summary>div{ 
     grid-template-columns:85%;}}
 @media only screen and (min-width:490px){
-.corAnswers-BoardHeader #settings{
-    width:13%;}
-#settingsReviewContent{top:160px;}
 .corAnswers-Board>ol>details>li>ul{
     padding-inline-start:25px;}}
 @media only screen and (min-width:541px){
@@ -1839,7 +1842,7 @@ details > summary:first-of-type{
     width:50%;}}
 @media only screen and (min-width:768px){
 .corAnswers-BoardHeader #settings{
-    width:8%;}
+    width:7%;}
 #settingsReviewContent{top:220px;}
 .corAnswers-Board-Header, .corAnswers-Board, .corAnswers-btn{ 
     width:99%;}}
@@ -1862,32 +1865,36 @@ details > summary:first-of-type{
 @media only screen and (min-width: 1024px) and (min-height: 1366px){ 
 #settingsReviewContent{top:350px;}}
 @media only screen and (min-width:1280px){
+#settingsReviewContent{top:180px;}
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:67px;}}
 /* MOBILE VIEW FONT SIZES CSS */
-@media only screen and (max-width:820px){
+@media only screen and (max-width:767px){
 .corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
-    font-size:2.3em;}
+    font-size:1.5em;}
 .corAnswers-Board>ol>details{ 
-    font-size:2.5em;
-    line-height:35px;}
+    font-size:2em;
+    line-height:30px;}
 .corAnswers-Board>ol>details>li>ul>li{ 
-    font-size:0.9em;
+    font-size:1em;
+    line-height:30px;}
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
+    font-size:0.974em; /* 22px */
     line-height:30px;}}
 @media only screen and (max-width:540px){
 .corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
     font-size:1.175em; /* 20px */
 }
 .corAnswers-Board>ol>details{ 
-    font-size:1.475em; /* 22.5px */
+    font-size:1.575em; /* 22.5px */
     line-height:26px;
     gap:10px;}
 .corAnswers-Board>ol>details>li>ul>li{ 
     font-size:0.88em;/* 22p.3x */
     line-height:26px;}
 .corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
-    font-size:0.8888em; /* 14.5px */
-    line-height:20px;}
+    font-size:0.7888em; /* 14.5px */
+    line-height:26px;}
 .corAnswers-btn>button{
     font-size:1.25em!important; /* 20px */
     width:100%;}}
@@ -1896,44 +1903,59 @@ details > summary:first-of-type{
     font-size:0.885em;}
 .corAnswers-btn>button{
     font-size:1em!important; 
-}}
-/* DESKTOP VIEW FONT SIZES CSS */
-@media only screen and (min-width:821px){
-.corAnswers-Board-Header>h1{
-    font-size:2em; /* 20px */
 }
+.corAnswers-Board>ol>details {
+    font-size: 1.475em;}}
+/* DESKTOP VIEW FONT SIZES CSS */
+@media only screen and (min-width:768px){
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
+    font-size:2em;}
 .corAnswers-Board>ol>details{ 
-    font-size:2em; /* 20px */
+    font-size:2.5em;
     line-height:36px;}
 .corAnswers-Board>ol>details>li>ul>li{ 
-    font-size:0.815em; /* 26px */
+    font-size:0.715em;
     line-height:28px;}
 .corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
-    font-size:0.844em; /* 22px */
-    line-height:24px;}}
-@media only screen and (min-width:912px){
+    font-size:0.574em; /* 22px */
+    line-height:28px;}}
+@media only screen and (min-width:820px){
 .corAnswers-Board-Header>h1{
-    font-size:2.7em; /* 38px */
+    font-size:2em;
 }
 .corAnswers-Board>ol>details{ 
-    font-size:3em; /* 38px */
-    line-height:42px;}
+    font-size:2.5em;
+    line-height:36px;}
 .corAnswers-Board>ol>details>li>ul>li{ 
-    font-size:0.943em; /* 32px */
-    line-height:34px;}
-.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
-    font-size:0.875em; /* 32px */
+    font-size:0.715em;
+    line-height:28px;}}
+@media only screen and (min-width:912px){
+.corAnswers-Board>ol>details>li>ul>li{ 
+    font-size:0.8em;
     line-height:30px;}}
 @media only screen and (min-width:1024px){
-.corAnswers-Board-Header>h1{
+    .corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1{
     font-size:2.25em; /* 36px */
 }
 .corAnswers-Board>ol>details{ 
     font-size:2.375em; /* 38px */
     line-height:42px;}
 .corAnswers-Board>ol>details>li>ul>li{ 
-    font-size:0.89em; /* 38px */
+    font-size:0.83em; /* 38px */
     line-height:34px;}
 .corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
-    font-size:0.812em; /* 26px */
-    line-height:28px;}}
+    font-size:0.532em; /* 26px */
+    line-height:32px;}}
+@media only screen and (min-width:1180px){
+.corAnswers-Board-Header>h1{
+    font-size:2.45em; /* 36px */
+}
+.corAnswers-Board>ol>details{ 
+    font-size:2.5em; /* 38px */
+    line-height:42px;}
+.corAnswers-Board>ol>details>li>ul>li{ 
+    font-size:0.9em; /* 38px */
+    line-height:38px;}
+.corAnswers-Board>ol>details>li>ul>li>ul,.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
+    font-size:0.632em; /* 26px */
+    line-height:36px;}}
