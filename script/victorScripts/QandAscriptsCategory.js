@@ -122,18 +122,31 @@ var darkCyanCssFile;
 var darkPurpleCssFile;
 
 darkPurpleCssFile = document.getElementById('darkPurpleCssFile');
-var antiqueWhiteThemeBtn = document.getElementById('antiqueWhite');
-antiqueWhiteThemeBtn.addEventListener('click', changeToAntiquewhiteTheme);
-var blackPearlThemeBtn = document.getElementById('blackPearl');
-blackPearlThemeBtn.addEventListener('click', changeToBlackPearlTheme);
-var copperRoseThemeBtn = document.getElementById('copperRose');
-copperRoseThemeBtn.addEventListener('click', changeToCopperRoseTheme);
-var crisomThemeBtn = document.getElementById('crimson');
-crisomThemeBtn.addEventListener('click', changeToCrimsonTheme);
-var darkCyanThemeBtn = document.getElementById('darkCyan');
-darkCyanThemeBtn.addEventListener('click', changeToDarkCyanTheme);
-var darkPurpleThemeBtn = document.getElementById('darkPurple');
-darkPurpleThemeBtn.addEventListener('click', changeToDarkPurpleTheme);
+
+const antiqueWhiteThemeBtn = document.getElementsByClassName('antiqueWhite');
+Array.from(antiqueWhiteThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToAntiquewhiteTheme);
+});
+const blackPearlThemeBtn = document.getElementsByClassName('blackPearl');
+Array.from(blackPearlThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToBlackPearlTheme);
+});
+const copperRoseThemeBtn = document.getElementsByClassName('copperRose');
+Array.from(copperRoseThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToCopperRoseTheme);
+});
+const crisomThemeBtn = document.getElementsByClassName('crimson');
+Array.from(crisomThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToCrimsonTheme);
+});
+const darkCyanThemeBtn = document.getElementsByClassName('darkCyan');
+Array.from(darkCyanThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToDarkCyanTheme);
+});
+const darkPurpleThemeBtn = document.getElementsByClassName('darkPurple');
+Array.from(darkPurpleThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToDarkPurpleTheme);
+});
 
 function setDarkOrLightModeInCache(colorMode){
     localStorage.setItem('colorMode', colorMode)
