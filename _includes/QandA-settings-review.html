@@ -1,28 +1,6 @@
 <div id="settingsReviewContent">
     <div class="settingsContentInner">
-        <div id="themeSettings">
-            <div class="collapsible">Change Theme <i class="fas fa-solid fa-caret-right"></i></div>
-            <ul class="content">
-                <li class="antiqueWhite">Antiquewhite
-                    <span></span>
-                </li>
-                <li class="blackPearl">BlackPearl
-                    <span></span>
-                </li>
-                <li class="copperRose">CopperRose
-                    <span></span>
-                </li>
-                <li class="crimson">Crimson
-                    <span></span>
-                </li>
-                <li class="darkCyan">DarkCyan
-                    <span></span>
-                </li>
-                <li class="darkPurple">DarkPurple
-                    <span></span>
-                </li>
-            </ul>
-        </div>
+        {% include QandA-settings-fontAndTheme.html %}
         <div onclick="window.location.reload()">Redo Quiz</div>
         <div id="rules" onclick="showRules()">Quiz Rules</div>
         <div>
