@@ -582,7 +582,8 @@ button{
     padding:40px;
     z-index:3;
     gap:10px;
-    text-transform:uppercase;}
+    text-transform:uppercase;
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%)}
 #settingsContent a, #settingsReviewContent a, #catSettingsContent a, #poorPerPopup a{
     text-decoration:none;}
 .settingsContentInner, .catSettingsContentInner, #poorPerPopup{ 
@@ -612,14 +613,14 @@ button{
 #themeSettings li{
     grid-template-columns:70% 25%;
 }
-#fontSettings li{
+#themeSettings li, #fontSettings li{
     grid-template-columns:45% 30% 25%;
 }
-#fontSettings li>p{
+#themeSettings li>p, #fontSettings li>p{
     margin:0;
     max-width: 100px;
 }
-#fontSettings li>em{
+#themeSettings li>em, #fontSettings li>em{
     font-size: 10px!important;
     place-self: center;
 }
@@ -629,7 +630,7 @@ button{
     height:20px;
     margin-top:2px;
 }
-#fontSettings li>span{
+#themeSettings li>span, #fontSettings li>span{
     font-size: 14px!important;
     position:absolute;
     right:10px;
@@ -642,7 +643,7 @@ button{
 }
 @media screen and (max-width:541px){
 #themeSettings li{
-    grid-template-columns:80% 20%;
+    /* grid-template-columns:80% 20%; */
 }
 #themeSettings li>span{
     width:12px;
