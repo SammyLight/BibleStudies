@@ -6,20 +6,16 @@ function toggleFontAndAddCurrentLabel(font) {
     allListItems.forEach(item => {
         removeCurrentLabel(item);
     });
-
     // Set the font for the body
     document.body.style.fontFamily = font;
-
     // Save the selected font to localStorage
     localStorage.setItem('selectedFont', font);
-
     // Find the corresponding LI element for the current font and add "current" label
     var currentLiElement = findLiElementForFont(font);
     if (currentLiElement) {
         addCurrentLabel(currentLiElement);
     }
 }
-
 // Function to find LI element for a given font
 function findLiElementForFont(font) {
     // Find the LI element with the specified font value
@@ -31,11 +27,10 @@ function findLiElementForFont(font) {
     }
     return null; // Return null if not found
 }
-
+// Function add current label
 function addCurrentLabel(liElement) {
     const createTextForCurrentFont = document.createElement('em');
     createTextForCurrentFont.innerHTML = ' (current)';
-
     // Check if the first child is a text node
     if (liElement.firstChild && liElement.firstChild.nodeType === Node.TEXT_NODE) {
         // Insert the <em> element after the text node
@@ -45,14 +40,13 @@ function addCurrentLabel(liElement) {
         liElement.insertBefore(createTextForCurrentFont, liElement.lastChild);
     }
 }
-
+// Function remove current label
 function removeCurrentLabel(liElement) {
     var currentLabel = liElement.querySelector('em');
     if (currentLabel) {
         liElement.removeChild(currentLabel);
     }
 }
-
 // Function to find LI element for a given font within a specific container
 function findLiElementForFontInContainer(font, container) {
     // Find the LI element with the specified font value within the container
@@ -64,47 +58,37 @@ function findLiElementForFontInContainer(font, container) {
     }
     return null; // Return null if not found
 }
-
 // Function to add "current" label to all occurrences of the specified font
 function addCurrentLabelToAllOccurrences(font) {
     // Get all occurrences of the font settings structure
     var fontSettingsContainers = document.querySelectorAll('.fontSettings');
-
     // Loop through each occurrence
     fontSettingsContainers.forEach(function (container) {
         // Find the corresponding LI element based on the selectedFont attribute
         var liElement = findLiElementForFontInContainer(font, container);
-
         // If the LI element is found, add the "current" label
         if (liElement) {
             addCurrentLabel(liElement);
         }
     });
 }
-
 // Run on page load
 document.addEventListener('DOMContentLoaded', function () {
     // Get the saved font from localStorage
     var savedFont = localStorage.getItem('selectedFont');
-
     if (savedFont) {
         // Apply the saved font to the body
         document.body.style.fontFamily = savedFont;
-
         // Add "current" label to all occurrences of the saved font
         addCurrentLabelToAllOccurrences(savedFont);
     }
 });
-
-
 // Event listener for font settings container
 document.addEventListener('click', function (event) {
     var targetElement = event.target;
     var fontSettingsContainer = targetElement.closest('.fontSettings');
-
     if (fontSettingsContainer) {
         var liElement = targetElement.closest('li');
-
         if (liElement) {
             var selectedFont = liElement.getAttribute('font');
             toggleFontAndAddCurrentLabel(selectedFont);
@@ -113,28 +97,6 @@ document.addEventListener('click', function (event) {
         }
     }
 });
-
-
-// // Run when an LI is clicked
-// document.querySelector('.fontSettings').addEventListener('click', function (event) {
-//     var targetElement = event.target;
-//     // Check if the clicked element is an LI or a child of an LI
-//     var liElement = targetElement.closest('li');
-//     if (liElement) {
-//         var selectedFont = liElement.getAttribute('font');
-//         toggleFontAndAddCurrentLabel(selectedFont);
-//     }
-// });
-// // Add a separate event listener for the p element
-// document.querySelector('.fontSettings li p').addEventListener('click', function (event) {
-//     // Stop the event from propagating to the parent LI
-//     event.stopPropagation();
-//     var liElement = event.currentTarget.closest('li');
-//     if (liElement) {
-//         var selectedFont = liElement.getAttribute('font');
-//         toggleFontAndAddCurrentLabel(selectedFont);
-//     }
-// });
 //Get the font value in the attribute of each Li and make the font-family of its span(created)
 const fontSettings = document.getElementsByClassName('fontSettings');
 Array.from(fontSettings).forEach(element => {
