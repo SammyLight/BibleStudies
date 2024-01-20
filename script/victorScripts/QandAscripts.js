@@ -103,7 +103,6 @@ for (i = 0; i < questions.length; i++) {
 
     var parentElementLI = questions[i];
     var parentElementLINowDiv = parentElementLI.firstChild;
-    // console.log(parentElementLINowDiv);
     var parentElmTextNode = parentElementLINowDiv.textContent.replace(/(\((.*)\)[\s\n\r]*)/,'<p>$2</p>');
     parentElementLINowDiv.remove();
     var createDiv = document.createElement("div");
@@ -650,7 +649,6 @@ function showAllQuestionsWithAnswers() {
         var optSpanClone = optClone[k].querySelector('span.insertedSpan');
         var optImgClone = optSpanClone.querySelectorAll('img');
         var optExplainClone = optClone[k].querySelector('ul');
-        console.log(optExplainClone);
         // Iterate through each img element and remove it
         optImgClone.forEach(function(img) {
             img.remove();
@@ -769,7 +767,6 @@ window.addEventListener("DOMContentLoaded", () => {
     quizBgSound.play();
     letsStart.volume = 0.1;
     letsStart.play();
-    getDarkOrLightModeFROMCache();
 });
 function bgSoundPauseButton() {
     if (quizBgSound.play()){
@@ -806,131 +803,4 @@ function bgSoundPlayButtonFromResult() {
             buttonPauseFromResult.style.opacity = '1'
         }
     }
-}
-
-// FOR TOGGLING THEMES
-var antiqueWhiteCssFile;
-var blackPearlCssFile;
-var copperRoseCssFile;
-var crimsonCssFile;
-var darkCyanCssFile;
-var darkPurpleCssFile;
-
-darkPurpleCssFile = document.getElementById('darkPurpleCssFile');
-
-const antiqueWhiteThemeBtn = document.getElementsByClassName('antiqueWhite');
-Array.from(antiqueWhiteThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToAntiquewhiteTheme);
-});
-const blackPearlThemeBtn = document.getElementsByClassName('blackPearl');
-Array.from(blackPearlThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToBlackPearlTheme);
-});
-const copperRoseThemeBtn = document.getElementsByClassName('copperRose');
-Array.from(copperRoseThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToCopperRoseTheme);
-});
-const crisomThemeBtn = document.getElementsByClassName('crimson');
-Array.from(crisomThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToCrimsonTheme);
-});
-const darkCyanThemeBtn = document.getElementsByClassName('darkCyan');
-Array.from(darkCyanThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToDarkCyanTheme);
-});
-const darkPurpleThemeBtn = document.getElementsByClassName('darkPurple');
-Array.from(darkPurpleThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToDarkPurpleTheme);
-});
-
-function setDarkOrLightModeInCache(colorMode){
-    localStorage.setItem('colorMode', colorMode)
-}
-function getDarkOrLightModeFROMCache(){
-    if(colorMode = localStorage.getItem('colorMode')){
-        if(colorMode=='DarkPurpleTheme'){changeToDarkPurpleTheme()}
-        else if(colorMode=='BlackPearlTheme'){changeToBlackPearlTheme()}
-        else if(colorMode=='CopperRoseTheme'){changeToCopperRoseTheme()}
-        else if(colorMode=='CrimsonTheme'){changeToCrimsonTheme()}
-        else if(colorMode=='DarkCyanTheme'){changeToDarkCyanTheme()}
-        else if(colorMode=='AntiquewhiteTheme'){changeToAntiquewhiteTheme()}
-    } else {changeToDarkPurpleTheme()}
-}
-function changeToAntiquewhiteTheme() {
-    setDarkOrLightModeInCache('AntiquewhiteTheme')
-    antiqueWhiteCssFile = document.createElement('link');
-    antiqueWhiteCssFile.id = 'antiqueWhiteCssFile'
-    antiqueWhiteCssFile.type = 'text/css';
-    antiqueWhiteCssFile.href = '../style/bibleQuizBG-antiquewhite.css';
-    antiqueWhiteCssFile.rel = 'stylesheet';
-    head.appendChild(antiqueWhiteCssFile);
-    blackPearlCssFile.remove();
-    crimsonCssFile.remove();
-    darkCyanCssFile.remove();
-    darkPurpleCssFile.remove();
-    copperRoseCssFile.remove();
-}
-function changeToBlackPearlTheme() {
-    setDarkOrLightModeInCache('BlackPearlTheme')
-    blackPearlCssFile = document.createElement('link');
-    blackPearlCssFile.id = 'blackPearlCssFile'
-    blackPearlCssFile.type = 'text/css';
-    blackPearlCssFile.href = '../style/bibleQuizBG-blackpearl.css';
-    blackPearlCssFile.rel = 'stylesheet';
-    head.appendChild(blackPearlCssFile);
-    antiqueWhiteCssFile.remove();
-    crimsonCssFile.remove();
-    darkCyanCssFile.remove();
-    copperRoseCssFile.remove();
-    darkPurpleCssFile.remove();
-}
-function changeToCopperRoseTheme() {
-    setDarkOrLightModeInCache('CopperRoseTheme')
-    copperRoseCssFile = document.createElement('link');
-    copperRoseCssFile.id = 'copperRoseCssFile'
-    copperRoseCssFile.type = 'text/css';
-    copperRoseCssFile.href = '../style/bibleQuizBG-copperrose.css';
-    copperRoseCssFile.rel = 'stylesheet';
-    head.appendChild(copperRoseCssFile);
-    antiqueWhiteCssFile.remove();
-    crimsonCssFile.remove();
-    darkCyanCssFile.remove();
-    darkPurpleCssFile.remove();
-}
-function changeToCrimsonTheme() {
-    setDarkOrLightModeInCache('CrimsonTheme')
-    crimsonCssFile = document.createElement('link');
-    crimsonCssFile.id = 'crimsonCssFile'
-    crimsonCssFile.type = 'text/css';
-    crimsonCssFile.href = '../style/bibleQuizBG-crimson.css';
-    crimsonCssFile.rel = 'stylesheet';
-    head.appendChild(crimsonCssFile);
-    antiqueWhiteCssFile.remove();
-    blackPearlCssFile.remove();
-    darkCyanCssFile.remove();
-    darkPurpleCssFile.remove();
-    copperRoseCssFile.remove();
-}
-function changeToDarkCyanTheme() {
-    setDarkOrLightModeInCache('DarkCyanTheme')
-    darkCyanCssFile = document.createElement('link');
-    darkCyanCssFile.id = 'darkCyanCssFile'
-    darkCyanCssFile.type = 'text/css';
-    darkCyanCssFile.href = '../style/bibleQuizBG-darkcyan.css';
-    darkCyanCssFile.rel = 'stylesheet';
-    head.appendChild(darkCyanCssFile);
-    antiqueWhiteCssFile.remove();
-    blackPearlCssFile.remove();
-    crimsonCssFile.remove();
-    copperRoseCssFile.remove();
-    darkPurpleCssFile.remove();
-}
-function changeToDarkPurpleTheme() {
-    setDarkOrLightModeInCache('DarkPurpleTheme')
-    head.appendChild(darkPurpleCssFile);
-    antiqueWhiteCssFile.remove();
-    blackPearlCssFile.remove();
-    crimsonCssFile.remove();
-    copperRoseCssFile.remove();
-    darkCyanCssFile.remove();
 }
