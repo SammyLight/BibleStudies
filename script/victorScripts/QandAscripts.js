@@ -498,8 +498,8 @@ function showHintFunc() {
 }
 //TO HIDE QUESTION HINT
 function closeHintFunc() {
-    if (showHint.className == "showHintCSS") {
-        showHint.className = "";
+    if (showHint.classList.contains("showHintCSS")) {
+        showHint.classList.remove("showHintCSS")
     }
     clickSound.play(); 
     closeHintSound.play();
@@ -508,10 +508,10 @@ function closeHintFunc() {
 document.addEventListener('mouseup', function(e) {
     var container = showHint;
     if (!container.contains(e.target)) {
-        if (container.className == "showHintCSS") {
-            container.className = "";
-            closeHintSound.play();
+        if (container.classList.contains("showHintCSS")) {
+            container.classList.remove("showHintCSS")
             clickSound.play();
+            closeHintSound.play();
         }
     }
 });
@@ -520,15 +520,12 @@ var settingsReviewContent;
 var rulesContent;
 var closeSettings = document.createElement("SPAN");
 closeSettings.classList.add('closeSettings');
-closeSettings.innerText = 'x';
 closeSettings.addEventListener('click', closeSettingsFunc);
 var closeSettingsReview = document.createElement("SPAN");
 closeSettingsReview.classList.add('closeSettings');
-closeSettingsReview.innerText = 'x';
 closeSettingsReview.addEventListener('click', closeSettingsReviewFunc);
 var closeRules = document.createElement("SPAN");
 closeRules.classList.add('closeSettings');
-closeRules.innerText = 'x';
 closeRules.addEventListener('click', closeRulesFunc);
 
 //TO SHOW SETTINGS AND RULES
@@ -552,44 +549,44 @@ function showRules() {
 }
 //TO HIDE SETTINGS AND RULES
 function closeSettingsFunc() {
-    if (settingsContent.className == "show") {
-        settingsContent.className = "";
-      }
-      clickSound.play(); 
-      closeHintSound.play();
+    if (settingsContent.classList.contains("show")) {
+        settingsContent.classList.remove("show");
+    }
+    clickSound.play(); 
+    closeHintSound.play();
 }
 function closeSettingsReviewFunc() {
-    if (settingsReviewContent.className == "show") {
-        settingsReviewContent.className = "";
-      }
-      clickSound.play(); 
-      closeHintSound.play();
+    if (settingsReviewContent.classList.contains("show")) {
+        settingsReviewContent.classList.remove("show");
+    }
+    clickSound.play(); 
+    closeHintSound.play();
 }
 function closeRulesFunc() {
-    if (rulesContent.className == "show") {
-        rulesContent.className = "";
-      }
-      clickSound.play(); 
-      closeHintSound.play();
+    if (rulesContent.classList.contains("show")) {
+        rulesContent.classList.remove("show");
+    }
+    clickSound.play(); 
+    closeHintSound.play();
 }
 //CLICK ANYWHERE TO CLOSE SETTINGS
 document.addEventListener('mouseup', function(e) {
     var settingsContentContainer = document.getElementById("settingsContent");
         if (!settingsContentContainer.contains(e.target)) {
-            if (settingsContentContainer.className == "show") {
-                settingsContentContainer.className = "";
-                closeHintSound.play();
+            if (settingsContentContainer.classList.contains("show")) {
+                settingsContentContainer.classList.remove("show");
                 clickSound.play();
+                closeHintSound.play();
             }
         }
 });
 document.addEventListener('mouseup', function(e) {
     var settingsReviewContentContainer = document.getElementById("settingsReviewContent");
         if (!settingsReviewContentContainer.contains(e.target)) {
-            if (settingsReviewContentContainer.className == "show") {
-                settingsReviewContentContainer.className = "";
-                closeHintSound.play();
+            if (settingsReviewContentContainer.classList.contains("show")) {
+                settingsReviewContentContainer.classList.remove("show");
                 clickSound.play();
+                closeHintSound.play();
             }
         }
 });
@@ -692,12 +689,6 @@ function showAllQuestionsWithAnswers() {
     CorrectedAnswersSection.style.display = 'grid';
     resultSound.play();
 }
-
-//PAGE PRELOAD
-setTimeout(function() {
-    $('.loader-bg-bibleQuiz').fadeToggle();
-}, 1500);
-
 //SOUND
 var wrongAnswerSound = new Audio("../audio/wrongAnswerSound2.mp3");
 var rightAnswerSound = new Audio("../audio/rightAnswerSound2.mp3");
