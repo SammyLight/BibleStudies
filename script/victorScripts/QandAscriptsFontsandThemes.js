@@ -11,6 +11,7 @@ var blackPearlCssFile;
 var copperRoseCssFile;
 var crimsonCssFile;
 var darkCyanCssFile;
+var darkGreyCssFile;
 var darkPurpleCssFile;
 var whiteCssFile;
 
@@ -40,6 +41,10 @@ const darkCyanThemeBtn = document.getElementsByClassName('darkCyanCssFile');
 Array.from(darkCyanThemeBtn).forEach(element => {
     element.addEventListener('click', changeToDarkCyanTheme);
 });
+const darkGreyThemeBtn = document.getElementsByClassName('darkGreyCssFile');
+Array.from(darkGreyThemeBtn).forEach(element => {
+    element.addEventListener('click', changeToDarkCyanTheme);
+});
 const darkPurpleThemeBtn = document.getElementsByClassName('darkPurpleCssFile');
 Array.from(darkPurpleThemeBtn).forEach(element => {
     element.addEventListener('click', changeToDarkPurpleTheme);
@@ -59,6 +64,7 @@ function getDarkOrLightModeFROMCache(){
         else if(colorMode=='BlackPearlTheme'){changeToBlackPearlTheme()}
         else if(colorMode=='CopperRoseTheme'){changeToCopperRoseTheme()}
         else if(colorMode=='CrimsonTheme'){changeToCrimsonTheme()}
+        else if(colorMode=='DarkGreyTheme'){changeToDarkGreyTheme()}
         else if(colorMode=='DarkCyanTheme'){changeToDarkCyanTheme()}
         else if(colorMode=='AntiquewhiteTheme'){changeToAntiquewhiteTheme()}
         else if(colorMode=='whiteTheme'){changeToWhiteTheme()}
@@ -77,6 +83,7 @@ function changeToAntiquewhiteTheme() {
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
@@ -93,6 +100,7 @@ function changeToBlackTheme() {
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
@@ -109,6 +117,7 @@ function changeToBlackPearlTheme() {
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
@@ -125,6 +134,7 @@ function changeToCopperRoseTheme() {
     if (blackPearlCssFile) blackPearlCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
@@ -141,6 +151,7 @@ function changeToCrimsonTheme() {
     if (blackPearlCssFile) blackPearlCssFile.remove();
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
@@ -157,18 +168,37 @@ function changeToDarkCyanTheme() {
     if (blackPearlCssFile) blackPearlCssFile.remove();
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
+    if (darkPurpleCssFile) darkPurpleCssFile.remove();
+    if (whiteCssFile) whiteCssFile.remove();
+}
+function changeToDarkGreyTheme() {
+    setDarkOrLightModeInCache('DarkGreyTheme')
+    darkGreyCssFile = document.createElement('link');
+    darkGreyCssFile.id = 'darkGreyCssFile'
+    darkGreyCssFile.type = 'text/css';
+    darkGreyCssFile.href = '../style/bibleQuizBG-darkgrey.css';
+    darkGreyCssFile.rel = 'stylesheet';
+    head.appendChild(darkGreyCssFile);
+    if (antiqueWhiteCssFile) antiqueWhiteCssFile.remove();
+    if (blackCssFile) blackCssFile.remove();
+    if (blackPearlCssFile) blackPearlCssFile.remove();
+    if (copperRoseCssFile) copperRoseCssFile.remove();
+    if (crimsonCssFile) crimsonCssFile.remove();
+    if (darkCyanCssFile) darkCyanCssFile.remove();
     if (darkPurpleCssFile) darkPurpleCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
 function changeToDarkPurpleTheme() {
     setDarkOrLightModeInCache('DarkPurpleTheme')
     head.appendChild(darkPurpleCssFile);
-    // Reference the existing darkPurpleCssFile link element
+    // Reference the existing links element
     antiqueWhiteCssFile = document.getElementById('antiqueWhiteCssFile');
     copperRoseCssFile = document.getElementById('copperRoseCssFile');
     crimsonCssFile = document.getElementById('crimsonCssFile');
     blackPearlCssFile = document.getElementById('blackPearlCssFile');
     darkCyanCssFile = document.getElementById('darkCyanCssFile');
+    darkGreyCssFile = document.getElementById('darkGreyCssFile');
     darkPurpleCssFile = document.getElementById('darkPurpleCssFile');
     // Remove other CSS files
     if (antiqueWhiteCssFile) antiqueWhiteCssFile.remove();
@@ -177,6 +207,7 @@ function changeToDarkPurpleTheme() {
     if (copperRoseCssFile) copperRoseCssFile.remove();
     if (crimsonCssFile) crimsonCssFile.remove();
     if (darkCyanCssFile) darkCyanCssFile.remove();
+    if (darkGreyCssFile) darkGreyCssFile.remove();
     if (whiteCssFile) whiteCssFile.remove();
 }
 function changeToWhiteTheme() {
