@@ -43,7 +43,7 @@ Array.from(darkCyanThemeBtn).forEach(element => {
 });
 const darkGreyThemeBtn = document.getElementsByClassName('darkGreyCssFile');
 Array.from(darkGreyThemeBtn).forEach(element => {
-    element.addEventListener('click', changeToDarkCyanTheme);
+    element.addEventListener('click', changeToDarkGreyTheme);
 });
 const darkPurpleThemeBtn = document.getElementsByClassName('darkPurpleCssFile');
 Array.from(darkPurpleThemeBtn).forEach(element => {
