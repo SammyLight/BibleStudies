@@ -81,17 +81,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-    console.log(latestVideoBox);
-    console.log(tabOfLatestVideoBox);
-
-    console.log(previousVideoBoxOne);
-    console.log(tabOfpreviousVideoBoxOne);
-
-    console.log(previousVideoBoxTwo);
-    console.log(tabOfpreviousVideoBoxTwo);
-
-    console.log(previousVideoBoxThree);    
-    console.log(tabOfpreviousVideoBoxThree);
+    // console.log(latestVideoBox);
+    // console.log(tabOfLatestVideoBox);
+    // console.log(previousVideoBoxOne);
+    // console.log(tabOfpreviousVideoBoxOne);
+    // console.log(previousVideoBoxTwo);
+    // console.log(tabOfpreviousVideoBoxTwo);
+    // console.log(previousVideoBoxThree);    
+    // console.log(tabOfpreviousVideoBoxThree);
 
     let moved = false; // Flag to track whether the buttons have been moved
     const btnArray = Array.from(allBtns);
@@ -221,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   allBtns.forEach((elem) => {
     const linkId = elem.id;
-
     // Define a function to handle the setTimeout callback
     function updateButton() {
       // Find the corresponding tab for the button
