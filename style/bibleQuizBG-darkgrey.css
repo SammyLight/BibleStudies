@@ -1,9 +1,9 @@
 :root {
     --ansANDexp:#f1a509;
     --bg-cat-grid:aliceblue;
-    --bg-color:#000;
-    --bg-color-hover:#212121;
-    --scrollbar-bg-color:#272727;
+    --bg-color:#212121;
+    --bg-color-hover:#292929;
+    --scrollbar-bg-color:#000000;
     /* --border-dark:#050608; */
     --border-light:#f0f6fc;
     --btn-bg-color-dark:#f1a509;
@@ -14,7 +14,7 @@
     --fade:rgba(0,0,0,0.4);
     --gradient1:#969292;
     --gradient2:#969292;
-    --header-links-hover:#212121;
+    --header-links-hover:#292929;
     --loader-border:#ff5733;
     --perm-fail:red;
     --perm-pass:#238636;
@@ -23,7 +23,7 @@
     --text-color-light:#f0f6fc;
     --text-color-cat-grid:#272727;
     --white-shadow:#fff;
-    --shadow:#272727;
+    --shadow:rgba(0, 0, 0, 0.4);
 }
 .animation-area{ 
 	background:linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);}
@@ -107,7 +107,7 @@ hr {
 /* END OF HEADER SECTION */
 #cat-bibleQuiz-inner h1{
     text-shadow:7px 7px orange,
-                 18px 18px #212121;
+                 18px 18px black;
     -webkit-text-fill-color:transparent;
     -webkit-text-stroke-width:4px;
     -webkit-text-stroke-color:honeydew;}
@@ -121,7 +121,7 @@ hr {
     -webkit-text-fill-color:transparent;
     -webkit-text-stroke-width:2px;
     text-shadow:3px 3px orange,
-                 10px 10px #212121;}}
+                 10px 10px black;}}
 .cat-grid>a{ 
     box-shadow:1px 1px 3px rgb(0 0 0 / 20%);}
 .cat-grid>a{ 
@@ -157,7 +157,7 @@ hr {
     -webkit-text-fill-color:transparent;}
 #settingsContent, #settingsReviewContent, #catSettingsContent{ 
     background:var(--bg-color);
-    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 47%);
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 87%);
     color:var(--text-color-light)!important;}
 #settingsContent a, #settingsReviewContent a, #catSettingsContent a{ 
     color:var(--text-color-light);}
