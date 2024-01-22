@@ -487,7 +487,6 @@ function isClickedLiAnAnswer(event) {
 var showHint;
 var closeHint = document.createElement("SPAN");
 closeHint.classList.add('closeHint');
-closeHint.innerText = 'x';
 closeHint.addEventListener('click', closeHintFunc);
 
 function showHintFunc() {
