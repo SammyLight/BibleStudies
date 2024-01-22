@@ -349,7 +349,7 @@ ul.header-links{
     width:35px;}}
 @media only screen and (min-width:590px){ 
 #settingsContent, #settingsReviewContent, #catSettingsContent{ 
-    top:160px;}
+    top:150px;}
 #cat-headerbar{
     grid-template-columns:30% 50% 20%;}
 .headerUL{ 
@@ -459,9 +459,7 @@ ul.header-links{
 .cat-grid{ 
     grid-gap:20px;
     gap:20px;
-    font-size:1em;}
-.cat-grid>a:hover{
-    font-size:1.1em;}}
+    font-size:1em;}}
 @media screen and (max-width:299px){
 .cat-grid{ 
     font-size:0.7em;}
@@ -583,7 +581,9 @@ button{
     z-index:3;
     gap:10px;
     text-transform:uppercase;
-    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%)}
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%);}
+#settingsContent, #settingsReviewContent, #catSettingsContent{
+    color: #f0f6fc!important;}
 #settingsContent a, #settingsReviewContent a, #catSettingsContent a, #poorPerPopup a{
     text-decoration:none;}
 .settingsContentInner, .catSettingsContentInner, #poorPerPopup{ 
@@ -608,7 +608,6 @@ button{
     display:grid;
     text-transform:capitalize;
     position:relative;
-    opacity:0.8;
 }
 #themeSettings li{
     grid-template-columns:70% 25%;
@@ -619,6 +618,10 @@ button{
 #themeSettings li>p, #fontSettings li>p{
     margin:0;
     max-width: 100px;
+    opacity: 0.8;
+}
+#themeSettings li>p:hover, #fontSettings li>p:hover{
+    opacity: 1;
 }
 #themeSettings li>em, #fontSettings li>em{
     font-size: 10px!important;
@@ -699,6 +702,12 @@ button{
     justify-content:center;
     align-items:center;
     width:50%;}
+#prevquestionbutton span, #nextquestionbutton span{
+    display:flex;
+}
+#prevquestionbutton i, #nextquestionbutton i{
+    margin-top:4px;
+}
 #questionhint{ 
     border-radius:3px;
     cursor:pointer;
@@ -706,9 +715,6 @@ button{
     align-content:center;
     /* grid-area:col-3; */
     place-self:center end;
-    /* width:100%; */
-    /* text-shadow:rgb(255 162 0 / 80%) 0px 0px 39px; */
-    /* width:fit-content; */
 }
 #CountHint{
     display:flex;
@@ -777,13 +783,20 @@ button{
     width:auto;
     z-index:0;}
 .closeHint, .closeSettings, .closeCatSettings{
+    background: url(../images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
     border-radius:6px;
-    padding:3px 6px;
+    width:1em;
+    height:1em;
+    padding:5px;
     cursor:pointer;
     position:absolute;
-    right:0;
-    top:0;
+    right:3px;
+    top:3px;
     z-index:1;}
+#rulesContent .closeSettings{
+    width:2em;
+    height:2em;
+}
 .showHintCSS>a, .showNewCatCSS>a{ 
     text-decoration:underline;
     place-self:center;}
@@ -1486,7 +1499,8 @@ to{ left:0px;}
     margin:10px 0;}
 .Result-Board h5{ 
     font-size:0.83em;
-    margin:10px 0;}
+    margin:10px 0;
+    margin-right:5px;}
 .Result-Board>div>span{ 
     font-size:larger;}
 .Result-img, .performance{ 

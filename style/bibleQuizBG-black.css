@@ -1,25 +1,25 @@
 :root {
-    --ansANDexp:#D3756B;
+    --ansANDexp:#f1a509;
     --bg-cat-grid:aliceblue;
-    --bg-color:#583d3d;
-    --bg-color-hover:#4f3737;
-    --scrollbar-bg-color:#3a2929;
+    --bg-color:#212121;
+    --bg-color-hover:#292929;
+    --scrollbar-bg-color:#000000;
     /* --border-dark:#050608; */
     --border-light:#f0f6fc;
-    --btn-bg-color-dark:#D3756B;
+    --btn-bg-color-dark:#f1a509;
     --btn-bg-color-light:#f0f6fc;
     --btn-nextprev-border:#969292;
     --cat-grid-hover:#f0f0f0ff;
-    --counter:#D3756B;
+    --counter:#58a6ff;
     --fade:rgba(0,0,0,0.4);
     --gradient1:#969292;
     --gradient2:#969292;
-    --header-links-hover:#4f3737;
+    --header-links-hover:#292929;
     --loader-border:#ff5733;
     --perm-fail:red;
     --perm-pass:#238636;
     --quizCatName:gray;
-    --text-color-dark:#D3756B;
+    --text-color-dark:#212121;
     --text-color-light:#f0f6fc;
     --text-color-cat-grid:#272727;
     --white-shadow:#fff;
