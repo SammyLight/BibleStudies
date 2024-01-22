@@ -81,17 +81,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-    // console.log(latestVideoBox);
-    // console.log(tabOfLatestVideoBox);
+    console.log(latestVideoBox);
+    console.log(tabOfLatestVideoBox);
 
-    // console.log(previousVideoBoxOne);
-    // console.log(tabOfpreviousVideoBoxOne);
+    console.log(previousVideoBoxOne);
+    console.log(tabOfpreviousVideoBoxOne);
 
-    // console.log(previousVideoBoxTwo);
-    // console.log(tabOfpreviousVideoBoxTwo);
+    console.log(previousVideoBoxTwo);
+    console.log(tabOfpreviousVideoBoxTwo);
 
-    // console.log(previousVideoBoxThree);    
-    // console.log(tabOfpreviousVideoBoxThree);
+    console.log(previousVideoBoxThree);    
+    console.log(tabOfpreviousVideoBoxThree);
 
     let moved = false; // Flag to track whether the buttons have been moved
     const btnArray = Array.from(allBtns);
@@ -99,7 +99,56 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let elem of btnArray.slice(1)) {
       let btnId = elem.id;
       let theButtonMatch;
-    
+      // Check for tabOfPreviousVideoBoxThree condition
+      if (tabOfpreviousVideoBoxThree) {
+        const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
+        const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
+        if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
+          // console.log(btnId);
+          theButtonMatch = elem;
+          // console.log(theButtonMatch);
+          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
+          const indexToMove = btnArray.indexOf(theButtonMatch);
+          if (indexToMove !== -1) {
+            // console.log(indexToMove);
+            const movedElement = btnArray.splice(indexToMove, 1)[0];
+            // console.log(movedElement);
+            btnArray.splice(4, 0, movedElement);
+            moved = true; // Set the flag to true
+          }
+        }
+      }
+      // Check for tabOfPreviousVideoBoxTwo condition
+      if (tabOfpreviousVideoBoxTwo) {
+        const parentOfPreviousVideoBoxTwo = previousVideoBoxTwo.parentNode;
+        const parentOfPreviousVideoBoxTwoId = parentOfPreviousVideoBoxTwo.id;
+        if (parentOfPreviousVideoBoxTwoId.includes(btnId)) {
+          theButtonMatch = elem;
+          // console.log(theButtonMatch);
+          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
+          const indexToMove = btnArray.indexOf(theButtonMatch);
+          if (indexToMove !== -1) {
+            const movedElement = btnArray.splice(indexToMove, 1)[0];
+            btnArray.splice(3, 0, movedElement);
+            moved = true; // Set the flag to true
+          }
+        }
+      }
+      // Check for tabOfPreviousVideoBoxOne condition
+      if (tabOfpreviousVideoBoxOne) {
+        const parentOfPreviousVideoBoxOne = previousVideoBoxOne.parentNode;
+        const parentOfPreviousVideoBoxOneId = parentOfPreviousVideoBoxOne.id;
+        if (parentOfPreviousVideoBoxOneId.includes(btnId)) {
+          theButtonMatch = elem;
+          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
+          const indexToMove = btnArray.indexOf(theButtonMatch);
+          if (indexToMove !== -1) {
+            const movedElement = btnArray.splice(indexToMove, 1)[0];
+            btnArray.splice(2, 0, movedElement);
+            moved = true; // Set the flag to true
+          }
+        }
+      }
       // Check for tabOfLatestVideoBox condition
       if (tabOfLatestVideoBox) {
         const parentOfLatestVideoBox = latestVideoBox.parentNode;
@@ -107,85 +156,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (parentOfLatestVideoBoxId.includes(btnId)) {
           theButtonMatch = elem;
           theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
-    
           const indexToMove = btnArray.indexOf(theButtonMatch);
           if (indexToMove !== -1) {
             const movedElement = btnArray.splice(indexToMove, 1)[0];
             btnArray.splice(1, 0, movedElement);
-            // console.log(movedElement = btnArray.indexOf(theButtonMatch));
             moved = true; // Set the flag to true
           }
         }
       }
-      
-      // Check for tabOfPreviousVideoBoxOne condition
-      if (tabOfpreviousVideoBoxOne) {
-        const parentOfPreviousVideoBoxOne = previousVideoBoxOne.parentNode;
-        const parentOfPreviousVideoBoxOneId = parentOfPreviousVideoBoxOne.id;
-        if (parentOfPreviousVideoBoxOneId.includes(btnId)) {
-          // console.log(btnId);
-          theButtonMatch = elem;
-          // console.log(theButtonMatch);
-          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
-    
-          const indexToMove = btnArray.indexOf(theButtonMatch);
-          if (indexToMove !== -1) {
-            // console.log(indexToMove);
-            const movedElement = btnArray.splice(indexToMove, 1)[0];
-            // console.log(movedElement);
-            btnArray.splice(2, 0, movedElement);
-            moved = true; // Set the flag to true
-          }
-        }
-      }
-
-      // Check for tabOfPreviousVideoBoxTwo condition
-      if (tabOfpreviousVideoBoxTwo) {
-        const parentOfPreviousVideoBoxTwo = previousVideoBoxTwo.parentNode;
-        const parentOfPreviousVideoBoxTwoId = parentOfPreviousVideoBoxTwo.id;
-        if (parentOfPreviousVideoBoxTwoId.includes(btnId)) {
-          // console.log(btnId);
-          theButtonMatch = elem;
-          // console.log(theButtonMatch);
-          theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
-    
-          const indexToMove = btnArray.indexOf(theButtonMatch);
-          if (indexToMove !== -1) {
-            // console.log(indexToMove);
-            const movedElement = btnArray.splice(indexToMove, 1)[0];
-            // console.log(movedElement);
-            btnArray.splice(3, 0, movedElement);
-            moved = true; // Set the flag to true
-          }
-        }
-      }
-      // // Check for tabOfPreviousVideoBoxThree condition
-      // if (tabOfpreviousVideoBoxThree) {
-      //   const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
-      //   const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
-      //   if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
-      //     // console.log(btnId);
-      //     theButtonMatch = elem;
-      //     // console.log(theButtonMatch);
-      //     theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
-    
-      //     const indexToMove = btnArray.indexOf(theButtonMatch);
-      //     if (indexToMove !== -1) {
-      //       // console.log(indexToMove);
-      //       const movedElement = btnArray.splice(indexToMove, 1)[0];
-      //       // console.log(movedElement);
-      //       btnArray.splice(4, 0, movedElement);
-      //       moved = true; // Set the flag to true
-      //     }
-      //   }
-      // }
-    
-      // Break out of the loop if the buttons have been moved
-      // if (moved) {
-      //   break;
-      // }
     }
-    
     // Remove existing buttons from the DOM and insert buttons in the updated order
     if (moved) {
       const parentElement = document.querySelector('.videos-header-btns-cont');
@@ -222,13 +201,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const date = videoBox.getAttribute('date-posted');
       if (datesMap[date]) {
         // Handle the video boxes with the same date in the first tab
-        videoBox.classList.add('same-date1');  
-        datesMap[date].classList.add('same-date2');
+        datesMap[date].setAttribute('same-date', 'swappedfrom 2-1');
+        videoBox.setAttribute('same-date', 'swappedfrom 1-2');// setting attributes has not effect on the code, this is just for me.  
         // Swap positions in the DOM
-        const parent = datesMap[date].parentNode;
-        parent.removeChild(videoBox);
-        // Insert the video box (.same-date1) before the existing element (.same-date2)
-        parent.insertBefore(videoBox, datesMap[date]);
+        tab1Content.removeChild(videoBox);// this is the current videoBox
+        // Insert the video box (swap1-2) before the existing element datesMap[date] (swap2-1)
+        tab1Content.insertBefore(videoBox, datesMap[date]);
       } else {
         // Store the reference to the video box for the date
         datesMap[date] = videoBox;
@@ -261,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.innerHTML = '';
         // Append the original text and the count element to the button
         elem.appendChild(document.createTextNode(originalText));
-        // elem.appendChild(tabChildrenCountElement);
+        elem.appendChild(tabChildrenCountElement);
       }
       // Find the corresponding tab for the button (for the first tab)
       if (tabsArrayFirst) {
@@ -279,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
           elem.innerHTML = '';
           // Append the original text and the count element to the button
           elem.appendChild(document.createTextNode(firstOriginalText));
-          // elem.appendChild(firstTabChildrenCountElement);
+          elem.appendChild(firstTabChildrenCountElement);
         }
       }
     }
