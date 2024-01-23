@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.innerHTML = '';
         // Append the original text and the count element to the button
         elem.appendChild(document.createTextNode(originalText));
-        elem.appendChild(tabChildrenCountElement);
+        // elem.appendChild(tabChildrenCountElement);
       }
       // Find the corresponding tab for the button (for the first tab)
       if (tabsArrayFirst) {
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
           elem.innerHTML = '';
           // Append the original text and the count element to the button
           elem.appendChild(document.createTextNode(firstOriginalText));
-          elem.appendChild(firstTabChildrenCountElement);
+          // elem.appendChild(firstTabChildrenCountElement);
         }
       }
     }
