@@ -120,7 +120,7 @@ footer a{
     color:var(--DM-vivid-orange);}
 .Contact-section h5{ 
     box-shadow:none!important;}
-.footerLinks-header a:hover{
+.footerLinks-header a:hover,.Contact-section a:hover{
     color:var(--grey);}
 /* FOOTER LINKS CSS */
 @media only screen and (max-width:720px){ 
