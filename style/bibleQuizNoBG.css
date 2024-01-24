@@ -702,12 +702,8 @@ button{
     justify-content:center;
     align-items:center;
     width:50%;}
-#prevquestionbutton span, #nextquestionbutton span{
-    display:flex;
-}
-#prevquestionbutton i, #nextquestionbutton i{
-    margin-top:4px;
-}
+#prevquestionbutton span, #nextquestionbutton span{display:flex;}
+#prevquestionbutton i, #nextquestionbutton i{margin-top:2px;}
 #questionhint{ 
     border-radius:3px;
     cursor:pointer;
