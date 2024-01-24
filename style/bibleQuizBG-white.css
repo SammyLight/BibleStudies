@@ -170,7 +170,7 @@ hr{
 .quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
     text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;}
 #questioncount,span[ref]:not(.verse){
-    color:var(--counter);}
+    color:var(--counter)!important;}
 /* QandA-BOARD SECTION */
 .QandA-Board>ol>li{ 
     color:var(--text-color-dark)!important;}
@@ -184,7 +184,6 @@ hr{
     box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%);}
 .showHintCSS, .showNewCatCSS{
     background:var(--bg-color);
-    border:1px solid var(--bg-color);
     color:var(--text-color-dark)!important;}
 .closeHint, .closeSettings, .closeCatSettings{
     background-color:red;
