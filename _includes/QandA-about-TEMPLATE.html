@@ -1,16 +1,16 @@
 {% include homeHead.html %}
+<script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script> 
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=DynaPuff' rel='stylesheet'>
 <link type="text/css" href="../style/reftaggerLightCity.css" rel="stylesheet">
 <link type="text/css" href="../style/bibleQuizNoBG.css" rel="stylesheet">
-<link type="text/css" href="../style/darkMODE.css" rel="stylesheet">
-<link id="theme-stylesheet" type="text/css" href="../style/lightMODE.css" rel="stylesheet">
 <link type="text/css" href="../style/root.css" rel="stylesheet">
 <link id="darkPurpleCssFile" type="text/css" href="../style/bibleQuizBG-darkpurple.css" rel="stylesheet">
 </head>
 
 <body>
     <section id="cat-bibleQuiz" class="cat-bibleQuiz-section">
+        {% include QandA-cat-settings.html %}
         <audio id="categorySound" src="../audio/categorySound.mp3" loop="true"></audio>
         <audio id="clickSound" src="../audio/clickSound.mp3"></audio>
         <div id="cat-headerbar" class="container-fluid-inner">
@@ -36,7 +36,7 @@
                     </li>
                 </ul>
             </div>
-            <button id="catSettings" class="catSettings" style="position: relative;" onclick="showCatSettings()" title="general settings"><img src="images\settings-svgrepo-com.svg" alt="&#9881;"></button>
+            <button id="catSettings" class="catSettings" style="position: relative;" onclick="showCatSettings()" title="general settings"><img src="../images/settings-svgrepo-com.svg" alt="&#9881;"></button>
         </div>
         <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
             <h1>About Quiz</h1>
@@ -50,10 +50,10 @@
                                 <li>If only one or two(in the case of more than two correct options) correct Answer is selected, the Question will be passed as failed.</li>
                             </ol>
                         </li>
-                        <li>When an option(s) is selected, it is colored  <span style="color: orange;">Yellow</span>, at this point your Answer has not been comfirmed yet, you will need to click the confirm button at the bottom right of your screen to confirm your selection.
+                        <li>When an option(s) is selected, it is colored  <span style="color: orange!important;">Yellow</span>, at this point your Answer has not been comfirmed yet, you will need to click the confirm button at the bottom right of your screen to confirm your selection.
                             <ol>
                                 <li>Once the confirm button is clicked, your Anwser is locked, it cannot be undone.</li>
-                                <li>But before clicking the comfirm button, when the option(s) selected is still colored <span style="color: orange;">Yellow</span>, you can un-select option(s) selected and select another option(s).</li>
+                                <li>But before clicking the comfirm button, when the option(s) selected is still colored <span style="color: orange!important;">Yellow</span>, you can un-select option(s) selected and select another option(s).</li>
                             </ol>
                             <li>If you do not know the Answer to a Question and do not wish to select any option(s), you can click the confirm button to show the right Answer.
                                 <ol>
@@ -66,7 +66,7 @@
                                 <li>For <strong>Hints</strong> that are Scriptural references, click on the Scriptural reference to show the verse.</li>
                             </ol>
                         </li>
-                        <li>You can change your settings such as Theme and Music ON/OFF by clicking <img class="aboutImg" src="images\settings-svgrepo-com.svg" alt="&#9881;"> icon at the top of your screen.</li>
+                        <li>You can change your settings such as Theme, Font and Music ON/OFF by clicking <img class="aboutImg" src="images\settings-svgrepo-com.svg" alt="&#9881;"> icon at the top of your screen.</li>
                         <li>As you may have seen, there are two categories. CHILDREN and ADULTS categories, please feel free to choose any, as no knowlegde is a waste.</li>
                         <li>You can review the Quiz after the Quiz has been completed by clicking the review button (it is very easy to see).
                             <ol>
@@ -75,12 +75,10 @@
                         </li>
                     </ol>
                 </div>
-                {% include QandA-cat-settings.html %}
         </section>
     </section>
     <script type="text/javascript" src="../script/victorScripts/QandAscriptsFontsandThemes.js"></script>
     <script type="text/javascript" src="../script/victorScripts/QandAscriptsChooseCategory.js"></script>
     <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script> 
 </body>
