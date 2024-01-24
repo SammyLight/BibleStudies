@@ -147,7 +147,6 @@ hr {
 .QandA-header{ 
     box-shadow:0 3px 4px var(--shadow);
     color:var(--text-color-light);}
-
 .quizCatLink a{ 
     color:var(--text-color-light);}
 .quizCatLink span>i{

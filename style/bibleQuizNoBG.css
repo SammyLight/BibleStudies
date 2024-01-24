@@ -50,6 +50,7 @@
 }
 /* PRELOAD CSS */
 .loader-bg-bibleQuiz{
+    background:#1a0f30;
     display:grid;
     place-content:center;
     height:100%;
@@ -65,6 +66,7 @@
     top:calc(45vh - 75px);
     left:calc(46vw - 75px);}
 .loader-bibleQuiz:before, .loader-bibleQuiz:after{
+    border:1em solid #ff5733;
     content:'';
     border-radius:50%;
     width:inherit;
@@ -96,6 +98,8 @@ html{
     /* line-height:16px; */
 }
 body{
+    background:#1a0f30;
+    color:#f0f6fc;
     font-family:'DynaPuff', cursive;
     margin:0;
     -webkit-user-select:none;
