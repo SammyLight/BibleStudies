@@ -32,12 +32,12 @@
         </div>
     </div>
     <div class="Result-btn">
-        <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color"><span>Redo Quiz <i class="fas fa-solid fa-angle-right"></i></span></button>
-        <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()"><span>Review Answers <i class="fas fa-solid fa-angle-right"></i></span></button>
+        <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color"><span>Redo Quiz</span></button>
+        <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()"><span>Review Answers</span></button>
         <button id="newBtn" class="btn-bg-color">
             {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
             <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
-                New Quiz <i class="fas fa-solid fa-angle-right"></i>
+                New Quiz
             </a>{% endif %}{% endfor %}
         </button>
     </div>
@@ -45,9 +45,9 @@
         <p>Your score is not very good!!!</p>
         <p>Would you like to...</p>
         <div class="Result-btn popupBtn">
-            <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
-            <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers <i class="fas fa-solid fa-angle-right"></i></button>
-            <button id="openResultBtn" class="btn-bg-color">View Result <i class="fas fa-solid fa-angle-right"></i></button>
+            <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color">Redo Quiz</button>
+            <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers</button>
+            <button id="openResultBtn" class="btn-bg-color">View Result</button>
         </div>
     </div>
 </section>

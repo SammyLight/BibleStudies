@@ -11,11 +11,11 @@
     <div class="corAnswers-Board">
     </div>  
     <div class="corAnswers-btn">
-        <button onclick="window.location.reload()">Redo Quiz <i class="fas fa-solid fa-angle-right"></i></button>
+        <button onclick="window.location.reload()">Redo Quiz</button>
         <button>
             {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
             <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
-                New Quiz <i class="fas fa-solid fa-angle-right"></i>
+                New Quiz
             </a>{% endif %}{% endfor %}
         </button>
     </div>
