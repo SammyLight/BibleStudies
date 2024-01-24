@@ -392,13 +392,14 @@ footer{
     padding:20px 0;}
 .Contact-section p{ 
     display:grid;
-    grid-template-columns:6% 96%;
-    place-items:baseline;
+    grid-template-columns:10% 90%;
+    line-height:1;
     margin:1em 0!important;
-    font-size:0.88em!important;}
+    font-size:1em!important;
+    overflow-wrap:break-word;}
 .Contact-section .icons{ 
     font-size:15px;
-    /* margin-right:5px; */
+    place-self:center start;
 }
 .footerLinks-header h3,.Contact-section h3{ 
     font-size:calc(18px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;
@@ -424,10 +425,16 @@ ul.footerLinks-lists{
 .footerLinks-lists p{ 
     font-size:16px;}
 /* FOOTER LINKS CSS */
+@media only screen and (max-width:1060px){
+.Contact-section p{ 
+    grid-template-columns:3% 97%;
+    font-size:1em!important;}} 
 @media only screen and (max-width:720px){ 
 .footerLinks-header h3,
 .Contact-section h3{ 
     margin:1em 0 0 0!important;}
+.Contact-section p {
+    grid-template-columns: 5% 95%;}
 .visible-titles2{ 
     display:grid;
     grid-template-columns:80% 17%;
@@ -449,12 +456,22 @@ ul.footerLinks-lists{
 .footerLinks-header h3,
 .Contact-section h3{
     border-bottom:none;}
+.Contact-section p{ 
+    grid-template-columns:6% 94%;
+    font-size:0.9em!important;}
 .visible-titles2{ 
     font-size:18px!important;}}
+@media only screen and (max-width:380px){ 
+.Contact-section p{ 
+    grid-template-columns:8% 92%;}}
 @media only screen and (max-width:300px){ 
 .Contact-section p{ 
-    grid-template-columns:8% 96%;
-    font-size:.67em!important;}}
+    grid-template-columns:10% 90%;
+    font-size:0.75em!important;}}
+@media only screen and (max-width:235px){ 
+.Contact-section p{ 
+    grid-template-columns:12% 88%;
+    font-size:0.70em!important;}}
 @media only screen and (min-width:721px){ 
 .footerLinks-header h3,
 .Contact-section h3{ 
