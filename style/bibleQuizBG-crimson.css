@@ -52,13 +52,13 @@ hr {
 #quizCatName{ 
     color:var(--quizCatName);}
 #confirmButton{ 
-    background:var(--btn-bg-color-light);
-    border:1px solid var(--btn-bg-color-light);
-    color:var(--text-color-dark);}
-#confirmButton:hover{ 
     background:var(--btn-bg-color-dark);
     border:1px solid var(--btn-bg-color-dark);
     color:var(--text-color-light);}
+#confirmButton:hover{ 
+    background:var(--btn-bg-color-light);
+    border:1px solid var(--btn-bg-color-light);
+    color:var(--text-color-dark);}
 /* Choose QandA-Categories CSS */  
 .choosecat-grid{ 
     background:var(--bg-color);
