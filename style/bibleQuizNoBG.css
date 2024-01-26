@@ -1279,7 +1279,19 @@ to{ left:0px;}
 #quizCatName, #confirmButton{ 
     margin-bottom:10px;
     grid-area:auto;}}
-
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+#settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup {
+    width:60vw;
+    padding:50px;
+    font-size:3em!important;
+}
+.settingsContentInner, .catSettingsContentInner, #poorPerPopup {
+    gap: 15px;
+}
+#themeSettings ul, #fontSettings ul, #catThemeSettings ul{
+   height:250px; 
+   font-size:28px!important;
+}}
 /* DESKTOP FONT SIZES CSS */
 @media only screen and (min-width:658px){
 #settingsContent, #settingsReviewContent, #catSettingsContent, #poorPerPopup{
@@ -1476,7 +1488,7 @@ to{ left:0px;}
     border-radius:6px!important;
     box-sizing:border-box;
     height:auto;
-    /* min-height:90%; */
+    margin-top:10%;
     width:90%;
     padding:3px;
     place-self:center;
@@ -1489,14 +1501,14 @@ to{ left:0px;}
     place-self:center;
     position:relative;}
 .Result-Board h2{ 
-    font-size:1.5em;
-    margin:15px 0;
+    font-size:1.2em;
+    margin:10px 0;
     letter-spacing:2px;
     white-space:nowrap;}
 .Result-Board h4{ 
     display:block!important;
-    font-size:1em;
-    margin:10px 0;}
+    font-size:0.9em;
+    margin:8px 0;}
 .Result-Board h5{ 
     font-size:0.83em;
     margin:10px 0;
@@ -1559,7 +1571,7 @@ to{ left:0px;}
     width:-webkit-fill-available;
     height:-webkit-fill-available;
     display:block;
-    padding:0.3em;}
+    padding:0.2em;}
 .btn-bg-color{ 
     border-radius:6px;
     margin:5px 5px 5px 0;
@@ -1584,13 +1596,13 @@ to{ left:0px;}
     text-align:center;
     width:90%;}
 .Result-btn>button{
-    min-height:40px;
+    min-height:35px;
     text-align:center;
-    width:48%;}
+    width:46%;}
 .popupBtn>button{
     width:38%!important;
     height:auto!important;
-    min-height:40px;}}
+    min-height:35px;}}
 @media only screen and (max-width:285px){
 .Result-img>img{ 
     height:120px;}
@@ -1613,6 +1625,12 @@ to{ left:0px;}
     width:90%;}
 .Result-btn>button{ 
     width:49%;}}
+@media only screen and (min-width:540px){
+.Result-Board{
+    margin:0;}
+.Result-btn>button>a, .Result-btn>button>span{
+    padding: 0.5em!important;
+}}
 @media only screen and (min-width:963px){
 .Result-btn>button{ 
     width:32%;}
@@ -1636,6 +1654,23 @@ to{ left:0px;}
     top:150px;}
 .popupBtn>button, .Result-btn>button{ 
     width:100%!important;}}
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+.Result-Board {
+    margin-top: 0!important;}
+.Result-Board-inner{
+    display:block;
+    place-self:normal;}
+.Result-img{
+    border-bottom: 1px solid var(--btn-bg-color-light);
+    border-right:none!important;
+}
+.Result-btn>button{
+    font-size: 1.863em!important;
+}
+.Result-btn>button>a, .Result-btn>button>span{
+    padding: 0.5em!important;}
+#poorPerPopup{
+    top:300px;}}
 /* MOBILE VIEW FONT SIZES CSS */
 .popupBtn>button{
     font-size:1.363em!important;}
@@ -1679,7 +1714,7 @@ to{ left:0px;}
     font-size:1.2em;}}
 @media only screen and (min-width:820px) and (max-width:1023px){
 .Result-Board h5{ 
-    font-size:1.43em;}
+    font-size:1.7em;}
 #questionsIndex{ 
     font-size:1.5em;}
 .performance ol{
@@ -1691,13 +1726,19 @@ to{ left:0px;}
     height:300px;}
 #questionsIndex{ 
     font-size:1.9em;}}
-    @media only screen and (min-width: 1024px) and (min-height: 1366px){
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
 .Result-Board h2{ 
-    font-size:3.5em;}
+    font-size:3.5em!important;}
+.Result-Board h4 {
+    font-size: 2.2em!important;}
+.Result-Board h5 {
+    font-size:2em!important;}
 .Result-img>img{ 
-    height:300px;}
+    height:300px!important;}
 #questionsIndex{ 
-    font-size:1.9em;}}
+    font-size:2.2em!important;}
+.performance ol {
+    font-size: xxx-large!important;}}
 /* DESKTOP VIEW FONT SIZES CSS */
 @media only screen and (min-width:1024px){
 .Result-Board h2{ 
@@ -1866,6 +1907,30 @@ details > summary:first-of-type{
     margin-top:-43px;}
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:53px;}}
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+#CorrectedAnswers-section {
+    grid-template-rows: 80px 100px auto 20px;
+}
+.corAnswers-BoardHeader #settings {
+    width: 6%;
+}
+.corAnswers-BoardHeader>div, .corAnswers-Board-Header>h1 {
+    font-size:2.7em;
+}
+.corAnswers-Board>ol>details {
+    font-size:2.675em;
+    line-height:44px;
+}
+.corAnswers-Board>ol>details>li>ul>li {
+    font-size:1.23em;
+    line-height:38px;
+}
+.corAnswers-Board>ol>details>li>ul>li>ul, .corAnswers-Board>ol>details>li>ul>li>span>ul {
+    font-size:0.662em;
+    line-height:40px;
+}
+.corAnswers-btn>button{
+    font-size: 2.2em!important;}}
 @media only screen and (min-width:1280px){
 .corAnswers-Board>ol>details>li>ul{ 
     padding-inline-start:67px;}}
