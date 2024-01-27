@@ -40,9 +40,7 @@
 body{
     background:var(--bg-color);}
 /* Custom CSS */
-hr {
-    background: var(--btn-bg-color-light);
-}
+hr{background: var(--btn-bg-color-light);}
 .explainButton{
     color:var(--text-color-dark);
     background:var(--btn-bg-color-light);
