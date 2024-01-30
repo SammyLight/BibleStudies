@@ -179,6 +179,9 @@ span[strnum]{
     overflow:hidden;
 }
 /* CONTEXT_MENU */
+#context_menu{ 
+    color:var(--black);
+}
 #context_menu.slideintoview, #context_menu.slideoutofview{ 
     transition:none;
 }
