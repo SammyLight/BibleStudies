@@ -2,24 +2,64 @@
 .videos-header{
     overflow-x:auto;
     margin-bottom:0!important;}
+.videos-header-cont{
+    display:flex;
+    place-content:center;
+    border-radius:6px;
+    margin-top:12px;
+    overflow:inherit;
+    flex-wrap:nowrap;
+    position:relative;
+}
 .videos-header-btns-cont{
     display:flex;
     overflow:inherit;
     flex-wrap:nowrap;
     position:relative;
-    margin-top:12px;
-    border-radius:6px;}
-.videos-header-btns-cont>.active{border-radius:6px;}
-.videos-header-btns-cont::-webkit-scrollbar{display:none;}
-.videos-header-btns{
+    width:99%;
+    border-radius:10px;
+    gap:15px;
+    margin-left:1px;
+    position:relative;}
+.videos-header-cont .arrows{
+    position:absolute;
+    z-index:2020;
+    height:100%;
+    top:0;
     display:flex;
-    font-size: calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;
+    flex-direction:row;
+    justify-content:center;}
+.arrow-left{left:-15px;}
+.arrow-right{right:-15px;}
+.arrow-btn-size{
+    width:40px;
+    height:100%;}
+#arrow-left-btn,#arrow-right-btn{
+    display:flex;
+    align-items:center;
+    cursor:pointer;}
+.arrow-left::after,.arrow-right::before{
+    content:"";
+    pointer-events:none;
+    width:35px;
+    height:100%;}
+@media only screen and (max-width:420px){
+.arrow-left{left:-5px;}
+.arrow-right{right:-5px;}
+.arrow-left::after,.arrow-right::before{width:20px;}
+.arrow-btn-size{width:25px;}}
+.videos-header-cont::-webkit-scrollbar,.videos-header-btns-cont::-webkit-scrollbar{display:none;}
+.videos-header-btns{
+    border-bottom: 3px solid transparent!important;
+    display:flex;
+    font-size:calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;
     font-weight:600;
     position:relative;
     padding:3px 15px;
     transition:all 0.2s ease-in-out;
     white-space:nowrap;
-    gap:5px;}
+    gap:5px;
+    border-radius:10px;}
 @media only screen and (min-width:541px){ 
 .videos-header-btns{padding:3px 25px;}}
 @media only screen and (min-width:768px){ 
@@ -69,7 +109,8 @@
 /* .video-date{display: block;} */
 @media only screen and (max-width:540px){
 .video-box h3{padding:8px 0 0;}}
-@media only screen and (max-width:414px){
+@media only screen and (max-width:420px){
+.videos-header-cont .shadow {width:20px;}
 .video-box.homeResources-grid-containter{padding:8px 8px 22px 8px;}}
 @media only screen and (max-width:360px){
 .video-box.homeResources-grid-containter{ 
