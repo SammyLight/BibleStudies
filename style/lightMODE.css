@@ -197,14 +197,18 @@ blockquote:before{color:var(--light-purple);}
 .prev-link span, .next-link span{
     color:var(--inherit)!important;}
 /* styles from video.css */
+#arrow-left-btn,#arrow-right-btn{background-color:var(--white);}
+.arrow-left::after{background:linear-gradient(to right,var(--white) 1%,rgba(33,33,33,0) 99%);}
+.arrow-right::before{background:linear-gradient(to left,var(--white) 1%,rgba(33,33,33,0) 99%);}
 .videos-header-btns-cont{
-    background-color:var(--bgColor-smoke-white)!important;
+    /* background-color:var(--bgColor-smoke-white)!important; */
     box-shadow:4px 7px 10px rgba(0, 0, 0, 0.1);}
 .videos-header-btns-cont>.active{
     background-color:var(--vivid-orange)!important;
-    color:var(--white)!important;
-    border-bottom:3px solid var(--vivid-orange);}
-.videos-header-btns{color:var(--black);}
+    color:var(--white)!important;}
+.videos-header-btns{
+    background-color:var(--bgColor-smoke-white);
+    color:var(--black);}
 .videos-header-btns:hover{
     color:var(--black);}
 .video-box h3{color:var(--DM-grayTwo);}
