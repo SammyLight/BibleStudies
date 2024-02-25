@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.innerHTML = '';
         // Append the original text and the count element to the button
         elem.appendChild(document.createTextNode(originalText));
-        // elem.appendChild(tabChildrenCountElement);
+        elem.appendChild(tabChildrenCountElement);
       }
       // Find the corresponding tab for the button (for the first tab)
       if (tabsArrayFirst) {
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
           elem.innerHTML = '';
           // Append the original text and the count element to the button
           elem.appendChild(document.createTextNode(firstOriginalText));
-          // elem.appendChild(firstTabChildrenCountElement);
+          elem.appendChild(firstTabChildrenCountElement);
         }
       }
     }
@@ -279,98 +279,110 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// allBtns.forEach((elem) => {
-//   elem.addEventListener('click', function() {
-//     const linkId = elem.id;
+//Right and Left arrows for scrolling
+document.addEventListener('DOMContentLoaded', function () {
+  const btnsContainer = document.querySelector('.videos-header-cont');
+  const btnsContainerInner = document.querySelector('.videos-header-btns-cont');
+  let arrowIndicatorRight;
+  let arrowIndicatorLeft;
+  let scrollSpeed = 200; // Adjust the scroll speed as needed
+  let isAnimating = false;
 
-//     allBtns.forEach((button) => {
-//       if (button.id === linkId) {
-//         button.classList.add("active");
-//       } else {
-//         button.classList.remove('active');
-//       }
-//     });
-//     allTabs.forEach((tab) => {
-//       if (tab.id === linkId + "-content") {
-//         tab.classList.add("videotab-content--active");  
-//       } else {
-//         tab.classList.remove('videotab-content--active');
-//       }
-//     });
-//   });
-// });
+  function addArrowIndicatorLeft() {
+      arrowIndicatorLeft = document.createElement('div');
+      arrowIndicatorLeft.className = 'arrows arrow-left';
+      arrowIndicatorLeft.innerHTML = `
+          <div id="arrow-left-btn" style="fill: currentcolor;">
+              <div class="arrow-btn-size">
+                  <div style="width: 100%; height: 100%; fill: currentcolor;">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                          <path d="M14.96 18.96 8 12l6.96-6.96.71.71L9.41 12l6.25 6.25-.7.71z"></path>
+                      </svg>
+                  </div>
+              </div>
+          </div>`;
+      btnsContainer.appendChild(arrowIndicatorLeft);
 
-// // Create an array to store all video boxes from all tabs
-// const allVideoBoxes = [];
-// let latestVideoBox;
-// let latestDate = new Date(0); // Initialize with a very early date
-// let tabOfLatestVideoBox;
-// const previousVideoBoxes = [];
-// const previousDates = [];
-// const tabOfPreviousVideoBoxes = [];
+      arrowIndicatorLeft.addEventListener('click', function () {
+          if (!isAnimating) {
+              smoothScroll(btnsContainerInner, -scrollSpeed);
+          }
+      });
+  }
 
-// // Assuming allTabs is a NodeList or an array of tabs
-// Array.from(allTabs).slice(1).forEach((tab) => {
-//   const linkId = tab.id;
-//   // Retrieve all video boxes for the current tab
-//   const allVideoBox = document.querySelectorAll(`#${linkId} .video-box`);
-//   // Push video boxes into the array
-//   allVideoBoxes.push(...allVideoBox);
+  function addArrowIndicatorRight() {
+      arrowIndicatorRight = document.createElement('div');
+      arrowIndicatorRight.className = 'arrows arrow-right';
+      arrowIndicatorRight.innerHTML = `
+          <div id="arrow-right-btn" style="fill: currentcolor;">
+              <div class="arrow-btn-size">
+                  <div style="width: 100%; height: 100%; fill: currentcolor;">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: block; width: 100%; height: 100%;">
+                          <path d="m9.4 18.4-.7-.7 5.6-5.6-5.7-5.7.7-.7 6.4 6.4-6.3 6.3z"></path>
+                      </svg>
+                  </div>
+              </div>
+          </div>`;
+      btnsContainer.appendChild(arrowIndicatorRight);
 
-//   // Iterate over video boxes for the current tab
-//   allVideoBox.forEach((videoBox) => {
-//     const dateAttribute = videoBox.getAttribute('date-posted');
-//     const currentDate = new Date(dateAttribute.replace(/(\d{1,2})(st|nd|rd|th)?/, '$1'));
+      arrowIndicatorRight.addEventListener('click', function () {
+          if (!isAnimating) {
+              smoothScroll(btnsContainerInner, scrollSpeed);
+          }
+      });
+  }
 
-//     if (currentDate > latestDate) {
-//       // Update the latest video box information
-//       previousVideoBoxes[2] = previousVideoBoxes[1];
-//       previousDates[2] = previousDates[1];
-//       tabOfPreviousVideoBoxes[2] = tabOfPreviousVideoBoxes[1];
+  function removeArrowIndicators() {
+      if (arrowIndicatorRight) {
+          btnsContainer.removeChild(arrowIndicatorRight);
+          arrowIndicatorRight = null;
+      }
+      if (arrowIndicatorLeft) {
+          btnsContainer.removeChild(arrowIndicatorLeft);
+          arrowIndicatorLeft = null;
+      }
+  }
 
-//       previousVideoBoxes[1] = previousVideoBoxes[0];
-//       previousDates[1] = previousDates[0];
-//       tabOfPreviousVideoBoxes[1] = tabOfPreviousVideoBoxes[0];
+  function checkOverflow() {
+      const isOverflowRight = btnsContainerInner.scrollWidth > btnsContainerInner.clientWidth + btnsContainerInner.scrollLeft;
+      const isOverflowLeft = btnsContainerInner.scrollLeft > 0;
+      removeArrowIndicators();
+      if (isOverflowRight) {
+          addArrowIndicatorRight();
+      }
+      if (isOverflowLeft) {
+          addArrowIndicatorLeft();
+      }
+  }
 
-//       previousVideoBoxes[0] = latestVideoBox;
-//       previousDates[0] = latestDate;
-//       tabOfPreviousVideoBoxes[0] = tabOfLatestVideoBox;
+  checkOverflow();
+  btnsContainerInner.addEventListener('scroll', function () {
+      checkOverflow();
+  });
 
-//       latestDate = currentDate;
-//       latestVideoBox = videoBox;
-//       tabOfLatestVideoBox = tab;
-//     } else {
-//       findPreviousVideoBox(currentDate, videoBox, tab); // Pass 'tab' as a parameter
-//     }
-//   });
-// });
+  // Function for custom smooth scrolling
+  function smoothScroll(element, distance) {
+      const start = element.scrollLeft;
+      const end = start + distance;
+      const duration = 500; // Adjust the duration as needed
+      let startTime;
 
-// // Function to find the previous video box
-// function findPreviousVideoBox(currentDate, videoBox, tab) {
-//   for (let i = 0; i < previousVideoBoxes.length; i++) {
-//     if (currentDate > previousDates[i] && currentDate < latestDate) {
-//       // Update the previous video box information
-//       previousVideoBoxes[i + 1] = previousVideoBoxes[i];
-//       previousDates[i + 1] = previousDates[i];
-//       tabOfPreviousVideoBoxes[i + 1] = tabOfPreviousVideoBoxes[i];
+      function scrollAnimation(currentTime) {
+          if (!startTime) startTime = currentTime;
 
-//       previousDates[i] = currentDate;
-//       previousVideoBoxes[i] = videoBox;
-//       tabOfPreviousVideoBoxes[i] = tab;
-//     }
-//   }
-// }
-// // Now, you have the information in the arrays previousVideoBoxes, previousDates, and tabOfPreviousVideoBoxes.
+          const progress = currentTime - startTime;
+          const easeInOut = 0.5 - 0.5 * Math.cos(Math.PI * progress / duration);
 
-// // Now, `previousVideoBox` contains the video box with the date immediately preceding `latestDate` and not equal to it
-//     console.log(latestVideoBox);
-//     console.log(tabOfLatestVideoBox);
+          element.scrollLeft = start + easeInOut * distance;
 
-//     console.log(previousVideoBoxes[0]);
-//     console.log(tabOfPreviousVideoBoxes[0]);
+          if (progress < duration) {
+              requestAnimationFrame(scrollAnimation);
+          } else {
+              isAnimating = false;
+          }
+      }
 
-//     console.log(previousVideoBoxes[1]);
-//     console.log(tabOfPreviousVideoBoxes[1]);
-
-//     console.log(previousVideoBoxes[2]);    
-//     console.log(tabOfPreviousVideoBoxes[2]);
+      isAnimating = true;
+      requestAnimationFrame(scrollAnimation);
+  }
+});
