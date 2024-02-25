@@ -81,15 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-    // console.log(latestVideoBox);
-    // console.log(tabOfLatestVideoBox);
-    // console.log(previousVideoBoxOne);
-    // console.log(tabOfpreviousVideoBoxOne);
-    // console.log(previousVideoBoxTwo);
-    // console.log(tabOfpreviousVideoBoxTwo);
-    // console.log(previousVideoBoxThree);    
-    // console.log(tabOfpreviousVideoBoxThree);
-
     let moved = false; // Flag to track whether the buttons have been moved
     const btnArray = Array.from(allBtns);
     // Iterate over buttons
@@ -101,15 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const parentOfPreviousVideoBoxThree = previousVideoBoxThree.parentNode;
         const parentOfPreviousVideoBoxThreeId = parentOfPreviousVideoBoxThree.id;
         if (parentOfPreviousVideoBoxThreeId.includes(btnId)) {
-          // console.log(btnId);
           theButtonMatch = elem;
-          // console.log(theButtonMatch);
           theButtonMatch = btnArray.find((elem) => elem.id === theButtonMatch.id);
           const indexToMove = btnArray.indexOf(theButtonMatch);
           if (indexToMove !== -1) {
-            // console.log(indexToMove);
             const movedElement = btnArray.splice(indexToMove, 1)[0];
-            // console.log(movedElement);
             btnArray.splice(4, 0, movedElement);
             moved = true; // Set the flag to true
           }
@@ -235,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.innerHTML = '';
         // Append the original text and the count element to the button
         elem.appendChild(document.createTextNode(originalText));
-        elem.appendChild(tabChildrenCountElement);
+        // elem.appendChild(tabChildrenCountElement);
       }
       // Find the corresponding tab for the button (for the first tab)
       if (tabsArrayFirst) {
@@ -253,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
           elem.innerHTML = '';
           // Append the original text and the count element to the button
           elem.appendChild(document.createTextNode(firstOriginalText));
-          elem.appendChild(firstTabChildrenCountElement);
+          // elem.appendChild(firstTabChildrenCountElement);
         }
       }
     }
@@ -309,7 +296,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
   }
-
   function addArrowIndicatorRight() {
       arrowIndicatorRight = document.createElement('div');
       arrowIndicatorRight.className = 'arrows arrow-right';
@@ -331,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
   }
-
   function removeArrowIndicators() {
       if (arrowIndicatorRight) {
           btnsContainer.removeChild(arrowIndicatorRight);
@@ -342,7 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
           arrowIndicatorLeft = null;
       }
   }
-
   function checkOverflow() {
       const isOverflowRight = btnsContainerInner.scrollWidth > btnsContainerInner.clientWidth + btnsContainerInner.scrollLeft;
       const isOverflowLeft = btnsContainerInner.scrollLeft > 0;
@@ -359,8 +343,6 @@ document.addEventListener('DOMContentLoaded', function () {
   btnsContainerInner.addEventListener('scroll', function () {
       checkOverflow();
   });
-
-  // Function for custom smooth scrolling
   function smoothScroll(element, distance) {
       const start = element.scrollLeft;
       const end = start + distance;
@@ -381,7 +363,6 @@ document.addEventListener('DOMContentLoaded', function () {
               isAnimating = false;
           }
       }
-
       isAnimating = true;
       requestAnimationFrame(scrollAnimation);
   }
