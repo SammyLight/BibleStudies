@@ -9,14 +9,12 @@
     margin-top:12px;
     overflow:inherit;
     flex-wrap:nowrap;
-    position:relative;
-}
+    position:relative;}
 .videos-header-btns-cont{
     display:flex;
     overflow:inherit;
     flex-wrap:nowrap;
     position:relative;
-    width:99%;
     border-radius:10px;
     gap:15px;
     margin-left:1px;
@@ -50,7 +48,7 @@
 .arrow-btn-size{width:25px;}}
 .videos-header-cont::-webkit-scrollbar,.videos-header-btns-cont::-webkit-scrollbar{display:none;}
 .videos-header-btns{
-    border-bottom: 3px solid transparent!important;
+    border-bottom:3px solid transparent!important;
     display:flex;
     font-size:calc(20px + (24 - 16)*((100vw - 320px) / (1920 - 320)))!important;
     font-weight:600;
@@ -106,7 +104,7 @@
     font-weight:500;
     line-height:1.25;
     text-transform:revert;}
-/* .video-date{display: block;} */
+/* .video-date{display:block;} */
 @media only screen and (max-width:540px){
 .video-box h3{padding:8px 0 0;}}
 @media only screen and (max-width:420px){
@@ -121,8 +119,7 @@
 .videotab-content, .searchvideotab-content{grid-template-columns:repeat(4, 1fr);}}
 /* search CSS */
 #searchResults{position:relative;}
-.highlighted{border-radius: 2px;}
+.highlighted{border-radius:2px;}
 .displayedVideoCountElement{
     position:absolute;
-    padding-top:6px;
-}
+    padding-top:6px;}
