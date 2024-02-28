@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         datesMap[date] = videoBox;
       }
     });
-  }, 2100);
+  }, 2500);
 
   // Convert allTabs to an array using Array.from or the spread operator
   const tabsArrayAll = Array.from(allTabs);
