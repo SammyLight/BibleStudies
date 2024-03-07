@@ -215,7 +215,8 @@ blockquote:before{color:var(--DM-light-purple);}
     background-color:var(--DM-grayTwo)!important;}
 /* styles from video.css */
 #context_menu{
-    background:var(--DM-bgColor-smoke-white);}
+    background:var(--DM-bgColor-smoke-white);
+    color:var(--white);}
 #context_menu .buttons{
     background:var(--DM-light-gray);
     border-bottom:2px solid #70707072;}
@@ -240,6 +241,7 @@ blockquote:before{color:var(--DM-light-purple);}
 #context_menu details[open] > summary > div:first-of-type{
     background:url(../images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
     transform:rotate(-180deg);}
+#context_menu .verse {color:var(--DM-not-translated-word);}
 span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated){
     color:var(--DM-translated-word);}
 #context_menu:not([strnum]) hr,.compare_verses hr{

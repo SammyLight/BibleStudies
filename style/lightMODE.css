@@ -215,7 +215,9 @@ blockquote:before{color:var(--light-purple);}
 #searchResults .homeResources-grid-containter {
     background-color:var(--bgColor-smoke-white)!important;}
 /* styles from reftaggerLightCity.css */
-#context_menu{background:var(--whitesmoke);}
+#context_menu{
+    background:var(--whitesmoke);
+    color:var(--black);}
 #context_menu .buttons{
     background:var(--ref-img);
     border-bottom:2px solid #70707072;}
@@ -234,6 +236,7 @@ blockquote:before{color:var(--light-purple);}
     background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;}
 #context_menu details[open] > summary > div:first-of-type{
     background:url(../images/arrow-down-svgrepo-com.svg) center no-repeat;}
+#context_menu .verse {color:var(--not-translated-word);}
 span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated){
     color:var(--translated-word);}
 #context_menu:not([strnum]) hr,.compare_verses hr{
