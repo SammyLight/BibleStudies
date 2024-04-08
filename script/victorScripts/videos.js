@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });  
   }
-  setTimeout(videoCloneToTab1, 2500);
+  setTimeout(videoCloneToTab1, 3500);
 
   // Convert allTabs to an array using Array.from or the spread operator
   const tabsArrayAll = Array.from(allTabs);
