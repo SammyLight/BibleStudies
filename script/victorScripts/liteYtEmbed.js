@@ -46,8 +46,11 @@ function runFirstPartOfCode() {
                 this.append(chaNameAndVideoTitle);
             }
             // Set up video title
+            // const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
+            // const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
             const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
-            const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
+            const oEmbedURL = `https://www.youtube.com/oembed?url=${encodeURIComponent(videoURL)}&format=json`;
+
             if (!this.hasFetchedVideoInfo) {
                 fetch(oEmbedURL)
                 .then(response => {
@@ -67,6 +70,16 @@ function runFirstPartOfCode() {
                         videoTitleSeen.classList.add('video-title');
                         videoTitleSeen.append(data.title);
                         videoBox.append(videoTitleSeen);
+                    }
+                    // Determine if the video is live based on the type returned by oEmbed
+                    const isLiveVideo = data.type === 'video.live';
+
+                    if (isLiveVideo) {
+                        console.log('Video is currently live!');
+                        // You can take further action here if the video is live
+                    } else {
+                        console.log('Video is not live');
+                        // Video is not live, proceed with other actions
                     }
                     // Function to strip HTML tags from a string
                     function stripHtmlTags(html) {
