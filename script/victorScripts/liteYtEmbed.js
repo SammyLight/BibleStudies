@@ -77,10 +77,7 @@ function runFirstPartOfCode() {
                     if (isLiveVideo) {
                         console.log('Video is currently live!');
                         // You can take further action here if the video is live
-                    } else {
-                        console.log('Video is not live');
-                        // Video is not live, proceed with other actions
-                    }
+                    } 
                     // Function to strip HTML tags from a string
                     function stripHtmlTags(html) {
                         const doc = new DOMParser().parseFromString(html, 'text/html');
