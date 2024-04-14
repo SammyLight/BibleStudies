@@ -1,7 +1,7 @@
 ---
 ---
 [
-  {% assign filtered_pages = site.pages | where: 'layout', 'pageTEMPLATE' %}
+  {% assign filtered_pages = site.pages | where: 'layout', 'articleTEMPLATE' %}
   {% for page in filtered_pages %}
       {
         "layout"    : "{{ page.layout }}",
