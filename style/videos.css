@@ -21,7 +21,7 @@
     position:relative;}
 .videos-header-cont .arrows{
     position:absolute;
-    z-index:2020;
+/*     z-index:2020; */
     height:100%;
     top:0;
     display:flex;
