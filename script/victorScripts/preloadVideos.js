@@ -1,6 +1,6 @@
 setTimeout(function() {
   $('.loader-bg').fadeToggle();
-}, 4500);
+}, 1000);
 //Remove the - in Articles and Summaries Categories name
 const artSumCatNameElements = document.querySelectorAll('.ArtSumCatName');
 artSumCatNameElements.forEach(element => {
