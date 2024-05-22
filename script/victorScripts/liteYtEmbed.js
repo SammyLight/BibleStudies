@@ -297,4 +297,4 @@ function videoCloneToOtherTabs() {
         }
     });
 }
-setTimeout(videoCloneToOtherTabs, 3500);
+setTimeout(videoCloneToOtherTabs, 3000);
