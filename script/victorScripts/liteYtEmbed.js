@@ -23,99 +23,67 @@ function runFirstPartOfCode() {
             // A label for the button takes priority over a [playlabel] attribute on the custom-element
             this.playLabel = (playBtnEl && playBtnEl.textContent.trim()) || this.getAttribute('playlabel') || 'Play';
 
-            /**
-             * Lo, the youtube placeholder image!  (aka the thumbnail, poster image, etc)
-             *
-             * See https://github.com/paulirish/lite-youtube-embed/blob/master/youtube-thumbnail-urls.md
-             *
-             * TODO: Do the sddefault->hqdefault fallback
-             *       - When doing this, apply referrerpolicy (https://github.com/ampproject/amphtml/pull/3940)
-             * TODO: Consider using webp if supported, falling back to jpg
-             */
             if (!this.style.backgroundImage) {
             this.style.backgroundImage = `url("https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg")`;
             }
-            // Set up channel image
-            const existingChaNameAndVideoTitle = this.querySelector('.chaNameAndVideoTitle');                
-            if (!existingChaNameAndVideoTitle) {
-                var chaNameAndVideoTitle = document.createElement('div');
-                chaNameAndVideoTitle.classList.add('chaNameAndVideoTitle');
-                var channelImg = document.createElement('div');
-                channelImg.classList.add('lty-channelimg');
-                chaNameAndVideoTitle.prepend(channelImg);
-                this.append(chaNameAndVideoTitle);
-            }
+            
             // Set up video title
-            // const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
-            // const oEmbedURL = `https://www.youtube.com/oembed?url=${videoURL}`;
             const videoURL = `https://www.youtube.com/watch?v=${this.videoId}`;
             const oEmbedURL = `https://www.youtube.com/oembed?url=${encodeURIComponent(videoURL)}&format=json`;
-
+            
+            // Ensure hasFetchedVideoInfo is in the correct scope and check its value
             if (!this.hasFetchedVideoInfo) {
                 fetch(oEmbedURL)
-                .then(response => {
-                    if (response.status === 200) {
-                        return response.json();
-                    } else {
-                        throw new Error("Failed to retrieve video information.");
-                    }
-                })
-                .then(data => {
-                    const videoBox = this.parentElement.parentElement;
-                    // Check if a .video-title element already exists
-                    const existingVideoTitle = videoBox.querySelector('.video-title');                
-                    if (!existingVideoTitle) {
-                        // If it doesn't exist, create a new h3.video-title element
-                        const videoTitleSeen = document.createElement('h3');
-                        videoTitleSeen.classList.add('video-title');
-                        videoTitleSeen.append(data.title);
-                        videoBox.append(videoTitleSeen);
-                    }
-                    // // Determine if the video is live based on the type returned by oEmbed
-                    // const isLiveVideo = data.type === 'video.live';
+                    .then(response => {
+                        if (response.status === 200) {
+                            return response.json();
+                        } else {
+                            throw new Error("Failed to retrieve video information.");
+                        }
+                    })
+                    .then(data => {
+                        // Function to strip HTML tags from a string
+                        function stripHtmlTags(html) {
+                            const doc = new DOMParser().parseFromString(html, 'text/html');
+                            return doc.body.textContent || "";
+                        }
+            
+                        let videoTitleElement;
+                        var modifiedText;
+                        var videoDateElement;
+            
+                        // Define the array with the video's Category name
+                        const videoCategories = ["Sunday", "Monday", "Wednesday", "Program"];
+            
+                        // Get all video-box elements
+                        const videoBoxElement = this.closest(`#All-Tab-content .video-box`);
+                        if (!videoBoxElement) {return}
 
-                    // if (isLiveVideo) {
-                    //     console.log('Video is currently live!');
-                    //     // You can take further action here if the video is live
-                    // } else {
-                    //     console.log('Video is not live');
-                    //     // Video is not live, proceed with other actions
-                    // }
-                    // Function to strip HTML tags from a string
-                    function stripHtmlTags(html) {
-                        const doc = new DOMParser().parseFromString(html, 'text/html');
-                        return doc.body.textContent || "";
-                    }
+                        // Set up channel Logo
+                            var channelLogoCon = document.createElement('div');
+                            channelLogoCon.classList.add('channelLogo-container');
+                            var channelLogo = document.createElement('div');
+                            channelLogo.classList.add('lty-channelLogo');
+                            channelLogoCon.prepend(channelLogo);
+                            this.append(channelLogoCon);
 
-                    // Create a set to track processed video boxes
-                    const processedVideoBoxes = new Set();
-                    var videoTitleElement;
-                    var modifiedText;
-                    var videoDateElement;
-
-                    // Define the array with the video's Category name
-                    const videoCategories = ["Sunday", "Monday", "Wednesday", "Program"];
-
-                    // Get all video-box elements
-                    const videoBoxElements = document.querySelectorAll('.video-box');
-
-                    // Loop through each video-box element
-                    videoBoxElements.forEach(function (videoBoxElement) {
-                        // Check if the modification has already been done
-                        if (!processedVideoBoxes.has(videoBoxElement)) {
+                        // Set up video title
+                            videoTitleElement = document.createElement('h3');
+                            videoTitleElement.classList.add('video-title');
+                            videoTitleElement.append(data.title);
+                            videoBoxElement.append(videoTitleElement);
+            
                             // Get the video title element within the current video-box
-                            videoTitleElement = videoBoxElement.querySelector('.video-title');
-                            
                             if (videoTitleElement) {
                                 // Get the text content of the video-title (h3) element
                                 const videoTitleText = videoTitleElement.textContent;
-
+        
                                 // Extract the date from the video title
                                 const firstDateFormatMatch = videoTitleText.match(/(\d{1,2}(?:st|nd|rd|th)?)\s?(\w{3})\.\s?(\d{4})\.?/);
                                 const secondDateFormatMatch = videoTitleText.match(/(?:\w{3},\s)?(\w{3})\s(\d{1,2}),\s(\d{4})\.?/);
-
+        
                                 let dateString, dateObject;
-                                
+        
                                 if (firstDateFormatMatch && firstDateFormatMatch.length > 0) {
                                     const [dayMatch, monthMatch, yearMatch] = firstDateFormatMatch.slice(1);
                                     dateString = `${monthMatch} ${dayMatch.replace(/\D/g, '')}, ${yearMatch}`;
@@ -123,57 +91,53 @@ function runFirstPartOfCode() {
                                     const [, monthMatch, dayMatch, yearMatch] = secondDateFormatMatch;
                                     dateString = `${monthMatch} ${dayMatch}, ${yearMatch}`;
                                 }
-                                
+        
                                 if (dateString) {
                                     dateObject = new Date(dateString);
-                                    
+        
                                     if (!isNaN(dateObject)) {
                                         const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(dateObject);
-
+        
                                         // Create a span element
                                         videoDateElement = document.createElement('span');
                                         videoDateElement.classList.add('video-date');
                                         videoDateElement.textContent = dayOfWeek + ', ' + dateString + '.';
-
+        
                                         // Create a new text node with the modified text (excluding the date)
                                         modifiedText = document.createTextNode(videoTitleText.replace(firstDateFormatMatch ? firstDateFormatMatch[0] : secondDateFormatMatch[0], ''));
                                         videoTitleElement.innerHTML = '';
-
+        
                                         // Append the modified text and the span element to the video title
                                         videoTitleElement.appendChild(modifiedText);
                                         videoTitleElement.appendChild(videoDateElement);
-
+        
                                         // Add the modified video title content (without HTML tags) as a new attribute
                                         videoBoxElement.setAttribute('video-title', stripHtmlTags(videoTitleElement.innerHTML));
-
+        
                                         // Add the date as an attribute to the current video-box
                                         videoBoxElement.setAttribute('date-posted', dayOfWeek + ', ' + dateString);
-                                        
-                                        processedVideoBoxes.add(videoBoxElement);
                                     } else {
                                         console.error('Invalid date object:', dateObject);
                                     }
                                 } else {
                                     console.error('No date match found');
                                 }
-
+        
                                 // Check if any of the target words are present in the video title text
                                 const matchedCategory = videoCategories.find(word => videoTitleText.includes(word));
-                                
+        
                                 // If a match is found, set an attribute on the video-box element
                                 if (matchedCategory) {
                                     videoBoxElement.setAttribute('categoryTab', matchedCategory);
                                 }
                             }
-                        }
+                        this.hasFetchedVideoInfo = true; // Set the flag to true after processing
+                    })
+                    .catch(error => {
+                        console.error(error);
                     });
-
-                    this.hasFetchedVideoInfo = true;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
             }
+            
             // Set up play button, and its visually hidden label
             if (!playBtnEl) {
                 playBtnEl = document.createElement('button');
@@ -333,4 +297,4 @@ function videoCloneToOtherTabs() {
         }
     });
 }
-setTimeout(videoCloneToOtherTabs, 4500);
+setTimeout(videoCloneToOtherTabs, 3500);

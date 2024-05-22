@@ -1,6 +1,6 @@
 const videoSearchInput = document.getElementById("videoSearch");
 const searchResultsContainer = document.getElementById("searchResults");
-const searchFromTab1Content = document.querySelector('#tab1-content');
+const searchFromAllTabContent = document.querySelector('#All-Tab-content');
 const displayedVideos = new Set();
 let observer;
 // Event listener for highlighting
@@ -62,7 +62,7 @@ function handleVideoSearch() {
     const searchQuery = videoSearchInput.value.toLowerCase();
     searchResultsContainer.innerHTML = "";
     displayedVideos.clear();
-    const videoBoxes = searchFromTab1Content.querySelectorAll(".video-box");
+    const videoBoxes = searchFromAllTabContent.querySelectorAll(".video-box");
     videoBoxes.forEach((video) => {
         const { videoTitleAttribute, videoDateAttribute } = getAttributes(video);
         const videoIdElement = video.querySelector("lite-youtube");
