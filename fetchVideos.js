@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 const fs = require('fs');
 const path = require('path');
 
-const keyFile = path.join(__dirname, 'service-account-key.json'); // Adjust this path if necessary
+const keyFile = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 const scopes = ['https://www.googleapis.com/auth/youtube.force-ssl'];
 
 async function getVideoIds() {
