@@ -1,0 +1,31 @@
+{% include QandA-head.html %}
+{% include QandA-headCSS.html %}
+</head>
+<body class="newBG">
+    <div class="loader-bg-bibleQuiz">
+        <div class="loader-bibleQuiz"></div>
+    </div>
+    <section id="cat-bibleQuiz" class="cat-bibleQuiz-section">
+        {% include QandA-cat-header.html %}
+        <section id="cat-bibleQuiz-inner" class="container-fluid-inner">
+            <h1>BIBLE QUIZ</h1>
+            <h5>TEST YOUR KNOWLEDGE ON:</h5>
+            {{ content }}
+        </section>
+        {% include QandA-cat-settings.html %}
+        <audio id="categorySound" src="../audio/categorySound.mp3" loop="true"></audio>
+        <!-- <button id="pauseButtonCat">
+            <i class="fas fa-volume-mute"></i>
+          </button>
+          <button id="playButtonCat">
+              <i class="fas fa-volume-up"></i>
+        </button> -->
+        <audio id="clickSound" src="../audio/clickSound.mp3"></audio>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../script/victorScripts/preload.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/QandAscriptsFontsandThemes.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/QandAscriptsCategory.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/lightANDdarkmode.js"></script>
+</body>

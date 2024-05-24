@@ -1,0 +1,425 @@
+</div>
+</div>
+
+<section id="detailsSection" class="draggableSection">
+	<div id="detailsSectionheader" class="titleBarH3">
+		<h3>Details</h3>
+		<button id="closeDetails" onclick="toggleDetailsSection()">X</button>
+	</div>
+	<div id="detailsKeyFacts" style="display: none;">
+
+		<h4 title="Absolute/Relative time when this/these event/events takes place">Time:</h4>
+		<ul id="detailsTimePeriods">
+		</ul>
+
+		<h4 title="Where this/these event/events takes place">Location:</h4>
+		<ul id="detailsRegions">
+		</ul>
+
+		<h4>Characters:</h4>
+		<ul id="detailsActors">
+		</ul>
+
+	</div>
+
+	<div id="wysiwygEditor">
+		<input type="hidden" name="myDoc">
+		<div id="toolBar1" class="toolBar1n2">
+			<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option selected>FORMATTING</option>
+				<option value="h1">Heading 1</option>
+				<option value="h2">Heading 2</option>
+				<option value="h3">Heading 3</option>
+				<option value="h4">Heading 4</option>
+				<option value="h5">Heading 5</option>
+				<option value="h6">Heading 6</option>
+				<option value="p">Paragraph &lt;p&gt;</option>
+				<option value="pre">Preformatted &lt;pre&gt;</option>
+			</select>
+			<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>FONT</option>
+				<option>Arial</option>
+				<option>Arial Black</option>
+				<option>Courier New</option>
+				<option>Times New Roman</option>
+			</select>
+			<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>SIZE</option>
+				<option value="1">Very small</option>
+				<option value="2">A bit small</option>
+				<option value="3">Normal</option>
+				<option value="4">Medium-large</option>
+				<option value="5">Big</option>
+				<option value="6">Very big</option>
+				<option value="7">Maximum</option>
+			</select>
+			<select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>COLOR</option>
+				<option value="AliceBlue" title="AliceBlue" style="background-color:AliceBlue"></option>
+				<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite"></option>
+				<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+				<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+				<option value="Azure" title="Azure" style="background-color:Azure"></option>
+				<option value="Beige" title="Beige" style="background-color:Beige"></option>
+				<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+				<option value="Black" title="Black" style="background-color:Black"></option>
+				<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond"></option>
+				<option value="Blue" title="Blue" style="background-color:Blue"></option>
+				<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+				<option value="Brown" title="Brown" style="background-color:Brown"></option>
+				<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+				<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+				<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+				<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+				<option value="Coral" title="Coral" style="background-color:Coral"></option>
+				<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue"></option>
+				<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+				<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+				<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+				<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+				<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+				<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod"></option>
+				<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+				<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+				<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+				<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+				<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta"></option>
+				<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen"></option>
+				<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+				<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+				<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+				<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+				<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen"></option>
+				<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue"></option>
+				<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray"></option>
+				<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey"></option>
+				<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise"></option>
+				<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+				<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+				<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue"></option>
+				<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+				<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+				<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+				<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+				<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite"></option>
+				<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen"></option>
+				<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+				<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+				<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+				<option value="Gold" title="Gold" style="background-color:Gold"></option>
+				<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+				<option value="Gray" title="Gray" style="background-color:Gray"></option>
+				<option value="Grey" title="Grey" style="background-color:Grey"></option>
+				<option value="Green" title="Green" style="background-color:Green"></option>
+				<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow"></option>
+				<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+				<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+				<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+				<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+				<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+				<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+				<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+				<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush"></option>
+				<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+				<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon"></option>
+				<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+				<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+				<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+				<option value="LightGoldenRodYellow" title="LightGoldenRodYellow" style="background-color:LightGoldenRodYellow"></option>
+				<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+				<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+				<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+				<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+				<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon"></option>
+				<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen"></option>
+				<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue"></option>
+				<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray"></option>
+				<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey"></option>
+				<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue"></option>
+				<option value="LightYellow" title="LightYellow" style="background-color:LightYellow"></option>
+				<option value="Lime" title="Lime" style="background-color:Lime"></option>
+				<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+				<option value="Linen" title="Linen" style="background-color:Linen"></option>
+				<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+				<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+				<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine"></option>
+				<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+				<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid"></option>
+				<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple"></option>
+				<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen"></option>
+				<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue"></option>
+				<option value="MediumSpringGreen" title="MediumSpringGreen" style="background-color:MediumSpringGreen"></option>
+				<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise"></option>
+				<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed"></option>
+				<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue"></option>
+				<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+				<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+				<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+				<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite"></option>
+				<option value="Navy" title="Navy" style="background-color:Navy"></option>
+				<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+				<option value="Olive" title="Olive" style="background-color:Olive"></option>
+				<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+				<option value="Orange" title="Orange" style="background-color:Orange"></option>
+				<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+				<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+				<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod"></option>
+				<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+				<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise"></option>
+				<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed"></option>
+				<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+				<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+				<option value="Peru" title="Peru" style="background-color:Peru"></option>
+				<option value="Pink" title="Pink" style="background-color:Pink"></option>
+				<option value="Plum" title="Plum" style="background-color:Plum"></option>
+				<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+				<option value="Purple" title="Purple" style="background-color:Purple"></option>
+				<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple"></option>
+				<option value="Red" title="Red" style="background-color:Red"></option>
+				<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+				<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+				<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown"></option>
+				<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+				<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+				<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+				<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+				<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+				<option value="Silver" title="Silver" style="background-color:Silver"></option>
+				<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+				<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+				<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+				<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+				<option value="Snow" title="Snow" style="background-color:Snow"></option>
+				<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen"></option>
+				<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+				<option value="Tan" title="Tan" style="background-color:Tan"></option>
+				<option value="Teal" title="Teal" style="background-color:Teal"></option>
+				<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+				<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+				<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+				<option value="Violet" title="Violet" style="background-color:Violet"></option>
+				<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+				<option value="White" title="White" style="background-color:White"></option>
+				<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+				<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+				<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen"></option>
+			</select>
+			<select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none">
+				<option class="heading" selected>BACKGROUND</option>
+				<!-- <option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="black">Black</option> -->
+				<option value="AliceBlue" title="AliceBlue" style="background-color:AliceBlue"></option>
+				<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite"></option>
+				<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+				<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+				<option value="Azure" title="Azure" style="background-color:Azure"></option>
+				<option value="Beige" title="Beige" style="background-color:Beige"></option>
+				<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+				<option value="Black" title="Black" style="background-color:Black"></option>
+				<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond"></option>
+				<option value="Blue" title="Blue" style="background-color:Blue"></option>
+				<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+				<option value="Brown" title="Brown" style="background-color:Brown"></option>
+				<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+				<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+				<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+				<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+				<option value="Coral" title="Coral" style="background-color:Coral"></option>
+				<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue"></option>
+				<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+				<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+				<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+				<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+				<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+				<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod"></option>
+				<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+				<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+				<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+				<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+				<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta"></option>
+				<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen"></option>
+				<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+				<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+				<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+				<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+				<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen"></option>
+				<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue"></option>
+				<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray"></option>
+				<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey"></option>
+				<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise"></option>
+				<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+				<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+				<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue"></option>
+				<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+				<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+				<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+				<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+				<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite"></option>
+				<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen"></option>
+				<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+				<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+				<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+				<option value="Gold" title="Gold" style="background-color:Gold"></option>
+				<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+				<option value="Gray" title="Gray" style="background-color:Gray"></option>
+				<option value="Grey" title="Grey" style="background-color:Grey"></option>
+				<option value="Green" title="Green" style="background-color:Green"></option>
+				<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow"></option>
+				<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+				<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+				<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+				<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+				<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+				<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+				<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+				<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush"></option>
+				<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+				<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon"></option>
+				<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+				<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+				<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+				<option value="LightGoldenRodYellow" title="LightGoldenRodYellow" style="background-color:LightGoldenRodYellow"></option>
+				<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+				<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+				<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+				<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+				<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon"></option>
+				<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen"></option>
+				<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue"></option>
+				<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray"></option>
+				<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey"></option>
+				<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue"></option>
+				<option value="LightYellow" title="LightYellow" style="background-color:LightYellow"></option>
+				<option value="Lime" title="Lime" style="background-color:Lime"></option>
+				<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+				<option value="Linen" title="Linen" style="background-color:Linen"></option>
+				<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+				<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+				<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine"></option>
+				<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+				<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid"></option>
+				<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple"></option>
+				<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen"></option>
+				<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue"></option>
+				<option value="MediumSpringGreen" title="MediumSpringGreen" style="background-color:MediumSpringGreen"></option>
+				<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise"></option>
+				<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed"></option>
+				<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue"></option>
+				<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+				<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+				<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+				<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite"></option>
+				<option value="Navy" title="Navy" style="background-color:Navy"></option>
+				<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+				<option value="Olive" title="Olive" style="background-color:Olive"></option>
+				<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+				<option value="Orange" title="Orange" style="background-color:Orange"></option>
+				<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+				<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+				<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod"></option>
+				<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+				<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise"></option>
+				<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed"></option>
+				<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+				<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+				<option value="Peru" title="Peru" style="background-color:Peru"></option>
+				<option value="Pink" title="Pink" style="background-color:Pink"></option>
+				<option value="Plum" title="Plum" style="background-color:Plum"></option>
+				<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+				<option value="Purple" title="Purple" style="background-color:Purple"></option>
+				<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple"></option>
+				<option value="Red" title="Red" style="background-color:Red"></option>
+				<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+				<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+				<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown"></option>
+				<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+				<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+				<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+				<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+				<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+				<option value="Silver" title="Silver" style="background-color:Silver"></option>
+				<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+				<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+				<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+				<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+				<option value="Snow" title="Snow" style="background-color:Snow"></option>
+				<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen"></option>
+				<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+				<option value="Tan" title="Tan" style="background-color:Tan"></option>
+				<option value="Teal" title="Teal" style="background-color:Teal"></option>
+				<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+				<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+				<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+				<option value="Violet" title="Violet" style="background-color:Violet"></option>
+				<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+				<option value="White" title="White" style="background-color:White"></option>
+				<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+				<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+				<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen"></option>
+			</select>
+		</div>
+		<div id="toolBar2" class="toolBar1n2">
+			<button class="intLink fa fa-paint-brush" title="Clean"
+				onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};"
+				style="display: none"></button>
+			<button class="intLink fa fa-print" title="Print" onclick="printDoc();" style="display: none"></button>
+			<button class="intLink fa fa-undo" title="Undo" onclick="formatDoc('undo');" style="display: none"></button>
+			<button class="intLink fa fa-undo fa-flip-horizontal" title="Redo" onclick="formatDoc('redo');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-remove" title="Remove formatting" onclick="formatDoc('removeFormat')"
+				style="display: none"></button>
+			<button class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" style="display: none"></button>
+			<button class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');"
+				style="display: none"></button>
+			<button class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');"
+				style="display: none"></button>
+			<button class="intLink" title="HorizontalLine" onclick="formatDoc('insertHorizontalRule');"
+				style="display: none">—</button>
+			<button class="intLink fa fa-subscript" title="Subscript" onclick="formatDoc('subscript');"
+				style="display: none"></button>
+			<button class="intLink fa fa-superscript" title="Superscript" onclick="formatDoc('superscript');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-left" title="Left align" onclick="formatDoc('justifyleft');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-justify" title="Center align" onclick="formatDoc('justifycenter');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-right" title="Right align" onclick="formatDoc('justifyright');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-list-ol" title="Numbered list" onclick="formatDoc('insertorderedlist');"
+				style="display: none"></button>
+			<button class="intLink fa fa-list-ul" title="Dotted list" onclick="formatDoc('insertunorderedlist');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock','blockquote');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');"
+				style="display: none"></button>
+			<button class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-link" title="Hyperlink"
+				onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" style="display: none"></button>
+
+			<button class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" style="display: none"></button>
+
+			<button class="intLink fa fa-paste" title="Paste" onclick="formatDoc('paste');"
+				style="display: none"></button>
+		</div>
+
+		<button id="toggleKeyDetails" onclick="toglesummary()">Keys</button>
+		<button id="expandDetails" onclick="detailsEditButtons()" title="Show Text Editor">Editor</button>
+		<button id="makeCurrentDetailEditable" onclick="makeCurrentDetailEditable()"
+			title="Make Detail/Note Edtiable">Edit</button>
+	</div>

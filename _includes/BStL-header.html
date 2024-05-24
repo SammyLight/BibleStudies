@@ -1,0 +1,26 @@
+<body class="scrollbar scrollbar-custom">
+	<!--HEAD-->
+	<nav id="head_1" class="grid2">
+		<div id="navHeadNavBtn" >
+			<button id="navMenu" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button>
+			<button class="masterNavButtonsToggle" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
+		</div>
+
+		<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
+	</nav>
+
+	<section id="websiteNav">
+		<!--		<h3 style="display: none">Bible Timelines</h3>-->
+		<h4 style="display: none">
+			{% for page in site.pages %}{% if page.categories contains "HomePageArticle-BibleTimelines" %}
+			<a id="timelinesHome" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">BibleTimelines Home</a>
+			{% endif %}{% endfor %}
+		</h4>
+		<ul style="display: none">
+
+			{% for page in site.pages %}{% if page.categories contains "BibleTimelines" %}<li class="all-links" style="display: none"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
+		        {% endif %}">{{page.title}}</a></li>
+			{% endif %}{% endfor %}
+		</ul>
+
+	</section>

@@ -1,0 +1,50 @@
+<section id="homeBodyContent" class="container-fluid-inner">
+	<div id="Resources-section" class="Resources-grid">
+		<h1 class="titles titles-inner">More Latest Summaries</h1>
+		<div class="homeResources-grid">
+			{% assign sorted-posts = site.posts | sort: 'date' | reverse %} {% assign my_array = "" | split: ',' %} {%
+			for posts in sorted-posts %} {% if posts.date And posts.date != "" And posts.date != nil %} {% assign
+			my_array = my_array | push: posts %} {% endif %}
+			{% endfor %}
+			{% for page in my_array limit:30 %}
+			<div class="homeResources-grid-containter">
+			<small class="archive-date">{{ page.date | date: "%a, %b %d, %y." }}</small>
+			<h2 class="titles">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+				{{ page.title }}
+				</a>
+			</h2>
+			<p class="prayer-text">
+				{% if page.content contains '<!--excerpt.start-->' and page.content contains '<!--excerpt.end-->' %}
+				{{ ((page.content | split:'<!--excerpt.start-->' | last) | split: '<!--excerpt.end-->' | first) |
+				strip_html | truncatewords: 50 }}
+				{% else %}
+				{{ page.content | strip_html | truncatewords: 50 }}
+				{% endif %}
+			</p>
+			<small>
+				<a class="titles-links" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">read more</a>
+			</small>
+			<div class="prayer-text">
+				<p class="categories"><span>category:</span>
+					{% if post %}
+					{% assign categories = post.categories %}
+					{% else %}
+					{% assign categories = page.categories %}
+					{% endif %}
+					{% for category in categories %}
+					{% capture category_name %}{{ category | prepend: 'HomePage-' }}{% endcapture %}
+				{% assign sumcaty = category_name %}
+				{% for post in site.posts %}
+				{% if post.categories contains sumcaty %}
+					<a class="cat-link ArtSumCatName" href="{% if site.baseurl == "" %}{{post.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{post.url}}{% endif %}">{{category}}</a>
+					{% unless forloop.last %}&nbsp;{% endunless %}
+					{% endif %}{% endfor %}
+					{% endfor %}
+				</p>
+			</div>
+		</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

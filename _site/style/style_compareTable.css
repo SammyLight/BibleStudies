@@ -1,0 +1,73 @@
+table.comparisonTable >
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{ 
+	/* border-bottom: none; */
+}
+
+table.comparisonTable{ 
+	position: relative;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Zebra striping */
+table.comparisonTable tr:nth-of-type(odd){ 
+	background: #eee;
+}
+
+table.comparisonTable > tr:first-child > td,
+table.comparisonTable tbody:only-child tr:first-child > td,
+table.comparisonTable th{ 
+	background: #e1ffd3;
+	color: black;
+	font-weight: bold;
+}
+
+table.comparisonTable th{ 
+	position: sticky;
+	top: 0; /* Don't forget this, required for the stickiness */
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+table.comparisonTable td,
+table.comparisonTable th{ 
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.comparisonTable td:first-child,
+table.comparisonTable th:first-child{ 
+	border-left: 3.5px solid grey;
+	border-right: 2.5px solid grey;
+}
+
+table.comparisonTable td:last-child,
+table.comparisonTable th:last-child{ 
+	border-right: 3.5px solid grey;
+}
+
+table.comparisonTable thead ~ tbody > tr:first-of-type,
+table.comparisonTable tbody > tr:nth-of-type(2){ 
+	border-top: 5px solid grey;
+}
+
+table.comparisonTable td:nth-child(2),
+table.comparisonTable th:nth-child(2){ 
+	border-left: 3.5px solid grey;
+}
+
+table.comparisonTable tr:last-of-type{ 
+	border-bottom: 5px solid grey;
+}
+
+#compTableBtn{ 
+	position: fixed;
+	top: 0;
+	right: 0;
+}

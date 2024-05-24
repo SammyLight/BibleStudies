@@ -1,0 +1,107 @@
+body {
+    position: relative;
+    background: rgb(223, 223, 223);
+    transition: 800ms;
+    counter-reset: h1Counter;
+}
+body > h1 {
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    border-bottom: 3px solid purple;
+}
+h1,h2,h3,h4,h5,h6 {
+    cursor: pointer;
+}
+main {
+    position: relative;
+    padding-left: 1em;
+    /* border: 0.1em solid grey; */
+    height: 100%;
+    width: 100%;
+    counter-reset: h1Counter;
+}
+main>*:not(h1):not(h2):not(h3) {
+    font-size: 1.4em;
+}
+.darkmode {
+    background: rgb(26, 26, 26);
+    color: white;
+    transition: 800ms;
+}
+* {
+    height: auto;
+}
+[class*="hidby_"]{
+    display: none;
+    height: 0;
+    transition: 500ms;
+}
+button#darkmode_btn {
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    background: rgb(26, 26, 26);
+    color: white;
+    transition: 800ms;
+    font-size:1.5em;
+    z-index: 5;
+}
+.darkmode button#darkmode_btn {
+    background: rgb(223, 223, 223);
+    color: rgb(26, 26, 26);
+    transition: 800ms;
+}
+main > h1 {
+    counter-reset: h2Counter;
+}
+main > h1:before {
+    counter-increment: h1Counter;
+    content: counter(h1Counter) ". ";
+    list-style-type: upper-roman;
+    counter-style: upper-roman;
+    counter-reset: h2Counter;
+    
+    padding-top: 0.5em;
+    background-color:tan;
+    border-radius:0.1em;
+    margin-right: 0.25em;
+}
+main > h2:before {
+    counter-increment: h2Counter;
+    content: counter(h2Counter);
+    counter-style: upper-roman;
+    list-style-type: upper-roman;
+
+    background-color:cadetblue;
+    /* color: white!important; */
+    border-radius:5%;
+    margin-right: 5px;
+}
+main > h3:before {
+    counter-increment: h2Counter;
+    content: counter(h2Counter);
+    counter-style: upper-roman;
+    list-style-type: upper-roman;
+
+    padding-top: 0.5em;
+    background-color:darkseagreen;
+    border-radius:5%;
+    margin-right: 5px;
+}
+main > h1:before, main > h2:before, main > h3:before {
+    color: black;
+    display:inline-block;
+    min-width: 1.5em;
+    height: 1em;
+    text-align: center;
+    line-height: 20px;
+    /* box-shadow: 0px 2.5px 0px 10px orangered; */
+    transition: 100ms;
+}
+.hidingsibs:before{
+    box-shadow: 0px -5px 0px 0px orangered;
+    height: 1em;
+    transition: 300ms;
+}

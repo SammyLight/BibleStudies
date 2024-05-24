@@ -1,0 +1,38 @@
+<svg width="1073" height="512" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="1075" height="514" id="canvas_background" fill="none"/>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <ellipse fill-opacity="0.5" fill="rgba(196,155,155,0)" cx="242.337269" cy="225.46871" id="svg_2" rx="234.840939" ry="152.174433" stroke="#ffae00" stroke-width="5" stroke-opacity="0.5"/>
+  <ellipse fill-opacity="0.5" fill="rgba(209,255,180,0)" cx="530.701967" cy="247.208434" id="svg_3" rx="234.840939" ry="152.174433" stroke="#0500a0" stroke-width="5" stroke-opacity="0.5"/>
+  <ellipse fill-opacity="0.5" fill="rgba(209,255,180,0)" cx="828.21932" cy="237.936391" id="svg_19" rx="234.840939" ry="152.174433" stroke="#00861b" stroke-width="5" stroke-opacity="0.5"/>
+  <g id="svg_12">
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_4" y="251.197261" x="75.446348" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">NOT SEEN</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_11" y="216.19726" x="97.451347" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Things</text>
+  </g>
+  <g id="svg_1">
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_20" y="250.236513" x="863.379305" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">SEEN</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_21" y="217.158032" x="856.736458" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Things</text>
+  </g>
+  <g id="svg_22">
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_8" y="217.624166" x="641.958347" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Seen</text>
+   <text fill="#000000" stroke="#1A333F" stroke-width="0" stroke-dasharray="null" stroke-opacity="0.5" fill-opacity="0.5" x="613.723922" y="285.697307" id="svg_9" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">Hoped For</text>
+   <text fill="#000000" stroke="#1A333F" stroke-width="0" stroke-dasharray="null" stroke-opacity="0.5" fill-opacity="0.5" x="665.306889" y="250.697307" id="svg_10" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">&amp;</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_15" y="181.697307" x="634.649017" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Things</text>
+  </g>
+  <g id="svg_23">
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_5" y="221.717868" x="327.514202" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Not Seen</text>
+   <text fill="#000000" stroke="#1A333F" stroke-width="0" stroke-dasharray="null" stroke-opacity="0.5" fill-opacity="0.5" x="319.26625" y="289.791009" id="svg_6" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">Hoped For</text>
+   <text fill="#000000" stroke="#1A333F" stroke-width="0" stroke-dasharray="null" stroke-opacity="0.5" fill-opacity="0.5" x="370.849197" y="254.791009" id="svg_7" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">&amp;</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_13" y="185.791009" x="340.191356" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Things</text>
+  </g>
+  <g id="svg_25">
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_16" y="328.639741" x="490.633048" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">HOPED</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_17" y="293.090231" x="493.426415" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">Things</text>
+   <text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_24" y="364.103048" x="513.156027" fill-opacity="0.5" stroke-opacity="0.5" stroke-dasharray="null" stroke-width="0" stroke="#1A333F" fill="#000000">For</text>
+  </g>
+ </g>
+</svg>

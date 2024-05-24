@@ -1,0 +1,79 @@
+table.comparisonTable >
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{ 
+	/* border-bottom: none; */
+}
+
+table.comparisonTable{ 
+	width: 100%;
+	border-collapse: collapse;
+	background: rgba(191, 255, 151, 0.61);
+}
+
+table.comparisonTable tr th:first-child,
+table.comparisonTable tr td:first-child{ 
+	background: rgba(255, 243, 103, 0.59);
+}
+/* Zebra striping */
+table.comparisonTable tr:nth-of-type(odd){ 
+	background: rgba(238, 238, 238, 0.6);
+}
+
+table.comparisonTable > tr:first-child > td:first-child,
+table.comparisonTable tbody:only-child tr:first-child > td:first-child,
+table.comparisonTable th:first-child{ 
+	background: rgb(255, 230, 93);
+	/* background: #e1ffd3; */
+	color: white;
+	font-weight: bold;
+}
+
+table.comparisonTable > tr:first-child > td:first-child + td,
+table.comparisonTable tbody:only-child tr:first-child > td:first-child + td,
+table.comparisonTable th:first-child{ 
+	background: rgb(130, 255, 93);
+	color: white;
+	font-weight: bold;
+}
+
+table.comparisonTable td,
+table.comparisonTable th{ 
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.comparisonTable td:first-child,
+table.comparisonTable th:first-child{ 
+	border-left: 3.5px solid grey;
+}
+
+table.comparisonTable td:last-child,
+table.comparisonTable th:last-child{ 
+	border-right: 3.5px solid grey;
+}
+
+table.comparisonTable thead ~ tbody > tr:first-of-type,
+table.comparisonTable tbody > tr:nth-of-type(2){ 
+	border-top: 5px solid grey;
+}
+
+table.comparisonTable td:nth-child(2),
+table.comparisonTable th:nth-child(2){ 
+	border-left: 3.5px solid grey;
+}
+
+table.comparisonTable tr:last-of-type{ 
+	border-bottom: 5px solid grey;
+}
+
+#compTableBtn{ 
+	position: fixed;
+	top: 0;
+	right: 0;
+}

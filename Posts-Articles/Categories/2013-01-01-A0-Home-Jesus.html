@@ -1,0 +1,46 @@
+---
+layout: cat-homepageTEMPLATE
+title: "Jesus"
+permalink: /Jesus/
+categories: ["HomePageArticle-Jesus"]
+---
+
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
+		<h1 class="titles">Jesus</h1>
+		<p>A collection of Useful Resources on Jesus.</p>
+	</div>
+	{% assign subcatarray = "Jesus and the Angel of Yahweh,Trinity,Deity of Christ,Parables of Jesus,General Studies"|split:',' %}
+			
+	{% for subcat in subcatarray %}
+		{% for page in site.pages %}
+		{% if page.categories contains "Jesus" %}
+		{% if page.subsection contains subcat %}
+	<div class="homeResources-grid-containter">
+		{% for page in site.pages %}
+		{% if page.categories contains "Jesus" %}
+		{% if page.subsection contains subcat %}
+				<h2 class="titles">{{ subcat }}</h2>
+				<ol>
+					{% break %}
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+					{% for page in site.pages %}
+		{% if page.categories contains "Jesus" %}
+		{% if page.subsection contains subcat %}
+					<li class="all-links">
+						<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a>
+						 &nbsp; <small class="archive-date-summary">{{ page.date | date:	"%a, %b %d, %y" }}.</small>
+					</li>
+					{% endif %}
+					{% endif %}
+					{% endfor %}
+				</ol>
+	</div>
+			{% break %}
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+			{% endfor %}
+</div>

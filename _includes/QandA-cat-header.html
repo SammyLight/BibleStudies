@@ -1,0 +1,25 @@
+<div id="cat-headerbar" class="container-fluid-inner">
+    <div class="churchLOGO">
+        {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
+        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+            <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+        </a>{% endif %}{% endfor %}
+    </div>
+    <div class="headerUL">
+        <ul class="header-links">
+            <li class="header-links-li transition">
+                {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+                <a class="linkTitle transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <span>Q-Home</span>
+                </a>{% endif %}{% endfor %}
+            </li>
+            <li class="header-links-li transition">
+                {% for page in site.pages %}{% if page.title contains "Rules" %}
+                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <span>About</span>
+                </a>{% endif %}{% endfor %}
+            </li>
+        </ul>
+    </div>
+    <button id="catSettings" class="catSettings" style="position: relative;" onclick="showCatSettings()" title="general settings"><img src="../images/settings-svgrepo-com.svg" alt="&#9881;"></button>
+</div>

@@ -1,0 +1,72 @@
+{% include homeHead.html %}
+{% include QandA-headCSS.html %}
+</head>
+
+<body class="newBG">
+    <div class="loader-bg-bibleQuiz">
+        <div class="loader-bibleQuiz"></div>
+    </div>
+    <section id="chooseCat" class="choosecat-grid">
+        <div id="cat-headerbar" class="container-fluid-inner">
+            <div class="churchLOGO">
+                {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
+                <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                    <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                </a>{% endif %}{% endfor %}
+            </div>
+            <div class="headerUL">
+                <ul class="header-links">
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "LightCity-Teaching-Fellowship" %}
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>Home</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                    <li class="header-links-li transition">
+                        {% for page in site.pages %}{% if page.title contains "Rules" %}
+                        <a class="iconLink transition" href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                            <span>About</span>
+                        </a>{% endif %}{% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <button id="catSettings" class="catSettings" style="position: relative;" onclick="showCatSettings()" title="general settings"><img src="../images/settings-svgrepo-com.svg" alt="&#9881;"></button>
+        </div>
+        <div class="choosecat-grid-inner">
+            <!-- <h2>Who Are You Please?</h2> -->
+            <div>
+                <button class="choosecat-Child con1">
+                    {% for page in site.pages %}
+                    {% if page.categories contains "Quiz Cat" %}
+                    {% if page.subsection contains "HomePage-Children" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        Children Quiz
+                    </a>{% endif %}{% endif %}{% endfor %}
+                </button>
+                <button class="choosecat-Adult con2">
+                    {% for page in site.pages %}
+                    {% if page.categories contains "Quiz Cat" %}
+                    {% if page.subsection contains "HomePage-Adult" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        Adult Quiz
+                    </a>{% endif %}{% endif %}{% endfor %}
+                </button>
+                <button class="choosecat-Child con3">
+                    {% for page in site.pages %}
+                    {% if page.categories contains "Quiz Cat" %}
+                    {% if page.subsection contains "trivia" %}
+                    <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">
+                        Bible Trivia
+                    </a>{% endif %}{% endif %}{% endfor %}
+                </button>
+            </div>
+        </div>
+        <audio id="categorySound" src="../audio/categorySound.mp3" loop="true"></audio>
+        <audio id="clickSound" src="../audio/clickSound.mp3"></audio>
+          {% include QandA-cat-settings.html %}
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../script/victorScripts/QandAscriptsFontsandThemes.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/QandAscriptsChooseCategory.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+</body>

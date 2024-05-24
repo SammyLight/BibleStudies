@@ -1,0 +1,352 @@
+:root {
+    --ansANDexp:chocolate;
+    --bg-cat-grid:#f1a509;
+    --bg-color:white;
+    --bg-color-hover:#f0f6fc;
+    --scrollbar-bg-color:#f0f6fc;
+    --border-dark:#050608;
+    --border-light:#f0f6fc;
+    --btn-bg-color-dark:#212121;
+    --btn-bg-color-light:#f1a509;
+    --btn-nextprev-border:#969292;
+    --cat-grid-hover:#ffc107;
+    --counter:chocolate;
+    --fade:rgba(0,0,0,0.4);
+    --gradient1:#FFA500;
+    --gradient2:#d53a9d;
+    --header-links-hover:#f1a509;
+    --loader-border:#ff5733;
+    --perm-fail:red;
+    --perm-pass:green;
+    --quizCatName:gray;
+    --text-color-dark:#212121;
+    --text-color-light:#f0f6fc;
+    --text-color-cat-grid:#f0f6fc;
+    --shadow:rgba(0, 0, 0, 0.2);
+    --white-shadow:#fff;
+}
+body{
+    background:var(--bg-color);}
+.animation-area{ 
+	background:linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);}
+.box-area li{ 
+	border-bottom:160px solid rgb(228, 222, 211);
+	border-left:20px solid transparent;
+	border-right:20px solid transparent;}
+/* PRELOAD CSS */
+.loader-bg-bibleQuiz{
+    background:var(--bg-color);}
+.loader-bibleQuiz:before, .loader-bibleQuiz:after{
+    border:1em solid var(--loader-border);}
+/* Custom CSS */
+hr{ 
+    background:var(--btn-bg-color-dark);}
+.explainButton{
+    color:var(--text-color-light);
+    background:var(--btn-bg-color-light);
+    border:1px solid var(--btn-bg-color-light);
+    /* box-shadow:0 1px 2px var(--shadow); */
+}
+#quizCatName{ 
+    color:var(--quizCatName);}
+#confirmButton{ 
+    background:var(--btn-bg-color-light);
+    border:var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+#confirmButton:hover{ 
+    background:var(--btn-bg-color-dark);
+    border:var(--btn-bg-color-dark);}
+/* Choose QandA-Categories CSS */
+.choosecat-grid{ 
+    background:var(--bg-color);
+    /* box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 68%); */
+    color:#212121!important;}
+.choosecat-Child{ 
+    background:var(--btn-bg-color-light);
+    border:var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+.choosecat-Child a{ 
+    color:var(--text-color-light);}
+.choosecat-Adult{ 
+    background:var(--btn-bg-color-dark);
+    border:var(--btn-bg-color-dark);
+    color:var(--text-color-light);}
+.choosecat-Adult a{ 
+    color:aliceblue;}
+.choosecat-grid h2{ 
+    color:darkkhaki;}
+@media  only screen and (min-width:1024px){
+.choosecat-Child:hover{ 
+    background:var(--btn-bg-color-dark);
+    border:var(--btn-bg-color-dark);
+    color:var(--text-color-light);}
+.choosecat-Adult:hover{ 
+    background:var(--btn-bg-color-light);
+    border:var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+.choosecat-Child a:hover{ 
+    color:var(--text-color-light);}
+.choosecat-Adult a:hover{ 
+    color:var(--text-color-light);}}
+/* QandA-Categories CSS */
+.cat-bibleQuiz-section{
+    background:var(--bg-color);}
+/* HEADER SECTION */
+#cat-headerbar{
+    /* border:1px solid #EC7272; */
+    box-shadow:0 3px 4px var(--shadow);}
+.header-links-li>a{ 
+    color:var(--text-color-dark);}
+.header-links a:hover, .header-links a:focus{ 
+    color:var(--text-color-light);}
+.header-links li:hover, .header-links li:focus{ 
+    background:var(--header-links-hover);}
+/* END OF HEADER SECTION */
+#cat-bibleQuiz-inner h1{
+    text-shadow:7px 7px orange,
+                 18px 18px black;
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke-width:4px;
+    -webkit-text-stroke-color:honeydew;}
+#cat-bibleQuiz-inner h5, #cat-bibleQuiz-inner h6{ 
+    /* color:black; */
+    color:var(--text-color-dark);}
+#cat-bibleQuiz-inner p, #cat-bibleQuiz-inner ol{
+    color:var(--text-color-dark);}
+/* MOBILE CSS */
+@media screen and (max-width:590px){
+#cat-bibleQuiz-inner h1{
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke-width:2px;
+    text-shadow:3px 3px orange,
+                 10px 10px black;}}
+.cat-grid>a{ 
+    box-shadow:1px 1px 3px rgb(0 0 0 / 20%);}
+.cat-grid>a{ 
+    color:var(--text-color-light-cat-grid);
+    text-shadow:0 1px 1px var(--white-shadow);
+    background:var(--bg-cat-grid);
+    box-shadow:0 3px 4px var(--shadow);
+    border:1px solid var(--bg-cat-grid);}
+.cat-grid>a:hover{
+    background:var(--cat-grid-hover);}
+/* DESKTOP VIEW */
+
+/* QandA CSS */
+#QandA-section{
+    background:var(--bg-color);}
+#QandA-section a{ 
+    color:var(--text-color-dark);
+    /* text-decoration:none; */
+}
+.fade{ 
+    background:var(--fade);}
+/* HEADER SECTION */
+.QandA-header{ 
+    box-shadow:0 3px 4px var(--shadow);
+    /* border:1px solid #EC7272; */
+    color:var(--text-color-dark);}
+.quizCatLink a{ 
+    color:var(--text-color-dark);}
+.quizCatLink span>i{
+    background:-webkit-linear-gradient(#f3ec78, #af4261);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;}
+#settingsContent, #settingsReviewContent, #catSettingsContent{ 
+    background:var(--bg-color);
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%);
+    color:var(--text-color-dark)!important;}
+#settingsContent a, #settingsReviewContent a, #catSettingsContent a{ 
+    color:var(--text-color-dark);}
+#nextPrevButton{ 
+    border:1px solid var(--btn-nextprev-border);}
+#playButton, #pauseButton, #playButtonCat, #pauseButtonCat, #playButtonFromResult, #pauseButtonFromResult{ 
+    color:var(--text-color-dark);
+    /* background:#212121;
+    box-shadow:2px 2px 4px rgba(0, 0, 0, 0.4); */
+}
+.vl{ 
+    border-left:3px solid var(--text-color-dark);}
+.quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover, #questionhint:hover{
+    text-shadow:rgba(255,162,0,0.95) 0px 0px 39px;}
+#questioncount,span[ref]:not(.verse){
+    color:var(--counter)!important;}
+/* QandA-BOARD SECTION */
+.QandA-Board>ol>li{ 
+    color:var(--text-color-dark)!important;}
+.insertedDiv {
+    background:linear-gradient(45deg,var(--gradient1),var(--gradient2));
+}
+.insertedDivInner{
+    background: var(--bg-color);
+}
+.showHintCSS{
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 88%);}
+.showHintCSS, .showNewCatCSS{
+    background:var(--bg-color);
+    color:var(--text-color-dark)!important;}
+.closeHint, .closeSettings, .closeCatSettings{
+    background-color:red;
+    color:aliceblue!important;}
+.showHintCSS>a, .showNewCatCSS>a{ 
+    color:var(--text-color-dark)!important;}
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5,#d53a9d);
+    background:linear-gradient(45deg,var(--gradient1),var(--gradient2));
+}
+.insertedSpan::before{ 
+    background:var(--bg-color);
+    box-shadow:2px 1px 7px var(--shadow);
+    color:var(--text-color-dark);}
+.insertedSpan{ 
+    background:var(--bg-color); 
+}
+.QandA-Board>ol>li>ul>li>ul,.QandA-Board>ol>li>ul>li>span>ul{
+    color:var(--text-color-light);}
+/* MOBILE VIEW */
+@media  only screen and (max-width:1023px){
+/* HEADER SECTION */
+/* QandA-BOARD SECTION */
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5, #d53a9d);
+    background:linear-gradient(45deg,var(--gradient2),var(--gradient1));  
+}}
+@media only screen and (min-width: 1024px) and (min-height: 1366px){
+.QandA-Board>ol>li>ul>li{ 
+    background:linear-gradient(45deg,#743ad5, #d53a9d);
+    background:linear-gradient(45deg,var(--gradient2),var(--gradient1));  
+}}/* END OF MOBILE VIEW */
+
+/* DESKTOP VIEW */
+/* HEADER SECTION */
+/* QandA-BOARD SECTION */
+/* @media only screen and (min-width:912px){
+.quizCatLink:hover, #prevquestionbutton:hover, #nextquestionbutton:hover{
+    background:#212121;
+    border:1px solid #212121;
+    color:aliceblue!important;}
+.quizCatLink a:hover{ 
+    color:aliceblue!important;   
+}} */
+@media only screen and (min-width:1024px){
+/* QandA-BOARD SECTION */
+.insertedSpan:hover, .insertedSpan:active{
+    background:var(--bg-color-hover);
+    border:var(--bg-color-hover);}}
+/* QUIZ RESULT CSS */
+#quizResult-section{
+    background:transparent;}
+.Result-BoardHeader{
+    box-shadow:0 3px 4px var(--shadow);
+    color:var(--text-color-dark);}
+.Result-BoardHeader>ul a{
+    color:var(--text-color-dark);}
+.Result-Board{ 
+    /* background:linear-gradient(to top, #FFA500,#d53a9d); */
+    background:var(--bg-color);
+    color:var(--text-color-dark)!important;
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 85%);}
+.Result-Board-inner{ 
+    background:var(--bg-color);
+    /* border:1px solid #212121; */
+}
+.Result-Board h2{ 
+    color:var(--text-color-dark)!important;}
+.performance ol{ 
+    color:var(--perm-fail);}
+.performance ol:first-of-type{ 
+    color:var(--perm-pass);}
+#poorPerPopup{
+    background:var(--bg-color);
+    border:1px solid var(--bg-color);
+    color:var(--text-color-dark);
+    box-shadow:3px -500px 22px 2000px rgb(0 0 0 / 95%);}
+.btn-bg-color{ 
+    background:var(--btn-bg-color-light);
+    border:1px solid var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+.btn-bg-outline{ 
+    background:var(--btn-bg-color-dark);
+    border:1px solid var(--btn-bg-color-dark);
+    color:var(--text-color-light);}
+.btn-bg-outline:hover{ 
+    background:var(--btn-bg-color-light);
+    border:1px solid var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+.btn-bg-color>a{ 
+    color:var(--text-color-light)!important;}
+.btn-bg-color:hover{
+    background:var(--btn-bg-color-dark)!important;
+    border:1px solid var(--btn-bg-color-dark);
+    color:var(--text-color-light);}
+.btn-bg-color>a:hover{ 
+    color:var(--text-color-light)!important;}
+@media only screen and (max-width:1023px){
+.Result-img{ 
+    border-bottom:1px solid var(--text-color-dark);}}
+@media only screen and (min-width:1024px){
+.Result-img{ 
+    border-right:1px solid var(--text-color-dark);}}
+/* CORRECTED ANSWERS CSS */
+#CorrectedAnswers-section{ 
+    background:var(--bg-color);}
+.corAnswers-BoardHeader{
+    box-shadow:0 3px 4px var(--shadow);
+    color:var(--text-color-dark);}
+.corAnswers-Board-Header{
+    color:var(--text-color-dark);}
+.corAnswers-Board-Header>h1{
+    color:var(--text-color-dark);}
+.questionsH1{
+    color:var(--text-color-dark)!important;}
+.ansANDexpH1{
+    color:var(--ansANDexp)!important;}
+.corAnswers-Board a{ 
+    color:inherit;
+    /* text-decoration:none; */
+}
+.corAnswers-Board>ol>details{ 
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    color:var(--text-color-dark);}
+/* .corAnswers-Board>ol>li>div{ 
+    border-right:2px solid #212121;} */
+.corAnswers-Board>ol>details>li>ul>li>span>strong{ 
+    color:var(--ansANDexp)!important;}
+.corAnswers-Board>ol>details>li>ul>li>span>ul{ 
+    color:var(--ansANDexp)!important;}
+.corAnswers-btn>button{
+    background:var(--btn-bg-color-light);
+    border:1px solid var(--btn-bg-color-light);
+    color:var(--text-color-light);}
+.corAnswers-btn>button:hover{ 
+    background:var(--btn-bg-color-dark);
+    border:1px solid var(--btn-bg-color-dark);
+    color:var(--text-color-light)!important;}
+.corAnswers-btn>button>a{ 
+    color:var(--text-color-light)!important;}
+.corAnswers-btn>button>a:hover{ 
+    background:var(--btn-bg-color-dark)!important;
+    color:var(--text-color-light)!important;}
+.totalQuestionsColor{
+    color:var(--text-color-dark)!important;}
+/* Scrollbar CSS */
+/* width */
+::-webkit-scrollbar{ 
+    width:5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track{ 
+    background:var(--bg-color); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb{ 
+    background:var(--shadow); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover{ 
+    background:var(--scrollbar-bg-color); 
+  }

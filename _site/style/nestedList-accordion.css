@@ -1,0 +1,129 @@
+@counter-style circled-alpha{ 
+    system:fixed;
+    symbols:Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+    /* symbols:A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; */
+    suffix:" ";
+}
+/* body>ol,
+ol.meganestedlist{ 
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+}
+
+body>ol li,
+ol.meganestedlist li{ 
+    scroll-snap-align:start;
+} */
+
+body>ol span,
+ol.meganestedlist span{ 
+    width:50px;
+    height:50px;
+    color:rgb(230, 157, 0);
+    font-size:l;
+    border-color:black;
+    position:relative;
+    left:-8px;
+}
+/* EVENTLISTNER ON PSUEDO-ELEMENT (BEFORE) ONLY */
+body>ol li,
+ol.meganestedlist li{ 
+    pointer-events:none;
+}
+
+body>ol li::before,
+body>ol a,
+ol.meganestedlist li::before,
+ol.meganestedlist a{ 
+    pointer-events:all;
+    /* border-right:5px solid black; */
+    /* border-bottom:2px solid black; */
+}
+/* COUNTER RESET */
+body>ol, body>ol ol,
+ol.meganestedlist, .meganestedlist ol{ 
+    list-style-type:none;
+    counter-reset:list;
+    margin-left:0;
+    padding-left:0.5em;
+    border-left:1px solid rgba(128, 128, 128, 0.329);
+    border-top:1px solid rgba(128, 128, 128, 0.329);;
+}
+
+body>ol li, body>ol ol li,
+ol.meganestedlist li, .meganestedlist ol li{ 
+    counter-reset:alpha;
+}
+
+body>ol li>ol,
+ol.meganestedlist li>ol{ 
+    counter-reset:indent;
+}
+/* COUNTER INCREMENT */
+body>ol>li,
+ol.meganestedlist>li{ 
+    /* display:table; */
+    counter-increment:list;
+    margin-bottom:0.6em;
+}
+
+body>ol li>ol>li,
+ol.meganestedlist li>ol>li{ 
+    counter-increment:alpha;
+    margin:0;
+}
+
+body>ol li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li{ 
+    counter-increment:alpha 2;
+}
+
+body>ol li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 3;
+}
+
+body>ol li>ol>li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 4;
+}
+
+body>ol li>ol>li>ol>li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 5;
+}
+
+body>ol li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 6;
+}
+
+body>ol li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 7;
+}
+
+body>ol li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li,
+ol.meganestedlist li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li{ 
+    counter-increment:alpha 8;
+}
+
+body>ol li>ol>li::before,
+ol.meganestedlist li>ol>li::before{ 
+    counter-increment:indent;
+}
+/* COUNTER APPLIED */
+body>ol>li:before,
+ol.meganestedlist>li:before{ 
+    /* display:table-cell; */
+    font-weight:bolder;
+    font-size:small;
+    font-family:Montserrat, sans-serif;
+    content:counter(list) ".";
+    padding-right:0.6em;
+}
+
+body>ol li ol>li:before,
+ol.meganestedlist li ol>li:before{ 
+    content:counter(list) "["counter(alpha, upper-alpha) counter(indent) "] .";
+}

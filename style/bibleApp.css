@@ -1,0 +1,3499 @@
+:root{ 
+    --verse-hover-shadow:
+    -2px 0px 0px rgb(0 0 0/30%)
+    ,2px 0px 0px rgb(0 0 0/30%)
+    ,0px 2px 4px 0px rgb(0 0 0/40%);
+    --verse-column:2px 0px 0px grey inset
+    ,-2px 0px 0px grey inset
+    ,-2px 0px 2px 0px rgb(0 0 0/20%)
+    ,2px 0px 2px 0px rgb(0 0 0/20%);
+    --verse-column-highest:2px 2px 0px grey inset
+    ,-2px 0px 0px grey inset
+    ,-2px -2px 2px 0px rgb(0 0 0/20%)
+    ,2px 0px 2px 0px rgb(0 0 0/20%);
+    --verse-column-lowest:2px 0px 0px grey inset
+    ,-2px -2px 0px grey inset
+    ,-2px 0px 2px 0px rgb(0 0 0/20%)
+    ,2px 2px 2px 0px rgb(0 0 0/20%);
+    --maxwidth-of-verses-per-row:20%;
+    --darkmode-bg1color:#00080d;
+    --darkmode-bg1color:#202124;
+    --darkmode-bg1color:#0d171b;
+    --fontsize-main:15px;
+    --fontsize-refnsearch:8px;
+    --fontsize-versionsbuttons:13px;
+    --minHeighWidth-leftside_btns:20px;
+    --fontsize-scripture-nav:15px;
+    --fontsize-scripture:17px;
+    --fontsize-sidewindow-verses:16px;
+    --fontsize-versenotes:25px;
+    --fontsize-ref:12px;
+    --fontsize-strongstooltip:17px;
+    --fontsize-title:20px;
+    --width-sidebuttons:24px;
+    --heighWidth-refnsrchbtn:58px;
+    --width-mainbutton:35px;
+    --ref-hlt:#dde3db;
+    --searchedword-hlt:maroon;
+    --searchedword-hlt2:blue;
+    --ref-img:url(images/background.jpg);
+    --ref-img:url(../images/background.jpg);
+    --translated-word:#01003b;
+    /* --ref-img:#D7D5D1; */
+    --img-cancel:url(images/cancel-svgrepo-com.svg);
+    --img-chkbox:url(images/check-box-svgrepo-com.svg);
+    --ref-paper:url(images/IyEMTp.jpg);
+    --img-cancel:url(../images/cancel-svgrepo-com.svg);
+    --img-chkbox:url(../images/check-box-svgrepo-com.svg);
+    --ref-paper:url(../images/IyEMTp.jpg);
+    --verse-higlight:#ffff92;
+    --verse-higlight:#fffb001b;
+    --vhlt-hover:#fff08f99;
+    --vhlt-hover:#ffffc0d4;
+    --vmultiple-hover:#fff39b;
+    --vmultiple2-hover:rgba(255, 213, 0, 0.527);
+    --nav-bg-color:#fbfbfb;
+    --crossrefbackground:#f3f0ff;
+    --vhlt-border:#8080809c;
+    --vhlt:#ffffdd;
+    --vhlt2:#ffff99;
+    --vhlt3:#ffffc4;
+    --vhlt3:#fff6aa;
+    --vhlt4:#fffac884;
+    --versenote-contextmenu:white;
+    --noteEdit-active:#ffe8d7;
+    --strgs-num:#403b69;
+    --strongword-hover:rgba(255, 223, 117, 0.662);
+    --shadow-color:rgb(41,41,41);
+    --shadow-color2:rgba(67, 67, 67, 0.87);
+    --shadow-color2:rgb(41,41,41);
+    --shadow-color3:rgba(172, 160, 160, 0.87);
+    --shadow-color3:rgb(41,41,41);
+    --shadow-ctxtmenu-hover:rgba(20, 2, 67, 0.87);
+    --shadow-ctxtmenu-hover:rgb(41,41,41);
+    --strnum-hover:#feff90;
+    --span-trans-hover:rgb(151, 116, 0);
+    --span-hover:#f6efe3;
+    --chpt:rgb(238, 227, 202);
+    --chpt:#F6D588;
+    --verse-hover:rgb(248, 246, 241);
+    --main-font:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --top-bar-bground-color:#212121;
+    --scroll-track-bg-color:#878787;
+    --scroll-thumb-border-color:#000000;
+    --scroll-thumb-bgcolor:#4b4b4b;
+    --scroll-thumb-hover-border:#939cff;
+    --scroll-thumb-hover-bg-color:#555;
+    --buttons:#f8f8f8;
+    --buttons-border:0.25px solid #70707072;
+    --selection:rgba(0, 0, 255, 0.1);
+    --grey:grey;
+    --grey-blue:rgb(216, 216, 216);
+    --green:green;
+    --greenish:#cbff7d;
+    --greenish2:#adffa7;
+    --greenyellow:greenyellow;
+    --white:#ffff;
+    --whitesmoke:whitesmoke;
+    --orangered:orangered;
+    --royalblue:royalblue;
+    --redwords:crimson;
+    --yellow:yellow;
+    --lightpink:lightpink;
+    --greenyellow:greenyellow;
+    --black:black;
+    --blue:blue;
+    --brown:brown;
+    --verse_compare:#606060;
+    --whitish_noteContextMenu:rgb(252, 252, 252);
+    --col2-border:0.05em;
+    --btn-radius:0.25em;
+}
+@font-face{ 
+    font-family:Marvel;
+    src:url(extra-fonts/Marvel-Regular.ttf);
+}
+@font-face{ 
+    font-family:Marvel;
+    src:url(extra-fonts/Marvel-Italic.ttf);
+    font-style:italic;
+}
+@font-face{ 
+    font-family:Marvel;
+    src:url(extra-fonts/Marvel-Bold.ttf);
+    font-weight:bold;
+}
+@font-face{ 
+    font-family:Marvel;
+    src:url(extra-fonts/Marvel-BoldItalic.ttf);
+    font-weight:bold;
+    font-style:italic;
+}
+@font-face{ 
+    font-family:Merriweather;
+    src:url(extra-fonts/Merriweather-Regular.ttf);
+}
+@font-face{ 
+    font-family:Merriweather;
+    src:url(extra-fonts/Merriweather-Italic.ttf);
+    font-style:italic;
+}
+@font-face{ 
+    font-family:Merriweather;
+    src:url(extra-fonts/Merriweather-Bold.ttf);
+    font-weight:bold;
+}
+@font-face{ 
+    font-family:Merriweather;
+    src:url(extra-fonts/Merriweather-BoldItalic.ttf);
+    font-weight:bold;
+    font-style:italic;
+}
+@font-face{ 
+    font-family:Poppins;
+    src:url(extra-fonts/Poppins-Light.ttf);
+}
+@font-face{ 
+    font-family:Poppins;
+    src:url(extra-fonts/Poppins-Italic.ttf);
+    font-style:italic;
+}
+@font-face{ 
+    font-family:Poppins;
+    src:url(extra-fonts/Poppins-Bold.ttf);
+    font-weight:bold;
+}
+@font-face{ 
+    font-family:Poppins;
+    src:url(extra-fonts/Poppins-BoldItalic.ttf);
+    font-weight:bold;
+    font-style:italic;
+}
+::selection{ 
+    background-color:var(--selection);
+    color:black;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus{ 
+    transition:background-color 600000s 0s, color 600000s 0s;
+}
+.b{font-weight:bold;}
+.i{font-style:italic;}
+.em{
+    font-style:italic;
+    font-weight:bold;
+    font-size:0.75em;
+}
+.missing{
+    font-weight:normal;
+    font-size:0.8em;
+}
+html{ 
+    padding:0;
+    font-size:var(--fontsize-main);
+    /* background:var(--ref-img); */
+    font-family:var(--main-font);
+}
+body{ 
+    display:flex;
+    position:relative;
+    margin:0;
+    overflow-y:hidden;
+    background:var(--ref-img);
+    /* don't add color to the body, it will hide the svg */
+}
+body *{ 
+    box-sizing:border-box;
+    overflow-wrap:break-word;
+    -webkit-transition:all 0.1s ease-in-out;
+    -moz-transition:all 0.1s ease-in-out;
+    -o-transition:all 0.1s ease-in-out;
+    transition:all 0.1s ease-in-out;
+}
+.verse_note{transition:transform 0s!important;}
+body>svg{ 
+    width:100% !important;
+}
+/* svg{
+    filter:invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}*/
+#versenote_totheright{ 
+    position:relative;
+    display:none;
+    grid-column-start:3;
+    grid-column-end:4;
+    grid-row-start:2;
+    grid-row-end:3;
+    max-width:0;
+    height:inherit;
+    background-color:var(--buttons);
+    font-size:var(--fontsize-main);
+    overflow-y:hidden;
+}
+#versenote_totheright #versenote_totheright_div1, .notes_ref_head{ 
+    font-size:1.5em;
+    box-shadow:0 0px 5px 3px black;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+    width:100%;
+    z-index:2;
+    background:sandybrown;
+    font-weight:bold;
+    color:black;
+}
+.notes_ref_head{ cursor:pointer;}
+.notes_ref_head.user1{ background:greenyellow;}
+.defnotefolder.active_button{ box-shadow:none;}
+.verse_note:not(.detached_note) .notes_ref_head{ display:none}
+#versenote_totheright #versenote_totheright_div2{ 
+    position:relative;
+    padding:0.5rem;
+    overflow-y:auto;
+    height:100%;
+}
+.refnav_col2_closebtn{ 
+    position:sticky;
+    top:0px;
+    margin-left:auto;
+    height:1em!important;
+    width:1em!important;
+    background:var(--img-cancel) center no-repeat;
+    border:none;
+    box-shadow:none;
+    z-index:10;
+}
+#btns_vtotheright{ 
+    position:absolute;
+    display:flex;
+    flex-direction:row-reverse;
+}
+#noteDetacher_inHeader{ 
+    margin-right:0.5em;
+    padding-left:1.5em;
+}
+#btns_vtotheright .note_closebtn_x{ position:relative;}
+#btns_vtotheright .note_closebtn_d{ background:none;}
+#versenote_totheright .note_closebtn_x,#btns_vtotheright{ 
+    top:0;
+    right:0;
+}
+#btns_compareWindow_totheright{ 
+    position:relative;
+    display:flex;
+}
+#btns_compareWindow_totheright button{ 
+    min-width:2em;
+}
+#versenote_totheright .context_menu,#versenote_totheright code{ 
+    font-size:var(--fontsize-main)!important;
+}
+button *{ pointer-events:none;}
+.text_content:empty::before{
+    content:'Take down a comment to the verse';
+    font-size:large;
+    font-style:italic;
+}
+.t1:not(.text_content),
+.t2:not(.text_content){
+    display:none;
+}
+sup{
+    font-size:0.6em;
+}
+li li{
+    list-style-type:lower-alpha;
+}
+li li li{
+    list-style-type:lower-roman;
+}
+.verse{ z-index:0;}
+#pagemaster{ 
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    grid-template-rows:auto 1fr;
+    row-gap:0;
+    border-right:1px solid var(--scroll-thumb-hover-bg-color);
+}
+/* #ppp code, #context_menu:not(.win2) code{  */
+#ppp code, #context_menu code{ 
+    font-size:var(--fontsize-ref);
+    font-family:none;
+    font-weight:normal;
+}
+#ppp code:hover, #context_menu code:hover{ 
+    z-index:3;
+}
+.chptheading{ 
+    background:var(--chpt) !important;
+    border-bottom:0.5px solid var(--grey);
+    font-size:calc(var(--fontsize-main) * 1.5);
+    border-left:2px solid;
+}
+#ppp .verse:not(code){ 
+    font-size:var(--fontsize-scripture);
+}
+#ppp>span{ 
+    display:block;
+}
+#refnav{ 
+    grid-column-start:1;
+    grid-column-end:2;
+    grid-row-start:2;
+    grid-row-end:3;
+    display:flex;
+    flex-direction:row;
+    height:inherit;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+#refnav:hover{ 
+    /* position:relative; */
+    z-index:21;
+}
+#context_menu:hover, #versenote_totheright:hover{ 
+    z-index:21;
+}
+#refnav button:not(#bibleapp_versemarkers button):not(#scriptureCompareWindow button):not(:last-child):not(#searchprametersbtnholder .showhidebookgrps){ 
+border-bottom:none;
+}
+button#darkmodebtn{ 
+    font-family:apple color emoji,segoe ui emoji,notocoloremoji,segoe ui symbol,android emoji,emojisymbols,emojione mozilla;
+}
+.rtl{ 
+    direction:rtl
+}
+code{position:relative; padding-top:5px;}
+span.vmultiple code{ 
+    box-sizing:border-box;
+    font-weight:bolder;
+    font-style:italic;
+    text-decoration:none!important;
+}
+span.vmultiple.noted code{
+    border-bottom:2px solid var(--brown)!important;
+}
+span.vmultiple.noted code:before{ 
+    content:'N';
+    color:red;
+}
+span.vmultiple.user1note code:before{ 
+    content:'U';
+    color:purple;
+}
+[class*="marker_"] code:before,
+[class^="marker_"] code:before,
+[class~="marker_"] code:before{ 
+    content:'M';
+    position:absolute;
+    left:0px;
+    top:-0.5em;
+    font-size:0.8em;
+    font-weight:bold;
+    color:purple;
+}
+span.vmultiple.noted[class*="marker_"] code:before{ 
+    content:'N-M';
+    color:purple;
+}
+span.vmultiple.noted.user1note code:before{ 
+    content:'N-U';
+    color:purple;
+}
+span.vmultiple.user1note[class*="marker_"] code:before{ 
+    content:'U-M';
+    color:purple;
+}
+span.vmultiple.noted.user1note[class*="marker_"] code:before{ 
+    content:'N-U-M';
+    color:purple;
+}
+span.vmultiple code:before{ 
+    position:absolute;
+    left:0px;
+    top:-0.5em;
+    font-size:0.8em;
+    font-weight:bold;
+}
+span.vmultiple.noted code #verse_notes_button{ 
+    background:var(--white);
+    color:var(--green);
+}
+#show_crossref_comments{
+    position:absolute;
+    left:-8%;
+    display:flex;
+    flex-wrap:nowrap;
+    bottom:var(--fontsize-ref);
+    border-radius:2px;
+}
+.vmultiple:not([class*=marker_]) #verse_marker_button,
+.vmultiple:not(.noted) #verse_notes_button{ 
+    background-color:none!important;
+    color:grey;
+}
+.vmultiple[class*=marker_] #verse_marker_button{ 
+    background-color:rgb(251, 216, 151);
+}
+#show_crossref_comments button{
+    /* flex:1 1 40%; */
+    font-size:var(--fontsize-ref);
+    font-weight:bold;
+    border-width:0.5px;
+    background:var(--buttons);
+}
+#show_crossref_comments button:hover{
+    background:var(--white)!important;
+    color:black!important;
+}
+/* .showing_crossref */ .verse_crossref_button,
+/* .showing_versenote */ .verse_notes_button{ 
+    background:var(--greenish);
+    font-style:italic!important;
+    font-weight:bold!important;
+}
+.crossrefs, .verse_note{
+    box-shadow:0 2px 2px 0var(--scroll-track-bg-color);
+}
+.crossrefs{
+    position:relative;
+    padding:5px 5px 0 5px;
+    background:var(--crossrefbackground);
+    box-shadow:inset 0 1px 4px var(--black);
+    overflow:auto;
+    font-size:var(--fontsize-main);
+    transition:max-height .2s ease-in-out;
+    min-height:10px;
+    max-height:500px;
+    padding:8px;
+    margin-bottom:5px;
+    line-height:auto;
+    opacity:1;
+    /* z-index:2; */
+}
+.crossrefs h5{ 
+    border-bottom:1px solid;
+    margin:0;
+    margin-top:0.5em;
+}
+.crossrefs strong{ 
+    display:inline-block;
+    margin-top:0.5em;
+}
+.crfnnote{ 
+    margin-bottom:5px;
+    margin-top:5px;
+    box-shadow:0 2px 2px var(--black),0 0 1px var(--black);
+    box-shadow:0 2px 1px var(--black);
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+    direction:ltr;
+}
+.showing_crossref .crfnnote{ 
+    box-shadow:0 1px 1px var(--grey);
+}
+#verse_note{display:none; position:relative;}
+.verse_note:not(.note_temp_holder .verse_note), .note_temp_holder{ 
+    padding:5px;
+    background:var(--ref-img);
+    transform:translate(0,0);
+}
+.versenote_hidden{ 
+    padding:0;
+}
+.verse_note{ 
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    transition:all 0.15s ease-in-out;
+    padding:0!important;
+    overflow:hidden;
+    min-height:10px;
+    max-height:80vh;
+    margin-bottom:5px;
+    line-height:auto;
+    opacity:1;
+    background-color:var(--whitesmoke);
+    font-size:1.2em;
+    z-index:1;
+    box-shadow:0px 0px 1px 1px black;
+    color:black;
+}
+.verse_note:not(.detached_note){ 
+    transform:translate(0,0)!important;
+    box-shadow:0px 2px 6px -1px;
+}
+.verse_note #context_menu{ 
+    background:var(--versenote-contextmenu);
+}
+.verse_note #context_menu,
+.verse_note #context_menu .cmtitlebar~span{ 
+    font-size:inherit!important;
+}
+.text_content{
+    position:relative;
+    width:100% !important;
+    margin-left:0;
+    margin-right:0;
+    min-height:50px;
+    max-height:80vh;
+    border:1px solid var(--grey)!important;
+    background:var(--ref-img);
+    overflow:auto;
+    resize:vertical;
+    padding:10px;
+    box-shadow:0px 1px 0px 0px black;
+}
+.text_content span[ref]:not(.verse_compare),
+.text_content span[strnum]:not(#context_menu span[strnum]),
+#versenote_totheright span[ref],
+#versenote_totheright span[strnum]:not(#context_menu span[strnum])
+{
+    font-weight:bold;
+    border-bottom:var(--black) 1px solid;
+    color:var(--black);
+    cursor:pointer;
+}
+.text_content #context_menu{
+    background:var(--whitish_noteContextMenu);
+    z-index:1!important;
+}
+.text_content span[ref]:not(.verse_compare):hover{
+    color:var(--grey);
+    border-radius:5px;
+}
+.save_edit_btns_holder{
+    display:flex;
+    align-content:space-between;
+    justify-content:center;
+    flex-wrap:nowrap;
+    flex-direction:row;
+    align-items:center;
+    box-shadow:inset 0px 1px;
+}
+.save_edit_btns_holder button{
+    font-size:large;
+    font-weight:bold;
+    box-shadow:none;
+}
+.note_temp_holder{ 
+    overflow:hidden;
+}
+.note_edit_button{
+    background:none;
+    cursor:pointer;
+}
+.note_edit_button.active{
+    background:var(--noteEdit-active);
+}
+.note_edit_button:active{
+    box-shadow:0px 0px 2px 0px var(--shadow-color);
+}
+.note_edit_button::before{
+    content:'Edit';
+    font-style:italic;
+    pointer-events:none;
+}
+.note_save_button::before{
+    content:'Save';
+    font-style:italic;
+    pointer-events:none;
+}
+/* CLOSE BUTTON FOR VERSENOTE */
+.note_closebtn:not(.note_closebtn_x)::before{ 
+    content:'Close';
+}
+.closebtn, .note_closebtn{ 
+    content:'Close';
+    font-style:italic;
+    display:block;
+    z-index:10;
+    transition:all 0.3s ease-in-out;
+}
+.cmenu_closebtn,
+.note_closebtn_x,
+#cmenu_navnclose_btns button{ 
+    background-color:whitesmoke!important;
+    min-width:1em;
+    height:1em;
+    font-size:1em;
+}
+#cmenu_navnclose_btns button{ 
+    border-radius:2px;
+    font-weight:bold;
+    box-shadow:1px 1px 1px var(--shadow-color);
+}
+#cmenu_navnclose_btns button:not(:disabled):hover{ 
+    background-color:burlywood!important;
+}
+.cmenu_closebtn,
+.note_closebtn_x,
+.compwin_closebtn_x{ 
+    /* background:var(--img-cancel) center no-repeat; */
+    background:url(images/cancel-svgrepo-com.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com.svg) center no-repeat;
+
+}
+/* .note_closebtn_x{  */
+.close_n_notemenu_btns{ 
+    position:absolute;
+    display:flex;
+    top:4.5px;
+    right:5px;
+}
+.close_n_notemenu_btns button{ 
+    height:1.5em;
+    width:1.5em;
+    z-index:3;
+}
+.notemenu{ 
+    padding:3px;
+    padding-bottom:1px;
+    font-size:0.5em;
+    width:100%!important;
+    box-shadow:0 1px 3.5px 0px black;
+    pointer-events:visible;
+    overflow-y:scroll;
+    flex:1 0;
+    max-height:170px;
+}
+.notemenu *{ 
+    margin:0;
+    cursor:pointer;
+    pointer-events:auto;
+    padding-top:0.1em;
+}
+.notemenu *::before{ 
+    font-size:12px;
+    border-top:1px solid;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-radius:5px;
+    margin-left:5px;
+    margin-right:2px;
+    padding:0;
+    background-color:burlywood;
+    box-shadow:-3px 3px grey;
+}
+.notemenu *:first-child{ 
+    padding-top:2px;
+}
+.notemenu *:last-child{ 
+    padding-bottom:2px;
+}
+
+.notemenu *:hover{ 
+    border-color:brown!important;
+    background-color:burlywood!important;
+    color:black!important;
+}
+.notemenu h1::before{ 
+    padding-right:calc(20px - (1 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    content:'|';
+    background:#e688f6;
+}
+.notemenu h2::before{ 
+    padding-right:calc(20px - (2 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    content:'||';
+    background:#F6D588;
+}
+.notemenu h3::before{ 
+    padding-right:calc(20px - (3 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    content:'|||';
+    background:#d5f688;
+}
+.notemenu h4::before{ 
+    padding-right:calc(20px - (4 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    content:'||||';
+    background:#88f688;
+}
+.notemenu h5::before{ 
+    padding-right:calc(20px - (5 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    content:'|||||';
+    background:#88e2f6;
+}
+.notemenu h6::before{ 
+    padding-right:calc(20px - (6 * 0.2rem));
+    padding-left:5px;
+    font-size:1rem;
+    padding-right:0.22rem;
+    padding-left:0.22rem;
+    content:'||||||';
+    background:#F6D588;
+}
+#context_menu:not([strnum]) .cmtitlebar #cmenu_navnclose_btns{ 
+    display:flex;
+    flex:1;
+    justify-content:flex-end;
+    margin-left:0.2em;
+    padding:0;
+}
+#context_menu[strnum] .cmtitlebar #cmenu_navnclose_btns{ 
+    position:absolute;
+    display:flex;
+    top:5px;
+    right:0.2em;
+}
+#cmenu_navnclose_btns button.prv{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    transform:rotate(-90deg);
+    margin-left:2px;
+    box-shadow:-1px -1px 1px var(--shadow-color);
+}
+#cmenu_navnclose_btns button.prv_verse{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    margin-left:2px;
+    box-shadow:1px 1px 1px var(--shadow-color);
+}
+#cmenu_navnclose_btns button.nxt_verse{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    transform:rotate(-180deg);
+    margin-left:1px;
+    /* margin-right:auto; */
+    box-shadow:-1px -1px 1px var(--shadow-color);
+}
+#cmenu_navnclose_btns button.nxt_verse,
+#cmenu_navnclose_btns button.cmenu_tsk,
+#cmenu_navnclose_btns button.nxt{ 
+    margin-right:0.3em!important;
+}
+#cmenu_navnclose_btns button.cmenu_tsk{
+    padding-left:3px;
+    padding-right:3px;
+}
+#cmenu_navnclose_btns button.prv:not([indx]),
+#cmenu_navnclose_btns button.nxt:not([indx]),
+#cmenu_navnclose_btns button:disabled,
+#cmenu_navnclose_btns button[disabled]{ 
+    /* display:none; */
+    opacity:0.3;
+}
+#cmenu_navnclose_btns button.nxt{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    transform:rotate(90deg);
+    margin-right:2px;
+}
+/* #context_menu:not([strnum]) .cmenu_closebtn{ 
+    top:0px;
+    right:0.3em;
+} */
+#context_menu[strnum] .cmenu_closebtn{ 
+    right:0.3em;
+}
+.closebtn.cmenu_closebtn:hover{ 
+    background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
+    background:url(../images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
+    background-color:transparent!important;
+    box-shadow:0px 0px 0px 1px rgba(155, 0, 0, 0.281)!important;
+    border-radius:0.2em;
+    transition:all 0.3s ease-in-out;
+}
+.closebtn.cmenu_closebtn:active{ 
+    box-shadow:0px 0px 0px 1px rgba(155, 0, 0, 0.589)!important;
+    border-radius:0.2em;
+    transition:all 0.3s ease-in-out;
+}
+#singleverse_compare_menu, #titlebarsearchparameters{ 
+    display:flex;
+    flex-wrap:wrap;
+    width:fit-content;
+}
+#titlebarsearchparameters > *{ 
+    flex-grow:1;
+    justify-content:left;
+}
+#singleverse_compare_menu button{ 
+    font-size:var(--fontsize-ref);
+    font-weight:bold;
+    min-width:25px;
+    padding:5px;
+    text-overflow:ellipsis;
+}
+#singleverse_compare_menu input{ 
+    width:5.5px;
+    position:absolute;
+    right:0;
+}
+#refnav>.refnav{ 
+    height:100%;
+    float:left;
+}
+
+#refnav #app_settings{ 
+    border-right:0.25px solid var(--grey);
+    background:var(--ref-img);
+    overflow:visible;
+    z-index:10;
+}
+#refnav #app_settings *{ 
+    display:block;
+}
+#refnav #app_settings img{ 
+    margin-left:5px;
+    margin-right:5px;
+    width:calc(var(--width-sidebuttons) * 0.8);
+}
+#comparewindowBtn img{ 
+    height:calc(var(--width-sidebuttons));
+    transform:scale(1.1);
+}
+#refnav #app_settings>button{ 
+    min-width:var(--minHeighWidth-leftside_btns);
+    min-height:var(--minHeighWidth-leftside_btns);
+    width:var(--width-sidebuttons)!important;
+    height:var(--width-sidebuttons);
+    padding:0;
+    font-size:22.5px;
+    font-size:calc(var(--width-sidebuttons)*0.65)!important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#refnav #app_settings>button:last-child{ 
+    border-bottom-left-radius:0.25em;
+    border-bottom-right-radius:0.25em;
+}
+#bible_nav{ 
+    background-color:transparent;
+    font-size:var(--fontsize-scripture-nav)!important;
+    box-shadow:0px 0px 10px 7px var(--shadow-color);
+    display:flex;
+}
+#bible_nav .bkname{
+    justify-content:flex-start;
+    padding-left:0.5em;
+}
+#bible_nav .bkname, #bible_nav .chptnum{ 
+    width:100%;
+    /* padding-left:7px; */
+    /* box-shadow:inset 0px 0px 1px 0px var(--black); */
+    /* border-radius:5px; */
+}
+.refnav .bible_nav{ 
+    height:99.5%;
+    float:left;
+    background-color:var(--nav-bg-color);
+    overflow-y:scroll;
+    border-bottom:2px solid;
+}
+#refnav .bible_nav *{ 
+    cursor:pointer;
+}
+#refnav .bible_nav *:hover{ 
+    background-color:var(--ref-hlt);
+}
+#refnav .bible_nav *:active{ 
+    background:var(--ref-img);
+}
+.ref_hlt{ 
+    font-weight:bold;
+    font-style:italic;
+    background-color:var(--ref-hlt);
+    background:var(--ref-img);
+    border-top:0.25px solid var(--vhlt-border);
+    border-bottom:0.25px solid var(--vhlt-border);
+}
+.tmp_hlt{ 
+    background-color:var(--ref-hlt);
+}
+#bible_chapters > .chptnum{ 
+    display:none;
+}
+.show_chapter{ 
+    display:block !important;
+}
+#bible_verses{ 
+    display:none;
+}
+#bible_verses>option{ 
+    width:20px;
+}
+button{ 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'  Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-size:var(--fontsize-main); */
+    font-size:calc(var(--fontsize-refnsearch)*1.5);
+    cursor:pointer;
+    border:var(--buttons-border);
+    background-color:var(--buttons);
+    overflow:hidden;
+}
+.buttons{ 
+    width:auto;
+    background:var(--ref-img);
+    border-bottom:2px solid #70707072;
+}
+#context_menu{ 
+    position:absolute;
+    background:var(--whitesmoke);
+    width:400px;/*This same number is used in context menu eventlistner*/
+    max-width:100%;
+    max-height:400px;
+    padding:5px;
+    overflow-y:scroll;
+    -webkit-box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 0.5px 0px 0px var(--grey);
+    -moz-box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 0.5px 0px 0px var(--grey);
+    box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 0.5px 0px 0px var(--grey);
+    z-index:10;
+    font-size:var(--fontsize-strongstooltip);
+    overflow-x:hidden;
+    resize:both;
+}
+#context_menu[strnum]{ 
+    max-height:80vh;
+}
+#context_menu.slideintoview, #context_menu.slideoutofview{ 
+    transition:none;
+}
+#context_menu[strnum]{ 
+    padding:0px;
+}
+#context_menu[strnum]>.cmtitlebar{ 
+    padding-left:10px;
+    padding-right:10px;
+    font-size:0.7em;
+}
+#context_menu:hover{ 
+    -webkit-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
+    -moz-box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
+    box-shadow:5px 5px 15px 0px var(--shadow-ctxtmenu-hover);
+}
+#context_menu:not([strnum]){
+    -webkit-box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 23px 0px 0px var(--grey);
+    -moz-box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 23px 0px 0px var(--grey);
+    box-shadow:3px 3px 3.5px 0px var(--shadow-color2), 0 5px 5px 2px var(--shadow-color3), inset 0px 23px 0px 0px var(--grey);
+}
+#context_menu>hr+.strngsdefinition>hr:first-child{display:none;}
+#context_menu h2, #context_menu i{  font-size:inherit;}
+#context_menu .strngsdefinition div{ display:block;}
+.strngsdefinition a{color:grey; cursor:pointer}
+.strngsdefinition span[ref]{color:blueviolet}
+.strngsdefinition span[ref]:hover,
+.vmultiple code:hover,
+#searchPreviewFixed .verse code:hover,
+.crossrefs>span:not(.notref):hover,
+#context_menu code:not(.cmtitlebar code):hover,
+#searchPreviewFixed [ref]:not(.verse_compare):not(#context_menu>span.verse):hover,
+#scriptureCompareWindow [ref]:not(.verse_compare):not(#context_menu>span.verse):hover{ 
+    text-decoration:underline;
+    color:var(--blue);
+    cursor:pointer;
+}
+#context_menu .cmtitlebar code{ 
+    display:inline-flex;
+    align-items:center;
+    font-size:1.2em;
+}
+#context_menu code button.cmenusrchbtn{ 
+    width:1em;
+    height:1em;
+    
+    display:block;
+    padding:0;
+    border-radius:5px;
+    margin-right:5px;
+}
+#context_menu code button.cmenusrchbtn img{ 
+    pointer-events:none;
+}
+#context_menu .verse{ 
+    padding:5px;
+    display:block;
+}
+#context_menu .verse:hover{ 
+    border-radius:3px;
+    overflow:hidden;
+}
+#context_menu .crfnnote{ 
+    margin-bottom:2px;
+    border-radius:0!important;
+}
+#context_menu .crfnnote_btns{ 
+    margin-bottom:0;
+}
+#context_menu .crossrefs{ 
+    border-radius:0!important;
+    margin-bottom:0;
+}
+#context_menu div{z-index:2;}
+#context_menu[strnum] hr:not(:last-child){margin-top:0}
+#context_menu hr:last-child{margin-bottom:0}
+/* #context_menu .verse_crossref_button{font-size:0.7em;} */
+.crfnnote_btns button,.verse_crossref_button{font-size:0.55em;}
+.crfnnote_btns button{ 
+    font-style:italic;
+    font-size:0.5em;
+    font-weight:bold;
+    flex:0.25 0.25 auto;
+}
+#context_menu:not([strnum]) hr,
+.compare_verses hr{ 
+    border:0!important;
+    height:0.25px!important;
+    background:var(--black)!important;
+    overflow:visible;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items:center;
+}
+#context_menu:not([strnum]) hr::before,
+.compare_verses hr::before{ 
+    content:attr(vrange);
+    width:auto;
+    height:auto;
+    font-style:italic;
+    font-size:0.7em;
+    font-weight:bold;
+    -moz-border-radius:0.25em;
+    -webkit-border-radius:0.25em;
+    border-radius:0.25em;
+    margin-bottom:-0.5em;
+    margin-left:50%;
+    background:var(--whitesmoke);
+}
+#refnav_col2 hr::before{ background:linear-gradient(transparent, transparent, var(--buttons)60%, transparent)!important;}
+.compare_verses hr{ margin-top:1em;}
+.compare_verses hr::before{ font-size:0.6em;}
+#context_menu .strngsdefinition:last-child hr:last-of-type{display:none;}
+#context_menu .cmtitlebar{
+    position:sticky;
+    top:0;
+    right:inherit;
+    background:var(--ref-img);
+    font-size:0.8em;
+    font-weight:bold;
+    width:100%;
+    padding-bottom:10px;
+    /* padding-right:10px; */
+    /* margin-bottom:10px; */
+    /* box-shadow:0px -21.5px 13px 28px var(--scroll-track-bg-color); */
+    z-index:10;
+}
+#context_menu:not([strnum]) .cmtitlebar{ 
+    display:flex;
+}
+.verse_note #context_menu .cmtitlebar{
+    box-shadow:0px -26.5px 8px 17px var(--scroll-track-bg-color);
+}
+
+#context_menu .cmtitlebar::before{ 
+    position:absolute;
+    content:'';
+    left:-9px;
+    top:-5px;
+    width:120%;
+    height:100%;
+    background:var(--ref-img);
+    box-shadow:0px -21px 0px 25px var(--scroll-track-bg-color);
+    z-index:-1;
+    pointer-events:none;
+}
+/* #versenote_totheright #context_menu{ 
+    left:1em!important;
+    right:1em!important;
+    width:calc(100% - 2em);
+} */
+#context_menu:not(.win2) .cmtitlebar~span{
+    font-size:var(--fontsize-scripture);
+}
+button:disabled{ 
+    cursor:default;
+    pointer-events:none;
+    opacity:0.3;
+    background-color:lightgrey;
+}
+button:not(:disabled):hover{ 
+    background-color:var(--chpt) !important;
+}
+.active_button,#searchsettings.active_button{ 
+    background-color:var(--chpt) !important;
+}
+.red, span.red span{
+    color:var(--redwords)!important;
+}.strongsnum{ 
+    color:var(--strgs-num);
+}
+[strnum]:empty{ 
+    display:none !important;
+}
+#main{ 
+    position:relative;
+    display:flex;
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start:2;
+    grid-row-end:3;
+    max-width:100%;
+    box-shadow:inset 1px 0px 2px 0px var(--shadow-color);
+    overflow-y:scroll;
+}
+#main>*>*{ 
+    padding-left:5px;
+}
+#search_section{ 
+    grid-column-start:4;
+    grid-column-end:5;
+    grid-row-start:1;
+    grid-row-end:4;
+    background-color:var(--royalblue);
+}
+#ppp>span.verse:last-child{ 
+    padding-bottom:20px;
+}
+.dvnNm,
+span[strnum~=dvnNm],
+span[strnum~=H3068]{
+    font-variant:small-caps;
+}
+span[strnum]{ 
+    cursor:pointer;
+    border-radius:1px!important;
+}
+span[strnum]:hover{ 
+    z-index:1;
+}
+span[strnum] > span[strnum]{ 
+    border:none;
+    box-shadow:none;
+    font-style:italic;
+}
+span.verse:hover:not(.vhlt),
+span.vmultiple:hover{ 
+    transition:background 0.05s ease-in-out;
+    border-radius:0.1em;
+}
+#searchPreviewFixed span.verse{ 
+    display:block;
+    box-shadow:0px 2px 0px 0px var(--grey);
+    padding-bottom:5px;
+    margin-right:0px;
+}
+#searchPreviewFixed span.verse:hover:not(.vhlt){
+    cursor:pointer;
+    box-shadow:inset 2px 0px 2px 0px var(--grey),inset -2px 0px 2px 0px var(--grey);
+    box-shadow:0px 1px 0px 0px var(--grey);
+    border-radius:0;
+}
+.crossrefs+.span.vmultiple{
+    z-index:-4;
+}
+.compare_verses .verse{ 
+    display:block;
+} 
+body:not(#versenotepage) span[class*=v_]:not(#context_menu span[class*=v_]):hover,
+#searchPreviewFixed .verse:not(details):hover,
+.relocating{ 
+    cursor:pointer;
+    background-color:var(--vhlt3)!important;
+    box-shadow:-14px 0px 6px -13px var(--shadow-color),14.5px 0px 6px -13px var(--shadow-color)!important;
+    box-shadow:0px 2px 4px rgb(0 0 0/40%),0px -2px 4px rgb(0 0 0/40%),0px 7px 13px -3px rgb(0 0 0/30%),0px -7px 13px -3px rgb(0 0 0/30%),0px -3px 0px rgb(0 0 0/20%) inset,0px 3px 0px rgb(0 0 0/20%) inset!important;
+    transition:250ms ease-in-out;
+    z-index:3;
+    transition:all 0!important;
+}
+.vmultiple .verse.hovered_version{ 
+    background:var(--vhlt3)!important;
+    box-shadow:var(--verse-hover-shadow)!important;
+    z-index:2;
+}
+.vmultiple .verse.hovered_version{
+    box-shadow:var(--verse-column)!important;
+}
+.vmultiple:first-of-type .verse.hovered_version{ 
+    box-shadow:var(--verse-column-highest)!important;
+}
+.vmultiple:last-of-type .verse.hovered_version{ 
+    box-shadow:var(--verse-column-lowest)!important;
+}
+#bibleversions_btns [bversion]:hover{ 
+    transform:scale(1.2);
+    box-shadow:inset 1px 1px var(--grey), inset -1px -1px var(--grey);
+    border-radius:2px;
+    background:var(--vhlt3)!important;
+    z-index:2;
+}
+.darkmode #bibleversions_btns [bversion]:hover{ 
+    background:palegoldenrod!important;
+    color:black!important;
+}
+/* HIGHLIGHT VMULTIPLE */
+span.vmultiple:hover{
+    background-color:var(--whitesmoke);
+    background-color:#eeeee251;
+    background-color:var(--vhlt4);
+    transition:box-shadow 0.05s ease-in;
+    box-shadow:0px 0px 5px 1px rgb(0 0 0/100%)!important;
+    transition:250ms ease-in;
+    z-index:4;
+}
+span.vmultiple:hover .verse{ 
+    background:var(--vhlt4)!important;
+}
+.v_dblclckd .verse{ 
+    background-color:var(--vhlt-hover);
+    border-radius:2px;
+    box-shadow:0px 0px 0px 1px var(--grey);
+}
+.v_dblclckd{
+    z-index:1;
+}
+span.translated:hover{ 
+    border-bottom:3px solid var(--brown)!important;
+    color:var(--brown);
+}
+span.translated:not(.win2_noteholder blockquote .verse:not(.verse:hover) span.translated){ color:var(--translated-word)}
+.translated[trans]{ 
+    font-weight:600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+sup{ font-weight:bold;}
+.search_options{ 
+    display:none;
+    font-size:small;
+    font-style:italic;
+    color:var(--whitesmoke);
+}
+.eng2grk{ 
+    text-indent:-9999px;
+}
+.eng2grk>span{ 
+    display:inline;
+    font-weight:bold;
+}
+.eng2grk .strnum{ 
+    box-shadow:none!important;
+}
+.eng2grk::after{ 
+    box-shadow:none!important;
+}
+#fontchange, #fontsizes{ 
+    width:100%;
+}
+#eng2grk_sup_table{
+    min-width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+#eng2grk_sup_table td{ 
+    padding:0;
+}
+#eng2grk_sup_table button{ 
+    width:100%;
+    min-height:30px;
+    min-height:2.5em!important;
+    font-weight:bold;
+}
+#bibleapp_cache td:first-child{ 
+    width:50%;
+    text-align:right;
+    padding-right:10px;
+    font-size:0.8em;
+    font-style:italic;
+    font-weight:bold;
+}
+/* #shortcutkeys_list{ max-width:15em;} */
+#shortcutkeys_list *{ 
+    font-size:0.7rem!important;
+}
+.strnum:after{ 
+    content:attr(data-lemma);
+    font-style:italic;
+}
+#context_menu .strnum:not(:hover),
+#strongsdefinitionwindow .strnum:not(:hover){
+    font-style:italic;
+    /* border-bottom:1px solid; */
+    box-shadow:inset 0px -1px 0px 0px;
+}
+#searchresultwindow{ 
+    position:absolute;
+    top:12px;
+    right:5px;
+    max-height:70%;
+    width:450px;
+    background:var(--white);
+    overflow:scroll;
+    z-index:99;
+}
+.relative{ 
+    position:relative;
+    height:100%;
+}
+#searchPreview>*{ 
+    display:block;
+    padding:0 5px;
+}
+#searchPreview [ref]:hover{ 
+    font-weight:bolder;
+    border-bottom:1px dashed var(--blue);
+    border:2px solid var(--grey);
+}#searchrelative{ 
+    display:flex;
+}
+#searchclose{ 
+    padding:0 2px;
+    font-size:10px;
+    font-weight:bold;
+    border-left:0.5px solid var(--black);
+}
+#searchclose:active,
+#searchminimize:active{ 
+    font-style:italic;
+}
+#searchclose:hover{ 
+    background-color:var(--lightpink);
+}
+#searchminimize:hover{ 
+    background-color:var(--greenyellow);
+}
+#searchminimize{     padding:0 2px;
+    font-size:10px;
+    font-weight:bold;
+    border-left:0.5px solid var(--black);
+}
+#refnav{ 
+    /* height:auto; */
+    overflow-y:hidden;
+    font-size:var(--fontsize-main);
+    background:var(--whitesmoke);
+    box-shadow:inset -2px 0 0 0 black, 3px 0 1px 0px black;
+    z-index:13;
+}
+#refnav input{ 
+    height:8px;
+    width:8px;
+}
+#searchparameters{ 
+    min-height:auto;
+    border-bottom:1px solid var(--scroll-track-bg-color);
+    border-top:0;
+    background-color:var(--ref-hlt);
+    font-size:var(--fontsize-main);
+}
+.search_param_btns{
+    width:100%;
+    text-align:left;
+    margin:2px;
+}
+#searchparameters div:first-of-type+div,
+#bibleapp_cache div:first-of-type,
+#bibleapp_cache .settingssectionheadings{ 
+    border-bottom:1px solid var(--scroll-track-bg-color);
+    border-top:1px solid var(--scroll-track-bg-color);
+    margin:0;
+    box-shadow:0 0.5px 0 var(--shadow-color);
+    background-color:var(--whitesmoke);
+    background-image:var(--ref-img);
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+}
+#searchprametersbtnholder{ 
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+#searchprametersbtnholder>button{ 
+    display:inline;
+    font-size:13px;
+    width:auto;
+}
+#searchprametersbtnholder>button{ 
+    flex:1 1 30%;
+}
+#searchprametersbtnholder #biblebooksgroup_fixed{ 
+    flex:1 1 100%;
+    height:calc(var(--fontsize-refnsearch) * 2.9);
+}
+#searchprametersbtnholder .biblebooksgroup_dropdown_content{ 
+    margin-top:1.7em;
+    min-width:50%;
+}
+#searchprametersbtnholder .showhidebookgrps{ 
+    min-width:calc(var(--fontsize-refnsearch) * 2.5);
+    height:calc(var(--fontsize-refnsearch) * 2.5);
+    top:calc(var(--fontsize-refnsearch) * 0.2)!important;
+}
+#showhidebookgrpsFixed{ height:2em;}
+#opensearch{ display:none;}
+.bible_versions_heading,
+#bibleapp_versemarkers_settings,
+#biblenotes_nav_settings{
+    box-shadow:0 0.5px 0 var(--shadow-color);
+    background-color:var(--whitesmoke);
+    /* background-image:var(--ref-img); */
+    font-style:italic;
+    font-weight:bold;
+    text-align:center;
+}
+#bibleapp_versemarkers,
+#bibleapp_available_notes{ 
+    border-right:solid 2px;
+    height:100%;
+    width:15em;
+    overflow-x:hidden;
+}
+#bibleapp_available_notes{ 
+    display:flex;
+    flex-direction:column;
+    overflow-y:hidden;
+}
+#bibleapp_versemarkers details,
+#bibleapp_available_notes details.settings{ 
+    border-bottom:2.5px solid;
+    padding-bottom:0;
+    box-shadow:0 2px 5px var(--shadow-color);
+    background-color:var(--whitesmoke);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+#bibleapp_available_notes details.settings{ 
+    margin-bottom:0;
+}
+#bibleapp_versemarkers details > div,
+#bibleapp_available_notes details.settings > div{ 
+    box-shadow:0 2px 5px var(--shadow-color);
+    margin:0.5em;
+    padding:0.25em;
+}
+#bibleapp_versemarkers summary,
+#bibleapp_available_notes summary#biblenotes_nav_settings{ 
+    display:flex;
+    justify-content:space-between;
+    box-shadow:0 2px 5px var(--shadow-color);
+    padding-right:1em;
+    margin-bottom:0;
+    height:2em;
+    padding-bottom:0.3em;
+}
+#bibleapp_available_notes summary#biblenotes_nav_settings{
+    margin:0!important;
+    padding:0.3em!important;
+}
+#bibleapp_versemarkers summary .openCloseIconHolder,
+#bibleapp_available_notes summary#biblenotes_nav_settings .openCloseIconHolder{ 
+    height:5em!important;
+}
+summary#biblenotes_nav_settings .openCloseIconHolder~div,
+summary#bibleapp_versemarkers_settings .openCloseIconHolder~div{
+    display:flex!important;
+    flex:1;
+    justify-content:center;
+    align-items:flex-end;
+}
+#bibleapp_versemarkers summary img,
+#bibleapp_available_notes summary#biblenotes_nav_settings img{ 
+    width:1.4em;
+}
+#bibleapp_versemarkers #otherbooks_versemarkers_list,
+#bibleapp_versemarkers #currentbook_versemarkers_list{ 
+    margin-left:0.3em;
+    margin-right:0.3em;
+}
+#bibleapp_versemarkers #otherbooks_versemarkers_list .vm_btns:last-of-type,
+#bibleapp_versemarkers #currentbook_versemarkers_list .vm_btns:last-of-type{ 
+    margin-bottom:0.3em;
+}
+#bibleapp_versemarkers #currentbook_versemarkers_list:empty:before,
+#bibleapp_versemarkers #otherbooks_versemarkers_list:empty:before,
+#bibleapp_versemarkers #currentbook_versemarkers_list:not(:empty):before{ 
+    content:attr(empty_txt);
+    font-weight:bold;
+}
+#bibleapp_versemarkers #otherbooks_versemarkers_list:not(:empty):before{ 
+    content:"Other Book Markers";
+    font-weight:bold;
+}
+#bibleapp_versemarkers #otherbooks_versemarkers_list:not(:empty),
+#bibleapp_versemarkers #currentbook_versemarkers_list:not(:empty){ 
+    margin-top:0.5em;
+    padding:0.2em 0.2em 0 0.2em;
+    border-bottom:2px solid grey;
+    box-shadow:0 2px 5px var(--shadow-color);
+}
+#bibleapp_cache *:not(.settingssectionheadings){ 
+    font-size:var(--fontsize-main);
+}
+.bible_nav{ 
+    overflow-y:scroll;
+    height:100%;
+    font-weight:bold;
+}
+
+#strongsdefinitionwindow details, details{ 
+    border-bottom:2px solid #aaa;
+    padding:.25em 0;
+}
+#bibleapp_available_notes details{ 
+    /* padding:0; */
+    margin-bottom:8px;
+}
+#bibleapp_available_notes details:last-child{ 
+    margin-bottom:0;
+}
+
+#strongsdefinitionwindow summary, summary{ 
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    /* font-weight:bold; */
+    margin:-.5em -.5em 0;
+    padding:.5em;
+    cursor:pointer;
+    z-index:-10;
+    list-style:none;
+}
+#strongsdefinitionwindow summary i, summary i{ 
+    font-size:0.7em;
+}
+#strongsdefinitionwindow summaryh2, summaryh2{ 
+    font-size:1em;
+}
+#strongsdefinitionwindow summary>div:first-of-type, summary>div:first-of-type{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    min-width:1em;
+    height:2em;
+    margin:10px;
+}
+#strongsdefinitionwindow details[open] > summary,
+details[open] summary{ 
+    border-bottom:1px solid #aaa;
+    margin-bottom:.5em;
+}
+
+#strongsdefinitionwindow details[open] > summary{ 
+    margin:0;
+    width:400px;
+}
+#strongsdefinitionwindow details > summary{ 
+    margin:0;
+    width:400px;
+}
+
+#strongsdefinitionwindow details[open] > summary > div:first-of-type,
+details[open] > summary > div:first-of-type{ 
+    background:url(images/arrow-down-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-down-svgrepo-com.svg) center no-repeat;
+}
+
+#bible_nav,
+#bible_versions,
+#bibleapp_cache{ 
+    max-width:300px;
+    height:100%;
+    border-right:2px solid var(--grey);
+    font-size:var(--fontsize-main);
+}
+#bible_versions,
+#searchPreviewWindowFixed,
+#strongsdefinitionwindow,
+#bibleapp_cache{ 
+    overflow-y:auto;
+    background-color:var(--verse-higlight);
+}
+#bible_versions,
+#bibleapp_cache{ 
+    overflow-y:scroll;
+}
+#cache_table{ 
+    width:100%;
+    display:table!important;
+    border-collapse:collapse;
+}
+#cache_table td{min-width:40px;}
+#cache_table td button{min-width:100%;font-weight:bolder;font-size:200%!important;padding:0;}
+#hidestrongshighlight{ display:none;}
+#strongsdefinitionwindow{ 
+    font-size:var(--fontsize-scripture);
+}
+#strongsdefinitionwindow::after{ 
+    content:'';
+    background-color:#ccc;
+    position:absolute;
+    right:0;
+}
+#searchPreviewWindowFixed,
+#strongsdefinitionwindow{
+    min-width:200px;
+    max-width:25vw;
+    height:100%;
+    overflow-x:hidden;
+}
+#resizerdiv{ 
+    display:none;
+}
+#resizerdiv:hover,#resizerdiv:active{ 
+    background-color:var(--greenyellow);
+}
+#strongsdefinitionwindow>*:not(hr),
+#strongsdefinitionwindow>*:not(hr),
+#bible_versions>*:not(hr),
+#bibleapp_cache>*:not(hr){ 
+    padding-right:3px;
+    padding-left:3px;
+}
+#bible_versions{ 
+    font-size:var(--fontsize-main);
+    min-width:150px;
+}
+.strngsdefinition h1,
+.strngsdefinition h2,
+.strngsdefinition h3,
+.strngsdefinition h4,
+.strngsdefinition h5,
+.strngsdefinition h6{ 
+    cursor:pointer;
+}
+.strngsdefinition h1,
+.strngsdefinition h2,
+.strngsdefinition h3,
+.strngsdefinition h4{ 
+    font-size:inherit;
+    display:inline;
+    padding-top:0;
+    margin-top:0;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+.strngsdefinition h5{display:flex;}
+.strngsdefinition h5::before{
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
+    height:100%!important;
+    transform:rotate(0deg);
+    margin-left:0;
+}
+.strngsdefinition h5.hidingsibs::before,
+.strngsdefinition h5.slduper::before{
+    transform:rotate(180deg);
+}
+.strngsdefinition h5,.strngsdefinition h6{ 
+    position:relative;
+    margin:0px 5px 0px 0px;
+    padding-left:7.5px;
+    border-bottom:1px solid var(--grey);
+    font-style:italic;
+    background-color:rgb(105, 105, 105);
+    color:var(--white)!important;
+    z-index:5;
+}
+#strongsdefinition_text h5, #strongsdefinition_text h6{ 
+    position:relative;
+    margin:0px;
+    padding-left:10px;
+    box-shadow:0px 2px 0px 0px var(--grey);
+    font-style:italic;
+    background-color:#111116c9;
+    color:var(--white)!important;
+    z-index:5;
+}
+.strngsdefinition p{ 
+    position:relative;
+    margin:5px 10px;
+    font-size:0.9em;
+    background-color:inherit;
+}
+.strngsdefinition div{ 
+    overflow:hidden;
+}
+#searchPreviewWindowFixed.slideintoview{
+    display:flex!important;
+}
+#searchPreviewWindowFixed{ 
+    position:relative;
+    flex-direction:column;
+    overflow-y:hidden;
+    font-size:var(--fontsize-scripture);
+    padding-bottom:7px;
+    margin-bottom:7px;
+    height:100%;
+    min-width:350px;
+}
+#searchPreviewWindowFixed #context_menu{ 
+    left:5px!important;
+    right:5px!important;
+    width:calc(100% - 10px)!important;
+    font-size:0.9em;
+}
+#searchparameters .searchFontSizeSettings,
+#searchparameters div:last-child,
+.totalfound{ 
+    display:block;
+    background-color:var(--verse-higlight);
+    background-image:var(--ref-img);
+    border-top:1.5px solid var(--scroll-track-bg-color);
+    box-shadow:0 2px 0 var(--grey);
+}
+#searchparameters #where2display{ 
+    display:block;
+    border-top:1.1px solid var(--scroll-track-bg-color);
+}
+#searchparametertitlebar_holder{
+    display:flex;
+}
+#searchparametertitlebar{ 
+    cursor:pointer;
+    height:1.8em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+}
+#hidesearchparameters, #showonlysearchinput{ 
+    background-color:var(--whitesmoke);
+    min-width:calc(var(--fontsize-refnsearch) * 2.5);
+    border:1px solid var(--scroll-track-bg-color);
+    cursor:pointer;
+    font-weight:900;
+}
+#searchPreviewFixed{ 
+    position:relative;
+    height:100%;
+    overflow-y:auto;
+}
+#searchPreviewFixed>*, #scriptureCompare_columns_holder .chptheading{ 
+    display:block;
+    padding:0 5px;
+}
+#searchPreviewFixed > span.verse:has(.crossrefs:not(.sld_up)):last-of-type,
+.compare_verses > span.verse:has(.crossrefs:not(.sld_up)):last-of-type{ margin-bottom:10em}
+#searchPreviewFixed > details.verse,
+#scriptureCompare_columns_holder > details.verse{ 
+    font-size:calc(var(--fontsize-main)/1.2);
+}
+details.verse summary{ 
+    font-style:italic;
+    padding-bottom:0.1em;
+}
+details.verse > summary::before{ 
+    content:"\25BA";
+    left:0;
+}
+details.verse[open] > summary::before{ 
+    content:"\25BC";
+}
+details.verse[open]{ 
+    padding-bottom:0.25em!important;
+}
+#searchPreviewFixed>.chptheading,
+#scriptureCompare_columns_holder .chptheading,
+#searchPreviewFixed code{ 
+    cursor:pointer;
+    font-size:var(--fontsize-main);
+    font-weight:bolder;
+    margin:0;
+}
+#searchPreviewFixed .chptheading:not(.dhid)::before,
+#scriptureCompare_columns_holder .chptheading:not(.dhid)::before{ 
+    content:'';
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat;
+    min-width:1em;
+    height:1em;
+    padding:0.5em;
+    position:relative;
+    margin-right:5px;
+    margin-left:5px;
+}
+#searchPreviewFixed .chptheading.dhid::before,
+#scriptureCompare_columns_holder .chptheading.dhid::before{ 
+    content:'';
+    background:url(images/arrow-down-svgrepo-com.svg) center no-repeat;
+    background:url(../images/arrow-down-svgrepo-com.svg) center no-repeat;
+    min-width:1em;
+    height:1em;
+    padding:0.5em;
+    position:relative;
+    margin-right:5px;
+    margin-left:5px;
+}
+#showonlysearchinput.active_button::before{ 
+    content:'+';
+}
+#showonlysearchinput:not(.active_button)::before{ 
+    content:'-';
+}
+#searchdiv_fixed{ 
+    display:flex;
+    width:100%;
+}
+input#wordsearch_fixed{ 
+    width:100%;
+    height:auto;
+    border:none;
+}
+#forwordsearch_fixed:disabled, #forwordsearch_fixed:not(:disabled), #hidesearchparameters{ 
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+#forwordsearch img,#forwordsearch_fixed img{ transform:rotateZ(-90deg);}
+input#wordsearch_fixed{ 
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+#searchPreviewWindowFixed button:not(#searchparametertitlebar_holder button):not(#forwordsearch_fixed):not(#showhidebookgrpsFixed):not(#biblebooksgroup_fixed_myDropdown button){ 
+    border:0.25px solid rgb(198, 198, 198);
+    border-radius:2px!important;
+    box-shadow:0 0 0 0.3px var(--black);
+    display:flex;
+}
+
+::-webkit-scrollbar{ 
+    width:0.35em;
+    height:0.35em;
+}
+
+::-webkit-scrollbar-track{ 
+    background:var(--scroll-track-bg-color);
+}
+
+::-webkit-scrollbar-thumb{ 
+    background:var(--scroll-thumb-bgcolor);
+    border-top:2px solid var(--scroll-thumb-border-color);
+    border-bottom:2px solid var(--scroll-thumb-border-color);
+}
+
+::-webkit-scrollbar-thumb:hover{ 
+    background:var(--scroll-thumb-hover-bg-color);
+    border-top:2px solid var(--scroll-thumb-hover-border);
+    border-bottom:2px solid var(--scroll-thumb-hover-border);
+}
+
+.section_headings{ 
+    display:none;
+}
+.vmultiple{ 
+    position:relative;
+    display:flex !important;
+    flex-wrap:wrap;
+}
+.vmultiple>.section_headings,.vmultiple>h1,.vmultiple>h2,.vmultiple>h3,.vmultiple>h4{ 
+    flex:1 0 100%;
+}
+.vmultiple>span{ 
+    padding:5px 5px;
+    flex-basis:50px;
+    flex-grow:1;
+}
+.chptverses > .vmultiple > .verse{ 
+    flex:1;
+    min-width:var(--maxwidth-of-verses-per-row);
+}
+.vmultiple:not(.v_dblclckd) >.verse{ 
+    background-color:var(--ref-img);
+}
+span.vmultiple:hover span.vhlt{ 
+    background:var(--yellow);
+}
+
+.slideup{ 
+    opacity:0;
+    overflow:hidden;
+    height:0;
+    margin-top:-150px!important;
+    z-index:-1;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+#refnav>.refnav,
+#refnav>#bible_nav,
+#refnav>#bible_versions,
+#refnav>#searchPreviewWindowFixed,
+#refnav>#strongsdefinitionwindow,
+#refnav>#bible_versions,
+#refnav>#bibleapp_cache{ 
+    transition:all 0.2s ease-in-out;
+}
+#refnav img, #top_horizontal_bar img{ 
+    pointer-events:none;
+}
+.slideintoview{ 
+    display:block;
+    margin-left:0px;
+    margin-top:0;
+    -webkit-transition:all 0.2s ease-in-out;
+    -moz-transition:all 0.2s ease-in-out;
+    -o-transition:all 0.2s ease-in-out;
+    transition:all 0.2s ease-in-out;
+}
+.slideoutofview{ 
+    margin-top:0;
+    -webkit-transition:all 0.2s ease-in-out;
+    -moz-transition:all 0.2s ease-in-out;
+    -o-transition:all 0.2s ease-in-out;
+    transition:all 0.2s ease-in-out;
+}
+.displaynone{ 
+    display:none !important;
+}
+.displayshow{ 
+    display:block !important;
+}
+#refnav_col2, #togglenavbtn{ 
+border-right:var(--col2-border) solid auto!important;
+}
+#refnav_col2{ 
+    box-shadow:inset -2px 0 0 0 var(--black);
+    z-index:9;
+}
+#refnav_col2 > div{ 
+    box-shadow:3px 0px 9px 0 var(--black);
+    position:relative;
+    height:100%;
+    background-color:var(--buttons);
+}
+#refnav_col2 > .slideintoview.displaynone{
+    display:null!important;
+}
+.vhlt{ 
+    background-color:var(--vhlt2)!important;
+    border-top:0.25px solid var(--vhlt-border);
+    border-left:0.25px solid var(--vhlt-border);
+    border-right:0.25px solid var(--vhlt-border);
+    border-radius:2px;
+    z-index:1;
+    -webkit-box-shadow:1px 1px 2px 0px var(--shadow-color2);
+    -moz-box-shadow:1px 1px 2px 0px var(--shadow-color2);
+    box-shadow:1px 1px 2px 0px var(--shadow-color2);
+}
+.vhlt:hover{ 
+    background-color:var(--vhlt-hover);
+    -webkit-box-shadow:1px 1px 1px 0px var(--shadow-color2);
+    -moz-box-shadow:1px 1px 1px 0px var(--shadow-color2);
+    box-shadow:1px 1px 1px 0px var(--shadow-color2);
+}
+.vhlt+.vhlt{ 
+    border-top:0;
+    padding-bottom:3px;
+}
+[class^=v_].vhlt{
+    background-color:var(--vhlt2);
+}
+#mobilebuttons{ 
+    display:none;
+}
+/* TOP-BAR TOGGLE BUTTON */
+#topbartogglebtn:hover{ 
+    background:var(--ref-img);
+    border:1px solid var(--grey);
+}
+#topbartogglebtn{ 
+    position:absolute;
+    top:99%;
+    right:0.5em;
+    right:0.85em;
+    width:2.95rem;
+    height:2.15rem;
+    background:var(--ref-img);
+    border-radius:0 0 0.15em 0.15em;
+    box-shadow:2.75px 2.75px 0 0.05em black;
+    width:calc(var(--width-sidebuttons) * 1.15);
+    height:calc(var(--width-sidebuttons) * 0.8);
+    border-radius:1px;
+    padding:0;
+}
+#topbartogglebtn span{ 
+    position:relative;
+    width:0.65rem;
+    height:1.6rem;
+    background-color:var(--black);
+    display:inline-block;
+    transition:all 0.2s ease;
+    width:calc(var(--width-sidebuttons) * 0.15);
+    height:calc(var(--width-sidebuttons) * 0.65);
+    border:none;
+}
+#topbartogglebtn:hover span{ 
+    background-color:var(--white);
+}
+#topbartogglebtn:active span{ 
+    background-color:var(--black);
+}
+#topbartogglebtn.active_button span:first-of-type{ 
+    transform:rotate(135deg);
+}
+#topbartogglebtn span:first-of-type{ 
+    left:-0.2em;
+    transform:rotate(45deg);
+}
+#topbartogglebtn.active_button span:last-of-type{ 
+    transform:rotate(45deg);
+}
+#topbartogglebtn span:last-of-type{ 
+    right:-0.2em;
+    transform:rotate(135deg);
+}
+/* TOP-HORIZONTAL BAR */
+#top_horizontal_bar{
+    position:relative;
+    grid-column-start:1;
+    grid-column-end:4;
+    grid-row-start:1;
+    grid-row-end:2;
+    border-bottom:2px solid var(--grey);
+    display:flex;
+    flex-wrap:wrap;
+    z-index:22;
+}
+#top_horizontal_bar_buttons{
+    background:var(--ref-img);
+    border-bottom:2px solid #70707072;
+    display:flex;
+    flex-grow:1;
+    z-index:1;
+    -webkit-transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease-in-out;
+    -o-transition:all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+}
+#top_horizontal_bar #ref_search_versions_holder, #top_horizontal_bar #titlebarsearchparameters > *{
+    border-bottom:none!important;
+}
+#top_horizontal_bar #titlebarsearchparameters{ 
+    border-top:none!important;
+}
+#top_horizontal_bar #titlebarsearchparameters button,
+#top_horizontal_bar #titlebarsearchparameters button .checkboxreplacement{ 
+    font-size:calc(var(--fontsize-refnsearch)*1.5)!important;
+}
+/* REF & SEARCH */
+#ref_search_versions_holder{ 
+    display:flex;
+    flex-wrap:wrap;
+    flex-grow:1;
+    flex:1 1;
+}
+#searchdiv{ 
+    position:relative;
+    border:var(--buttons-border);
+    z-index:2;
+}
+#searchdiv *:not(#biblebooksgroup_inputndropdown *){ 
+    border-top:none;
+    border-bottom:none;
+}
+#refdiv,#refhistoryBtns,#searchdiv,#bibleversions_btns{ 
+    display:flex;
+    /* margin-right:0.1em; */
+}
+#refdiv{
+    margin-right:0;
+    width:calc(var(--fontsize-refnsearch)*13);
+}
+#refdiv input{ 
+    width:100%;
+    font-size:var(--fontsize-refnsearch);
+    flex-grow:1;
+    padding-left:0.5em;
+}
+#refdiv input, input#wordsearch{ 
+    font-size:calc(var(--fontsize-refnsearch)*1.5);
+}
+#refdiv button, #searchdiv button, #forwordsearch_fixed{ 
+    display:flex;
+    align-items:center;
+    padding:2px;
+    min-width:calc(var(--fontsize-refnsearch) * 2.5);
+    min-height:calc(var(--fontsize-refnsearch) * 2);
+    font-size:calc(var(--fontsize-refnsearch) * 2);
+}
+.darkmode #forwordsearch:disabled, .darkmode #forwordsearch_fixed:disabled{ 
+    background-color:var(--buttons)!important;
+    opacity:1;
+}
+.darkmode #forwordsearch:disabled img, .darkmode #forwordsearch_fixed:disabled img{ 
+    opacity:0.1!important;
+}
+/* REFERENCE */
+#reference{ 
+    vertical-align:bottom;
+    background-color:var(--buttons);
+    border:var(--buttons-border);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:bolder;
+    font-size:40px;
+    flex-grow:1;
+}
+/* SEARCH */
+#wordsearch{
+    background-color:var(--buttons)!important;
+    border:var(--buttons-border)!important;
+}
+#wordsearch::-webkit-input-placeholder,
+#reference::-webkit-input-placeholder,#wordsearch:-moz-placeholder,
+#reference:-moz-placeholder,#wordsearch::-moz-placeholder,
+#reference::-moz-placeholder,#wordsearch:-ms-input-placeholder,
+#reference:-ms-input-placeholder{ 
+    font-style:italic;
+}
+#wordsearch:focus,
+#wordsearch_fixed:focus,
+#refdiv>input:focus,
+#biblebooksgroup_1:focus,
+#biblebooksgroup_2:focus,
+#biblebooksgroup_3:focus,
+#biblebooksgroup_fixed:focus,
+.verses_input:focus,
+.darkmode .input_n_btn button:focus,
+.input_n_btn button:focus{ 
+    background:#fff59d!important;
+    color:black!important;
+}
+/* #wordsearch,
+#wordsearch_fixed,
+#refdiv>input,
+#biblebooksgroup_1,
+#biblebooksgroup_2,
+#biblebooksgroup_3,
+#biblebooksgroup_fixed,
+.verses_input,
+.darkmode .input_n_btn button,
+.input_n_btn button{ 
+    font-weight:bolder;
+} */
+
+/* BIBLE VERSIONS BUTTONS */
+#bibleversions_btns{ 
+    display:contents;
+}
+#bibleversions_btns input{ 
+    width:6px;
+    pointer-events:none;
+    display:none;
+}
+#bibleversions_btns button{ 
+    display:block;
+    float:left;
+    /* white-space:nowrap; */
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-weight:bold;
+    font-size:var(--fontsize-versionsbuttons);
+    border-right:1px solid var(--grey);
+    /* width:3em; */
+    overflow-wrap:break-word;
+}
+#bibleversions_btns button:first-child{ 
+    border-left:1px solid var(--grey);
+}
+#bibleversions_btns button:focus, .relocating{ 
+    z-index:4;
+}
+#bibleversions_btns button.dragging{ 
+    cursor:grabbing!important;
+}
+#bibleversions_btns button:not(.active_button){
+    font-style:italic;
+    color:grey;
+    opacity:0.85;
+}
+/* SEARCH PARAMETERS */
+#titlebarsearchparameters{ 
+    font-size:12px;
+    margin-top:0;
+    transition-duration:0.3s;
+}
+#searchprametersbtnholder *:not(input),
+#wordsearch_fixed,
+/* #titlebarsearchparameters *:not(input), */
+.verses_input{ 
+    font-size:calc(var(--fontsize-main)*0.85)!important;
+}
+/* AVAILABLE NOTES */
+#bibleapp_available_notes{
+    max-width:300px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    cursor:pointer;
+    height:100%;
+}
+#bibleapp_available_notes em{ 
+    display:block;
+    padding-left:0.4em;
+    padding-right:0.4em;
+    background:var(--grey);
+    color:var(--white);
+    font-weight:bold;
+    font-size:var(--fontsize-main);
+}
+#bibleapp_available_notes code{ 
+    box-sizing:border-box;
+    height:1.1em;
+    padding-left:0.1em;
+}
+#bibleapp_available_notes code:hover{ 
+    color:var(--redwords);
+    font-weight:bold;
+    box-shadow:0px -25px 0px 0px var(--verse-higlight) inset;
+}
+#bibleapp_available_notes span:not(:first-child){ 
+    border-left:0.15em solid grey;
+    padding-left:0.1em;
+}
+#bibleapp_available_notes span:hover{ 
+    border-bottom:5px solid var(--grey);
+    border-radius:5px;
+    background:var(--verse-higlight);
+}
+#bibleapp_available_notes b{ 
+    font-size:1.2em;
+}
+#bibleapp_available_notes details > summary{ 
+    color:var(--black);
+    background:var(--whitesmoke);
+    font-weight:bold;
+    display:list-item;
+    list-style:inside disclosure-closed;
+    margin-right:0;
+    margin-left:0;
+}
+#bibleapp_available_notes details[open] > summary{ 
+    list-style:inside disclosure-open;
+}
+#bibleapp_available_notes details:hover > summary{ 
+    background:var(--selection);
+}
+#bibleapp_available_notes details.settings summary+div{ 
+    display:flex!important;
+    flex-direction:column;
+}
+#bibleapp_available_notes details.settings summary+div{ 
+    display:flex!important;
+    flex-wrap:wrap;
+    font-size:12px;
+}
+#bibleapp_versemarkers details.settings button,
+#bibleapp_available_notes details.settings button{ 
+    border-radius:5px!important;
+    border:1px solid grey!important;
+    margin-left:10px;
+    min-height:1em;
+}
+#bibleapp_available_notes #biblenotes_nav{ overflow-y:auto;}
+#togglenavbtn{ 
+    font-size:calc(var(--width-sidebuttons)*0.65)!important;
+    font-weight:400;
+    padding:0;
+    min-width:var(--minHeighWidth-leftside_btns)!important;
+    width:var(--width-sidebuttons)!important;
+    box-shadow:1px 0 black;
+}
+#togglenavbtn img{ 
+    width:calc(var(--fontsize-refnsearch) * 2)!important;
+    width:calc(var(--fontsize-refnsearch) * 2)!important;
+    max-width:60.5px!important;
+}
+div>br:first-child{display:none;}
+
+#btnAdd{ 
+    bottom:20px;
+    right:20px;
+    z-index:1000;
+    background-color:#333;
+    color:#fff;
+    border:0;
+    border-radius:4px;
+    padding:8px 16px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:has(.checkboxreplacement){
+    position:relative;
+    padding-left:1.3em;
+}
+button .checkboxreplacement:has(input[type="checkbox"]) input[type="checkbox"]{ 
+    display:block;
+    position:absolute;
+    left:-100vw;
+    visibility:none;
+}
+button .checkboxreplacement:has(input[type="checkbox"]){ 
+    width:1.5em;
+    height:1.5em!important;
+    margin-right:0.1em;
+    margin-top:0.2em;
+    margin-bottom:0.2em;
+    flex-basis:100%;
+    transform:scale(0.7);
+    position:absolute;
+    left:0;
+    /* border:solid #d9d9d9; */
+}
+button .checkboxreplacement:has(input[type="checkbox"]):before{ 
+    content:"";
+    background:var(--img-cancel) center no-repeat;
+    display:flex;
+    width:100%!important;
+    height:100%!important;
+}
+button:hover .checkboxreplacement:has(input[type="checkbox"]):before{ 
+    background-color:#ccc;
+}
+button .checkboxreplacement:has(input[type="checkbox"]:checked):before{ 
+    background:var(--img-chkbox) center no-repeat;
+    background-color:var(--chpt);
+}
+
+input:focus{ 
+    outline:none;
+}
+
+#strongsdefinitionwindow{ 
+    display:flex;
+    flex-direction:column;
+}
+#strongsnum_inputholder{ 
+    display:flex;
+    align-items:stretch;
+}
+#strongsnum_inputholder #strongsnum_input{ 
+    width:100%;
+    height:auto;
+    border-bottom-left-radius:8px;
+    border-top-left-radius:8px;
+    border:none;
+    box-shadow:inset 0px 0px 0px 0.5px var(--grey);
+}
+#strongsnum_inputholder #strongsnum_srchbtn{ 
+    width:50px;
+    display:flex;
+    align-items:stretch;
+    border-bottom-right-radius:8px;
+    border-top-right-radius:8px;
+}
+#strongsnum_inputholder #strongsnum_srchbtn img{ 
+    transform:scale(0.6);
+}
+#strongsdefinitionwindow #strongsdefinition_text{ 
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.crfnnote_btns{ 
+    position:relative;
+    display:flex;
+    flex-wrap:wrap;
+    background:var(--ref-img);
+    box-shadow:0 2px 4px var(--black);
+    z-index:3;
+}
+
+.crfnnote_btns::before{
+    display:block;
+    content:'';
+    /* background-color:var(--verse-higlight); */
+    height:100%;
+    width:100%;
+    position:absolute;
+    z-index:-1;
+}
+#singleverse_compare_menu{ 
+    display:flex;
+    flex-wrap:wrap;
+}
+
+
+/* SEARCH ICON WITH CSS DIV */
+.magnifying_glass{ 
+    /* font-size:10em; */
+    display:inline-block;
+    width:0.5em;
+    box-sizing:content-box;
+    height:0.5em;
+    border:0.1em solid black;
+    position:relative;
+    border-radius:50%;
+    margin-bottom:0.15em;
+    box-shadow:inset -0.05em -0.09em 0em 0.2em #80808078!important;
+}
+.magnifying_glass:before{ 
+    content:"";
+    display:inline-block;
+    position:absolute;
+    right:0.25em;
+    bottom:-0.2em;
+    border-width:1em;
+    background:black;
+    width:0.45em;
+    height:0.08em;
+    transform:rotate(-60deg);
+}
+.verse_note td,
+.verse_note th{ 
+    vertical-align:top;
+    border:1px solid grey;
+    padding-left:0.5em;
+}
+/* VERSE GROUPS */
+.v_markers{ 
+    display:flex;
+    flex-wrap:wrap;
+    position:relative;
+    width:100%;
+    background:var(--whitesmoke);
+    min-height:1em;
+    /* overflow:visible; */
+    /* margin-bottom:5px; */
+    padding-top:5px;
+    padding-bottom:5px;
+    box-shadow:inset 0px 1px 0px var(--black), inset 0px -1px 0px var(--black);
+}
+/* .vmultiple:hover .v_markers{ 
+    margin-bottom:0px;
+    padding-bottom:8px; 
+}
+.v_markers:hover{ 
+    z-index:1;
+}*/
+
+button.add_vMarker{ 
+    font-size:1;
+    box-shadow:inset 0px 1px 0px var(--black), inset 0px -1px 0px var(--black);
+}
+button.add_vMarker:not(:first-child){ 
+    margin-left:5px;
+}
+div.v_markerinputnbtn_holder{ 
+    position:relative;
+    display:flex;
+    /* z-index:-1; */
+}
+div.v_markers .vmarker:first-of-type,
+.markernote + .vmarker{ 
+    margin-left:0.5em;
+}
+div.v_markers .vmarker{ 
+    position:relative;
+    font-style:italic;
+    cursor:pointer;
+    z-index:1;
+}
+div.v_markers .vmarker:hover{ 
+    color:var(--brown);
+}
+
+div.v_markers .vmarker.hasnote{ 
+    /* background-color:rgba(255, 192, 203, 0.37); */
+    border-bottom:3px dotted crimson;
+    color:crimson;
+}
+div.v_markers .vmarker.showingNote{ 
+    box-shadow:inset 0 1px var(--shadow-color), inset 0 -1px var(--shadow-color);
+    border-top-left-radius:0.2em;
+    border-top-right-radius:0.2em;
+    padding-left:0.2em;
+    padding-right:0.2em;
+    border-left:1px solid;
+    border-right:1px solid;
+}
+div.v_markers .vmarker.showingNote + .markernote{
+    position:relative;
+    border-radius:0.2em;
+    margin-right:0.5em;
+    margin-left:0.5em;
+}
+/* div.v_markers .vmarker.hasnote:after{ 
+    content:"* ";
+    position:absolute;
+    font-size:125%;
+    top:-0.2em;
+    left:-0.4em;
+    font-weight:bold;
+    color:red;
+}*/
+div.v_markerinputnbtn_holder button img{ 
+    width:1em;
+}
+div.v_markers div#autocomplete_items{ 
+    position:absolute;
+    left:0;
+    top:100%;
+    background-color:var(--whitesmoke);
+    width:calc(100% - 1.6em);
+    z-index:99;
+}
+/* div.v_markers:not(:hover) div#autocomplete_items{ 
+    display:none;
+}*/
+/* div.v_markerinputnbtn_holder input:not(:focus) ~ div#autocomplete_items{ 
+    display:none;
+}*/
+#autocomplete_items div{ 
+    padding:10px;
+    cursor:pointer;
+    background-color:#fff;
+    border-bottom:1px solid #d4d4d4;
+    color:black!important;
+}
+#autocomplete_items div:hover{ 
+    /*when hovering an item:*/
+    background-color:#e9e9e9;
+}
+.autocomplete_active{ 
+    /*when navigating through the items using the arrow keys:*/
+    background-color:DodgerBlue !important;
+    color:#ffffff;
+}
+
+#vmarker_options_menu{ 
+    position:absolute;
+    background-color:var(--whitesmoke);
+    top:100%;
+    width:10em;
+    border:2px solid var(--black)!important;
+    border-radius:2.5px;
+    border-bottom-left-radius:7.5px;
+    border-bottom-right-radius:7.5px;
+    overflow:hidden;
+    box-shadow:-2px 1px 8px -2px var(--shadow-color),
+    2px 1px 8px -1px var(--shadow-color);
+    z-index:2;
+}
+#vmarker_options_menu h4,
+#vmarker_options_menu h5,
+#vmarker_options_menu code{ 
+    display:block;
+    background-color:var(--brown);
+    color:white!important;
+    border-bottom:2px solid var(--black)!important;
+    padding:1px 0 1px 7.5px;
+    margin:0px;
+    cursor:default;
+    font-weight:bold;
+    font-style:normal;
+    font-size:0.75em;
+}
+#vmarker_options_menu code:hover{ 
+    color:var(--black);
+}
+#vmarker_options_menu .vmarker_options,
+#vmarker_options_menu button{ 
+    margin:0px!important;
+    padding-left:0.7em;
+    width:100%;
+    border-bottom:1px solid var(--grey);
+    justify-content:left;
+    font-size:1em;
+    text-align:left;
+}
+#vmarker_options_menu .vmarker_options:not(:disabled):hover{ 
+    background-color:var(--span-hover);
+    cursor:pointer;
+    font-weight:normal;
+    box-shadow:0.4em 0 1px 0 orange;
+}
+#vmarker_options_menu .vmarker_options:not(:disabled):active{ 
+    font-weight:bold;
+    box-shadow:inset 0.6em 0 1px 0 red;
+}
+.markernote{ 
+    display:block;
+    width:100%;
+    border:1px solid rosybrown;
+    padding:5px;
+    background:var(--whitesmoke);
+    min-height:1.5em;
+    margin-bottom:0.2em;
+}
+.markernote textarea{ 
+    width:100%;
+    min-height:1.5em;
+}
+.markernote button{ 
+    min-height:1em;
+}
+.markernote .markernotesavebtn{ 
+    border-bottom-left-radius:0.2em;
+}
+.markernote .closebtn{ 
+    top:-1.1em;
+    right:0.2em;
+}
+.markernotetext{ 
+    display:block;
+    width:100%;
+    /* background-color:palegoldenrod!important; */
+    border-bottom:2px solid rosybrown;
+}
+.markernote > p{ 
+    margin-top:0;
+    margin-bottom:0;
+}
+.markernotetext > p{ 
+    min-height:1em!important;
+    margin:0;
+}
+.markernotetext > p:empty{ 
+    background-color:palegoldenrod;
+    padding:0;
+    border:1px solid red;
+}
+.vm, #bibleapp_versemarkers button{ 
+    width:100%;
+    min-height:1.5em;
+    text-align:left;
+    border-radius:0.15em!important;
+}
+.vm *, #bibleapp_versemarkers .checkboxreplacement{ 
+    pointer-events:none;
+}
+.vm div, #bibleapp_versemarkers button div{ width:100%;}
+.vm_btns, #autocomplete_buttons{ 
+    display:flex;
+}
+.vm_btns *{ 
+    border-radius:0.15em!important;
+}
+.vm_btns .checkboxreplacement:has(:checked){ 
+    border:1px solid var(--black);
+}
+.vm_btns:hover button,
+.vm_btns:hover button div{ 
+    color:black!important;
+    font-weight:bold;
+    background-color:var(--chpt) !important;
+}
+.vm_btns .vmbtnprevious,
+.vm_btns .vmbtnnext{ 
+    width:25%!important;
+    font-weight:bold;
+}
+.vm_btns .vmbtnprevious:before,
+.vm_btns .vmbtnnext:before{ 
+    content:"";
+    width:80%;
+    height:80%;
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat!important;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat!important;
+}
+#refhistoryBtns{ 
+    display:flex;
+    flex-wrap:wrap;
+}
+#refhistoryback,
+#refhistoryfront{ 
+    flex-basis:50%;
+    height:100%;
+}
+.darkmode #refhistoryback:before,
+.darkmode #refhistoryfront:before{ 
+    background:url(images/arrow-up-svgrepo-com-Grey.svg) center no-repeat!important;
+    background:url(../images/arrow-up-svgrepo-com-Grey.svg) center no-repeat!important;
+}
+#refhistoryback:disabled,
+#refhistoryfront:disabled{ 
+    opacity:0.2;
+}
+#refhistoryback:before,
+#refhistoryfront:before{ 
+    content:"";
+    width:calc(var(--fontsize-versionsbuttons)*1.5);
+    width:calc(var(--fontsize-refnsearch) * 2.5);
+    height:80%;
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat!important;
+    background:url(../images/arrow-up-svgrepo-com.svg) center no-repeat!important;
+    pointer-events:none;
+}
+#refhistory_list{ 
+    flex-basis:100%;
+    /* display:flex; */
+    height:0;
+    width:0;
+}
+#refhistorylist_back, #refhistorylist_front{ 
+    box-shadow:0 0 2px;
+    flex-basis:75%;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    max-height:40vh;
+    width:max-content;
+}
+#refhistorylist_back *, #refhistorylist_front *{ 
+    cursor:pointer;
+    overflow:visible;
+    font-size:0.85em;
+    text-align:left;
+    justify-content:left;
+}
+#refhistorylist_front *{ 
+    text-align:right;
+}
+#refhistoryBtns:has(#refhistorylist_back:not(.displaynone)) #refhistoryback,
+#refhistoryBtns:has(#refhistorylist_front:not(.displaynone)) #refhistoryfront{ background-color:var(--chpt);}
+#refhistorylist_front{ margin-left:auto;}
+.vm_btns .vmbtnprevious:before,#refhistoryback:before{ transform:rotate(90deg) scaleY(-1);}
+.vm_btns .vmbtnnext:before,
+#refhistoryfront:before{ 
+    transform:rotate(90deg);
+}
+.eng2grk_sup_btns input{ 
+    pointer-events:none;
+}
+/* BOTTOM LEFT NAV BUTTONS */
+
+#bottomleft_btns{ 
+    display:block;
+    margin-top:auto;
+    margin-bottom:1em;
+    margin-left:auto;
+    margin-right:0.75em;
+    grid-column-start:2;
+    grid-row-start:2;
+    opacity:0.5;
+    z-index:99;
+    /* position:fixed; */
+    /* bottom:1em; */
+    /* right:0.75em; */
+}
+#bottomleft_btns:hover{ 
+    opacity:1;
+}
+.flex{ 
+    position:relative;
+    display:flex;
+    flex-direction:column;
+}
+#app_settings .refnav_col2_closebtn, #bottomleft_btns button{ background:var(--chpt) !important;}
+body:not(.darkmode) #bottomleft_btns button, body:not(.darkmode) #topbartogglebtn{ 
+    background:#eaeaea6b;
+    border:1px;
+    box-shadow:2px 2px 5px 0 black;
+}
+#bottomleft_btns button, #topbartogglebtn{ 
+    width:var(--width-sidebuttons);
+    min-width:var(--minHeighWidth-leftside_btns);
+    height:var(--width-sidebuttons);
+    border:1px solid #333333!important;
+    box-shadow:2.75px 2.75px 0 0.05em black;
+    transition:all 0.5s;
+}
+#bottomleft_btns button:hover{ 
+    opacity:1;
+    transition:all 0.5s;
+}
+#bottomleft_btns #gotochpt_prev{ 
+    border-top-left-radius:var(--btn-radius);
+    border-top-right-radius:var(--btn-radius);
+}
+#bottomleft_btns button:hover, #topbartogglebtn:hover{ 
+    background:brown !important;
+}
+#bottomleft_btns button:active, #topbartogglebtn:active{ 
+    background:pink !important;
+    border:5px solid brown!important;
+    transform:scale(0.9) !important;
+}
+#bottomleft_btns #gotochpt_next{margin-top:0.25em;}
+#bottomleft_btns #gotochpt_next,#topbartogglebtn{ 
+    border-bottom-left-radius:var(--btn-radius);
+    border-bottom-right-radius:var(--btn-radius);
+}
+#bottomleft_btns #gotochpt_next img{ 
+    transform:rotate(180deg);
+}
+#bottomleft_btns #sidemenubtn_rightbottom{ 
+    border-radius:0.25em;
+    margin-top:1em;
+}
+/* button:not(#refnav_col2 button):focus,  */
+#app_settings button:not(.refnav_col2_closebtn):active,
+#top_horizontal_bar_buttons button:active,
+#bottomleft_btns button:active,
+button#topbartogglebtn:active{ 
+    transform:scale(1.1);
+}
+/* #app_settings button:not(#refnav_col2 button):not(#togglenavbtn):active, */
+#app_settings button:active,
+#top_horizontal_bar_buttons button:not(#togglenavbtn):active,
+#bottomleft_btns button:active,
+button#topbartogglebtn:active{ 
+    background-color:peachpuff;
+    border-radius:50px!important;
+}
+#bottomleft_btns:focus-within{ 
+    opacity:1;
+}
+#bottomleft_btns:focus-within button:not(:focus){
+    opacity:0.5;
+}
+#bottomleft_btns button:active,
+button#topbartogglebtn:active{ 
+    background-color:peachpuff!important;
+}
+/* #app_settings:focus-within{
+    overflow:visible!important;
+} */
+.vtemp{
+    box-shadow:inset 3px 0 red,inset 0 3px red,inset 0 -3px red!important;
+}
+.righttemp{
+    box-shadow:inset -3px 0 red,inset 0 3px red,inset 0 -3px red!important;
+}
+#otherButtonsInHead{
+    margin-left:auto;
+    display:flex;
+}
+#otherButtonsInHead #scriptureCompareWinDetacher_inHeader{ 
+    display:flex;
+    min-width:2em;
+    max-width:5.5em;
+}
+#otherButtonsInHead button{ 
+    border-radius:3px;
+    flex-grow:1;
+    font-size:var(--fontsize-versionsbuttons);
+}
+#scriptureCompareWinDetacher_inHeader, #noteDetacher_inHeader, #bookmarks_holder #bookmark_head{ 
+    font-size:calc(var(--fontsize-versionsbuttons) * 0.9);
+    font-size:calc(var(--fontsize-refnsearch)*1.4)!important;
+}
+#otherButtonsInHead img{ 
+    width:100%;
+    max-height:1.2em;
+    font-size:calc(var(--fontsize-refnsearch)*2);
+}
+#bookmarks_holder{
+    margin-right:0.5em;
+    cursor:pointer;
+}
+#bookmark_content{ 
+    display:none;
+    position:absolute;
+    right:5px;
+    margin-top:0;
+    padding:0px 0px;
+    background-color:#f9f9f9;
+    box-shadow:4px 4px 4px 0px rgba(0,0,0,0.2);
+    border:1px solid var(--shadow-color);
+    max-height:55vh;
+    overflow:auto;
+    z-index:1;
+}
+#bookmark_content:empty::before{ 
+    content:"No Bookmark";
+}
+#bookmarks_holder #bookmark_content.displayblock{ 
+    display:block;
+}
+#bookmarks_holder #bookmark_content *{ 
+    padding:1px 5px;
+    list-style-type:none;
+}
+#bookmarks_holder #bookmark_content *:hover{ 
+    cursor:pointer;
+    background-color:var(--greenish);
+    color:black!important;
+}
+#bookmarks_holder #bookmark_head{ 
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-style:italic;
+    font-size:calc(var(--fontsize-versionsbuttons) * 0.9);
+    /* font-size:calc(var(--fontsize-refnsearch)*1.2); */
+}
+#bookmarks_holder #bookmark_head::after{ 
+    content:'\25BC';
+    margin-left:0.25em;
+    font-size:0.8em;
+}
+#bookmarks_holder.showing_bookmarks #bookmark_head::after{ 
+    content:'\25B2';
+    margin-left:0.25em;
+    font-size:0.8em;
+}
+#app_settings .refnav_col2_closebtn img{ 
+    margin-left:0.2em!important;
+}
+#app_settings .refnav_col2_closebtn{ 
+    display:none!important;
+    background:var(--buttons)!important;
+    border:var(--buttons-border);
+    box-shadow:
+        -5px -3px 3px 0px rgba(30,30,30,0.5),
+        -6px -3px 3px 0px rgba(30,30,30,0.5)!important;
+    overflow:visible;
+    transform:rotate(-180deg);
+    margin-top:1em;
+    opacity:0.5;
+    height:1.5em!important;
+    border-radius:1.5em!important;
+    z-index:1000;
+}
+#app_settings .refnav_col2_closebtn:hover{ 
+    overflow:visible;
+    transform:rotate(-180deg);
+    opacity:0.8;
+    z-index:1000;
+}
+
+#main.detached_inlineversenote .note_temp_holder{ 
+    display:contents;
+}
+#main.detached_inlineversenote .verse_note,
+#main.detached_inlineversenote .note_temp_holder{ 
+    z-index:20!important;
+}
+#main.detached_inlineversenote .verse_note:not(.detached_note){ 
+    display:none;
+    z-index:-1!important;
+}
+#scriptureCompareWindow{ 
+    position:relative;
+    background-color:var(--buttons);
+    font-size:var(--fontsize-main);
+    overflow-y:hidden;
+}
+#scriptureCompareWindow.showingNote,
+#versenote_totheright.showingNote{ 
+    display:flex;
+    flex-direction:column;
+    max-width:33vw;
+    box-shadow:inset 1px 0px var(--black);
+}
+#scriptureCompareWindow,
+#scriptureCompareWindow.showingNote{
+    /* min-width:350px; */
+    max-width:80vw;
+    box-shadow:0 5px 5px 1px var(--shadow-color)!important;
+    border-radius:2.5px;
+    z-index:10;
+}
+#scriptureCompareWindow #scriptureCompare_columns_holder{ 
+    display:flex;
+    height:calc(100% - 1em);
+    width:max-content;
+    max-width:75vw;
+    padding-bottom:1em;
+    overflow-x:scroll;
+}
+#scriptureCompareWindow .scriptureCompare_columns{ 
+    display:flex;
+    min-width:10em;
+    flex-direction:column;
+}
+#scriptureCompareWindow .scriptureCompare_columns:last-child{  
+    margin-right:0.5em;
+}
+#scriptureCompareWindow .scriptureCompare_columns{ 
+    margin-left:0.5em;
+    flex:1 1 100%;
+    min-width:350px;
+    max-width:25vw;
+}
+#scriptureCompareWindow .scriptureCompare_columns .compare_verses{ 
+    height:100%;
+    box-shadow:0  5px 5px -5px grey;
+    padding-left:0.25em;
+    padding-right:0.5em;
+    overflow-y:scroll;
+}
+#scriptureCompareWindow .scriptureCompare_columns input{ 
+    width:100%!important;
+    height:100%!important;
+}
+#scriptureCompareWindow .input_n_btn{ 
+    display:flex;
+}
+#scriptureCompareWindow .input_n_btn *{ 
+    border:1px solid saddlebrown!important;
+    min-width:1.2em;
+    font-weight:bolder;
+}
+#scriptureCompareWindow .input_n_btn *:not(:first-child){ 
+    border-left:none!important;
+}
+#scriptureCompareWindow .input_n_btn *:first-child{ 
+    border-top-left-radius:5px!important;
+    border-bottom-left-radius:5px!important;
+}
+#scriptureCompareWindow .input_n_btn *:last-child{ 
+    border-top-right-radius:5px!important;
+    border-bottom-right-radius:5px!important;
+}
+#scriptureCompareWindow #btns_compareWindow_totheright.closebtn{ 
+    position:relative;
+    margin-top:0;
+    width:100%;
+    border:none;
+    box-shadow:none;
+    z-index:10;
+}
+#scriptureCompareWindow #btns_compareWindow_totheright .compwin_closebtn_x{ 
+    background:var(--img-cancel) center no-repeat;
+}
+#scriptureCompareWindow #btns_compareWindow_totheright .searchFontSizeSettings{ 
+    padding:0;
+}
+#scriptureCompareWindow #btns_compareWindow_totheright button,
+#scriptureCompareWindow #btns_compareWindow_totheright .compwin_closebtn_x{ 
+    margin-left:auto;
+    height:0.9em!important;
+    width:2em!important;
+}
+#scriptureCompareWindow .verse:not(code):not(details){ 
+    font-size:var(--fontsize-scripture);
+}
+#scriptureCompareWindow code{ 
+    font-size:var(--fontsize-ref);
+    font-weight:bold;
+}
+#cmenu_navnclose_btns button{ 
+    box-shadow:inset 0 0 1px 0px !important;
+    border:none!important;
+}
+#cmenu_navnclose_btns button, .darkmode #cmenu_navnclose_btns button{ 
+    margin-top:0!important;
+}
+.verse_compare .cmenu_closebtn{ 
+    display:inline;
+    border:none!important;
+    width:0.65em!important;
+    min-width:0.65em!important;
+    height:0.65em!important;
+}
+.cbv, .green_active,
+.darkmode .cbv, .darkmode .green_active{ 
+    background:#f8ffa5!important;
+    color:maroon!important;
+}
+.cbv, .darkmode .cbv{ background:#fff3d1!important;}
+button.compare_withinsearchresult_button:hover{
+    color:maroon!important;
+    background:var(--chpt) !important;
+}
+.nopointerevents{ pointer-events:none!important;}
+.verse_compare{ 
+    box-shadow:2px 0 var(--verse_compare),
+        inset 2px 0 var(--verse_compare),
+        -2px 0 var(--verse_compare),
+        inset 0 -1px var(--verse_compare)!important;
+    padding-left:10px!important;
+    border-top-right-radius:5px!important;
+    border-bottom-right-radius:5px!important;
+    border-top-left-radius:0px!important;
+    border-bottom-left-radius:0px!important;
+}
+.verse:not(.verse_compare) + .verse_compare{ 
+    border-top:3px solid var(--verse_compare);
+}
+.vrs_bein_comp{ 
+    box-shadow:inset -2px 0 var(--verse_compare),
+        -10px 0 var(--verse_compare);
+    /* padding-left:10px!important; */
+}
+.verse_compare + .vrs_bein_comp{ 
+    margin-top:10px;
+    box-shadow:inset -2px 0 var(--verse_compare),
+        inset 0 1px var(--verse_compare),
+        -10px 0 var(--verse_compare);
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+}
+/* FOR TOGGLEH1TOH6SIBLINGS */
+h1:not(.text_content>h1):not(.notemenu>h1):not(.strngsdefinition h1),
+h2:not(.text_content>h2):not(.notemenu>h2):not(.strngsdefinition h2),
+h3:not(.text_content>h3):not(.notemenu>h3):not(.strngsdefinition h3),
+h4:not(.text_content>h4):not(.notemenu>h4):not(.strngsdefinition h4),
+h5:not(.text_content>h5):not(.notemenu>h5):not(.strngsdefinition h5),
+h6:not(.text_content>h6):not(.notemenu>h6):not(.strngsdefinition h6){ 
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+}
+.hidby_H1,.hidby_H2,.hidby_H3,.hidby_H4,.hidby_H5,.hidby_H6{ display:none}
+h1::before,h2::before,h3::before,h4::before,h5::before,h6::before,.hidingsibs::before{ 
+    margin:0 0.5em;
+    width:1em;
+    height:1em;
+    flex-direction:column-reverse;
+    flex-grow:0;
+    flex-shrink:0;
+}
+.crossrefs h1::before,.crossrefs h2::before,.crossrefs h3::before,.crossrefs h4::before,.crossrefs h5::before,.crossrefs h6::before{ 
+    content:url(images/arrow-up-svgrepo-com.svg);
+    content:url(../images/arrow-up-svgrepo-com.svg);
+    transform:rotate(180deg);
+}
+.crossrefs .hidingsibs::before{ 
+    content:url(images/arrow-up-svgrepo-com.svg);
+    content:url(../images/arrow-up-svgrepo-com.svg);
+    transform:rotate(90deg);
+}
+.darkmode .crossrefs h1::before, .darkmode .crossrefs h2::before, .darkmode .crossrefs h3::before, .darkmode .crossrefs h4::before, .darkmode .crossrefs h5::before, .darkmode .crossrefs h6::before{ 
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
+    transform:rotate(180deg);
+}
+.darkmode .crossrefs .hidingsibs::before{ 
+    content:url(images/white-arrow-up-svgrepo-com.svg);
+    content:url(../images/white-arrow-up-svgrepo-com.svg);
+    transform:rotate(90deg);
+}
+/* CKEditor */
+.cke_toolbox{ 
+    display:flex;
+    flex-wrap:wrap;
+}
+/* NEW SEARCH DESIGN */
+.biblebooksgroup_inputndropdown{ 
+    position:relative;
+    display:inline-block;
+    width:auto;
+}
+#biblebooksgroup_inputndropdown{ 
+    position:absolute;
+    display:inline-block;
+    margin-top:1.2em;
+    width:calc(100% - var(--fontsize-refnsearch) * 2.5);
+    grid-row:2;
+    grid-column:1;
+    box-shadow:0px 12px 5px -10px var(--shadow-color), -5px 12px 5px -10px var(--shadow-color);
+}
+.biblebooksgroup_inputndropdown input{ 
+    padding-right:1em;
+    width:100%;
+    height:100%;
+}
+#biblebooksgroup_inputndropdown input{ 
+    font-size:calc(var(--fontsize-refnsearch)*1.5);
+}
+.showhidebookgrps{ 
+    position:absolute;
+    top:0px;
+    right:0px;
+    height:100%;
+}
+#searchdiv .showhidebookgrps{ 
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    height:calc(var(--fontsize-refnsearch) * 2.2);
+    top:calc(var(--fontsize-refnsearch) * 0.15);
+}
+.showhidebookgrps.showbksdrpdown::before{ 
+    content:"\002B";
+    width:0.5em;
+}
+.showhidebookgrps::before{ 
+    content:"\2212";
+    width:0.5em;
+}
+.biblebooksgroup_dropdown_content>button,
+.biblebooksgroup_dropdown_content>span{ 
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:2.5px;
+    padding-bottom:2.5px;
+    margin-bottom:3px;
+    font-weight:bold;
+    /* box-shadow:0 1px var(--verse-higlight),0 -1px var(--verse-higlight); */
+    box-shadow:0 0.5px rgb(125, 125, 125),0 -0.5px rgb(125, 125, 125);
+}
+.biblebooksgroup_dropdown_content{ 
+    position:absolute;
+    background-color:#f9f9f9;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    cursor:pointer;
+    font:menu;
+}
+#biblebooksgroup_myDropdown_1{ min-width:100%;}
+.biblebooksgroup_dropdown_content button,
+.biblebooksgroup_dropdown_content span{ 
+    color:black;
+    text-decoration:none;
+    display:flex;
+    width:100%;
+    text-align:left;
+    justify-content:left;
+}
+.biblebooksgroup_dropdown_content button{
+    font-size:1.15em!important;
+}
+.biblebooksgroup_dropdown_content span:hover{ 
+    background-color:#bde1ff;
+}
+.biblebooksgroup_dropdown_group{ 
+    background-color:#f9f9f9!important;
+    margin-bottom:3px;
+}
+.biblebooksgroup_dropdown_group:first-of-type{ 
+    box-shadow:0 0.5px rgb(125, 125, 125);
+}
+.biblebooksgroup_dropdown_group button,
+.biblebooksgroup_dropdown_group span{ 
+    padding-left:10px!important;
+    padding-right:10px!important;
+    cursor:pointer;
+    font-size:0.95em;
+}
+
+details.verse h3.strongs_analysis{ 
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+details.verse h4.strongs_analysis{ 
+    margin-top:0.75em;
+    margin-bottom:0;
+}
+details.verse h4.strongs_analysis ~ hr{ 
+    margin-top:0.25em;
+    margin-bottom:0.25em;
+}
+#searchPreviewFixed #context_menu:not([strnum]) .cmtitlebar{ 
+    font-size:0.75em;
+}
+details.verse li:first-of-type > hr{ display:none;}
+details span{ overflow-wrap:break-word;}
+
+#searchPreviewFixed span.verse,#scriptureCompareWindow span.verse,
+#searchPreviewFixed .strngsdefinition,#scriptureCompareWindow .strngsdefinition,
+#scriptureCompareWindow .context_menu{ 
+    font-size:var(--fontsize-sidewindow-verses)!important;
+}
+#searchPreviewFixed span.verse [ref],#scriptureCompareWindow span.verse [ref],
+#searchPreviewFixed .cmtitlebar,#scriptureCompareWindow .cmtitlebar{ 
+    font-size:0.75em!important;
+}
+.text_content{ font-size:calc(var(--fontsize-versenotes) - 0.5em)!important;}
+.slideup:focus,
+.slideup:focus input,
+.slideup button,
+.slideup input,
+.slideup *,
+#titlebarsearchparameters.slideup:focus,
+#titlebarsearchparameters.slideup:focus input,
+#titlebarsearchparameters.slideup *,
+#titlebarsearchparameters.slideup button,
+#titlebarsearchparameters.slideup input{ pointer-events:none!important;}
+.decrease_fontsize,.increase_fontsize{ position:relative;}
+/* .decrease_fontsize{ padding-left:0.7em!important;}
+.increase_fontsize{ padding-right:0.7em!important;} */
+.decrease_fontsize:before{ left:0.5em;}
+.increase_fontsize:after{ right:0.5em;}
+.decrease_fontsize[fontsize]:not([fontsize=""]):before,
+.increase_fontsize[fontsize]:not([fontsize=""]):after{ 
+    /* position:absolute; */
+    content:attr(fontsize);
+    font-size:50%;
+    font-style:italic;
+    vertical-align:baseline;
+    height:1em;
+    width:1em;
+    border-radius:50%;
+    padding:5px;
+    box-shadow:0px 0px 2px 1px;
+}
+.decrease_fontsize,.increase_fontsize{padding-left:0.15em!important;padding-right:0.15em!important}
+.decrease_fontsize[fontsize]:not([fontsize=""]):before{margin-right:0.5em}
+.increase_fontsize[fontsize]:not([fontsize=""]):after{margin-left:0.5em}
+
+tr.hr{border-bottom:0.4em double var(--scroll-track-bg-color);}
+#biblebooksgroup_1{ z-index:300;}
+.searchFontSizeSettings{
+    display:flex!important;
+    justify-content:space-between;
+    padding:0.1em;
+}
+.searchFontSizeSettings > span:last-child{ 
+    display:flex!important;
+    width:25%;
+}
+.darkmode .searchFontSizeSettings button,
+.searchFontSizeSettings button{ 
+    flex:1 1 50%;
+    border:1px var(--grey-blue) solid!important;
+    border-radius:0.2em;
+    margin:auto 2px;
+}
+#totalfound b, .totalfound b{ color:#641b00!important}
+.darkmode #totalfound b, .darkmode .totalfound b{ color:#baa785!important}
+#hidesearchparameters, #showonlysearchinput{ 
+    border-radius:0!important;
+    border-right:0!important;
+}
+#showonlysearchinput{ 
+    border-left:0!important;
+}
+#forwordsearch_fixed, #showhidebookgrpsFixed{
+    border-radius:2px!important;
+}
+#hidesearchparameters, #forwordsearch_fixed{ 
+    border-bottom:0!important;
+}
+#forwordsearch_fixed{
+    border-top:0!important;
+}
+.verse.resultsummary ol{ margin-left:1em;}
+.verse.resultsummary hr{ 
+    margin:0;
+    border:0px!important;
+    background:transparent!important;
+    box-shadow:0 0.25px;
+    margin:1px auto 5px auto !important;
+}
+.verse.resultsummary li>hr{ 
+    margin-bottom:0.8em;
+    visibility:hidden;
+}
+.verse.resultsummary li>div{ padding-top:0.5em;}
+details.verse.resultsummary [strnum],
+.verse.resultsummary .strongs_analysis{ 
+    /* font-style:italic; */
+    color:var(--searchedword-hlt);
+    box-shadow:inset 0 -1.25px orange!important;
+}
+.darkmode .verse.resultsummary [strnum],
+.darkmode .verse.resultsummary .strongs_analysis{ 
+    color:#ffeecf;
+    color:#bcfffb;
+    color:var(--searchedword-hlt);
+    box-shadow:inset 0 -1.25px grey!important;
+}
+.verse.resultsummary details{ 
+    padding:0;
+    border-bottom:0!important;
+}
+.verse.resultsummary summary{ 
+    border-bottom:1px solid #aaa!important;
+    padding-bottom:0;
+    display:inline-block;
+    width:100%;
+}
+.verse.resultsummary details div{ 
+    margin-top:0.25em;
+}
+.verse.resultsummary hr:last-child{ 
+    display:none;
+}
+#biblebooksgroup_inputndropdown_3{ 
+    position:relative;
+    margin-top:0;
+    flex:1 1;
+    display:flex;
+    min-width:200px;
+    max-width:200px;
+}
+input#biblebooksgroup_3{ 
+    height:1.1em;
+    flex:1;
+}
+#biblebooksgroup_myDropdown_3 button{ 
+    min-width:-webkit-fill-available;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+}
+#biblebooksgroup_myDropdown_3{ 
+    margin-top:1em;
+    margin-right:0!important;
+    font-size:0.9em;
+    width:100%;
+}
+.transition_none{ transition:none!important;}
+#columnsperverse,#colorgroups{ 
+    display:flex;
+    flex-wrap:wrap;
+}
+#colorgroups button,
+#columnsperverse button{ 
+    flex:1 1 33%;
+    font-weight:bold;
+    display:flex;
+    padding:0.5em;
+}
+#colorgroups button .checkboxreplacement,
+#columnsperverse .checkboxreplacement{ 
+    display:none;
+}
+#colorgroups button .checkboxreplacement,
+#columnsperverse .checkboxreplacement{ 
+    position:relative;
+    font-size:0.7em;
+    display:none;
+}
+#bibleapp_cache #colorsection button{ 
+    font-size:1em!important;
+}
+#colorgroups{ 
+    border:var(--buttons-border);
+    padding-top:0.9em!important;
+    border-left:none!important;
+}
+#colorsection td:first-child{ 
+    padding-right:10px!important;
+    padding-left:10px!important;
+}
+#colorsection td div{ 
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    border:none!important;
+    font-size:calc(var(--fontsize-main) * 0.9)!important;
+    background:none!important;
+}
+#colorsection td div *:not(input):not(button){ 
+    flex:1 1 100%;
+}
+#colorsection td div input{ 
+    flex-basis:50%;
+    font-size:2.5em!important;
+    height:1em!important;
+}
+#colorsection td div button{ 
+    flex-basis:50%;
+}
+#colorgroups button{ 
+    flex:1;
+    font-weight:bold;
+}
+#shortcutkeys_list_clone h3{ 
+    border-top:2px solid;
+    border-bottom:2px solid;
+}
+#shortcutkeys_list{ 
+    border-top:1px solid;
+}
+#shortcutkeys_list details summary{
+    color:var(--black);
+    font-weight:bold;
+    font-size:1rem!important;
+    display:list-item;
+    list-style:inside disclosure-closed;
+    background:var(--whitesmoke);
+    margin-right:0;
+    margin-left:0;
+    padding:0;
+    margin-top:0.1em;
+}
+#shortcutkeys_list details[open] > summary{ 
+    list-style:inside disclosure-open;
+}

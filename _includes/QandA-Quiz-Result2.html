@@ -1,0 +1,53 @@
+<section id="quizResult-section">
+    <!-- <div id="headerbar" class="Result-BoardHeader">
+        <div>Quiz Result</div>
+    </div> -->
+    <div class="js-container container" style="top:0px !important;"></div>
+    <div  class="Result-Board">
+        <div class="Result-Board-inner">
+            <div id="resultImgContainer" class="Result-img">
+                <div>
+                    <h2>Congratulations!</h2>
+                    <!-- <img src="../images/Trophy10.svg" alt="Trophy"> -->
+                    <h4 id="quizCmlpt">Quiz Completed</h4>
+                </div>
+            </div>
+            <div class="performance">
+                <div>
+                    <h2>Your Performance</h2>
+                    <h4 id="performance"></h4>
+                </div>
+                <div id="questionsIndex"></div>
+                <ol>
+                    <li>Correct</li>
+                    <li><i class="fas fa-solid fa-arrow-right"></i></li>
+                    <li id="scoreCorrect"></li>
+                </ol>
+                <ol>
+                    <li>Wrong</li>
+                    <li><i class="fas fa-solid fa-arrow-right"></i></li>
+                    <li id="scoreMissed"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="Result-btn">
+        <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color"><span>Redo Quiz</span></button>
+        <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()"><span>Review Answers</span></button>
+        <button id="newBtn" class="btn-bg-color">
+            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
+                New Quiz
+            </a>{% endif %}{% endfor %}
+        </button>
+    </div>
+    <div id="poorPerPopup">
+        <p>Your score is not very good!!!</p>
+        <p>Would you like to...</p>
+        <div class="Result-btn popupBtn">
+            <button id="redoBtn" onclick="window.location.reload()" class="btn-bg-color">Redo Quiz</button>
+            <button id="reviewBtn" class="btn-bg-outline" onclick="showAllQuestionsWithAnswers()">Review Answers</button>
+            <button id="openResultBtn" class="btn-bg-color">View Result</button>
+        </div>
+    </div>
+</section>

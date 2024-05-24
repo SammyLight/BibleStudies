@@ -1,0 +1,42 @@
+:root {
+    /* lightMODE Theme */
+    --bgColor-smoke-white:#f6f6f6;
+    --bgColor-blockquote:rgb(0, 0, 0, 0.05);
+    --bgColor-emphasize:rgb(245, 220, 244);
+    --white:#ffffff;
+    --black:#212121;
+    --black:#282828;
+    --gray:#9D9D9D;
+    --light-gray:#F0F0F0;
+    --grey:grey;
+    --light-grey:#d0d0d0;
+    --vivid-orange:#ffc107;
+    --vivid-orange-trans:#ffc1071c;
+    --light-vivid-orange:#f8d261;
+    --supernova:#5f40f6;
+    --red:red;
+    --light-purple:rgb(83, 0, 83, 0.5);
+    /* --selection:rgba(0, 0, 255, 0.1); */
+    --selection:#f8d261;
+    --inherit:inherit;
+    /* darkMODE Theme */
+    --DM-bgColor-smoke-white:#1e1e1e; /* Darker background color */
+    --DM-bgColor-smoke-white2:#0f0f0f; /* Darker background color */
+    --DM-bgColor-blockquote:rgba(255, 255, 255, 0.05); /* Lighten the blockquote background */
+    --DM-bgColor-emphasize:rgb(51, 0, 36); /* Darken the emphasize background */
+    --DM-white:#ffffff; /* Keep white as it is */
+    --DM-black:#e1e1e1; /* Light gray for text on dark backgrounds */
+    --DM-gray:#6b6b6b; /* Light gray text color */
+    --DM-grayTwo:#2b2b2b; /* Keep grey as it is */
+    --DM-light-gray:#111; /* Dark gray background for contrast */
+    --DM-translated-word:#d6d6fb;
+    --DM-grey:grey; /* Keep grey as it is */
+    --DM-light-grey:#292929; /* Darken the light gray */
+    --DM-vivid-orange:#f1a509; /* Darken the vivid orange */
+    --DM-vivid-orange-trans:#f1a40909; /* Darken the vivid orange */
+    --DM-light-vivid-orange:#ffe35e; /* Lighten the light vivid orange */
+    --DM-supernova:#9a74f6; /* Darken the supernova color */
+    --DM-red:#ff3c3c; /* Bright red for alerts */
+    --DM-light-purple:rgba(179, 0, 179, 0.5); /* Adjust the light purple color */
+    --DM-inherit:inherit; /* Keep inherit as it is */
+}

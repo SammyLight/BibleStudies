@@ -1,0 +1,391 @@
+/* DARKMODE SECTION *//* @media (prefers-color-scheme:dark) */
+.darkmode{ 
+    --verse-hover:#2a323fed;
+    --verse-hover-shadow:0px 2px 4px rgb(0 0 0/40%)
+    ,0px -2px 4px rgb(0 0 0/40%)
+    ,0px 7px 13px -3px rgb(0 0 0/30%)
+    ,0px -7px 13px -3px rgb(0 0 0/30%)
+    ,0px -3px 0px rgb(0 0 0/20%) inset
+    ,0px 0px 5px white inset
+    ,2px 0px 0px grey inset
+    ,-2px 0px 0px grey inset
+    ,0px 3px 0px rgb(0 0 0/20%) inset;
+    --txtcolor:#e8e6e3;
+    --ref-img:#121212;
+    --ref-img:#202124;
+    --buttons-border:0.5px solid #736b5e;
+    --whitesmoke:#202124;
+    --vhlt-hover:#300000;
+    --vhlt-hover:#8a3f26;
+    --vmultiple-hover:rgb(0, 13, 13);
+    --vhlt:rgb(0, 21, 21);
+    --vhlt2:rgb(0, 39, 39);
+    --vhlt3:#2a323fed;
+    --vhlt4:#2a323fed;
+    --selection:rgba(0, 255, 0, 0.6);
+    --selection:rgb(2 20 7);
+    --black:white;
+    --grey:rgb(22, 29, 24);
+    --searchedword-hlt:orange;
+    --searchedword-hlt:#ffecb3;
+    --searchedword-hlt2:deepskyblue;
+    --translated-word:#d1d0fc;
+    --translated-word:#d3d8ff;
+    --whitish_noteContextMenu:rgb(18, 18, 18);
+    --versenote-contextmenu:rgb(18, 18, 18);
+    --verse-higlight:rgb(18, 18, 18);
+    --chpt:#594007;
+    --chpt2:rgb(0, 0, 0);
+    --vhlt3:rgb(8,4,0);
+    --buttons-txtcolor:rgb(255, 255, 255);
+    --darkmode-border:#736b5e;
+    --darkmode-border-2:#62776d;
+    /* --darkmode-bg1color:#00080d;
+    --darkmode-bg1color:#202124;
+    --darkmode-bg1color:#0d171b; */
+    --buttons:#00080d;
+    --buttons:#202124;
+    --img-cancel:url(images/cancel-svgrepo-com-DarkMode.svg);
+    --img-chkbox:url(images/check-box-svgrepo-com-DarkMode.svg);
+    --darkslategray:darkslategray;
+    --darkslategray:rgb(107, 84, 0);
+    --crossrefbackground:#8d6500;
+    --crossrefbackground:rgb(8,4,0);
+    --span-trans-hover:rgb(0, 0, 0);
+}
+.darkmode button, .darkmode input{ 
+    background-color:var(--buttons);
+    color:var(--buttons-txtcolor)!important;
+}
+.darkmode #strongsdefinitionwindow summary>div:first-of-type, .darkmode summary>div:first-of-type{ 
+    background:url(images/white-arrow-up-svgrepo-com.svg) center no-repeat;
+    min-width:1em;
+    height:2em;
+    margin:10px;
+}
+.darkmode #strongsdefinitionwindow details[open] > summary > div:first-of-type,
+.darkmode details[open] > summary > div:first-of-type{ 
+    background:url(images/white-arrow-down-svgrepo-com.svg) center no-repeat;
+}
+.darkmode #hidesearchparameters,
+.darkmode #showonlysearchinput,
+.darkmode .cmenu_closebtn,
+.darkmode .closebtn,
+.darkmode #bibleapp_available_notes{ 
+    background-color:transparent!important;
+}
+.darkmode .note_closebtn{ 
+    background-color:black!important;
+}
+.darkmode #searchparameters{ 
+    background:none;
+}
+.darkmode button+button{ 
+    border-left:none!important;
+}
+.darkmode #searchparameters button{ 
+    border-top:none!important;
+    border-bottom:none!important;
+}
+.darkmode #searchparameters * button:first-child{ 
+    border-left:none!important;
+}
+.darkmode #searchparameters * button:last-child{ 
+    border-right:none!important;
+}
+.darkmode .searchFontSizeSettings button:first-child,
+.darkmode .searchFontSizeSettings button:last-child,
+.darkmode #searchparameters .searchFontSizeSettings button:first-child,
+.darkmode #searchparameters .searchFontSizeSettings button:last-child{ 
+    border:1px var(--darkmode-border) solid!important;
+}
+.darkmode button:hover .checkboxreplacement:has(input[type="checkbox"]):before{ 
+    background-color:transparent;
+    border:1px solid var(--darkmode-border);
+    border-radius:5px;
+}
+.darkmode button .checkboxreplacement:has(input[type="checkbox"]:checked):before{ 
+    background:var(--img-chkbox) center no-repeat;
+    background-color:var(--darkmode-bg1color);
+}
+.darkmode span[ref]:not(.vmultiple):not(.verse_compare):hover, .darkmode .strnum:hover{ 
+    box-shadow:inset 0 -1.5em 0px 0px rgba(255, 223, 117, 0.663),
+    0 5px 5px -2px var(--shadow-orange)!important;
+}
+.darkmode #fontchange, .darkmode .biblebooksgroup, .darkmode #fontsizes{ 
+    background-color:#000000;
+}
+.darkmode #refnav .bible_nav *:hover, .darkmode #refnav .tmp_hlt{ 
+    background-color:var(--ref-img);
+    box-shadow:0px 3px 0px 0px var(--vhlt-border), 0px -3px 0px 0px var(--vhlt-border);
+}
+.darkmode ::selection{ 
+    background-color:purple;
+    color:white;
+}
+.darkmode *{ 
+    color:var(--txtcolor);
+    border-color:var(--darkmode-border)!important;
+}
+.darkmode [ref]{ 
+    color:var(--txtcolor)!important;
+}
+.darkmode #topbartogglebtn,
+.darkmode #sidemenubtn_rightbottom{ 
+    transition:all 0.5s ease 0s;
+}
+.darkmode #sidemenubtn_rightbottom{ 
+    background-color:var(--darkmode-border);
+}
+.darkmode #topbartogglebtn span{ 
+    background-color:var(--txtcolor);
+}
+.darkmode #topbartogglebtn:hover span{ 
+    background-color:whitesmoke;
+}
+/* .darkmode .active_button, .darkmode #searchsettings.active_button{ 
+    background-color:burlywood!important;
+    color:#000!important;
+}*/
+.darkmode .active_button, .darkmode #searchsettings.active_button{ 
+    background-color:var(--chpt) !important;
+}
+.darkmode #refnav_col2, .darkmode #togglenavbtn{ 
+    border-right:var(--col2-border) solid var(--darkmode-border)!important;
+}
+.darkmode #refnav_col2 > div{ background-color:var(--darkmode-bg1color);}
+.darkmode #context_menu .cmtitlebar::before{ 
+    box-shadow:inset 0px -0.15em 0px 0px var(--darkslategray);
+}
+.darkmode #context_menu{ 
+    border:2px solid var(--darkslategray)!important;
+    box-shadow:inset 0px 23px 0px 0px var(--darkslategray);
+}
+.darkmode .strngsdefinition h5,
+.darkmode .strngsdefinition h6{ 
+    background-color:var(--darkslategray);
+}
+.darkmode #context_menu code button.cmenusrchbtn{ 
+    border:rgb(166, 166, 166)!important;
+    background-color:transparent;
+}
+.darkmode #btns_vtotheright button{ 
+    background-color:black!important;
+    border:whitesmoke!important;
+}
+.darkmode .verse_note{ 
+    background:var(--darkmode-bg1color);
+}
+.darkmode span.vmultiple.noted code #verse_notes_button{ 
+    background:var(--brown);
+}
+.darkmode .v_dblclckd .verse{ 
+    background-color:var(--vhlt-hover);
+}
+.darkmode .vmultiple:not(.v_dblclckd) > .verse{ 
+    background-color:var(--darkmode-bg1color);
+}
+.darkmode #show_crossref_comments{ 
+    border:1px solid white!important;
+}
+.darkmode #show_crossref_comments button{
+    border:1px solid whitesmoke!important;
+    color:white;
+    background-color:darkcyan;
+}
+.darkmode #show_crossref_comments button:hover{ 
+    background:burlywood!important;
+}
+.darkmode .vmultiple[class*=marker_] #verse_marker_button{ 
+    background-color:burlywood!important;
+}
+.darkmode .crossrefs{ 
+    background:transparent;
+}
+.darkmode #cmenu_navnclose_btns button{ 
+    background-color:var(--buttons)!important;
+    color:var(--txtcolor)!important;
+    border:1px solid var(--black);
+}
+.darkmode #cmenu_navnclose_btns button:hover{ 
+    color:black!important;
+    background-color:pink!important;
+}
+.darkmode #cmenu_navnclose_btns button.cmenu_closebtn{ 
+    background:url(images/cancel-svgrepo-com-DarkMode.svg) center no-repeat;
+}
+.darkmode #cmenu_navnclose_btns button.cmenu_closebtn:hover{ 
+    background:url(images/cancel-svgrepo-com-BLACK.svg) center no-repeat;
+}
+.darkmode .notes_ref_head{ 
+    color:black!important;
+}
+.darkmode .notemenu *::before{ 
+    border-color:black;
+    color:black;
+}
+.darkmode #cmenu_navnclose_btns button.nxt_verse,
+.darkmode #cmenu_navnclose_btns button.nxt,
+.darkmode #cmenu_navnclose_btns button.prv_verse,
+.darkmode #cmenu_navnclose_btns button.prv{ 
+    background:url(images/arrow-up-svgrepo-com-DarkMode.svg) center no-repeat;
+}
+.darkmode #cmenu_navnclose_btns button.nxt_verse:hover,
+.darkmode #cmenu_navnclose_btns button.nxt:hover,
+.darkmode #cmenu_navnclose_btns button.prv_verse:hover,
+.darkmode #cmenu_navnclose_btns button.prv:hover{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat;
+}
+.darkmode #cmenu_navnclose_btns button.prv{ 
+    margin-top:-1px;
+}
+.darkmode #cmenu_navnclose_btns button.nxt{ 
+    margin-top:1px;
+}
+.darkmode #searchPreviewFixed .chptheading:not(.dhid)::before,
+.darkmode #scriptureCompare_columns_holder .chptheading:not(.dhid)::before{ 
+    background:url(images/white-arrow-up-svgrepo-com.svg) center no-repeat;
+}
+.darkmode #searchPreviewFixed .chptheading.dhid::before,
+.darkmode #scriptureCompare_columns_holder .chptheading.dhid::before{ 
+    background:url(images/white-arrow-down-svgrepo-com.svg) center no-repeat;
+}
+.darkmode .magnifying_glass{ 
+    border:0.1em solid white!important;
+    box-shadow:inset -0.05em -0.09em 0em 0.2em #8ebdf9e0!important;
+}
+.darkmode .magnifying_glass:before{ 
+    background:white;
+}
+.darkmode span[class^=v_]:hover,
+.darkmode span.vmultiple:hover{ 
+    background-color:transparent!important;
+    background-color:var(--vhlt-hover)!important;
+    background-color:#00000075!important;
+
+}
+.darkmode span[class^=v_]:hover{ 
+    box-shadow:0px 2px 4px rgb(0 0 0), 0px -2px 4px rgb(0 0 0), 0px 7px 13px -3px rgb(39 40 38 / 30%), 0px -7px 13px -3px rgb(39 40 38 / 30%), 0px -3px 0px rgb(193 193 193 / 20%) inset, 0px 3px 0px rgb(193 193 193 / 20%) inset !important;
+}
+.darkmode .vm_btns:hover .checkboxreplacement{ 
+    background-color:#0b5913;
+}
+.darkmode .vm_btns:hover button,
+.darkmode .vm_btns:hover button div{ 
+    color:black!important;
+    font-weight:bold;
+    background-color:pink!important;
+}
+
+.darkmode .vm_btns:hover .vmbtnprevious:before,
+.darkmode .vm_btns:hover .vmbtnnext:before{ 
+    background:url(images/arrow-up-svgrepo-com.svg) center no-repeat!important;
+}
+
+.darkmode .vm_btns .vmbtnprevious:hover,
+.darkmode .vm_btns .vmbtnnext:hover{ 
+    background-color:rgb(210, 185, 126) !important;
+}
+
+.darkmode .vm_btns .vmbtnprevious:before,
+.darkmode .vm_btns .vmbtnnext:before{ 
+    background:url(images/white-arrow-up-svgrepo-com.svg) center no-repeat!important;
+}
+
+.darkmode #app_settings button:focus,
+.darkmode #top_horizontal_bar_buttons button:focus,
+.darkmode #bottomleft_btns button:focus,
+.darkmode button#topbartogglebtn:focus,
+.darkmode #bottomleft_btns button:focus,
+.darkmode button#topbartogglebtn:focus{ 
+    background-color:brown!important;
+    border:1px solid var(--darkmode-border)!important;
+}
+.darkmode .note_edit_button.active{ color:black!important}
+.darkmode .note_edit_button.active:hover{ color:white!important}
+.darkmode #otherButtonsInHead button{ 
+    border:1px solid  var(--darkmode-border)!important;
+    margin-bottom:0;
+    height:100%!important;
+}
+.darkmode #bookmarks_holder #bookmark_content *{ 
+    background-color:var(--darkmode-bg1color);
+}
+.darkmode #bookmarks_holder #bookmark_content *:hover{ 
+    cursor:pointer;
+    background-color:var(--greenish);
+    color:black!important;
+}
+.darkmode .text_content{
+    background:var(--darkmode-bg1color);
+}
+body.darkmode, .darkmode input, .darkmode textarea, .darkmode select, .darkmode button, .darkmode .verse{ 
+    border-color:var(--darkmode-border)!important;
+    color:var(--txtcolor)!important;
+}
+body.darkmode{ 
+    background-color:var(--darkmode-bg1color)!important;
+}
+.darkmode #top_horizontal_bar_buttons, .darkmode #refnav #app_settings{ 
+    background-color:var(--darkmode-bg1color)!important;
+}
+.darkmode #bottomleft_btns button, .darkmode #topbartogglebtn{
+    border:1px solid #62776d!important;
+}
+.darkmode .cke_inner div, .darkmode .cke_inner button{ 
+    background:#161616!important;
+    color:white;
+}
+.darkmode .cke_inner button{ 
+    outline:white;
+}
+.darkmode .cke_inner .cke_button_on{ 
+    background:#020011;
+}
+.darkmode a.cke_button_off:hover,
+.darkmode a.cke_button_off:focus,
+.darkmode a.cke_button_off:active{
+    background-color:#19172c!important;
+    background:#19172c!important;
+    color:white;
+}
+.darkmode .cke_toolgroup button{ 
+    border:10px solid grey!important;
+}
+.darkmode .cke_toolgroup{ 
+    border:1px solid var(--ref-img)!important;
+    border-radius:2px;
+    margin-right:5px;
+    box-shadow:2px 2px #080808;
+    padding:2px 1px;
+    background:var(--ref-img);
+}
+.darkmode .cke_dialog td *{ 
+    background:black!important;
+}
+.darkmode .eng2grk::after{ color:orange!important;}
+.darkmode .vmultiple code:hover, .darkmode #searchPreviewFixed .verse code:hover, .darkmode .crossrefs>span:hover, .darkmode #context_menu code:not(.cmtitlebar code):hover{ text-decoration:underline;color:rgb(166, 235, 225) !important;}
+.darkmode .cbv{ background:#e5dde1!important;}
+.darkmode .green_active{ background-color:rgb(212 220 198)!important;}
+.darkmode .compare_withinsearchresult_button:hover{color:var(--txtcolor)!important;}
+.darkmode hr{ border-color:white!important;}
+body.darkmode:not(#versenotepage) span[class*=v_]:not(#context_menu span[class*=v_]):hover,
+.darkmode #searchPreviewFixed .verse:not(details):hover{ 
+    background:var(--vhlt4)!important;
+    box-shadow:var(--verse-hover-shadow)!important;
+}
+body.darkmode:not(#versenotepage) span[class*=v_]:not(#context_menu span[class*=v_]):hover,
+body.darkmode #searchPreviewFixed .verse:not(details):hover,
+body.darkmode .relocating{ 
+    background-color:var(--vhlt3)!important;
+}
+.darkmode .vmultiple .verse.hovered_version{ 
+    background:var(--verse-hover)!important;
+    box-shadow:var(--verse-column)!important;
+}
+.darkmode .vmultiple:first-of-type .verse.hovered_version{ 
+    box-shadow:var(--verse-column-highest)!important;
+}
+.darkmode .vmultiple:last-of-type .verse.hovered_version{ 
+    box-shadow:var(--verse-column-lowest)!important;
+}

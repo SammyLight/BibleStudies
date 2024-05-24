@@ -1,0 +1,128 @@
+	<!--* MENUS & STORYLINE TABLE***************************-->
+	<div id="middleGridSection" class="grid">
+		<!--* MENUS ****************************************-->
+		<div id="masterNav" class="scrollbar-custom" >
+
+			<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+			
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="storylineTableEditorButtonsMenu" class="">
+				<!-- For master note -->
+				<button class="masterNote tableHeadEqualHeights" onclick="showHideSiteNav(masterNote)" title="Show Master Note">N</button>
+
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
+					<h3 id="storylineTableEditorMenuH3" class="titleBarH3">Editor
+					</h3>
+
+				</div>
+
+				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+					<!-- <span>Edit StoryLine</span> -->
+					<span>E</span>
+					<input id="editableRadio" type="checkbox"  value="editableRadio">
+				</button>
+				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
+					<!-- <span>DETAILS/Notes</span> -->
+					<span>D</span>
+					<input id="detailsRadio" type="checkbox"  value="detailsRadio">
+				</button>
+				<button class="headbuttons" id="connectionsTypeButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<!-- <span>Connection</span> -->
+					<span>C</span>
+					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
+				</button>
+				<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+					<!-- <span>SlideShow List</span> -->
+					<span>S</span>
+					<input id="showSlideShowArranger" type="checkbox" value="slideShowArranger" >
+				</button>
+			</div>
+
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="moveButtonsMenu" class="">
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'M')" title="Move Events & Sections">&#9776;</button>
+					<h3 id="moveMenuH3" class="titleBarH3" style="">Move</h3>
+				</div>
+				<div  id="tdandtrDrag">
+					<div>
+						<button class="fa fa-arrow-circle-up" onclick="moveRowUp()" title="Move Row Up">
+						</button>
+						<button class="fa fa-arrow-circle-down" onclick="moveRowDown()" title="Move Row Down"></button>
+					</div>
+
+					<div >
+						<button class="fa fa-arrow-circle-left" onclick="moveCellLeft()" title="Move Event Backward"></button>
+						<button class="fa fa-arrow-circle-right" onclick="moveCellRight()" title="Move Event Forward"></button></div>
+				</div>
+			</div>
+			
+			<!--TIME PERIODS MENU******************************-->
+			<div id="timePeriodMenu" lass="">
+				<div class="titleDiv">
+					<button id="showTimeMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Time Sections (Vertical/Ages) Menu">&#9776;</button>
+					<h3 id="timesMenuH3" class="titleBarH3" style="">TimeSections</h3>
+				</div>
+				<div  id="timeMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllColXOfCheckedTD' onclick="hideAllOtherColXsExcept4AllColXOfCheckedTD(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllColXOfCheckedTD' onclick="hideAllColXOfCheckedTD(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAlltimePeriodMenu' onclick="uncheckAllBoxes('.timeLINameCheckBox')">x</button>
+				</div>
+				<div id="timeMenuListDiv">
+					<ol id="timeMenuList"></ol>
+				</div>
+			</div>
+			
+			<!--TIMELINES-ROW**********************************-->
+			<div id="timeLinesMenu" class="">
+				<div class="titleDiv">
+					<button id="showTimeLinesMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Timelines (Horizontal) Menu">&#9776;</button>
+					<h3  id="timeLinesMenuH3" class="titleBarH3" style="">TimeLines</h3>
+				</div>
+				<div id="timeLinesMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+
+					<button  id='hightlightTimelines' onclick="hightlightCheckedTimelines(this)" title="Show only timeLines belonging to the checked list item">Mark</button>
+
+					<button  id='hideAllCheckedTimeLines' onclick="HideCheckedTimelines(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+
+					<button  id='uncheckAllTimeLinesMenu' onclick="uncheckAllBoxes('.timeLinesLINameCheckBox')">x</button>
+				</div>
+				<div  id="timeLinesMenuListDiv" style="">
+					<ol id="timeLinesMenuList"></ol>
+				</div>
+			</div>
+			<!--CONTROLS FOR THE LABELS ***********************-->
+			<div id="navSection4navDivButtonHolder" class="draggableSection">
+
+				<div class="titleDiv">
+					<button id="showLabelMenu" class="expandMinimizeButton" title="Characters Menu" onclick="toggleBtnzFamily(this, 'C')">&#9776;</button>
+					<h3  class="titleBarH3">Characters</h3>
+				</div>
+				<div style="">
+					<div  id="navDivButtonHolder" class="scrollbar scrollbar-custom">
+						<button  id='soloDivsOfCheckedClass' onclick="hideAllOtherExcept4DivsOfClass(this)" title="Show only labels belonging to the checked list item">Solo</button>
+						<button  id='hideDivsOfCheckedClass' onclick="hideDivsOfClass(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+						<button id='uncheckAll' onclick="hideDivsOfCheckedClass.click(), uncheckAllBoxes('.labelListNameCheckBox')">x</button>
+					</div>
+					<ol id="labelList"></ol>
+				</div>
+			</div>
+			
+			<!--TERRITORIES************************************-->
+			<div id="locationsMenu" class="">
+				<div class="titleDiv">
+					<button id="showLocationsMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'L')" title="Locations Menu">&#9776;</button>
+					<h3 id="locationsMenuH3" class="titleBarH3" style="">Locations</h3>
+				</div>
+				<div id="locationsMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllCheckedLocations' onclick="hideAllOtherLocationsExcept4checkedLocations(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllCheckedLocations' onclick="hideAllCheckedLocations(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAllLocationsMenu' onclick="uncheckAllBoxes('.locationsLINameCheckBox')">x</button>
+				</div>
+				<div id="locationsMenuListDiv">
+					<ol id="locationsMenuList"></ol>
+				</div>
+			</div>
+		</div>

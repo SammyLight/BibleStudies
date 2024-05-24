@@ -1,0 +1,110 @@
+<section id="detailsSection" class="draggableSection">
+    <div id="detailsSectionheader" class="titleBarH3">
+        <h3>Details</h3>
+        <button id="closeDetails" onclick="toggleDetailsSection()">X</button>
+    </div>
+    <div id="detailsKeyFacts">
+
+        <h4 title="Absolute/Relative time when this/these event/events takes place">Time:</h4>
+        <ul id="detailsTimePeriods">
+        </ul>
+
+        <h4 title="Where this/these event/events takes place">Location:</h4>
+        <ul id="detailsRegions">
+        </ul>
+
+        <h4>Characters:</h4>
+        <ul id="detailsActors">
+        </ul>
+
+    </div>
+
+    <div id="wysiwygEditor">
+        <input type="hidden" name="myDoc">
+        <div id="toolBar1" class="toolBar1n2">
+            <select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+                <option selected>FORMATTING</option>
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+                <option value="h3">Heading 3</option>
+                <option value="h4">Heading 4</option>
+                <option value="h5">Heading 5</option>
+                <option value="h6">Heading 6</option>
+                <option value="p">Paragraph &lt;p&gt;</option>
+                <option value="pre">Preformatted &lt;pre&gt;</option>
+            </select>
+            <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+                <option class="heading" selected>FONT</option>
+                <option>Arial</option>
+                <option>Arial Black</option>
+                <option>Courier New</option>
+                <option>Times New Roman</option>
+            </select>
+            <select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+                <option class="heading" selected>SIZE</option>
+                <option value="1">Very small</option>
+                <option value="2">A bit small</option>
+                <option value="3">Normal</option>
+                <option value="4">Medium-large</option>
+                <option value="5">Big</option>
+                <option value="6">Very big</option>
+                <option value="7">Maximum</option>
+            </select>
+            <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+                <option class="heading" selected>COLOR</option>
+                <option value="pink" style="background-color: pink">Pink</option>
+                <option value="red" style="background-color:red">Red</option>
+                <option value="brown" style="background-color:brown; color:white">Brown</option>
+                <option value="orange" style="background-color:orange">Orange</option>
+                <option value="yellow" style="background-color:yellow">Yellow</option>
+                <option value="blue" style="background-color:blue; color:white">Blue</option>
+                <option value="purple" style="background-color:purple; color:white">Purple</option>
+                <option value="black" style="background-color:black; color:white">Black</option>
+                <option value="grey" style="background-color:grey; color:white">Grey</option>
+                <option value="green" style="background-color:green; color:white">Green</option>
+            </select>
+            <select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;" style="display: none" style="display: none">
+                <option class="heading" selected>BACKGROUND</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="black">Black</option>
+            </select>
+        </div>
+        <div id="toolBar2" class="toolBar1n2">
+            <button class="intLink fa fa-paint-brush" title="Clean" onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};" style="display: none"></button>
+            <button class="intLink fa fa-print" title="Print" onclick="printDoc();" style="display: none"></button>
+            <button class="intLink fa fa-undo" title="Undo" onclick="formatDoc('undo');" style="display: none"></button>
+            <button class="intLink fa fa-undo fa-flip-horizontal" title="Redo" onclick="formatDoc('redo');" style="display: none"></button>
+
+            <button class="intLink fa fa-remove" title="Remove formatting" onclick="formatDoc('removeFormat')" style="display: none"></button>
+            <button class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" style="display: none"></button>
+            <button class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');" style="display: none"></button>
+            <button class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');" style="display: none"></button>
+            <button class="intLink" title="HorizontalLine" onclick="formatDoc('insertHorizontalRule');" style="display: none">—</button>
+            <button class="intLink fa fa-subscript" title="Subscript" onclick="formatDoc('subscript');" style="display: none"></button>
+            <button class="intLink fa fa-superscript" title="Superscript" onclick="formatDoc('superscript');" style="display: none"></button>
+            <button class="intLink fa  fa-align-left" title="Left align" onclick="formatDoc('justifyleft');" style="display: none"></button>
+            <button class="intLink fa  fa-align-justify" title="Center align" onclick="formatDoc('justifycenter');" style="display: none"></button>
+            <button class="intLink fa  fa-align-right" title="Right align" onclick="formatDoc('justifyright');" style="display: none"></button>
+
+            <button class="intLink fa fa-list-ol" title="Numbered list" onclick="formatDoc('insertorderedlist');" style="display: none"></button>
+            <button class="intLink fa fa-list-ul" title="Dotted list" onclick="formatDoc('insertunorderedlist');" style="display: none"></button>
+
+            <button class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock','blockquote');" style="display: none"></button>
+
+            <button class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');" style="display: none"></button>
+            <button class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');" style="display: none"></button>
+
+            <button class="intLink fa fa-link" title="Hyperlink" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" style="display: none"></button>
+
+            <button class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" style="display: none"></button>
+
+            <button class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" style="display: none"></button>
+
+            <button class="intLink fa fa-paste" title="Paste" onclick="formatDoc('paste');" style="display: none"></button>
+        </div>
+        
+        <button id="toggleKeyDetails" onclick="toglesummary()">Key Details</button>
+        <button id="expandDetails" onclick="detailsEditButtons()">Editor Buttons</button>
+        <button id="makeCurrentDetailEditable" onclick="makeCurrentDetailEditable()" title="Make detail/note edtiable">Make Editable</button>
+</div>

@@ -1,0 +1,37 @@
+.scrollbar {
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+/* customize scrollbar css */
+.scrollbar-custom::-webkit-scrollbar {
+	width: 12px;
+	background-color: white;
+}
+
+.scrollbar-custom::-webkit-scrollbar:horizontal {
+	height: 12px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+	background-color: beige;
+	border: 1px grey solid;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 6px grey inset;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+	background-color: beige;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+	background-color: white;
+	border: 1px solid #333333;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:active {
+	background-color: white;
+	border: 1px solid #333333;
+}

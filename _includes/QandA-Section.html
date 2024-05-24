@@ -1,0 +1,28 @@
+<section id="QandA-section">
+    <div id="opacityBG" class="opacityBG">
+        {% include QandA-header.html %}
+        {% include QandA-settings.html %}
+        <div id="CountHint">
+            <div id="questioncount" title="Question Counter">
+                <span></span>
+            </div>
+            <div id="questionhint" onclick="showHintFunc()" title="Hint for this question">
+                <div class="Hint-img">
+                    <img src="../images/Hint17.svg" alt="Hint">
+                </div>
+            </div>
+        </div>
+        <div id="subCat"></div>
+        <div id="QandAbody-section" class="QandAbody-section">
+            <div class="QandA-Board">
+                {{content}}
+            </div>
+        </div>
+        <div class="QandA-BoardLinks">
+            <div id="quizCatName">
+                <span>{{page.title}}</span>
+            </div>
+            <button id="confirmButton" onclick="confirm()">Confirm</button>
+        </div>
+    </div>
+</section>

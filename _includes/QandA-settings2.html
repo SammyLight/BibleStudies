@@ -1,0 +1,29 @@
+<div id="settingsContent" class="newBG">
+    <div class="settingsContentInner">
+        {% include QandA-settings-fontAndTheme.html %}
+        <div onclick="window.location.reload()">Restart Quiz</div>
+        <div id="rules" onclick="showRules()">Quiz Rules</div>
+        <div>
+            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
+                <span>Quit Quiz</span>
+            </a>{% endif %}{% endfor %}
+        </div>
+    </div>
+    <hr>
+    <div id="audioSettings">
+        <span><i class="fas fa-volume-up"></i> Music:</span>
+        <audio id="quizBgSound" src="../audio/BG-Track4.mp3" loop="true"></audio>
+        <audio id="letsStart" src="../audio/letsStart.mp3"></audio>
+        <button id="playButton">On
+            <!-- <i class="fas fa-volume-up"></i> -->
+        </button>
+        <div class="vl"></div>
+        <button id="pauseButton">Off
+            <!-- <i class="fas fa-volume-mute"></i> -->
+        </button>
+    </div>
+</div>
+<div id="rulesContent">
+    {% include QandA-aboutTWO-TEMPLATE.html %}
+</div>

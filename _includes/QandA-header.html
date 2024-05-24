@@ -1,0 +1,21 @@
+<div id="headerbar" class="QandA-header">
+        <button class="quizCatLink">
+            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
+            {% for aaa in site.pages %}
+                {% if aaa.subsection contains caty %}
+                <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                    <span><i class="fas fa-thin fa-power-off"></i> New Quiz</span>
+                </a>
+            {% endif %}
+            {% endfor %}
+        </button>
+        <button id="settings" class="settings" onclick="showSettings()" title="general settings"><img src="../images/settings-svgrepo-com.svg" alt="&#9881;"></button>
+        <div id="nextPrevButton">
+            <div id="prevquestionbutton" onclick="goToPreviousQuestion()" title="Previous Question">
+                <span><i class="fas fa-solid fa-angle-left"></i>Prev</span>
+            </div>
+            <div id="nextquestionbutton" title="Next Question">
+                <span>Next<i class="fas fa-solid fa-angle-right"></i></span>
+            </div>
+        </div>
+</div>

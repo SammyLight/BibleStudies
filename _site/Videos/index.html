@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title class="ArtSumCatName">Videos</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link type="text/css" href="../style/lite-yt-embed.css" rel="stylesheet">
+<link type="text/css" href="../style/headerANDfooter.css" rel="stylesheet">
+<link type="text/css" href="../style/darkMODE.css" rel="stylesheet">
+<link id="theme-stylesheet" type="text/css" href="../style/lightMODE.css" rel="stylesheet">
+<link type="text/css" href="../style/root.css" rel="stylesheet">
+<link type="text/css" href="../style/lightcity-02.css" rel="stylesheet">
+<link type="text/css" href="../style/videos.css" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://kit.fontawesome.com/4c38acae5e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="fonts">
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
+    <label class="switch" id="theme-toggle-container">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider round">
+            <p id="sun-icon">L</p>
+            <p id="moon-icon">D</p>
+        </span>
+    </label> 
+    <div class="header-container">
+    <header id="mobileHeader">
+        <div class="bg-color bg-image">
+            <div class="mobileHeaderNav container-fluid-inner">
+                <div class="mobileLogoSize">
+                    
+                    <a title="Articles page" href="/LightCity-Teaching-Fellowship/">
+                        <img class="mobileLogo" src="../images/LightCityLOGO.jpg" alt="lightcity-LOGO">
+                    </a>
+                </div>
+                <div>
+                    <div class="mobileControls">
+                        <div class="mobileDropdown">
+                            <button onclick="myFunction()" class="mobileButton" type="button">
+                            </button>
+                            <div id="myDropdown" class="myDropdown transition">
+                                <div class="mobile-homeHeaderNav active-link">
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Articles page" href="/LightCity-Teaching-Fellowship/">
+                                            <span>Articles</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Teaching Summaries page" href="/teaching-summary/">
+                                            <span>Summaries</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Videos page" href="/Videos/">
+                                            <span>Videos</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Categories for Articles" href="/Study-Resources/">
+                                            <span>Categories</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Bible quiz page" href="/Bible Quiz/">
+                                            <span>Bible Quiz</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="All our Doctrines" href="/Doctrines/">
+                                            <span>Doctrines</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        <a class="linkTitle transition" title="Bible app" href="https://samuelawojuola.github.io/BibleApp-2">
+                                            <span>Bible App</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="About us page" href="/About-us/">
+                                            <span>About</span>
+                                        </a>
+                                    </div>
+                                    <div class="mobile-headerLinks transition">
+                                        
+                                        <a class="linkTitle transition" title="Our meeting days" href="/Join-us/">
+                                            <span>Meeting Days</span>
+                                        </a>
+                                    </div>
+                                    <button id="closeNavBar" class="closeNavBar">
+                                        <div></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header id="desktopHeader">
+        <div id="homeHeader" class="bg-color bg-image">
+            <div class="container-fluid-inner">
+                <nav class="homeHeaderNav">
+                    <div class="churchLOGO">
+                        
+                        <a title="Articles page" class="iconLink transition" href="/LightCity-Teaching-Fellowship/">
+                            <img class="churchLOGO-img" src="../images/LightCityLOGO.jpg" height=" 40" alt="lightcity-LOGO">
+                        </a>
+                    </div>
+                    <div class="headerUL">
+                        <div id="header-links" class="header-links active-link">
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Articles page" href="/LightCity-Teaching-Fellowship/">
+                                    <span>Articles</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Teaching Summaries page" href="/teaching-summary/">
+                                    <span>Summaries</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Videos page" href="/Videos/">
+                                    <span>Videos</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Categories for Articles" href="/Study-Resources/">
+                                    <span>Categories</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Bible quiz page" href="/Bible Quiz/">
+                                    <span>Bible Quiz</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="All our Doctrines" href="/Doctrines/">
+                                    <span>Doctrines</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                <a class="iconLink transition" title="Bible app" href="https://samuelawojuola.github.io/BibleApp-2">
+                                    <span>Bible App</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="About us page" href="/About-us/">
+                                    <span>About</span>
+                                </a>
+                            </div>
+                            <div class="header-links-li transition">
+                                
+                                <a class="iconLink transition" title="Our meeting days" href="/Join-us/">
+                                    <span>Meeting Days</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+</div>
+    <div id="search-container" class="homeResources-grid-containter" style="margin: 20px 16px;padding: 16px;">
+        <form>
+  <label for="videoSearch"></label>
+  <input type="search" spellcheck="true" autocomplete="on" id="videoSearch" name="videoSearch" placeholder="search videos...">
+  <div id="searchResults" class="searchvideotab-content searchvideotab-content--active"></div>
+</form>
+
+    </div>
+	<section id="homeBodyContent" class="homeBody-section">
+    <div class="videos-container container-fluid-inner">
+        <div class="titles-inner videos-header">
+            <h1 class="titles">LightCity Videos</h1>
+            <div class="videos-header-cont">
+                <div class="videos-header-btns-cont">
+                    <button id="All-Tab" class="videos-header-btns" title="All Videos">All</button>
+                    <button id="Sunday-Tab" class="videos-header-btns" title="Sunday Fellowship">Sundays</button>
+                    <button id="Monday-Tab" class="videos-header-btns" title="Monday Prayer Meeting">Mondays</button>
+                    <button id="Wednesday-Tab" class="videos-header-btns" title="Bible Studies">Wednesdays</button>
+                    <button id="Program-Tab" class="videos-header-btns" title="Programs">Programs</button>
+                </div>
+            </div>
+        </div>
+        <div class="videotab-content-wrapper">
+            <div id="All-Tab-content" class="videotab-content">
+    <!-- <button id="authorizeButton">Authorize</button> -->
+    <ul id="videoIdsList"></ul>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="KmMvS95L4_s" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="usfoAvr526w" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="6p9X-n6kw3o" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="s478wvO53ik" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="PuIY7tKbszE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="8urVJCCqPKQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="3mgoyGzo4V4" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="L_PATHG1Q34" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="58h4d7ocl60" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="AN_fM1EtqYY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="oeOm0xtlVvE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="vuCleHL5v3Y" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="iMD4MNad_pY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="4bNhJvcV_Yk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="KYcCfWwUggU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="6maMNefWaFY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_T_cc4jFCR8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="BhsOOy0YoHg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wFOZqY7LGlA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_S-yJ-XpD14" params="controls=1"></button></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="UoH2ntkcQyg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="2h_PK70k06Y" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="M8fMJw6aRpM" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="rDFaEiIg3Fk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="MDD5qc5a2rg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="JslFGPCor3Y" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="pIdAjV7FNJo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="fueAV6qDKxk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="mmwFcL9f9gI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wOnsS5kkSFo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="oGrQE6Wtvtg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="dJJ5Uprqa_E" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="XNzZDUzMDsA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="VM2fw_Nqy7s" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="tcZv91HB7mw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="R4UPa82idC8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="aKNoSxTNk3k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="7rULos9PujU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="eC7APGuR_kY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="dZp8Rrbjx1k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="oH9kz-9deyk" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="y4jQALieR8o" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="uRTXPzervD8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="E8F3vASGeEs" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="jyupt_L2mb4" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1ysmQy8j7Us" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="AbtrsJLuU7k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Ouz_z4iXdIU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="y56xoCzujE8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="f-Ol6n6t_CA" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="ghAQg4bqtMU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="GM2bhRsdlyE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="LkPG9YG2JO8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="L9lUPif7Qig" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="55NunqTscC0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="0Kj0CNcjpM4" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="js0HuacvgiA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="dvPVp89p748" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Kq2F93PAaVQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="JHB4mtUJWcc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="z1Q-txutbw4" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="hGRdncPQjvk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="5vbKcyMpSjc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="YFgcOZLAalo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="oBkKwDd-vkM" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="I1biR7DfLAY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="b9k9VGgdih0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="y_uE0iSBjI4" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="jrKkPuBaoY0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="gsytTDM-oP4" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="zOhhoQ4o5tQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="JS5ERaRWuPM" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="8v_21QNT_UA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="7WP0bJ2jtRU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="ekOS7XBNdxg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wYk_rF9XovY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="QV5rZ1chhZw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="-p9YZ67XJ30" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1OdIVWfPwPc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Xu9llvv9n3o" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="v-qwXuaqH4Y" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="m9Qu3r_nSlg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="BzkJESW-CwQ" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="BlT8sn3LiWA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="ajmaq0TvA9g" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="a03vIiXt0o8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="HqLRfi79OKI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="2nwgAul-0MY" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wAFp7ZwUbs0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="BSLnkM2tBDA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="gDjZRbAH-os" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wC3HRWign1E" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="fN5y9Qt_HZo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="UV_OZcAOleE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="AMVUL9N0ZsY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="QdPLsY5Hyjo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="jB9i7zSr8dI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1_SBUPS4Kpo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="wplXzQglEL8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="RZTvIP1v_38" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="uVt7D95U5Sw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="KBSgIflqQv0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="8KHlmiLknMw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1X0vWNsmDb8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="maB2me6prM0" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="jENRe-Ow2B4" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="lLHQgbNtmVY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="AFmeJ4Q9vLo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="aoTumdQj0-E" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="zR2Mnq0q9OM" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="JerGtGd4t_8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="cVNwG5sjw3Q" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="hzUGnW-h0sw" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_RSYhJJlpKI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="djxM557CxTE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="bu_TQJjXerY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="219vUSmoNBA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="9X2lV8Ed7Jg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="WYV0ydQ_lJk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1nO-Nk_h-zA" params="controls=1"></button></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_o5IX_eZx9s" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="AeaovbZWog8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="i_RELaK0oQw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="KRFTqHqdw7c" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="6XphF0s5Lgc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="MeGCeNtXCSc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="U9UkNNDkwJk" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="HG0F-B7pQA8" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Rc5PSU9cpBQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="aimhIFN7T3U" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="b91gVoucryQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="-vp5J0flc0I" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="D70I1ViR7aE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="CfJ5muGH_e8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="hA_rf0Hqi38" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="3DMYl8JYa7Q" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="S8Yx-aZp7fA" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="9q66bl8AJFM" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_4aGaCkCAK8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="6xQ3gO9aa28" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="RgU2gmAYnC8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="3OnGUb2ydHE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="o89AYDO8_QI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="4kgbbi-U9f0" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Y3Lluncc_iQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="92yEN5ttBBA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="slUB-Egjyw4" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Zf_uS95OqYE" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="mVVM4IkmL0k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="0MGxbbVRKG8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="MLtnqeMdLtw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="maVitPMfcww" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Fo4qJqcBZmc" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="-m_39Srdg0Q" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="4Br_68FmEMo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Jb3WA0weFJQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="iUmoKamScEg" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="FGKroSG0W2k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="GVpCnLTqkds" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="mObNrwVbdTU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="T9it7bZXkGo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="RhEejQ5Cwqs" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="uZo0UBN7kjY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="UjrHaVztUBo" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="BPo-VMlasAA" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="GB-BJa-iFWM" params="controls=1"></button></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="gMWeV_gKQ0k" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="1ZNRrEcYiDQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="nhH-0NZEdIY" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="v6qBd3fHpnA" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="ZiDqc5QLcYw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="g6Uld1QPU5Q" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="thWJ328OEVY" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="spV2O0QersI" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="flRkMREfW1A" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="Aivvj2CefBw" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="HRo8cjRr1oU" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="_RG_qKB0_ZQ" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="KMkHnp0Djo8" params="controls=1"></lite-youtube>
+        </div>
+    </div>
+    <div class="video-box homeResources-grid-containter">
+        <div class="iframe-container">
+            <lite-youtube videoid="qJqnP-JN_3Q" params="controls=1">on></lite-youtube>
+        </div>
+    </div>
+</div>
+            <div id="Sunday-Tab-content" class="videotab-content">
+</div>
+            <div id="Monday-Tab-content" class="videotab-content">
+</div>
+            <div id="Wednesday-Tab-content" class="videotab-content">
+</div>
+            <div id="Program-Tab-content" class="videotab-content">
+</div>
+        </div>
+    </div>
+</section>
+    <footer>
+    <section id="Contact-section">
+        <div class="">
+            <div class="Contact-section-inner container-fluid-inner">
+                <div class="footer-nav-wrapper">
+                    <div class="footerLinks-wrapper">
+                        <div class="footerLinks-header">
+                            <div class="visible-titles2 collapsible">
+                                <h3>Latest Summaries</h3>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="min-height content">
+                                <ul class="footerLinks-lists active-link">
+                                    
+                                    <li>
+                                        <a href="/Why Do Priests of the Law Wear Head Coverings/">Why Do Priests of the Law Wear Head Coverings
+                                            <small class="archive-date" style="margin-top: 0;">Wed, Sep 20, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/Psalm 149/">Psalm 149
+                                            <small class="archive-date" style="margin-top: 0;">Wed, Sep 20, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/The Value of a Soul/">The Value of a Soul
+                                            <small class="archive-date" style="margin-top: 0;">Sun, Sep 17, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/Proverbs 31/">Proverbs 31
+                                            <small class="archive-date" style="margin-top: 0;">Sun, Sep 17, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/Exhortation/">Exhortation
+                                            <small class="archive-date" style="margin-top: 0;">Sun, Sep 17, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/Hebrews Overview (03)/">Hebrews Overview (03)
+                                            <small class="archive-date" style="margin-top: 0;">Wed, Aug 16, 23.</small>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="footerLinks-header space">
+                            <div class="visible-titles2 collapsible">
+                                <h3>Categories</h3>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="min-height content">
+                                <ul class="footerLinks-lists active-link" style="margin-bottom: 10px!important;">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="/Faith/">
+                                            Faith
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="/Matthew/">
+                                            Matthew
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="/Daniel/">
+                                            Daniel
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="/Parables/">
+                                            Parables
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="/1 John/">
+                                            1 John
+                                        </a>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a class="link" href="">
+                                            
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                                <small title="Click me for all Links in Categories">
+                                    
+                                    <a class="titles-links" href="/categories/"
+                                        style="text-decoration: none!important;">
+                                        <span>More categories</span>
+                                    </a>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="footerLinks-header">
+                            <div class="visible-titles2 collapsible">
+                                <h3>Pages</h3>
+                                <i class="caret2 fas fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="min-height content">
+                                <ul class="footerLinks-lists active-link">
+                                    <li>
+                                        
+                                        <a href="/LightCity-Teaching-Fellowship/">
+                                            <span>Articles</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        
+                                        <a href="/teaching-summary/">
+                                            <span>Summaries</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        
+                                        <a href="/Videos/">
+                                            <span>Videos</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        
+                                        <a href="/Bible Quiz/">
+                                            <span>Bible Quiz</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://samuelawojuola.github.io/BibleApp-2">
+                                            <span>Bible App</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        
+                                        <a href="/About-us/">
+                                            <span>About Us</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        
+                                        <a href="/Join-us/">
+                                            <span>Meeting Days</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-nav-wrapper" style="border: none;">
+                    <div class="Contact-section">
+                        <h3>Contact Us</h3>
+                        <h5>For Questions Or Any Request Please Contact Us Via:</h5>
+                        <p class="prayer-text"><i class="icons fas fa-phone-alt"></i><em> +234 703 777 9894, +234 902
+                                259 9514.</em></p>
+                        <p class="prayer-text"><i class="icons fas fa-envelope"></i><em>
+                                <a href="mailto:lightcityteachingfellowship@gmail.com">lightcityteachingfellowship@gmail.com.</a></em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+    <script type="text/javascript" src="../script/victorScripts/liteYtEmbed.js" defer></script>
+    <!-- <script type="text/javascript" src="../script/victorScripts/getVideoIds.js" defer></script> -->
+    <script type="text/javascript" src="../script/victorScripts/getVideoIdsJekyll.js" defer></script>
+    <script type="text/javascript" src="../script/victorScripts/lightANDdarkmode.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../script/victorScripts/preloadVideos.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/dropDownMenu.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/generalscript.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/recentposts.js"></script>
+    <script type="text/javascript" src="../script/victorScripts/videos.js" defer></script>
+    <script type="text/javascript" src="../script/victorScripts/searchVideos.js"></script>
+</body>
+</html>

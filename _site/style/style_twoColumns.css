@@ -1,0 +1,69 @@
+table.twoColumns{ 
+	/* width: 100%; */
+	border-collapse: collapse;
+	background: rgba(191, 255, 151, 0.61);
+}
+
+table.twoColumns tr th:first-child,
+table.twoColumns tr td:first-child{ 
+	background: rgba(255, 243, 103, 0.59);
+}
+/* Zebra striping */
+table.twoColumns tr:nth-of-type(odd){ 
+	background: rgba(238, 238, 238, 0.6);
+}
+
+table.twoColumns > tr:first-child > td:first-child,
+table.twoColumns tbody:only-child tr:first-child > td:first-child,
+table.twoColumns th:first-child{ 
+	background: rgb(255, 230, 93);
+	/* background: #e1ffd3; */
+	color: white;
+	font-weight: bold;
+}
+
+table.twoColumns > tr:first-child > td:first-child + td,
+table.twoColumns tbody:only-child tr:first-child > td:first-child + td,
+table.twoColumns th:first-child{ 
+	background: rgb(130, 255, 93);
+	color: white;
+	font-weight: bold;
+}
+
+table.twoColumns td,
+table.twoColumns th{ 
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
+	vertical-align: top;
+}
+
+table.twoColumns td:first-child,
+table.twoColumns th:first-child{ 
+	border-left: 3.5px solid grey;
+}
+
+table.twoColumns td:last-child,
+table.twoColumns th:last-child{ 
+	border-right: 3.5px solid grey;
+}
+
+table.twoColumns thead ~ tbody > tr:first-of-type,
+table.twoColumns tbody > tr:nth-of-type(2){ 
+	border-top: 5px solid grey;
+}
+
+table.twoColumns td:nth-child(2),
+table.twoColumns th:nth-child(2){ 
+	border-left: 3.5px solid grey;
+}
+
+table.twoColumns tr:last-of-type{ 
+	border-bottom: 5px solid grey;
+}
+
+#compTableBtn{ 
+	position: fixed;
+	top: 0;
+	right: 0;
+}

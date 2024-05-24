@@ -1,0 +1,22 @@
+<section id="CorrectedAnswers-section">
+    <div id="headerbar" class="corAnswers-BoardHeader">
+        <div>Review Answers</div>
+        <button id="settings" class="settings" onclick="showSettingsReview()" title="general settings"><img src="../images/settings-svgrepo-com.svg" alt="&#9881;"></button>
+    </div>
+    {% include QandA-settings-review.html %}
+    <div class="corAnswers-Board-Header">
+        <h1><span class="questionsH1">Question,</span><span style="color: transparent!important;">s</span><span class="ansANDexpH1">Answer(s) & Explanation(s)</span></h1>
+        <!-- <h1>Answer & Explanation</h1> -->
+    </div>
+    <div class="corAnswers-Board">
+    </div>  
+    <div class="corAnswers-btn">
+        <button onclick="window.location.reload()">Redo Quiz</button>
+        <button>
+            {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+            <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
+                New Quiz
+            </a>{% endif %}{% endfor %}
+        </button>
+    </div>
+</section>

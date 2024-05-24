@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Deuteronomy 32</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<!-- <link rel="shortcut icon" href="../images/LightCityLOGO.ico"> -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--the content is the dynamic part of the page which are
+1. the storyLineTable itself
+2. the details section
+-->
+<style id="divColorStyles">
+    .opt_Nations{ background-color: Brown; stroke: Brown }
+    .opt_SonsOfGod{ background-color: Pink; stroke: Pink }
+    .opt_Yahweh{ background-color: Lime; stroke: Lime }
+    .opt_Israel{ background-color: CadetBlue; stroke: CadetBlue }
+    .opt_IdolsAndDemons{ background-color: Black; stroke: Black }
+    .opt_Fire{ background-color: Red; stroke: Red }
+    .opt_Church{ background-color: LightBlue; stroke: LightBlue }</style>
+	<style id="legendTableRowsToggleStyle"></style>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link type="text/css" href="../style/BibleTimelinesCSS/BibleStoryLineCreator.css" rel="stylesheet">
+	<link type="text/css" href="../style/BibleTimelinesCSS/scrollBar.css" rel="stylesheet">
+
+</head>
+
+<body class="scrollbar scrollbar-custom">
+	<!--HEAD-->
+	<nav id="head_1" class="grid2">
+		<div id="navHeadNavBtn" >
+			<button id="navMenu" onclick="navMenu()" title="Toggle Navigation Menu">Site Menu</button>
+			<button class="masterNavButtonsToggle" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar">Control</button>
+		</div>
+
+		<h1 class="tableHeadEqualHeights" id="storyLineTableTitleHeader" contenteditable="true"></h1>
+	</nav>
+
+	<section id="websiteNav">
+		<!--		<h3 style="display: none">Bible Timelines</h3>-->
+		<h4 style="display: none">
+			
+			<a id="timelinesHome" href="/BibleTimelines/">BibleTimelines Home</a>
+			
+		</h4>
+		<ul style="display: none">
+
+			<li class="all-links" style="display: none"><a href="/Timeline Template/">Timeline Template</a></li>
+			<li class="all-links" style="display: none"><a href="/Ages - Major Junctures/">Ages - Major Junctures</a></li>
+			<li class="all-links" style="display: none"><a href="/Ages-Major Time Divisions/">Ages-Major Time Divisions</a></li>
+			<li class="all-links" style="display: none"><a href="/Salvation and Creation/">Salvation &amp; Creation</a></li>
+			<li class="all-links" style="display: none"><a href="/Salvation Through The Ages Comprehensive/">Salvation Through The Ages [Comprehensive]</a></li>
+			<li class="all-links" style="display: none"><a href="/Salvation Through The Ages Simple/">Salvation Through The Ages [Simple]</a></li>
+			<li class="all-links" style="display: none"><a href="/II Kings--Assyria, Israel and Judah/">II Kings--Assyria, Israel and Judah</a></li>
+			<li class="all-links" style="display: none"><a href="/II Kings--Pekah, Ahaz, Hoshea and Hezekiah/">II Kings--Pekah, Ahaz, Hoshea and Hezekiah</a></li>
+			<li class="all-links" style="display: none"><a href="/Deuteronomy 32/">Deuteronomy 32</a></li>
+			<li class="all-links" style="display: none"><a href="/The AoY from Gen - Rev/">The AoY from Gen - Rev</a></li>
+			<li class="all-links" style="display: none"><a href="/The Prophet Like Moses/">The Prophet Like Moses</a></li>
+			<li class="all-links" style="display: none"><a href="/Isaiah--Emmanuel vs. Assyria/">Isaiah--Emmanuel vs. Assyria</a></li>
+			<li class="all-links" style="display: none"><a href="/Malachi/">Malachi</a></li>
+			<li class="all-links" style="display: none"><a href="/Psalm 82/">Psalm 82</a></li>
+			<li class="all-links" style="display: none"><a href="/Daniel 1-12 Not Prophecy/">Daniel 1-12 [Not Prophecy]</a></li>
+			<li class="all-links" style="display: none"><a href="/Daniel 8 Not Prophecy/">Daniel 8 [Not Prophecy]</a></li>
+			
+		</ul>
+
+	</section>
+	<!--ALERTS-->
+	<div id="customAlertBack" onclick="customAlertClose()">
+		<div id="customAlert">
+			<!--			<button id="customAlertClose" onclick="customAlertClose()">X</button>-->
+			<p id="customAlertContent"></p>
+
+		</div>
+	</div>
+	<!--* MENUS & STORYLINE TABLE***************************-->
+	<div id="middleGridSection" class="grid">
+		<!--* MENUS ****************************************-->
+		<div id="masterNav" class="scrollbar-custom" >
+
+			<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+			
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="storylineTableEditorButtonsMenu" class="">
+				<!-- For master note -->
+				<button class="masterNote tableHeadEqualHeights" onclick="showHideSiteNav(masterNote)" title="Show Master Note">N</button>
+
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'S')" title="StoryLine Editor and Format">&#9776;</button>
+					<h3 id="storylineTableEditorMenuH3" class="titleBarH3">Editor
+					</h3>
+
+				</div>
+
+				<button class="headbuttons tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+					<!-- <span>Edit StoryLine</span> -->
+					<span>E</span>
+					<input id="editableRadio" type="checkbox"  value="editableRadio">
+				</button>
+				<button class="headbuttons tableHeadEqualHeights" id="detailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio">
+					<!-- <span>DETAILS/Notes</span> -->
+					<span>D</span>
+					<input id="detailsRadio" type="checkbox"  value="detailsRadio">
+				</button>
+				<button class="headbuttons" id="connectionsTypeButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+					<!-- <span>Connection</span> -->
+					<span>C</span>
+					<input id="connectByTimelines" type="checkbox" value="connectByTimelines">
+				</button>
+				<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+					<!-- <span>SlideShow List</span> -->
+					<span>S</span>
+					<input id="showSlideShowArranger" type="checkbox" value="slideShowArranger" >
+				</button>
+			</div>
+
+
+			<!--BUTTONS MENU FOR MOVING ROWS AND CELLS******-->
+			<div id="moveButtonsMenu" class="">
+				<div class="titleDiv">
+					<button id="showMoveButtons" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'M')" title="Move Events & Sections">&#9776;</button>
+					<h3 id="moveMenuH3" class="titleBarH3" style="">Move</h3>
+				</div>
+				<div  id="tdandtrDrag">
+					<div>
+						<button class="fa fa-arrow-circle-up" onclick="moveRowUp()" title="Move Row Up">
+						</button>
+						<button class="fa fa-arrow-circle-down" onclick="moveRowDown()" title="Move Row Down"></button>
+					</div>
+
+					<div >
+						<button class="fa fa-arrow-circle-left" onclick="moveCellLeft()" title="Move Event Backward"></button>
+						<button class="fa fa-arrow-circle-right" onclick="moveCellRight()" title="Move Event Forward"></button></div>
+				</div>
+			</div>
+			
+			<!--TIME PERIODS MENU******************************-->
+			<div id="timePeriodMenu" lass="">
+				<div class="titleDiv">
+					<button id="showTimeMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Time Sections (Vertical/Ages) Menu">&#9776;</button>
+					<h3 id="timesMenuH3" class="titleBarH3" style="">TimeSections</h3>
+				</div>
+				<div  id="timeMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllColXOfCheckedTD' onclick="hideAllOtherColXsExcept4AllColXOfCheckedTD(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllColXOfCheckedTD' onclick="hideAllColXOfCheckedTD(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAlltimePeriodMenu' onclick="uncheckAllBoxes('.timeLINameCheckBox')">x</button>
+				</div>
+				<div id="timeMenuListDiv">
+					<ol id="timeMenuList"></ol>
+				</div>
+			</div>
+			
+			<!--TIMELINES-ROW**********************************-->
+			<div id="timeLinesMenu" class="">
+				<div class="titleDiv">
+					<button id="showTimeLinesMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'T')" title="Timelines (Horizontal) Menu">&#9776;</button>
+					<h3  id="timeLinesMenuH3" class="titleBarH3" style="">TimeLines</h3>
+				</div>
+				<div id="timeLinesMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+
+					<button  id='hightlightTimelines' onclick="hightlightCheckedTimelines(this)" title="Show only timeLines belonging to the checked list item">Mark</button>
+
+					<button  id='hideAllCheckedTimeLines' onclick="HideCheckedTimelines(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+
+					<button  id='uncheckAllTimeLinesMenu' onclick="uncheckAllBoxes('.timeLinesLINameCheckBox')">x</button>
+				</div>
+				<div  id="timeLinesMenuListDiv" style="">
+					<ol id="timeLinesMenuList"></ol>
+				</div>
+			</div>
+			<!--CONTROLS FOR THE LABELS ***********************-->
+			<div id="navSection4navDivButtonHolder" class="draggableSection">
+
+				<div class="titleDiv">
+					<button id="showLabelMenu" class="expandMinimizeButton" title="Characters Menu" onclick="toggleBtnzFamily(this, 'C')">&#9776;</button>
+					<h3  class="titleBarH3">Characters</h3>
+				</div>
+				<div style="">
+					<div  id="navDivButtonHolder" class="scrollbar scrollbar-custom">
+						<button  id='soloDivsOfCheckedClass' onclick="hideAllOtherExcept4DivsOfClass(this)" title="Show only labels belonging to the checked list item">Solo</button>
+						<button  id='hideDivsOfCheckedClass' onclick="hideDivsOfClass(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+						<button id='uncheckAll' onclick="hideDivsOfCheckedClass.click(), uncheckAllBoxes('.labelListNameCheckBox')">x</button>
+					</div>
+					<ol id="labelList"></ol>
+				</div>
+			</div>
+			
+			<!--TERRITORIES************************************-->
+			<div id="locationsMenu" class="">
+				<div class="titleDiv">
+					<button id="showLocationsMenu" class="expandMinimizeButton" onclick="toggleBtnzFamily(this, 'L')" title="Locations Menu">&#9776;</button>
+					<h3 id="locationsMenuH3" class="titleBarH3" style="">Locations</h3>
+				</div>
+				<div id="locationsMenuDivButtonHolder" class="scrollbar scrollbar-custom">
+					<button id='soloAllCheckedLocations' onclick="hideAllOtherLocationsExcept4checkedLocations(this)" title="Show only labels belonging to the checked list item">Solo</button>
+					<button id='hideAllCheckedLocations' onclick="hideAllCheckedLocations(this)" title="Hide just the labels belonging to the checked list items">Hide</button>
+					<button id='uncheckAllLocationsMenu' onclick="uncheckAllBoxes('.locationsLINameCheckBox')">x</button>
+				</div>
+				<div id="locationsMenuListDiv">
+					<ol id="locationsMenuList"></ol>
+				</div>
+			</div>
+		</div>
+
+		<div id="divTableContainer" class="scrollbar scrollbar-custom">
+			<table id="masterTable">
+				<tr>
+					<td valign="top">
+						<!--<button type="checkbox" class="tableHeadEqualHeights" id="masterEditButton" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio" checked="true">Edit StoryLine
+							<input id="editableRadio" type="checkbox" checked='true' value="editableRadio" style="width: 20px">
+						</button>-->
+						<svg id="svg"></svg>
+						<!--I POSITION THE SVG HERE SO THAT IT CAN SCROLL WITH THE TABLE WITHOUT HAVING TO BE REDRAWN-->
+						<table id="legendTable">
+							<thead>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</td>
+
+					<td id="legendNstoryLineHolder" valign="top" style="position: relative">
+
+<table id="storyLineTable">
+							<thead>
+								<tr rowname="Time">
+									<td class="dragOverELAdded col-1 col-2 col-3" originalcolspan="3" hiddencol_xs_count="0" colspan="3" rindex="0"><h4 contenteditable="false">Yahweh Raises Israel [Deut 32:10-14]</h4></td>
+									
+									
+									<td class="dragOverELAdded col-4 col-5 col-6 col-7 col-8" originalcolspan="5" hiddencol_xs_count="0" rindex="0" colspan="5"><h4 contenteditable="false">Yahweh Hides His Face From Israel [Deut 32:19-20]</h4></td>
+									
+								<td class="dragOverELAdded col-9 col-10 col-11" originalcolspan="3" hiddencol_xs_count="0" rindex="0" colspan="3"><h4 contenteditable="false">Atonement for land and people [Deut 32:43]</h4></td></tr><tr rowname="Time" title="Time">
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"></td>
+									
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td><td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"><h4 contenteditable="false">Yahweh’s wrath kindles a fire [Deut 32:22]</h4></td><td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="1"><h4 contenteditable="false">Israel in Idolatry [Deut 32:16-17]</h4></td>
+									<td class="clicked dragOverELAdded col-6 col-7 col-8" originalcolspan="3" hiddencol_xs_count="0" rindex="1" colspan="3"><h4 contenteditable="false">Israel in Full &amp; Partial Exiles [Deut 28:64; 32:26]</h4></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="1" colspan="1"></td></tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="clicked dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" location="babel"><span class="locationspan">Babel</span><h4 contenteditable="false">The Division of Nations [Deut 32:8]</h4><div class="opt_Yahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Yahweh" title="Yahweh" draggable="true">Yahweh</div><div class="opt_SonsOfGod draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="SonsOfGod" title="SonsOfGod" draggable="true">Sons of God</div><div class="opt_Nations draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Nations" title="Nations" draggable="true">Nations</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Idols &amp; Demons</div></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" location="wilderness"><span class="locationspan">Wilderness</span><h4 contenteditable="false">Yahweh Cares For Israel</h4><div class="opt_Yahweh draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Yahweh" title="Yahweh" draggable="true">Yahweh</div><div class="opt_Israel draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Israel" title="Israel" draggable="true">Israel</div></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2" location="israel"><span class="locationspan">Israel</span><h4 contenteditable="false">Yahweh is Made Jealous &amp; Angry&nbsp;[Deut 32:16]</h4><div class="opt_Israel draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Israel" title="Israel" draggable="true">Jeshurun</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Idols &amp; Demons</div></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td>
+									<td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" location="israel"><span class="locationspan">Israel</span><div class="opt_Israel draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Israel" title="Israel" draggable="true">Israel</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Idols &amp; Demons</div></td><td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"><h4 contenteditable="false">Israel Scattered by the Nations [Deut 32:23-25,26]</h4><div class="opt_Israel draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Israel" title="Israel" draggable="true">Israel</div><div class="opt_Nations draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Nations" title="Nations" draggable="true">Nations</div></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="2"><h4 contenteditable="false">The nations slip [Deut 32:35]</h4><div class="opt_Nations draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Nations" title="Nations" draggable="true">Nations</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Idols &amp; Demons</div></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" location="israel"><span class="locationspan">Israel</span><h4 contenteditable="false">Yahweh has mercy on Israel [Deut 32:36]</h4><div class="opt_Israel draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Israel" title="Israel" draggable="true">Israel</div></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1"></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="2" colspan="1" location="earth"><span class="locationspan">Earth</span><h4 contenteditable="false">Resurrection of the dead [Deut 32:39]</h4><div class="opt_Church draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Church" title="Church" draggable="true" connectfrom="Israel">Church of Gentiles</div></td></tr>
+								<tr rowname="Time" title="Time">
+									<td class="dragOverELAdded col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8" originalcolspan="8" hiddencol_xs_count="0" colspan="8" rindex="3"><h4 contenteditable="false">Nations Feed on False &amp; Deadly Doctrines of Devils [Deut 32:32-33]</h4></td>
+									
+									
+									
+									
+								<td class="dragOverELAdded col-9 col-10 col-11" originalcolspan="3" hiddencol_xs_count="0" rindex="3" colspan="3"><h4 contenteditable="false">Yahweh Avenges His People [Deut 32:40-42]</h4></td></tr><tr>
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td><td class="showingDetail dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4" location="hades" detailindex="1"><span class="locationspan">Hades</span><h4 contenteditable="false">Yahweh’s wrath kindles a fire in Sheol/Hades [Deut 32:22]</h4><div class="opt_Fire draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Fire" title="Fire" draggable="true">Fire</div><div class="localShowDetailButton" id="locDtlShowBtn_1" detailindex="1" title="Show notes and details of selected events" onclick="toggleDetailsSection()">+</div></td><td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1" location="earth"><span class="locationspan">Earth</span><h4 contenteditable="false">Yahweh choses Gentiles making Israel jealous [Deut 32:16b]</h4><div class="opt_Church draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="Church" title="Church" draggable="true" connectfrom="Nations">Church of Gentiles</div></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="4"></td>
+								<td class="dragOverELAdded col-9 col-10" originalcolspan="2" hiddencol_xs_count="0" rindex="4" colspan="2"><h4 contenteditable="false">Yahweh judges the nations and avenges his people [Deut 32:36,41-42,43]</h4><div class="opt_Nations draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Nations" title="Nations" draggable="true">Nations</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Idols &amp; Demons</div></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="4" colspan="1"><div class="opt_SonsOfGod draggableDiv nameLabelDiv dark-text dragEventListnerAdded" divclassname="SonsOfGod" title="SonsOfGod" draggable="true">Sons of God</div><div class="opt_IdolsAndDemons draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="IdolsAndDemons" title="IdolsAndDemons" draggable="true">Demons</div></td></tr><tr>
+									<td class="dragOverELAdded col-1" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-2" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-3" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-4" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td><td class="dragOverELAdded col-5" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+									<td class="dragOverELAdded col-6" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td><td class="dragOverELAdded col-7" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td><td class="dragOverELAdded col-8" originalcolspan="1" hiddencol_xs_count="0" colspan="1" rindex="5"></td>
+								<td class="dragOverELAdded col-9" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"><div class="opt_Fire draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Fire" title="Fire" draggable="true">Fire</div></td><td class="dragOverELAdded col-10" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"></td><td class="dragOverELAdded col-11" originalcolspan="1" hiddencol_xs_count="0" rindex="5" colspan="1"><div class="opt_Fire draggableDiv nameLabelDiv light-text dragEventListnerAdded" divclassname="Fire" title="Fire" draggable="true">Fire</div></td></tr>
+							</tbody>
+						</table>
+
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<section id="detailsSection" class="draggableSection">
+	<div id="detailsSectionheader" class="titleBarH3">
+		<h3>Details</h3>
+		<button id="closeDetails" onclick="toggleDetailsSection()">X</button>
+	</div>
+	<div id="detailsKeyFacts" style="display: none;">
+
+		<h4 title="Absolute/Relative time when this/these event/events takes place">Time:</h4>
+		<ul id="detailsTimePeriods">
+		</ul>
+
+		<h4 title="Where this/these event/events takes place">Location:</h4>
+		<ul id="detailsRegions">
+		</ul>
+
+		<h4>Characters:</h4>
+		<ul id="detailsActors">
+		</ul>
+
+	</div>
+
+	<div id="wysiwygEditor">
+		<input type="hidden" name="myDoc">
+		<div id="toolBar1" class="toolBar1n2">
+			<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option selected>FORMATTING</option>
+				<option value="h1">Heading 1</option>
+				<option value="h2">Heading 2</option>
+				<option value="h3">Heading 3</option>
+				<option value="h4">Heading 4</option>
+				<option value="h5">Heading 5</option>
+				<option value="h6">Heading 6</option>
+				<option value="p">Paragraph &lt;p&gt;</option>
+				<option value="pre">Preformatted &lt;pre&gt;</option>
+			</select>
+			<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>FONT</option>
+				<option>Arial</option>
+				<option>Arial Black</option>
+				<option>Courier New</option>
+				<option>Times New Roman</option>
+			</select>
+			<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>SIZE</option>
+				<option value="1">Very small</option>
+				<option value="2">A bit small</option>
+				<option value="3">Normal</option>
+				<option value="4">Medium-large</option>
+				<option value="5">Big</option>
+				<option value="6">Very big</option>
+				<option value="7">Maximum</option>
+			</select>
+			<select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none" style="display: none">
+				<option class="heading" selected>COLOR</option>
+				<option value="AliceBlue" title="AliceBlue" style="background-color:AliceBlue"></option>
+				<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite"></option>
+				<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+				<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+				<option value="Azure" title="Azure" style="background-color:Azure"></option>
+				<option value="Beige" title="Beige" style="background-color:Beige"></option>
+				<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+				<option value="Black" title="Black" style="background-color:Black"></option>
+				<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond"></option>
+				<option value="Blue" title="Blue" style="background-color:Blue"></option>
+				<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+				<option value="Brown" title="Brown" style="background-color:Brown"></option>
+				<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+				<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+				<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+				<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+				<option value="Coral" title="Coral" style="background-color:Coral"></option>
+				<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue"></option>
+				<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+				<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+				<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+				<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+				<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+				<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod"></option>
+				<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+				<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+				<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+				<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+				<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta"></option>
+				<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen"></option>
+				<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+				<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+				<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+				<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+				<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen"></option>
+				<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue"></option>
+				<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray"></option>
+				<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey"></option>
+				<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise"></option>
+				<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+				<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+				<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue"></option>
+				<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+				<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+				<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+				<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+				<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite"></option>
+				<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen"></option>
+				<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+				<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+				<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+				<option value="Gold" title="Gold" style="background-color:Gold"></option>
+				<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+				<option value="Gray" title="Gray" style="background-color:Gray"></option>
+				<option value="Grey" title="Grey" style="background-color:Grey"></option>
+				<option value="Green" title="Green" style="background-color:Green"></option>
+				<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow"></option>
+				<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+				<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+				<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+				<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+				<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+				<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+				<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+				<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush"></option>
+				<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+				<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon"></option>
+				<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+				<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+				<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+				<option value="LightGoldenRodYellow" title="LightGoldenRodYellow" style="background-color:LightGoldenRodYellow"></option>
+				<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+				<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+				<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+				<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+				<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon"></option>
+				<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen"></option>
+				<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue"></option>
+				<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray"></option>
+				<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey"></option>
+				<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue"></option>
+				<option value="LightYellow" title="LightYellow" style="background-color:LightYellow"></option>
+				<option value="Lime" title="Lime" style="background-color:Lime"></option>
+				<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+				<option value="Linen" title="Linen" style="background-color:Linen"></option>
+				<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+				<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+				<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine"></option>
+				<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+				<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid"></option>
+				<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple"></option>
+				<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen"></option>
+				<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue"></option>
+				<option value="MediumSpringGreen" title="MediumSpringGreen" style="background-color:MediumSpringGreen"></option>
+				<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise"></option>
+				<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed"></option>
+				<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue"></option>
+				<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+				<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+				<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+				<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite"></option>
+				<option value="Navy" title="Navy" style="background-color:Navy"></option>
+				<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+				<option value="Olive" title="Olive" style="background-color:Olive"></option>
+				<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+				<option value="Orange" title="Orange" style="background-color:Orange"></option>
+				<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+				<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+				<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod"></option>
+				<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+				<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise"></option>
+				<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed"></option>
+				<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+				<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+				<option value="Peru" title="Peru" style="background-color:Peru"></option>
+				<option value="Pink" title="Pink" style="background-color:Pink"></option>
+				<option value="Plum" title="Plum" style="background-color:Plum"></option>
+				<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+				<option value="Purple" title="Purple" style="background-color:Purple"></option>
+				<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple"></option>
+				<option value="Red" title="Red" style="background-color:Red"></option>
+				<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+				<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+				<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown"></option>
+				<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+				<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+				<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+				<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+				<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+				<option value="Silver" title="Silver" style="background-color:Silver"></option>
+				<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+				<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+				<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+				<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+				<option value="Snow" title="Snow" style="background-color:Snow"></option>
+				<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen"></option>
+				<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+				<option value="Tan" title="Tan" style="background-color:Tan"></option>
+				<option value="Teal" title="Teal" style="background-color:Teal"></option>
+				<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+				<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+				<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+				<option value="Violet" title="Violet" style="background-color:Violet"></option>
+				<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+				<option value="White" title="White" style="background-color:White"></option>
+				<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+				<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+				<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen"></option>
+			</select>
+			<select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+				style="display: none">
+				<option class="heading" selected>BACKGROUND</option>
+				<!-- <option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="black">Black</option> -->
+				<option value="AliceBlue" title="AliceBlue" style="background-color:AliceBlue"></option>
+				<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite"></option>
+				<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+				<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+				<option value="Azure" title="Azure" style="background-color:Azure"></option>
+				<option value="Beige" title="Beige" style="background-color:Beige"></option>
+				<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+				<option value="Black" title="Black" style="background-color:Black"></option>
+				<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond"></option>
+				<option value="Blue" title="Blue" style="background-color:Blue"></option>
+				<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+				<option value="Brown" title="Brown" style="background-color:Brown"></option>
+				<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+				<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+				<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+				<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+				<option value="Coral" title="Coral" style="background-color:Coral"></option>
+				<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue"></option>
+				<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+				<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+				<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+				<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+				<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+				<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod"></option>
+				<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+				<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+				<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+				<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+				<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta"></option>
+				<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen"></option>
+				<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+				<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+				<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+				<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+				<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen"></option>
+				<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue"></option>
+				<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray"></option>
+				<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey"></option>
+				<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise"></option>
+				<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+				<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+				<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue"></option>
+				<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+				<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+				<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+				<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+				<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite"></option>
+				<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen"></option>
+				<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+				<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+				<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+				<option value="Gold" title="Gold" style="background-color:Gold"></option>
+				<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+				<option value="Gray" title="Gray" style="background-color:Gray"></option>
+				<option value="Grey" title="Grey" style="background-color:Grey"></option>
+				<option value="Green" title="Green" style="background-color:Green"></option>
+				<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow"></option>
+				<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+				<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+				<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+				<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+				<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+				<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+				<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+				<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush"></option>
+				<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+				<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon"></option>
+				<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+				<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+				<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+				<option value="LightGoldenRodYellow" title="LightGoldenRodYellow" style="background-color:LightGoldenRodYellow"></option>
+				<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+				<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+				<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+				<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+				<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon"></option>
+				<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen"></option>
+				<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue"></option>
+				<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray"></option>
+				<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey"></option>
+				<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue"></option>
+				<option value="LightYellow" title="LightYellow" style="background-color:LightYellow"></option>
+				<option value="Lime" title="Lime" style="background-color:Lime"></option>
+				<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+				<option value="Linen" title="Linen" style="background-color:Linen"></option>
+				<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+				<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+				<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine"></option>
+				<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+				<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid"></option>
+				<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple"></option>
+				<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen"></option>
+				<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue"></option>
+				<option value="MediumSpringGreen" title="MediumSpringGreen" style="background-color:MediumSpringGreen"></option>
+				<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise"></option>
+				<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed"></option>
+				<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue"></option>
+				<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+				<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+				<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+				<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite"></option>
+				<option value="Navy" title="Navy" style="background-color:Navy"></option>
+				<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+				<option value="Olive" title="Olive" style="background-color:Olive"></option>
+				<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+				<option value="Orange" title="Orange" style="background-color:Orange"></option>
+				<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+				<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+				<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod"></option>
+				<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+				<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise"></option>
+				<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed"></option>
+				<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+				<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+				<option value="Peru" title="Peru" style="background-color:Peru"></option>
+				<option value="Pink" title="Pink" style="background-color:Pink"></option>
+				<option value="Plum" title="Plum" style="background-color:Plum"></option>
+				<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+				<option value="Purple" title="Purple" style="background-color:Purple"></option>
+				<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple"></option>
+				<option value="Red" title="Red" style="background-color:Red"></option>
+				<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+				<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+				<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown"></option>
+				<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+				<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+				<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+				<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+				<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+				<option value="Silver" title="Silver" style="background-color:Silver"></option>
+				<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+				<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+				<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+				<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+				<option value="Snow" title="Snow" style="background-color:Snow"></option>
+				<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen"></option>
+				<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+				<option value="Tan" title="Tan" style="background-color:Tan"></option>
+				<option value="Teal" title="Teal" style="background-color:Teal"></option>
+				<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+				<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+				<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+				<option value="Violet" title="Violet" style="background-color:Violet"></option>
+				<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+				<option value="White" title="White" style="background-color:White"></option>
+				<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+				<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+				<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen"></option>
+			</select>
+		</div>
+		<div id="toolBar2" class="toolBar1n2">
+			<button class="intLink fa fa-paint-brush" title="Clean"
+				onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};"
+				style="display: none"></button>
+			<button class="intLink fa fa-print" title="Print" onclick="printDoc();" style="display: none"></button>
+			<button class="intLink fa fa-undo" title="Undo" onclick="formatDoc('undo');" style="display: none"></button>
+			<button class="intLink fa fa-undo fa-flip-horizontal" title="Redo" onclick="formatDoc('redo');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-remove" title="Remove formatting" onclick="formatDoc('removeFormat')"
+				style="display: none"></button>
+			<button class="intLink fa fa-bold" title="Bold" onclick="formatDoc('bold');" style="display: none"></button>
+			<button class="intLink fa fa-italic" title="Italic" onclick="formatDoc('italic');"
+				style="display: none"></button>
+			<button class="intLink fa fa-underline" title="Underline" onclick="formatDoc('underline');"
+				style="display: none"></button>
+			<button class="intLink" title="HorizontalLine" onclick="formatDoc('insertHorizontalRule');"
+				style="display: none">—</button>
+			<button class="intLink fa fa-subscript" title="Subscript" onclick="formatDoc('subscript');"
+				style="display: none"></button>
+			<button class="intLink fa fa-superscript" title="Superscript" onclick="formatDoc('superscript');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-left" title="Left align" onclick="formatDoc('justifyleft');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-justify" title="Center align" onclick="formatDoc('justifycenter');"
+				style="display: none"></button>
+			<button class="intLink fa  fa-align-right" title="Right align" onclick="formatDoc('justifyright');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-list-ol" title="Numbered list" onclick="formatDoc('insertorderedlist');"
+				style="display: none"></button>
+			<button class="intLink fa fa-list-ul" title="Dotted list" onclick="formatDoc('insertunorderedlist');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-quote-left" title="Quote" onclick="formatDoc('formatblock','blockquote');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-outdent" title="Add indentation" onclick="formatDoc('outdent');"
+				style="display: none"></button>
+			<button class="intLink fa fa-indent" title="Delete indentation" onclick="formatDoc('indent');"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-link" title="Hyperlink"
+				onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}"
+				style="display: none"></button>
+
+			<button class="intLink fa fa-cut" title="Cut" onclick="formatDoc('cut');" style="display: none"></button>
+
+			<button class="intLink fa fa-copy" title="Copy" onclick="formatDoc('copy');" style="display: none"></button>
+
+			<button class="intLink fa fa-paste" title="Paste" onclick="formatDoc('paste');"
+				style="display: none"></button>
+		</div>
+
+		<button id="toggleKeyDetails" onclick="toglesummary()">Keys</button>
+		<button id="expandDetails" onclick="detailsEditButtons()" title="Show Text Editor">Editor</button>
+		<button id="makeCurrentDetailEditable" onclick="makeCurrentDetailEditable()"
+			title="Make Detail/Note Edtiable">Edit</button>
+	</div>
+
+	<div id="detailsSummary" class="scrollbar-custom">
+
+		
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <div class="showDetail" id="detail_1" detailindex="1" contenteditable="true"><h1>When Was the Fire of God's Wrath Kindled?</h1>
+<hr>
+<p>The answer to this question is the answer to another question: How old is the said wrath of God? </p>
+<p>That God speaks of this fire in connection to the sin of Israel does not mean that their sin was the reason for its kindling. In fact, the opposite is the case.</p>
+<p>The fire had already been kindled. It is because of this that God speaks of their end.</p>
+
+<h1>There is A Fire of Torment In Sheol/Hades</h1>
+<hr>
+<p>God says that the fire kindled by His wrath burns even in the lowest of Sheol/Hades. This means that there is a place of torment in Sheol/Hades </p>
+<p>This agrees with the torment in the fire in hades of the rich man [Luk 16:23-24] <em>(in the story of poor Lazarus and the rich man told by the Lord Jesus)</em>.</p>
+<h1>The Abyss &amp; the Fire of Torment In Sheol/Hades</h1>
+<hr>
+<p>We should note that Moses defines the part of Sheol/Hades where this fires of God's wrath burns as the "lowest sheol".</p>
+<p>This corresponds to the Abyss which means bottomless [Rev 20:1,3] and confirms the fear of the demons in the demoniac,</p>
+<blockquote>“What do you want with us, Son of God?” they shouted. “Have you come here to <strong>torture</strong> us before the appointed
+time?”<br>
+And they begged him repeatedly not to order them to go into the <strong>Abyss</strong>. [Luk 8:31 <em>cf.,</em> Mat 8:29]</blockquote>
+</div>
+
+      
+
+      
+
+</div>
+<div id="editMode">
+	<label for="switchBox">Show HTML</label>
+	<input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);">
+</div>
+</section>
+
+
+
+<section id="alternateStoryLineEditorButtons">
+	<div id="alternateStoryLineEditorButtonsheader" class="titleBarH3">
+		<h3>Table Editor/Creator</h3>
+		<button id="alternateClose" onclick="alternateClose()">X</button>
+	</div>
+	
+	<div id="alternateStoryLineEditorButtonsBody">
+		<!--Table-->
+		<div id="realignandreconnect" class="vertical">
+			<span>Table:</span>
+			<div class="vertical"><button onclick="buildLegendTable()">Re-Align Tables</button><button onclick="connectAllDraggableDivsWithSVGLines()">Connect Divs</button><button onclick="btn_buildLegendTable()"><strong>Restore Timeline</strong></button><button id="saveDynamicDataToFile_2" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE"><strong>&#128190;</strong> </button>
+			</div>
+		</div>
+		
+		<!--Delete-->
+		<div id="deleteButtons" class="vertical">
+			<span>Delete:</span>
+			<div class="vertical">
+				<button id="divDeleteButton" title="delete label" onclick="deleteDIV()">
+					✘<br />Del<br />Label
+				</button><button title="delete label" onclick="destroyCell()">
+					✘<br />Del<br />Cell
+				</button><button title="delete timeline, i.e., row" onclick="destroyRow()">
+					✘<br />Del<br />Row
+				</button><button title="delete selected time section, i.e., column" onclick="destroyColumn()">
+					✘<br />Del<br />Col
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Merge & Split-->
+		<div id="mergeAndSplit" class="vertical">
+			<span>Merge<br>/Split:</span>
+			<div class="vertical">
+				<button id="selectCell2MergeSplit" title="select cells to be merged or split" onclick="selectCells(this)">
+					&#10010;
+					<br />
+					Select
+					<br />
+					Cells
+				</button><button title="merge selected cells" onclick="mergeCells()">
+					&#124; &#129034;&#129032; &#124;
+					<br />
+					Merge
+					<br />
+					Cells
+				</button><button title="split selected cells" onclick="splitCell()">
+					&#124;&#124;&#129032; &#129034;&#124;&#124;
+					<br />Split
+					<br />
+					Cells
+				</button>
+			</div>
+		</div>
+		
+
+		<!--Create-->
+		<div class="vertical">
+			<span>Create:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Name:</span> <input type="text" id="myText" value="">
+					</div>
+					<button title="create cell to the left" onclick="createCellBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Cell
+					</button><button title="create cell to the right" onclick="createCellAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Cell
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="clone row above" onclick="cloneRowAbove()">
+						&#129033;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="clone row below" onclick="cloneRowBelow()">
+						&#129035;
+						<br />
+						clone
+						<br />
+						Row
+					</button><button title="new row above" onclick="createRowAbove()">
+						&#129033;
+						<br />
+						new
+						<br />
+						Row
+					</button><button title="new row below" onclick="createRowBelow()">
+						&#129035;
+						<br />
+						new
+						<br />
+						Row
+					</button>
+				</div>
+				<div class="vertical">
+					<button title="new column to the left" onclick="createColumnBefore()">
+						&#129032;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="new column to the right" onclick="createColumnAfter()">
+						&#129034;
+						<br />
+						new
+						<br />
+						Col
+					</button><button title="delete timesection, i.e., column" onclick="destroyColumn()">
+						&#129034;
+						<br />
+						del
+						<br />
+						Col
+					</button></div>
+			</div>
+		</div>
+		
+
+		<!--Edit-->
+		<div class="vertical">
+			<span>Edit:</span>
+			<div class="vertical">
+				<div class="vertical">
+					<div class="vertical2">
+						<span style="font-style: italic">Cell Heading:</span> <input type="text" id="cellHeading" value="">
+					</div>
+					<button id="applyHeadingBtn" onclick="insertHeading()">Apply Heading</button>
+
+					<div class="vertical2">
+						<!--for the content of the cell-->
+						<span style="font-style: italic">Cell Details:</span> <input type="text" id="cellText" value="">
+					</div>
+					<button id="applyTextBtn" onclick="insertTextIntoTD()">Apply Details</button>
+
+					<div class="vertical2">
+						<!--for the duration of the cell-->
+						<span style="font-style: italic">Duration:</span> <input type="text" id="eventDuration" value="">
+					</div>
+					<button id="applyDurationBtn" onclick="insertDurationIntoTD()">Apply Duration</button>
+
+					<div class="vertical2">
+					</div>
+					<div class="vertical2">
+						<span style="font-style: italic">Row Name:</span> <input type="text" id="rowName" value="">
+					</div>
+					<button id="applyRowEditBtn" onclick="rowEdit()">Apply RowName</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!--Land/Region-->
+		<div class="vertical">
+			<span>Location<br>/Region:</span>
+			<div class="vertical">
+				<div class="vertical3">
+					<input type="text" id="locationInput" value="" draggable="false">
+					<select id="locationOptionsDropdown" onclick="fillLocationInput()" onchange="fillLocationInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createRegionAttribute()">Append Location</button></div>
+			</div>
+		</div>
+		
+
+		<!--Label/Actors-->
+		<div class="vertical">
+			<span>Actors:</span>
+			<div class="vertical">
+				<span style="font-style: italic">Main<br>Name:</span>
+				<div class="vertical3">
+					<input type="text" id="divClass" value="" draggable="false">
+					<select id="divClassOptionsDropdown" onclick="fillDivClassInput()" onchange="fillDivClassInput()">
+					</select><br>
+				</div>
+				<span style="font-style: italic">Alias:</span>
+				<div class="vertical3">
+					<input type="text" id="divName" value="" draggable="false">
+					<select id="divNameOptionsDropdown" onclick="fillDivNameInput()" onchange="fillDivNameInput()">
+					</select>
+				</div>
+				<div class="vertical2">
+					<button onclick="createDIV()">Create Div</button></div>
+			</div>
+		</div>
+		
+
+		<!--#2-Label/Actors-->
+		<div class="vertical">
+			<span>Custom<br>Connect</span>
+			<div class="vertical">
+				<div class="vertical2">
+					<button id="connectFromButton" onclick="connectFrom()">Connect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectFrom" value="" draggable="false">
+					<select id="divClass2ConnectFromOptions" onclick="fillDivClass2ConnectFrom()" onchange="fillDivClass2ConnectFrom()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectFrom()">DisConnect<br>From</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectFrom" value="" draggable="false">
+					<select id="divToDisConnect4rmOptions" onclick="fillDivClassToDisConnectFrom()" onchange="fillDivClassToDisConnectFrom()">
+					</select>
+				</div>
+				<!--///////////////////////////////////////-->
+				
+				<!--///////////////////////////////////////-->
+				<div class="vertical2">
+					<button id="connectToButton" onclick="connectTo()">Connect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divClass2ConnectTo" value="" draggable="false">
+					<select id="divClass2ConnectToOptions" onclick="fillDivClass2ConnectTo()" onchange="fillDivClass2ConnectTo()">
+					</select><br>
+				</div>
+				<div class="vertical2">
+					<button onclick="disConnectTo()">DisConnect<br>To</button>
+				</div>
+				<div class="vertical3">
+					<input type="text" id="divToDisConnectTo" value="" draggable="false">
+					<select id="divToDisConnect2Options" onclick="fillDivClassToDisConnectTo()" onchange="fillDivClassToDisConnectTo()">
+					</select>
+				</div>
+				<!--///////////////////////////-->
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+
+<div id="slideShowListMaster">
+	<div id="slideShowListMasterheader" class="titleBarH3">
+		<h3>SlideShowOrder</h3>
+
+		<div>
+			<button id="closeSlideShow2" class=" fa fa-refresh" onclick="buildTimeMenuSelectors()"></button><button id="closeSlideShow2" class="fa fa-window-close" onclick="closeSlideShow()"></button>
+		</div>
+	</div>
+	<div id="slideShowListContainer" class="scrollbar-custom">
+
+	</div>
+</div>
+
+<section id="pageFootSection">
+	<!--SAVE BUTTON-->
+	<button id="saveDynamicDataToFile_1" class="" onclick="saveDynamicDataToFile()" title="Save BIBLE STORYLINE">&#128190;</button>
+	<button class="masterNavButtonsToggle fa fa-align-justify" onclick="toggleAllMasterNavBtnz()" title="Hide Navigation SideBar"></button>
+	<!--MODIFIERS & BUILDERS BUTTONS-->
+	<div id="pageBottomStorylineTableEditorButtons">
+
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomMasterEditButton" style="" onclick="makeTableEditable()" title="Click to Edit StoryLineTable" for="editableRadio">
+			<span>Edit</span>
+		</button>
+		<button class="headbuttons tableHeadEqualHeights" id="pageBottomDetailsShowButton" onclick="toggleDetailsSection()" title="Show notes and details of selected events" for="detailsRadio"><span>Notes</span>
+		</button>
+		<button class="headbuttons" id="divsArrangementButton" onclick="howShouldDivsBeConnected(this)" title="Connect Actors Across TimeLines">
+			<span>Connection</span>
+		</button>
+		<button class="headbuttons" id="slideShowArranger" onclick="closeSlideShow()" title="Show/Hide the SlideShow List">
+			<span>SlideShow</span>
+		</button>
+	</div>
+	<!--SLIDE SHOW BUTTONS-->
+	<div id="slideShowButtons">
+		<input id="nextEventUseKeyboard" type="checkbox" checked="true" title="Enable Arrow Keys on Keyboard"></input>
+		<button id="prevEvent" class="fa fa-arrow-left" onclick="prevEventShow()" title="Show PREVIOUS event"></button>
+		<button id="resetEvent" class="fa fa-arrows" onclick="resetEventShow()" title="RESET events"></button>
+		<button id="nextEvent" class="fa fa-arrow-right" onclick="nextEventShow()" title="Show NEXT event"></button>
+	</div>
+</section>
+
+</body>
+
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/darkOrlightBG.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/GetElement-XY-Coordinates.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/tableColumnClasses.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/draggableHtmlElement.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragdCloneDivs.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_01.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_02.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/cssColorNamesArray.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/svgConnectors_03.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/BibleStoryLineCreator.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/detailsSection.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/dragDropRows&Cells.js"></script>
+
+<script type="text/javascript" src="../script/BibleTimelinesJS/TextEditorDocExec.js"></script>
+
+<!-- <script type="text/javascript" src="../script/BibleTimelinesJS/reftager.js"></script> -->
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    BLB.Tagger.Translation = 'NKJV';
+    BLB.Tagger.HyperLinks = 'all'; // 'all', 'none', 'hover'
+    BLB.Tagger.HideTanslationAbbrev = false;
+    BLB.Tagger.TargetNewWindow = true;
+    BLB.Tagger.Style = 'par'; // 'line' or 'par'
+    BLB.Tagger.NoSearchTagNames = ''; // HTML element list
+    BLB.Tagger.NoSearchClassNames = 'noTag doNotTag'; // CSS class list
+</script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/storyTellerColumnSlideShow.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/modifyStyleSheet.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/fileSaver.js"></script>
+<script type="text/javascript" src="../script/BibleTimelinesJS/saveTimelineAndDetails.js"></script>
+
+</html>

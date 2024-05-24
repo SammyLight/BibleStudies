@@ -1,0 +1,29 @@
+---
+layout: videosTEMPLATE
+permalink: /Videos/
+title: "Videos"
+---
+
+<section id="homeBodyContent" class="homeBody-section">
+    <div class="videos-container container-fluid-inner">
+        <div class="titles-inner videos-header">
+            <h1 class="titles">LightCity Videos</h1>
+            <div class="videos-header-cont">
+                <div class="videos-header-btns-cont">
+                    <button id="All-Tab" class="videos-header-btns" title="All Videos">All</button>
+                    <button id="Sunday-Tab" class="videos-header-btns" title="Sunday Fellowship">Sundays</button>
+                    <button id="Monday-Tab" class="videos-header-btns" title="Monday Prayer Meeting">Mondays</button>
+                    <button id="Wednesday-Tab" class="videos-header-btns" title="Bible Studies">Wednesdays</button>
+                    <button id="Program-Tab" class="videos-header-btns" title="Programs">Programs</button>
+                </div>
+            </div>
+        </div>
+        <div class="videotab-content-wrapper">
+            {% include videosALL.html %}
+            {% include videosSUNDAY.html %}
+            {% include videosMONDAY.html %}
+            {% include videosWEDNESDAY.html %}
+            {% include videosPROGRAM.html %}
+        </div>
+    </div>
+</section>

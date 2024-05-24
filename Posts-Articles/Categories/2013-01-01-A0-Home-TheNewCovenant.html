@@ -1,0 +1,23 @@
+---
+layout: cat-homepageTEMPLATE
+title: "The New Covenant"
+permalink: /The New Covenant/
+categories: ["HomePageArticle-New-Covenant"]
+---
+
+<div id="categories" class="homeBody-section container-fluid-inner">
+	<div class="titles-inner">
+		<h1 class="titles">The New Covenant</h1>
+		<p style="margin: 0">A collection of Useful Resources on The New Covenant</p>
+	</div>
+	<div class="homeResources-grid-containter">
+		<ol>
+			{% for page in site.pages %}{% if page.categories contains "New-Covenant" %}
+			<li class="all-links">
+				<a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">{{ page.title }}</a> &nbsp; <small class="archive-date-summary">{{ page.date | date: "%a, %b %d, %y" }}.</small>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ol>
+	</div>
+</div>

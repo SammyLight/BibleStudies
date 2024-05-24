@@ -1,0 +1,1 @@
+{% include QandA-TEMPLATE2.html %}

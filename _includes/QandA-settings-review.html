@@ -1,0 +1,31 @@
+<div id="settingsReviewContent" class="newBG">
+    <div class="settingsContentInner">
+        {% include QandA-settings-fontAndTheme.html %}
+        <div onclick="window.location.reload()">Redo Quiz</div>
+        <div id="rules" onclick="showRules()">Quiz Rules</div>
+        <div>
+            {% assign caty = page.subsection[0] | prepend: 'HomePage-' %}
+            {% for aaa in site.pages %}
+            {% if aaa.subsection contains caty %}
+            <a href="{% if site.baseurl == "" %}{{aaa.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{aaa.url}}{% endif %}">
+                <span>New Quiz</span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+    <div id="audioSettings">
+        <span><i class="fas fa-volume-up"></i> Music:</span>
+        <button id="playButtonFromResult">On
+            <!-- <i class="fas fa-volume-up"></i> -->
+        </button>
+        <div class="vl"></div>
+        <button id="pauseButtonFromResult">Off
+            <!-- <i class="fas fa-volume-mute"></i> -->
+        </button>
+    </div>
+</div>
+<div id="rulesContent">
+    {% include QandA-aboutTWO-TEMPLATE.html %}
+</div>

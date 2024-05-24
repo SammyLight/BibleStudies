@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{page.title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style/BNodesG/bibleNodes.css">
+    <link rel="stylesheet" href="../style/BNodesG/selectables.css">
+</head>
+
+<body>
+    <div id="moveSelectedElements" style="display: none;">
+        <button id="up" onmousedown="moveUp('start')" onmouseup="moveUp('stop')">Up</button>
+        <br>
+        <button id="left" onmousedown="moveLeft('start')" onmouseup="moveLeft('stop')">Left</button>
+        <button id="right" onmousedown="moveRight('start')" onmouseup="moveRight('stop')">Right</button>
+        <br>
+        <button id="down" onmousedown="moveDown('start')" onmouseup="moveDown('stop')">Down</button>
+    </div>
+    <div id="bibleNodesHeader">
+        <h1 id="bibleNodesTitle" title='Double click to edit'>{{page.title}}</h1>
+        <button id="menuButton" onclick="navMenu()">Site Menu</button>
+        <button id="saveButton" onclick="saveDynamicDataToFile()">SAVE</button>
+        <button id="darkModeButton" onclick="darkModeOnOff()" title="Toggle Dark or Light Mode">D</button>
+        <!-- <div style="display: inline;"> -->
+        <button onclick="interactivity()" id="makeInteractive" class="noninteractive">Interactive</button>
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('all')"
+            title="Hide/Show All Descendants">
+            <label for="allGenRadio">All Gen
+                <input id="allGenRadio" type="checkbox" value="allGenRadio">
+            </label>
+        </button>
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('firstGeneration')"
+            title="Hide/Show Next Descendants">
+            <label for="firstGenRadio">
+                <span>1<em>st</em> Gen</span>
+                <input id="firstGenRadio" type="checkbox" value="firstGenRadio">
+            </label>
+        </button>
+        <button class="interactivebutton" style="display: none" onclick="descendants2Toggle('hideAllShowFirst')"
+            title="Hide All Descendants But Show First Generation">
+            <label for="allNfirstGenRadio">
+                <span>All & 1<em>st</em> Gen</span>
+                <input id="allNfirstGenRadio" type="checkbox" value="allNfirstGenRadio">
+            </label>
+        </button>
+        <!-- </div> -->
+        <div id="websiteNav">
+            <h4 style="display: none; width: fit-content;">
+                {% for page in site.pages %}{% if page.categories contains "HomePage-BibleNodeGraph" %}
+                <a id="timelinesHome"
+                    href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}">BibleNodeGraph
+                    Home</a>
+                {% endif %}{% endfor %}
+            </h4>
+            <input type="text" id="searchBox" onkeyup="searchNavMenu('searchBox', 'websiteNavMenu')"
+                placeholder="Search for names.." title="Type in a name" style="display: none">
+            <ol id="websiteNavMenu" style="display: none;">
+                {% for page in site.pages %}{% if page.categories contains "BibleNodeGraph" %}<li
+                    style="display: none;"><a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}
+		        {% endif %}">{{page.title}}</a></li>
+                {% endif %}{% endfor %}
+            </ol>
+        </div>
+    </div>
+
+    <div id="nodeCanvasContainer">
+        <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
+        <div id="canvasCustomContextMenu" class="customContextMenu">
+            <button id="contextMenuNewNode" onclick="createNewNode('node')">New Node</button>
+        </div>
+        <!-- ContextMenu for rightClick on any divNode -->
+        <div id="nodeDivCustomContextMenu" class="customContextMenu">
+            <button id="cMenuLink" onclick="nodeToConnectCurrentNodeTo()" tabindex="0">Link</button>
+            
+            <!-- For changing divNodes Color -->
+            <!-- <button id="cMenuColor" onclick="changeNodeColor()" tabindex="0">Color</button> -->
+            <!-- <div class="inputNselect"> -->
+				<button type="text" id="divColor" value="COLOR">
+				<select id="divColorOptionsDropdown" onchange="optionsRGBColor(window.getComputedStyle(this[this.selectedIndex], null).getPropertyValue('background-color')), fillDivColorInput(this[this.selectedIndex].value)">
+					<option class="heading">COLOR</option>
+					<option value="AliceBlue" title="AliceBlue" selected="" style="background-color:AliceBlue"></option>
+					<option value="AntiqueWhite" title="AntiqueWhite" style="background-color:AntiqueWhite">
+					</option>
+					<option value="Aqua" title="Aqua" style="background-color:Aqua"></option>
+					<option value="Aquamarine" title="Aquamarine" style="background-color:Aquamarine"></option>
+					<option value="Azure" title="Azure" style="background-color:Azure"></option>
+					<option value="Beige" title="Beige" style="background-color:Beige"></option>
+					<option value="Bisque" title="Bisque" style="background-color:Bisque"></option>
+					<option value="Black" title="Black" style="background-color:Black"></option>
+					<option value="BlanchedAlmond" title="BlanchedAlmond" style="background-color:BlanchedAlmond">
+					</option>
+					<option value="Blue" title="Blue" style="background-color:Blue"></option>
+					<option value="BlueViolet" title="BlueViolet" style="background-color:BlueViolet"></option>
+					<option value="Brown" title="Brown" style="background-color:Brown"></option>
+					<option value="BurlyWood" title="BurlyWood" style="background-color:BurlyWood"></option>
+					<option value="CadetBlue" title="CadetBlue" style="background-color:CadetBlue"></option>
+					<option value="Chartreuse" title="Chartreuse" style="background-color:Chartreuse"></option>
+					<option value="Chocolate" title="Chocolate" style="background-color:Chocolate"></option>
+					<option value="Coral" title="Coral" style="background-color:Coral"></option>
+					<option value="CornflowerBlue" title="CornflowerBlue" style="background-color:CornflowerBlue">
+					</option>
+					<option value="Cornsilk" title="Cornsilk" style="background-color:Cornsilk"></option>
+					<option value="Crimson" title="Crimson" style="background-color:Crimson"></option>
+					<option value="Cyan" title="Cyan" style="background-color:Cyan"></option>
+					<option value="DarkBlue" title="DarkBlue" style="background-color:DarkBlue"></option>
+					<option value="DarkCyan" title="DarkCyan" style="background-color:DarkCyan"></option>
+					<option value="DarkGoldenRod" title="DarkGoldenRod" style="background-color:DarkGoldenRod">
+					</option>
+					<option value="DarkGray" title="DarkGray" style="background-color:DarkGray"></option>
+					<option value="DarkGrey" title="DarkGrey" style="background-color:DarkGrey"></option>
+					<option value="DarkGreen" title="DarkGreen" style="background-color:DarkGreen"></option>
+					<option value="DarkKhaki" title="DarkKhaki" style="background-color:DarkKhaki"></option>
+					<option value="DarkMagenta" title="DarkMagenta" style="background-color:DarkMagenta">
+					</option>
+					<option value="DarkOliveGreen" title="DarkOliveGreen" style="background-color:DarkOliveGreen">
+					</option>
+					<option value="DarkOrange" title="DarkOrange" style="background-color:DarkOrange"></option>
+					<option value="DarkOrchid" title="DarkOrchid" style="background-color:DarkOrchid"></option>
+					<option value="DarkRed" title="DarkRed" style="background-color:DarkRed"></option>
+					<option value="DarkSalmon" title="DarkSalmon" style="background-color:DarkSalmon"></option>
+					<option value="DarkSeaGreen" title="DarkSeaGreen" style="background-color:DarkSeaGreen">
+					</option>
+					<option value="DarkSlateBlue" title="DarkSlateBlue" style="background-color:DarkSlateBlue">
+					</option>
+					<option value="DarkSlateGray" title="DarkSlateGray" style="background-color:DarkSlateGray">
+					</option>
+					<option value="DarkSlateGrey" title="DarkSlateGrey" style="background-color:DarkSlateGrey">
+					</option>
+					<option value="DarkTurquoise" title="DarkTurquoise" style="background-color:DarkTurquoise">
+					</option>
+					<option value="DarkViolet" title="DarkViolet" style="background-color:DarkViolet"></option>
+					<option value="DeepPink" title="DeepPink" style="background-color:DeepPink"></option>
+					<option value="DeepSkyBlue" title="DeepSkyBlue" style="background-color:DeepSkyBlue">
+					</option>
+					<option value="DimGray" title="DimGray" style="background-color:DimGray"></option>
+					<option value="DimGrey" title="DimGrey" style="background-color:DimGrey"></option>
+					<option value="DodgerBlue" title="DodgerBlue" style="background-color:DodgerBlue"></option>
+					<option value="FireBrick" title="FireBrick" style="background-color:FireBrick"></option>
+					<option value="FloralWhite" title="FloralWhite" style="background-color:FloralWhite">
+					</option>
+					<option value="ForestGreen" title="ForestGreen" style="background-color:ForestGreen">
+					</option>
+					<option value="Fuchsia" title="Fuchsia" style="background-color:Fuchsia"></option>
+					<option value="Gainsboro" title="Gainsboro" style="background-color:Gainsboro"></option>
+					<option value="GhostWhite" title="GhostWhite" style="background-color:GhostWhite"></option>
+					<option value="Gold" title="Gold" style="background-color:Gold"></option>
+					<option value="GoldenRod" title="GoldenRod" style="background-color:GoldenRod"></option>
+					<option value="Gray" title="Gray" style="background-color:Gray"></option>
+					<option value="Grey" title="Grey" style="background-color:Grey"></option>
+					<option value="Green" title="Green" style="background-color:Green"></option>
+					<option value="GreenYellow" title="GreenYellow" style="background-color:GreenYellow">
+					</option>
+					<option value="HoneyDew" title="HoneyDew" style="background-color:HoneyDew"></option>
+					<option value="HotPink" title="HotPink" style="background-color:HotPink"></option>
+					<option value="IndianRed" title="IndianRed" style="background-color:IndianRed"></option>
+					<option value="Indigo" title="Indigo" style="background-color:Indigo"></option>
+					<option value="Ivory" title="Ivory" style="background-color:Ivory"></option>
+					<option value="Khaki" title="Khaki" style="background-color:Khaki"></option>
+					<option value="Lavender" title="Lavender" style="background-color:Lavender"></option>
+					<option value="LavenderBlush" title="LavenderBlush" style="background-color:LavenderBlush">
+					</option>
+					<option value="LawnGreen" title="LawnGreen" style="background-color:LawnGreen"></option>
+					<option value="LemonChiffon" title="LemonChiffon" style="background-color:LemonChiffon">
+					</option>
+					<option value="LightBlue" title="LightBlue" style="background-color:LightBlue"></option>
+					<option value="LightCoral" title="LightCoral" style="background-color:LightCoral"></option>
+					<option value="LightCyan" title="LightCyan" style="background-color:LightCyan"></option>
+					<option value="LightGoldenRodYellow" title="LightGoldenRodYellow" style="background-color:LightGoldenRodYellow"></option>
+					<option value="LightGray" title="LightGray" style="background-color:LightGray"></option>
+					<option value="LightGrey" title="LightGrey" style="background-color:LightGrey"></option>
+					<option value="LightGreen" title="LightGreen" style="background-color:LightGreen"></option>
+					<option value="LightPink" title="LightPink" style="background-color:LightPink"></option>
+					<option value="LightSalmon" title="LightSalmon" style="background-color:LightSalmon">
+					</option>
+					<option value="LightSeaGreen" title="LightSeaGreen" style="background-color:LightSeaGreen">
+					</option>
+					<option value="LightSkyBlue" title="LightSkyBlue" style="background-color:LightSkyBlue">
+					</option>
+					<option value="LightSlateGray" title="LightSlateGray" style="background-color:LightSlateGray">
+					</option>
+					<option value="LightSlateGrey" title="LightSlateGrey" style="background-color:LightSlateGrey">
+					</option>
+					<option value="LightSteelBlue" title="LightSteelBlue" style="background-color:LightSteelBlue">
+					</option>
+					<option value="LightYellow" title="LightYellow" style="background-color:LightYellow">
+					</option>
+					<option value="Lime" title="Lime" style="background-color:Lime"></option>
+					<option value="LimeGreen" title="LimeGreen" style="background-color:LimeGreen"></option>
+					<option value="Linen" title="Linen" style="background-color:Linen"></option>
+					<option value="Magenta" title="Magenta" style="background-color:Magenta"></option>
+					<option value="Maroon" title="Maroon" style="background-color:Maroon"></option>
+					<option value="MediumAquaMarine" title="MediumAquaMarine" style="background-color:MediumAquaMarine">
+					</option>
+					<option value="MediumBlue" title="MediumBlue" style="background-color:MediumBlue"></option>
+					<option value="MediumOrchid" title="MediumOrchid" style="background-color:MediumOrchid">
+					</option>
+					<option value="MediumPurple" title="MediumPurple" style="background-color:MediumPurple">
+					</option>
+					<option value="MediumSeaGreen" title="MediumSeaGreen" style="background-color:MediumSeaGreen">
+					</option>
+					<option value="MediumSlateBlue" title="MediumSlateBlue" style="background-color:MediumSlateBlue">
+					</option>
+					<option value="MediumSpringGreen" title="MediumSpringGreen" style="background-color:MediumSpringGreen">
+					</option>
+					<option value="MediumTurquoise" title="MediumTurquoise" style="background-color:MediumTurquoise">
+					</option>
+					<option value="MediumVioletRed" title="MediumVioletRed" style="background-color:MediumVioletRed">
+					</option>
+					<option value="MidnightBlue" title="MidnightBlue" style="background-color:MidnightBlue">
+					</option>
+					<option value="MintCream" title="MintCream" style="background-color:MintCream"></option>
+					<option value="MistyRose" title="MistyRose" style="background-color:MistyRose"></option>
+					<option value="Moccasin" title="Moccasin" style="background-color:Moccasin"></option>
+					<option value="NavajoWhite" title="NavajoWhite" style="background-color:NavajoWhite">
+					</option>
+					<option value="Navy" title="Navy" style="background-color:Navy"></option>
+					<option value="OldLace" title="OldLace" style="background-color:OldLace"></option>
+					<option value="Olive" title="Olive" style="background-color:Olive"></option>
+					<option value="OliveDrab" title="OliveDrab" style="background-color:OliveDrab"></option>
+					<option value="Orange" title="Orange" style="background-color:Orange"></option>
+					<option value="OrangeRed" title="OrangeRed" style="background-color:OrangeRed"></option>
+					<option value="Orchid" title="Orchid" style="background-color:Orchid"></option>
+					<option value="PaleGoldenRod" title="PaleGoldenRod" style="background-color:PaleGoldenRod">
+					</option>
+					<option value="PaleGreen" title="PaleGreen" style="background-color:PaleGreen"></option>
+					<option value="PaleTurquoise" title="PaleTurquoise" style="background-color:PaleTurquoise">
+					</option>
+					<option value="PaleVioletRed" title="PaleVioletRed" style="background-color:PaleVioletRed">
+					</option>
+					<option value="PapayaWhip" title="PapayaWhip" style="background-color:PapayaWhip"></option>
+					<option value="PeachPuff" title="PeachPuff" style="background-color:PeachPuff"></option>
+					<option value="Peru" title="Peru" style="background-color:Peru"></option>
+					<option value="Pink" title="Pink" style="background-color:Pink"></option>
+					<option value="Plum" title="Plum" style="background-color:Plum"></option>
+					<option value="PowderBlue" title="PowderBlue" style="background-color:PowderBlue"></option>
+					<option value="Purple" title="Purple" style="background-color:Purple"></option>
+					<option value="RebeccaPurple" title="RebeccaPurple" style="background-color:RebeccaPurple">
+					</option>
+					<option value="Red" title="Red" style="background-color:Red"></option>
+					<option value="RosyBrown" title="RosyBrown" style="background-color:RosyBrown"></option>
+					<option value="RoyalBlue" title="RoyalBlue" style="background-color:RoyalBlue"></option>
+					<option value="SaddleBrown" title="SaddleBrown" style="background-color:SaddleBrown">
+					</option>
+					<option value="Salmon" title="Salmon" style="background-color:Salmon"></option>
+					<option value="SandyBrown" title="SandyBrown" style="background-color:SandyBrown"></option>
+					<option value="SeaGreen" title="SeaGreen" style="background-color:SeaGreen"></option>
+					<option value="SeaShell" title="SeaShell" style="background-color:SeaShell"></option>
+					<option value="Sienna" title="Sienna" style="background-color:Sienna"></option>
+					<option value="Silver" title="Silver" style="background-color:Silver"></option>
+					<option value="SkyBlue" title="SkyBlue" style="background-color:SkyBlue"></option>
+					<option value="SlateBlue" title="SlateBlue" style="background-color:SlateBlue"></option>
+					<option value="SlateGray" title="SlateGray" style="background-color:SlateGray"></option>
+					<option value="SlateGrey" title="SlateGrey" style="background-color:SlateGrey"></option>
+					<option value="Snow" title="Snow" style="background-color:Snow"></option>
+					<option value="SpringGreen" title="SpringGreen" style="background-color:SpringGreen">
+					</option>
+					<option value="SteelBlue" title="SteelBlue" style="background-color:SteelBlue"></option>
+					<option value="Tan" title="Tan" style="background-color:Tan"></option>
+					<option value="Teal" title="Teal" style="background-color:Teal"></option>
+					<option value="Thistle" title="Thistle" style="background-color:Thistle"></option>
+					<option value="Tomato" title="Tomato" style="background-color:Tomato"></option>
+					<option value="Turquoise" title="Turquoise" style="background-color:Turquoise"></option>
+					<option value="Violet" title="Violet" style="background-color:Violet"></option>
+					<option value="Wheat" title="Wheat" style="background-color:Wheat"></option>
+					<option value="White" title="White" style="background-color:White"></option>
+					<option value="WhiteSmoke" title="WhiteSmoke" style="background-color:WhiteSmoke"></option>
+					<option value="Yellow" title="Yellow" style="background-color:Yellow"></option>
+					<option value="YellowGreen" title="YellowGreen" style="background-color:YellowGreen">
+					</option>
+				</select>
+            </button>
+			<!-- </div> -->
+
+
+            <!-- <button id="contextMenuClone" onclick="cloneNodeDiv()" tabindex="0">Clone</button> -->
+            <button id="cMenuEdit" onclick="makeNodeDivEditable()" tabindex="0">Edit</button>
+            <button id="cMenuDeleteNodeDiv" onclick="deleteNodeDiv()" tabindex="0">Delete</button>
+            <button id="cMenuAddNote" onclick="addNote()" tabindex="0">Add Note</button>
+            <!-- SETS BUTTONS & SUBMENU -->
+            <button onclick="setsCMenu()">Sets</button>
+            <ul id="setselect"></ul>
+            <input type="text" id="setnewset" onkeypress ="showCurrentValue(event)" value="">
+            <!-- INTERACTIVITY -->
+            <button id="cMenuDescendantsAllToggle" onclick="toggleAllDescendants()" tabindex="0">All Gens</button>
+            <button id="cMenuDescendantsFirstToggle" onclick="toggleFirstGeneration()" tabindex="0">1<em>st</em>Gen</button>
+        </div>
+        <!-- ContextMenu for rightClick on any svgPath -->
+        <div id="svgPathCustomContextMenu" class="customContextMenu">
+            <button id="addLabelContextMenu" onclick="addLabelToPath()" tabindex="0">Add Label</button>
+            <button id="deletePathContextMenu" onclick="deletePath()" tabindex="0">Delete</button>
+            <button id="addNoteContextMenu" onclick="addNote()" tabindex="0">Add Note</button>
+
+            {% comment %}
+            <select id="startSide" onchange="startSide(this[this.selectedIndex].value)">
+                <option class="heading" selected>StartSide</option>
+                <option value="left" title="left">Start Left</option>
+                <option value="top" title="top">Start Top</option>
+                <option value="right" title="right">Start Right</option>
+                <option value="bottom" title="bottom">Start Bottom</option>
+            </select>
+
+            <select id="endSide" onchange="endSide(this[this.selectedIndex].value)">
+                <option class="heading" selected>EndSide</option>
+                <option value="left" title="left">End Left</option>
+                <option value="top" title="top">End Top</option>
+                <option value="right" title="right">End Right</option>
+                <option value="bottom" title="bottom">End Bottom</option>
+            </select>
+            {% endcomment %}
+        </div>
+
+        <!-- ContextMenu for rightClick on any note -->
+        <div id="notesCustomContextMenu" class="customContextMenu">
+            <button id="deleteNoteBtn" onclick="deleteNote()" tabindex="0">Delete</button>
+        </div>
+
+        {% comment %}
+        <!-- <div id="" class=""> -->
+        Useful to keep the title bar in place when scrolling on mobile
+        It however affects assigning of x and y coordinates
+        {% endcomment %}

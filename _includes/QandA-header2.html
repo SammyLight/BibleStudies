@@ -1,0 +1,18 @@
+<div id="headerbar" class="QandA-header">
+    <button class="quizCatLink">
+        {% for page in site.pages %}{% if page.title contains "Bible Quiz" %}
+        <a href="{% if site.baseurl == "" %}{{page.url}}{% elsif site.baseurl != "" %}/{{site.baseurl}}{{page.url}}{% endif %}"">
+            <span><i class="fas fa-thin fa-power-off"></i> New Quiz</span>
+        </a>{% endif %}{% endfor %}
+    </button>
+    <button id="settings" class="settings" onclick="showSettings()" title="general settings"><img
+            src="../images\settings-svgrepo-com.svg" alt="&#9881;"></button>
+    <div id="nextPrevButton">
+        <div id="prevquestionbutton" onclick="goToPreviousQuestion()" title="Previous Question">
+            <span><i class="fas fa-solid fa-angle-left"></i>Prev</span>
+        </div>
+        <div id="nextquestionbutton" title="Next Question">
+            <span>Next<i class="fas fa-solid fa-angle-right"></i></span>
+        </div>
+    </div>
+</div>
