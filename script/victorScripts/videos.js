@@ -50,7 +50,7 @@ const allTabs = document.querySelectorAll(".videotab-content");
               }
           }
       }
-      setTimeout(updateButton, 3255);
+      setTimeout(updateButton, 3250);
 
       elem.addEventListener('click', function() {
           allBtns.forEach((button) => {
