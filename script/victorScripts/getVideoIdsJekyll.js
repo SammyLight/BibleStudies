@@ -9,7 +9,7 @@
 //   });
 // });
 
-console.log('Fetching from URL:', '{{ site.baseurl }}/videoIds.json');
+console.log('Fetching from URL:', '{{ site.baseurl }}/Videos/videoIds.json');
 
 fetch('{{ site.baseurl }}/videoIds.json')
   .then(response => {
