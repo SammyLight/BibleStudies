@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video IDs</title>
+</head>
+<body>
+  <ul id="videoIdsList"></ul>
+  <script>
+// const baseUrl = '{{ site.baseurl }}';
+// const fetchUrl = baseUrl ? `${baseUrl}/videoIds.json` : '/videoIds.json';
+// console.log('Fetching from URL:', fetchUrl);
+  fetch('{{ site.baseurl }}/videoIds.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(videoIds => {
+      const videoIdsList = document.getElementById('videoIdsList');
+      videoIds.forEach(videoId => {
+        const listItem = document.createElement('li');
+        listItem.textContent = videoId;
+        videoIdsList.appendChild(listItem);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching video IDs:', error);
+    });
+</script>
+
+</body>
+</html>
